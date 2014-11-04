@@ -22,3 +22,8 @@ To get started with the community resources, you need to add a custom data sourc
   <li>Double click <b>Community d20 Data Set</b>, and follow the on-screen instructions.</li>
   <li>Restart Hero Lab one more time, and enjoy.</li>
 </ol>
+
+Support
+-------
+
+To report an issue in the sources, please [submit an issue report](https://github.com/NullCascade/HeroLabCommunityDataDnD35/issues/new). If you have content you would like to add to this project, please fork this project and submit a pull request.
