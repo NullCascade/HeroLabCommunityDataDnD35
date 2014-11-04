@@ -10,3 +10,5 @@ source/
 *.1st
 *.dtd
 *.pkg
+*.db
+*.xml
