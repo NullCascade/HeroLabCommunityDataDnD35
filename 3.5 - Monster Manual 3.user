@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="rAmbuDrake" name="Ambush Drake" description="{i}About the size of an adult human, this dragonlike creature bears distinctly lupine features in place of the more common feline attributes of traditional dragons. Its jaw is elongated and its build muscular, although its wings seem stunted for its size.{/i}\n\nMost creatures perceive ambush drakes as deadly draconic hunters of limited intelligence. However, they are social creatures among their own kind. Ambush drakes share the classic dragon mentality of hoarding treasure, but a pack doesn&#146;t believe in individual ownership. While one ambush drake might use an item at any given moment, the pack owns the treasure, and tomorrow another ambush drake might use it.\n\nAn ambush drake prefers to move about on all fours, only using its undersized wings when necessary.\n\nAn ambush drake typically weighs 200 pounds and has a 5-foot-long body. Its scales display dark shades of gray or black.\n\nAmbush drakes can speak Common and Draconic, but rarely choose to do so. Instead, they communicate telepathically with their kind." compset="Race">
+    <fieldval field="rSTR" value="6"/>
+    <fieldval field="rDEX" value="4"/>
+    <fieldval field="rCON" value="8"/>
+    <fieldval field="rINT" value="-4"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="5"/>
+    <fieldval field="rWill" value="5"/>
+    <fieldval field="rAttack" value="7"/>
+    <fieldval field="rAC" value="6"/>
+    <fieldval field="rCR" value="5"/>
+    <fieldval field="rInfAutoLn" value="Common, Draconic"/>
+    <fieldval field="rInfHit" value="7d12 (7 levels of Dragon)"/>
+    <fieldval field="rHitDice" value="7"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rHPStart" value="45"/>
+    <usesource source="MM3"/>
+    <tag group="Alignment" tag="Evil"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="Race" tag="typDragon"/>
+    <tag group="Language" tag="Any"/>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Maneuver" tag="Poor"/>
+      <autotag group="Value" tag="30"/>
+      </bootstrap>
+    <bootstrap thing="typDragon"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      </bootstrap>
+    <bootstrap thing="xPoison">
+      <autotag group="User" tag="Bite"/>
+      <autotag group="User" tag="PriDEX"/>
+      <autotag group="User" tag="1d6_5"/>
+      <autotag group="User" tag="SecDEX"/>
+      <autotag group="User" tag="Sc1d6_5"/>
+      </bootstrap>
+    <bootstrap thing="xBreathWea">
+      <assignval field="livename" value="Breath Weapon, {i}slow{/i} 7 rds, 30 ft cone"/>
+      </bootstrap>
+    <bootstrap thing="xTelepathy">
+      <autotag group="Value" tag="30"/>
+      <assignval field="xSumm" value="Constant contact in 30 ft, can&apos;t be flat footed/flanked unless all are."/>
+      <assignval field="livename" value="Telepathic Link"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Hide."/>
+      </bootstrap>
+    <bootstrap thing="xScent"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <eval phase="Render" index="2">hero.child[xTelepathy].field[CustDesc].text = &quot;Ambush drakes share a communal consciousness, enabling them to communicate telepathically with other ambush drakes. A group of ambush drakes within 30 feet of each other are in constant contact. If one is aware of a particular danger, they all are. If one in the group is not flat-footed, none of them are. No ambush drake in the group is considered flanked unless all are.&quot;
+
+      hero.child[xBreathWea].field[CustDesc].text = &quot;30-foot cone, once every 1d4 rounds, {i}slow{/i} (duration 7 rounds), Will DC 17 negates. Ambush drakes are immune to the breath weapons of other ambush drakes. The save DC is Constitution-based.{BR}{BR}Using a breath weapon is a standard action. Once a dragon breathes, it can&#146;t breathe again until 1d4 rounds later. If a dragon has more than one type of breath weapon, it still can breathe only once every 1d4 rounds. A blast from a breath weapon always starts at any intersection adjacent to the dragon and extends in a direction of the dragon&#146;s choice, with an area as noted on the table below. If the breath weapon deals damage, creatures caught in the area can attempt Reflex saves to take half damage; the DC depends on the dragon&#146;s age and variety, and is given in each individual entry. Saves against nondamaging breath weapons use the same DC; the kind of saving throw is noted in the variety descriptions. The save DC against a breath weapon is 10 + 1/2 dragon&#146;s HD + dragon&#146;s Con modifier. {BR}{BR}Breath weapons come in two basic shapes, line and cone, whose areas vary with the dragon&#146;s size.&quot;</eval>
+    <eval phase="PostLevel" priority="10000" index="3">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 9
+      #applysr[damage]</eval>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 10
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 10
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 10
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 10
+
+      #skillbonus[kHide] += 4</eval>
+    </thing>
+  <thing id="rArcanOoze" name="Arcane Ooze" description="{i}The creature resembles a fluid mass of green protoplasm. Within its immense bulk, glowing veins throb and pulse with eldritch light.{/i}\n\nCreated in ancient times, arcane oozes have long since outlived their original purpose and their long-forgotten creators. The bizarre creatures have a strange affinity for arcane magic. Immune to most arcane magic, arcane oozes drain arcane energy from nearby spellcasters. Some speculate that these oozes were created to combat a rival group of arcane spellcasters, but scant evidence backs any such conclusion. Others suggest arcane oozes arose as a natural response to some cataclysmic event caused by arcane magic. Adherents of these later theories claim that one day arcane oozes will drown out all arcane magic in the world.\n\nAn arcane ooze measures 15 feet across and 3 feet thick. It weighs as much as 20,000 pounds." compset="Race">
+    <comment>All the stats (climb bonus, constrict, grapple bonus and slam damage) seem to be based off a +5 Str bonus (rather than 22 being +6)
+
+Was this eratted?
+
+      #appenddesc[xImmMagic,&quot;A magical attack that deals electricity damage increases an arcane ooze&#146;s speed as if it had been affected by the haste spell for 3 rounds.&quot;]</comment>
+    <fieldval field="rDEX" value="-9"/>
+    <fieldval field="rCON" value="16"/>
+    <fieldval field="rWIS" value="-9"/>
+    <fieldval field="rCHA" value="-9"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAttack" value="11"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="5"/>
+    <fieldval field="rWill" value="5"/>
+    <fieldval field="rCR" value="9"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="15d10 (15 levels of Ooze)"/>
+    <fieldval field="rHitDice" value="15"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="rSpace" value="15"/>
+    <fieldval field="rReach" value="10"/>
+    <fieldval field="rHPStart" value="82"/>
+    <fieldval field="rSTR" value="12"/>
+    <usesource source="MM3"/>
+    <tag group="RaceSize" tag="Huge2"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Race" tag="typOoze"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="Alignment" tag="NeutralGE"/>
+    <tag group="RaceType" tag="NPC"/>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="2d6_104"/>
+      </bootstrap>
+    <bootstrap thing="rBlindSi"></bootstrap>
+    <bootstrap thing="xAcid">
+      <autotag group="User" tag="Slam"/>
+      <autotag group="User" tag="ScConstric"/>
+      <autotag group="User" tag="2d6_104"/>
+      <assignval field="xSumm" value="Extra dam. Dissolves only flesh."/>
+      </bootstrap>
+    <bootstrap thing="xConstrict">
+      <autotag group="User" tag="2d6_104"/>
+      <autotag group="User" tag="DamHighStr"/>
+      </bootstrap>
+    <bootstrap thing="xImpGrab">
+      <autotag group="User" tag="Slam"/>
+      </bootstrap>
+    <bootstrap thing="typOoze"></bootstrap>
+    <bootstrap thing="xImmMagic"></bootstrap>
+    <bootstrap thing="xSplSiphon"></bootstrap>
+    <bootstrap thing="xClimb">
+      <autotag group="Value" tag="20"/>
+      </bootstrap>
+    <eval phase="Render" index="2">~ Rename our Acid attack
+      hero.child[xAcid].field[CustDesc].text = &quot;An arcane ooze secretes a digestive acid that dissolves only flesh. Any successful hit in melee combat or a constrict attack by the creature deals an extra 2d6 points of acid damage.&quot;
+
+      hero.child[xConstrict].field[CustDesc].text = &quot;An arcane ooze deals automatic slam damage and acid damage with a successful grapple check.&quot;
+
+      hero.child[xImmMagic].field[CustDesc].text = &quot;You are immune to all spells or spell like abilities that allow spell resistance, and all supernatural effects.{br}{br}A magical attack that deals electricity damage increases an arcane ooze&#146;s speed as if it had been affected by the {i}haste{/i} spell for 3 rounds.{br}{br}A magical attack that deals acid damage heals an arcane ooze of an amount of damage equal to half the acid damage that the spell would normally have caused.&quot;</eval>
+    <eval phase="First" priority="5000"><![CDATA[      ~ We have 60 foot Blindsight
+      hero.child[rBlindSi].field[Value].value = maximum(60, hero.child[rBlindSi].field[Value].value)
+
+      ~ Don' have INT cause... dur?
+      perform hero.child[aINT].assign[Helper.NoScore]
+
+      ~ We aren't allowed any skills or feats
+      perform hero.assign[Hero.NoSkills]
+      perform hero.assign[Hero.NoFeats]
+
+      ~ Many races and classes bootstrap feats, so go through them disabling them all!
+      foreach pick in hero from BaseFeat
+        perform eachpick.assign[Helper.FtDisable]
+        nexteach]]></eval>
+    </thing>
+  <thing id="xSplSiphon" name="Spell Siphon" description="An arcane ooze exerts a strange pull on arcane spell energy. Any time an arcane spellcaster begins his turn within 60 feet of an arcane ooze, he must make a DC 25 Fortitude save or lose a random spell of the highest spell level that he has available. For every spell lost by a victim in this manner, the arcane ooze gains temporary hit points equal to 5 &#215; the level of the lost spell. These temporary hit points are lost after 1 hour.\n\nLine of effect between the spellcaster and the arcane ooze is necessary in order for this ability to work. The save DC is Constitution-based." compset="Special" summary="Arcane caster in 60 ft loses a spell of highest level, gain level x 5 temp hp.">
+    <comment>too long?</comment>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostAttr" priority="20000">~ Count our Racial HD and get our base DC.
+      var HD as number
+      HD = herofield[tHitDice].value - #totallevelcount[] + #levelcount[Race]
+      var DC as number
+      DC = 10 + HD/2 + hero.child[aCON].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[    field[livename].text = field[name].text &  " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="rArmand" name="Armand" description="{i}This short, solidly built humanoid with thick, plated skin seems as patient as a stone. Its stance lends it stability.{/i}\n\nArmands are nomadic humanoids who wander the desert in search of new experiences. They operate as a democratic unit with all adult armands able to voice and vote in council. They don&#146;t believe in individual ownership and share all possessions and resources among other armands. Their philosophy scorns wealth because of its transitory nature. Of infinitely greater value are experiences, and those armands who have traveled, adventured, and returned to the tribe are deemed &#147;wise ones&#148; whose advice carries the most weight. Thus, many young adult armands leave their families and seek to see more of the world.\n\nA typical armand stands 3-1/2 to 4 feet tall and weighs roughly 150 pounds.\n\nArmands speak Common and their own language, Armandish." compset="Race">
+    <fieldval field="rDEX" value="6"/>
+    <fieldval field="rCON" value="6"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rInfFavor" value="Monk"/>
+    <fieldval field="rInfAutoLn" value="Armandish, Common"/>
+    <fieldval field="rInfHit" value="5d8 (5 levels of Monstrous Humanoid)"/>
+    <fieldval field="rHitDice" value="5"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rHPStart" value="22"/>
+    <usesource source="MM3"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="typMonHuma"/>
+    <tag group="Alignment" tag="Lawful"/>
+    <tag group="Alignment" tag="NeutralGE"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="RaceSize" tag="Small11"/>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Survival."/>
+      </bootstrap>
+    <bootstrap thing="lArmandish"></bootstrap>
+    <bootstrap thing="typMonsHum"></bootstrap>
+    <bootstrap thing="xBurrow2">
+      <autotag group="Value" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="rStability"></bootstrap>
+    <bootstrap thing="xDefStance"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 8
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 8
+      hero.child[xBurrow2].field[Value].value = maximum(hero.child[xBurrow2].field[Value].value, 10)
+
+      #skillbonus[kSurvival] += 4</eval>
+    </thing>
+  <thing id="lArmandish" name="Armandish" description="Typically spoken by the contemplative armadillo-folk of the deserts." compset="Language" uniqueness="unique">
+    <usesource source="MM3"/>
+    </thing>
+  <thing id="xDefStance" name="Defensive Stance" description="When it needs to, an armand can become a stalwart bastion of defense. As a move action, an armand can take a defensive stance, gaining phenomenal precision and durability, but it cannot move while in this stance. The creature gains a +2 bonus on attack rolls, a +2 resistance bonus on all saves, and a +4 dodge bonus to AC until it moves.\n\nThe following changes are in effect as long as the defensive stance lasts: AC 22, touch 18, flat-footed 15; Base Atk +5; Grp +1; Atk claw +11 melee (1d4); Full Atk 2 claws +11 melee (1d4); SV Fort +6, Ref +9, Will +6." compset="Special" summary="Move, gain +2 to hit and saves, +4 to AC until move.">
+    <fieldval field="hName1" value="Active"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    <eval phase="PreLevel" priority="5000">doneif (field[hIsOn1].value = 0)
+
+        hero.child[vFort].field[vResist].value = maximum(hero.child[vFort].field[vResist].value, 2)
+        hero.child[vRef].field[vResist].value = maximum(hero.child[vRef].field[vResist].value, 2)
+        hero.child[vWill].field[vResist].value = maximum(hero.child[vWill].field[vResist].value, 2)
+        hero.child[ArmorClass].field[tACDodge].value += 4
+        hero.child[Attack].field[Bonus].value += 2</eval>
+    </thing>
+  <thing id="rOgreSkull" name="Ogre, Skullcrusher" description="{i}This 8-foot-tall brute resembles an ogre but looks to be more intelligent, and it stands more erect. Its armor and shield are covered in spikes, and it carries a vicious-looking morningstar.{/i}\n\nSkullcrusher ogres are an offshoot of the ogre stock bred for war. Shorter and less brutish than typical ogres, skullcrusher ogres are nevertheless stronger and more dangerous.\n\nThuggish and sadistic, bellicose and rowdy, skullcrusher ogres enjoy bullying weaker creatures. Tribes often keep slaves, which in many cases are normal ogres.\n\nCreated long ago to serve as soldiers, skullcrusher ogres have naturally centered their culture on warfare, and their villages are arrayed like military encampments. Skullcrusher ogres build siege walls and other structures to defend their homes, and they train elephants for mounted combat.\n\nAn adult skullcrusher ogre stands 8 to 9 feet tall and weighs 550 to 600 pounds. The creatures&#146; skin color ranges from pale yellow to pale brown, and their hair tends to be black. Skullcrusher ogres wear armor during their waking hours and little clothing when sleeping.\n\nSkullcrusher ogres speak Giant and Common." compset="Race">
+    <fieldval field="rSTR" value="14"/>
+    <fieldval field="rCON" value="6"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rAttack" value="6"/>
+    <fieldval field="rFort" value="6"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="rCR" value="5"/>
+    <fieldval field="rInfFavor" value="Fighter"/>
+    <fieldval field="rInfAutoLn" value="Common, Giant"/>
+    <fieldval field="rInfHit" value="8d8 (8 levels of Giant)"/>
+    <fieldval field="rHitDice" value="8"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <fieldval field="rHPStart" value="36"/>
+    <usesource source="MM3"/>
+    <tag group="Language" tag="lOrc"/>
+    <tag group="Language" tag="lTerran"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="Race" tag="Ogre"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="kHandleAnm"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowArcEn"/>
+    <tag group="ClassSkill" tag="kRide"/>
+    <tag group="Race" tag="typGiant"/>
+    <tag group="Language" tag="lDwarven"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="Alignment" tag="Evil"/>
+    <tag group="Language" tag="lGoblin"/>
+    <bootstrap thing="xGiaRockTh"></bootstrap>
+    <bootstrap thing="wGiaRock">
+      <autotag group="wRangeInc" tag="100"/>
+      <autotag group="wMain" tag="2d6_104"/>
+      <assignval field="wAttBonus" value="1"/>
+      </bootstrap>
+    <bootstrap thing="kCrafArmor"></bootstrap>
+    <bootstrap thing="kKnowArcEn"></bootstrap>
+    <bootstrap thing="fTwoWep">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="lGiant"></bootstrap>
+    <bootstrap thing="typeGiant"></bootstrap>
+    <bootstrap thing="fArmHeavy"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="fImpGrapp">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kCrafArmor].field[kInnate].arrayvalue[index] += 5
+      hero.child[kHandleAnm].field[kInnate].arrayvalue[index] += 5
+      hero.child[kKnowArcEn].field[kInnate].arrayvalue[index] += 5
+      hero.child[kIntim].field[kInnate].arrayvalue[index] += 2
+      hero.child[kRide].field[kInnate].arrayvalue[index] += 5</eval>
+    </thing>
+  <thing id="kCrafArmor" name="Craft: Armor" description="You are skilled at the creation of all armors as well as shields." compset="Skill" uniqueness="unique">
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="Helper" tag="SkCatCraft" name="Craft Skill" abbrev="Craft Skill"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="rChangelin" name="Changeling" description="{i}This peculiar humanoid has pale gray skin, thin hair, and blank white eyes. You see hints of a nose and mouth, but its face is bereft of expression. Its limbs are gangly and slightly misproportioned, although it moves gracefully.{/i}\n\nChangelings are subtle shapeshifters capable of disguising their appearance. They evolved through the union of doppelgangers and humans, eventually becoming a separate race distinct from either ancestral tree. Changelings do not possess the full shapechanging ability of doppelgangers, but they can create effective disguises at will. This ability makes them consummate spies and criminals, and many changelings live up to that potential.\n\nIn general, changelings are prudent and cautious, preferring to take risks only when they feel that their chances are good or the payoff is worth it. They appreciate the finer things in life and take great pleasure in the comforts of a wealthy lifestyle when they can obtain it. They avoid direct confrontation, preferring stealthy strikes and hasty retreats whenever possible. In conversation, they are soft-spoken but have a gift for drawing out more information than the other party usually plans to reveal.\n\nChangelings strongly resemble their doppelganger lineage, with only a passing nod to their humanoid heritage. All changelings fall within the boundaries of Medium size, usually standing between 5 and 6 feet tall. Unlike true doppelgangers, changelings do have gender in their natural form, although they can adopt any shape they like. They speak Common, but many changelings enjoy collecting other languages to expand their repertoire of disguises and identities.\n\nHumans and elves regard changelings with suspicion. Many, however, have reason to do business with them. Dwarves have little patience for their deceptive and subtle manner. Gnomes and halflings, on the other hand, enjoy matching wits with changelings, though they are often rivals in certain shady activities." compset="Race">
+    <fieldval field="rInfFavor" value="Rogue"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <usesource source="MM3"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Language" tag="lAuran"/>
+    <tag group="Language" tag="lDwarven"/>
+    <tag group="Language" tag="lElven"/>
+    <tag group="Language" tag="lGiant"/>
+    <tag group="Language" tag="lGnome"/>
+    <tag group="Language" tag="lHalfling"/>
+    <tag group="Language" tag="lTerran"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Race" tag="stypShChan"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <bootstrap thing="stypShapCh"></bootstrap>
+    <bootstrap thing="xChanShaMi"></bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <assignval field="livename" value="+10 to Disguise when using Minor Change Shape"/>
+      </bootstrap>
+    <bootstrap thing="xNaturaLin"></bootstrap>
+    <bootstrap thing="xChangeImm"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+2 to Bluff, Intimidate, and Sense Motive."/>
+      </bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <eval phase="First" priority="5000">#skillbonus[kBluff] += 2
+    #skillbonus[kIntim] += 2
+    #skillbonus[kSenseMot] += 2</eval>
+    </thing>
+  <thing id="xChanShaMi" name="Minor Change Shape" description="Changelings have the supernatural ability to alter their appearance as though using a {i}disguise self{/i} spell that affects their bodies but not their possessions. This is not an illusory effect but a minor physical alteration of a changeling&#146;s facial features, skin color and texture, and size, within the limits described for the spell. A changeling can use this ability at will, and the alteration lasts until she changes shape again. A changeling reverts to her natural form when killed. A {i}true seeing{/i} spell reveals her natural form. Using this ability is a full-round action." compset="Special" summary="At will, full-rd, as {i}disguise self{/i} but not illusionary.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="xNaturaLin" name="Natural Linguist" description="Changelings add Speak Language to their list of class skills for any class they adopt." compset="Special" summary="Add Speak Language to class skills for all classes.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First" priority="5000">perform hero.assign[ClassSkill.kSpeakLang]</eval>
+    </thing>
+  <thing id="xChangeImm" name="+2 to saves vs Sleep &amp; Charm effects" description="+2 racial bonus on saving throws against sleep and charm effects." compset="Special">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="rLizardBla" name="Lizardfolk, Blackscale" description="{i}This stocky, heavily muscled reptilian humanoid stands almost 9 feet in height. Deep-socketed eyes and flat nasal openings give its face the appearance of a skull. Its scales are black, and a leathery crest running from the top of its head to the middle of its back rises up as it sees you. It flexes talon tipped fingers and snarls, revealing a row of vicious fangs.{/i}\n\nLike their smaller cousins, blackscale lizard folk are primitive reptilian humanoids that can be very dangerous if provoked.\n\nA blackscale lizardfolk is usually 8-1/2 to 9-1/2 feet tall, and weighs about 600 pounds. Its tail is 4 to 5 feet long.\n\nBlackscale lizard folk speak Draconic, and a blackscale lizard folk with an Intelligence score of 12 or greater will also speak Common." compset="Race">
+    <fieldval field="rSTR" value="8"/>
+    <fieldval field="rCON" value="4"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rInfAutoLn" value="Draconic"/>
+    <fieldval field="rHitDice" value="4"/>
+    <fieldval field="rHPStart" value="9"/>
+    <fieldval field="rInfHit" value="4d8 (4 levels of Monstrous Humanoid)"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="7"/>
+    <fieldval field="rSkillMult" value="5"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="rInfFavor" value="Barbarian"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rHPStart" value="18"/>
+    <usesource source="MM3"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="Race" tag="typMonHuma"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Alignment" tag="NeutralGE" name="Neutral" abbrev="N"/>
+    <tag group="Alignment" tag="NeutralLC" name="Neutral" abbrev="N"/>
+    <tag group="ClassSkill" tag="kBalance" name="Balance" abbrev="Balance"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSwim" name="Swim" abbrev="Swim"/>
+    <tag group="ClassSkill" tag="kJump" name="Jump" abbrev="Jump"/>
+    <tag group="WepProf" tag="wGreatclub"/>
+    <tag group="Race" tag="stypReptil" name="Subtype - Reptilian" abbrev="Subtype - Reptilian"/>
+    <bootstrap thing="xRacSkiBon">
+      <autotag group="SpecSource" tag="rLizardfol"/>
+      <assignval field="xSumm" value="+4 to Balance, Jump, and Swim."/>
+      </bootstrap>
+    <bootstrap thing="rLiHoldBr"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Helper" tag="RaceSize"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="RaceSize"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsAcid"></bootstrap>
+    <bootstrap thing="typMonsHum"></bootstrap>
+    <bootstrap thing="stypReptil"></bootstrap>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <eval phase="First" priority="5000" index="2">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kBalance].field[kInnate].arrayvalue[index] += 1
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 4
+      hero.child[kSwim].field[kInnate].arrayvalue[index] += 2
+
+      ~ +4 to Balance, Jump, and Swim checks
+      #skillbonus[kBalance] += 4
+      #skillbonus[kJump] += 4
+      #skillbonus[kSwim] += 4
+
+      #applyresist[xDamRsAcid, 5]</eval>
+    </thing>
+  <thing id="rBoneclaw" name="Boneclaw" description="{i}This large skeletal humanoid&#146;s clawlike fingers are at least two feet long. Worse, the slender, knife-sharp claws contract and extend in length from moment to moment, sometimes instantly reaching a length of 10 or more feet, before slowly contracting.{/i}\n\nBoneclaws are bloodthirsty undead that enjoy using their extendable claws to bring death to the living. The lore of the dead does not reveal from what dark necromancer&#146;s laboratory or fell nether plane boneclaws entered the world. Perhaps they merely &#147;evolved&#148; from lesser forms. \n\nThe boneclaw is an intelligent skeletal undead that possesses exceptional control over the length of its claws. At will, a boneclaw can extend one or two of its finger-claws out to a distance of 20 feet, neatly skewering fl eshy creatures that stand in the way.\n\nA boneclaw stands about 8 feet tall and weighs about 300 pounds.\nBoneclaws speak Common and Abyssal.\n\n{b}COMBAT{/b}\n\nA boneclaw likes to get the drop on its enemies, especially when its foes are still at range, surprising them with an attack of opportunity by extending its claws as its enemies close to melee range. With its Combat Reflexes, this can occur often within the same fight.\n\nA boneclaw normally attacks using its Power Attack feat, taking a &#150;2 penalty on its attack rolls and gaining a +2 bonus on damage rolls." compset="Race" uniqueness="unique">
+    <fieldval field="rReach" value="20"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rAttack" value="5"/>
+    <fieldval field="rCR" value="5"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rSTR" value="11"/>
+    <fieldval field="rDEX" value="8"/>
+    <fieldval field="rINT" value="4"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="9"/>
+    <fieldval field="rInfHit" value="10d12 (10 levels of undead)"/>
+    <fieldval field="rHitDice" value="10"/>
+    <fieldval field="rSkillPlus" value="4"/>
+    <fieldval field="rFeat" value="-4"/>
+    <fieldval field="rHPStart" value="65"/>
+    <usesource source="MM3"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="User" tag="EnemyUnde"/>
+    <tag group="Race" tag="typUndead"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Alignment" tag="Chaotic"/>
+    <tag group="Alignment" tag="Evil"/>
+    <bootstrap thing="typUndead"></bootstrap>
+    <bootstrap thing="xReachClaw"></bootstrap>
+    <bootstrap thing="xDamRdB"></bootstrap>
+    <bootstrap thing="xTurnRes">
+      <assignval field="Value" value="2"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="fComRef"></bootstrap>
+    <bootstrap thing="fImpInit"></bootstrap>
+    <bootstrap thing="fPowerAtt"></bootstrap>
+    <bootstrap thing="fImpNatAtt"></bootstrap>
+    <bootstrap thing="xImmCold"></bootstrap>
+    <bootstrap thing="xUnHoTough"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[~ We don't have a CON score because we're undead, and above that sort of petty nonsense
+      perform hero.child[aCON].assign[Helper.NoScore]]]></eval>
+    <eval phase="First" priority="5000" index="3">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 13
+      hero.child[kIntim].field[kInnate].arrayvalue[index] += 13
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 13
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 13
+      hero.child[kSearch].field[kInnate].arrayvalue[index] += 13
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 13</eval>
+    <eval phase="UserFinal" priority="10000" index="4">~ Boneclaws speak Common and Abyssal!
+      herofield[tLangsSta].value = 0
+      herofield[tLangsSpk].value = 0</eval>
+    </thing>
+  <thing id="xReachClaw" name="Reaching Claws" description="{b}Reaching Claws{/b} (Ex): A bone claw can make melee attacks with its bone claws, instantly extending them as part of an attack to a distance of up to 20 feet (thereby allowing the boneclaw to threaten more squares than even its Large size would otherwise indicate)." compset="Special" uniqueness="unique">
+    <usesource source="MM3"/>
+    <tag group="SpecSource" tag="rBoneclaw"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xUnHoTough" name="Unholy Toughness" description="{b}Unholy Toughness{/b}: You gain hit points equal to your Charisma modifier times your hit dice." compset="Special" summary="You gain hit points equal to your Charisma modifier times your hit dice." uniqueness="unique">
+    <comment>Input by Bodrin 03/07/2011
+
+bodrinbarlow@gmail.com
+
+Bootstrap to Undead for greater effectiveness!</comment>
+    <usesource source="MM3" parent="p35" name="Monster Manual 3"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="UnHoTough" name="Unholy Toughness"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final" priority="10000">~ Add our Charisma bonus times our Hit Dice to our hit point total.
+
+container.child[Totals].field[tHP].value = container.child[Totals].field[tHitDice].value * hero.child[aCHA].field[aModBonus].value + container.child[Totals].field[tHP].value</eval>
+    </thing>
+  <thing id="rGoatFolk" name="Goatfolk (Ibixian)" description="&quot;An amalgam of goat and human, this creature has a furry chest\nand legs that end in hooves.&quot;\n\nGoatfolk are powerfully built goatlike creatures that resemble satyrs. Unlike their hedonistic and mischievous fey cousins, goatfolk are much more physically focused creatures who favor a barbarian lifestyle.\n\nGoatfolk choose leaders by combat, and the strongest and most aggressive lead the pack. Thus, leadership is transitory and prone to challenge. Both males and females assert themselves and hold these temporary positions of power.\n\nThese creatures call themselves ibixians, and races that deal regularly with them use the proper name, but colloquially, they&#146;ve been dubbed &#147;goatfolk.&#148;\n\nGoatfolk are bigger than most humans and almost all satyrs, standing about 6 to 6-1/2 feet tall and weighing about 250 pounds.\n\nGoatfolk speak Common and their own language, Ibixian." compset="Race" uniqueness="unique">
+    <fieldval field="rSTR" value="+4"/>
+    <fieldval field="rCON" value="+2"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="rCR" value="2"/>
+    <fieldval field="rInfFavor" value="Barbarian"/>
+    <fieldval field="rInfAutoLn" value="Ibixian, Common"/>
+    <fieldval field="rInfHit" value="3d8 Hit Dice (3 levels of Monstrous Humanoid)"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAttack" value="3"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rRef" value="3"/>
+    <fieldval field="rWill" value="3"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rSkillMult" value="6"/>
+    <fieldval field="rHeightMnM" value="70"/>
+    <fieldval field="rWeightMnM" value="230"/>
+    <fieldval field="rHeightMnF" value="66"/>
+    <fieldval field="rWeightMnF" value="215"/>
+    <fieldval field="rHitDice" value="3"/>
+    <usesource source="MM3"/>
+    <tag group="WepProf" tag="wGreataxe"/>
+    <tag group="SpecSource" tag="rGoatFolk"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Language" tag="lElven"/>
+    <tag group="Language" tag="lGiant"/>
+    <tag group="Language" tag="lGnome"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Language" tag="lSylvan"/>
+    <tag group="Race" tag="rGoatFolk" name="Goat Folk (Ibixian)" abbrev="Ibixian"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="HeightDice" tag="1"/>
+    <tag group="HeightSize" tag="8"/>
+    <tag group="WeightDice" tag="4"/>
+    <tag group="WeightSize" tag="10"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="wHeadButt">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d6_5"/>
+      </bootstrap>
+    <bootstrap thing="lIbixian"></bootstrap>
+    <bootstrap thing="xPackFervo"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="typMonsHum"></bootstrap>
+    <eval phase="First">~ +4 to Intimidate checks
+      #skillbonus[kIntim] += 4</eval>
+    </thing>
+  <thing id="lIbixian" name="Ibixian" compset="Language" uniqueness="unique"></thing>
+  <thing id="xPackFervo" name="Pack Fervor" description="An ibixian loves to brawl with or alongside others of its kind.  Doing this increases its enjoyment of the fight and adds ferocity to its attacks.  When an ibixian is within 30 feet of another goatfolk, it gains a +2 morale bonus on attack rolls and damage rolls and a +4 morale bonus on saving throws against fear effects." compset="Special" summary="+2 to attack and damage rolls, +4 save against fear" uniqueness="unique">
+    <fieldval field="hName1" value="Pack Fervor"/>
+    <usesource source="MM3"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecType" tag="Resist"/>
+    <tag group="SpecSource" tag="rGoatFolk"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First"><![CDATA[
+  if (field[hIsOn1].value <> 0) then
+    hero.child[Attack].field[BonMorale].value += 2
+    hero.child[Damage].field[tDamBonus].value += 2
+  endif]]></eval>
+    </thing>
+  </document>

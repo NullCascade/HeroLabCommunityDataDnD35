@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>Input by Bodrin 30/06/2011
+
+bodrinbarlow@gmail.com</info_author>
+    <info_history>V1.0 initial data input!</info_history>
+    </fileinfo>
+  <thing id="tmDracLich" name="Dracolich" description="The dracolich is an undead creature resulting from the transformation of an evil dragon. The process usually involves a cooperative effort between an evil dragon and a powerful cleric, sorcerer, or wizard, but especially powerful spellcasters have been known to coerce an evil dragon to undergo the transformation against its will.\n\nThe dragon must first consume a lethal concoction known as a dracolich brew. This act instantly slays the dragon,  whereupon its spirit is transferred to its dracolich phylactery, regardless of the distance between the phylactery and the dragon&#146;s body.\n\nA spirit contained in a phylactery can sense any reptilian or dragon corpse of Medium or larger size within 90 feet and attempt  to possess it. Under no circumstances can the spirit possess a living body. The spirit&#146;s original body is an ideal vessel, and any attempt to possess it is automatically successful. To possess a suitable corpse other than its own, a dracolich must make a successful Charisma  check (DC 10 for a true dragon DC 15 for any other creature of the dragon type, or DC 20 for any other kind of reptilian creature, such as a giant snake or  (lizardfolk). If the check fails, the dracolich can never possess that particular corpse.\n\nIf the corpse accepts the spirit, the corpse becomes animated. If the animated corpse is the spirit&#146;s former body, it immediately becomes a dracolich. Otherwise, it becomes a proto-dracolich (see below). A dracolich appears as a skeletal or semiskeletal version of its former self, with glowing points of light in its shadowy eye sockets.\n\n{b}PROTO-DRACOLICHES{/b}\nA proto-dracolich comes into being when a dracolich&#146;s spirit possesses any body other than the corpse that was created when the dragon consumed its dose of dracolich brew. A proto-dracolich has the mind and memories of its original form but the hit points and immunities of a dracolich. A proto-dracolich can neither speak nor cast spells. Further, it cannot deal extra cold damage, use a breath weapon, or use frightful presence as a dracolich. Its Strength, speed, and Armor Class are those of the possessed body. \n\nA proto-dracolich transforms into a full-fledged dracolich in 2d4 days. When the transformation is complete, the dracolich&#146;s form resembles that of its original body. It can now speak, cast spells, and employ the breath weapon it originally had, in addition to gaining all the abilities of a dracolich. A dracolich typically keeps a few &#147;spare&#148; bodies of a suitable size near the hiding place of its phylactery, so that if its current form is destroyed, it can possess and transform a new body within a few days.\n\nCREATING A DRACOLICH\n&#147;Dracolich&#148; is an acquired template  that can be added to any evil dragon (hereafter referred to as the base creature), though dragons of old age  or older, with spellcasting abilities, are preferred. \n\nA dracolich uses all the  base creature&#146;s statistics and special abilities except as noted here.\n\n{b}Size  and Type{/b}: The creature&#146;s type changes to undead. Do not recalculate the creature&#146;s base attack bonus,saves, or skill points. Size is unchanged.\n\n{b}Speed{/b}: A dracolich&#146;s ability to fly becomes supernatural in nature. \n\n{b}Armor Class{/b}: A dracolich gains an additional +2 natural armor bonus (the hide toughens when the dragon becomes a dracolich).\n\n{b}Attacks{/b}: A dracolich  cannot make crush attacks even if it was capable of doing so when the base creature was alive. \n\n{b}Damage{/b}: A dracolich  deals an extra 1d6 points of cold damage on any successful hit. A successful attack may also paralyze the victim  (see below).\n\n{b}Special Attacks{/b}: A dracolich retains all the special attack forms of the base creature, including breath weapon, spell use, and spell-like  abilities. Some of these attack forms are enhanced, and  it also gains some new abilities. \n\n{b}Breath Weapon{/b} (Su): Since a dracolich doesn&#146;t have a Constitution score, it uses its Charisma  modifier  to determine the save DC for its breath weapon instead.\n\n{b}Control Undead {/b} (Sp): Once every three days, a dracolich can use control undead as the spell (caster level 15th). The dracolich  cannot cast other spells while this ability is in effect.\n\n{b}Frightful Presence{/b} (Ex): Since the creature&#146;s Charisma score increases by 2, the  save DC for the dracolich&#146;s frightful presence ability  increases by 1.\n\n{b}Paralyzing Gaze{/b} (Su): The gaze of a dracolich&#146;s glow- ing eyes  can paralyze victims within 40 feet who fail a  Fortitude save (DC 10 + 1/2 dracolich&#146;s HD + draco lich&#146;s Cha modifier). If the  saving throw is successful, the character is forever immune to the gaze of that particular dracolich. If it fails, the victim  is paralyzed for 2d6 rounds.\n\n{b}Paralyzing Touch{/b} (Su): A creature struck by any of a dracolich&#146;s physical attacks must make a Fortitude save (DC same  as for the dracolich&#146;s  paralyzing gaze) or be paralyzed for 2d6 rounds. A successful saving throw  against this effect does not confer any immunity against  subsequent attacks.\n\n{b}Special Qualities{/b}: A dracolich retains all the special qualities of the  base creature. Again, some are enhanced, and a dracolich  gains some new special qualities as well.\n\n{b}Damage Reduction{/b}: Like a skeleton, a dracolich has damage reduction 5/bludgeoning.\n\n{b}Immunities{/b}: In addition to the standard undead immuni- ties (see below),  a dracolich is immune to polymorph, cold, and electricity effects.\n\n{b}Invulnerability{/b}: If a dracolich  is slain, its spirit immediately returns to its phylactery. If no dragon-type corpse lies within 90 feet for the spirit to possess, the dracolich is trapped in the phylactery until such a time if ever that a corpse becomes available.\nA dracolich is difficult to destroy. If its spirit is currently contained in its phylactery, destroying that item when  a suitable  corpse is not within range effectively destroys the dracolich. Likewise, an active dracolich  is unable to attempt further possessions if its phylactery is destroyed. The fate of a disembodied dracolich spirit that is, a spirit with no body or phylactery is unknown, but presumably it is drawn to the Lower Planes.\n\n{b}Spell Resistance {/b}(Ex): Becoming a dracolich increases the dragon&#146;s spell resistance by +3. A dracolich has a minimum spell resistance of 16.\n\n{b}Undead Traits{/b}: A dracolich is immune to mind-affecting effects, poison, magic sleep effects, paralysis, stunning, disease, death effects, and any effect that requires a Fortitude save unless it also works on objects or is harmless. It is not subject to critical hits, nonlethal damage, ability damage to its physical ability scores, ability drain, energy drain, fatigue, exhaustion, or death from massive damage. It cannot be raised, and resurrection works only if it is willing. It has darkvision out to 60 feet (unless the base creature had a greater range). \n\n{b}Saves{/b}: As undead, dracoliches are immune to anything that requires a Fortitude save unless it affects objects. \n\n{b}Abilities{/b}: Being undead, the dracolich has no Constitution score (use its Charisma modifier to determine save DC against its breath weapon, tail sweep, and similar special attacks). Its Charisma score is increased by 2, which increases the DC of the save against its frightful  presence and other special abilities. Otherwise, the dracolich&#146;s ability scores remain the same as the base creature&#146;s scores. \n\nOrganization: Solitary.\nChallenge Rating: Same as base creature +3.\nAlignment: Always evil.\nAdvancement: Up to +2 HD.\nLevel Adjustment: Same as base creature +4.\n\n{b}Source{/b}: Draconomicon" compset="Template" summary="The dracolich is an undead creature resulting from the transformation of an evil dragon." uniqueness="unique">
+    <comment>V1.0 created 30/06/2011
+
+bodrinbarlow@gmail.com
+
+Authors Should:
+Bootstrap with a AbilType.Extra/Super
+Bootstrap with a User.DurRd/DurMin
+Bootstrap with a User.Bite/Claw/Etc...
+Bootstrap with a User.1_1/1d2_2/Etc...
+Set the CustDesc field
+Set the xSumm field
+
+Base DC is Con, can apply a User.OverCHA to make it use Charisma
+
+Authors Should:
+Set the livename field
+Set the xSumm field</comment>
+    <fieldval field="cLevelAdj" value="4"/>
+    <fieldval field="tmAC" value="2"/>
+    <fieldval field="tmCHA" value="2"/>
+    <usesource source="Draconom"/>
+    <tag group="AlgnReq" tag="Evil"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <tag group="AlgnForbid" tag="Good"/>
+    <tag group="User" tag="Dracolich"/>
+    <tag group="SpecSource" tag="Dracolich"/>
+    <bootstrap thing="xImmCold"></bootstrap>
+    <bootstrap thing="xImmElec"></bootstrap>
+    <bootstrap thing="xImmParaly"></bootstrap>
+    <bootstrap thing="xImmPoly"></bootstrap>
+    <bootstrap thing="typUndead">
+      <autotag group="User" tag="OverNoUseT"/>
+      </bootstrap>
+    <bootstrap thing="xDracInvul"></bootstrap>
+    <bootstrap thing="xDracCoUn"></bootstrap>
+    <bootstrap thing="xGaze">
+      <assignval field="livename" value="Paralyzing Gaze"/>
+      <assignval field="xSumm" value="40 ft, paralyzed for 2d6 rds."/>
+      </bootstrap>
+    <bootstrap thing="xParalyze">
+      <autotag group="User" tag="OverCHA"/>
+      <autotag group="AbilType" tag="Super"/>
+      <autotag group="User" tag="DurRd"/>
+      <autotag group="User" tag="2d6_104"/>
+      <autotag group="User" tag="Touch"/>
+      <assignval field="xSumm" value="Foes struck by any physical attack are paralyzed."/>
+      </bootstrap>
+    <bootstrap thing="xDamRdB"></bootstrap>
+    <eval phase="First" priority="5000" index="2">~ Set up our damage reduction 5 Bludgeoning
+      #applydr[xDamRdB, 5]
+
+~ Our Breath Weapon uses Charisma instead of Constitution
+      perform hero.childfound[xBreathWea].assign[User.OverCHA]</eval>
+    <eval phase="UserFinal" priority="10000" index="3"><![CDATA[~ We have spell resistance +3
+      var damage as number
+      damage = hero.child[xSplRs].field[Value].value + 3
+      #applysr[damage]
+
+~ Disable our crush attack as the Dracolich doesn't have a skin covered body as its undead!
+      foreach pick in hero from BaseSpec where "thingid.xDragCrush"
+        perform eachpick.assign[Helper.SpcDisable]
+        nexteach
+
+~ Disable our Vulnerability to cold as the Dracolich is immune to cold!
+      foreach pick in hero from BaseSpec where "thingid.xVulCold"
+        perform eachpick.assign[Helper.SpcDisable]
+        nexteach]]></eval>
+    <eval phase="First" priority="50"><![CDATA[~ Go through all type specials and assign a tag to disable them. Also set the hTotal field to <> 0 so that bootstrap conditions will fail. 
+   foreach pick in hero from BaseSpec where "thingid.typ? & !thingid.typUndead"
+     perform each.assign[Helper.SpcDisable]
+     each.field[hTotal].value = 1
+
+~ Even though we are no longer that type, we do not recalculate BAB, saves, or anything else.
+     perform each.assign[User.OverUseTyp]
+   nexteach
+
+~ Finally, delete all Race.typWhatever tags and add back one for the Undead type.
+  perform hero.delete[Race.typ?]
+  perform hero.assign[Race.typUndead]]]></eval>
+    <eval phase="Render" index="4">hero.child[xParalyze].field[CustDesc].text = &quot;A creature struck by any of a dracolich&#146;s physical attacks must make a Fortitude save (DC same as for the dracolich&#146;s paralyzing gaze) or be paralyzed for 2d6 rounds. A successful saving throw against this effect does not confer any immunity against subsequent attacks.&quot;
+
+hero.child[xGaze].field[CustDesc].text = &quot;The gaze of a dracolich&#146;s glowing eyes can paralyze victims within 40 feet who fail a Fortitude save (DC 10 + 1/2 dracolich&#146;s HD + dracolich&#146;s Cha modifier). If the saving throw is successful, the character is forever immune to the gaze of that particular dracolich. If it fails, the victim is paralyzed for 2d6 rounds.&quot;</eval>
+    </thing>
+  <thing id="xDracInvul" name="Invulnerability" description="If a dracolich  is slain, its spirit immediately returns to its phylactery. If no dragon-type corpse lies within 90 feet for the spirit to possess, the dracolich is trapped in the phylactery until such a time if ever that a corpse becomes available.\n\nA dracolich is difficult to destroy. If its spirit is currently contained in its phylactery, destroying that item when a suitable corpse is not within range effectively destroys the dracolich. Likewise, an active dracolich is unable to attempt further possessions if its phylactery is destroyed. \n\nThe fate of a disembodied dracolich spirit&#151;that is, a spirit with no body or phylactery&#151;is unknown, but presumably it is drawn to the Lower Planes." compset="Special" summary="If slain retreat to phylactary and possess draconic corpse in 90 ft." uniqueness="unique">
+    <comment>Input by Bodrin 30/06/2011
+
+bodrinbarlow@gmail.com</comment>
+    <usesource source="Draconom"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="Dracolich"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="User" tag="Dracolich"/>
+    </thing>
+  <thing id="xDracCoUn" name="Control Undead" description="Once every three days, a dracolich can use control undead as the spell (caster level 15th). The dracolich  cannot cast other spells while this ability is in effect." compset="Special" summary="1/3 days, cast Control Undead, but can&apos;t cast others until spell ends." uniqueness="unique">
+    <comment>Input by Bodrin 30/06/2011
+
+bodrinbarlow@gmail.com</comment>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Draconom"/>
+    <tag group="SpecSource" tag="Dracolich"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="User" tag="Dracolich"/>
+    </thing>
+  <thing id="fAwaFriPre" name="Awaken Frightful Presence" description="You gain frightful presence.\n\n{b}Prerequisites{/b}: Cha 11, dragon type.\n\n{b}Benefit{/b}: You gain the frightful presence special ability with a radius in feet equal to 5 &#215; 1/2 your racial Hit Dice.\n\nThe ability takes effect automatically whenever you attack, charge, or fly overhead. Creatures within the radius are subject to the effect if they can see you and have fewer Hit Dice than your racial Hit Dice.\n\nA potentially affected creature that succeeds on a Will save (DC 10 + 1/2 your racial HD + your Cha modifier) remains immune to your frightful presence for 24 hours. On a failure, creatures with 4 or fewer Hit Dice become panicked for 4d6 rounds and those with 5 or more Hit Dice become shaken for 4d6 rounds. Dragons ignore the frightful presence of other dragons.\n\n{b}Special{/b}: If you have both this feat and you have (or later gain) the frightful presence ability, your frightful presence radius either increases by 50% or increases to 5 feet &#215; 1/2 your racial Hit Dice, whichever figure is higher. The save DC against your frightful presence also increases by 2.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain frightful presence to racial HD x5 ft (DCXX Will neg), or +2 DC &amp; +50% rng." uniqueness="useronce">
+    <comment>xSumm (Done)</comment>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="5000"><![CDATA[      var rng as number
+      rng = (herofield[tHitDice].value - herofield[tLevel].value) / 2
+      rng = round(rng, 0, -1)
+      rng *= 5
+
+      var DC as number
+      DC = 10 + round(herofield[tHitDice].value/2,0,-1) + hero.child[aCHA].field[aModBonus].value
+
+      field[xSumm].text = "Gain " & rng & " ft rad frightful presence (DC" & DC & " Will neg), or +2 DC & +50% rng."]]></eval>
+    <exprreq message="Dragon type required."><![CDATA[hero.tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Charisma 11 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fAwaSplRes" name="Awaken Spell Resistance" description="You gain spell resistance.\n\n{b}Prerequisites{/b}: Con 13, dragon type.\n\n{b}Benefit{/b}: You gain innate spell resistance equal to your racial Hit Dice.\n\n{b}Special{/b}: If your racial Hit Dice increase after you gain this feat, your spell resistance increases as well. If you have this feat and you also have (or later gain) spell resistance as a racial ability, your spell resistance is equal to your new Hit Dice total or your racial spell resistance +2, whichever is higher.\n\nYou can take this feat multiple times. Each time you take the feat, your innate spell resistance increases by 2. For example, an old silver dragon that has taken this feat twice has spell resistance 30.\n\n{b}Source{/b}: Draconomicon" compset="Feat">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <bootstrap thing="xAwaSplRes"></bootstrap>
+    <exprreq message="Dragon type required."><![CDATA[hero.tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fClingBrea" name="Clinging Breath" description="Your breath weapon clings to creatures and continues to affect them in the round after you breathe.\n\n{b}Prerequisites{/b}: Con 13, breath weapon.\n\n{b}Benefit{/b}: Your breath weapon has its normal effect, but also clings to anything caught in its area. A clinging breath weapon lasts for 1 round. In the round after you breathe, the clinging breath weapon deals half of the damage it dealt in the previous round. Creatures that avoid damage from the breath weapon (such as creatures with the evasion special quality or incorporeal creatures) do not take the extra damage. For example, an old silver dragon uses its cold breath and deals 72 points of cold damage (or 36 points against a target that makes its save). In the following round, foes that failed their saves against the breath weapon initially take an additional 36 points of cold damage, and foes that succeeded on their saves take 18 points of cold damage.\n\nA foe can take a full-round action to attempt to remove the clinging breath weapon before taking any additional damage. It takes a successful Reflex saving throw (same DC as your normal breath weapon) to remove the effect. Rolling around on the ground grants a +2 bonus on the saving throw, but leaves the foe prone. A clinging breath weapon cannot be removed or smothered by jumping into water. A clinging breath weapon can be magically dispelled (DC equal to your breath weapon save DC).\n\nThis feat only works on a breath weapon that has instantaneous duration and that deals some kind of damage, such as energy damage (acid, cold, electricity, fire, or sonic), ability damage, or negative levels.\n\nWhen you use this feat, add +1 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Special{/b}: You can apply this feat more than once to the same breath weapon. Each time you do, the clinging breath weapon lasts an additional round.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep clings, does 1/2 original dam next rd. +1 rd to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Breath Weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDevCrit" name="Devastating Critical" description="Choose one type of melee weapon, such as a claw or bite. With that weapon, you are capable of killing any creature with a single strike.\n\n{b}Prerequisites{/b}: Str 25, Cleave, Great Cleave, Improved Critical (chosen weapon), Overwhelming Critical (chosen weapon), Power Attack, Weapon Focus (chosen weapon).\n\n{b}Benefit{/b}: Whenever you score a critical hit with the weapon you have chosen, the target must make a Fortitude save (DC 10 + 1/2 your HD + your character level + your Str modifier) or die instantly. (Creatures immune to critical hits can&#146;t be affected by this feat.)\n\n{b}Special{/b}: You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new weapon.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Chosen wep kills foe on crit (DCXX Fort neg)">
+    <comment>Need to pre req epic feats for 21st+ level. Or do I? (Done)
+Test? (Mine works, still says need epic hero... changed Dragons to apply Hero.Epic tag)
+
+Custom Exp Test? (Done)
++ Char level a typo? (No, done)
+xSumm (Done)</comment>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Epic"/>
+    <tag group="fShowWhat" tag="Weapons"/>
+    <eval phase="UserPostAt" priority="5000"><![CDATA[      var DC as number
+      DC = 10 + round(herofield[tHitDice].value/2,0,-1) + hero.child[aSTR].field[aModBonus].value + hero.tagcount[Classes.?] - hero.tagcount[Classes.Race] 
+
+      field[xSumm].text = "Chosen wep kills foe on crit (DC" & DC & " Fort neg)."]]></eval>
+    <evalrule phase="Render" priority="12000" message="Weapon Focus with chosen weapon required."><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+var wpn as string
+wpn = field[fChosen].chosen.idstring
+wpn = "WepFocus." & wpn
+
+validif (hero.tagcountstr[wpn] <> 0)]]></evalrule>
+    <evalrule phase="Render" priority="12000" index="2" message="Improved Critical with chosen weapon required."><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+var wpn as string
+wpn = field[fChosen].chosen.idstring
+wpn = "ImpCrit." & wpn
+
+validif (hero.tagcountstr[wpn] <> 0)]]></evalrule>
+    <exprreq message="Improved Critical (chosen weapon) required."><![CDATA[hero.tagis[ImpCrit.?] <> 0]]></exprreq>
+    <exprreq message="Overwhelming Critical required."><![CDATA[#hasfeat[fOverwCrit] <> 0]]></exprreq>
+    <exprreq message="Strength 25 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 25]]></exprreq>
+    <exprreq message="Power Attack required."><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
+    <exprreq message="Great Cleave required."><![CDATA[#hasfeat[fGreatClv] <> 0]]></exprreq>
+    <exprreq message="Weapon Focus (chosen weapon) required."><![CDATA[hero.tagis[WepFocus.?] <> 0]]></exprreq>
+    <exprreq message="Cleave required."><![CDATA[#hasfeat[fCleave] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDireCharg" name="Dire Charge" description="You can make a full attack as part of a charge.\n\n{b}Prerequisite{/b}: Improved Initiative.\n\n{b}Benefit{/b}: If you charge a foe during the first round of combat (or the surprise round, if you are allowed to act in it), you can make a full attack against the opponent you charge.\n\n{b}Normal{/b}: Without this feat, you may only make a single attack as part of a charge.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="If charge on 1st rd of combat make full attack at end." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Epic"/>
+    <exprreq message="Improved Initiative required."><![CDATA[#hasfeat[fImpInit] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDracKnow" name="Draconic Knowledge" description="You are attuned to nature and the elements and can draw on deep wells of knowledge.\n\n{b}Prerequisites{/b}: Int 19, true dragon, any three Knowledge skills.\n\n{b}Benefit{/b}: This feat works much like the bard&#146;s bardic knowledge class feature, except that it relies on the scale and impact of past events rather than on how many people already share the information. You may make a special Draconic Knowledge check (d20 + your age category + your Int modifier) to see whether you know some relevant information about an item, event, or locale. This check will not reveal the powers of a magic item but may give a hint about its general function. You may not take 10 or take 20 on this check; this sort of information is essentially random. If you have a Knowledge skill that is related to or applicable to the information you seek, you receive a +1 bonus on the draconic knowledge check for every 5 ranks you have in that Knowledge skill.\n\nThe DM determines the Difficulty Class of the check by referring to the table below.\n\n{b}DC &#150;&#150; Type of Knowledge &#150;&#150; Examples{/b}\n10 &#150;&#150; Something with worldwide or planetwide significance &#150;&#150; Information about the creation of the world, worldwide cataclysms, powerful places of mystery, or gods.\n15 &#150;&#150; Something with regional significance, but long-lasting or with a long-term impact &#150;&#150; Information about empires, wars, regional disasters, or legendary individuals or groups\n20 &#150;&#150; Something with regional significance, but relatively short-lived effects &#150;&#150; Information about countries, battles, national disasters, or powerful individuals or groups\n25 &#150;&#150; Something with local significance, but long-lasting or with a long-term impact &#150;&#150; Information about a minor dynasty, a minor place of mystery, single magic item, or hero\n30 &#150;&#150; Something with local significance and relatively short-lived effects &#150;&#150; Information about a local hero, a minor battle, or a single building\n\n{b}DC Modifiers:{/b}\n&#150;1 Per 10,000 gp of item&#146;s value, if an object\n&#150;5 Individual is a dragon, dragonslayer, or dragon friend\n&#150;5 Dragon has a lair in the area affected\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Make special knowledge check about widescale or important past events." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Intelligence 19 required."><![CDATA[child[aINT].field[aFinalVal].value >= 19]]></exprreq>
+    <exprreq message="True Dragon required."><![CDATA[hero.tagis[Race.TrueDragon] <> 0]]></exprreq>
+    <prereq message="Three or more knowledge skills required.">
+      <validate><![CDATA[var result as number
+
+foreach pick in hero from BaseSkill where "Helper.SkCatKnow"
+     if (each.field[kUserRanks].value >= 1) then
+       result += 1
+     endif
+nexteach
+
+validif (result >= 3)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fEmbSplFoc" name="Embed Spell Focus" description="You can embed focus components required for your spells into your body.\n\n{b}Prerequisites{/b}: Con 13, dragon type, ability to cast spells.\n\n{b}Benefit{/b}: You can embed the focus component for a spell you know how to cast into your skin or hide and use the embedded focus anytime you cast the spell. You can embed a number of focuses equal to your Constitution score.\n\n{b}Special{/b}: The total value of expensive spell focuses a dragon has embedded in its hide should be considered part of the dragon&#146;s treasure.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Incorporate focuses for spells into your hide (max X)." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      var max as number
+      max = hero.child[aCON].field[aModBonus].value
+
+      field[xSumm].text = "Incorporate focuses for spells into your hide (max " & max & ")."]]></eval>
+    <exprreq message="Dragon type required."><![CDATA[hero.tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Ability to cast spells required."><![CDATA[hero.tagis[Hero.Arcane] + hero.tagis[Hero.Divine] <> 0]]></exprreq>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fEndurBlow" name="Endure Blows" description="You are adept at lessening the effects of blows.\n\n{b}Prerequisites{/b}: Con 19, dragon type, Toughness.\n\n{b}Benefit{/b}: You gain damage reduction 2/&#151;. This stacks with any damage reduction you have from other sources. Damage reduction cannot reduce damage below 0.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="DR 2/&#151; stacks with other sources." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <bootstrap thing="xDamRd"></bootstrap>
+    <eval phase="Final" priority="9000"><![CDATA[~ DR/-
+  if (hero.childfound[xDamRd].field[Value].value <> 0) then
+     hero.childfound[xDamRd].field[Value].value += 2
+     done
+  else
+     hero.child[xDamRd].field[Value].value = maximum(hero.child[xDamRd].field[Value].value, 2)
+  endif]]></eval>
+    <exprreq message="Toughness required."><![CDATA[#hasfeat[fToughness] <> 0]]></exprreq>
+    <exprreq message="Dragon type required."><![CDATA[hero.tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Constitution 19 required."><![CDATA[child[aCON].field[aFinalVal].value >= 19]]></exprreq>
+    </thing>
+  <thing id="fEnlBreath" name="Enlarge Breath" description="Your breath weapon is larger than normal.\n\n{b}Prerequisites{/b}: Con 13, breath weapon.\n\n{b}Benefit{/b}: The length of your breath weapon increases by 50% (round down to the nearest multiple of 5). For example, an old silver dragon breathing an enlarged cone of cold produces a 75-foot cone instead of a 50-foot cone. Cone-shaped breath weapons get wider when they get longer, but line shaped breath weapons do not.\n\nWhen you use this feat, add +1 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep is 50% longer (and wider if cone). +1 rd to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    </thing>
+  <thing id="fEpicFort" name="Epic Fortitude" description="You have tremendously high fortitude.\n\n{b}Benefit{/b}: You gain a +4 bonus on all Fortitude saving throws.\n\n{b}Source{/b}: Draconomicon" compset="Feat" uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Epic"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      container.child[vFort].field[Bonus].value += 4]]></eval>
+    </thing>
+  <thing id="fEpicRef" name="Epic Reflexes" description="You have tremendously fast reflexes.\n\n{b}Benefit{/b}: You gain a +4 bonus on all Reflex saving throws.\n\n{b}Source{/b}: Draconomicon" compset="Feat" uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Epic"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      container.child[vRef].field[Bonus].value += 4]]></eval>
+    </thing>
+  <thing id="fEpicWill" name="Epic Will" description="You have tremendously strong willpower.\n\n{b}Benefit{/b}: You gain a +4 bonus on all Will saving throws.\n\n{b}Source{/b}: Draconomicon" compset="Feat" uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Epic"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      container.child[vWill].field[Bonus].value += 4]]></eval>
+    </thing>
+  <thing id="fExtSprBre" name="Extend Spreading Breath" description="You can convert your breath weapon into a spread effect that can be used at range.\n\n{b}Prerequisites{/b}: Con 15, breath weapon, Shape Breath, Spreading Breath, size Small or larger.\n\n{b}Benefit{/b}: You can modify your breath weapon so that it fills a spread centered anywhere within a short distance of your head. The range and size of the spread depends on your size, as shown below.\n\n{b}Dragon Size &#151; Spread Radius &#151; Spread Range{/b}\nSmall &#151; 10 ft. &#151; 40 ft.\nMedium &#151; 15 ft. &#151; 60 ft.\nLarge &#151; 20 ft. &#151; 80 ft.\nHuge &#151; 25 ft. &#151; 100 ft.\nGargantuan &#151; 30 ft. &#151; 120 ft.\nColossal &#151; 35 ft. &#151; 140 ft.\n\nWhen you use this feat, add +2 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep becomes XX rad spread up to YY ft away. +2 rds to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[   if (herofield[tSize].value <= -1) then
+     field[xSumm].text = "Breath wep becomes 10 ft rad spread up to 40 ft away. +2 rds to recharge."
+   elseif (herofield[tSize].value = 0) then
+     field[xSumm].text = "Breath wep becomes 15 ft rad spread up to 60 ft away. +2 rds to recharge."
+   elseif (herofield[tSize].value = 1) then
+     field[xSumm].text = "Breath wep becomes 20 ft rad spread up to 80 ft away. +2 rds to recharge."
+   elseif (herofield[tSize].value = 2) then
+     field[xSumm].text = "Breath wep becomes 25 ft rad spread up to 100 ft away. +2 rds to recharge."
+   elseif (herofield[tSize].value = 3) then
+     field[xSumm].text = "Breath wep becomes 30 ft rad spread up to 120 ft away. +2 rds to recharge."
+   elseif (herofield[tSize].value >= 4) then
+     field[xSumm].text = "Breath wep becomes 35 ft rad spread up to 140 ft away. +2 rds to recharge."
+   endif]]></eval>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    <exprreq message="Shape Breath required."><![CDATA[#hasfeat[fShapeBrea] <> 0]]></exprreq>
+    <exprreq message="Spreading Breath required."><![CDATA[#hasfeat[fSpreadBre] <> 0]]></exprreq>
+    <exprreq message="Size Small or larger required."><![CDATA[herofield[tSize].value >= -1]]></exprreq>
+    <exprreq message="Constitution 15 required."><![CDATA[child[aCON].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fFastHealD" name="Fast Healing" description="You heal your wounds very quickly.\n\n{b}Prerequisite{/b}: Con 25.\n\n{b}Benefit{/b}: You gain fast healing 3, or your existing fast healing improves by 3. The benefit of this feat does not stack with fast healing granted by magic items or nonpermanent magical effects.\n\n{b}Special{/b}: This feat may be taken multiple times. Its effects stack.\n\n{b}Source{/b}: Draconomicon" compset="Feat">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Epic"/>
+    <bootstrap thing="xFastHealD"></bootstrap>
+    <exprreq message="Constitution 25 required."><![CDATA[child[aCON].field[aFinalVal].value >= 25]]></exprreq>
+    </thing>
+  <thing id="fHeighBre" name="Heighten Breath" description="Your breath weapon is even more deadly than normal.\n\n{b}Prerequisites{/b}: Con 13, breath weapon.\n\n{b}Benefit{/b}: You can increase the save DC of your breath weapon by any number up to a maximum equal to your Constitution bonus.\n\nFor each point by which you increase the save DC, add +1 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep DC increases up to +X, +same rds to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[
+      field[xSumm].text = "Breath wep DC increases up to +" & hero.child[aCON].field[aModBonus].value & ", +same rds to recharge."]]></eval>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fImpManuev" name="Improved Maneuverability" description="Your maneuverability in flight improves.\n\n{b}Prerequisites{/b}: Fly speed 150 feet, Hover or Wingover.\n\n{b}Benefit{/b}: Your maneuverability improves by one category, from clumsy to poor, poor to average, or average to good (see Tactical Aerial Movement, page 20 of the Dungeon Master&#146;s Guide).\n\n{b}Special{/b}: You can take this feat multiple times. Each time you take the feat, your maneuverability improves by one category (but never becomes better than good).\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Maneuverability class increases by 1 step.">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostLv" priority="49999"><![CDATA[var result as number
+if (hero.childfound[xFly].tagis[Maneuver.Good] <> 0) then
+      done
+elseif (hero.childfound[xFly].tagis[Maneuver.Average] <> 0) then
+      result = hero.childfound[xFly].delete[Maneuver.?]
+      result = hero.childfound[xFly].assign[Maneuver.Good]
+elseif (hero.childfound[xFly].tagis[Maneuver.Poor] <> 0) then
+      result = hero.childfound[xFly].delete[Maneuver.?]
+      result = hero.childfound[xFly].assign[Maneuver.Average]
+elseif (hero.childfound[xFly].tagis[Maneuver.Clumsy] <> 0) then
+      result = hero.childfound[xFly].delete[Maneuver.?]
+      result = hero.childfound[xFly].assign[Maneuver.Poor]
+endif]]></eval>
+    <exprreq message="Hover or Wingover required."><![CDATA[#hasfeat[fHover] + #hasfeat[fWingover] <> 0]]></exprreq>
+    <exprreq message="Fly speed 150 required."><![CDATA[hero.childfound[xFly].field[Value].value >= 150]]></exprreq>
+    </thing>
+  <thing id="fImpMultiA" name="Improved Multiattack" description="You are particularly adept at using all your natural weapons at once.\n\n{b}Prerequisites{/b}: Three or more natural weapons, Multiattack.\n\n{b}Benefit{/b}: Your secondary attacks with natural weapons have no penalty on the attack roll. You still add only &#189; your Strength bonus, if any, to damage dealt.\n\n{b}Normal{/b}: Without this feat, your secondary natural attacks are made at a &#150;5 penalty (or a &#150;2 penalty if you have the Multiattack feat).\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Secondary natural attacks are made at no penalty, still 1/2 Str bon to dam." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[   ~ Loop through all natural weapons that are secondary
+   foreach pick in hero from BaseNatWep where "Helper.NatSecond & !Helper.NatPrimary"
+
+   ~ Multiattack feat should have already reduced penalties by 3, add 2 to offset remaining penalty.
+     each.field[wAttBonus].value += 2
+   nexteach]]></eval>
+    <exprreq message="Multiattack required."><![CDATA[#hasfeat[fMultiAtt] <> 0]]></exprreq>
+    <prereq message="Three or more natural attacks required.">
+      <validate><![CDATA[
+        var total as number
+        var numattacks as number
+        foreach pick in hero from BaseNatWep
+
+          ~ If this weapon uses the number of hands of the race, add that
+          ~ number of attacks
+          if (eachpick.tagis[Helper.RaceHands] <> 0) then
+            total += herofield[tNumHands].value
+
+          ~ Otherwise, add the number of attacks the weapon has, which should
+          ~ always be at least 1
+          else
+            numattacks = eachpick.tagmax[Value.?]
+            numattacks = maximum(numattacks,1)
+            total += numattacks
+            endif
+          nexteach
+        if (total >= 3) then
+          @valid = 1
+          endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fImpRapidS" name="Improved Rapidstrike" description="You can make multiple attacks with a natural weapon.\n\n{b}Prerequisites{/b}: Dex 9, one or more pairs of natural weapons, aberration, dragon, elemental, magical beast, or plant type, base attack bonus +15, Rapidstrike.\n\n{b}Benefit{/b}: If you have a pair of natural weapons, such as two claws, two wings, or two slams, you can make two or more extra attacks with one of those weapons, the first at a &#150;5 penalty and the second and subsequent attacks at an additional &#150;5, but never more than four extra attacks. Creatures with multiple limbs qualify for this feat as well, so a creature with three arms and three claw attacks qualifies for this feat.\n\n{b}Normal{/b}: Without this feat, you attack once with each natural weapon.\n\n{b}Special{/b}: You can take this feat once for each pair of natural weapons you have. For example, a Large true dragon has one bite, two claws, two wings, and one tail attacks. The dragon can take this feat twice, once for its claws and once for its wings.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="With chosen nat wep gain extra att as though wep (max 4, based on BAB).">
+    <fieldval field="ftCandExpr" value="component.BaseNatWep &amp; Value.2|Value.3|Value.4|Value.5|Value.6|Value.7|Value.8|Value.9|Value.10|Value.11|Value.12"/>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <eval phase="UserPostLv" priority="10000">perform hero.childfound[fRapidStri].delete[Helper.ShowSpec]</eval>
+    <exprreq message="Rapidstrike required."><![CDATA[#hasfeat[fRapidStri] <> 0]]></exprreq>
+    <exprreq message="Dexterity 9 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 9]]></exprreq>
+    <exprreq message="Aberration, Dragon, Elemental, Magical beast, or Plant type required."><![CDATA[hero.tagis[Race.typAberrat] + hero.tagis[Race.typDragon] + hero.tagis[Race.typElement] + hero.tagis[Race.typMagBeas] + hero.tagis[Race.typPlant] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +15 required."><![CDATA[child[Attack].field[tAtkBase].value >= 15]]></exprreq>
+    <prereq message="One or more pairs of natural weapons required.">
+      <validate><![CDATA[
+        var total as number
+        var numattacks as number
+        foreach pick in hero from BaseNatWep
+
+          ~ If this weapon uses the number of hands of the race, add that number of attacks
+          if (eachpick.tagis[Helper.RaceHands] <> 0) then
+            total += herofield[tNumHands].value
+
+          ~ Otherwise, add the number of attacks the weapon has, which should always be at least 1
+          else
+            numattacks = eachpick.tagmax[Value.?]
+
+            if (numattacks >= 2) then
+              total += 1
+            endif
+
+          endif
+          nexteach
+
+        validif (total >= 1)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fImpSnatch" name="Improved Snatch" description="You can make snatch attacks against bigger opponents than other creatures can.\n\n{b}Prerequisite{/b}: Snatch.\n\n{b}Benefit{/b}: As the Snatch feat (see page 304 of the Monster Manual), except that you can grab a creature two size categories smaller than you with your bite or claw attack.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Snatch foes up to 2 size cat smaller." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Snatch required."><![CDATA[#hasfeat[fSnatch] <> 0]]></exprreq>
+    </thing>
+  <thing id="fImpSpeed" name="Improved Speed" description="You are faster than others of your kind.\n\n{b}Prerequisites{/b}: Str 13, dragon type.\n\n{b}Benefit{/b}: Your fly speed (if you have one) improves by 20 feet. All other speeds you have improve by 10 feet.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="+20 ft to fly speed, +10 ft to all other movement types." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <eval phase="Final"><![CDATA[      ~ Add to our base speed.
+      hero.child[Speed].field[tSpeed].value = hero.child[Speed].field[tSpeed].value + 10
+
+      ~ Add to our Swim speed (if any).
+      if (hero.childfound[xSwim].field[Value].value <> 0) then
+        hero.childfound[xSwim].field[Value].value += 10
+      endif
+
+      ~ Add to our Climb speed (if any).
+      if (hero.childfound[xClimb].field[Value].value <> 0) then
+        hero.childfound[xClimb].field[Value].value += 10
+      endif
+
+      ~ Add to our Burrow speed (if any).
+      if (hero.childfound[xBurrow].field[Value].value <> 0) then
+        hero.childfound[xBurrow].field[Value].value += 10
+      endif]]></eval>
+    <eval phase="Final" priority="14900" index="2"><![CDATA[
+      ~ Add to our Fly speed (if any).
+      if (hero.childfound[xFly].field[Value].value <> 0) then
+        hero.childfound[xFly].field[Value].value += 20
+      endif]]></eval>
+    <exprreq message="Dragon type required."><![CDATA[hero.tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Strength 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fImpSplCap" name="Improved Spell Capacity" description="You can prepare spells that exceed the normal limits of spellcasting.\n\n{b}Prerequisite{/b}: Ability to cast spells of the normal maximum spell level in at least one spellcasting class.\n\n{b}Benefit{/b}: When you select this feat, you gain one spell slot per day of any level up to one level higher than the highest level spell you can already cast in a particular class. For example, if you select this feat as a 21st-level wizard, you would gain one wizard spell slot of any spell level up to 10th. You must still have the requisite ability score (10 + spell level) to cast any spell stored in this slot. If you have a high enough ability modifier to gain one or more bonus spells for this spell level, you also gain the bonus spells for this spell level.\n\nYou must use the spell slot as a member of the class in which you can already cast spells of the normal maximum spell level. For instance, a 5th-level ranger/22nd-level sorcerer couldn&#146;t add a ranger spell slot, because he can&#146;t cast spells of the normal maximum spell level for rangers. He must add the spell slot to his sorcerer spells.\n\n{b}Special{/b}: You can gain this feat multiple times.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain spl slot of up to 1 higher than can now cast, even past max spl lvl.">
+    <comment><![CDATA[Eval (Can't do without 10th level spells)]]></comment>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Epic"/>
+    <tag group="fShowWhat" tag="Classes"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <prereq message="Ability to cast spells of maximum level in one class required.">
+      <validate><![CDATA[~ Loop through all classes with spellcasting
+var maxlevel as number
+foreach pick in hero from BaseClHelp where "Hero.Arcane|Hero.Divine"
+
+~ Find the max level for this class and set maxlevel to it.
+  maxlevel = each.field[cSplMaxLvl].value
+
+~ Do we have a slot available of that level? If so we are valid.
+  validif (each.field[cCastMax].arrayvalue[maxlevel] <> 0)
+  validif (each.field[cMemMax].arrayvalue[maxlevel] <> 0)
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fLrgInChrg" name="Large and in Charge" description="You can prevent opponents from closing inside your reach.\n\n{b}Prerequisites{/b}: Natural reach of 10 feet or more, size Large or larger.\n\n{b}Benefit{/b}: When you make a successful attack of opportunity against an opponent that is moving inside your threatened area, you can force the opponent back to the 5-foot space it was in before it provoked the attack of opportunity. After you hit with your attack of opportunity, make an opposed Strength check against your opponent. You gain a +4 bonus for each size category larger than your opponent you are, and an additional +1 bonus for every 5 points of damage you dealt with your attack of opportunity. If you win the opposed check, your opponent is pushed back 5 feet into the space it just left. An opponent you push cannot move any farther in this round.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="If AoO for move hits, opp Str chk, push foe to 1st sq &amp; no move if win." uniqueness="useronce">
+    <comment>Too long? (Done)</comment>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Reach 10+ ft required."><![CDATA[herofield[tReach].value >= 10]]></exprreq>
+    <exprreq message="Size Large or larger required."><![CDATA[herofield[tSize].value >= 1]]></exprreq>
+    </thing>
+  <thing id="fLingerBre" name="Lingering Breath" description="Your breath weapon forms a lingering cloud.\n\n{b}Prerequisites{/b}: Con 15, breath weapon, Clinging Breath.\n\n{b}Benefit{/b}: Your breath weapon has its normal effects, but also remains as a lingering cloud of the same shape and size as the original breath weapon. This cloud lasts 1 round.\n\nFoes caught in the breath weapon&#146;s area when you breathe take no additional damage from the lingering breath weapon, provided they leave the cloud by the shortest available route on their next turn. Otherwise, anyone who touches or enters the cloud while it lasts takes one-half of the breath weapon&#146;s normal effects; any saving throw the breath weapon normally allows still applies. Damaging breath weapons deal one-half their normal damage, and breath weapons with effects that have durations last for half the normal time. If a creature is affected by the same non damaging breath weapon twice, the effects do not stack.\n\nFor example, an old silver dragon uses this feat on its cold breath weapon. Creatures caught in the 50-foot cone take 16d8 points of cold damage, and a DC 31 Reflex save reduces the damage by half. The 50-foot cone lingers for 1 round. While the cone lasts, anyone touching or entering it takes 8d8 points of cold damage, and a DC 31 Reflex save reduces the cold damage to 4d8 points. Creatures in the cone when the dragon breathed take no additional damage if they leave by the shortest available route on their next turn.\n\nIf the same dragon uses this feat on its paralyzing breath weapon, a creature caught in the 50-foot cone must make a DC 31 Fortitude save or be paralyzed for 1d6+8 rounds. The 50-foot cone lingers for 1 round. While the cone lasts, anyone touching or entering it must make a DC 31 Fortitude save or be paralyzed for 1d3+4 rounds. Creatures in the cone when the dragon breathed take no additional damage if they leave by the shortest available route on their next turn. Creatures paralyzed by the initial breath cannot leave the cloud, but suffer no additional effects because the paralyzing effects do not stack.\n\nWhen you use this feat, add +2 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Special{/b}: You can apply this feat more than once to the same breath weapon. Each time you do, the lingering breath lasts an additional round.\n\nYou can apply this feat to a breath weapon that also has received the Clinging Breath feat, but the resulting breath clings only to foes caught in the initial breath.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep is cloud, &#189; effect for next rd. Self stack, +2 rd each to recharge." uniqueness="useronce">
+    <comment>too long? (No, but corrected xSumm)</comment>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <exprreq message="Constitution 15 required."><![CDATA[child[aCON].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    <exprreq message="Clinging Breath required."><![CDATA[#hasfeat[fClingBrea] <> 0]]></exprreq>
+    </thing>
+  <thing id="fMaxBreath" name="Maximize Breath" description="You can take a full-round action to use your breath weapon to maximum effect.\n\n{b}Prerequisites{/b}: Con 17, breath weapon.\n\n{b}Benefit{/b}: If you use your breath weapon as a full-round action, all variable, numeric effects of the attack are maximized. A maximized breath weapon deals maximum damage, lasts for the maximum time, or the like. For example, an old silver dragon using a maximized cold breath weapon (damage 16d8) deals 128 points of damage. An old silver dragon using a maximized paralysis gas breath weapon (duration 1d6+8 rounds) paralyzes creatures for 14 rounds if they fail their saving throws.\n\nThe DCs for saving throws against your breath weapon are not affected.\n\nWhen you use this feat, add +3 to the number of rounds you must wait before using your breath weapon again.\n\nThis feat stacks with the effects of breath weapons enhanced with other metabreath feats, but does not maximize them. For example, a maximized breath weapon further enhanced by the Tempest Breath feat produces the type of wind effect noted in that feat description, but the velocity of the wind is not also maximized.\n\n{b}Special{/b}: You cannot use this feat and the Quicken Breath feat on the same breath weapon at the same time.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Full rd, breath wep is maximized, can&apos;t also quicken. +3 rds to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Constitution 17 required."><![CDATA[child[aCON].field[aFinalVal].value >= 17]]></exprreq>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    </thing>
+  <thing id="fMultSnatc" name="Multisnatch" description="You can grapple enemies more firmly with only one of your natural attacks.\n\n{b}Prerequisites{/b}: Str 17, Snatch.\n\n{b}Benefit{/b}: When grappling an opponent with only the part of your body that made the attack, you take only a &#150;10 penalty on grapple checks to maintain the hold.\n\n{b}Normal{/b}: Without this feat, you take a &#150;20 penalty on grapple checks to maintain a hold with only one part of your body.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Grappling with only one part of body penalty is reduced to -10." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Strength 17 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 17]]></exprreq>
+    <exprreq message="Snatch required."><![CDATA[#hasfeat[fSnatch] <> 0]]></exprreq>
+    </thing>
+  <thing id="fOverCWeak" name="Overcome Weakness" description="You can overcome an innate vulnerability through sheer willpower.\n\n{b}Prerequisites{/b}: Vulnerability to energy, Iron Will, Suppress Weakness.\n\n{b}Benefit{/b}: You can completely suppress your vulnerability to a type of energy. When subjected to an attack based on that type of energy, you take no extra damage.\n\n{b}Normal{/b}: A creature vulnerable to a type of energy takes half again as much (+50%) damage as normal from that energy type, regardless of whether a saving throw is allowed, or if the save is a success or failure.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Vulnerability to chosen energy dam is suppressed, no extra dam." uniqueness="useronce">
+    <fieldval field="ftCandExpr" value="User.PickElem"/>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostLv" priority="10000">perform hero.childfound[fSupprWeak].delete[Helper.ShowSpec]</eval>
+    <eval phase="PreLevel" priority="5000" index="2"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      ~ If we haven't chosen anything, get out now
+      if (field[fChosen].ischosen = 0) then
+        done
+      endif
+
+      ~ Assign an appropriate element tag to ourselves depending on our choice
+      if (field[fChosen].chosen.tagis[User.ElemAcid] <> 0) then
+         perform assign[User.ElemAcid]
+      elseif (field[fChosen].chosen.tagis[User.ElemCold] <> 0) then
+         perform assign[User.ElemCold]
+      elseif (field[fChosen].chosen.tagis[User.ElemElec] <> 0) then
+         perform assign[User.ElemElec]
+      elseif (field[fChosen].chosen.tagis[User.ElemFire] <> 0) then
+         perform assign[User.ElemFire]
+      elseif (field[fChosen].chosen.tagis[User.ElemSoni] <> 0) then
+         perform assign[User.ElemSoni]
+      endif]]></eval>
+    <evalrule phase="Validation" priority="10000" message="Must choose same element as Suppress Weakness." summary="Must choose same element as Suppress Weakness."><![CDATA[        var result as number
+    if (field[fChosen].chosen.tagis[User.ElemAcid] <> 0) then
+      foreach pick in hero from BaseFeat where "thingid.fSupprWeak"
+        if (each.tagis[User.ElemAcid] <> 0) then
+           result += 1
+        endif
+      nexteach
+
+    elseif (field[fChosen].chosen.tagis[User.ElemCold] <> 0) then
+      foreach pick in hero from BaseFeat where "thingid.fSupprWeak"
+        if (each.tagis[User.ElemCold] <> 0) then
+           result += 1
+        endif
+      nexteach
+
+    elseif (field[fChosen].chosen.tagis[User.ElemElec] <> 0) then
+      foreach pick in hero from BaseFeat where "thingid.fSupprWeak"
+        if (each.tagis[User.ElemElec] <> 0) then
+           result += 1
+        endif
+      nexteach
+
+    elseif (field[fChosen].chosen.tagis[User.ElemFire] <> 0) then
+      foreach pick in hero from BaseFeat where "thingid.fSupprWeak"
+        if (each.tagis[User.ElemFire] <> 0) then
+           result += 1
+        endif
+      nexteach
+
+    elseif (field[fChosen].chosen.tagis[User.ElemSoni] <> 0) then
+      foreach pick in hero from BaseFeat where "thingid.fSupprWeak"
+        if (each.tagis[User.ElemSoni] <> 0) then
+           result += 1
+        endif
+      nexteach
+
+    endif
+
+    validif (result <> 0)
+
+    if (@valid = 0) then
+      hero.panelvalid[feats] = 0
+    endif]]></evalrule>
+    <exprreq message="Iron Will required."><![CDATA[#hasfeat[fIronWill] <> 0]]></exprreq>
+    <exprreq message="Vulnerability to Energy required."><![CDATA[hero.childfound[xVulAcid].tagis[Helper.ShowSpec] + hero.childfound[xVulCold].tagis[Helper.ShowSpec] + hero.childfound[xVulFire].tagis[Helper.ShowSpec] + hero.childfound[xVulForce].tagis[Helper.ShowSpec] + hero.childfound[xVulSonic].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <exprreq message="Suppress Weakness required."><![CDATA[#hasfeat[fSupprWeak] <> 0]]></exprreq>
+    </thing>
+  <thing id="fOverwCrit" name="Overwhelming Critical" description="Choose one type of melee weapon, such as claw or bite. With that weapon, you deal more damage on a critical hit.\n\n{b}Prerequisites{/b}: Str 23, Cleave, Great Cleave, Improved Critical (chosen weapon), Power Attack, Weapon Focus (chosen weapon).\n\n{b}Benefit{/b}: When using the weapon you have selected, you deal +1d6 points of extra damage on a successful critical hit. If the weapon&#146;s critical multiplier is &#215;3, add +2d6 points of extra damage instead, and if the multiplier is &#215;4, add +3d6 points of extra damage instead. (Creatures immune to critical hits can&#146;t be affected by this feat.)\n\n{b}Special{/b}: You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new weapon.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Chosen weapon does extra dam on crit.">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Epic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fShowWhat" tag="Weapons"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      ~ If we haven't chosen anything, get out now
+      if (field[fChosen].ischosen = 0) then
+        done
+        endif
+
+      var id as string
+      id = field[fChosen].chosen.idstring
+
+      var crit as number
+
+      foreach pick in hero where "IsWeapon." & id
+         crit = eachpick.tagmax[wCritMult.?] - 1
+      nexteach
+
+      field[xSumm].text = "Chosen weapon does +" & crit & "d6 on crit."]]></eval>
+    <evalrule phase="Render" priority="12000" message="Weapon Focus with chose weapon required."><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+var wpn as string
+wpn = field[fChosen].chosen.idstring
+wpn = "WepFocus." & wpn
+
+validif (hero.tagcountstr[wpn] <> 0)]]></evalrule>
+    <evalrule phase="Render" priority="12000" index="2" message="Improved Critical with chosen weapon required."><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+var wpn as string
+wpn = field[fChosen].chosen.idstring
+wpn = "ImpCrit." & wpn
+
+validif (hero.tagcountstr[wpn] <> 0)]]></evalrule>
+    <exprreq message="Strength 23 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 23]]></exprreq>
+    <exprreq message="Cleave required."><![CDATA[#hasfeat[fCleave] <> 0]]></exprreq>
+    <exprreq message="Great Cleave required."><![CDATA[#hasfeat[fGreatClv] <> 0]]></exprreq>
+    <exprreq message="Power Attack required."><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
+    <exprreq message="Improved Critical (chosen weapon) required."><![CDATA[hero.tagis[ImpCrit.?] <> 0]]></exprreq>
+    <exprreq message="Weapon Focus (chosen weapon) required."><![CDATA[hero.tagis[WepFocus.?] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPowClimb" name="Power Climb" description="If you fly in a straight line, you can gain altitude in flight more easily than others.\n\n{b}Prerequisites{/b}: Str 15, fly speed (average maneuverability).\n\n{b}Benefit{/b}: When flying, you can gain altitude and still move your full speed provided you fly in a straight line.\n\n{b}Normal{/b}: Without this feat, you must move at half speed to gain altitude (see Tactical Aerial Movement, page 20 of the Dungeon Master&#146;s Guide).\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Can gain altitude without slowing, as long as fly in straight line." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Strength 15 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Average or better maneuverability required."><![CDATA[hero.childfound[xFly].tagis[Maneuver.Average] + hero.childfound[xFly].tagis[Maneuver.Good] + hero.childfound[xFly].tagis[Maneuver.Perfect] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPowerDive" name="Power Dive" description="You can fall upon an opponent from the sky.\n\n{b}Prerequisites{/b}: Str 15, fly speed (average maneuverability).\n\n{b}Benefit{/b}: When flying, you can dive and land on an opponent to deal extra damage. This is a standard action that can only affect creatures that are smaller than you. You make an overrun attack, but the opponent cannot choose to avoid you. If you knock down the target, you may make an additional slam attack, dealing the indicated damage plus 1-1/2 times your Strength bonus (round down). This attack is at the usual +4 bonus against prone opponents.\n\n{b}Size &#151; Power Dive Damage{/b}\nFine &#151; 1d2\nDiminutive &#151; 1d3\nTiny &#151; 1d4\nMedium &#151; 1d6\nLarge &#151; 1d8\nHuge &#151; 2d6\nGargantuan &#151; 2d8\nColossal &#151; 4d6\n\n{b}Normal{/b}: Without this feat, you can attack with just one natural weapon and do not have a chance to knock down the opponent.\n\n{b}Special{/b}: If you fail in the overrun attempt and are tripped in turn, you are instead knocked down and deal the indicated slam damage to yourself.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Std, fly overrun att vs smaller foe, extra dam if knock prone (may harm self)." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Strength 15 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Average or better maneuverability required."><![CDATA[hero.childfound[xFly].tagis[Maneuver.Average] + hero.childfound[xFly].tagis[Maneuver.Good] + hero.childfound[xFly].tagis[Maneuver.Perfect] <> 0]]></exprreq>
+    </thing>
+  <thing id="fQuickBrea" name="Quicken Breath" description="You can loose your breath weapon with but a thought.\n\n{b}Prerequisites{/b}: Con 19, breath weapon.\n\n{b}Benefit{/b}: Using your breath weapon is a free action. When you use this feat, add +4 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Special{/b}: You cannot use this feat and the Maximize Breath feat on the same weapon at the same time.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Use breath wep as free action, can&apos;t also maximize. +4 rds to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Constitution 19 required."><![CDATA[child[aCON].field[aFinalVal].value >= 19]]></exprreq>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    </thing>
+  <thing id="fRapidStri" name="Rapidstrike" description="You can attack more than once with a natural weapon.\n\n{b}Prerequisites{/b}: Dex 9, one or more pairs of natural weapons, aberration, dragon, elemental, magical beast, or plant type, base attack bonus +10.\n\n{b}Benefit{/b}: If you have a pair of natural weapons, such as two claws, two wings, or two slams, you can make one extra attack with one of those weapons at a &#150;5 penalty. A creature with multiple limbs qualifies for this feat as well, such as a creature with three arms and three claw attacks.\n\n{b}Normal{/b}: Without this feat, you attack once with each natural weapon.\n\n{b}Special{/b}: You can take this feat once for each pair of natural weapons you have. For example, a Large dragon has one bite, two claws, two wings, and one tail attacks. The dragon can take this feat twice, once for its claws and once for its wings.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="With chosen nat wep gain extra att with -5 penalty.">
+    <fieldval field="ftCandExpr" value="component.BaseNatWep &amp; Value.2|Value.3|Value.4|Value.5|Value.6|Value.7|Value.8|Value.9|Value.10|Value.11|Value.12"/>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <exprreq message="Base attack bonus +10 required."><![CDATA[child[Attack].field[tAtkBase].value >= 10]]></exprreq>
+    <exprreq message="Dexterity 9 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 9]]></exprreq>
+    <exprreq message="Aberration, Dragon, Elemental, Magical beast, or Plant type required."><![CDATA[hero.tagis[Race.typAberrat] + hero.tagis[Race.typDragon] + hero.tagis[Race.typElement] + hero.tagis[Race.typMagBeas] + hero.tagis[Race.typPlant] <> 0]]></exprreq>
+    <prereq message="One or more pairs of natural weapons required.">
+      <validate><![CDATA[
+        var total as number
+        var numattacks as number
+        foreach pick in hero from BaseNatWep
+
+          ~ If this weapon uses the number of hands of the race, add that number of attacks
+          if (eachpick.tagis[Helper.RaceHands] <> 0) then
+            total += herofield[tNumHands].value
+
+          ~ Otherwise, add the number of attacks the weapon has, which should always be at least 1
+          else
+            numattacks = eachpick.tagmax[Value.?]
+
+            if (numattacks >= 2) then
+              total += 1
+            endif
+
+          endif
+          nexteach
+
+        validif (total >= 1)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fRecovBrea" name="Recover Breath" description="You wait less time before being able to use your breath weapon again.\n\n{b}Prerequisites{/b}: Con 17, breath weapon.\n\n{b}Benefit{/b}: You reduce the interval between uses of your breath weapon. You wait 1 round less than usual before breathing again, but always at least 1 round. The feat stacks with the effects of metabreath feats, reducing the total time you must wait to use your breath weapon again by 1 round.\n\n{b}Special{/b}: If you have multiple heads with breath weapons, all breath weapons use the reduced interval.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="-1 rd to recharge breath weapons." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Constitution 17 required."><![CDATA[child[aCON].field[aFinalVal].value >= 17]]></exprreq>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    </thing>
+  <thing id="fRend" name="Rend" description="You can rend opponents you hit with your claws.\n\n{b}Prerequisites{/b}: Two claw attacks, Str 13, Power Attack, Snatch, size Huge or larger.\n\n{b}Benefit{/b}: If you strike the same opponent with two claw attacks, you automatically deal extra damage equal to that of two claw attacks plus 1-1/2 times your Strength bonus. You cannot grab an opponent at the same time you rend that opponent.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="If hit foe with 2 claw att, rend for 2 claw dam (+Str bon x1.5)." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Strength 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Power Attack required."><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
+    <exprreq message="Snatch required."><![CDATA[#hasfeat[fSnatch] <> 0]]></exprreq>
+    <exprreq message="Huge or larger required."><![CDATA[herofield[tSize].value >= 2]]></exprreq>
+    <prereq message="Two or more claw attacks.">
+      <validate><![CDATA[
+        var total as number
+        var numattacks as number
+        foreach pick in hero from BaseNatWep where "IsWeapon.wClaw"
+
+          ~ If this weapon uses the number of hands of the race, add that number of attacks
+          if (eachpick.tagis[Helper.RaceHands] <> 0) then
+            total += herofield[tNumHands].value
+
+          ~ Otherwise, add the number of attacks the weapon has, which should always be at least 1
+          else
+            numattacks = eachpick.tagmax[Value.?]
+
+            if (numattacks >= 2) then
+              total += 1
+            endif
+
+          endif
+          nexteach
+
+        validif (total >= 1)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fShapeBrea" name="Shape Breath" description="You can make the area of your breath weapon a cone or a line, as you see fit.\n\n{b}Prerequisites{/b}: Con 13, breath weapon, size Small or larger.\n\n{b}Benefit{/b}: If you have a line shaped breath weapon, you can opt to shape it into a cone. Likewise, if you have a cone shaped breath weapon, you can shape it into a line.\n\nWhen you use this feat, add +1 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Normal{/b}: Without this feat, the shape of your breath weapon is fixed.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep can choose to be either line or cone. +1 rd to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    <exprreq message="Small or larger required."><![CDATA[herofield[tSize].value >= -1]]></exprreq>
+    </thing>
+  <thing id="fShockWave" name="Shock Wave" description="You can strike the ground with your tail so hard it knocks other creatures down.\n\n{b}Prerequisites{/b}: Str 13, true dragon, size Large or larger, Power Attack.\n\n{b}Benefit{/b}: You may, as a full-round action, strike a solid surface with your tail and create a shock wave that radiates out from your space and continues for a number of feet equal to 5 &#215; your racial Hit Dice. Make a bull rush attack by rolling once regardless of how many creatures are in the radius. Every creature in the radius makes a Strength check and compares it to your roll. Those who fail their opposed checks are knocked down.\n\n{b}Special{/b}: Structures and unattended objects at least partially within the shock wave take damage equal to 1d6 + your Strength bonus.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Full rd, strike surface with tail, bull rush vs all in X ft to knock prone." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      var rng as number
+      rng = (herofield[tHitDice].value - herofield[tLevel].value) * 5
+
+      field[xSumm].text = "Full rd, strike surface with tail, bull rush vs all in " & rng & " ft to knock prone."]]></eval>
+    <exprreq message="True Dragon required."><![CDATA[hero.tagis[Race.TrueDragon] <> 0]]></exprreq>
+    <exprreq message="Large or larger required."><![CDATA[herofield[tSize].value >= 1]]></exprreq>
+    <exprreq message="Power Attack required."><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
+    <exprreq message="Strength 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fSnatSwall" name="Snatch and Swallow" description="You can swallow creatures you have grabbed with your bite attack.\n\n{b}Prerequisites{/b}: Con 19, true dragon, Snatch, Improved Snatch, size Huge or larger.\n\n{b}Benefit{/b}: If you begin your turn with an opponent held in your mouth, you can attempt a new grapple check (as though attempting to pin the opponent). If you succeed, your opponent takes bite damage and is swallowed.\n\nA swallowed creature is considered grappled, while you are not. A swallowed creature can try to cut its way free with any light piercing or slashing weapon (the amount of damage required to get free is noted on the table below), or it can just try to escape the grapple. If the swallowed creature chooses the latter course, success puts it back in your mouth. Any damage a swallowed creature deals is deducted from your hit points. If a creature cuts itself free, muscular action closes the hole, so that if you swallow someone again, that creature must cut itself free again. Swallowed creatures take damage in each round they remain swallowed, as shown below. \n\n{b}Dragon Size &#150;&#150; Target Size* &#150;&#150; Physical Dam** &#150;&#150; Energy Dam***{/b}\nHuge &#150;&#150; Medium &#150;&#150; 1d8 &#150;&#150; 2d8\nGargantuan &#150;&#150; Large &#150;&#150; 2d6 &#150;&#150; 4d6\nColossal &#150;&#150; Huge &#150;&#150; 2d8 &#150;&#150; 4d8\n* Maximum size of a swallowed creature. Your stomach can hold two such creatures; smaller foes count as one-quarter of a creature.\n** A swallowed foe takes bludgeoning damage in each round it spends in your stomach.\n*** A swallowed foe takes energy damage in each round it spends in your stomach. The type of energy is the same as that of your breath weapon.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Foe grappled in mouth can be swallowed as though pin, takes dam inside you." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Constitution 19 required."><![CDATA[child[aCON].field[aFinalVal].value >= 19]]></exprreq>
+    <exprreq message="True Dragon required."><![CDATA[hero.tagis[Race.TrueDragon] <> 0]]></exprreq>
+    <exprreq message="Snatch required."><![CDATA[#hasfeat[fSnatch] <> 0]]></exprreq>
+    <exprreq message="Improved Snatch required."><![CDATA[#hasfeat[fImpSnatch] <> 0]]></exprreq>
+    <exprreq message="Huge or larger required."><![CDATA[herofield[tSize].value >= 2]]></exprreq>
+    </thing>
+  <thing id="fSpellCHar" name="Spellcasting Harrier" description="Spellcasters you threaten find it difficult to cast defensively.\n\n{b}Prerequisite{/b}: Combat Reflexes.\n\n{b}Benefit{/b}: Any spellcaster you threaten in melee provokes an attack of opportunity if he or she tries to cast defensively. You get a +4 bonus on this attack roll.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Foe provokes AoO if tries to cast defensively while threatened." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Epic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Combat Reflexes required."><![CDATA[#hasfeat[fComRef] <> 0]]></exprreq>
+    </thing>
+  <thing id="fSpreadBre" name="Spreading Breath" description="You can convert your breath weapon into a spread effect.\n\n{b}Prerequisites{/b}: Con 15, breath weapon, Shape Breath, size Small or larger.\n\n{b}Benefit{/b}: You can modify your breath weapon so that it fills a spread centered on your head instead of taking its normal shape. The radius of the spread depends on your size, as shown below.\n\n{b}Creature Size &#151; Spread Radius{/b}\nSmall &#151; 10 ft.\nMedium &#151; 15 ft.\nLarge &#151; 20 ft.\nHuge &#151; 25 ft.\nGargantuan &#151; 30 ft.\nColossal &#151; 35 ft.\n\nWhen you use this feat, add +2 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep is X ft rad spread centered on head. +2 rds to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[   if (herofield[tSize].value <= -1) then
+     field[xSumm].text = "Breath wep is 10 ft rad spread centered on head. +2 rds to recharge."
+   elseif (herofield[tSize].value = 0) then
+     field[xSumm].text = "Breath wep is 15 ft rad spread centered on head. +2 rds to recharge."
+   elseif (herofield[tSize].value = 1) then
+     field[xSumm].text = "Breath wep is 20 ft rad spread centered on head. +2 rds to recharge."
+   elseif (herofield[tSize].value = 2) then
+     field[xSumm].text = "Breath wep is 25 ft rad spread centered on head. +2 rds to recharge."
+   elseif (herofield[tSize].value = 3) then
+     field[xSumm].text = "Breath wep is 30 ft rad spread centered on head. +2 rds to recharge."
+   elseif (herofield[tSize].value >= 4) then
+     field[xSumm].text = "Breath wep is 35 ft rad spread centered on head. +2 rds to recharge."
+   endif]]></eval>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    <exprreq message="Shape Breath required."><![CDATA[#hasfeat[fShapeBrea] <> 0]]></exprreq>
+    <exprreq message="Small or larger required."><![CDATA[herofield[tSize].value >= -1]]></exprreq>
+    <exprreq message="Constitution 15 requried."><![CDATA[child[aCON].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fSplitBrea" name="Split Breath" description="You can split your breath weapon into a pair of weaker effects.\n\n{b}Prerequisites{/b}: Con 13, breath weapon, Shape Breath, size Small or larger.\n\n{b}Benefit{/b}: Your breath weapon retains its size and shape, but splits into two areas that you aim separately. Each portion deals half the damage the breath weapon normally deals or lasts half as long as the effect normally lasts. For example, an old silver dragon that uses this feat on its cold breath weapon produces two 50-foot cones of cold that deal 8d8 points of cold damage each. If the same dragon used this feat on its paralyzing gas breath weapon, it would produce two cones of gas, each of which could paralyze a creature for 1d3+4 rounds.\n\nYou can aim the split breath effects so that their areas overlap. Creatures caught in the area of overlap are struck by both weapons and are affected twice, subject to all the normal rules for stacking magical effects.\n\nWhen you use this feat, add +1 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep is now 2 (but 1/2 effect), aimed separately. +1 rd to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    <exprreq message="Shape Breath required."><![CDATA[#hasfeat[fShapeBrea] <> 0]]></exprreq>
+    <exprreq message="Small or larger required."><![CDATA[herofield[tSize].value >= -1]]></exprreq>
+    </thing>
+  <thing id="fSupprWeak" name="Suppress Weakness" description="Your vulnerability to an energy type is reduced.\n\n{b}Prerequisites{/b}: Vulnerability to energy, Iron Will.\n\n{b}Benefit{/b}: You can partially suppress your vulnerability to a type of element or energy. When subjected to an attack based on that type of energy, you take one-quarter again as much (+25%) damage, regardless of whether a saving throw is allowed, or if the save is a success or failure.\n\n{b}Normal{/b}: A creature vulnerable to an element or energy type takes half again as much (+50%) damage as normal from that energy type.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Vulnerability to energy dam is suppressed, only +25% extra dam." uniqueness="useronce">
+    <fieldval field="ftCandExpr" value="User.PickElem"/>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      ~ If we haven't chosen anything, get out now
+      if (field[fChosen].ischosen = 0) then
+        done
+      endif
+
+      ~ Assign an appropriate element tag to ourselves depending on our choice
+      if (field[fChosen].chosen.tagis[User.ElemAcid] <> 0) then
+         perform assign[User.ElemAcid]
+      elseif (field[fChosen].chosen.tagis[User.ElemCold] <> 0) then
+         perform assign[User.ElemCold]
+      elseif (field[fChosen].chosen.tagis[User.ElemElec] <> 0) then
+         perform assign[User.ElemElec]
+      elseif (field[fChosen].chosen.tagis[User.ElemFire] <> 0) then
+         perform assign[User.ElemFire]
+      elseif (field[fChosen].chosen.tagis[User.ElemSoni] <> 0) then
+         perform assign[User.ElemSoni]
+      endif]]></eval>
+    <exprreq message="Vulnerability to Energy required."><![CDATA[hero.childfound[xVulAcid].tagis[Helper.ShowSpec] + hero.childfound[xVulCold].tagis[Helper.ShowSpec] + hero.childfound[xVulFire].tagis[Helper.ShowSpec] + hero.childfound[xVulForce].tagis[Helper.ShowSpec] + hero.childfound[xVulSonic].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <exprreq message="Iron Will required."><![CDATA[#hasfeat[fIronWill] <> 0]]></exprreq>
+    </thing>
+  <thing id="fTailConst" name="Tail Constrict" description="You can make constriction attacks with your tail.\n\n{b}Prerequisites{/b}: True dragon, Snatch, Improved Snatch.\n\n{b}Benefit{/b}: You can grab and constrict creatures you hit with your tail slap attack. This works just like a snatch attack, except that it can be used against any creature smaller than you. If you successfully grab an opponent with your tail, you deal bludgeoning damage equal to your tail slap damage plus 1-1/2 times your Strength modifier. Each round you hold your opponent, you deal constriction damage.\n\nYou cannot make tail slap or tail sweep attacks while constricting an opponent with your tail.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Grab &amp; constrict smaller foes hit by tail slap(as snatch, tail dam each rd held)." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="True Dragon required."><![CDATA[hero.tagis[Race.TrueDragon] <> 0]]></exprreq>
+    <exprreq message="Snatch required."><![CDATA[#hasfeat[fSnatch] <> 0]]></exprreq>
+    <exprreq message="Improved Snatch required."><![CDATA[#hasfeat[fImpSnatch] <> 0]]></exprreq>
+    </thing>
+  <thing id="fTailSwKno" name="Tail Sweep Knockdown" description="Your tail sweep attack knocks opponents prone.\n\n{b}Prerequisite{/b}: Tail sweep attack.\n\n{b}Benefit{/b}: Creatures who fail their saving throws against your tail sweep attack are knocked prone in addition to taking full damage.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Tail sweep also knocks foes prone if fail save." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <exprreq message="Tail Sweep required."><![CDATA[hero.childfound[xTailSweep].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    </thing>
+  <thing id="fTempBreat" name="Tempest Breath" description="You can make your breath weapon strike with the force of a windstorm.\n\n{b}Prerequisites{/b}: Str 13, breath weapon, Power Attack, size Large or larger.\n\n{b}Benefit{/b}: When you use your breath weapon, in addition to its normal effects, creatures in the area are affected as through struck by wind effects. The force of the wind depends on your size, as indicated below. For the effects of high winds, see Table 3&#150;24 on page 95 of the Dungeon Master&#146;s Guide.\n\n{b}Dragon Size &#151; Wind Force{/b}\nLarge &#151; Severe\nHuge &#151; Windstorm\nGargantuan &#151; Hurricane\nColossal &#151; Tornado\n\nBecause your breath weapon has an instantaneous duration, creatures ignore the checked effect unless they are airborne (in which case they are blown back 1d6&#215;5 feet).\n\nWhen you use this feat, add +1 to the number of rounds you must wait before using your breath weapon again.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Breath wep has XXX winds, may knock foes prone/back. +1 rd to recharge." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Metabreath"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[   if (herofield[tSize].value <= 1) then
+     field[xSumm].text = "Breath wep has Sev winds, may knock foes prone/back. +1 rd to recharge."
+   elseif (herofield[tSize].value = 2) then
+     field[xSumm].text = "Breath wep has WnS winds, may knock foes prone/back. +1 rd to recharge."
+   elseif (herofield[tSize].value = 3) then
+     field[xSumm].text = "Breath wep has Hurr winds, may knock foes prone/back. +1 rd to recharge."
+   elseif (herofield[tSize].value >= 4) then
+     field[xSumm].text = "Breath wep has Torn winds, may knock foes prone/back. +1 rd to recharge."
+   endif]]></eval>
+    <exprreq message="Breath weapon required."><![CDATA[hero.childfound[xBreathWea].tagis[Helper.ShowSpec] + hero.tagis[User.BreathWeap] <> 0]]></exprreq>
+    <exprreq message="Power Attack required."><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
+    <exprreq message="Large or larger required."><![CDATA[herofield[tSize].value >= 1]]></exprreq>
+    <exprreq message="Strength 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fWhirlWTSw" name="Whirlwind Tail Sweep" description="You can sweep your tail in a circular arc.\n\n{b}Prerequisite{/b}: Tail sweep attack.\n\n{b}Benefit{/b}: Your tail sweep attack affects a circle with a radius equal to your tail slap&#146;s reach.\n\n{b}Normal{/b}: Your tail sweep attack affects a semicircle.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Tail sweep affects all in tail slap&apos;s reach." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Tail Sweep required."><![CDATA[hero.childfound[xTailSweep].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    </thing>
+  <thing id="fWingstorm" name="Wingstorm" description="You can flatten targets with blasts of air from your wings.\n\n{b}Prerequisites{/b}: Str 13, true dragon, fly speed 200, Hover, Power Attack, size Large or larger.\n\n{b}Benefit{/b}: As a full-round action, you can hover in place and use your wings to create a blast of air in a cylinder with a radius and height of 10 feet times your age category. The wind blows from the center of your body toward the outside edge at the bottom of the cylinder.\n\nThe force of the wind depends on your size, as indicated below. For the effects of high winds, see Table 3&#150;24 on page 95 of the Dungeon Master&#146;s Guide.\n\n{b}Dragon Size &#151; Wind Force{/b}\nLarge &#151; Severe\nHuge &#151; Windstorm\nGargantuan &#151; Hurricane\nColossal &#151; Tornado\n\nBecause the blast of air only lasts for your turn, creatures ignore the checked effect unless they are airborne (in which case they are blown back 1d6&#215;5 feet).\n\n{b}Special{/b}: You can elect to keep the wind in effect for longer than your current turn. If you do, the wind lasts until your next turn (and you can opt to continue the effect during your next turn). Anyone in or entering the cylinder is affected. Because you are producing a continuous blast of air, the checked effect works normally while the wind lasts (checked creatures cannot move forward against the force of the wind, or they are blown back 1d6&#215;5 feet if airborne).\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Full rd, hover in place &amp; make XX rad, XX long cylinder of YYY force wind." uniqueness="useronce">
+    <comment>xSumm (Done)
+
+Fly speed 20 is a typo? (yes, no true dragon has fly speed less than 20, so if not typo never would have been mentioned.... increased to 200.)</comment>
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Monstrous"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[   var dist as number
+   dist = hero.childfound[xAgeCat].field[Value].value * 10
+
+   if (herofield[tSize].value <= 1) then
+     field[xSumm].text = "Full rd, hover in place & make " & dist & " rad, " & dist & " long cylinder of Sev force wind."
+   elseif (herofield[tSize].value = 2) then
+     field[xSumm].text = "Full rd, hover in place & make " & dist & " rad, " & dist & " long cylinder of WnS force wind."
+   elseif (herofield[tSize].value = 3) then
+     field[xSumm].text = "Full rd, hover in place & make " & dist & " rad, " & dist & " long cylinder of Hurr force wind."
+   elseif (herofield[tSize].value >= 4) then
+     field[xSumm].text = "Full rd, hover in place & make " & dist & " rad, " & dist & " long cylinder of Torn force wind."
+   endif]]></eval>
+    <exprreq message="True Dragon required."><![CDATA[hero.tagis[Race.TrueDragon] <> 0]]></exprreq>
+    <exprreq message="Fly speed 200 required."><![CDATA[hero.childfound[xFly].field[Value].value >= 200]]></exprreq>
+    <exprreq message="Hover required."><![CDATA[#hasfeat[fHover] <> 0]]></exprreq>
+    <exprreq message="Power Attack required."><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
+    <exprreq message="Large or larger required."><![CDATA[herofield[tSize].value >= 1]]></exprreq>
+    <exprreq message="Strength 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fCloQuaFiD" name="Close-Quarters Fighting" description="You are skilled at fighting at close range and resisting grapple attempts.\n\n{b}Prerequisites{/b}: Base attack bonus +3.\n\n{b}Benefit{/b}: You gain an attack of opportunity whenever an enemy attempts to grapple you, even if the enemy has a feat or special ability that would normally bypass the attack. If you deal damage with this attack, the enemy fails to start the grapple unless it has the Improved Grapple feat or a special ability such as improved grab. If the enemy has such an ability, you may add the damage you deal as a bonus on your opposed check to resist being grappled. This feat does not give you extra attacks of opportunity during a round or allow you to make an attack of opportunity when you would be denied one for being surprised, helpless, or in a similar situation.\n\nFor example, an ogre attempts to grapple Tordek. Tordek gains an attack of opportunity, hits, and causes damage. Since the ogre does not have any sort of grappling special ability or feat, it fails to start a grapple. Then an ankheg&#151;a creature with the improved grab special ability&#151;attempts to grapple Tordek. He takes an attack of opportunity, hits, and deals 10 points of damage to the creature. Tordek then adds +10 to his opposed check to resist being grappled.\n\n{b}Normal{/b}: Creatures with Improved Grapple, improved grab, or similar feats or special abilities do not provoke attacks of opportunity when they attempt to start a grapple.\n\n{b}Special{/b}: A fighter may select Close-Quarters Fighting as one of his fighter bonus feats.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain AoO vs grapple att, even if normally none, dam dealt is bon to resist." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <exprreq message="Base attack bonus +3 required."><![CDATA[child[Attack].field[tAtkBase].value >= 3]]></exprreq>
+    </thing>
+  <thing id="fClevWresD" name="Clever Wrestling" description="You have a better than normal chance to escape or wriggle free from a big creature&#146;s grapple or pin.\n\n{b}Prerequisites{/b}: Improved Unarmed Strike, size Small or Medium.\n\n{b}Benefit{/b}: When your opponent is larger than Medium, you gain a circumstance bonus on your grapple check to escape a grapple or pin. The size of the bonus depends on your opponent&#146;s size:\n\n{b}Opponent Size &#151; Bonus{/b}\nColossal &#151; +8\nGargantuan &#151; +6\nHuge &#151; +4\nLarge &#151; +2\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain a circ bonus on grapple ck to escape from big creatures." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="SpecType" tag="Defense" name="Defense" abbrev="Defense"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Small or Medium size required."><![CDATA[hero.tagis[Size.Small] + hero.tagis[Size.Medium] <> 0]]></exprreq>
+    <exprreq message="Improved Unarmed Strike required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fCunnSideS" name="Cunning Sidestep" description="You have a better than normal chance to avoid being bull rushed or tripped.\n\n{b}Prerequisites{/b}: Improved Unarmed Strike, Clever Wrestling, size Small or Medium.\n\n{b}Benefit{/b}: When your opponent is larger than Medium, you gain a circumstance bonus on any opposed check you make to avoid being bull rushed, tripped, knocked down, or pushed. The size of the bonus depends on your opponent&#146;s size:\n\n{b}Opponent Size &#151; Bonus{/b}\nColossal &#151; +8\nGargantuan &#151; +6\nHuge &#151; +4\nLarge &#151; +2\n\n{b}Special{/b}: This feat is effective against the Large and in Charge feat. The bonus from this feat does not stack with the Clever Wrestling feat.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain circ bon to resist bull rush, trip, knock down or push vs big creatures." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Improved Unarmed Strike required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <exprreq message="Clever Wrestling required."><![CDATA[#hasfeat[fCleverWre] + #hasfeat[fClevWresD] + #hasfeat[fClevWreSW] <> 0]]></exprreq>
+    <exprreq message="Small or Medium size required."><![CDATA[hero.tagis[Size.Small] + hero.tagis[Size.Medium] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDeftStriD" name="Deft Strike" description="You can place attacks at weak points in your opponent&#146;s defenses.\n\n{b}Prerequisites{/b}: Int 13, Combat Expertise, Spot 10 ranks, sneak attack +1d6.\n\n{b}Benefit{/b}: As a standard action, you can attempt to find a weak point in a visible target&#146;s armor. This requires a Spot check against a DC equal to your target&#146;s Armor Class. If you succeed, your next attack against that target (which must be made no later than your next turn) ignores the target&#146;s armor bonus and natural armor bonus to AC (including any enhancement bonuses to armor or natural armor). Other AC bonuses still apply normally.\n\nIf you use a ranged weapon to deliver the attack, your opponent must be within 30 feet of you in order for you to benefit from this feat.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Stand, spot chk vs foe&apos;s AC to ignore armor/nat armor on next att in 1 rd." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Intelligence 13 required."><![CDATA[child[aINT].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Combat Expertise required."><![CDATA[#hasfeat[fComExpert] <> 0]]></exprreq>
+    <exprreq message="Spot 10 ranks required."><![CDATA[#skillranks[kSpot] >= 10]]></exprreq>
+    <exprreq message="Sneak attack +1d6 required."><![CDATA[childfound[xSneakAtt].field[Value].value >= 1]]></exprreq>
+    </thing>
+  <thing id="fDragCohor" name="Dragon Cohort" description="You gain the service of a loyal dragon ally.\n\n{b}Prerequisites{/b}: Character level 9th, Speak Language (Draconic).\n\n{b}Benefit{/b}: You gain a cohort selected from Table 3&#150;14, just as you would by selecting the Leadership feat. However, you may treat the dragon&#146;s ECL as if it were 3 lower than indicated.\n\n{b}Table 3&#150;14: Alignment &#150;&#150; Dragon &amp; ECL*{/b}\n{b}LG{/b} &#150;&#150; Bronze (wyrmling) 10, Silver (wyrmling) 11, Gold (wyrmling) 12, Bronze (very young) 13, Silver (very young) 14, Gold (very young) 16, Bronze (young) 18, Silver (young) 18, Gold (young) 20\n{b}NG{/b} &#150;&#150; Pseudodragon 4\n{b}CG{/b} &#150;&#150; Brass (wyrmling) 6, Copper (wyrmling) 7, Brass (very young) 10, Copper (very young) 11, Brass (young) 14, Copper (young) 15, Brass (juvenile) 17, Copper (juvenile) 18\n{b}N{/b} &#150;&#150; Wyvern 12, Dragon turtle 17\n{b}LE{/b} &#150;&#150; Blue (wyrmling) 10, Green (wyrmling) 10, Blue (very young) 13, Green (very young) 13, Green (young) 16, Blue (young) 17, Green (juvenile) 20\n{b}CE{/b} &#150;&#150; White (wyrmling) 5, Black (wyrmling) 7, White (very young) 9, Black (very young) 10, Red (wyrmling) 11, White (young) 12, Black (young) 13, Red (very young) 15, Black (juvenile) 17, White (juvenile) 17, Red (young) 19\n*Subtract 3 if using the Dragon Cohort feat.\n\n{b}DRAGONS AS COHORTS{/b}\nIf your DM is willing to allow it, you can use the Leadership feat to try attracting a dragon to be your cohort. To determine what sort of dragon will heed your call, first refer to the Leadership table on page 106 of the Dungeon Master&#146;s Guide to determine the highest level of cohort you can attract. Then consult Table 3&#150;14: Dragon Cohorts to see what age and kind of dragon can be attracted based on the level of cohort you can attract. Note that even though the table lists dragons with an ECL higher than 17, you can&#146;t use the Leadership feat to attract a cohort with a level higher than 17th.\n\nAlternatively, the Dragon Cohort feat allows you to attract a draconic cohort. In this case, you can treat the dragon&#146;s ECL as if it were 3 lower than given, allowing you to gain a more powerful dragon than with the Leadership feat. (This adjustment to ECL is only for purposes of selecting an appropriate cohort, not for any other purpose.)\n\nRegardless of which feat is used, the method by which the character attracts the dragon cohort should be decided by the player and DM together. Since most of the options listed on Table 3&#150;14 are younger than adult, it&#146;s entirely possible that such a dragon was entrusted to the PC&#146;s care and training by its parents. The character might even have had the opportunity to raise his cohort from an egg! See Raising a Dragon, above, for more information on dealing with young dragons.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain a dragon as a cohort, treat ECL as -3." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <pickreq thing="lDraconic" onlyonce="yes"/>
+    <exprreq message="Character level 9th required."><![CDATA[herofield[tLevel].value >= 9]]></exprreq>
+    </thing>
+  <thing id="fDragFamil" name="Dragon Familiar" description="When you are able to acquire a new familiar, you may select a wyrmling dragon as a familiar.\n\n{b}Prerequisites{/b}: Cha 13, Speak Language (Draconic), arcane spellcaster level 7th, ability to acquire a new familiar, compatible alignment.\n\n{b}Benefit{/b}: When acquiring a new familiar, you can choose a wyrmling dragon.\n\n{b}DRAGONS AS FAMILIARS{/b}\nArcane spellcasters can gain a wyrmling dragon as a familiar, an option most popular among sorcerers, though many wizards also understand the value of having a dragon on your side. Your alignment and arcane spellcaster level must be at least as high as the value given for that dragon.\n\n{b}Table 3&#150;19: Choosing a Dragon Familiar\nDragon &#150;&#150; Char Alignment &#150;&#150; Level{/b}\nWhite &#150;&#150; N, CN, CE &#150;&#150; 7th\nBlack &#150;&#150; N, NE, CE &#150;&#150; 8th\nBrass &#150;&#150; NG, CG, CN &#150;&#150; 9th\nGreen &#150;&#150; N, LE, NE &#150;&#150; 9th\nCopper &#150;&#150; CG, N, CN &#150;&#150; 10th\nBlue &#150;&#150; LN, LE, NE &#150;&#150; 10th\nBronze &#150;&#150; LG, LN, N &#150;&#150; 11th\nRed &#150;&#150; CN, CE, NE &#150;&#150; 12th\nSilver &#150;&#150; LG, NG, N &#150;&#150; 12th\nGold &#150;&#150; LG, NG, LN &#150;&#150; 14th\n\nA dragon familiar that becomes very young in age can no longer serve as a familiar. It loses its bond with you, including all special abilities granted to it or you because of this bond. Assuming you have treated it well, the dragon maintains a friendly relationship with you in the future.\n\nThe dragon familiar is magically linked to you like a normal familiar. The familiar uses the basic statistics for a creature of its kind with the following adjustments. Hit points are half of masters and use the master&apos;s BAB, unless the dragon&apos;s normal total is higher.\n\n{b}Familiar Ability Descriptions{/b}: All dragon familiars have special abilities (or impart abilities to their masters) depending on the level of the master. For full details about the abilities mentioned on Table 3&#150;20, see the sidebar Familiars on pages 52&#150;53 of the Player&#146;s Handbook.\n\n{b}Table 3&#150;20: Dragon Familiar Special Abilities\nMaster Class Level &#150;&#150; Nat Armor &#150;&#150; Special{/b}\n8th or lower &#150;&#150; +1 &#150;&#150; Alertness, improved evasion, share spells, empathic link\n9th &#150;&#150; 12th &#150;&#150; +2 &#150;&#150; Deliver touch spells\n13th &#150;&#150; 16th &#150;&#150; +3 &#150;&#150; Spell resistance\n17th &#150;&#150; 20th &#150;&#150; +4 &#150;&#150; {i}Scry on familiar{/i}\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain a wyrmling dragon as a familiar." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <pickreq thing="lDraconic" onlyonce="yes"/>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Ability to acquire a new familiar required."><![CDATA[tagis[CompAvail.cArcFamil] <> 0]]></exprreq>
+    <prereq message="Arcane spellcaster level 7th required.">
+      <validate><![CDATA[~ Loop through all classes looking for arcane casting
+var result as number
+
+foreach pick in hero from BaseClHelp where "CasterSrc.Arcane"
+   if (each.field[cTotalLev].value >= 7) then
+     result += 1
+   endif
+nexteach
+
+validif (result >= 1)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fDragHuntr" name="Dragon Hunter" description="You have made a special study of dragons and know how to defend against a dragon&#146;s attacks.\n\n{b}Prerequisite{/b}: Wis 13.\n\n{b}Benefit{/b}: You gain a +2 dodge bonus to Armor Class against attacks made by dragons and a +2 competence bonus on saving throws against the spells, attacks, and special abilities of dragons. Likewise, you gain a +2 competence bonus on any opposed check (such as a bull rush attempt or a grapple check) you make against a dragon.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="+2 dodge bon to AC, +2 comp to saves &amp; opposed chks vs dragons." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Wisdom 13 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fDraHunBra" name="Dragon Hunter Bravery" description="You resist dragons&#146; frightful presence, and your mere presence helps others resist as well.\n\n{b}Prerequisites{/b}: Wis 13, Dragon Hunter.\n\n{b}Benefit{/b}: You and all allies within 30 feet who can see you are treated as having +4 HD for the purposes of determining your resistance to the frightful presence of dragons. All creatures so affected also gain a +4 morale bonus on Will saves made to resist a dragon&#146;s frightful presence.\n\nYour animal companion, familiar, or special mount automatically succeeds on its Will save to resist the dragon&#146;s frightful presence if you succeed on yours (or if your effective Hit Dice total makes you immune).\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Allies in 30 ft are +4 HD &amp; save vs fright pres. Bond comp succeeds if you do." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Wisdom 13 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Dragon Hunter required."><![CDATA[#hasfeat[fDragHuntr] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDraHunDef" name="Dragon Hunter Defense" description="Your insight into the tactics and abilities of dragons grants you awareness of how best to avoid their magical attacks.\n\n{b}Prerequisites{/b}: Wis 13, Dragon Hunter.\n\n{b}Benefit{/b}: You gain the evasion ability against the breath weapons of dragons. (If a dragon&#146;s breath weapon allows a Reflex save for half damage, a successful save indicates that you take no damage.)\n\nAlso, you gain a bonus equal to 1/2 your character level on all saving throws you make against the supernatural or spell like abilities of dragons.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain evasion vs dragon breath wep &amp; +X to save vs dragon Su/Sp abilities." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[var bonus as number
+bonus = round(#totallevelcount[]/2,0,-1)
+
+field[xSumm].text = "Gain evasion vs dragon breath wep & +" & bonus & " to save vs dragon Su/Sp abilities."]]></eval>
+    <exprreq message="Dragon Hunter required."><![CDATA[#hasfeat[fDragHuntr] <> 0]]></exprreq>
+    <exprreq message="Wisdom 13 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fDragSteed" name="Dragon Steed" description="You have earned the service of a loyal draconic steed.\n\n{b}Prerequisites{/b}: Cha 13, Ride 8 ranks, Speak Language (Draconic).\n\n{b}Benefit{/b}: You gain the service of a dragonnel that serves loyally, much like a cohort.\n\n{b}Special{/b}: If you have a special mount, this dragonnel replaces your special mount.\n\n{b}DRAGONS AS SPECIAL MOUNTS{/b}\nSome paladins want more from a mount than loyalty, desiring an intelligent and mighty ally against the forces of evil. Clearly, a dragon is a far more powerful special mount than any other a paladin could obtain and threatens to become more special than the paladin herself. Furthermore, most true dragons have little interest in being at the beck and call of anyone. That said, few sights are more breathtaking than a paladin astride a mighty dragon.\n\n{b}Table 3&#150;15: Maximum Rider Size &#150;&#150; Dragon &amp; Minimum Paladin Level{/b}\nMedium &#150;&#150; Dragonnel 9, Spiked felldrake 11, Gold (VY) 16, Gold (Y) 20\nSmall &#150;&#150; Gold (wyrmling) 12, Bronze (VY) 13, Silver (VY) 14, Bronze (Y) 18, Silver (Y) 19\n\nA paladin must provide her special mount with a suitable lair (according to type) and treasure to keep there (a minimum hoard of 1,000 gp per Hit Die of the dragon is typical). The dragon isn&#146;t just keeping the treasure safe, it belongs to the dragon, and it won&#146;t part with this treasure kindly. Finally, the dragon must be treated with the respect that a creature of its intelligence, power, and stature commands.\n\nDragon special mounts advance based on the level they become available with these differences: Bonus HD are d12s, Improved Speed affects all movement types, only the higher value applies for Int and SR, and Share Spells only affects the paladin&apos;s not the mount&apos;s spells.\n\n{b}Table 3&#150;16: Paladin Level &#150;&#150; Bonus HD &#150;&#150; Nat Armor &#150;&#150; Str Adj. &#150;&#150; Int &#150;&#150; Special{/b}\n{i}Dragonnel{/i}\n9&#150;10th &#150;&#150; +2 &#150;&#150; +4 &#150;&#150; +1 &#150;&#150; 6 &#150;&#150; Improved evasion, share spells, empathic link, share saving throws\n11&#150;14th &#150;&#150; +4 &#150;&#150; +6 &#150;&#150; +2 &#150;&#150; 7 &#150;&#150; Improved speed\n15&#150;18th &#150;&#150; +6 &#150;&#150; +8 &#150;&#150; +3 &#150;&#150; 8 &#150;&#150; Command creatures of its kind\n19&#150;20th &#150;&#150; +8 &#150;&#150; +10 &#150;&#150; +4 &#150;&#150; 9 &#150;&#150; Spell resistance\n{i}Spiked Felldrake, Gold (wyrmling), or Bronze (VY){/i}\n10&#150;14th &#150;&#150; +2 &#150;&#150; +4 &#150;&#150; +1 &#150;&#150; 6 &#150;&#150; Improved evasion, share spells, empathic link, share saving throws\n15&#150;18th &#150;&#150; +4 &#150;&#150; +6 &#150;&#150; +2 &#150;&#150; 7 &#150;&#150; Improved speed\n19&#150;20th &#150;&#150; +6 &#150;&#150; +8 &#150;&#150; +3 &#150;&#150; 8 &#150;&#150; Command creatures of its kind\n{i}Silver (VY), or Gold (VY){/i}\n14&#150;18th &#150;&#150; +2 &#150;&#150; +4 &#150;&#150; +1 &#150;&#150; 6 &#150;&#150; Improved evasion, share spells, empathic link, share saving throws\n19&#150;20th &#150;&#150; +4 &#150;&#150; +6 &#150;&#150; +2 &#150;&#150; 7 &#150;&#150; Improved speed\n{i}Bronze (Y), Silver (Y), or Gold (Y){/i}\n18&#150;20th &#150;&#150; +2 &#150;&#150; +4 &#150;&#150; +1 &#150;&#150; 6 &#150;&#150; Improved evasion, share spells, empathic link, share saving throws\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Gain dragonnel, like a cohort. Can also serve as a paladin mount." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <pickreq thing="lDraconic" onlyonce="yes"/>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Ride 8 ranks required."><![CDATA[#skillranks[kRide] >= 8]]></exprreq>
+    </thing>
+  <thing id="fDragWildS" name="Dragon Wild Shape" description="You can take the form of a dragon.\n\n{b}Prerequisites{/b}: Wis 19, Knowledge (nature) 15 ranks, wild shape ability.\n\n{b}Benefit{/b}: You can use your wild shape ability to change into a Small or Medium dragon. You gain all the extraordinary and supernatural abilities of the dragon whose form you take, but not any spell-like abilities or spellcasting powers.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Can wild shape into dragons, gain Ex &amp; Su abilities but not Sp/spellcasting." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Wisdom 19 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 19]]></exprreq>
+    <exprreq message="Knowledge (nature) 15 ranks required."><![CDATA[#skillranks[kKnowNat] >= 15]]></exprreq>
+    <exprreq message="Wild Shape required."><![CDATA[hero.tagis[Hero.WildShape] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDragonban" name="Dragonbane" description="You have made a special study of dragons and are adept at pulling off deliberate attacks that take advantage of a dragon&#146;s weak spots.\n\n{b}Prerequisites{/b}: Int 13, Dragonfoe, base attack bonus +6.\n\n{b}Benefit{/b}: You may use a full-round action to make a single attack (melee or ranged) against a dragon with a +4 bonus on the attack roll. Such an attack deals an extra 2d6 points of damage if it hits. For a ranged attack, the dragon must be within 30 feet to gain the bonus to hit and the extra damage.\n\n{b}Special{/b}: The bonus on the attack roll and the extra damage stack with the benefits provided by a weapon with the bane (dragons) special ability.\n\nIn the case of a critical hit, the extra damage dice aren&#146;t multiplied.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Full rd, make one att with +4 bon and +2d6 dam vs dragons." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Intelligence 13 required."><![CDATA[child[aINT].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Dragonfoe required."><![CDATA[#hasfeat[fDragonfoe] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +6 required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    </thing>
+  <thing id="fDragoncra" name="Dragoncrafter" description="You can make special weapons, armor, and other items using parts of dragons as materials.\n\n{b}Prerequisite{/b}: Knowledge (arcana) 2 ranks.\n\n{b}Benefit{/b}: You can create any dragoncraft item whose prerequisites you meet. Creating a dragoncraft item follows the normal rules for the Craft skill (see page 70 of the Player&#146;s Handbook).\n\n{b}DRAGONCRAFT ITEMS{/b}\nDragoncraft items are nonmagical objects made from specific parts of a true dragon&#146;s body. Only a character with the Dragoncrafter feat (see page 105) can create dragoncraft items. They derive special powers from their origin, as well as from the skill of the person crafting them.\n\nCreating a dragoncraft item is much like creating a masterwork weapon or similar item. In addition to the item itself (which may also include a masterwork component, if it is a weapon, shield, or suit of armor), the character must &#147;create&#148; the dragoncraft component.\n\nA dragoncraft component has a price that varies based on the specific item (see item descriptions below). The Craft DC for creating a dragoncraft component is 25. Only after all components of a dragoncraft item are completed is the item considered finished.\n\nSince dragoncraft items aren&#146;t magical, they don&#146;t lose their powers in an {i}antimagic field{/i} or similar area. For those effects that require a caster level, treat the caster level as 3rd or the lowest level possible to cast the spell in question, whichever is higher. The powers of dragoncraft items don&#146;t stack with similar or identical effects, as noted in the specific item descriptions below. You can add magical qualities to a dragoncraft item (including enhancement bonuses for items such as weapons and armor) at the normal price, but only if you possess the Dragoncrafter feat (in addition to any other prerequisites).\n\nSeveral dragoncraft items are described in chapter 3. The description of each item gives a dragoncraft price, dragon part, and skill, as defined here.\n\n{i}Dragoncraft Price{/i}: This is the price of the dragoncraft component. Add the price of the item itself, as well as the price for masterwork quality (for armor, shields, and weapons), to find the item&#146;s full price.\n\n{i}Dragon Part{/i}: The portion of a dragon&#146;s body required to create the dragoncraft item. The cost of this part is included in the dragoncraft price. On average, the part has a value of approximately one-third of the dragoncraft price, since it represents the raw materials needed for the item. If the character crafting the item supplies the part himself (perhaps from a dragon he has slain), reduce the dragoncraft price for this item by one-third.\n\n{i}Skill{/i}:The Craft skill needed to create the dragoncraft component.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Can create and enhance dragoncraft items from specific dragon body parts." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Knowledge (arcana) 2 ranks required."><![CDATA[#skillranks[kKnowArcan] >= 2]]></exprreq>
+    </thing>
+  <thing id="fDragondoo" name="Dragondoom" description="You have learned how to place blows against a dragon that deal tremendous damage.\n\n{b}Prerequisites{/b}: Int 13, Dragonbane, Dragonfoe, base attack bonus +10.\n\n{b}Benefit{/b}: When you attack a dragon, the critical multiplier of your weapon improves as noted below.\n\n{b}Normal Multiplier &#151; New Multiplier{/b}\n&#215;2 &#151; &#215;3\n&#215;3 &#151; &#215;5\n&#215;4 &#151; &#215;7\n\n{b}Special{/b}: The benefit of this feat does not stack with any other ability or effect that alters a weapon&#146;s critical multiplier.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Critical multiplier is increased vs dragons, x2 to x3, x3 to x5, x4 to x7." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Intelligence 13 required."><![CDATA[child[aINT].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Dragonbane required."><![CDATA[#hasfeat[fDragonban] <> 0]]></exprreq>
+    <exprreq message="Dragonfoe required."><![CDATA[#hasfeat[fDragonfoe] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +10 required."><![CDATA[child[Attack].field[tAtkBase].value >= 10]]></exprreq>
+    </thing>
+  <thing id="fDragonfoe" name="Dragonfoe" description="You have learned how to how to attack dragons more effectively than most other individuals.\n\n{b}Prerequisite{/b}: Int 13.\n\n{b}Benefit{/b}: You gain a +2 bonus on attack rolls against dragons and a +2 bonus on caster level checks made to overcome a dragon&#146;s spell resistance. Also, dragons take a &#150;2 penalty on saving throws against your spells, spell-like abilities, and supernatural abilities.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="+2 att &amp; +2 to overcome SR vs dragons. They also have -2 to saves vs you." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Intelligence 13 required."><![CDATA[child[aINT].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fDragonfri" name="Dragonfriend" description="You are a known and respected ally of dragons.\n\n{b}Prerequisites{/b}: Cha 11, Speak Language (Draconic).\n\n{b}Benefit{/b}: You gain a +4 bonus on Diplomacy checks made to adjust the attitude of a dragon, and a +2 bonus on Ride checks made when you are mounted on a dragon.\n\nIn addition, you gain a +4 bonus on saves against the frightful presence of good dragons.\n\n{b}Special{/b}: You can&#146;t select this feat if you have already taken the Dragonthrall feat.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="+4 to Diplo, +2 to riding, +4 to frightful pres (good only) vs dragons." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <pickreq thing="lDraconic" onlyonce="yes"/>
+    <exprreq message="Charisma 11 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fDragonson" name="Dragonsong" description="Your song or poetics echo the power of the dragonsong, an ancient style of vocal performance created by dragons in the distant past.\n\n{b}Prerequisites{/b}: Cha 13, Knowledge (arcana) 4 ranks, Perform 6 ranks, Speak Language (Draconic).\n\n{b}Benefit{/b}: You gain a +2 bonus on Perform checks involving song, poetics, or any other verbal or spoken form of performance.\n\nIn addition, the DC of any saving throw required by mind-affecting effects based on your song or poetics (such as bardic music) is increased by +2.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="+2 to verbal Performances, +2 DC for song/poetic mind affecting effects." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <pickreq thing="lDraconic" onlyonce="yes"/>
+    <exprreq message="Knowledge (arcana) 4 ranks required."><![CDATA[#skillranks[kKnowArcan] >= 4]]></exprreq>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    <prereq message="Perform 6 ranks required.">
+      <validate><![CDATA[~ Loop through all perform skills
+var result as number
+foreach pick in hero from BaseSkill where "Helper.SkCatPerf"
+
+~ If this skill has 6 or more ranks, we are valid
+  if (each.field[kUserRanks].value >= 6) then
+    result += 1
+  endif
+nexteach
+
+if (result >= 1) then
+  @valid = 1
+  endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fDragonthr" name="Dragonthrall" description="You have pledged your life to the service of evil dragonkind.\n\n{b}Prerequisite{/b}: Speak Language (Draconic).\n\n{b}Benefit{/b}: You gain a +4 bonus on any Bluff check made against a dragon, and a +2 bonus on Ride checks made when you are mounted on a dragon.\n\nYou gain a +4 bonus on saves against the frightful presence of evil dragons.\n\nYou take a &#150;2 penalty on saves against enchantment spells and effects cast by dragons.\n\n{b}Special{/b}: You can&#146;t select this feat if you have already taken the Dragonfriend feat.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="+4 to Bluff, +2 to riding, +4 vs evil frightful pres, -2 to ench saves vs dragons." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <pickreq thing="lDraconic" onlyonce="yes"/>
+    </thing>
+  <thing id="fFrightPre" name="Frightful Presence" description="Like a dragon, your mere presence can terrify those around you.\n\n{b}Prerequisites{/b}: Cha 15, Intimidate 9 ranks.\n\n{b}Benefit{/b}: You gain the use of the frightful presence ability. Whenever you attack or charge, all opponents within a radius of 30 feet who have fewer levels or Hit Dice than you become shaken for a number of rounds equal to 1d6 + your Cha modifier. The effect is negated by a Will save (DC 10 + 1/2 your character level + your Cha modifier).\n\nA successful save indicates that the opponent is immune to your frightful presence for 24 hours. This ability can&#146;t affect creatures with an Intelligence of 3 or lower, nor does it have any effect on dragons.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="If att/charge, foes in 30 ft with less HD are shaken 1d6+X rds (DCYY Will neg)." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      var DC as number
+      DC = 10 + round(herofield[tHitDice].value/2,0,-1) + hero.child[aCHA].field[aModBonus].value
+
+      field[xSumm].text = "If att/charge, foes in 30 ft of less HD are shaken 1d6+" & hero.child[aCHA].field[aModBonus].value & " rds (DC" & DC & " Will neg)."]]></eval>
+    <exprreq message="Intimidate 9 ranks required."><![CDATA[#skillranks[kIntim] >= 9]]></exprreq>
+    <exprreq message="Charisma 15 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fOverHThru" name="Overhead Threat" description="You can deal a nasty attack to anything that tries to crush or run over you.\n\n{b}Prerequisites{/b}: Close-Quarters Fighting, Power Attack, base attack bonus +6.\n\n{b}Benefit{/b}: You can use a slashing or piercing weapon to make an attack of opportunity against a foe using an attack designed to batter you from above, such as an overrun, trample, power dive, or dragon crush attack. You cannot use this feat if you are flat-footed or already grappled. This feat does not grant you an additional attack of opportunity in a round, so the feat does not help you if you have no attacks of opportunity available.\n\nYou gain a special attack modifier based on your opponent&#146;s size, as shown below. If your attack hits, you deal triple damage.\n\n{b}Opponent Size &#151; Bonus{/b}\nColossal &#151; +16\nGargantuan &#151; +12\nHuge &#151; +8\nLarge &#151; +4\nMedium or smaller &#151; +0\n\n{b}Special{/b}: Any extra damage dice your attack deals (such as from a sneak attack ability or a weapon special ability) are not multiplied by this feat.\n\nIf you score a critical hit with your attack, the extra damage you deal stacks with the extra damage from this feat. Add the damage multipliers together according to the standard rule (see Multiplying, page 304 of the Player&#146;s Handbook). For example, if your weapon deals double damage on a critical hit, any critical hit you score while also using this feat deals quadruple damage.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Use S/P wep to AoO vs batter from above, size based att bon &amp; x3 dam." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Close-Quarters Fighting required."><![CDATA[#hasfeat[fCloQuaFig] + #hasfeat[fCloQuaFiD] <> 0]]></exprreq>
+    <exprreq message="Power Attack required."><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +6 required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    </thing>
+  <thing id="fSenseWeak" name="Sense Weakness" description="You can take advantage of subtle weaknesses in your opponents&#146; defenses.\n\n{b}Prerequisites{/b}: Int 13, Combat Expertise, Weapon Focus.\n\n{b}Benefit{/b}: Whenever you attack with a weapon with which you have selected the Weapon Focus feat, you may ignore up to 5 points of the target&#146;s damage reduction (regardless of the material or enhancement bonus of your weapon) or hardness. This benefit can&#146;t reduce the effective damage reduction or hardness of a target to less than 0.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="With weapon focus weapon ignore 5 points of DR or hardness." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Intelligence 13 required."><![CDATA[child[aINT].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Combat Expertise required."><![CDATA[#hasfeat[fComExpert] <> 0]]></exprreq>
+    <exprreq message="Weapon Focus required."><![CDATA[hero.tagis[WepFocus.?] <> 0]]></exprreq>
+    </thing>
+  <thing id="fAdrFlyAtt" name="Adriot Flyby Attack" description="You can make flyby attacks and get out of reach quickly.\n\n{b}Prerequisites{/b}: Fly speed 90, Flyby Attack, Hover or Wingover.\n\n{b}Benefit{/b}: When flying and making an attack action, you can move both before and after the attack, provided that the total distance moved is not greater than your fly speed. Your flying movement does not provoke attacks of opportunity from the creatures you attack during the round when you use this feat.\n\n{b}Source{/b}: Draconomicon" compset="Feat" summary="Flyby attack movement no longer provokes AoO from foes you attack." uniqueness="useronce">
+    <usesource source="Draconom" parent="p35" name="Draconomicon"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Flyby Attack required."><![CDATA[#hasfeat[fFlybyAt] <> 0]]></exprreq>
+    <exprreq message="Hover or Wingover required."><![CDATA[#hasfeat[fHover] + #hasfeat[fWingover] <> 0]]></exprreq>
+    <exprreq message="Fly speed 90 required."><![CDATA[hero.childfound[xFly].field[Value].value >= 90]]></exprreq>
+    </thing>
+  <thing id="xAwaSplRes" name="Awaken Spell Resistance" description="You gain spell resistance.\n\n{b}Prerequisites{/b}: Con 13, dragon type.\n\n{b}Benefit{/b}: You gain innate spell resistance equal to your racial Hit Dice.\n\n{b}Special{/b}: If your racial Hit Dice increase after you gain this feat, your spell resistance increases as well. If you have this feat and you also have (or later gain) spell resistance as a racial ability, your spell resistance is equal to your new Hit Dice total or your racial spell resistance +2, whichever is higher.\n\nYou can take this feat multiple times. Each time you take the feat, your innate spell resistance increases by 2. For example, an old silver dragon that has taken this feat twice has spell resistance 30." compset="Special" uniqueness="unique">
+    <comment>Test with racial and item SR (Done)</comment>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <eval phase="UserFinal" priority="10000"><![CDATA[
+~ Count the number of times we have taken the feat
+var SR as number
+SR = hero.tagcount[HasFeat.fAwaSplRes]
+
+~ Do we already have SR? If so, increase by 2 per time taken.
+if (hero.child[xSplRs].field[Value].value <> 0) then
+   hero.child[xSplRs].field[Value].value += (SR * 2)
+
+~ If not, give us SR = to our HD, +2 for every time after the first.
+elseif (hero.child[xSplRs].field[Value].value = 0) then
+   SR = ((SR - 1) * 2) + herofield[tHitDice].value
+   ~ Set up our spell resistance
+   #applysr[SR]
+endif]]></eval>
+    </thing>
+  <thing id="xFastHealD" name="Fast Healing" description="You heal your wounds very quickly.\n\n{b}Prerequisite{/b}: Con 25.\n\n{b}Benefit{/b}: You gain fast healing 3, or your existing fast healing improves by 3. The benefit of this feat does not stack with fast healing granted by magic items or nonpermanent magical effects.\n\n{b}Special{/b}: This feat may be taken multiple times. Its effects stack." compset="Special" uniqueness="unique">
+    <comment>Test with troll and item giving fast healing. (Done)</comment>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xFastHeal"></bootstrap>
+    <eval phase="Final" priority="9999"><![CDATA[~ Count the number of times we have taken the feat
+var FH as number
+FH = hero.tagcount[HasFeat.fFastHealD] * 3
+
+~ Do we already have Fast Healing? If so, increase by 3 per time taken.
+if (hero.child[xFastHeal].field[Value].value <> 0) then
+   FH = FH + hero.child[xFastHeal].field[Value].value
+   hero.child[xFastHeal].field[Value].value = maximum(hero.child[xFastHeal].field[Value].value, FH)
+   field[xSumm].text = "We have a number, we should be " & FH & ""
+
+~ If not, give us 3x feats taken Fast Healing.
+elseif (hero.child[xFastHeal].field[Value].value = 0) then
+   hero.child[xFastHeal].field[Value].value = maximum(hero.child[xFastHeal].field[Value].value, FH)
+   field[xSumm].text = "We have a 0"
+endif]]></eval>
+    </thing>
+  </document>

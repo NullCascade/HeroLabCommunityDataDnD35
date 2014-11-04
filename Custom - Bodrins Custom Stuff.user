@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>bodrinbarlow@gmail.com</info_author>
+    <info_history>v1.0 initial input
+
+Damage Reduction added 03/03/2012
+
+Damage Bonus added 04/05/2012
+
+Total Defense added 18/05/2012
+
+Fighting Defensively added 07/09/2012
+
+Spell : Benediction
+
+Spell : Prayer
+
+Spell : Interfaith Blessing 6 versions Complete Champion 08/03/2013
+
+Condition : Charging 08/03/2013</info_history>
+    </fileinfo>
+  <thing id="pADamRed" name="Damage Reduction" description="Add this to give Damage Reduction to your character." compset="InPlay" summary="Add this to give Damage Reduction to your character.">
+    <comment>Added by Bodrin 02/03/2012
+3rd march 2012</comment>
+    <tag group="Helper" tag="AdjInfo"/>
+    <bootstrap thing="xDamRd"></bootstrap>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+~ Add to our Damage Reduction
+ var bonus as number
+      bonus = field[pAdjust].value
+      #applydr[xDamRd, bonus]]]></eval>
+    </thing>
+  <thing id="pADamBon" name="Damage Bonus" description="Add this to give a Damage Bonus to your character." compset="InPlay" summary="Add this to give a Damage Bonus to your character.">
+    <comment>Added by Bodrin 02/03/2012
+3rd march 2012</comment>
+    <tag group="Helper" tag="AdjInfo"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+~ If we're not enabled, get out now
+doneif (field[pIsOn].value = 0)
+
+	 ~ Add to our damage bonus
+      hero.child[Damage].field[tDamBonus].value = maximum(hero.child[Damage].field[tDamBonus].value, field[pAdjust].value)]]></eval>
+    </thing>
+  <thing id="pATotDefen" name="Total Defense" description="Select this adjustment to apply the Total Defense +4 Dodge Bonus to AC. If you have 6 or more ranks in Tumble the Dodge bonus increases to +6.\n\nPHB page 142. Rules Compendium page 55" compset="InPlay" summary="Dodge bonus to AC." uniqueness="useronce">
+    <comment>Added by Bodrin 18/05/2012
+18th May 2012.</comment>
+    <fieldval field="pSource" value="PHB page 142. Rules Compendium page 55"/>
+    <tag group="Helper" tag="AdjInfo"/>
+    <tag group="Helper" tag="NoIncr"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to +6 our armor class if we have 5 or more ranks in tumble
+      if (#skillranks[kTumble] >= 5) then 
+           hero.child[ArmorClass].field[tACDodge].value += 6
+
+else 
+
+      ~ Add to +4 our armor class 
+      if (#skillranks[kTumble] <= 4) then
+           hero.child[ArmorClass].field[tACDodge].value += 4
+   endif
+    endif]]></eval>
+    </thing>
+  <thing id="pAFigDefen" name="Fighting Defensively" description="Select this adjustment to apply the Fighting Defensively -4 Attack Penalty and the +2 Dodge Bonus to AC. If you have 5 or more ranks in Tumble the Dodge bonus increases to +3.\n\nPHB page 140. Rules Compendium page 55" compset="InPlay" summary="Penalty to Attack, Dodge bonus to AC." uniqueness="useronce">
+    <comment>Added by Bodrin 07/09/2012
+
+7th of September 2012.</comment>
+    <fieldval field="pSource" value="PHB page 140. Rules Compendium page 55"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to +3 our armor class if we have 5 or more ranks in tumble
+      if (#skillranks[kTumble] >= 5) then 
+           hero.child[ArmorClass].field[tACDodge].value += 3
+
+else 
+
+      ~ Add to +2 our armor class 
+      if (#skillranks[kTumble] <= 4) then
+           hero.child[ArmorClass].field[tACDodge].value += 2
+      
+   endif
+  endif]]></eval>
+    <eval phase="PreLevel" priority="10000" index="2"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add a -4 Penalty to our attack
+      hero.child[Attack].field[Bonus].value -= 4]]></eval>
+    </thing>
+  <thing id="pSPBenedic" name="Spell : Benediction" description="With this spell, you can grant another creature a +2 luck bonus on all saving throws.\n\nIf the subject is also under another effect that grants saving throw bonuses, the effects stack.\n\nIn addition, at any point before the duration expires, the subject can choose to reroll a single attack roll, saving throw, skill check, or ability check after seeing the result of the initial roll, but before finding out whether it succeeds or fails.\n\nThe higher of the two rolls applies.\n\nOnce this option is exercised, the spell ends immediately.\n\nUnlike most touch spells, benediction cannot be used on yourself.\n\nIts effects are for the benefit of others only." compset="InPlay" summary="You grant your comrade the luck of the gods." uniqueness="useronce">
+    <comment>Added by Bodrin 12/10/2012
+12th October 2012.</comment>
+    <fieldval field="pSource" value="Spell Compendium page"/>
+    <fieldval field="pDuration" value="10 / Minutes per level"/>
+    <tag group="Helper" tag="AdjInfo"/>
+    <tag group="Helper" tag="NoIncr"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+~ Add +2 Luck bonus to all our Saving throws
+   hero.child[vRef].field[BonLuck].value = maximum(hero.child[vRef].field[BonLuck].value, 2)
+    hero.child[vWill].field[BonLuck].value = maximum(hero.child[vWill].field[BonLuck].value, 2)
+     hero.child[vFort].field[BonLuck].value = maximum(hero.child[vFort].field[BonLuck].value, 2)]]></eval>
+    </thing>
+  <thing id="pSPPrayer" name="Spell : Prayer" description="You bring special favor upon yourself and your allies while bringing disfavor to your enemies. \n\nYou and each of your allies gain a +1 luck bonus on attack rolls, weapon damage rolls, saves, and skill checks, while each of your foes takes a -1 penalty on such rolls." compset="InPlay" summary="You bring special favor upon yourself and your allies while bringing disfavor to your enemies." uniqueness="useronce">
+    <comment>Added by Bodrin 1/2/2013
+1 February 2013.</comment>
+    <fieldval field="pSource" value="Players Handbook"/>
+    <fieldval field="pDuration" value="1 Round per level"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+~ Add +1 Luck bonus to all our Saving throws
+hero.child[vRef].field[BonLuck].value = maximum(hero.child[vRef].field[BonLuck].value, 1)
+hero.child[vWill].field[BonLuck].value = maximum(hero.child[vWill].field[BonLuck].value, 1)
+hero.child[vFort].field[BonLuck].value = maximum(hero.child[vFort].field[BonLuck].value, 1)
+
+	 ~ Add to our damage bonus
+      hero.child[Damage].field[tDamBonus].value = maximum(hero.child[Damage].field[tDamBonus].value, 1)
+
+      ~ Add to our attack bonus
+      hero.child[Attack].field[Bonus].value = maximum(hero.child[Attack].field[BonLuck].value, 1)
+
+~ Apply a +1 Luck bonus to all skills
+hero.child[AllSkills].field[BonLuck].value = maximum(hero.child[AllSkills].field[BonLuck].value, 1)]]></eval>
+    </thing>
+  <thing id="pSPIntFBl1" name="Spell : Interfaith Blessing" description="Gain a +1 Sacred Bonus on attack rolls and saves if you worship Bahamut, St. Cuthbert or Yondalla" compset="InPlay" uniqueness="useronce">
+    <comment>Added by Bodrin 8/3/2013
+
+8th February 2013.</comment>
+    <fieldval field="pSource" value="Complete Champion"/>
+    <fieldval field="pDuration" value="1 Minute per level"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+~ Add +1 Luck bonus to all our Saving throws
+hero.child[vRef].field[BonSacred].value = maximum(hero.child[vRef].field[BonSacred].value, 1)
+hero.child[vWill].field[BonSacred].value = maximum(hero.child[vWill].field[BonSacred].value, 1)
+hero.child[vFort].field[BonSacred].value = maximum(hero.child[vFort].field[BonSacred].value, 1)
+
+      ~ Add to our attack bonus
+      hero.child[Attack].field[BonSacred].value = maximum(hero.child[Attack].field[BonSacred].value, 1)]]></eval>
+    </thing>
+  <thing id="pSPIntFBl2" name="Spell : Interfaith Blessing" description="Gain a +1 Sacred Bonus on attack rolls and Skills if you worship Boccob, Corellan Larethian, Vecna or Wee Jas" compset="InPlay" uniqueness="useronce">
+    <comment>Added by Bodrin 8/3/2013
+
+8th February 2013.</comment>
+    <fieldval field="pSource" value="Complete Champion"/>
+    <fieldval field="pDuration" value="1 Minute per level"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our attack bonus
+      hero.child[Attack].field[BonSacred].value = maximum(hero.child[Attack].field[BonSacred].value, 1)
+
+      ~ Add to all our skills
+      hero.child[AllSkills].field[BonSacred].value = maximum(hero.child[AllSkills].field[BonSacred].value, 1)]]></eval>
+    </thing>
+  <thing id="pSPIntFBl3" name="Spell : Interfaith Blessing" description="Gain a +1 Sacred Bonus on attack rolls and armor class if you worship Ehlonna or Obad-Hai" compset="InPlay" uniqueness="useronce">
+    <comment>Added by Bodrin 8/3/2013
+
+8th February 2013.</comment>
+    <fieldval field="pSource" value="Complete Champion"/>
+    <fieldval field="pDuration" value="1 Minute per level"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our attack bonus
+      hero.child[Attack].field[BonSacred].value = maximum(hero.child[Attack].field[BonSacred].value, 1)
+
+      ~ Add to our Armor Class
+      hero.child[ArmorClass].field[BonSacred].value = maximum(hero.child[ArmorClass].field[BonSacred].value, 1)]]></eval>
+    </thing>
+  <thing id="pSPIntFBl4" name="Spell : Interfaith Blessing" description="Gain a +2 Profane Bonus on Damage rolls and armor class if you worship Erythnul, Gruumsh or Lolth" compset="InPlay" uniqueness="useronce">
+    <comment>Added by Bodrin 8/3/2013
+
+8th February 2013.</comment>
+    <fieldval field="pSource" value="Complete Champion"/>
+    <fieldval field="pDuration" value="1 Minute per level"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add 2 to our Damage bonus
+      hero.child[Damage].field[tDamBonus].value = hero.child[Damage].field[tDamBonus].value + 2
+
+      ~ Add to our Armor Class
+      hero.child[ArmorClass].field[BonProfane].value = maximum(hero.child[ArmorClass].field[BonProfane].value, 2)]]></eval>
+    </thing>
+  <thing id="pSPIntFBl5" name="Spell : Interfaith Blessing" description="Gain a +2 Sacred Bonus on armor class if you worship Farlaghn, Moradin or Pelor" compset="InPlay" uniqueness="useronce">
+    <comment>Added by Bodrin 8/3/2013
+
+8th February 2013.</comment>
+    <fieldval field="pSource" value="Complete Champion"/>
+    <fieldval field="pDuration" value="1 Minute per level"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our Armor Class
+      hero.child[ArmorClass].field[BonSacred].value = maximum(hero.child[ArmorClass].field[BonSacred].value, 2)]]></eval>
+    </thing>
+  <thing id="pSPIntFBl6" name="Spell : Interfaith Blessing" description="Gain a +2 Bonus on attack rolls if you worship Heironeous, Hextor or Nerull" compset="InPlay" uniqueness="useronce">
+    <comment>Added by Bodrin 8/3/2013
+
+8th February 2013.</comment>
+    <fieldval field="pSource" value="Complete Champion"/>
+    <fieldval field="pDuration" value="1 Minute per level"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our attack bonus
+      hero.child[Attack].field[BonSacred].value = maximum(hero.child[Attack].field[BonSacred].value, 2)]]></eval>
+    </thing>
+  <thing id="pSPIntFBl7" name="Spell : Interfaith Blessing" description="Gain a +1 Sacred Bonus on attack rolls and Damage if you worship Kord, Kurtulmak or Tiamat" compset="InPlay" uniqueness="useronce">
+    <comment>Added by Bodrin 8/3/2013
+
+8th February 2013.</comment>
+    <fieldval field="pSource" value="Complete Champion"/>
+    <fieldval field="pDuration" value="1 Minute per level"/>
+    <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
+    <tag group="Helper" tag="AdjInfo" name="AdjInfo" abbrev="AdjInfo"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our attack bonus
+      hero.child[Attack].field[BonSacred].value = maximum(hero.child[Attack].field[BonSacred].value, 1)
+
+      ~ Add to our Damage bonus
+      hero.child[Damage].field[tDamBonus].value = hero.child[Damage].field[tDamBonus].value + 1]]></eval>
+    </thing>
+  <thing id="pACharging" name="Charging" description="Add this Adjustment to apply the effects of charging in combat." compset="InPlay">
+    <comment>Added by Bodrin 8/3/2013
+
+8th February 2013.</comment>
+    <tag group="Helper" tag="NoIncr"/>
+    <tag group="Helper" tag="AdjInfo"/>
+    <tag group="Helper" tag="AdjCond"/>
+    <eval phase="First"><![CDATA[~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our attack bonus
+      hero.child[Attack].field[Bonus].value = maximum(hero.child[Attack].field[Bonus].value, 2)
+
+      ~ Reduce our Armor Class
+      hero.child[ArmorClass].field[Penalty].value -=2]]></eval>
+    </thing>
+  <thing id="ioBGaOgPo6" name="Gauntlets of Ogre Power +6" description="These gauntlets are made of tough leather with iron studs running across the back of the hands and fingers. They grant the wearer great strength, adding a +6 enhancement bonus to his Strength score. Both gauntlets must be worn for the magic to be effective.\n\nFaint transmutation; CL 6th; Craft Wondrous Item, bull&apos;s strength; Price 36,000 gp; Weight 4 lb." compset="Wondrous">
+    <comment>Added by Bodrin
+
+bodrinbarlow@gmail.com
+
+09/11/2012
+November 9th 2012</comment>
+    <fieldval field="gWeight" value="4"/>
+    <fieldval field="gCost" value="32000"/>
+    <usesource source="BodCusStuf"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpHand" name="Hand" abbrev="Hand"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aSTR], 6]
+        endif]]></eval>
+    </thing>
+  <thing id="ioBGaOgPo4" name="Gauntlets of Ogre Power +4" description="These gauntlets are made of tough leather with iron studs running across the back of the hands and fingers. They grant the wearer great strength, adding a +4 enhancement bonus to his Strength score. Both gauntlets must be worn for the magic to be effective.\n\nFaint transmutation; CL 6th; Craft Wondrous Item, bull&apos;s strength; Price 36,000 gp; Weight 4 lb." compset="Wondrous">
+    <comment>Added by Bodrin
+
+bodrinbarlow@gmail.com
+
+09/11/2012
+November 9th 2012</comment>
+    <fieldval field="gWeight" value="4"/>
+    <fieldval field="gCost" value="16000"/>
+    <usesource source="BodCusStuf"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpHand" name="Hand" abbrev="Hand"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aSTR], 4]
+        endif]]></eval>
+    </thing>
+  <thing id="ioBGaOgPo8" name="Gauntlets of Ogre Power +8" description="These gauntlets are made of tough leather with iron studs running across the back of the hands and fingers. They grant the wearer great strength, adding a +6 enhancement bonus to his Strength score. Both gauntlets must be worn for the magic to be effective.\n\nFaint transmutation; CL 6th; Craft Wondrous Item, bull&apos;s strength; Price 36,000 gp; Weight 4 lb." compset="Wondrous">
+    <comment>Added by Bodrin
+
+bodrinbarlow@gmail.com
+
+09/11/2012
+November 9th 2012</comment>
+    <fieldval field="gWeight" value="4"/>
+    <fieldval field="gCost" value="64000"/>
+    <usesource source="BodCusStuf"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpHand" name="Hand" abbrev="Hand"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aSTR], 8]
+        endif]]></eval>
+    </thing>
+  <thing id="irRingCha4" name="Ring of Charisma +4" description="This Ring functions as a cloak of Charisma\n\n{i}This lightweight and fashionable cloak has a highly decorative silver trim. When in a character&apos;s possession, it adds a +2, +4, or +6 enhancement bonus to her Charisma score.{/i}\n\nModerate transmutation; CL 8th; Craft Wondrous Item, eagle&apos;s splendor; Price 36,000 gp; Weight 2 lb." compset="Ring">
+    <comment>Added by Bodrin 17/09/2011</comment>
+    <fieldval field="gCost" value="16000"/>
+    <usesource source="BodCusStuf"/>
+    <tag group="gType" tag="Ring" name="Ring" abbrev="Ring"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aCHA], 4]
+        var result as number
+        result = assign[Helper.ShowSpec]
+        endif]]></eval>
+    </thing>
+  <thing id="irRingCha2" name="Ring of Charisma +2" description="This Ring functions as a cloak of Charisma\n\n{i}This lightweight and fashionable cloak has a highly decorative silver trim. When in a character&apos;s possession, it adds a +2, +4, or +6 enhancement bonus to her Charisma score.{/i}\n\nModerate transmutation; CL 8th; Craft Wondrous Item, eagle&apos;s splendor; Price 36,000 gp; Weight 2 lb." compset="Ring">
+    <comment>Added by Bodrin 17/09/2011</comment>
+    <fieldval field="gCost" value="4000"/>
+    <usesource source="BodCusStuf"/>
+    <tag group="gType" tag="Ring" name="Ring" abbrev="Ring"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aCHA], 2]
+        var result as number
+        result = assign[Helper.ShowSpec]
+        endif]]></eval>
+    </thing>
+  <thing id="irRingCha6" name="Ring of Charisma +6" description="This Ring functions as a cloak of Charisma\n\n{i}This lightweight and fashionable cloak has a highly decorative silver trim. When in a character&apos;s possession, it adds a +2, +4, or +6 enhancement bonus to her Charisma score.{/i}\n\nModerate transmutation; CL 8th; Craft Wondrous Item, eagle&apos;s splendor; Price 36,000 gp; Weight 2 lb." compset="Ring">
+    <comment>Added by Bodrin 17/09/2011</comment>
+    <fieldval field="gCost" value="36000"/>
+    <usesource source="BodCusStuf"/>
+    <tag group="gType" tag="Ring"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aCHA], 6]
+        var result as number
+        result = assign[Helper.ShowSpec]
+        endif]]></eval>
+    </thing>
+  <thing id="rmDisHand" name="Disembodied Hand" compset="Race">
+    <comment><![CDATA[Primarly based on weasel stats and the familiar rules
+
+HD: (equal to master as per familiar rules)
+
+HP:  (50% of master as per familiar rules
+
+Initiative +2
+
+Speed: 20ft;
+
+Climb: 20ft
+
+
+AC 15 (+2 size, +2 Dex, +1 Nat Armor)
+
+BAB: (equal to master + Dex, as per PHB)
+
+Attack: Slam 1d3 nonlethal
+
+Saves: Fort 5, Ref 4, Will 8 (as per master + ability mod)
+
+Ability Scores (used weasel stats)
+
+Str 3
+
+Dex 15
+
+Con 10
+
+Int 6 (as per PHB under familiar rules)
+
+Bug in Hero Lab program doesn't set INT correclty
+
+Wis 12
+
+Cha 5
+
+Weasel Skills (MM1)
+
+Balance +10
+
+Climb +10
+
+Spot +3
+
+Hide +11
+
+Move Silently +8
+
+Disembodied Hand Skills (DnD Wiki)
+
+Open Lock +2
+
+Sleight of hand +2
+
+Disable Device +2
+
+Jump +2
+
+Tumble +2
+
+Constant Benefits: 
+A Mage can retrieve or stow an item as a free action instead of a minor action using (Ex)
+
+Active Benefits: 
+Agile Digits: A Disembodied Hand can open latches & turn knobs that require only one hand to operate.  It can also manipulate objects to make Sleight of Hand checks. (Ex)
+It gains a +2 bonus to such checks (as above)]]></comment>
+    <fieldval field="rDEX" value="5"/>
+    <fieldval field="rCHA" value="-5"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rFeat" value="1"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rHPStart" value="2"/>
+    <fieldval field="rInfHit" value="1d8"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rCR" value=".25"/>
+    <fieldval field="rSpace" value="1"/>
+    <fieldval field="rReach" value="0"/>
+    <fieldval field="rNumHands" value="1"/>
+    <fieldval field="rInfFamBon" value="+2 to Reflex saves"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rSTR" value="-7"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rINT" value="-8"/>
+    <usesource source="BodCusStuf" parent="UserParent" name="Bodrins Custom Stuff"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="ClassSkill" tag="kTumble" name="Tumble" abbrev="Tumble"/>
+    <tag group="CompIs" tag="cArcFamil" name="Arcane Familiar" abbrev="Arcane Familiar"/>
+    <tag group="Alignment" tag="NeutralGE" name="Neutral" abbrev="N"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="RaceSize" tag="Tiny12" name="Tiny" abbrev="Tiny"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="ClassSkill" tag="kDisable"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kOpenLock"/>
+    <tag group="ClassSkill" tag="kSleight" name="Sleight of Hand" abbrev="Sleight of Hand"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Alignment" tag="NeutralLC" name="Neutral" abbrev="N"/>
+    <tag group="ClassSkill" tag="kBalance" name="Balance" abbrev="Balance"/>
+    <tag group="SpecSource" tag="ArcFamil"/>
+    <tag group="ClassSkill" tag="kClimb" name="Climb" abbrev="Climb"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <bootstrap thing="xImmGaze"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Move Silently, +8 to Balance"/>
+      </bootstrap>
+    <bootstrap thing="fAgile"></bootstrap>
+    <bootstrap thing="xAgiDigits"></bootstrap>
+    <bootstrap thing="xFreeRetri"></bootstrap>
+    <bootstrap thing="fWepFin">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xTremorsen"></bootstrap>
+    <bootstrap thing="xClimb"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="wMain" tag="1d3_3"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="1"/>
+      </bootstrap>
+    <eval phase="PreLevel" priority="10000" index="2"><![CDATA[
+      ~ If we're a familiar, and we're close, give our master a save bonus
+      if (#isfamiliarwithin1mile[]) then
+        master.child[vRef].field[Bonus].value += 2
+        endif]]></eval>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      #skillbonus[kBalance] += 10
+      #skillbonus[kClimb] += 10
+      #skillbonus[kDisable] += 2
+      #skillbonus[kHide] += 11
+      #skillbonus[kJump] += 2
+      #skillbonus[kMoveSil] += 8
+      #skillbonus[kOpenLock] += 2
+      #skillbonus[kSleight] += 2
+      #skillbonus[kSpot] += 3
+      #skillbonus[kTumble] += 2
+
+      ~ Change the attributes on Climb
+      perform hero.child[kClimb].assign[SkillOver.aDEX]</eval>
+    </thing>
+  <thing id="xFreeRetri" name="Free Retrieve" description="You can retrieve or stow an item as a free action instead of as a minor action." compset="Special" summary="You can retrieve or stow an item as a free action instead of as a minor action.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="SpecSource" tag="rmDisHand"/>
+    </thing>
+  <thing id="xAgiDigits" name="Agile Digits" description="A Disembodied Hand can open latches &amp; turn knobs that require only one hand to operate.\nIt can also manipulate objects to make Sleight of Hand  checks.  It gains a +2 bonus to such checks" compset="Special">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rmDisHand"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="tmFRDarCre" name="Dark Creature" description="{i}Dark creatures dwell on the Plane of Shadow sometimes crossing into other planes where the barriers between dimensions are weak. \nJust as parts of the Plane of Shadow resemble a strange, distorterd version of the Material Plane, &quot;dark creatures superficially resemble creatures from the Material Plane.{/i}\n\n&quot;Dark&quot; is an acquired or inherited template that can be added to any creature (refered to hereafter as the base creature). Dark creatures tend to be much duller in color, with more gray and black skin tones and hair highlights, than their Material Plane versions. In general, they also weigh less, as if part of their substance was mere sbadowstuff. A dark creature has all the base creature&apos;s statistics and special abilitlies, except as noted here.\n\nChallenge Rating: Same as the base creature or same as the base creature +1; see sidebar.\n\nSize and Type: Type and size are unchanged. Dark creatures encountered away from the Plane of Shadow have the extraplanar subtype. \n\nAlignment: Usually one step different from the base creature; rarely good.\n\nSenses: The base creature gains darkvision out to {i}60{/i} feet and superior low-light vision (four times as Strong as a human&apos;s).\n\nResist: &#183;The base creature gains resistance to cold 10.\n\nSpeed: All the base creature&apos;s speeds increase by 10 feet.\n\nSpecial abilities: The base creature gains the following special quality.\n\n{i}Hide in &apos;Plain Sight (Su):{/i} Can use the Hide skill while being observed and while lacking cover {i}or{/i} concealment, except in natural daylight, the area of a {i}daylight{/i} spell, or similar magical light.\n\nSkills: A dark creature has a +8 racial bonus on Hide checks and a {i}+6{/i} racial bonus on Move Silently checks. Otherwise same as the base creature.\n\nLevel Adjustment: +1." compset="Template" uniqueness="unique">
+    <comment>Data Input by Bodrin
+bodrinbarlow@gmail.com
+
+23/03/2014
+
+23rd of March 2014</comment>
+    <fieldval field="cLevelAdj" value="1"/>
+    <usesource source="BodCusStuf"/>
+    <tag group="TemplHelp" tag="Inherited"/>
+    <bootstrap thing="xFRDaHiPlS"></bootstrap>
+    <bootstrap thing="rDarkVis">
+      <autotag group="Value" tag="60"/>
+      </bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="rLowLight2">
+      <assignval field="Value" value="2"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsCold"></bootstrap>
+    <eval phase="PostLevel" priority="10000">hero.child[Speed].field[tSpeed].value +=10</eval>
+    <eval phase="First" index="2">~ We have bonuses to Hide and Move Silently
+      #skillbonus[kHide] += 8
+      #skillbonus[kMoveSil] += 8</eval>
+    <eval phase="First" priority="5000" index="3">~ Set up our damage reduction
+      #applydr[xDamRsCold, 10]</eval>
+    </thing>
+  <thing id="xFRDaHiPlS" name="Hide in Plain Sight" description="You can use the Hide skill even while being observed, as long as you are in a sunlit location. See the ranger class feature (PH 48)." compset="Special">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  </document>

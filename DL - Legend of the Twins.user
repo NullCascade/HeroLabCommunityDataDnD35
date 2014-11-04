@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>c9-09-10</info_history>
+    </fileinfo>
+  <thing id="cvDrdAcPri" name="(Ac. Priest)" description="Bonus Spells and Max spell level based on Intelligence. DCs still calculated based on Wisdom." compset="ClassVary" uniqueness="unique">
+    <usesource source="srcLotT" parent="pDL" name="Legends of the Twins"/>
+    <tag group="SplAttr" tag="aINT"/>
+    <tag group="ClVaryName" tag="Append"/>
+    <link linkage="varies" thing="cHelpDrd"/>
+    <eval phase="UserPostAt" priority="11000">var bonus as number
+   bonus = hero.child[aWIS].field[aModBonus].value + 10
+
+   var minus as number
+   minus = hero.child[aINT].field[aModBonus].value + 10
+   hero.child[cHelpDrd].field[cSplSaveDC].value = bonus - minus</eval>
+    <exprreq message="Academic Priest required."><![CDATA[#hasfeat[fAcaPrieLT] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvClrAcPri" name="(Ac. Priest)" description="Bonus Spells and Max spell level based on Intelligence. DCs still calculated based on Wisdom." compset="ClassVary" uniqueness="unique">
+    <usesource source="srcLotT"/>
+    <tag group="SplAttr" tag="aINT"/>
+    <tag group="ClVaryName" tag="Append"/>
+    <link linkage="varies" thing="cHelpClr"/>
+    <eval phase="UserPostAt" priority="11000">var bonus as number
+   bonus = hero.child[aWIS].field[aModBonus].value + 10
+
+   var minus as number
+   minus = hero.child[aINT].field[aModBonus].value + 10
+   hero.child[cHelpClr].field[cSplSaveDC].value = bonus - minus</eval>
+    <exprreq message="Academic Priest required."><![CDATA[#hasfeat[fAcaPrieLT] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvPalAcPri" name="(Ac. Priest)" description="Bonus Spells and Max spell level based on Intelligence. DCs still calculated based on Wisdom." compset="ClassVary" uniqueness="unique">
+    <usesource source="srcLotT"/>
+    <tag group="SplAttr" tag="aINT"/>
+    <tag group="ClVaryName" tag="Append"/>
+    <link linkage="varies" thing="cHelpPal"/>
+    <eval phase="UserPostAt" priority="11000">var bonus as number
+   bonus = hero.child[aWIS].field[aModBonus].value + 10
+
+   var minus as number
+   minus = hero.child[aINT].field[aModBonus].value + 10
+   hero.child[cHelpPal].field[cSplSaveDC].value = bonus - minus</eval>
+    <exprreq message="Academic Priest required."><![CDATA[#hasfeat[fAcaPrieLT] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvRgrAcPri" name="(Ac. Priest)" description="Bonus Spells and Max spell level based on Intelligence. DCs still calculated based on Wisdom." compset="ClassVary" uniqueness="unique">
+    <usesource source="srcLotT"/>
+    <tag group="SplAttr" tag="aINT"/>
+    <tag group="ClVaryName" tag="Append"/>
+    <link linkage="varies" thing="cHelpRgr"/>
+    <eval phase="UserPostAt" priority="11000">var bonus as number
+   bonus = hero.child[aWIS].field[aModBonus].value + 10
+
+   var minus as number
+   minus = hero.child[aINT].field[aModBonus].value + 10
+   hero.child[cHelpRgr].field[cSplSaveDC].value = bonus - minus</eval>
+    <exprreq message="Academic Priest required."><![CDATA[#hasfeat[fAcaPrieLT] <> 0]]></exprreq>
+    </thing>
+  <thing id="fLuckyLT" name="Lucky" description="You manage to survive situations through sheer good fortune.\n\n{b}Benefit{/b}: You gain a +1 luck bonus to all saving throws." compset="Feat" uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="FeatUnique"/>
+    <eval phase="First">#applybonus[BonLuck, hero.child[vFort], 1]
+        #applybonus[BonLuck, hero.child[vRef], 1]
+        #applybonus[BonLuck, hero.child[vWill], 1]</eval>
+    </thing>
+  <thing id="fQuickThLT" name="Quick Thinking" description="You react quickly to danger.\n\n{b}Benefit{/b}: You gain a +2 bonus to Initiative rolls and a +2 bonus to all Spot skill checks." compset="Feat" uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="FeatUnique"/>
+    <eval phase="UserPreLv" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      #skillbonus[kSpot] += 2
+      hero.child[Initiative].field[Bonus].value = hero.child[Initiative].field[Bonus].value + 2]]></eval>
+    </thing>
+  <thing id="fTrustwoLT" name="Trustworthy" description="You project a friendly demeanor.\n\n{b}Benefit{/b}: You get a +2 bonus on all Diplomacy checks and Gather Information checks." compset="Feat" summary="You get a +2 bonus on all Diplomacy checks and Gather Information checks." uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="PreLevel" priority="5000">hero.childfound[kDiplomacy].field[Bonus].value += 2
+      hero.childfound[kGatherInf].field[Bonus].value += 2</eval>
+    </thing>
+  <thing id="fAcaPrieLT" name="Academic Priest" description="Your path to faith is more scholarly than those of other clerics.\n\n{b}Prerequisites{/b}: Intelligence 13+\n\n{b}Benefit{/b}: For the purpose of determining bonus divine spells per day and maximum divine spell level, your primary spellcasting ability is Intelligence. If you have more than one divine spellcasting class, the bonus applies to only one of those classes. Your spell save DCs are not affected by this change.\n\n{b}Special{/b}: You may only take this feat as a 1st-level character. If you take this feat more than once it applies to a different divine spellcasting class each time. You may take this feat even if you have no divine spellcasting classes yet." compset="Feat">
+    <comment>Is there a custom expression for Classes that cast divine spells? (Done)
+
+Test? (Done)</comment>
+    <fieldval field="ftCandExpr" value="component.BaseClHelp &amp; CasterSrc.Divine"/>
+    <usesource source="srcLotT"/>
+    <tag group="Helper" tag="FeatUnique" name="FeatUnique" abbrev="FeatUnique"/>
+    <tag group="fCategory" tag="Upbringing" name="Upbringing" abbrev="Upbringing"/>
+    <exprreq message="Intelligence 13 required."><![CDATA[child[aINT].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fAltFormLT" name="Alternate Form" description="You have learned how to assume the form of an animal or humanoid, much as a silver, gold or bronze dragon can.\n\n{b}Prerequisites{/b}: Dragon, Adult age or older, Caster Level 5th.\n\n{b}Benefit{/b}: You are able to assume a single specific alternate humanoid or animal form of Medium size or smaller once per day. You can remain in your alternate form until you choose to return to your natural form.\n\n{b}Special{/b}: This feat may be taken more than once, each time adding to the number of times you may change form each day. Silver, gold and bronze dragons that take this feat may change form an additional time each day." compset="Feat">
+    <comment>Make special to count number taken and gen charges. or add to existing charges. (Done)</comment>
+    <usesource source="srcLotT"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="fShowWhat" tag="Freeform" name="Freeform edit control" abbrev="Freeform edit control"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <bootstrap thing="xAlterForm"></bootstrap>
+    <bootstrap thing="xfAltForm"></bootstrap>
+    <exprreq message="Caster level 5th required."><![CDATA[herofield[tMaxCaster].value >= 5]]></exprreq>
+    <exprreq message="Dragon type required."><![CDATA[hero.tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Adult age category or older required."><![CDATA[hero.childfound[xAgeCat].field[Value].value >= 6]]></exprreq>
+    </thing>
+  <thing id="fAstrForLT" name="Astrological Forecasting" description="You are able to use the heavens as a tool to provide an insight to your fate.\n\n{b}Prerequisite{/b}: Knowledge (arcana) 4 ranks.\n\n{b}Benefit{/b}: Once a week you may prepare an astrological reading. This requires an hour&#146;s time with a view of the night sky and a Knowledge (arcana) check. Compare the result of the check to the following:\n\n{b}DC &#150;&#150;&#150; Benefit{/b}\n20 &#150;&#150;&#150; Partial reading, +1 bonus\n25 &#150;&#150;&#150; Complete reading, +2 bonus\n30 &#150;&#150;&#150; Superlative reading, +3 bonus\n\nThe bonus applies as an insight bonus to any single ability check, skill check, attack roll, saving throw or initiative roll in the next seven days.\n\nA reading may also be prepared for another character that the character with this feat knows. In this case, the character who prepares the reading decides which type of check the bonus will apply to, but the character the reading was prepared for decides when to use it.\n\n{b}Special{/b}: The type of check affected must be chosen at the time the reading is prepared, but the bonus may be used at any time before the week is up. If it is not used, no reading may be prepared in the following week. Ignoring the signs of the heavens has its own consequences." compset="Feat" summary="1/week, read stars to provide an insight bonus on one roll during that time." uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <exprreq message="Knowledge (arcana) 4 ranks required."><![CDATA[#skillranks[kKnowArcan] >= 4]]></exprreq>
+    </thing>
+  <thing id="fCharmLT" name="Charming" description="Others find your company appealing.\n\n{b}Benefit{/b}: You get a +2 bonus on all Diplomacy checks and Bluff checks." compset="Feat" summary="You get a +2 bonus on all Diplomacy checks and Bluff checks." uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="PreLevel" priority="5000">hero.childfound[kDiplomacy].field[Bonus].value = hero.childfound[kDiplomacy].field[Bonus].value + 2
+      hero.childfound[kBluff].field[Bonus].value = hero.childfound[kBluff].field[Bonus].value + 2</eval>
+    </thing>
+  <thing id="fDiscipLT" name="Disciplined" description="You maintain composure even in life threatening situations.\n\n{b}Benefit{/b}: You get a +1 bonus on Will saves and a +2 bonus on Concentration checks." compset="Feat" summary="You get a +2 bonus on Concetration checks and +1 to WIll saves." uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="PreLevel" priority="5000">hero.childfound[kConcent].field[Bonus].value = hero.childfound[kConcent].field[Bonus].value + 2
+      container.child[vWill].field[Bonus].value = container.child[vWill].field[Bonus].value + 1</eval>
+    </thing>
+  <thing id="fDynaPriLT" name="Dynamic Priest" description="Your self-confidence and force of personality are the foundations of your faith.\n\n{b}Benefit{/b}: For the purpose of determining bonus divine spells per day and maximum divine spell level, your primary spellcasting ability is Charisma. If you have more than one divine spellcasting class, the bonus applies to only one of those classes. Your spell save DCs are not affected by this change.\n\n{b}Special{/b}: You may only take this feat as a 1st-level character. If you take this feat more than once it applies to a different divine spellcasting class each time. You may take this feat even if you have no divine spellcasting classes yet." compset="Feat">
+    <comment>Need to make Variant classes for this. (Done)</comment>
+    <fieldval field="ftCandExpr" value="component.BaseClHelp &amp; CasterSrc.Divine"/>
+    <usesource source="srcLotT"/>
+    <tag group="Helper" tag="FeatUnique" name="FeatUnique" abbrev="FeatUnique"/>
+    <tag group="fCategory" tag="Upbringing" name="Upbringing" abbrev="Upbringing"/>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fEducaLT" name="Education" description="You have received several years of formal schooling in which you were an excellent student.\n\n{b}Prerequisites{/b}: Civilized human, half-elf, Silvanesti elf or Qualinesti elf.\n\n{b}Benefit{/b}: All Knowledge skills are class skills for you, regardless of your character class. You gain a +2 bonus on two Knowledge skills of your choosing.\n\n{b}Special{/b}: You may only take this feat as a 1st-level character." compset="Feat" summary="All knowledge skills are class skills, +2 to two selected skills." uniqueness="useronce">
+    <fieldval field="ftCandExpr" value="component.BaseSkill &amp; Helper.SkCatKnow"/>
+    <usesource source="srcLotT"/>
+    <tag group="fSelFrom" tag="Hero" name="Picks on Hero" abbrev="Picks on Hero"/>
+    <tag group="fCategory" tag="Upbringing" name="Upbringing" abbrev="Upbringing"/>
+    <bootstrap thing="fEduHelpLT"></bootstrap>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      ~ Add 2 to our chosen skill
+      focus.field[Bonus].value += 2
+
+      ~ Set our 'short name'
+      field[fShortName].text = "Education: " & focus.field[name].text]]></eval>
+    <eval phase="UserFirst" priority="10000" index="2">var result as number
+    result = hero.assign[ClassSkill.Knowledge]</eval>
+    </thing>
+  <thing id="fEduHelpLT" name="Education Helper" description="Choose a second knowledge skill to gain a +2 bonus." compset="Feat" uniqueness="useronce">
+    <fieldval field="ftCandExpr" value="component.BaseSkill &amp; Helper.SkCatKnow"/>
+    <usesource source="srcLotT"/>
+    <tag group="fSelFrom" tag="Hero" name="Picks on Hero" abbrev="Picks on Hero"/>
+    <tag group="fCategory" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      ~ Add 2 to our chosen skill
+      focus.field[Bonus].value += 2
+
+      ~ Set our 'short name'
+      field[fShortName].text = "Education: " & focus.field[name].text]]></eval>
+    <exprreq message="Education required."><![CDATA[pickexists[fEducation] <> 0]]></exprreq>
+    </thing>
+  <thing id="fImpTaunLT" name="Improved Taunt" description="You are especially skilled in the art of enraging individuals through insults and jeering.\n\n{b}Prerequisites{/b}: Charisma 13+, Taunt exceptional ability.\n\n{b}Benefit{/b}: On a successful Bluff check versus an target&#146;s Sense Motive check, you cause the target to suffer a -2 penalty on attack rolls and AC. The taunt shifts the attitude of the target two steps towards Hostile (See the Dungeon Master&#146;s Guide, Chapter 4, NPC Attitudes).\n\nThe duration of the taunt is a number of rounds equal to the character&#146;s Charisma bonus, twice that if the Bluff check exceeds the target&#146;s Sense Motive check by 10 or more. This ability is only effective once per encounter.\n\nWith this ability you may choose to target a crowd in place of an individual target, If you make a successful Bluff check with a DC of 10 + 1 for every 2 targets in the crowd, their attitude shifts one degree towards Hostile, but they do not suffer any penalties to attack rolls and AC.\n\n{b}Special{/b}: Close friends and long time acquaintances of the individual doing the taunting are entitled to a +4 morale bonus to resist the effects of the taunt if they are targeted." compset="Feat" summary="Use bluff to anger foe and impose -2 penalty to hit and AC for X rds or longer." uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="UserPostAt"><![CDATA[var bonus as number
+ bonus = hero.child[aCHA].field[aModBonus].value
+field[xSumm].text = "Use bluff to anger foe and impose -2 penalty to hit and AC for " & bonus & " rds or longer."]]></eval>
+    <exprreq message="Taunt exceptional ability required."><![CDATA[pickexists[rKenTaunt] + pickexists[rHKenTaunt] <> 0]]></exprreq>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fHeroSurLT" name="Heroic Surge" description="You may draw on inner reserves of energy to perform additional actions in a round.\n\n{b}Benefit{/b}: You may take an additional move or attack action, either before or after your regular actions. You may never use Heroic Surge more than once per round, and only 1/day from 1st-4th level, 2/day 5th-8th, 3/day 9th-12th, 4/day 13th-16th, 5/day 17th-20th" compset="Feat" summary="Extra attack or move action once per round, few times a day." uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      var bonus as number
+      bonus = herofield[tHitDice].value/4
+      bonus = round(bonus, 0, 1)
+
+field[hTotal].value += bonus
+
+field[xSumm].text = "" & field[hTotal].value & "/day, extra att/move action before or after normal actions, once per rd."]]></eval>
+    </thing>
+  <thing id="fHaggleLT" name="Haggler" description="You are skilled at brokering deals in business matters.\n\n{b}Benefit{/b}: You gain a +2 bonus on all Appraise and Bluff skill checks." compset="Feat" uniqueness="unique">
+    <usesource source="srcLotT"/>
+    <tag group="HasFeat" tag="fCharming" name="Charming (KOoA)" abbrev="Charming (KOoA)"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="UserFirst">#skillbonus[kBluff] += 2
+#skillbonus[kAppraise] += 2</eval>
+    </thing>
+  <thing id="fMimicLT" name="Mimic" description="You possess a natural talent for impersonation.\n\n{b}Benefit{/b}: You gain a +2 bonus on Disguise and Perform skill checks." compset="Feat" uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="UserFirst">#skillbonus[kDisguise] += 2
+ ~ Apply it as a competence bonus on the appropriate Skill
+  #applybonus[Bonus, hero.child[AllPerform], 2]</eval>
+    </thing>
+  <thing id="fSharEyeLT" name="Sharp-Eyed" description="You have an eye for small details.\n\n{b}Benefit{/b}: You gain a +2 bonus on Search and Sense Motive skill checks." compset="Feat" uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="UserFirst">#skillbonus[kSearch] += 2
+#skillbonus[kSenseMot] += 2</eval>
+    </thing>
+  <thing id="fStreSmaLT" name="Street Smart" description="You have learned how to remain informed and keep an ear to the ground without raising suspicion.\n\n{b}Benefit{/b}: You gain a +2 bonus on all Bluff and Gather Information skill checks." compset="Feat" uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="UserFirst">#skillbonus[kBluff] += 2
+#skillbonus[kGatherInf] += 2</eval>
+    </thing>
+  <thing id="fStubborLT" name="Stubborn" description="You are exceptionally headstrong and bull-headed. It is difficult to sway you from your intended course of action.\n\n{b}Benefit{/b}: You gain a +1 bonus on Will saves and a +2 bonus to Intimidate skill checks." compset="Feat" summary="You get a +2 bonus on Intimidate checks and +1 to WIll saves." uniqueness="useronce">
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="PreLevel" priority="5000">#skillbonus[kIntim] += 2
+      container.child[vWill].field[Bonus].value += 1</eval>
+    </thing>
+  <thing id="fSpProdILT" name="Spellcasting Prodigy - Intelligence" description="You have an exceptional gift for magic. \n\n{b}Benefit{/b}: For the purpose of determining bonus spells per day, you treat your primary spellcasting ability score as being 2 points higher than its actual value. If you have more than one spellcasting class, the bonus applies to only one of those classes.\n\n{b}Special{/b}: You may only take this feat as a 1st-level character. If you take this feat more than once (for example, if you are a human character) it applies to a different spellcasting class each time. You may take this feat even if you have no spellcasting classes yet." compset="Feat">
+    <fieldval field="ftCandExpr" value="component.BaseClHelp &amp; CasterSrc.Divine|CasterSrc.Arcane"/>
+    <usesource source="srcLotT"/>
+    <tag group="fSelFrom" tag="Hero" name="Picks on Hero" abbrev="Picks on Hero"/>
+    <tag group="fCategory" tag="Upbringing" name="Upbringing" abbrev="Upbringing"/>
+    <eval phase="Final" priority="10000" name="Thing Spellcasting Prodigy - Charisma (WotL): Eval Script #1"><![CDATA[~ Get our Cha bonus
+      var bonus as number
+      bonus = hero.child[aINT].field[aModBonus].value
+
+      ~ Add one because we are treated as 2 higher for this class.
+      var spellevel as number
+      var spellevel2 as number
+      var spellevel3 as number
+
+    ~ If our bonus is 0, we treat our bonus as 1, giving us a first level bonus spell.
+      if (bonus = 0) then
+        spellevel = 1
+    ~ If our bonus is 1, we treat our bonus as 2, giving us a second level bonus spell.
+      elseif (bonus = 1) then
+        spellevel = 2
+    ~ If our bonus is 2, we treat our bonus as 3, giving us a third level bonus spell.
+      elseif (bonus = 2) then
+        spellevel = 3
+      elseif (bonus = 3) then
+        spellevel = 4
+    ~ If our bonus is 4, we treat our bonus as 5, giving us a 1st and 5th level bonus spell.
+      elseif (bonus = 4) then
+        spellevel = 5
+        spellevel2 = 1
+      elseif (bonus = 5) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 6) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 7) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 8) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 9) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 10) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 11) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 12) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 13) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 14) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 15) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 16) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 17) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 18) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 19) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 20) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 21) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 22) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 23) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 24) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 25) then
+        spellevel = 6
+        spellevel2 = 2
+      endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel] <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel] += 1
+ endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level, unless our value for that level is 0.
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel2] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel2] <> 0) then
+  if (spellevel2 <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel2] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel2] += 1
+  endif
+ endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level, unless our value for that level is 0.
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel3] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel3] <> 0) then
+  if (spellevel3 <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel3] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel3] += 1
+  endif
+ endif]]></eval>
+    </thing>
+  <thing id="fSpProdCLT" name="Spellcasting Prodigy - Charisma" description="You have an exceptional gift for magic. \n\n{b}Benefit{/b}: For the purpose of determining bonus spells per day, you treat your primary spellcasting ability score as being 2 points higher than its actual value. If you have more than one spellcasting class, the bonus applies to only one of those classes.\n\n{b}Special{/b}: You may only take this feat as a 1st-level character. If you take this feat more than once (for example, if you are a human character) it applies to a different spellcasting class each time. You may take this feat even if you have no spellcasting classes yet." compset="Feat">
+    <fieldval field="ftCandExpr" value="component.BaseClHelp &amp; CasterSrc.Divine|CasterSrc.Arcane"/>
+    <usesource source="srcLotT"/>
+    <tag group="fSelFrom" tag="Hero" name="Picks on Hero" abbrev="Picks on Hero"/>
+    <tag group="fCategory" tag="Upbringing" name="Upbringing" abbrev="Upbringing"/>
+    <eval phase="Final" priority="10000" name="Thing Spellcasting Prodigy - Charisma (WotL): Eval Script #1"><![CDATA[~ Get our Cha bonus
+      var bonus as number
+      bonus = hero.child[aCHA].field[aModBonus].value
+
+      ~ Add one because we are treated as 2 higher for this class.
+      var spellevel as number
+      var spellevel2 as number
+      var spellevel3 as number
+
+    ~ If our bonus is 0, we treat our bonus as 1, giving us a first level bonus spell.
+      if (bonus = 0) then
+        spellevel = 1
+    ~ If our bonus is 1, we treat our bonus as 2, giving us a second level bonus spell.
+      elseif (bonus = 1) then
+        spellevel = 2
+    ~ If our bonus is 2, we treat our bonus as 3, giving us a third level bonus spell.
+      elseif (bonus = 2) then
+        spellevel = 3
+      elseif (bonus = 3) then
+        spellevel = 4
+    ~ If our bonus is 4, we treat our bonus as 5, giving us a 1st and 5th level bonus spell.
+      elseif (bonus = 4) then
+        spellevel = 5
+        spellevel2 = 1
+      elseif (bonus = 5) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 6) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 7) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 8) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 9) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 10) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 11) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 12) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 13) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 14) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 15) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 16) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 17) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 18) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 19) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 20) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 21) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 22) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 23) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 24) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 25) then
+        spellevel = 6
+        spellevel2 = 2
+      endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel] <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel] += 1
+ endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level, unless our value for that level is 0.
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel2] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel2] <> 0) then
+  if (spellevel2 <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel2] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel2] += 1
+  endif
+ endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level, unless our value for that level is 0.
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel3] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel3] <> 0) then
+  if (spellevel3 <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel3] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel3] += 1
+  endif
+ endif]]></eval>
+    </thing>
+  <thing id="fSpProdWLT" name="Spellcasting Prodigy - Wisdom" description="You have an exceptional gift for magic. \n\n{b}Benefit{/b}: For the purpose of determining bonus spells per day, you treat your primary spellcasting ability score as being 2 points higher than its actual value. If you have more than one spellcasting class, the bonus applies to only one of those classes.\n\n{b}Special{/b}: You may only take this feat as a 1st-level character. If you take this feat more than once (for example, if you are a human character) it applies to a different spellcasting class each time. You may take this feat even if you have no spellcasting classes yet." compset="Feat">
+    <fieldval field="ftCandExpr" value="component.BaseClHelp &amp; CasterSrc.Divine|CasterSrc.Arcane"/>
+    <usesource source="srcLotT"/>
+    <tag group="fSelFrom" tag="Hero" name="Picks on Hero" abbrev="Picks on Hero"/>
+    <tag group="fCategory" tag="Upbringing" name="Upbringing" abbrev="Upbringing"/>
+    <eval phase="Final" priority="10000" name="Thing Spellcasting Prodigy - Charisma (WotL): Eval Script #1"><![CDATA[~ Get our Cha bonus
+      var bonus as number
+      bonus = hero.child[aWIS].field[aModBonus].value
+
+      ~ Add one because we are treated as 2 higher for this class.
+      var spellevel as number
+      var spellevel2 as number
+      var spellevel3 as number
+
+    ~ If our bonus is 0, we treat our bonus as 1, giving us a first level bonus spell.
+      if (bonus = 0) then
+        spellevel = 1
+    ~ If our bonus is 1, we treat our bonus as 2, giving us a second level bonus spell.
+      elseif (bonus = 1) then
+        spellevel = 2
+    ~ If our bonus is 2, we treat our bonus as 3, giving us a third level bonus spell.
+      elseif (bonus = 2) then
+        spellevel = 3
+      elseif (bonus = 3) then
+        spellevel = 4
+    ~ If our bonus is 4, we treat our bonus as 5, giving us a 1st and 5th level bonus spell.
+      elseif (bonus = 4) then
+        spellevel = 5
+        spellevel2 = 1
+      elseif (bonus = 5) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 6) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 7) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 8) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 9) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 10) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 11) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 12) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 13) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 14) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 15) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 16) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 17) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 18) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 19) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 20) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 21) then
+        spellevel = 6
+        spellevel2 = 2
+      elseif (bonus = 22) then
+        spellevel = 7
+        spellevel2 = 3
+      elseif (bonus = 23) then
+        spellevel = 8
+        spellevel2 = 4
+      elseif (bonus = 24) then
+        spellevel = 9
+        spellevel2 = 5
+        spellevel3 = 1
+      elseif (bonus = 25) then
+        spellevel = 6
+        spellevel2 = 2
+      endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel] <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel] += 1
+ endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level, unless our value for that level is 0.
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel2] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel2] <> 0) then
+  if (spellevel2 <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel2] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel2] += 1
+  endif
+ endif
+
+~ Should we have the ability to cast spells of the appropriate level, add 1 to that level, unless our value for that level is 0.
+ if (field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel3] + field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel3] <> 0) then
+  if (spellevel3 <> 0) then
+    field[fChosen].chosen.field[cMemMax].arrayvalue[spellevel3] += 1 
+    field[fChosen].chosen.field[cCastMax].arrayvalue[spellevel3] += 1
+  endif
+ endif]]></eval>
+    </thing>
+  <thing id="cvClrDynPr" name="(Dyn. Priest)" description="Bonus Spells and Max spell level based on Charisma. DCs still calculated based on Wisdom." compset="ClassVary" uniqueness="unique">
+    <usesource source="srcLotT"/>
+    <tag group="ClVaryName" tag="Append" name="Append" abbrev="Append"/>
+    <tag group="SplAttr" tag="aCHA"/>
+    <link linkage="varies" thing="cHelpClr"/>
+    <eval phase="UserPostAt" priority="11000">var bonus as number
+   bonus = hero.child[aWIS].field[aModBonus].value + 10
+
+   var minus as number
+   minus = hero.child[aCHA].field[aModBonus].value + 10
+   hero.child[cHelpClr].field[cSplSaveDC].value = bonus - minus</eval>
+    <exprreq message="Dynamic Priest required."><![CDATA[#hasfeat[fDynaPriLT] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvDrdDynPr" name="(Dyn. Priest)" description="Bonus Spells and Max spell level based on Charisma. DCs still calculated based on Wisdom." compset="ClassVary" uniqueness="unique">
+    <usesource source="srcLotT"/>
+    <tag group="ClVaryName" tag="Append" name="Append" abbrev="Append"/>
+    <tag group="SplAttr" tag="aCHA"/>
+    <link linkage="varies" thing="cHelpDrd"/>
+    <eval phase="UserPostAt" priority="11000">var bonus as number
+   bonus = hero.child[aWIS].field[aModBonus].value + 10
+
+   var minus as number
+   minus = hero.child[aCHA].field[aModBonus].value + 10
+   hero.child[cHelpClr].field[cSplSaveDC].value = bonus - minus</eval>
+    <exprreq message="Dynamic Priest required."><![CDATA[#hasfeat[fDynaPriLT] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvPalDynPr" name="(Dyn. Priest)" description="Bonus Spells and Max spell level based on Charisma. DCs still calculated based on Wisdom." compset="ClassVary" uniqueness="unique">
+    <usesource source="srcLotT"/>
+    <tag group="ClVaryName" tag="Append" name="Append" abbrev="Append"/>
+    <tag group="SplAttr" tag="aCHA"/>
+    <link linkage="varies" thing="cHelpPal"/>
+    <eval phase="UserPostAt" priority="11000">var bonus as number
+   bonus = hero.child[aWIS].field[aModBonus].value + 10
+
+   var minus as number
+   minus = hero.child[aCHA].field[aModBonus].value + 10
+   hero.child[cHelpClr].field[cSplSaveDC].value = bonus - minus</eval>
+    <exprreq message="Dynamic Priest required."><![CDATA[#hasfeat[fDynaPriLT] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvRgrDynPr" name="(Dyn. Priest)" description="Bonus Spells and Max spell level based on Charisma. DCs still calculated based on Wisdom." compset="ClassVary" uniqueness="unique">
+    <usesource source="srcLotT"/>
+    <tag group="ClVaryName" tag="Append" name="Append" abbrev="Append"/>
+    <tag group="SplAttr" tag="aCHA"/>
+    <link linkage="varies" thing="cHelpRgr"/>
+    <eval phase="UserPostAt" priority="11000">var bonus as number
+   bonus = hero.child[aWIS].field[aModBonus].value + 10
+
+   var minus as number
+   minus = hero.child[aCHA].field[aModBonus].value + 10
+   hero.child[cHelpClr].field[cSplSaveDC].value = bonus - minus</eval>
+    <exprreq message="Dynamic Priest required."><![CDATA[#hasfeat[fDynaPriLT] <> 0]]></exprreq>
+    </thing>
+  <thing id="cMarSeama" name="Seamanship +1" description="You gain a competence bonus on Balance, Climb, and Profession (sailor) checks." compset="ClSpecial" sortorder="1">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      var level as number
+      level = field[xTotalLev].value
+
+      var bonus as number
+      if (level >= 17) then
+        bonus = 5
+      elseif (level >= 13) then
+        bonus = 4
+      elseif (level >= 9) then
+        bonus = 3
+      elseif (level >= 5) then
+        bonus = 2
+      else
+        bonus = 1
+        endif
+
+#competencebonus[hero.child[kBalance], bonus]
+#competencebonus[hero.child[kClimb], bonus]
+#competencebonus[hero.childfound[kProfSail], bonus]]]></eval>
+    </thing>
+  <thing id="kProfSail" name="Profession: Sailor" description="You can do shipboard work to keep a vessel in order and running smooth." compset="Skill" uniqueness="unique">
+    <tag group="ClassSkill" tag="kProfMiner" name="Profession: Miner" abbrev="Profession: Miner"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="Helper" tag="SkCatProf" name="Profession Skill" abbrev="Profession Skill"/>
+    <tag group="Helper" tag="TrainOnly" name="TrainOnly" abbrev="TrainOnly"/>
+    <link linkage="skillattr" thing="aWIS"/>
+    </thing>
+  <thing id="cMarSeama2" name="Seamanship +2" description="You gain a competence bonus on Balance, Climb, and Profession (sailor) checks." compset="ClSpecial" sortorder="5">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    </thing>
+  <thing id="cMarSeama3" name="Seamanship +3" description="You gain a competence bonus on Balance, Climb, and Profession (sailor) checks." compset="ClSpecial" sortorder="9">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    </thing>
+  <thing id="cMarSeama4" name="Seamanship +4" description="You gain a competence bonus on Balance, Climb, and Profession (sailor) checks." compset="ClSpecial" sortorder="13">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="13"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    </thing>
+  <thing id="cMarSeama5" name="Seamanship +5" description="You gain a competence bonus on Balance, Climb, and Profession (sailor) checks." compset="ClSpecial" sortorder="17">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="17"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    </thing>
+  <thing id="cMarSaLore" name="Sailor Lore" description="A mariner picks up a lot of knowledge by listening to local gossip in various ports of call or from the sea stories of shipmates. A mariner may make a special sailor lore check with a bonus equal to his mariner level + his Intelligence modifier to see whether he knows some relevant information about local people or history, far away places, or strange superstitions. This check will not necessarily reveal true information, as much of the time the mariner heard it from someone who heard it from a friend, who heard it from a guy, etc. The mariner may not take 10 or 20 on this check; this sort of knowledge is essentially random. The DM will determine the DC of the check by referring to the accompanying table.\n\n{b}DC 10{/b} &#151; Commonly known, something that most people have heard and gossip about.\n{b}Example{/b}: The Knights of Neraka have blockaded Ak-Khurman; Saifhum is a den of pirates and buccaneers.\n{b}DC 20{/b} &#151; Known by select groups of individuals, not widely known by the general populace.\n{b}Example{/b}: A port official in Gulfport is rumored to have a weakness for dwarven ale; a stretch of coast in Khur which the Knights of Neraka do not patrol.\n{b}DC 25{/b} &#151; Known only by few individuals, spoken of only in whispers and secrecy.\n{b}Example{/b}: A Solamnic Knight whose family fortunes were built upon piracy back in the time of Istar; legends of a ghost ship that haunts the dry sea of Tarsis.\n{b}DC 30{/b} &#151; Unknown to the vast majority of people, long since forgotten by most.\n{b}Example{/b}: A safe way of traversing the Maelstrom of the Blood Sea; the location of the sunken ship of an infamous pirate." compset="ClSpecial" summary="Make a special Lore check for info on exotic lands &amp; superstitions.">
+    <comment>Added User Tag (Done)
+
+livename (Done)</comment>
+    <usesource source="srcLotT"/>
+    <tag group="User" tag="Lore"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <eval phase="UserPostAt" priority="10000" index="2"><![CDATA[var bonus as number
+bonus = #levelcount[Mariner] + hero.child[aINT].field[aModBonus].value
+
+field[livename].text = "Sailor Lore +" & bonus & ""]]></eval>
+    <eval phase="First">perform hero.assign[User.Lore]</eval>
+    </thing>
+  <thing id="cMarDirtS" name="Dirty Strike +1d4" description="A mariner is adept at maneuvers such as hitting below the belt, head butts, sucker punches, and other opportunistic tricks. Starting at 2nd level, a mariner may choose to make a single melee attack on his turn as a full round action that deals an additional +1d4 points of damage. This bonus increases to +2d4 at 6th level, +3d4 at 10th level, +4d4 at 14th level, and +5d4 at 18th level. The additional damage caused by a dirty strike is the same kind of damage as the weapon used in the attack; a 2nd-level mariner that uses a club to make a dirty strike deals an additional +1d4 bludgeoning damage, for example, and if the damage dealt by the attack is nonlethal damage, the additional damage is also nonlethal. \n\nThis ability has no effect on creatures without a discernable anatomy or that are immune to critical hits, such as constructs, oozes, plants, or undead. Additional damage from a dirty strike is not multiplied if the mariner scores a successful critical hit." compset="ClSpecial" summary="Full rd, make 1 melee attack and deal extra dam of weapon type.">
+    <comment>Is CustDesc the correct place and worded right? (Disregarded)</comment>
+    <usesource source="srcLotT"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xDirtStrik"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      var level as number
+      level = field[xTotalLev].value
+      var total as number
+      if (level >= 18) then
+        total = 5
+      elseif (level >= 14) then
+        total = 4
+      elseif (level >= 10) then
+        total = 3
+      elseif (level >= 6) then
+        total = 2
+      else
+        total = 1
+        endif
+
+      hero.child[xDirtStrik].field[Value].value += total]]></eval>
+    </thing>
+  <thing id="cMarDirtS2" name="Dirty Strike +2d4" description="Your dirty strike damage increases." compset="ClSpecial">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cMarDirtS3" name="Dirty Strike +3d4" description="Your dirty strike damage increases." compset="ClSpecial">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cMarDirtS4" name="Dirty Strike +4d4" description="Your dirty strike damage increases." compset="ClSpecial">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="14"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cMarDirtS5" name="Dirty Strike +5d4" description="Your dirty strike damage increases." compset="ClSpecial">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="18"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cMarBa2Ba" name="Back to Back +1" description="A mariner is trained in fighting alongside his shipmates in cramped and crowded conditions, especially against superior numbers. Starting at 4th level, whenever a mariner is adjacent to an ally and using the fighting defensively or total defense combat options or the Combat Expertise feat, he gains a +1 dodge bonus to his AC. This bonus increases to +2 at 8th level, +3 at 12th level, +4 at 16th level, and +5 at 20th level. He loses this bonus if he is denied his Dexterity bonus to AC or if he or his ally moves more than 5 ft. away." compset="ClSpecial" summary="Gain dodge bon to AC if adj to ally &amp; fight defensively/combat expertise.">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      var level as number
+      level = field[xTotalLev].value
+      var total as number
+      if (level >= 20) then
+        total = 5
+      elseif (level >= 16) then
+        total = 4
+      elseif (level >= 12) then
+        total = 3
+      elseif (level >= 8) then
+        total = 2
+      else
+        total = 1
+        endif
+
+      field[livename].text = "Back-to-Back +" & total & ""]]></eval>
+    </thing>
+  <thing id="cHelpMar" name="Mariner" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cAbbr" value="Mar"/>
+    <fieldval field="cSkills" value="6"/>
+    <arrayval field="cBonFtTot" index="0" value="1"/>
+    <arrayval field="cBonFtTot" index="4" value="2"/>
+    <arrayval field="cBonFtTot" index="9" value="3"/>
+    <arrayval field="cBonFtTot" index="14" value="4"/>
+    <arrayval field="cBonFtTot" index="19" value="5"/>
+    <arrayval field="cSpecial" index="0" value="Bonus feat, sailor lore, seamanship +1"/>
+    <arrayval field="cSpecial" index="1" value="Dirty strike +1d4"/>
+    <arrayval field="cSpecial" index="2" value="&#151;"/>
+    <arrayval field="cSpecial" index="3" value="Back-to-back +1"/>
+    <arrayval field="cSpecial" index="4" value="Bonus feat, seamanship +2"/>
+    <arrayval field="cSpecial" index="5" value="Dirty strike +2d4"/>
+    <arrayval field="cSpecial" index="6" value="&#151;"/>
+    <arrayval field="cSpecial" index="7" value="Back-to-back +2"/>
+    <arrayval field="cSpecial" index="8" value="Seamanship +3"/>
+    <arrayval field="cSpecial" index="9" value="Bonus feat, dirty strike +3d4"/>
+    <arrayval field="cSpecial" index="10" value="&#151;"/>
+    <arrayval field="cSpecial" index="11" value="Back-to-back +3"/>
+    <arrayval field="cSpecial" index="12" value="Seamanship +4"/>
+    <arrayval field="cSpecial" index="13" value="Dirty strike +4d4"/>
+    <arrayval field="cSpecial" index="14" value="Bonus feat"/>
+    <arrayval field="cSpecial" index="15" value="Back-to-back +4"/>
+    <arrayval field="cSpecial" index="16" value="Seamanship +5"/>
+    <arrayval field="cSpecial" index="17" value="Dirty strike +5d4"/>
+    <arrayval field="cSpecial" index="18" value="&#151;"/>
+    <arrayval field="cSpecial" index="19" value="Back-to-back +5, Bonus feat"/>
+    <usesource source="srcLotT"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="ClassSkill" tag="kTumble"/>
+    <tag group="ClassSkill" tag="kUseRope"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="Mariner" name="Mariner"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="WepProf" tag="wCutlass"/>
+    <tag group="WepProf" tag="wCutlassSW"/>
+    <tag group="WepProf" tag="wNet"/>
+    <tag group="WepProf" tag="wScimitar"/>
+    <tag group="WepProf" tag="wTrident"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kKnowLocal"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kSpeakLang"/>
+    <tag group="fInclude" tag="fAlertness"/>
+    <tag group="fInclude" tag="fComExpert"/>
+    <tag group="fInclude" tag="fImpDis"/>
+    <tag group="fInclude" tag="fImpFeint"/>
+    <tag group="fInclude" tag="fImpTrip"/>
+    <tag group="fInclude" tag="fComRef"/>
+    <tag group="fInclude" tag="fDodge"/>
+    <tag group="fInclude" tag="fMobility"/>
+    <tag group="fInclude" tag="fExoticWep"/>
+    <tag group="fInclude" tag="fFarShot"/>
+    <tag group="fInclude" tag="fImpInit"/>
+    <tag group="fInclude" tag="fLuckyLT"/>
+    <tag group="fInclude" tag="fLuckyRA"/>
+    <tag group="fInclude" tag="fLuckyWL"/>
+    <tag group="fInclude" tag="fPointBlnk"/>
+    <tag group="fInclude" tag="fPrecShot"/>
+    <tag group="fInclude" tag="fRapidShot"/>
+    <tag group="fInclude" tag="fCleave"/>
+    <tag group="fInclude" tag="fGreatClv"/>
+    <tag group="fInclude" tag="fImpBull"/>
+    <tag group="fInclude" tag="fImpOver"/>
+    <tag group="fInclude" tag="fImpSunder"/>
+    <tag group="fInclude" tag="fPowerAtt"/>
+    <tag group="fInclude" tag="fQuickDraw"/>
+    <tag group="fInclude" tag="fQuickThLT"/>
+    <tag group="fInclude" tag="fQuickThRA"/>
+    <tag group="fInclude" tag="fQuickThWL"/>
+    <tag group="fInclude" tag="fToughness"/>
+    <tag group="fInclude" tag="fWepFin"/>
+    <tag group="fInclude" tag="fWepFoc"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="cMarBa2Ba"></bootstrap>
+    <bootstrap thing="cMarBa2Ba2"></bootstrap>
+    <bootstrap thing="cMarBa2Ba3"></bootstrap>
+    <bootstrap thing="cMarBa2Ba4"></bootstrap>
+    <bootstrap thing="cMarBa2Ba5"></bootstrap>
+    <bootstrap thing="cMarDirtS"></bootstrap>
+    <bootstrap thing="cMarDirtS2"></bootstrap>
+    <bootstrap thing="cMarDirtS3"></bootstrap>
+    <bootstrap thing="cMarDirtS4"></bootstrap>
+    <bootstrap thing="cMarDirtS5"></bootstrap>
+    <bootstrap thing="cMarSaLore"></bootstrap>
+    <bootstrap thing="cMarSeama"></bootstrap>
+    <bootstrap thing="cMarSeama2"></bootstrap>
+    <bootstrap thing="cMarSeama3"></bootstrap>
+    <bootstrap thing="cMarSeama4"></bootstrap>
+    <bootstrap thing="cMarSeama5"></bootstrap>
+    <bootstrap thing="fWepMarine"></bootstrap>
+    <bootstrap thing="fBuckProf"></bootstrap>
+    </thing>
+  <thing id="cMariner" name="Mariner" description="Mariners live their lives at sea, waking to the smell of salt air and falling asleep at night to the sound of the waves. They may do quite well for themselves on land, but they always long for the freedom of the ocean.\n\n{b}Adventures{/b}: Many individuals become mariners in order to see the wide world, while others set sail in search of treasure or to avenge themselves on an enemy. Since situations can change rapidly on board ship, the mariner must be prepared to face a variety of dangers, from hurricanes to fire, starvation to mutiny. The mariner learns to adapt quickly to changing circumstances in order to survive.\n\n{b}Characteristics{/b}: Mariners are most comfortable when in view of the sea, and often become dispirited when they venture too far inland. They are quick to react to danger and sudden threats. Those who live at sea are accustomed to the hard life and adopt a pragmatic outlook in order to survive. To the landlubber, such an attitude can seem callous or even ruthless.\n\n{b}Alignment{/b}: Mariners are often of neutral alignment, learning to accept difficult situations they cannot change. They are rarely chaotic, since life aboard ship requires discipline.\n\n{b}Religion{/b}: Mariners are not generally deeply religious, though most are superstitious. Mariners, even non-evil ones, honor Zeboim, in the belief that their offerings and prayers will placate the capricious Sea Queen. Good mariners may also revere Habbakuk, the Fisher King, while those of neutral alignment may pay homage to Chislev, whose command over nature extends to the ocean.\n\n{b}Background{/b}: Mariners generally come from coastal families with long-standing nautical traditions. Mariners may also hire onto a ship in order to escape problems on land, run from the law or try to conceal dangerous secrets. Many mariners are professional sailors, forming part of a navy, in which case they may come from a noble family with a history of naval officer service.\n\nSome mariners come into their careers unwillingly. A captain who is short his full complement of crewmen will send out his officers with gangs of sailors to &#147;press&#148; men into service. \n\n{b}Races{/b}: Minotaurs are the most feared mariners in Ansalon and all are expected to serve on board ship at some point. Ogres, too, have held maritime endeavors in the past; half-ogres especially are common around the Blood Sea.\n\nThe humans of Northern Ergoth and Saifhum are known for their seamanship, with entire families serving on board sailing ships. Other human cultures produce mariners, also. Those nations whose cities have active ports engaged in the sea trade are the most likely to do so. \n\nElves rarely become mariners, since they feel most at home in woodlands and because there is a superstition among mariners that elves aboard ship are bad luck. Even so, the Silvanesti have long had a House Mariner whose role in elven society is to build and sail graceful coastal ships, but it is a minor house with only a handful of families. Sea elves rarely produce mariners because they would rather be swimming in the ocean than sailing upon it, while half-elves are much more likely to become mariners.\n\nGnomes of appropriate guilds sometimes become mariners, designing new ships and experimental submersibles. Dwarves never become mariners, and think anyone who chooses the life of a sailor must be crazy. Kender are more likely to be passengers and stowaways, not sailors, but are known.\n\n{b}Other Classes{/b}: Rogues and bards generally acquire their sea legs quickly and possess a broad range of skills that mariners admire. Mariners respect the strength of fighters, rangers, and barbarians. Spellcasters are rare aboard ships, but their magic is appreciated and utilized when available. Paladins and Solamnic Knights rarely associate with mariners, as their righteousness can conflict with the mariner&#146;s pragmatic view of life.\n\n{b}Role{/b}: Like a bard, mariners bring a variety of skills and abilities to an adventuring group, while not specializing in anything. A mariner&#146;s abilities work best in support of other characters, although like the ranger they can step up to combat when needed. While the mariner&#146;s class features are useful on land, they are unparalleled while at sea." compset="ClassLevel" maxlimit="20">
+    <usesource source="srcLotT"/>
+    <tag group="ClassType" tag="Normal"/>
+    <bootstrap thing="cHelpMar"></bootstrap>
+    <link linkage="helper" thing="cHelpMar"/>
+    </thing>
+  <thing id="cMarBa2Ba2" name="Back to Back +2" description="Back to back dodge bonus increases." compset="ClSpecial">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    </thing>
+  <thing id="cMarBa2Ba3" name="Back to Back +3" description="Back to back dodge bonus increases." compset="ClSpecial">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="12"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    </thing>
+  <thing id="cMarBa2Ba4" name="Back to Back +4" description="Back to back dodge bonus increases." compset="ClSpecial">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="16"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    </thing>
+  <thing id="cMarBa2Ba5" name="Back to Back +5" description="Back to back dodge bonus increases." compset="ClSpecial">
+    <usesource source="srcLotT"/>
+    <tag group="ClSpecWhen" tag="20"/>
+    <tag group="SpecSource" tag="cHelpMar"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    </thing>
+  <thing id="xDirtStrik" name="Dirty Strike" description="A mariner is adept at maneuvers such as hitting below the belt, head butts, sucker punches, and other opportunistic tricks. Starting at 2nd level, a mariner may choose to make a single melee attack on his turn as a full round action that deals an additional +1d4 points of damage. This bonus increases to +2d4 at 6th level, +3d4 at 10th level, +4d4 at 14th level, and +5d4 at 18th level. The additional damage caused by a dirty strike is the same kind of damage as the weapon used in the attack; a 2nd-level mariner that uses a club to make a dirty strike deals an additional +1d4 bludgeoning damage, for example, and if the damage dealt by the attack is nonlethal damage, the additional damage is also nonlethal. \n\nThis ability has no effect on creatures without a discernable anatomy or that are immune to critical hits, such as constructs, oozes, plants, or undead. Additional damage from a dirty strike is not multiplied if the mariner scores a successful critical hit." compset="Special" summary="Full rd, make 1 melee attack and deal extra dam of weapon type." uniqueness="unique">
+    <fieldval field="xSource" value="Class"/>
+    <usesource source="srcLotT"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="PostLevel" priority="20000"><![CDATA[
+      call CalcValue
+
+      ~ Set our name properly
+      field[livename].text = field[name].text & " +" & field[Value].value & "d4"]]></eval>
+    </thing>
+  <thing id="fWepMarine" name="Mariner Weapon Proficiencies" description="{b}Benefit{/b}: You are proficient with the Cutlass, Net, Scimitar, and Trident.\n\n{b}Normal{/b}: When using a weapon with which you are not proficient, you are at -4 to attack rolls." compset="Feat" summary="You are proficient with the Cutlass, Net, Scimitar, and Trident." uniqueness="unique">
+    <fieldval field="fShortName" value="Mariner Weapons"/>
+    <usesource source="srcLotT"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    </thing>
+  <thing id="fBuckProf" name="Buckler Proficiency" description="You are proficient with bucklers only." compset="Feat" uniqueness="useronce">
+    <tag group="Helper" tag="FeatUnique" name="FeatUnique" abbrev="FeatUnique"/>
+    <tag group="Helper" tag="ProfGroup" name="ProfGroup" abbrev="ProfGroup"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="UserFirst" priority="10000"><![CDATA[
+    var result as number
+    foreach pick in hero from BaseArmor where "ShldClass.Buckler"
+    result = each.assign[Helper.Proficient]
+    nexteach]]></eval>
+    </thing>
+  <thing id="mBuckler2" name="Buckler" description="Use a bow or crossbow without penalty. You can wield a weapon in your off-hand at a -1 penalty, but you don&apos;t get the buckler&apos;s AC bonus while doing so." compset="Armor" replaces="mBuckler">
+    <fieldval field="gWeight" value="5"/>
+    <fieldval field="gSizeCost" value="15"/>
+    <tag group="mAC" tag="1" name="1" abbrev="1"/>
+    <tag group="mArcFail" tag="5" name="5" abbrev="5"/>
+    <tag group="mArmorChk" tag="1" name="1" abbrev="1"/>
+    <tag group="mClass" tag="Shield" name="Shield" abbrev="Shield"/>
+    <tag group="mMaxDex" tag="1000" name="1000" abbrev="1000"/>
+    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
+    <tag group="ShldClass" tag="Buckler"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ Work out if we're equipped, or, if we're the child of a magic item, if
+      ~ our parent is equipped
+      var result as number
+      result = field[gIsEquip].value
+      if (container.ishero = 0) then
+        result += container.parent.field[gIsEquip].value
+        endif
+
+      ~ Taking an off-hand is ok with this shield, but you get -1 to hit
+      if (result <> 0) then
+        result = hero.assign[Hero.ShldOffOK]
+        result = hero.assign[Hero.OffShlP1]
+        endif]]></eval>
+    <prereq message="Buckler Proficiency or">
+      <validate><![CDATA[validif (hero.tagis[source.srcLotT] = 0)
+validif (#hasfeat[fBuckProf] + hero.tagis[Hero.ProfShield] <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="wCutlass" name="Cutlass" description="This is a short, heavy blade used on board ships and designed as both a slashing and piercing weapon. It is considered a light weapon, and because of the basket hilt the wielder gains a +2 circumstance bonus on rolls to avoid being disarmed." compset="Weapon">
+    <fieldval field="gSizeCost" value="12"/>
+    <fieldval field="gWeight" value="3"/>
+    <usesource source="srcLotT"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wCategory" tag="Melee"/>
+    </thing>
+  </document>

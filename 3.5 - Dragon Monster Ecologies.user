@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>Input by Bodrin 20/03/2011
+
+bodrinbarlow@gmail.com</info_author>
+    <info_history>From Dragon Monster Ecologies by Paizo publishing page 115 
+
+Version 1.0
+20/03/2011</info_history>
+    <info_todo>Define a selector for the individual Kyuss attacks!</info_todo>
+    </fileinfo>
+  <thing id="xKyCrSpawn" name="Create Spawn" description="\n{b}Create Spawn (Su){/b}: Once per round as a free action, a favored spawn of Kyuss can transfer a worm from its own body to that of an opponent. It can do this whenever it hits with a natural attack or an unarmed attack, but it can also make the transfer by means of a successful melee touch attack or a ranged touch attack, hurling a worm at a foe from a distance of up to 10 feet.\n\nEach worm is a Fine vermin with AC 10 and 1 hit point. It can be killed with normal damage or by the touch of silver. On the spawn&apos;s next action, the worm burrows into its host&apos;s flesh. \n\nA creature with a natural armor bonus of +5 or better is immune to this burrowing effect. The worm makes its way toward the host&apos;s brain, dealing 1 point of damage per round for 1d4+1 rounds. \n\nAt the end of that period, it reaches the brain. While the worm is inside a victim, a remove curse or remove disease effect destroys it, and a dispel evil or neutralize poison effect delays its progress for 10d6 minutes. A successful DC 20 Heal check extracts the worm and kills it.\n\nOnce the worm reaches the brain, it deals 1d2 points of Intelligence damage per round until it either is killed (by remove curse or remove disease) or slays its host (death occurs at o Intelligence). A Small, Medium, or Large creature slain by a worm rises as a new spawn of Kyuss (not a favored spawn) 1d6+4 rounds later; a Tiny or smaller creature quickly putrefies, and a Huge or larger creature becomes a normal zombie of the appropriate size. Newly created spawn are not under the control of their creator, but they usually follow whatever favored spawn of Kyuss created them.\n\nIf a creature is infested with multiple worms, a single remove curse or remove disease destroys all the worms infesting the creature at once.\n\nA favored spawn attacking a helpless opponent may use its foul embrace ability instead of this ability." compset="Special" summary="Once per round as a free action, a favored spawn of Kyuss can transfer a worm from its own body to that of an opponent." uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011</comment>
+    <usesource source="DME"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecSource" tag="FSpKyuss" name="Favoured Spawn of Kyuss"/>
+    </thing>
+  <thing id="xKyussFear" name="Fear Aura" description="{b}Fear Aura (Su){/b{: A spawn of Kyuss continuously radiates a fear effect. This ability functions like a fear spell (caster level 7th, Will save DC 14 + the favored spawn&apos;s Charisma modifier), except that it affects all creatures within a 40-foot radius. \n\nAny creature that makes a successful saving throw against the effect cannot be affected again by the fear aura of that favored spawn of Kyuss for 24 hours." compset="Special" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011</comment>
+    <usesource source="DME"/>
+    <tag group="SpecSource" tag="FSpKyuss"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="xKyFoulEmb" name="Foul Embrace" description="{b}Foul Embrace (Su){/b}: By pressing its face against a helpless victim, the favored spawn of Kyuss can infest the victim with a rain of 2d6 worms. This ability is treated the same as the create spawn ability, but a victim slain by the resulting infestation rises as a favored spawn of Kyuss rather than a normal zombie." compset="Special" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011</comment>
+    <usesource source="DME"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecSource" tag="FSpKyuss"/>
+    </thing>
+  <thing id="xKyussGift" name="Kyuss&apos; Gift" description="{b}Kyuss&apos; Gift (Su){/b}: Any creature hit by a favored spawn of Kyuss&apos; natural attack or unarmed attack must succeed at a DC ia Fortitude save or contract this supernatural disease. The incubation period is 1 day, and the disease deals 1d6 points of Constitution damage and 1d4 points of Wisdom damage. These effects manifest as rotting flesh and dementia. An affected creature gets only half the benefits of natural and magical healing, though a remove disease effect removes the affliction.\n\nIn addition to the previously described abilities, a favored spawn with 10 HD or more gains one of the following additional special attacks as a gift from Kyuss himself. Saving throws against these effects are against a DC of 10 + half the favored Spawn&apos;s Hit Dice + the favored spawn&apos;s Charisma modifier." compset="Special" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011</comment>
+    <usesource source="DME"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecSource" tag="FSpKyuss"/>
+    </thing>
+  <thing id="xKyInfSkin" name="Infested Skin" description="{b}Infested Skin (Su){/b}: The favored spawn of Kyuss is so infested with worms that any creature that strikes it with an unarmed strike, natural weapon, or light weapon must make a Reflex save or a Kyuss worm is transferred to the attacker&apos;s body. Any creature that shares the same square as the favored spawn (such as might occur during a grapple, bull rush, or Tumble check) must make a Reflex save to avoid the same fate." compset="Special" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011</comment>
+    <usesource source="DME"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="FSpKyuss"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    </thing>
+  <thing id="xKyNxBreat" name="Noxious Breath" description="{b}Noxious Breath (Su){/b}: Once every 1d4 rounds, as a standard action, the favored spawn of Kyuss can exhale nauseating vapor from its mouth in a 15-foot cone. All creatures in this area must make a Fortitude save or be nauseated for 1d4 rounds." compset="Special">
+    <comment>Added by Bodrin 20/03/2011
+
+Define a selector for the individual Kyuss attacks!</comment>
+    <usesource source="DME"/>
+    <tag group="SpecSource" tag="FSpKyuss"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xKyDRdSilv" name="Damage Reduction, Silver" description="{b}Damage Reduction (Ex{/b}): A favored spawn of Kyuss gains damage reduction 5/silver. If the favored spawn has 10 or more Hit Dice, this increases to damage reduction 10/silver." compset="Special" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011</comment>
+    <usesource source="DME"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="FSpKyuss"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="DR" name="Damage Reduction" abbrev="Damage Reduction"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the amount of damage we can resist
+      field[livename].text = "Damage Reduction (" & field[Value].value & "/silver)"]]></eval>
+    </thing>
+  <thing id="xKyFstHeal" name="Fast Healing" description="{b}Fast Healing (Ex){/b}: A favored spawn of Kyuss has fast healing 5" compset="Special" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011</comment>
+    <usesource source="DME"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the amount of healing per turn
+      field[livename].text = "Fast Healing " & field[Value].value]]></eval>
+    </thing>
+  <thing id="xKyTurnRes" name="Turn Resistance" description="You have Turn Resistance +3" compset="Special" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011</comment>
+    <usesource source="DME"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      ~ Use our value field as the quality of turn resistance
+      field[livename].text = field[name].text & " (" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xKyWormBur" name="Wormburst" description="{b}Wormburst (Su){/B}: Once per day as a standard action, the favored spawn of Kyuss can expel a 10-foot-radius burst of worms from its body. All creatures in this area of effect must make a Reflex save or become infested by 1d6 Kyuss worms." compset="Special" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011
+
+Define a selector for the individual Kyuss attacks!</comment>
+    <usesource source="DME"/>
+    <tag group="SpecSource" tag="FSpKyuss"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="tmFSpKyus2" name="Favored Spawn of Kyuss +2 CR" description="Creating a Favored Spawn of Kyuss\n\n&quot;Favored Spawn of Kyuss&quot; (known simply as the &quot;favored&quot; to cultists of Kyuss) is an inherited template that can be added to any living, corporeal creature. A favored spawn uses all the base creature&apos;s statistics and special abilities except as noted here.\n\nSize and Type: The creature&apos;s type changes to undead. Do not recalculate Hit Dice, base attack bonus, or saves. Size is unchanged.\n\nSpecial Attacks: A favored spawn retains all the special attacks of the base creature and also gains the following special attacks.\n\nCreate Spawn (Su): Once per round as a free action, a favored spawn of Kyuss can transfer a worm from its own body to that of an opponent. It can do this whenever it hits with a natural attack or an unarmed attack, but it can also make the transfer by means of a successful melee touch attack or a ranged touch attack, hurling a worm at a foe from a distance of up to 10 feet.\n\nEach worm is a Fine vermin with AC 10 and 1 hit point. It can be killed with normal damage or by the touch of silver. On the spawn&apos;s next action, the worm burrows into its host&apos;s flesh. A creature with a natural armor bonus of +5 or better is immune to this burrowing effect. The worm makes its way toward the host&apos;s brain, dealing 1 point of damage per round for 1d4+1 rounds. At the end of that period, it reaches the brain. While the worm is inside a victim, a remove curse or remove disease effect destroys it, and a dispel evil or neutralize poison effect delays its progress for 10d6 minutes. A successful DC 20 Heal check extracts the worm and kills it.\n\nOnce the worm reaches the brain, it deals 1d2 points of Intelligence damage per round until it either is killed (by remove curse or remove disease) or slays its host (death occurs at o Intelligence). A Small, Medium, or Large creature slain by a worm rises as a new spawn of Kyuss (not a favored spawn) 1d6+4 rounds later; a Tiny or smaller creature quickly putrefies, and a Huge or larger creature becomes a normal zombie of the appropriate size. Newly created spawn are not under the control of their creator, but they usually follow whatever favored spawn of Kyuss created them.\n\nIf a creature is infested with multiple worms, a single remove curse or remove disease destroys all the worms infesting the creature at once.\n\nA favored spawn attacking a helpless opponent may use its foul embrace ability instead of this ability.\n\nFear Aura (Su): A spawn of Kyuss continuously radiates a fear effect. This ability functions like a fear spell (caster level 7th, Will save DC 14 + the favored spawn&apos;s Charisma modifier), except that it affects all creatures within a 40-foot radius. Any creature that makes a successful saving throw against the effect cannot be affected again by the fear aura of that favored spawn of Kyuss for 24 hours.\n\nFoul Embrace (Su): By pressing its face against a helpless victim, the favored spawn of Kyuss can infest the victim with a rain of 2d6 worms. This ability is treated the same as the create spawn ability, but a victim slain by the resulting infestation rises as a favored spawn of Kyuss rather than a normal zombie.\n\nKyuss&apos; Gift (Su): Any creature hit by a favored spawn of Kyuss&apos; natural attack or unarmed attack must succeed at a DC ia Fortitude save or contract this supernatural disease. The incubation period is 1 day, and the disease deals 1d6 points of Constitution damage and 1d4 points of Wisdom damage. These effects manifest as rotting flesh and dementia. An affected creature gets only half the benefits of natural and magical healing, though a remove disease effect removes the affliction.\n\nIn addition to the previously described abilities, a favored spawn with 10 HD or more gains one of the following additional special attacks as a gift from Kyuss himself. Saving throws against these effects are against a DC of 10 + half the favored Spawn&apos;s Hit Dice + the favored spawn&apos;s Charisma modifier.\n\nInfested Skin (Su): The favored spawn of Kyuss is so infested with worms that any creature that strikes it with an unarmed strike, natural weapon, or light weapon must make a Reflex save or a Kyuss worm is transferred to the attacker&apos;s body. Any creature that shares the same square as the favored spawn (such as might occur during a grapple, bull rush, or Tumble check) must make a Reflex save to avoid the same fate.\n\nNoxious Breath (Su): Once every id4 rounds, as a standard action, the favored spawn of Kyuss can exhale nauseating vapor from its mouth in a 15-foot cone. All creatures in this area must make a Fortitude save or be nauseated for 1d4 rounds.\n\nWormburst (Su): Once per day as a standard action, the favored spawn of Kyuss can expel a 10-foot-radius burst of worms from its body. All creatures in this area of effect must make a Reflex save or become infested by 1d6 Kyuss worms.\n\nSpecial Qualities: A favored spawn retains all the special qualities of the base creature and gains the following.\n\nDamage Reduction (Ex): A favored spawn of Kyuss gains damage reduction 5/silver. If the favored spawn has 10 or more Hit Dice, this increases to damage reduction 10/silver.\n\nFast Healing (Ex): A favored spawn of Kyuss has fast healing 5.\n\nTurn Resistance (Ex): A favored spawn of Kyuss has turn resistance +3.\n\nAbilities: Increase from the base creature as follows: Str +4, Int +2, Wis +2, Cha +2. Favored spawn are undead and as such do not have a Constitution score.\n\nFeats: A favored spawn of Kyuss gains Improved Unarmed Strike as a bonus feat.\n\nChallenge Rating: +2 (for creatures with 9 HD or less) or +3 (for creatures with 10 HD or more).\n\nAlignment: Always chaotic evil.\n\n{b}Source{/b}: Dragon Monster Ecologies" compset="Template" summary="Challenge Rating: +2 (for creatures with 9 HD or less)" uniqueness="unique">
+    <comment>Added by Bodrin 20/03/2011
+
+Challenge Rating: +2 (for creatures with 9 HD or less) or  +3 (for creatures with 10 HD or more).</comment>
+    <fieldval field="tmINT" value="2"/>
+    <fieldval field="tmWIS" value="2"/>
+    <fieldval field="tmCHA" value="2"/>
+    <fieldval field="tmSTR" value="4"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <usesource source="DME" parent="p35" name="Dragon Monster Ecologies"/>
+    <tag group="AlgnReq" tag="ChaotEvil"/>
+    <tag group="SpecSource" tag="FSpKyuss"/>
+    <tag group="TemplHelp" tag="Inherited"/>
+    <bootstrap thing="xTurnRes">
+      <autotag group="Value" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <bootstrap thing="xKyWormBur"></bootstrap>
+    <bootstrap thing="fImpUnarm">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xKyCrSpawn"></bootstrap>
+    <bootstrap thing="xKyussFear"></bootstrap>
+    <bootstrap thing="xKyFstHeal">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xKyInfSkin"></bootstrap>
+    <bootstrap thing="xKyDRdSilv">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xKyussGift"></bootstrap>
+    <bootstrap thing="xKyNxBreat"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      var result as number
+
+      ~ We don't have a CON score because we're undead, and above that sort of
+      ~ petty nonsense
+      result = hero.child[aCON].assign[Helper.NoScore]
+
+      ~ Set up our damage reduction 9 HD or lower
+      var damage as number
+      #applydr[xKyDRdSilv, 5]
+     
+      ~ +3 Turn Resistance
+      hero.child[xTurnRes].field[Value].value = maximum(hero.child[xTurnRes].field[Value].value, 3)]]></eval>
+    </thing>
+  <thing id="tmFSpKyus3" name="Favored Spawn of Kyuss +3 CR" description="Creating a Favored Spawn of Kyuss\n\n&quot;Favored Spawn of Kyuss&quot; (known simply as the &quot;favored&quot; to cultists of Kyuss) is an inherited template that can be added to any living, corporeal creature. A favored spawn uses all the base creature&apos;s statistics and special abilities except as noted here.\n\nSize and Type: The creature&apos;s type changes to undead. Do not recalculate Hit Dice, base attack bonus, or saves. Size is unchanged.\n\nSpecial Attacks: A favored spawn retains all the special attacks of the base creature and also gains the following special attacks.\n\nCreate Spawn (Su): Once per round as a free action, a favored spawn of Kyuss can transfer a worm from its own body to that of an opponent. It can do this whenever it hits with a natural attack or an unarmed attack, but it can also make the transfer by means of a successful melee touch attack or a ranged touch attack, hurling a worm at a foe from a distance of up to 10 feet.\n\nEach worm is a Fine vermin with AC 10 and 1 hit point. It can be killed with normal damage or by the touch of silver. On the spawn&apos;s next action, the worm burrows into its host&apos;s flesh. A creature with a natural armor bonus of +5 or better is immune to this burrowing effect. The worm makes its way toward the host&apos;s brain, dealing 1 point of damage per round for 1d4+1 rounds. At the end of that period, it reaches the brain. While the worm is inside a victim, a remove curse or remove disease effect destroys it, and a dispel evil or neutralize poison effect delays its progress for 10d6 minutes. A successful DC 20 Heal check extracts the worm and kills it.\n\nOnce the worm reaches the brain, it deals 1d2 points of Intelligence damage per round until it either is killed (by remove curse or remove disease) or slays its host (death occurs at o Intelligence). A Small, Medium, or Large creature slain by a worm rises as a new spawn of Kyuss (not a favored spawn) 1d6+4 rounds later; a Tiny or smaller creature quickly putrefies, and a Huge or larger creature becomes a normal zombie of the appropriate size. Newly created spawn are not under the control of their creator, but they usually follow whatever favored spawn of Kyuss created them.\n\nIf a creature is infested with multiple worms, a single remove curse or remove disease destroys all the worms infesting the creature at once.\n\nA favored spawn attacking a helpless opponent may use its foul embrace ability instead of this ability.\n\nFear Aura (Su): A spawn of Kyuss continuously radiates a fear effect. This ability functions like a fear spell (caster level 7th, Will save DC 14 + the favored spawn&apos;s Charisma modifier), except that it affects all creatures within a 40-foot radius. Any creature that makes a successful saving throw against the effect cannot be affected again by the fear aura of that favored spawn of Kyuss for 24 hours.\n\nFoul Embrace (Su): By pressing its face against a helpless victim, the favored spawn of Kyuss can infest the victim with a rain of 2d6 worms. This ability is treated the same as the create spawn ability, but a victim slain by the resulting infestation rises as a favored spawn of Kyuss rather than a normal zombie.\n\nKyuss&apos; Gift (Su): Any creature hit by a favored spawn of Kyuss&apos; natural attack or unarmed attack must succeed at a DC ia Fortitude save or contract this supernatural disease. The incubation period is 1 day, and the disease deals 1d6 points of Constitution damage and 1d4 points of Wisdom damage. These effects manifest as rotting flesh and dementia. An affected creature gets only half the benefits of natural and magical healing, though a remove disease effect removes the affliction.\n\nIn addition to the previously described abilities, a favored spawn with 10 HD or more gains one of the following additional special attacks as a gift from Kyuss himself. Saving throws against these effects are against a DC of 10 + half the favored Spawn&apos;s Hit Dice + the favored spawn&apos;s Charisma modifier.\n\nInfested Skin (Su): The favored spawn of Kyuss is so infested with worms that any creature that strikes it with an unarmed strike, natural weapon, or light weapon must make a Reflex save or a Kyuss worm is transferred to the attacker&apos;s body. Any creature that shares the same square as the favored spawn (such as might occur during a grapple, bull rush, or Tumble check) must make a Reflex save to avoid the same fate.\n\nNoxious Breath (Su): Once every id4 rounds, as a standard action, the favored spawn of Kyuss can exhale nauseating vapor from its mouth in a 15-foot cone. All creatures in this area must make a Fortitude save or be nauseated for 1d4 rounds.\n\nWormburst (Su): Once per day as a standard action, the favored spawn of Kyuss can expel a 10-foot-radius burst of worms from its body. All creatures in this area of effect must make a Reflex save or become infested by 1d6 Kyuss worms.\n\nSpecial Qualities: A favored spawn retains all the special qualities of the base creature and gains the following.\n\nDamage Reduction (Ex): A favored spawn of Kyuss gains damage reduction 5/silver. If the favored spawn has 10 or more Hit Dice, this increases to damage reduction 10/silver.\n\nFast Healing (Ex): A favored spawn of Kyuss has fast healing 5.\n\nTurn Resistance (Ex): A favored spawn of Kyuss has turn resistance +3.\n\nAbilities: Increase from the base creature as follows: Str +4, Int +2, Wis +2, Cha +2. Favored spawn are undead and as such do not have a Constitution score.\n\nFeats: A favored spawn of Kyuss gains Improved Unarmed Strike as a bonus feat.\n\nChallenge Rating: +2 (for creatures with 9 HD or less) or +3 (for creatures with 10 HD or more).\n\nAlignment: Always chaotic evil.\n\n{b}Source{/b}: Dragon Monster Ecologies" compset="Template" summary="Challenge Rating: +3 (for creatures with 10 HD or more)." uniqueness="unique">
+    <comment>Challenge Rating: +3 (for creatures with 10 HD or more).</comment>
+    <fieldval field="tmINT" value="2"/>
+    <fieldval field="tmWIS" value="2"/>
+    <fieldval field="tmCHA" value="2"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="tmSTR" value="4"/>
+    <usesource source="DME" parent="p35" name="Dragon Monster Ecologies"/>
+    <tag group="SpecSource" tag="FSpKyuss" name="Favoured Spawn of Kyuss" abbrev="Favoured Spawn of Kyuss"/>
+    <tag group="AlgnReq" tag="ChaotEvil" name="Chaotic Evil" abbrev="Chaotic Evil"/>
+    <tag group="TemplHelp" tag="Inherited"/>
+    <bootstrap thing="xKyWormBur"></bootstrap>
+    <bootstrap thing="fImpUnarm">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xKyCrSpawn"></bootstrap>
+    <bootstrap thing="xKyussFear"></bootstrap>
+    <bootstrap thing="xKyFstHeal">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xKyInfSkin"></bootstrap>
+    <bootstrap thing="xKyDRdSilv">
+      <autotag group="Value" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="xKyussGift"></bootstrap>
+    <bootstrap thing="xKyNxBreat"></bootstrap>
+    <bootstrap thing="xTurnRes">
+      <autotag group="Value" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      var result as number
+
+      ~ We don't have a CON score because we're undead, and above that sort of
+      ~ petty nonsense
+      result = hero.child[aCON].assign[Helper.NoScore]
+
+      ~ Set up our damage reduction for 10HD plus
+      var damage as number
+      #applydr[xKyDRdSilv, 10]
+     
+      ~ +3 Turn Resistance
+      hero.child[xTurnRes].field[Value].value = maximum(hero.child[xTurnRes].field[Value].value, 3)]]></eval>
+    </thing>
+  </document>

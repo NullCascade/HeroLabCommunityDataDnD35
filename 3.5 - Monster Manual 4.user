@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="rJoysteal" name="Joystealer" description="{i}You face a cruelly beautiful, insubstantial being. It looks a little like an elf, but the feral smile and glittering, gemlike eyes betray it as something else.{/i}\n\nBeautiful, haunting, and cruel beyond mortal ken, joystealers hunt passion, feed on fear, and revel in the emotions that they steal from others. Once they labored in servitude for ethereal masters, but now they haunt the streets of cities or stride through forests at the side of other fey creatures.\n\nSTRATEGIES AND TACTICS\nIndividual joystealers seduce mortals with words and deeds, often trying to incite love or happiness, which they find tasty with a touch of surprise and fear. If forced to fight for its sustenance, a joystealer remains in a combat only long enough to reduce one living creature to 0 Charisma.  Then it uses its drain emotions ability, fl eeing thereafter to digest the passions it has stolen.\n\nA group of joystealers begins an attack from ambush, hiding partially within solid objects.  Though they are not invisible, these incorporeal creatures enjoy an excellent racial bonus on Hide checks, and they take advantage of shadows, clutter, undergrowth, and the like. If they achieve surprise, they attack a single target and drain it to helplessness.  Their superior reflexes give them an excellent chance of catching opponents flat-footed after the surprise round, allowing them to potentially incapacitate a second target.\n\nFor More information; See {i}Monster Manual IV 3.5{/i}, p 79\n\n{b}Source{/b}: Monster Manual 4" compset="Race">
+    <fieldval field="rDEX" value="7"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rINT" value="3"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="9"/>
+    <fieldval field="rCR" value="5"/>
+    <fieldval field="rInfHit" value="6d6 (6 levels of Fey)"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rAttack" value="3"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="5"/>
+    <fieldval field="rWill" value="5"/>
+    <fieldval field="rInfFavor" value="Rogue; see text"/>
+    <fieldval field="rSkill" value="4"/>
+    <fieldval field="rAC" value="4"/>
+    <usesource source="MonManual4" parent="p35" name="Monster Manual 4"/>
+    <tag group="RaceType" tag="MonstClass"/>
+    <tag group="WepProf" tag="wTch"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kKnowPlane"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Race" tag="typFey"/>
+    <tag group="Race" tag="stypIncorp"/>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Perfect"/>
+      <autotag group="Value" tag="30"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="Joystealers have a +4 racial bonus to Hide checks."/>
+      </bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <assignval field="xSumm" value="Joystealers have a +2 to disguise to act in char and +2 surv above ground."/>
+      </bootstrap>
+    <bootstrap thing="fTrack"></bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <bootstrap thing="xSenseEmot">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <bootstrap thing="xDrainEmot"></bootstrap>
+    <bootstrap thing="fImpInit"></bootstrap>
+    <bootstrap thing="xDamRdIron"></bootstrap>
+    <bootstrap thing="typFey"></bootstrap>
+    <bootstrap thing="stypIncorp"></bootstrap>
+    <eval phase="PostAttr" priority="20000" index="2">~ We add our dex to hit with melee, since we are incorporeal
+   hero.child[Attack].field[tAtkMelee].value += hero.child[aDEX].field[aModBonus].value
+
+~ A Joystealer looses its natural armor bonus but gains a deflection equal to what its natural armor was.
+
+var armorBon as number
+armorBon = hero.child[ArmorClass].field[tACNatural].value
+
+hero.child[ArmorClass].field[tACDeflect].value = maximum(hero.child[ArmorClass].field[tACDeflect].value, armorBon)
+
+hero.child[ArmorClass].field[tACNatural].value = hero.child[ArmorClass].field[tACNatural].value - hero.child[ArmorClass].field[tACNatural].value</eval>
+    <eval phase="First" priority="5000">~   Racial Starting HP
+~   herofield[cHP].value = 21
+~   Damage Reduction 5/Cold Iron
+    #applydr[xDamRdIron, 5]
+~   Racial Skill Bonus +4 Hide
+    #skillbonus[kHide] +=4
+
+var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kBluff].field[kInnate].arrayvalue[index] += 9
+      hero.child[kDiplomacy].field[kInnate].arrayvalue[index] += 2
+      hero.child[kDisguise].field[kInnate].arrayvalue[index] += 0
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 9
+      hero.child[kIntim].field[kInnate].arrayvalue[index] += 0
+      hero.childfound[kKnowNat].field[kInnate].arrayvalue[index] += 7
+      hero.childfound[kKnowPlane].field[kInnate].arrayvalue[index] += 4
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 9
+      hero.child[kSenseMot].field[kInnate].arrayvalue[index] += 9
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 9
+      hero.child[kSurvival].field[kInnate].arrayvalue[index] += 9
+
+      ~ Joystealers are incorporeal, NO STRENGTH
+      perform hero.child[aSTR].assign[Helper.NoScore]</eval>
+    </thing>
+  <thing id="xSenseEmot" name="Sense Emotions" description="This ability functions like blindsense, except that a joystealer can detect only the presence and positions of living creatures." compset="Special" summary="Sense creatures by their emotions without seeing them." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Sense" name="Sense" abbrev="Sense"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as sense distance
+      field[livename].text = field[name].text & " (" & field[Value].value & " feet)"]]></eval>
+    </thing>
+  <thing id="xDrainEmot" name="Drain Emotions" description="Once a joystealer has reduced a living creature to 0 Charisma, it can drain emotion completely from that opponent as a standard action. A creature so drained can&#146;t be affected by morale bonuses or penalties, can&#146;t rage, and can&#146;t receive the benefits of any other ability derived through inspiration or emotion. The affected creature is also immune to fear effects.\n\nThe drain emotions effect can be countered only by finding and destroying the joystealer who caused it or by casting a remove curse spell on the afflicted creature within the area of a hallow spell." compset="Special" summary="Once a Joystealer has red a creat to 0 Cha can drain emot as std act." uniqueness="useronce">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="rWrackspwn" name="Wrackspawn" description="{i}This misshapen monstrosity seems to have been both flayed and burned, its limbs twisted into dreadful parodies. It is eyeless and shrieks with mad battle lust.{/i}\n\nWrackspawns exist because the evil of demons knows no bounds. The remnants of good souls captured and tortured in the Abyss, wrackspawns live to infl ict pain upon others.  Fear and pain made them what they are, and these are what they wish to bring to all forms of life.\n\nSTRATEGIES AND TACTICS\nWrackspawns charge into combat heedless of any danger to themselves.  They use no strategy beyond attacking the nearest living being.  Wrackspawns typically ignore undead and constructs unless attacked by them, and even then they swiftly turn toward foes who can feel pain.  The only exceptions are their own kind and demons.  Wrack spawns innately fear demons and fiendish creatures, and they shy away from them in combat.\n\nWrackspawns wield ugly shortspears created from their own broken bones.  They rarely throw these treasured objects, preferring to use them in melee.  Faced with no alternative, a wrackspawn might throw its spear at an opponent it&#146;s sure it can kill.\n\nFor More information; See {i}Monster Manual IV 3.5{/i}, p 182\n\n{b}Source{/b}: Monster Manual 4" compset="Race">
+    <fieldval field="rCON" value="12"/>
+    <fieldval field="rINT" value="-4"/>
+    <fieldval field="rWIS" value="1"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rInfFavor" value="5-8 (Medium)"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rInfHit" value="4d8 (8 levels of Outsider)"/>
+    <fieldval field="rHitDice" value="4"/>
+    <fieldval field="rFort" value="4"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rInfAutoLn" value="Understands Abyssal"/>
+    <fieldval field="rSkillPlus" value="8"/>
+    <fieldval field="rFeat" value="-2"/>
+    <fieldval field="rSTR" value="9"/>
+    <fieldval field="rHeightMnF" value="60"/>
+    <fieldval field="rHeightMnM" value="60"/>
+    <fieldval field="rWeightMnF" value="250"/>
+    <fieldval field="rWeightMnM" value="250"/>
+    <usesource source="MonManual4"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="Race" tag="stypChaos"/>
+    <tag group="Race" tag="stypEvil"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="Alignment" tag="Chaotic" name="Chaotic" abbrev="Chaotic"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="Alignment" tag="Evil" name="Evil" abbrev="Evil"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="fArmHeavy"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="xImmVision"></bootstrap>
+    <bootstrap thing="rBlindSi">
+      <assignval field="Value" value="120"/>
+      </bootstrap>
+    <bootstrap thing="xPain"></bootstrap>
+    <bootstrap thing="iBoneShSpe"></bootstrap>
+    <bootstrap thing="mLeather">
+      <assignval field="livename" value="Piecemeal Armor"/>
+      </bootstrap>
+    <bootstrap thing="fSkillFoc"></bootstrap>
+    <bootstrap thing="fToughness"></bootstrap>
+    <bootstrap thing="xDamRd"></bootstrap>
+    <bootstrap thing="xDamRsFire"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="2d4_6"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="xImmGaze"></bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <bootstrap thing="stypChaoti"></bootstrap>
+    <bootstrap thing="stypEvil"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <eval phase="First" priority="5000">      ~ Damage Reduction 5/--
+      #applydr[xDamRd, 5]
+      ~ Damage Resist 10
+      #applyresist[xDamRsFire, 10]
+
+var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kClimb].field[kInnate].arrayvalue[index] += 7
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 7
+      hero.child[kIntim].field[kInnate].arrayvalue[index] += 7
+      hero.child[kJump].field[kInnate].arrayvalue[index] += 7
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 7
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 7</eval>
+    <evalrule phase="Level" message="Select Listen for Skill Focus" severity="warning"><![CDATA[foreach pick in hero from BaseSkill where "Helper.SkillFocus"
+ validif (eachpick.tagis[thingid.kListen] <> 0)
+nexteach]]></evalrule>
+    </thing>
+  <thing id="xPain" name="Pain" description="A living creature injured by the wrackspawn&#146;s bone shortspear takes an extra 2d6 points of damage and is sickened with pain for 1 round.  A DC 18 Fortitude save halves the damage and negates the sickened effect.  The save DC is Constitution-based." compset="Special">
+    <tag group="SpecSource" tag="rWrackspwn"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostAttr" priority="5000"><![CDATA[~ DC of Pain
+      var DC as number
+      var level as number
+      level = herofield[tHitDice].value / 2
+      DC = 10 + level + hero.child[aCON].field[aModBonus].value
+      DC = round(DC, 0, -1)
+
+      field[livename].text = "Pain (F" & DC & ")"]]></eval>
+    </thing>
+  <thing id="iBoneShSpe" name="Bone Shortspear" description="A Wrackspawn&apos;s bone spear is imbued with the pain and anguish and as such it inflicts an addtional 2d6 damage points of damage and sickens a target with pain (Fortitude save negates)." compset="MagicWep">
+    <tag group="IsWeapon" tag="wShortspr"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <child entity="wSpecMagic">
+      <bootstrap thing="wShortspr"></bootstrap>
+      </child>
+    </thing>
+  <thing id="rCorptFate" name="Corruptor of Fate" description="{i}A corpulent creature with sickly yellow skin wears black studded leather armor. It is armed with a short sword and shortbow.  As it attacks, a smell of brimstone emanates from its body and the faint sound of rolling dice can be heard.{/i}\n\nA corruptor of fate is a strange creature that brings bad luck.  It favors stealth and cunning to inflict suffering.\n\nStrategies and Tactics\n\nCorruptors of fate work alone or sometimes with a group of undead or a construct or two.  They rarely team up with other corruptors of fate.\n\nWhen encountered, corruptors are usually in mercenary service.  Their assignments emphasize assassination, but occasionally they&#146;re used to guard a valuable asset, especially if the owner expects a threat.\n\nCorruptors of fate take their assignments very seriously, but also have a strong instinct for self-preservation.  If a corruptor is clearly outmatched, it retreats with the intent to return shortly with reinforcements.\n\nFor More information; See {i}Monster Manual IV 3.5{/i}, p 190\n\n{b}Possessions:{/b} +1 studded leather armor, masterwork short sword, composite shortbow with 20 arrows\n\n{b}Source{/b}: Monster Manual 4" compset="Race">
+    <fieldval field="rSTR" value="5"/>
+    <fieldval field="rDEX" value="9"/>
+    <fieldval field="rCON" value="7"/>
+    <fieldval field="rCR" value="5"/>
+    <fieldval field="rInfFavor" value="rogue; see text"/>
+    <fieldval field="rInfHit" value="7d8 (7 levels of Outsider)"/>
+    <fieldval field="rHitDice" value="7"/>
+    <fieldval field="rInfAutoLn" value="Abyssal, Draconic, Infernal, Telepathy 100 ft."/>
+    <fieldval field="rSkillPlus" value="8"/>
+    <fieldval field="rAttack" value="7"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="5"/>
+    <fieldval field="rWill" value="5"/>
+    <fieldval field="rFeat" value="-3"/>
+    <usesource source="MonManual4"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSleight"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kTumble"/>
+    <tag group="ClassSkill" tag="kUseRope"/>
+    <tag group="Race" tag="stypEvil"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Alignment" tag="Evil" name="Evil" abbrev="E"/>
+    <bootstrap thing="fWepFin"></bootstrap>
+    <bootstrap thing="fDodge"></bootstrap>
+    <bootstrap thing="xYugoleTra"></bootstrap>
+    <bootstrap thing="xImmEnerDr"></bootstrap>
+    <bootstrap thing="xImmNecro"></bootstrap>
+    <bootstrap thing="xBestCurse"></bootstrap>
+    <bootstrap thing="xCorruptGa"></bootstrap>
+    <bootstrap thing="xPFPuUnluc">
+      <assignval field="livename" value="Unluck"/>
+      <assignval field="CustDesc" value="Roll twice for attacks and damage against a corruptor of fate; the attacker must use the lower result.  This is a mind-affecting necromantic effect."/>
+      <assignval field="xSumm" value="Roll 2x for atks and abils.  Take worse of two."/>
+      </bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <bootstrap thing="lInfernal"></bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <bootstrap thing="stypEvil"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="fImpInit"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kDisguise].field[kInnate].arrayvalue[index] += 10
+      hero.child[kEscape].field[kInnate].arrayvalue[index] += 10
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 10
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 10
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 10
+      hero.child[kSleight].field[kInnate].arrayvalue[index] += 10
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 10
+      hero.child[kTumble].field[kInnate].arrayvalue[index] += 10</eval>
+    </thing>
+  <thing id="xYugoleTra" name="Yugoleth Traits" compset="Special">
+    <bootstrap thing="xImmAcid">
+      <assignval field="xSource" value="Yugoleth Traits"/>
+      </bootstrap>
+    <bootstrap thing="xImmPois">
+      <assignval field="xSource" value="Yogoleth Traits"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsCold">
+      <assignval field="xSource" value="Yugoleth Traits"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsFire">
+      <assignval field="xSource" value="Yugoleth Traits"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsElec">
+      <assignval field="xSource" value="Yugoleth Traits"/>
+      </bootstrap>
+    <bootstrap thing="xTelepathy">
+      <assignval field="Value" value="100"/>
+      <assignval field="xSource" value="Yugoleth Traits"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <assignval field="xSource" value="Yugoleth Traits"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="1000">#applyresist[xDamRsFire, 10]
+      #applyresist[xDamRsCold, 10]
+      #applyresist[xDamRsElec, 10]
+
+
+      ~ Set up our spell resistance
+      var damage as number
+      
+      damage = round(10 + herofield[tHitDice].value / 2, 0, -1)
+      damage = minimum(damage, 25)
+      #applysr[damage]</eval>
+    </thing>
+  <thing id="xBestCurse" name="Bestow Curse (At Will)" description="Bestow Curse (Su) As the bestow curse spell; at will; Will DC 16; caster = HD.\n\nThis ability affects those touching or touched by a corruptor of fate or its weapons.  A cursed subject must roll percentile dice each turn.  On a roll of 01&#150;50, it can take no action.  On a roll of 51&#150;100, it can act normally.  This is a necromantic effect.  Undead are unaffected by a corruptor of fate&#146;s bestow curse ability.   The save DC is Constitution-based." compset="Special" summary="Cast the Bestow Curse at will, CL = HD." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="User" tag="PickFocus"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostAttr" priority="5000"><![CDATA[~ DC of Pain
+      var DC as number
+      var level as number
+      level = herofield[tHitDice].value / 2
+      DC = 10 + level + hero.child[aCON].field[aModBonus].value
+      DC = round(DC, 0, -1)
+
+      field[livename].text = "Bestow Curse (W" & DC & ")"]]></eval>
+    </thing>
+  <thing id="xCorruptGa" name="Corrupting Gaze" description="Corrupting Gaze (Su) A corruptor of fate can blast its enemies with a glance, at a range of up to 30 feet.  Creatures that meet the corruptor&#146;s gaze must succeed on a DC 13 Fortitude save or take 1d6 points of damage and a &#150;1 penalty on attack rolls, skill checks, and saving throws for 1 minute.  The save DC is Charisma-based." compset="Special" summary="Blast enemies 30ft. 1d6 dmg &amp; -1 pen rolls, chks and saves for 1min." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="User" tag="PickFocus"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostAttr" priority="5000"><![CDATA[~ DC of Pain
+      var DC as number
+      var level as number
+      level = herofield[tHitDice].value / 2
+      DC = 10 + level + hero.child[aCHA].field[aModBonus].value
+      DC = round(DC, 0, -1)
+
+      field[livename].text = "Corrupting Gaze (F" & DC & ")"]]></eval>
+    </thing>
+  </document>

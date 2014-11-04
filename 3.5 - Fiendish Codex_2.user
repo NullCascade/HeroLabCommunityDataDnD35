@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>c7-29-10</info_history>
+    </fileinfo>
+  <thing id="cHeRHolyFu" name="Holy Fury" description="When you face your enemies, a raging anger fills your mind. Avenging, divine power surges through you, allowing you to generate magical effects. You may only enter Holy Fury once per an encounter, but doing so is a free action and it lasts until the end of the encounter. While in a Holy Fury, your melee attacks are good-aligned and you also gain immunity to fear.\n\nYou gain a number of holy fury points equal to your Hellreaver level + your Cha modifier, which you spend to activate your Hellreaver class abilities." compset="ClSpecial" summary="Gain immunity to fear, good aligned melee attacks, and holy fury points" sortorder="1">
+    <usesource source="FCodex2" parent="p35" name="Fiendish Codex 2"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostAttr" priority="500">field[hTotal].value = hero.child[cHelpHel].field[cTotalLev].value + hero.child[aCHA].field[aModBonus].value</eval>
+    </thing>
+  <thing id="cHeRFuStr" name="Furious Strike +2/1d6" description="You can spend 1 holy fury point as a swift action to pour divine energy into your weapon. Your blade crackles with a divine aura that is baneful to your foes.\n\nYou gain a bonus to hit and extra dice of holy damage on your next attack, but only against an evil creature. If you use furious strike against a creature that is not evil, or your next attack misses, the furious strike has no effect but the holy fury point is still expended." compset="ClSpecial" summary="1 holy fury point for bonus to hit and extra dam on next attack vs evil foe" sortorder="1">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <eval phase="PostAttr" priority="1000"><![CDATA[~ Generate our new name
+      var level as number
+      level = hero.child[cHelpHel].field[cTotalLev].value
+      field[livename].text = "Furious Strike +"
+  var total as number
+      if (level = 10) then
+        total = 8
+      elseif (level > 6) then
+        total = 6
+      elseif (level > 3) then
+        total = 4
+      else
+        total = 2
+     endif
+  var other as number
+      if (level = 10) then
+        other = 4
+      elseif (level > 6) then
+        other = 3
+      elseif (level > 3) then
+        other = 2
+      else
+        other = 1
+     endif
+      field[livename].text = field[livename].text & total & "/" & other & "d6 (Su)"]]></eval>
+    </thing>
+  <thing id="cHeRFuStr2" name="Furious Strike +4/2d6" description="You can spend 1 holy fury point as a swift action to pour divine energy into your weapon. Your blade crackles with a divine aura that is baneful to your foes.\n\nYou gain a bonus to hit and extra dice of holy damage on your next attack, but only against an evil creature. If you use furious strike against a creature that is not evil, or your next attack misses, the furious strike has no effect but the holy fury point is still expended." compset="ClSpecial" summary="1 holy fury point for bonus to hit and extra dam on next attack vs evil foe" sortorder="4">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHeRFuStr3" name="Furious Strike +6/3d6" description="You can spend 1 holy fury point as a swift action to pour divine energy into your weapon. Your blade crackles with a divine aura that is baneful to your foes.\n\nYou gain a bonus to hit and extra dice of holy damage on your next attack, but only against an evil creature. If you use furious strike against a creature that is not evil, or your next attack misses, the furious strike has no effect but the holy fury point is still expended." compset="ClSpecial" summary="1 holy fury point for bonus to hit and extra dam on next attack vs evil foe" sortorder="7">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHeRFuStr4" name="Furious Strike +8/4d6" description="You can spend 1 holy fury point as a swift action to pour divine energy into your weapon. Your blade crackles with a divine aura that is baneful to your foes.\n\nYou gain a bonus to hit and extra dice of holy damage on your next attack, but only against an evil creature. If you use furious strike against a creature that is not evil, or your next attack misses, the furious strike has no effect but the holy fury point is still expended." compset="ClSpecial" summary="1 holy fury point for bonus to hit and extra dam on next attack vs evil foe" sortorder="10">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHeRDivSu" name="Divine Succor (10 points)" description="Just as your divine power can slay evil creatures, it can also mend the wounds of the just.\n\nAs a swift action you can spend 1 holy fury point to heal damage. You can apply this healing to yourself or any good aligned creatures within 20 feet." compset="ClSpecial" summary="1 holy fury point to heal yourself or good ally within 20 ft" sortorder="2">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ Generate our new name
+      var level as number
+      level = hero.child[cHelpHel].field[cTotalLev].value
+      field[livename].text = "Divine Succor ("
+      var total as number
+      if (level > 7) then
+        total = 30
+      elseif (level > 4) then
+        total = 20
+      else
+        total = 10
+        endif
+      field[livename].text = field[livename].text & total & " points) (Su)"]]></eval>
+    </thing>
+  <thing id="cHeRDivSu2" name="Divine Succor (20 points)" description="Just as your divine power can slay evil creatures, it can also mend the wounds of the just.\n\nAs a swift action you can spend 1 holy fury point to heal damage. You can apply this healing to yourself or any good aligned creatures within 20 feet." compset="ClSpecial" summary="1 holy fury point to heal yourself or good ally within 20 ft" sortorder="5">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHeRDivSu3" name="Divine Succor (30 points)" description="Just as your divine power can slay evil creatures, it can also mend the wounds of the just.\n\nAs a swift action you can spend 1 holy fury point to heal damage. You can apply this healing to yourself or any good aligned creatures within 20 feet." compset="ClSpecial" summary="1 holy fury point to heal yourself or good ally within 20 ft" sortorder="8">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHeRDivRe" name="Divine Resolve" description="You can draw upon the power of your fury to push aside the effect of a spell cast by your foes, a monster&apos;s poison, and so forth.\n\nAs an immediate action you can spend 1 holy fury point to gain a +2 bonus on your next saving throw. You can use this ability after attempting a save but before you learn whether it succeeded or failed." compset="ClSpecial" summary="1 holy fury point to gain +2 bonus on next saving throw" sortorder="3">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    </thing>
+  <thing id="cHeRIDivRe" name="Improved Divine Resolve" description="Your Divine Resolve ability improves. \n\nThis ability functions like the Divine Resolve class feature, except that you can now spend 2 holy fury points as an immediate action to gain a +4 bonus on your next saving throw. " compset="ClSpecial" summary="2 holy fury points to gain +4 bonus on next saving throw" sortorder="9">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    </thing>
+  <thing id="cHeRDivSh" name="Divine Shield" description="With a mighty shout you can focus your divine power into a shield that knocks aside a foe&apos;s attack.\n\nAs an immediate action you can spend 1 holy fury point to gain a +2 bonus on your AC against the next attack you face. You can use this ability after a foe attacks you but before you learn whether the attack hit or missed." compset="ClSpecial" summary="1 holy fury point to gain +2 bonus to AC against next attack" sortorder="3">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    </thing>
+  <thing id="cHeRIDivSh" name="Improved Divine Shield" description="Your Divine Shield ability improves. \n\nThis ability functions like the Divine Shield class feature, except that you can now spend 2 holy fury points as an immediate action to gain a +4 bonus to AC against the next attack you face." compset="ClSpecial" summary="2 holy fury points to gain +4 bonus to AC against next attack" sortorder="9">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    </thing>
+  <thing id="cHeRMettle" name="Mettle" description="If you make a sucessful Fortitude or Will save that would normally reduce (rather than negate) a spell&apos;s effect, you suffer no effect from the spell at all. Only those spells with a Saving Throw entry of &quot;Will partial,&quot; &quot;Fortitude half,&quot; or similar entries can be negated through this ability." compset="ClSpecial" summary="You are unaffected on a successful Fort or Will save" sortorder="4">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    </thing>
+  <thing id="cHeRHerSac" name="Heroic Sacrifice" description="As a swift action you can voluntarily take 2 points of Constitution damage to fully replenish your holy fury points." compset="ClSpecial" summary="Take 2 Con Damage to restore all holy fury points" sortorder="5">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    </thing>
+  <thing id="cHeRCalJud" name="Call to Judgement" description="With your foe near defeat, you cry out to the gods for justice. Gleaming white chains appear around your enemy, preventing it from using dimensional travel.\n\nAs a swift action you can spend 3 holy fury points to charge your weapon with divine power. If your next attack hits an evil outsider, the target suffers the effect of a Dimensional Anchor spell, with a caster level equal to your Hellreaver level." compset="ClSpecial" summary="3 holy fury points to affect an evil outsider with Dimensional Anchor" sortorder="6">
+    <usesource source="FCodex2"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    </thing>
+  <thing id="cHeRDivRet" name="Divine Retribution (1/day)" description="By channeling divine energy into an evil outsider you can destroy its physical form in a spectacular explosion. As your weapon cuts into its body, you funnel holy energy into it.\n\nOnce per day as a swift action, you can spend 4 holy fury points to imbue your next attack with a mighty aura of avenging divine power. If this attack hits an outsider that has the evil subtype, the target must attempt a Fortitude save (DC 10 + 1/2 your character level + your Cha modifier). \n\nIf it fails this save, the target explodes in a flash of light. It is slain, and all evil creatures in a 60 foot radius burst around it are blinded for 1 round (no save).\n\nOn a sucessful save, the target instead takes 10d6 points of damage as holy energy burns through its body, and the blinding effect does not trigger. This damage is in addition to to your attack&apos;s normal damage." compset="ClSpecial" sortorder="10">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="FCodex2"/>
+    <tag group="SpecSource" tag="cHelpHel"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    </thing>
+  <thing id="cHelpHel" name="Hellreaver" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="10"/>
+    <fieldval field="cAbbr" value="Hel"/>
+    <fieldval field="cSkills" value="2"/>
+    <usesource source="FCodex2"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="Hellreavr" name="Hellreaver"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowRel"/>
+    <tag group="ClassSkill" tag="kKnowPlane"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="AlgnReq" tag="Good"/>
+    <tag group="cRef" tag="Poor"/>
+    <bootstrap thing="cHeRCalJud"></bootstrap>
+    <bootstrap thing="cHeRDivRe"></bootstrap>
+    <bootstrap thing="cHeRDivRet"></bootstrap>
+    <bootstrap thing="cHeRDivSh"></bootstrap>
+    <bootstrap thing="cHeRDivSu"></bootstrap>
+    <bootstrap thing="cHeRDivSu2"></bootstrap>
+    <bootstrap thing="cHeRDivSu3"></bootstrap>
+    <bootstrap thing="cHeRFuStr"></bootstrap>
+    <bootstrap thing="cHeRFuStr2"></bootstrap>
+    <bootstrap thing="cHeRFuStr3"></bootstrap>
+    <bootstrap thing="cHeRFuStr4"></bootstrap>
+    <bootstrap thing="cHeRHerSac"></bootstrap>
+    <bootstrap thing="cHeRHolyFu"></bootstrap>
+    <bootstrap thing="cHeRIDivRe"></bootstrap>
+    <bootstrap thing="cHeRIDivSh"></bootstrap>
+    <bootstrap thing="cHeRMettle"></bootstrap>
+    </thing>
+  <thing id="cHellreavr" name="Hellreaver" description="Devils and their ilk can go only so far before their actions demand a response. At some point, a devil will destroy enough lives that someone has to take a stand. That someone is often a hellreaver&#151;a warrior whose outrage at the actions of the fiends and their ability to corrupt and seduce without consequence fuels an array of combat abilities. These potent options make these warriors tremendously effective combatants of the baatezu.\n\n{b}Special Requirements{/b}\nMust slay an outsider with the evil subtype.\n\n{b}Source{/b}: Fiendish Codex 2" compset="ClassLevel" maxlimit="10">
+    <usesource source="FCodex2"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpHel"></bootstrap>
+    <link linkage="helper" thing="cHelpHel"/>
+    <pickreq thing="fPowerAtt"/>
+    <exprreq message="Knowledge (the Planes) 4 Ranks required"><![CDATA[#skillranks[kKnowPlane] >= 4]]></exprreq>
+    <exprreq message="Base Attack Bonus +5 required"><![CDATA[child[Attack].field[tAtkBase].value >= 5]]></exprreq>
+    </thing>
+  <thing id="cHelpHbk" name="Hellbreaker" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="Hbk"/>
+    <fieldval field="cSkills" value="6"/>
+    <usesource source="FCodex2"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="Classes" tag="Hellbreak" name="Hellbreaker"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="kAppraise"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowPlane"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kTumble"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="AlgnReq" tag="Chaotic"/>
+    <bootstrap thing="cHBManDark"></bootstrap>
+    <bootstrap thing="cHBTelStat"></bootstrap>
+    <bootstrap thing="cHBSteaSLA"></bootstrap>
+    <bootstrap thing="cHBSnkAtk1"></bootstrap>
+    <bootstrap thing="cHBSnkAtk2"></bootstrap>
+    <bootstrap thing="cHBSnkAtk3"></bootstrap>
+    <bootstrap thing="cHBStowawa"></bootstrap>
+    <bootstrap thing="cHBNeuSLA"></bootstrap>
+    <bootstrap thing="cHBFoilSum"></bootstrap>
+    <bootstrap thing="cHBSteaSup"></bootstrap>
+    <bootstrap thing="cHBPlanHop"></bootstrap>
+    </thing>
+  <thing id="cHellbreak" name="Hellbreaker" description="{i}&#147;They steal our souls, I steal their stuff. That&#146;s fair, right?&#148;{/i}\n                            &#151;Trienath Salazar, hellbreaker\n\nHellbreakers are consummate adventurers. Called thieves by their detractors and heroes by their apologists, they specialize in infiltrating infernal strongholds and relieving them of their treasures. To this end, they develop a number of abilities and fighting techniques useful for combating the legions of Hell.\n\n{b}BECOMING A HELLBREAKER{/b}\nRogues likely make the best hellbreakers, since they have access to both Bluff and Sense Motive as class skills and gain the fastest sneak attack progression. Many hell breakers also have ranger levels, since the favored enemy ability complements those gained from this prestige class. Others dabble in forbidden magic, having one or more levels of binder or truenamer (Tome of Magic) to augment their other class features. A spellthief (Complete Adventurer) does well in this class too, as does a ninja, though it takes longer for both classes to meet the entry requirements.\n\n{b}Source{/b}: Fiendish Codex 2" compset="ClassLevel" maxlimit="10">
+    <usesource source="FCodex2"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpHbk"></bootstrap>
+    <link linkage="helper" thing="cHelpHbk"/>
+    <pickreq thing="fComExpert"/>
+    <pickreq thing="fImpFeint"/>
+    <pickreq thing="fUndResis"/>
+    <pickreq thing="lInfernal"/>
+    <exprreq message="Knowledge (the planes) 4 ranks required"><![CDATA[#skillranks[kKnowPlane] >= 4]]></exprreq>
+    <exprreq message="Sense Motive 8 ranks required"><![CDATA[#skillranks[kSenseMot] >= 8]]></exprreq>
+    <exprreq message="Bluff 8 ranks required"><![CDATA[#skillranks[kBluff] >= 8]]></exprreq>
+    <prereq message="Sneak attack, skirmish, or sudden strike +2d6 required">
+      <validate><![CDATA[var result as number
+result += childfound[xSneakAtt].field[Value].value
+result += childfound[xSkirmish].field[Value].value
+result += childfound[xSudStrike].field[Value].value
+result += childfound[cCDSurStri].field[Value].value
+
+validif (result >= 2)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fBraNinHel" name="Brand of the Nine Hells" description="You gain an infernal brand, a symbol proclaiming you as the property of an archdevil. This brand might be a physical symbol, or it could be a strange change in your body&#146;s structure.\n\n{b}Prerequisites{/b}: Lawful evil, devil.\n\n{b}Benefit{/b}: When you select this feat, choose an archdevil to whom you have sworn fealty. You gain a +2 bonus on Bluff, Diplomacy, and Sense Motive checks made against denizens of that archdevil&#146;s layer, but take a &#150;2 penalty on the same checks made against denizens of other layers. In addition, you gain a +2 bonus on Intimidate checks. The brand grants an additional benefit, depending upon the archdevil with which it is associated.\n\n{i}Bel{/i}: The brand of Bel is a cold iron longsword or greatsword (your choice) that glistens with green hellfire. This weapon deals normal damage appropriate to your size, plus an extra 1d6 points of damage against good-aligned creatures, or an extra 2d6 points of damage against demons. You are proficient with this weapon, even if you normally lack weapon proficiency with the longsword or greatsword.\n\n{i}Dispater{/i}: In keeping with your lord&#146;s fearful paranoia, you grow a pair of eyes in the back of your head. You cannot be flanked, nor can you be caught flat-footed.\n\n{i}Mammon{/i}: The brand of Mammon allows you to better play the careful game of balance necessary of all devils. When faced with mighty foes, you grovel and ask for mercy. Against weaker enemies, you show no quarter. If you attack an opponent with more HD than you, you automatically begin to project an aura of pity in a 30-foot radius around you. All creatures in this area must make Will saves (DC 10 + 1/2 your HD + your Cha modifier) or take a &#150;2 penalty on attacks against you. They see you as weak, pathetic, and barely worth the effort of slaying. \n\nCreatures with fewer HD than you, or any creature at half its maximum hit points or less (even one with more HD than you), suffer a different effect from this aura. These creatures become shaken (Will negates, DC 10 + 1/2 your HD + your Cha modifier) as you take on a ghastly, enraged aspect in their eyes. A creature with more HD than you that is subsequently reduced to half hit points must make a new save against this version of your aura. If it fails, the creature becomes shaken but it no longer takes the &#150;2 penalty on attack rolls described above (if it failed its save against the first aura effect). \nThis aura is a mind-affecting ability. A creature needs to save against each version of the aura only once every 24 hours. The aura&#146;s effect last as long as a creature is within its area.\n\n{i}Fierna and Belial{/i}: The brand of Fierna and Belial consumes you, infesting your thoughts with sinister urges. Once per round, you can use a melee touch attack to bestow these dark impulses on another creature. The target of this ability must make a Will save (DC 10 + 1/2 your HD + your Cha modifier). If it fails this save, the target is dazed for 1 round, lost in starry dreams of endless treasure, arcane might, and wishes fulfilled. You can use this mind-affecting ability once every 1d4 rounds.\n\n{i}Levistus{/i}: The brand of Levistus grants you a mystical link to that trapped archdevil&#146;s prison. Once per day as a swift action, you become encased in armor of ice. You gain resistance to cold 20, and all of your natural attacks deal an extra 1d6 points of cold damage. This benefi t lasts for 10 minutes.\n\n{i}Glasya{/i}: The brand of Glasya fills you with power, drawn from the shuddering remains of the Hag Countess. Once per day, you can activate this ability as a swift action. You gain fast healing 3 for 1 minute. Pulpy, tumorous flesh erupts from your wounds to seal your injuries.\n\n{i}Baalzebul{/i}: This brand causes your body to sweat a glistening slime. You gain a +4 bonus on grapple and Escape Artist checks. Your natural attacks deal an extra 1d6 points of acid damage.\n\n{i}Mephistopheles{/i}: The brand of Mephistopheles burns with unholy energy. Three times per day, as a swift action, you can invoke those flames to wreathe your body. For 1 round, all of your natural attacks deal an extra 1d6 points of fi re damage. If you are grappled or struck by an unarmed attack, your attacker takes 1d6 points of fire damage. At the start of each of your turns, any creatures in squares adjacent to you take 1d6 points of fire damage.\n\n{i}Asmodeus{/i}: The brand of Asmodeus fi lls you with power and authority. Three times per day as a swift action, you can use command, as the spell, as a spell-like ability.\n\n{b}Special{/b}: Once a character gains a brand of the Nine Hells, it can never gain the brand of another archdevil.\n\nNondevils can gain this feat, and the feats that require it as a prerequisite, by performing a particularly useful act for an archduke of Hell. This option is unavailable to player characters (unless a DM rules otherwise).\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Gain benefit based on allegiance to a Lord of the Nine." uniqueness="useronce">
+    <fieldval field="ftCandExpr" value="User.Brand9Hell"/>
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Lawful Evil Alignment required">tagis[Alignment.Evil] + tagis[Alignment.Lawful] = 2</exprreq>
+    <exprreq message="Must be a Devil"><![CDATA[tagis[Race.Devil] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDilaAura" name="Dilate Aura" description="You can extend the range of your aura.\n\n{b}Prerequisite{/b}: Aura ability.\n\n{b}Benefit{/b}: Once per encounter, you can double the range of your aura. The expanded aura lasts for a number of rounds equal to your Charisma modifier (minimum 1 round).\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Once/encounter, double range of your aura." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="fRpdRegen" name="Rapid Regeneration" description="You regenerate more rapidly.\n\n{b}Prerequisite{/b}: Regeneration ability.\n\n{b}Benefit{/b}: The amount of nonlethal damage removed by your regeneration ability increases by 1.\n\n{b}Special{/b}: You can select this feat multiple times. Its effects stack.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Regeneration increases by 1.">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="General"/>
+    <pickreq thing="xRegen"/>
+    </thing>
+  <thing id="fSpnInstin" name="Supernatural Instincts" description="Your uncanny insight enables you to take advantage of the subtle opportunities created when an opponent uses supernatural abilities against you.\n\n{b}Prerequisite{/b}: Combat Reflexes.\n\n{b}Benefit{/b}: When a creature you threaten uses a supernatural ability, it provokes an attack of opportunity from you. Unlike a spell or spell-like ability, though, a successful hit does not require the target to succeed on a Concentration check to continue to make use of the supernatural ability.\n\n{b}Normal{/b}: Supernatural abilities do not provoke attacks of opportunity.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Creature using a supernatural ability provokes attack of opportunity from you." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="General"/>
+    <pickreq thing="fComRef"/>
+    </thing>
+  <thing id="fUndResis" name="Undo Resistance" description="You learn to use cold iron weapons to unravel your opponent&#146;s magical defenses with a well-placed sneak attack.\n\n{b}Prerequisite{/b}: Sneak attack, sudden strike, or skirmish ability.\n\n{b}Benefit{/b}: If you successfully deal sneak attack damage with a cold iron weapon, you reduce the target&#146;s spell resistance by 1 point per die of sneak attack damage. Multiple uses of this feat stack. Undo Resistance can reduce a target&#146;s spell resistance to 0, but not below 0. Spell resistance reduced in this manner returns to normal 1 hour after the last sneak attack.\n\n{b}Special{/b}: You also gain this benefit with skirmish and sudden strike damage. Your DM might also allow you to use this feat with similar special abilities that grant you extra dice of damage against flat-footed or flanked opponents.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Deal sneak attack with cold iron weapon and reduce a creature&#146;s spell resistance." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Sneak attack, sudden strike, or skirmish ability required"><![CDATA[childfound[xSneakAtt].field[Value].value + childfound[xSudStrike].field[Value].value + childfound[cCDSurStri].field[Value].value + childfound[xSkirmish].field[Value].value >= 1]]></exprreq>
+    </thing>
+  <thing id="fVenSurge" name="Vengeful Surge" description="Opponents who target you with magical effects risk sparking your ire.\n\n{b}Prerequisite{/b}: Iron Will.\n\n{b}Benefit{/b}: Whenever you make a successful saving throw against a spell, spell-like ability, or supernatural effect, for 1 round you gain a +2 bonus on damage rolls against the creature that targeted you.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="When you make a save, gain +2 on damage against creature that targeted you for 1 round." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="General"/>
+    <pickreq thing="fIronWill"/>
+    </thing>
+  <thing id="fDevFavor" name="Devil&apos;s Favor" description="You have entered into an infernal pact with a dark power. In return for an indelible stain on your soul, and possibly an eternity of torment in Hell, you gain the ability to call upon the powers of Hell to aid your efforts.\n\n{b}Prerequisite{/b}: Pact with devil.\n\n{b}Benefit{/b}: When you attempt an attack, save, or check of any sort, you can beseech the dark powers to aid you. You gain a +2 bonus on the attack, save, or check.\n\nYou can use this ability a number of times per day equal to the total number of devil-touched feats you have selected, including this one.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="+2 bonus on attack, save, or check 1/day per devil-touched feat you have." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Devtouch" name="Devil-Touched"/>
+    </thing>
+  <thing id="fDevAura" name="Devil&apos;s Aura" description="Your close association with diabolic powers stains your soul. By focusing your power, you can cause other creatures to become unsettled and nervous in your presence.\n\n{b}Prerequisites{/b}: Cha 13, Intimidate 9 ranks, Devil&#146;s Favor.\n\n{b}Benefit{/b}: You can generate an aura of fear for 1 round as a swift action. All living creatures within 10 feet must succeed on a Will save (DC 10 + 1/2 your HD + your Cha modifier) or become shaken for 1d3 rounds. Multiple exposures to the same aura have no additional effect. The aura lasts for 1 round.\n\nYou can use this ability a number of times per day equal to the total number of devil-touched feats you have selected, including this one.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Create aura of fear for 1 round." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Devtouch" name="Devil-Touched"/>
+    <pickreq thing="fDevFavor"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Intimidate 9 ranks required"><![CDATA[#skillranks[kIntim] >= 9]]></exprreq>
+    </thing>
+  <thing id="fDevFlesh" name="Devil&apos;s Flesh" description="Your skin thickens and assumes a scaled, leathery texture that turns aside blows but serves as a clear mark of your taint.\n\n{b}Prerequisites{/b}: Con 15, Devil&#146;s Favor.\n\n{b}Benefit{/b}: You gain a bonus to your natural armor and on Intimidate checks equal to half the number of devil-touched feats you have selected, including this one. If you do not have a natural armor bonus, this feat provides you with one. If you already have one, this feat improves your existing bonus.\n\nIn addition, you take a penalty on all Diplomacy checks against good creatures equal to the natural armor bonus provided by this feat.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Gain bonus to natural armor, Intimidate based on number of devil-touched feats you have." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Devtouch" name="Devil-Touched"/>
+    <pickreq thing="fDevFavor"/>
+    <exprreq message="Constitution 15 required"><![CDATA[child[aCON].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fDevSight" name="Devil&apos;s Sight" description="Your eyes glow red with infernal energy, allowing you to pierce magical darkness.\n\n{b}Prerequisites{/b}: Wis 15, Devil&#146;s Favor.\n\n{b}Benefit{/b}: You gain darkvision out to 60 feet. If you already have darkvision, its range improves by 60 feet. In addition, as a swift action, you can gain blindsight out to 30 feet for 5 rounds.\n\nYou can use your blindsight ability a number of times per day equal to the total number of devil-touched feats you have selected, including this one.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Gain darkvision 60 ft. and blindsight 30 ft. for 5 rounds 1/day per devil-touched feat you have." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Devtouch" name="Devil-Touched"/>
+    <pickreq thing="fDevFavor"/>
+    <exprreq message="Wisdom 15 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fDevStamin" name="Devil&apos;s Stamina" description="Your body is infused with the toughness and fortitude of a devil. You can shrug off attacks that would slay a lesser creature.\n\n{b}Prerequisites{/b}: Devil&#146;s Favor, base Fortitude save +3.\n\n{b}Benefit{/b}: You gain 2 extra hit points per devil-touched feat you have selected, including this one. These hit points add to your maximum hit points, just like hit points from any other source.\n\nIn addition, once per day you gain fast healing equal to the number of devil-touched feats you possess for 5 rounds.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Gain 2 hp per devil-touched feat, and 1/day fast healing equal to number of devil-touched feats you have for 5 rounds." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Devtouch" name="Devil-Touched"/>
+    <pickreq thing="fDevFavor"/>
+    <exprreq message="Base Fortitude Save +3 required"><![CDATA[hero.child[vFort].field[vBase].value >= 3]]></exprreq>
+    </thing>
+  <thing id="fDevTongue" name="Devil&apos;s Tongue" description="You gain a devil&#146;s talent for trickery and deceit. Your words form a verbal maze that clouds your opponent&#146;s mind. As a physical mark of this ability, your tongue becomes forked like a serpent&#146;s.\n\n{b}Prerequisites{/b}: Cha 15, Devil&#146;s Favor.\n\n{b}Benefit{/b}: As a standard action, you can speak soothing words of friendship and amity to any opponent within 60 feet. The target must be able to hear and understand you. The target must make a Will save (DC 10 + 1/2 your HD + your Cha modifier) or be dazed for 1 round. In addition, he is rendered flat-footed.\n\nYou can use this ability a number of times per day equal to the number of devil-touched feats you possess. You can choose to spend two uses of this ability to use it as a swift action rather than as a standard action.\n\nThis is a mind-affecting, language-dependent, supernatural ability.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Daze one creature as standard action 1/day per devil-touched feat you have." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Devtouch" name="Devil-Touched"/>
+    <pickreq thing="fDevFavor"/>
+    <exprreq message="Charisma 15 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fDivCensur" name="Divine Censure" description="You can channel divine energy to instill fear in evil outsiders.\n\n{b}Prerequisites{/b}: Ability to turn undead, good alignment.\n\n{b}Benefit{/b}: You can spend one of your turn undead attempts as a standard action to channel your god&#146;s outrage, condemning all evil outsiders within 30 feet. Such creatures must make a Will save (DC 10 + 1/2 your character level + your Cha modifier) or become shaken for a number of rounds equal to your Charisma modifier (minimum 1 round).\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Cause evil outsiders to become shaken." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Divine"/>
+    <exprreq message="Good Alignment required"><![CDATA[tagis[Alignment.Good] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDivDefian" name="Divine Defiance" description="You can channel divine energy to counter spells without readying an action in advance.\n\n{b}Prerequisites{/b}: Divine caster level 3rd, ability to turn or rebuke undead.\n\n{b}Benefit{/b}: You can spend one of your turn or rebuke undead attempts as an immediate action to counter a spell or spelllike effect. For example, if an evil cleric targets Jozan with a {i}hold person{/i} spell, as an immediate action, Jozan can spend a turn undead attempt to counter the spell if he had prepared a {i}hold person{/i} or {i}dispel magic{/i} spell.\n\nYou must have the relevant spell prepared as normal (or {i}dispel magic{/i}), and you must make a Spellcraft check to identify the target&#146;s spell if applicable. (See PH 170 for details on counterspells.)\n\n{b}Normal{/b}: You must typically use a readied action to counter an enemy&#146;s spell.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Counter enemy&#146;s spell as an immediate action." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Divine"/>
+    <prereq message="Divine caster level 3rd required">
+      <validate><![CDATA[foreach pick in hero from BaseClHelp where "CasterSrc.Divine"
+ validif (eachpick.field[cCasterLev].value >= 3)
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fDivJustic" name="Divine Justice" description="You can channel divine energy to deal extra melee damage to evil outsiders.\n\n{b}Prerequisite{/b}: Ability to turn or rebuke undead.\n\n{b}Benefit{/b}: As a swift action, spend one of your turn or rebuke undead attempts to deal an extra 2d6 points of damage with all your successful melee attacks against evil outsiders until the end of the round. In addition, evil outsiders struck by one of your attacks while you are using this feat must succeed on a Will save (DC 10 + 1/2 your character level + your Cha modifier) or be shaken for 1 minute.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Deal +2d6 damage with melee attacks against evil outsiders for 1 round" uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Divine"/>
+    </thing>
+  <thing id="fPersRefus" name="Persistance Refusal" description="You can channel divine energy to make a second save against an effect that specifically targets you.\n\n{b}Prerequisite{/b}: Ability to turn or rebuke undead.\n\n{b}Benefit{/b}: As a swift action, spend one of your turn or rebuke undead attempts to make another save against any effect that targets you and has a continuing duration. For example, on his turn, a cleric with this feat who fails a saving throw to resist the effect of a hold monster spell can spend a turn undead attempt as a swift action to attempt another save.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Make another save against ongoing effect." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Divine"/>
+    </thing>
+  <thing id="fPiousDefi" name="Pious Defiance" description="You can channel positive or negative energy to firm your resolve.\n\n{b}Prerequisite{/b}: Ability to turn or rebuke undead.\n\n{b}Benefit{/b}: You can spend a turn or rebuke attempt as an immediate action to gain a bonus on Will saves equal to 1/2 your character level for 1 round.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Gain bonus on Will saves equal to 1/2 character level as an immediate action." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Divine"/>
+    </thing>
+  <thing id="fDisrSpell" name="Disrupting Spell" description="You can cast spells that disrupt other caster&#146;s magical capabilities.\n\n{b}Benefit{/b}: You can alter a spell so it interferes with one or more targets&#146; supernatural and spell-like abilities, as well as any spells they cast. A disrupting spell temporarily reduces the save DC of any spell, spell-like, or supernatural ability the affected creature or creatures can cast or use by 2. The effect of a disrupting spell lasts for a number of rounds equal to the spell&#146;s unmodifi ed level. Multiple disrupting spells do not stack. A disrupting spell has no effect on magic items. A disrupting spell uses up a spell slot two levels higher than the spell&#146;s actual level.\n\n{b}Source{/b}: Fiendish Codex 2" compset="Feat" summary="Your spell interferes with the spellcasting of an enemy." uniqueness="useronce">
+    <usesource source="FCodex2"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    </thing>
+  <thing id="cHBManDark" name="Mantle of Darkness" description="You can make Hide checks in any kind of darkness, even when observed by creatures that can see in darkness." compset="ClSpecial" summary="You can make Hide checks in any kind of darkness.">
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cHBTelStat" name="Telepathic Static" description="Beginning at 1st level, you emit a field of psychic chatter out to a range of 20 feet, negating the telepathy ability of all creatures within range. In addition, divination spells and spell-like abilities cast or used in the area are impeded. To use divination magic, a caster must succeed on a Spellcraft check (DC 20 + the level of the spell). If the check fails, the spell or spell-like ability does not function but is still lost as a prepared spell, spell slot, or daily use. If the check succeeds, the spell functions normally. You can suppress this ability for 1 round as a free action." compset="ClSpecial" summary="Emit a field of psychic chatter out to a range of 20&apos;.">
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHBSteaSLA" name="Steal Spell-Like Ability" description="Starting at 2nd level, you can use a sneak attack to temporarily steal a creature&#146;s spell-like ability. If you hit an opponent with a sneak attack, you can choose to forgo 2d6 dice of sneak attack damage and instead gain one use of one of the target&#146;s spell-like abilities. If the target is willing, you can steal a spell-like ability with a touch as a standard action (you do not need to damage a willing target).\n\nThis spell-like ability can originate from the target&#146;s class, race, template, or any other source, and can be of any spell level up to a maximum of 1/2 your class level. You can select a specific spell-like ability to borrow; otherwise, the DM chooses the ability at random. If the ability has a limited number of uses per day, the target must have at least one such use left, or you can&#146;t steal the ability. If the target can&#146;t use its ability (such as a summoned devil&#146;s summon ability), you can&#146;t steal it. If you steal and use an ability with limited uses per day, your use of the ability also counts as one use for the target creature.\n\nYou can use a stolen spell-like ability once. For all purposes (caster level, save DC, and so on), treat the spell-like ability as if the creature whose ability you stole were using it. You must use the stolen spell-like ability within 1 minute of acquiring it, or it is lost. Until you use the ability (or until 1 minute elapses), the target cannot use the stolen ability.\n\nIf you have a similar ability, such as the spellthief&#146;s steal spell-like ability (Complete Adventurer 19), you can steal two spell-like abilities at once, but each is subject to its respective spell level restriction. Once you have stolen a spell-like ability, you cannot use neutralize spell-like ability (see below) until you have used the stolen ability." compset="ClSpecial" summary="Use your sneak attack ability to steal your target&apos;s SLA.">
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostLevel" priority="12000"><![CDATA[var lvl as number
+lvl = round(#levelcount[Hellbreak]/2,0,-1)
+
+field[xSumm].text = "Use your sneak attack ability to steal your target's SLA of up to level " & lvl & "."]]></eval>
+    </thing>
+  <thing id="cHBSnkAtk1" name="Sneak Attack +1d6" description="Beginning at 3rd level, you deal extra damage when you are fl anking an opponent or at any time when a target would be denied its Dexterity bonus to AC. This extra damage applies to ranged attacks only if a target is within 30 feet. (See the rogue class feature, PH 50.)\n\nIf you have levels in another class that grants sneak attack damage, the extra damage stacks." compset="ClSpecial" summary="Gain sneak attack +1d6. Stacks with levels from other classes.">
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xSneakAtt">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Hellbreak >= 3]]></containerreq>
+      </bootstrap>
+    <eval phase="PostLevel" priority="12000"><![CDATA[if (#levelcount[Hellbreak] >= 9) then
+ hero.child[xSneakAtt].field[Value].value += 3
+elseif (#levelcount[Hellbreak] >= 6) then
+ hero.child[xSneakAtt].field[Value].value += 2
+elseif (#levelcount[Hellbreak] >= 3) then
+ hero.child[xSneakAtt].field[Value].value += 1
+endif]]></eval>
+    </thing>
+  <thing id="cHBSnkAtk2" name="Sneak Attack +2d6" description="Sneak attack damage increases to 2d6." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHBSnkAtk3" name="Sneak Attack +3d6" description="Sneak attack damage increases to 3d6." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHBStowawa" name="Stowaway" description="From 4th level on, you can hitch a ride on a conjuration (teleportation) spell or spell-like ability cast or used within 30 feet of you. If the target is unwilling, you must succeed on a level check with a DC of 10 + the caster level of the effect as an immediate action. If the target is willing, this ability functions automatically. When the spell is cast, you appear wherever the caster appears, in the same position you were at the time of the spell&#146;s casting. If this would force you to appear in a solid object, you appear in the nearest open available space. If the conjuration spell has variable results, such as teleport, you suffer the same effect as the caster." compset="ClSpecial" summary="Hitch a ride on a teleportation spell cast near you.">
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHBNeuSLA" name="Neutralize Spell-Like Ability" description="Beginning at 5th level, you gain the ability to neutralize one of a target&#146;s spell-like abilities. This ability functions like the steal spell-like ability class feature, except you do not gain the ability to use the spell-like ability. Instead, you prevent the target from using the ability for a number of rounds equal to your class level. You cannot use this ability while holding a stolen spell-like ability. You can neutralize any number of spell-like abilities." compset="ClSpecial" summary="Neutralize one of a target&#146;s spell-like abilities.">
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostLevel" priority="12000">field[xSumm].text = &quot;Neutralize one of a target&#146;s spell-like abilities for &quot; &amp; #levelcount[Hellbreak] &amp; &quot; rounds.&quot;</eval>
+    </thing>
+  <thing id="cHBFoilSum" name="Foil Summoning" description="At 7th level, your telepathic static intensifies so that you also impede conjuration (calling) and conjuration (summoning) spells and spell-like effects within 20 feet. See telepathic static, above, for details." compset="ClSpecial" summary="Impede summoning spells with your telepathic static.">
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHBSteaSup" name="Steal Supernatural Ability" description="From 8th level on, you can steal supernatural abilities. This ability functions like the steal spell-like ability class feature. While in possession of a stolen spell-like or supernatural ability, you cannot use steal spell-like ability, steal supernatural ability, or neutralize spell-like ability again until you lose access to the stolen ability (by discharging it or after 1 minute, whichever comes first)." compset="ClSpecial" summary="Steal supernatural abillities as you would spell-like abilities.">
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHBPlanHop" name="Plane Hop" description="At 10th level, you can use {i}plane shift{/i} as an immediate action once per day. This ability functions like the spell, but it has a range of personal and a target of you." compset="ClSpecial" summary="Use {i}plane shift{/i} as a spell-like ability 1/day.">
+    <fieldval field="hTotal" value="1"/>
+    <tag group="SpecSource" tag="cHelpHbk"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="xMrkAvernu" name="Mark of Avernus" description="Your unfailing allegiance to Bel gives you special strategic insights into the best ways to overcome your enemies. By examining your opponents, you can land telling blows.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Bel.\n\n{b}Benefit{/b}: You are a master strategist. Once per encounter, you can make a single ranged attack, melee attack, or use one of your spell-like abilities as an immediate action. In addition, whenever you successfully hit an opponent with an attack made as part of a readied action, you gain a +4 bonus on your attack roll and damage roll, and you automatically confirm a critical threat on such an attack." compset="Special" summary="1/encounter, make melee or ranged attack, or use a spell-like ability as an immediate action.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  <thing id="xMrkCania" name="Mark of Cania" description="Behind Mephistopheles&#146;s mask of civility and quick wit burns the fire of frustration and hatred. You acquire this archdevil&#146;s temperament, and you can channel it to destroy your foes.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Mephistopheles.\n\n{b}Benefit{/b}: The passionate anger for which Mephistopheles is famed burns brightly in you. Each round when you miss on an attack roll or a target successfully saves against a spell, spell-like ability, or supernatural ability you have cast or used, you gain a cumulative +1 bonus on attack rolls, damage rolls, saves, and checks. This bonus lasts until you successfully hit a target or until a target fails a saving throw against one of your spells, spell-like abilities, or supernatural effects.\n\nFor every +1 bonus you gain, you also take a &#150;1 penalty to Armor Class. This penalty disappears when the bonus no longer applies." compset="Special" summary="When you fail at an attack, gain cumulative bonus on attacks, saves, checks until you succeed.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  <thing id="xMrkDis" name="Mark of Dis" description="The infernal attention of Dispater has made you paranoid and cautious, giving you decided advantages in combat. Your attention to detail in battle leaves few openings for your opponents to attack.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Dispater.\n\n{b}Benefit{/b}: The only devils that survive for long in the labyrinthine streets of Dis are those with Dispater&#146;s preparedness and unflagging paranoia. When you move (and only when you move), the square in which you start your movement is not considered threatened. In addition, once per round, as an immediate action, you can choose to gain a +4 bonus to AC or on a single save. This bonus applies to one or the other, but not both." compset="Special" summary="Your starting square is not threatened, +4 to AC or on a save as immediate action 1/round.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  <thing id="xMrkMalado" name="Mark of Maladomini" description="Maladomini is a sinking mire of corruption and filth. Those who serve the Lord of Flies acquire some of his most unsavory characteristics. You exude stinking ichor like your master.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Baalzebul.\n\n{b}Benefit{/b}: You share the curse of your foul master, Baalzebul. Your body issues forth a steady stream of filth that collects about you. Any creature that enters or leaves a square adjacent to you must succeed on a Balance check (DC 10 + 1/2 your HD + your Con modifier) or immediately stop moving. A creature that fails this check and attempts to keep moving immediately falls prone in its current space. In addition, this slime reeks of decay, excrement, and worse, forcing any living creature within 10 feet of you to succeed on a Fortitude save (DC 10 + 1/2 your HD + your Con modifier) or become sickened for 10 rounds. Regardless of the outcome of the save, a creature cannot again be affected by your stench for 24 hours." compset="Special" summary="Issue pool of filth that forces Balance checks and causes creatures to become sickened.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  <thing id="xMrkMalbol" name="Mark of Malbolge" description="Malbolge has transformed into a place of disturbing growth and decay. Glasya, the new mistress, has blessed you with the same essence that infects everything in her domain, enabling you to draw power from the remains of the Hag Countess.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Glasya.\n\n{b}Benefit{/b}: Your body throbs with a number of fleshy tumors equal to your Constitution modifier +3 (minimum three tumors). Each round, as a swift action, you can draw strength from one of these cancerous growths to gain one of the following benefits:\n\n&#149; +10-foot enhancement bonus to your base speed for 1 round.\n&#149; Heal 2d6 points of damage +1 point per Hit Die.\n&#149; Increase your natural reach with your melee attacks by 5 feet for 1 round.\n&#149; Spray a stream of noxious fi lth at an adjacent target, forcing that creature to succeed on a Fortitude save (DC 10 + 1/2 your HD + your Con modifier) or become sickened for 1 round.\n\nSpent tumors regrow in 10 rounds." compset="Special" summary="Gain fleshy tumors that give you a variety of benefits.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  <thing id="xMrkMinaur" name="Mark of Minauros" description="Mammon is an expert at managing the various powers of Hell. From service to this archdevil, you know when to use explosive violence and when to beat a hasty retreat.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Mammon.\n\n{b}Benefit{/b}: Like your master, you know when to fight and when to flee. When making a charge attack, you gain a +2 bonus on your attack roll at the end of the charge for every 10 feet you move as part of the charge (in addition to the normal attack bonus from charging). In addition, when you move (and only when you move), the square in which you start your movement is not considered threatened. \n\n{b}Normal{/b}: You gain a +2 bonus on your attack roll at the end of a charge. Withdrawing is a full-round action." compset="Special" summary="Gain +2 bonus on charge attacks, and your starting square is not threatened.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  <thing id="xMrkNessus" name="Mark of Nessus" description="All bow before Asmodeus. The Lord of Nessus grants you a hint of his commanding nature.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Asmodeus.\n\n{b}Benefit{/b}: Few have the resolve necessary to confront Asmodeus himself, and you have learned to tap into this commanding authority. Whenever a creature would attack you, target you with a spell, or use spell-like or supernatural ability against you, it must fi rst succeed on a Will save (DC 10 + 1/2 your HD + your Cha modifier). If it fails, it must select another target or take some other action. Once an opponent succeeds on the saving throw, it cannot be affected again by your Mark of Nessus for 24 hours.\n\nIn addition, once per round as a swift action, you can infuse a single natural attack with hellfire, dealing an extra 1d6 points of damage." compset="Special" summary="An enemy must make a Will save before it can attack you, or it must target another foe.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  <thing id="xMrkPhlege" name="Mark of Phlegethos" description="The disturbing infatuation of physical pleasure and pain has indelibly touched your mind, enabling to draw strength from your own suffering, as well as that of others.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Belial or Fierna.\n\n{b}Benefit{/b}: You gain your master&#146;s or mistress&#146;s penchant for perverse sensuality. Whenever you take or deal damage, you gain 1 pleasure point. You can spend a single pleasure point as a swift action to gain a +4 bonus on your next attack roll, save, or ability or skill check. Accumulated pleasure points disappear at the end of the encounter." compset="Special" summary="When you take damage, you can gain bonuses on attacks, saves, or checks.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  <thing id="xMrkStygia" name="Mark of Stygia" description="Levistus demands that his servants work endlessly to extract him from his icy tomb. From your time on the glacier, you have learned to use your environment to best advantage.\n\n{b}Prerequisites{/b}: Brand of the Nine Hells, allegiance to Levistus.\n\n{b}Benefit{/b}: Those who serve Levistus are accustomed to the inhospitable cold and ice of Stygia. You never need to make Balance checks when on slippery or severely slippery surfaces, and you can move at full speed over any terrain that would ordinarily require a Balance check. Whenever both you and an opponent stand on icy or frozen surfaces, you gain a +4 bonus on attack rolls and damage rolls.\n\nFinally, each round as a swift action, you can limn a weapon you wield with Stygian cold for 1 round. On a successful hit, this weapon deals an extra 1d6 points of cold damage. If the weapon is made of Baatorian green steel (see page 99), it deals an extra 2d6 points of cold damage instead." compset="Special" summary="Do not need to make Balance checks on slippery surfaces, deal +1d6 cold damage, other benefits.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Brand9Hell"/>
+    </thing>
+  </document>

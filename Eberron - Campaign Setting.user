@@ -1,0 +1,1596 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>02-24-11 Sendric
+- Removed (EbCam) from feat names.</info_history>
+    </fileinfo>
+  <thing id="fStrongMin" name="Strong Mind" description="{b}Prerequisites{/b}: Wis 11\n\n{b}Benefit{/b}: You gain an +3 bonus on saving throws against psionic abilities and  mind attacks. Psionic abilities include spell-like abilities of monsters such as Aboleths, Mind-flayers, and Yuan-Ti (and any other creatures whose special attacks are described as psionic).\n\nMind attacks include the Mind-flayer&apos;s {i}Mind Blast{/i} ability, as well as any similiar supernatural ability that uses sheer mental force to stun or disable an opponent (at the DM&apos;s discretion).\n\n{b}Special{/b}: The benefit of this feat does not extend to spells, spell-like abilities , or magic items that duplicate psionic abilities. This is an exception to the general rule that magic and psionics are equivalent." compset="Feat" summary="+3 Bonus on saving throws versus Psionics." uniqueness="useronce">
+    <usesource source="EbCamSet" parent="pECS" name="Eberron Campaign Setting"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <exprreq message="Wisdom 11 required." iserror="no"><![CDATA[child[aWIS].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="cHelpArt" name="Artificer" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="Art"/>
+    <fieldval field="cSkills" value="4"/>
+    <fieldval field="cSplMinLvl" value="1"/>
+    <fieldval field="cSplMaxLvl" value="6"/>
+    <arrayval field="cBonFtTot" index="3" value="1"/>
+    <arrayval field="cBonFtTot" index="7" value="2"/>
+    <arrayval field="cBonFtTot" index="11" value="3"/>
+    <arrayval field="cBonFtTot" index="15" value="4"/>
+    <arrayval field="cBonFtTot" index="19" value="5"/>
+    <arrayval field="cCastTot" index="0" column="1" value="2"/>
+    <arrayval field="cCastTot" index="1" column="1" value="3"/>
+    <arrayval field="cCastTot" index="2" column="1" value="3"/>
+    <arrayval field="cCastTot" index="2" column="2" value="1"/>
+    <arrayval field="cCastTot" index="3" column="1" value="3"/>
+    <arrayval field="cCastTot" index="3" column="2" value="2"/>
+    <arrayval field="cCastTot" index="4" column="1" value="3"/>
+    <arrayval field="cCastTot" index="4" column="2" value="3"/>
+    <arrayval field="cCastTot" index="4" column="3" value="1"/>
+    <arrayval field="cCastTot" index="5" column="1" value="3"/>
+    <arrayval field="cCastTot" index="5" column="2" value="3"/>
+    <arrayval field="cCastTot" index="5" column="3" value="2"/>
+    <arrayval field="cCastTot" index="6" column="1" value="3"/>
+    <arrayval field="cCastTot" index="6" column="2" value="3"/>
+    <arrayval field="cCastTot" index="6" column="3" value="2"/>
+    <arrayval field="cCastTot" index="7" column="1" value="3"/>
+    <arrayval field="cCastTot" index="7" column="2" value="3"/>
+    <arrayval field="cCastTot" index="7" column="3" value="3"/>
+    <arrayval field="cCastTot" index="7" column="4" value="1"/>
+    <arrayval field="cCastTot" index="8" column="1" value="3"/>
+    <arrayval field="cCastTot" index="8" column="2" value="3"/>
+    <arrayval field="cCastTot" index="8" column="3" value="3"/>
+    <arrayval field="cCastTot" index="8" column="4" value="2"/>
+    <arrayval field="cCastTot" index="9" column="1" value="3"/>
+    <arrayval field="cCastTot" index="9" column="2" value="3"/>
+    <arrayval field="cCastTot" index="9" column="3" value="3"/>
+    <arrayval field="cCastTot" index="9" column="4" value="2"/>
+    <arrayval field="cCastTot" index="10" column="1" value="3"/>
+    <arrayval field="cCastTot" index="10" column="2" value="3"/>
+    <arrayval field="cCastTot" index="10" column="3" value="3"/>
+    <arrayval field="cCastTot" index="10" column="4" value="3"/>
+    <arrayval field="cCastTot" index="10" column="5" value="1"/>
+    <arrayval field="cCastTot" index="11" column="1" value="3"/>
+    <arrayval field="cCastTot" index="11" column="2" value="3"/>
+    <arrayval field="cCastTot" index="11" column="3" value="3"/>
+    <arrayval field="cCastTot" index="11" column="4" value="3"/>
+    <arrayval field="cCastTot" index="11" column="5" value="2"/>
+    <arrayval field="cCastTot" index="12" column="1" value="3"/>
+    <arrayval field="cCastTot" index="12" column="2" value="3"/>
+    <arrayval field="cCastTot" index="12" column="3" value="3"/>
+    <arrayval field="cCastTot" index="12" column="4" value="3"/>
+    <arrayval field="cCastTot" index="12" column="5" value="2"/>
+    <arrayval field="cCastTot" index="13" column="1" value="4"/>
+    <arrayval field="cCastTot" index="13" column="2" value="3"/>
+    <arrayval field="cCastTot" index="13" column="3" value="3"/>
+    <arrayval field="cCastTot" index="13" column="4" value="3"/>
+    <arrayval field="cCastTot" index="13" column="5" value="3"/>
+    <arrayval field="cCastTot" index="13" column="6" value="1"/>
+    <arrayval field="cCastTot" index="14" column="1" value="4"/>
+    <arrayval field="cCastTot" index="14" column="2" value="4"/>
+    <arrayval field="cCastTot" index="14" column="3" value="3"/>
+    <arrayval field="cCastTot" index="14" column="4" value="3"/>
+    <arrayval field="cCastTot" index="14" column="5" value="3"/>
+    <arrayval field="cCastTot" index="14" column="6" value="2"/>
+    <arrayval field="cCastTot" index="15" column="1" value="4"/>
+    <arrayval field="cCastTot" index="15" column="2" value="4"/>
+    <arrayval field="cCastTot" index="15" column="3" value="4"/>
+    <arrayval field="cCastTot" index="15" column="4" value="3"/>
+    <arrayval field="cCastTot" index="15" column="5" value="3"/>
+    <arrayval field="cCastTot" index="15" column="6" value="2"/>
+    <arrayval field="cCastTot" index="16" column="1" value="4"/>
+    <arrayval field="cCastTot" index="16" column="2" value="4"/>
+    <arrayval field="cCastTot" index="16" column="3" value="4"/>
+    <arrayval field="cCastTot" index="16" column="4" value="4"/>
+    <arrayval field="cCastTot" index="16" column="5" value="3"/>
+    <arrayval field="cCastTot" index="16" column="6" value="3"/>
+    <arrayval field="cCastTot" index="17" column="1" value="4"/>
+    <arrayval field="cCastTot" index="17" column="2" value="4"/>
+    <arrayval field="cCastTot" index="17" column="3" value="4"/>
+    <arrayval field="cCastTot" index="17" column="4" value="4"/>
+    <arrayval field="cCastTot" index="17" column="5" value="4"/>
+    <arrayval field="cCastTot" index="17" column="6" value="3"/>
+    <arrayval field="cCastTot" index="18" column="1" value="4"/>
+    <arrayval field="cCastTot" index="18" column="2" value="4"/>
+    <arrayval field="cCastTot" index="18" column="3" value="4"/>
+    <arrayval field="cCastTot" index="18" column="4" value="4"/>
+    <arrayval field="cCastTot" index="18" column="5" value="4"/>
+    <arrayval field="cCastTot" index="18" column="6" value="4"/>
+    <arrayval field="cCastTot" index="19" column="1" value="4"/>
+    <arrayval field="cCastTot" index="19" column="2" value="4"/>
+    <arrayval field="cCastTot" index="19" column="3" value="4"/>
+    <arrayval field="cCastTot" index="19" column="4" value="4"/>
+    <arrayval field="cCastTot" index="19" column="5" value="4"/>
+    <arrayval field="cCastTot" index="19" column="6" value="4"/>
+    <usesource source="EbCamSet"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kAppraise"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDisable"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kKnowArcEn"/>
+    <tag group="ClassSkill" tag="kKnowPlane"/>
+    <tag group="ClassSkill" tag="kOpenLock"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kUseMagic"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="Artificer"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="AgeColumn" tag="3"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <tag group="fInclude" tag="fCraftCons"/>
+    <tag group="CasterType" tag="SpontAll"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="cArtScrScr"></bootstrap>
+    <bootstrap thing="cArtBrwPot"></bootstrap>
+    <bootstrap thing="cArtCrWoIt"></bootstrap>
+    <bootstrap thing="cCrMagArms"></bootstrap>
+    <bootstrap thing="cArtCrWand"></bootstrap>
+    <bootstrap thing="cArtCrRod"></bootstrap>
+    <bootstrap thing="cArtCrStaf"></bootstrap>
+    <bootstrap thing="cCraFoRing"></bootstrap>
+    <bootstrap thing="cArtDisTra"></bootstrap>
+    <bootstrap thing="cArtKnowle"></bootstrap>
+    <bootstrap thing="cArtBonus"></bootstrap>
+    <bootstrap thing="cArtItemCr"></bootstrap>
+    <bootstrap thing="xArtCraftR"></bootstrap>
+    <bootstrap thing="cArtCrftHo"></bootstrap>
+    <bootstrap thing="cArtRetEss"></bootstrap>
+    <bootstrap thing="cArtMeSpTr"></bootstrap>
+    <bootstrap thing="cArtMeSpCo"></bootstrap>
+    <bootstrap thing="cArtSkMast"></bootstrap>
+    <link linkage="spellattr" thing="aINT"/>
+    </thing>
+  <thing id="cArtificer" name="Artificer" description="In Eberron, magic is almost technology. Spellcasters specialize in certain forms of that technology, while artificers tinker with its fundamental workings. Artificers understand magic on a different level from spellcasters, and do not cast spells as wizards and clerics do. They have an amazing facility with magic items and constructs, and in many ways, they keep the magical world of Eberron running. \n\n{b}Adventures:{/b} Artificers adventure for a variety of reasons. They seek deposits of rare minerals and dragonshards to use in their creations. They search for hidden arcane secrets related to making magic items or constructs. They face danger to acquire money to buy or make magic items. Like any other adventurers, they might also be motivated by a desire to fight evil or gain power, or by any of a host of similar reasons.\n\n{b}Characteristics:{/b} Artificers are perhaps the ultimate magical dabblers. They can use just about any spell from a wand or scroll, empower ordinary items with temporary magical power, repair damaged constructs (including warforged), alter the function of existing magic items, and craft magic items, constructs, and dragonshard items. They have a limited list of their own spell-like infusions that they can apply to objects, and they can also work with any of the spells on other classes&#146; spell lists. Their magic is neither arcane nor divine, and they are not bound by that classification: Their trade is magic in its most abstract (they might say purest) form.\n\n{b}Alignment:{/b} If artificers have a tendency toward any alignment, it is neutral. They are more interested in their work than in its moral implications. Some artificers create magic items for the common good, while others seek to create items of tremendous destructive power.\n\n{b}Religion:{/b} Many artificers revere the deity Onatar, Lord of Fire and Forge. Others are too preoccupied with mastering magic&#151;including divine magic&#151;to worry about the gods who may or may not be the source of magic.\n\n{b}Background:{/b} Like wizards, artificers learn their craft through long years of hard study. They share a sense of camaraderie with others who have endured similar training. They view other artificers as either colleagues or rivals. Rivalry may take a friendly form as the artificers try to outdo each other in their creations and accomplishments, or it could turn deadly, with artificers sending construct assassins after each other.\n\n{b}Races:{/b} Humans excel as artificers, having no natural attachment to the aesthetics of magic as elves do, and no knack for a particular expression of magic as gnomes have. Their analytical minds make them well suited to the artificer&#146;s task of reducing magic to its component pieces and reassembling it in a new form. Despite their Charisma penalty, warforged also make fine artificers, having a particular affi nity for the creation of other constructs. Dwarves and gnomes, with their skill in the crafting of mundane items, show equal skill in the magical craft of the artifi cer. Halflings, elves, half-elves, half-orcs, kalashtar, shifters, and changelings do not have strong traditions in this class and often choose different magical pathways.\n\n{b}Other Classes:{/b} Artificers work best when providing magical support to members of other classes. Though they are quite versatile, their talents lie in enhancing the items&#151;weapons, armor, wands, and other gear&#151;used by all the members of an adventuring party. They think of every party member as components of a machine, encouraging better teamwork within a group and sometimes providing strategy and tactics afforded by their unique mind-set.\n\n{b}Role:{/b} In a typical adventuring party, artifi cers have a range of roles revolving around magic items. They bring an unparalleled flexibility to both using and creating such items. In a party that doesn&#146;t include a druid, for example, an artificer can use (or scribe) a scroll of barkskin or wield a staff of the woodlands. Though they can fight reasonably well, few artificers are inclined to engage in front-rank melee combat.\n\n{b}Abilities:{/b} Charisma is the most important ability for an artificer, because several of his infusions rely on his ability to make Use Magic Device checks. Intelligence is also important because it determines the effectiveness of his infusions, but it plays a lesser role than for most spellcasters. A high Dexterity improves the artifi cer&#146;s defensive ability." compset="ClassLevel" maxlimit="20">
+    <usesource source="EbCamSet"/>
+    <tag group="ClassType" tag="Normal"/>
+    <bootstrap thing="cHelpArt"></bootstrap>
+    <link linkage="helper" thing="cHelpArt"/>
+    </thing>
+  <thing id="cArtKnowle" name="Artificer Knowledge" description="An artificer can make a special artificer knowledge check with a bonus equal to his artificer level + his Int modifier to detect whether a specific item has a magical aura.\n\nThe artificer must hold and examine the object for 1 minute. A successful check against DC 15 determines that the object has magical qualities, but does not reveal the specific powers of the item.\n\nAn artificer cannot take 10 or take 20 on this check. A particular item can only be examined in this fashion one time; if the check fails, the artificer can learn no more about that object." compset="ClSpecial" summary="Make a special knowledge check to determine if an item has magical qualities.">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <eval phase="PostAttr" priority="12000"><![CDATA[var bonus as number
+
+bonus = #levelcount[Artificer] + hero.child[aINT].field[aModBonus].value
+
+field[livename].text = field[name].text & " (+" & bonus & ")"]]></eval>
+    </thing>
+  <thing id="cArtBonus" name="Artisan Bonus" description="An artificer gains a +2 bonus on Use Magic Device checks to activate an item of a kind for which he has the prerequisite item creation feat. For example, an artificer who has the Craft Wand feat gains a +2 bonus on checks to use a spell from a wand." compset="ClSpecial" summary="+2 bonus to Use Magic Device when usng items he&apos;s familiar with.">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    </thing>
+  <thing id="cArtItemCr" name="Item Creation" description="An artificer can create a magic item even if he does not have access to the spells that are prerequisites for the item. The artificer must make a successful Use Magic Device check (DC 20 + caster level) to emulate each spell normally required to create the item. Thus, to make a 1st-level wand of magic missile, an artificer would need a Use Magic Device check result of 21 or higher. To create a bottle of air (caster level 7th), he would need a check result of 27 or higher to emulate the water breathing prerequisite.\n\nThe artificer must make a successful check for each prerequisite for each item he makes. If he fails a check, he can try again each day until the item is complete (see Creating Magic Items, page 282 of the Dungeon Master&#146;s Guide). If he comes to the end of the crafting time and he has still not successfully emulated one of the powers, he can make one final check&#151;his last-ditch effort, even if he has already made a check that day. If that check also fails, then the creation process fails and the time, money, and XP expended to craft the item are lost.\n\nFor purposes of meeting item prerequisites, an artificer&#146;s effective caster level equals his artificer level +2. If the item duplicates a spell effect, however, it uses the artificer&#146;s actual level as its caster level. Costs are always determined using the item&#146;s minimum caster level or the artificer&#146;s actual level (if it is higher). Thus, a 3rd-level artificer can make a scroll of fireball, since the minimum caster level for fireball is 5th. He pays the normal cost for making such a scroll with a caster level of 5th: 5 &#215; 3 &#215; 12.5 = 187 gp and 5 sp, plus 15 XP. But the scroll&#146;s actual caster level is only 3rd, and it produces a weak fireball that deals only 3d6 points of damage.\n\nAn artificer can also make Use Magic Device checks to emulate nonspell requirements, including alignment and race, using the normal DCs for the skill. He cannot emulate skill or feat requirements, however, including item creation feat prerequisites. He must meet the caster level prerequisite, including the minimum level to cast a spell he stores in a potion, wand, or scroll.\n\nAn artificer&#146;s infusions do not meet spell prerequisites for creating magic items. For example, an artificer must still employ the Use Magic Device skill to emulate the light spell to create a wand of light, even though light appears on his infusion list." compset="ClSpecial" summary="Create magic items without the prerequisite spells.">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xArtCraftR" name="Craft Reserve" description="An artificer receives a pool of points he can spend instead of experience points when crafting a magic item. Each time the artifi cer gains a new level, he receives a new craft reserve; leftover points from the previous level do not carry over. If the points are not spent, they are lost. An artifi cer can also use his craft reserve to supplement the XP cost of the item he is making, taking a portion of the cost from his craft reserve and a portion from his own XP." compset="Special" uniqueness="useronce">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostLevel" priority="12000"><![CDATA[var lvl as number
+lvl = #levelcount[Artificer]
+
+if (lvl >= 19) then
+ field[hTotal].value = round(lvl/4,0,-1)*1000
+elseif (lvl >= 15) then
+ field[hTotal].value = 1500 + (lvl-15)*500
+elseif (lvl >= 14) then
+ field[hTotal].value = 1200
+elseif (lvl >= 12) then
+ field[hTotal].value = 700 + (lvl-12)*200
+elseif (lvl >= 10) then
+ field[hTotal].value = 400 + (lvl-10)*100
+elseif (lvl >= 6) then
+ field[hTotal].value = 150 + (lvl-6)*50
+else
+ field[hTotal].value = lvl*20
+endif]]></eval>
+    </thing>
+  <thing id="cArtCrftHo" name="Craft Homonculus" description="At 4th level, an artificer can create a homunculus as if he had the Craft Construct feat. He must emulate the spell requirements ({i}arcane eye{/i}, {i}mending{/i}, and {i}mirror image{/i}) as normal for making a magic item, and he must pay all the usual gold and XP costs (though he can spend points from his craft reserve). An artificer can also upgrade an existing homunculus that he owns, adding 1 Hit Die at a cost of 2,000 gp and 160 XP.\n\nIf an artificer gives his homunculus more than 6 Hit Dice, it becomes a Small creature and advances as described in the Monster Manual (+4 Str, &#150;2 Dex, damage increases to 1d6). The homunculus also gains 10 extra hit points for being a Small construct.\n\nAn artificer&#146;s homunculus can have as many Hit Dice as its master&#146;s Hit Dice minus 2. No matter how many Hit Dice it has, a homunculus never grows larger than Small." compset="ClSpecial" summary="Create a homonculus in your spare time.">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cArtRetEss" name="Retain Essence" description="At 5th level, an artificer gains the ability to salvage the XP from a magic item and use those points to create another magic item. The artificer must spend a day with the item, and he must also have the appropriate item creation feat for the item he is salvaging. After one day, the item is destroyed and the artificer adds the XP it took to create the item to his craft reserve. These points are lost if the artificer does not use them before gaining his next level.\n\nFor example, an artificer wants to retain the essence of a wand of {i}summon monster IV{/i} that has 20 charges. Originally created (like all wands) with 50 charges, it required 840 XP when initially made, or 16.8 XP (840 &#247; 50) per charge. The artificer is able to recover the XP from the remaining charges. He puts 336 XP (16.8 &#215; 20) into his craft reserve." compset="ClSpecial" summary="Regain XP from a magic item and add it to your reserve pool.">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="cArtMeSpTr" name="Metmagic Spell Trigger" description="At 6th level, an artificer gains the ability to apply a metamagic feat he knows to a spell trigger item (generally a wand). He must have the appropriate item creation feat for the spell trigger item he is using. Using this ability expends additional charges from the item equal to the number of effective spell levels the metamagic feat would add to a spell.\n\nFor example, an artificer can quicken a spell cast from a wand by spending 5 charges (4 additional charges), empower the spell by spending 3 charges, or trigger it silently by spending 2 charges. The Still Spell feat confers no benefit when applied to a spell trigger item.\n\nAn artificer cannot use this ability when using a spell trigger item that does not have charges, such as {i}prayer beads{/i}." compset="ClSpecial" summary="Apply metamagic feats you know to spell trigger items.">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cArtMeSpCo" name="Metmagic Spell Completion" description="At 11th level, an artificer gains the ability to apply a metamagic feat he knows to a spell completion item (generally a scroll). He must have the appropriate item creation feat for the spell completion item he is using. The DC for the Use Magic Device check is equal to 20 + (3 &#215; the modified level of the spell). For example, applying the Empower Spell feat to a scroll of cone of cold, creating a 7th-level effect, has a DC of 20 + (3 &#215; 7), or 41. An artificer can use this ability a number of times per day equal to 3 + his Int modifier." compset="ClSpecial" summary="Apply metamagic feats you know to spell completion items.">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="11"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostAttr" priority="12000">var uses as number
+uses = 3 + hero.child[aINT].field[aModBonus].value
+
+field[hTotal].value = uses</eval>
+    </thing>
+  <thing id="cArtSkMast" name="Skill Mastery" description="At 13th level, an artificer can take 10 when making a Spellcraft or Use Magic Device check, even if stress and distractions would normally prevent him from doing so. This ability circumvents the normal rule that a character may not take 10 on a Use Magic Device check." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="13"/>
+    </thing>
+  <thing id="cArtScrScr" name="Scribe Scroll" description="You gain Scribe Scroll as a bonus feat." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <bootstrap thing="fScribeS">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cArtBrwPot" name="Brew Potion" description="You gain Brew Potion as a bonus feat." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <bootstrap thing="fBrewPot">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Artificer >= 2]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cArtCrWoIt" name="Craft Wondrous Item" description="You gain Craft Wondrous Item as a bonus feat." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <bootstrap thing="fCraftWond">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Artificer >= 3]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cCrMagArms" name="Craft Magic Arms and Armor" description="You gain Craft Magic Arms and Armor as a bonus feat." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <bootstrap thing="fCraftMgc">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Artificer >= 5]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cArtCrWand" name="Craft Wand" description="You gain Craft Wand as a bonus feat." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <bootstrap thing="fCraftWand">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Artificer >= 7]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cArtCrRod" name="Craft Rod" description="You gain Craft Rod as a bonus feat." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <bootstrap thing="fCraftRod">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Artificer >= 9]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cArtCrStaf" name="Craft Staff" description="You gain Craft Staff as a bonus feat." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="12"/>
+    <bootstrap thing="fCraftStf">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Artificer >= 12]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cCraFoRing" name="Forge Ring" description="You gain Forge Ring as a bonus feat." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="14"/>
+    <bootstrap thing="fForgeRing">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Artificer >= 14]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cArtDisTra" name="Disable Trap" description="You can find and disarm traps with a DC &gt; 20." compset="ClSpecial">
+    <usesource source="EbCamSet"/>
+    <tag group="SpecSource" tag="cHelpArt"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xTrapfind"></bootstrap>
+    <eval phase="Render" priority="12000"><![CDATA[hero.childfound[xTrapfind].field[xName].text = "Disable Trap"]]></eval>
+    </thing>
+  <thing id="sArt1001" name="Armor Enhancement, Lesser" description="The armor or shield you touch temporarily gains a special ability commonly found on magic armor or shields. You can choose any special ability whose market price is equivalent to a +1 bonus or up to 5,000 gp, such as light fortification or shadow. The armor or shield does not need to have an existing enhancement bonus, nor does it gain one when you imbue it with this infusion.\n\n{i}Material Component{/i}: An ointment made from rare spices and minerals, costing 10 gp." compset="Spell" summary="Armor or shield gains special ability with +1 bonus market price modifier.">
+    <fieldval field="sRange" value="Armor or shield touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None (object)"/>
+    <fieldval field="sResist" value="No (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="Object"/>
+    </thing>
+  <thing id="sArt1002" name="Energy Alteration" description="You alter an item that employs an energy type or grants protection from an energy type, to employ or protect against a different energy type. For example, you could change a +2 {i}flaming battleaxe{/i} to a +2 {i}frost battleaxe{/i} or a {i}ring of minor energy resistance (acid){/i} to a {i}ring of minor energy resistance (sonic){/i}. The amount of damage dealt by energy, protection offered from energy, and all other effects remain the same.\n\n{i}Material Component{/i}: An alchemical ointment formed from materials representing all fi ve energy types and costing 50 gp." compset="Spell" summary="Item using one kind of energy uses another instead.">
+    <fieldval field="sRange" value="Magic item touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNegObj"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sArt1003" name="Enhancement Alteration" description="This spell has two distinct versions, both involving an alteration of an existing enhancement bonus. If you imbue a shield with this infusion, some or all of its enhancement bonus applies to shield bash attacks made with the shield instead of to the wielder&#146;s shield bonus to Armor Class. You can choose any portion of its enhancement bonus to shift in this fashion.\n\nIf you imbue a weapon with this infusion, some or all of its enhancement bonus applies to the wielder&#146;s Armor Class if he chooses to fight defensively, uses the total defense action, uses the Combat Expertise feat, or uses the weapon in his off hand and has the Two-Weapon Defense feat. The enhancement bonus you shift no longer applies to the wielder&#146;s attack rolls and damage rolls with the weapon. As with the shield version, you can choose any portion of its enhancement bonus to shift in this fashion.\n\nIf the weapon or shield is attended, the wielder can make a Will saving throw to negate the effect." compset="Spell" summary="Magic shield&#146;s enhancement bonus applies to shield bash attacks, or magic weapon&#146;s enhancement bonus applies to Two-Weapon Defense.">
+    <fieldval field="sRange" value="Weapon or shield touched"/>
+    <fieldval field="sDuration" value="10 min./level (D)"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNegObj"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sArt1005" name="Inflict Light Damage" description="When laying your hand upon a construct, you transmute its structure to deal 1d8 points of damage +1 point per caster level (maximum +5)." compset="Spell" summary="Deals 1d8 + 1/level damage (maximum +5) to a construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt1010" name="Repair Light Damage" description="When laying your hands upon a construct that has at least 1 hit point remaining, or a living construct with &#150;9 or more hit points, you transmute its structure to repair damage it has taken. The spell repairs 1d8 points of damage + 1 point per caster level (maximum +5)." compset="Spell" summary="&#147;Cures&#148; 1d8 + 1/level damage (max +5) to a construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sArt1011" name="Resistance Item" description="A nonmagical item imbued with this infusion grants a +1 resistance bonus on saving throws to a character who wears or wields it. This bonus increases by 1 for every four caster levels (to +2 at 4th level, +3 at 8th level, +4 at 12th level, and so forth).\n\n{i}Material Component{/i}: Oil mixed with various spices and minerals." compset="Spell" summary="Item bestows +1 or better resistance bonus on saving throws.">
+    <fieldval field="sRange" value="Item touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sArt1013" name="Skill Enhancement" description="An item imbued with this infusion grants a +2 circumstance bonus on a specific skill check (determined by the caster) to a character who wears or wields it. This bonus increases by 1 for every two caster levels (to +3 at 2nd level, +4 at 4th level, +5 at 6th level, and so forth).\n\n{i}Material Component{/i}: A length of fine, black thread." compset="Spell" summary="Item bestows circumstance bonus on skill checks.">
+    <fieldval field="sRange" value="Item touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sArt1014" name="Spell Storing Item" description="This infusion allows you to place a spell effect into an item to draw it forth later, at your command. The item becomes, in effect, a wand with a single charge, which only you can use.\n\nYou can imbue any spell of 4th level or lower into the item, as long as its spell level is no greater than one-half your artificer level. Your artificer level is the spell&#146;s caster level. You must make a successful Use Magic Device check (DC 20 + [spell level &#215; 3]) to emulate the spell and store it in the item. If you fail this check by 10 or more, you suffer a mishap. The DM determines the result of a mishap, as with scroll mishaps. As a default, either the spell is activated immediately instead of being placed in the item, affecting you if possible, or the spell erupts in a burst of uncontrolled energy, dealing 2d6 points of damage to you.\n\nA single item can carry only one spell at a time.\n\nYou must provide any expensive material components or XP component the spell requires at the time you imbue it into the item. You must provide any focus the spell requires at the time you cast it from the item.\n\n{i}XP Cost{/i}: Your caster level &#215; the spell level. For example, to place a {i}scorching ray{/i} spell in an item, you must spend XP equal to your caster level &#215; 2." compset="Spell" summary="Store one spell in an item.">
+    <fieldval field="sRange" value="Item touched"/>
+    <fieldval field="sDuration" value="1 hour/level or until discharged"/>
+    <fieldval field="sSave" value="None (object)"/>
+    <fieldval field="sResist" value="No (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="Object"/>
+    </thing>
+  <thing id="sArt1015" name="Weapon Augmentation, Personal" description="The weapon you touch temporarily gains a special ability commonly found on magic weapons. You can choose any special ability whose market price is equivalent to a +1 bonus or up to 10,000 gp, such as flaming or keen. The weapon does not have to have an existing enhancement bonus, nor does it gain one when you imbue it with this infusion. The weapon gains the benefit of the infusion only if you wield, throw, or fire it.\n\n{i}Material Component{/i}: A patch of rabbit&#146;s fur." compset="Spell" summary="Your weapon gains special ability with +1 bonus market price modifier.">
+    <fieldval field="sRange" value="Weapon touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None (object)"/>
+    <fieldval field="sResist" value="No (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="Object"/>
+    </thing>
+  <thing id="sArt1004" name="Identify" description="The spell determines all magic properties of a single magic item, including how to activate those functions (if appropriate), and how many charges are left (if any).\n\n{i}Identify{/i} does not function when used on an artifact (see the Dungeon Master&#146;s Guide for details on artifacts).\n\n{i}Material Component{/i}: A pearl of at least 100 gp value, crushed and stirred into wine with an owl feather; the infusion must be drunk prior to spellcasting." compset="Spell" summary="Determines properties of magic item.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="1" name="1" abbrev="1"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Divination" name="Divination" abbrev="Div"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Hour1" name="1 Hour(s)" abbrev="Hour1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt1006" name="Light" description="This spell causes an object to glow like a torch, shedding bright light in a 20-foot radius (and dim light for an additional 20 feet) from the point you touch. The effect is immobile, but it can be cast on a movable object. Light taken into an area of magical {i}darkness{/i} does not function.\n\nA light spell (one with the light descriptor) counters and dispels a darkness spell (one with the darkness descriptor) of an equal or lower level.\n\n{i}Arcane Material Component{/i}: A firefly or a piece of phosphorescent moss." compset="Spell" summary="Object shines like a torch.">
+    <comment>66 7 9</comment>
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="10 minutes/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Evocation" name="Evocation" abbrev="Evoc"/>
+    <tag group="sSubschool" tag="Light" name="Light" abbrev="Light"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    </thing>
+  <thing id="sArt1007" name="Magic Stone" description="You transmute as many as three pebbles, which can be no larger than sling bullets, so that they strike with great force when thrown or slung. If hurled, they have a range increment of 20 feet. If slung, treat them as sling bullets (range increment 50 feet). The spell gives them a +1 enhancement bonus on attack and damage rolls. The user of the stones makes a normal ranged attack. Each stone that hits deals 1d6+1 points of damage (including the spell&#146;s enhancement bonus), or 2d6+2 points against undead." compset="Spell" summary="Three stones gain +1 on attack rolls, deal 1d6+1 damage.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="30 minutes or until discharged"/>
+    <fieldval field="sSave" value="Will Negates (Harmless, Object)"/>
+    <fieldval field="sResist" value="Yes (Harmless, Object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="UntilTrig" name="Until Used" abbrev="Until Used"/>
+    <tag group="sLevel" tag="1" name="1" abbrev="1"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt1008" name="Magic Vestment" description="You imbue a suit of armor or a shield with an enhancement bonus of +1 per four caster levels (maximum +5 at 20th level). An outfit of regular clothing counts as armor that grants no AC bonus for the purpose of this spell." compset="Spell" summary="Armor or shield gains +1 enhancement per four levels.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 hour/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless, Object)"/>
+    <fieldval field="sResist" value="Yes (Harmless, Object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt1009" name="Magic Weapon" description="{i}Magic weapon{/i} gives a weapon a +1 enhancement bonus on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon&#146;s +1 bonus on attack rolls.)\n\nYou can&#146;t cast this spell on a natural weapon, such as an unarmed strike (instead, see {i}magic fang{/i}). A monk&#146;s unarmed strike is considered a weapon, and thus it can be enhanced by this spell." compset="Spell" summary="Weapon gains +1 bonus.">
+    <comment>3 21 9 2525</comment>
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless, Object)"/>
+    <fieldval field="sResist" value="Yes (Harmless, Object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="1" name="1" abbrev="1"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt1012" name="Shield of Faith" description="This spell creates a shimmering, magical field around the touched creature that averts attacks. The spell grants the subject a +2 deflection bonus to AC, with an additional +1 to the bonus for every six levels you have (maximum +5 deflection bonus at 18th level).\n\n{i}Material Component{/i}: A small parchment with a bit of holy text written upon it." compset="Spell" summary="Aura grants +2 or higher deflection bonus.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="1" name="1" abbrev="1"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2001" name="Align Weapon" description="{i}Align weapon{/i} makes {b}one{/b} weapon {b}or 50 projectiles{/b} good, evil, lawful, or chaotic, as you choose. A weapon that is aligned can bypass the damage reduction of certain creatures, usually outsiders of the opposite alignment. This spell has no effect on a weapon that already has an alignment, such as a holy sword. You can&#146;t cast this spell on a natural weapon, such as an unarmed strike. When you make a weapon good, evil, lawful, or chaotic, {i}align weapon{/i} is a good, evil, lawful, or chaotic spell, respectively." compset="Spell" summary="Weapon becomes good, evil, lawful, or chaotic.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless, Object)"/>
+    <fieldval field="sResist" value="Yes (Harmless, Object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2003" name="Bear&apos;s Endurance" description="The affected creature gains greater vitality and stamina. The spell grants the subject a +4 enhancement bonus to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.\n\nHit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject&#146;s Constitution drops back to normal. They are not lost first as temporary hit points are (see page 146)." compset="Spell" summary="Subject gains +4 to Con for 1 min./level.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2004" name="Bull&apos;s Strength" description="The subject becomes stronger. The spell grants a +4 enhancement bonus to Strength, adding the usual benefits to melee attack rolls, melee damage rolls, and other uses of the Strength modifier.\n\n{i}Arcane Material Component{/i}: A few hairs, or a pinch of dung, from a bull." compset="Spell" summary="Subject gains +4 to Str for 1 min./level.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2005" name="Cat&apos;s Grace" description="The transmuted creature becomes more graceful, agile, and coordinated. The spell grants a +4 enhancement bonus to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.\n\n{i}Material Component{/i}: A pinch of cat fur." compset="Spell" summary="Subject gains +4 to Dex for 1 min./level.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2006" name="Chill Metal" description="{i}Chill metal{/i} makes metal extremely cold. Unattended, nonmagical metal gets no saving throw. Magical metal is allowed a saving throw against the spell. An item in a creature&apos;s possession uses the creature&apos;s saving throw bonus unless its own is higher.\n\nA creature takes cold damage if its equipment is chilled. It takes full damage if its armor is affected or if it is holding, touching, wearing, or carrying metal weighing one-fifth of its weight. The creature takes minimum damage (1 point or 2 points; see the table) if it&apos;s not wearing metal armor and the metal that it&apos;s carrying weighs less than one-fifth of its weight.\n\nOn the first round of the spell, the metal becomes chilly and uncomfortable to touch but deals no damage. The same effect also occurs on the last round of the spell&apos;s duration. During the second (and also the next-to-last) round, icy coldness causes pain and damage. In the third, fourth, and fifth rounds, the metal is freezing cold, causing more damage, as shown on the table below.\n\n{b}Round{/b} - {b}Metal Temperature{/b} - {b}Damage{/b}\n1 - Cold - None\n2 - Icy - 1d4 points\n3-5 - Freezing - 2d4 points\n6 - Icy - 1d4 points\n7 - Cold - None\n\nAny heat intense enough to damage the creature negates cold damage from the spell (and vice versa) on a point-for-point basis. Underwater, {i}chill metal{/i} deals no damage, but ice immediately forms around the affected metal, making it more buoyant.\n\n{i}Chill metal{/i} counters and dispels {i}heat metal{/i}." compset="Spell" summary="Cold metal damages those who touch it.">
+    <fieldval field="sRange" value="Close (25 ft.+5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="7 rounds"/>
+    <fieldval field="sSave" value="Will Negates"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Close" name="Close" abbrev="{ref s_Close}Cls{ref}"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="Cold" name="Cold" abbrev="Cold"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2007" name="Eagle&apos;s Splendor" description="The transmuted creature becomes more poised, articulate, and personally forceful. The spell grants a +4 enhancement bonus to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell&#146;s effect do increase.\n\n{i}Arcane Material Component{/i}: A few feathers or a pinch of droppings from an eagle." compset="Spell" summary="Subject gains +4 to Cha for 1 min./level.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless)"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2008" name="Fox&apos;s Cunning" description="The transmuted creature becomes smarter. The spell grants a +4 enhancement bonus to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell&#146;s effect do increase. This spell doesn&#146;t grant extra skill points.\n\n{i}Arcane Material Component{/i}: A few hairs, or a pinch of dung, from a fox." compset="Spell" summary="Subject gains +4 Int for 1 min./level.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless)"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2009" name="Heat Metal" description="{i}Heat metal{/i} makes metal extremely warm. Unattended, nonmagical metal gets no saving throw. Magical metal is allowed a saving throw against the spell. (Magic item&#146;s saving throws are covered in the Dungeon Master&#146;s Guide.) An item in a creature&#146;s possession uses the creature&#146;s saving throw bonus unless its own is higher. {b}It can affect the metal equipment of one creature per two levels, no two of which can be more than 30 ft. apart; or 25 lb. of metal/level, all of which must be within a 30 ft. circle.{/b}\n\nA creature takes fire damage if its equipment is heated. It takes full damage if its armor is affected or if it is holding, touching, wearing, or carrying metal weighing one-fifth of its weight. The creature takes minimum damage (1 point or 2 points; see the table) if it&#146;s not wearing metal armor and the metal that it&#146;s carrying weighs less than one-fifth of its weight.\n\nOn the first round of the spell, the metal becomes warm and uncomfortable to touch but deals no damage. The same effect also occurs on the last round of the spell&#146;s duration. During the second (and also the next-to-last) round, intense heat causes pain and damage. In the third, fourth, and fifth rounds, the metal is searing hot, causing more damage, as shown on the table below.\n\n{b}Metal\nRound Temperature Damage{/b}\n1 Warm None\n2 Hot 1d4 points\n3&#150;5 Searing 2d4 points\n6 Hot 1d4 points\n7 Warm None\n\nAny cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis. For example, if the damage roll from a {i}heat metal{/i} spell indicates 2 points of fire damage and the subject is hit by a {i}ray of frost{/i} in the same round and takes 3 points of cold damage, it winds up taking no fire damage and only 1 point of cold damage. If cast underwater, {i}heat metal{/i} deals half damage and boils the surrounding water.\n\n{i}Heat metal{/i} counters and dispels {i}chill metal{/i}." compset="Spell" summary="Make metal so hot it damages those who touch it.">
+    <fieldval field="sRange" value="Close (25 ft.+5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="7 rounds"/>
+    <fieldval field="sSave" value="Will Negates (Object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Close" name="Close" abbrev="{ref s_Close}Cls{ref}"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="Fire" name="Fire" abbrev="Fire"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2011" name="Owl&apos;s Wisdom" description="The transmuted creature becomes wiser. The spell grants a +4 enhancement bonus to Wisdom, adding the usual benefit to Wisdom-related skills. Clerics, druids, paladins, and rangers (and other Wisdom based spellcasters) who receive {i}owl&#146;s wisdom{/i} do not gain any additional bonus spells for the increased Wisdom, but the save DCs for their spells increase.\n\n{i}Arcane Material Component{/i}: A few feathers, or a pinch of droppings, from an owl." compset="Spell" summary="Subject gains +4 to Wis for 1 min./level.">
+    <comment>19 15 3 5 3333</comment>
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless)"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt2013" name="Toughen Construct" description="{i}Toughen construct{/i} thickens the unliving matter that forms a construct&#146;s skin. The effect grants a +2 enhancement bonus to the creature&#146;s existing natural armor bonus. This enhancement bonus increases by 1 for every three caster levels above 3rd, to a maximum of +5 at caster level 12th.\n\nThe enhancement bonus provided by {i}toughen construct{/i} stacks with the target&#146;s natural armor bonus, but not with other enhancement bonuses to natural armor. A creature without natural armor has an effective natural armor bonus of +0." compset="Spell" summary="Grants construct +2 (or higher) enhancement to natural armor.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt3002" name="Construct Energy Ward" description="As {i}resist energy{/i} (see page 272 of the Player&#146;s Handbook), except that the target must be a construct." compset="Spell" summary="Construct gains resistance 10 to specified energy type.">
+    <fieldval field="sRange" value="Construct touched."/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt3004" name="Magic Weapon, Greater" description="This spell functions like {i}magic weapon{/i}, except that it gives a weapon an enhancement bonus on attack and damage rolls of +1 per four caster levels (maximum +5).\n\nAlternatively, you can affect as many as fifty arrows, bolts, or bullets. The projectiles must be of the same kind, and they have to be together (in the same quiver or other container). Projectiles, but not thrown weapons, lose their transmutation when used. (Treat shuriken as projectiles, rather than as thrown weapons, for the purpose of this spell.)\n\n{i}Arcane Material Component{/i}: Powdered lime and carbon." compset="Spell" summary="+1/four levels (max +5).">
+    <fieldval field="sRange" value="Close (25 ft.+5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 hour/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless, Object)"/>
+    <fieldval field="sResist" value="Yes (Harmless, Object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sRange" tag="Close" name="Close" abbrev="{ref s_Close}Cls{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt3005" name="Metamagic Item" description="You temporarily apply a metamagic feat you know to a single spell contained within a spell trigger item. For the duration of this infusion, anyone who casts that spell from the item gains the benefit of that metamagic feat. For example, you could imbue a {i}wand of fireballs{/i} with the Empower Spell feat or apply the Maximize Spell feat to the {i}cone of cold{/i} spell in a {i}staff of frost{/i}." compset="Spell" summary="Imbue spell trigger item with metamagic feat.">
+    <fieldval field="sRange" value="Spell trigger magic item touched"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Will negates (harmless, object)"/>
+    <fieldval field="sResist" value="Yes (harmless, object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNegObj"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sArt3006" name="Power Surge" description="By touching a wand or staff that has at least 1 charge, you imbue it with 1 temporary charge per five caster levels. These charges work like temporary hit points: When a character uses the item, deduct the charges spent from the temporary charges first. When the {i}power surge{/i} expires, any remaining temporary charges are lost.\n\n{i}XP Cost{/i}: 5 XP &#215; the level of the highest-level spell stored in the item." compset="Spell" summary="Charged spell trigger item gains temporary charges.">
+    <fieldval field="sRange" value="Wand or staff touched"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sArt3008" name="Stone Construct" description="The construct you touch gains resistance to blows, cuts, stabs, and slashes. The subject gains damage reduction 10/adamantine. Once the spell has prevented a total of 10 points of damage per artifi cer level you possess (maximum 150 points), it is discharged.\n\n{i}Material Component{/i}: Granite and 250 gp worth of diamond dust sprinkled on the construct." compset="Spell" summary="Construct gains DR 10/adamantine.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="10 min./level or until discharged"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt3009" name="Suppress Requirement" description="You alter a magic item that requires a certain class feature, race, ability score, or alignment to function to its fullest potential, so that it no longer carries that requirement. You must make a Use Magic Device check sufficient to emulate the requirement as if you were attempting to use the item yourself. If you succeed, the requirement is suppressed for the duration of this infusion.\n\n{i}Material Component{/i}: Powdered gemstones worth a total of 500 gp." compset="Spell" summary="Item that requires class feature, race, ability score, or alignment to function to its fullest potential no longer carries that requirement.">
+    <fieldval field="sRange" value="Magic item touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNegObj"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sArt4001" name="Construct Energy Ward, Greater" description="As {i}protection from energy{/i} (see page 266 of the {i}Player&#146;s Handbook{/i}), except that the target must be a construct." compset="Spell" summary="Construct gains immunity to specified energy type.">
+    <fieldval field="sRange" value="Construct touched."/>
+    <fieldval field="sDuration" value="10 min./level or until discharged"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    </thing>
+  <thing id="sArt4002" name="Globe of Invulnerability, Lesser" description="An immobile, faintly shimmering magical sphere {b}(a 10 ft. radius spherical emanation){/b} surrounds you and excludes all spell effects of 3rd level or lower. The area or effect of any such spells does not include the area of the {i}lesser globe of invulnerability{/i}. Such spells fail to affect any target located within the globe. Excluded effects include spell-like abilities and spells or spell-like effects from items. However, any type of spell can be cast through or out of the magical globe. Spells of 4th level and higher are not affected by the globe, nor are spells already in effect when the globe is cast. The globe can be brought down by a targeted {i}dispel magic{/i} spell, but not by an area {i}dispel magic{/i}. You can leave and return to the globe without penalty.\n\nNote that spell effects are not disrupted unless their effects enter the globe, and even then they are merely suppressed, not dispelled. For example, creatures inside the globe would still see a {i}mirror image{/i} created by a caster outside the globe. If that caster then entered the globe, the images would wink out, to reappear when the caster exited the globe. Likewise, a caster standing in the area of a {i}light{/i} spell would still receive sufficient illumination for vision, even though that part of the {i}light{/i} spell&#146;s area that lies within the globe would not be luminous.\n\nIf a given spell has more than one level depending on which character class is casting it, use the level appropriate to the caster to determine whether {i}lesser globe of invulnerability{/i} stops it.\n\n{i}Material Component{/i}: A glass or crystal bead that shatters at the expiration of the spell." compset="Spell" summary="Stops 1st- through 3rd-level spell effects.">
+    <fieldval field="sRange" value="10 ft"/>
+    <fieldval field="sDuration" value="1 round/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="sRange" tag="Feet" name="Feet" abbrev="Feet"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt4003" name="Inflict Critical Damage" compset="Spell" summary="Deals 4d8 + 1/level damage (maximum +20) to a construct.">
+    <usesource source="EbCamSet"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="4"/>
+    </thing>
+  <thing id="sArt4005" name="Item Alteration" description="You alter an item that provides a certain type of bonus so that it provides a different type of bonus to the same value or roll. For example, you could change a {i}ring of protection +1{/i} so that it provided a natural armor bonus to Armor Class instead of a deflection bonus, or you could change a {i}cloak of resistance{/i} so that it provided a circumstance bonus on saves instead of a resistance bonus. You cannot use this infusion to change an item so that it provides a sacred or profane bonus, nor can you change an item that already does so to make it provide a different kind of bonus. You also cannot make an item provide a dodge bonus to Armor Class." compset="Spell" summary="Item that provides a certain type of bonus provides a different type of bonus to the same value or roll.">
+    <fieldval field="sRange" value="Magic item touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNegObj"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sArt4004" name="Iron Construct" description="You transform an existing construct into a powerhouse of hardened iron, similar to the effect of the iron body spell. The construct gains damage reduction 15/adamantine. It takes half damage from acid and fire attacks of all kinds. Even if it is not a golem, however, it becomes vulnerable to all special attacks that affect iron golems.\n\nThe construct gains a +4 enhancement bonus to Strength, but takes a &#150;4 penalty to Dexterity as well (to a minimum Dexterity of 1).\n\nThe construct&#146;s weight increases by a factor of five.\n\n{i}Material Component{/i}: A small piece of iron that was once part of an iron golem, a hero&#146;s armor, or a war machine." compset="Spell" summary="Construct gains DR 15/adamantine and takes half damage from acid and fire.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt4006" name="Minor Creation" description="You create a nonmagical, unattended object of nonliving, vegetable matter&#151;linen clothes, a hemp rope, a wooden ladder, and so forth. The volume of the item created cannot exceed 1 cubic foot per caster level. You must succeed on an appropriate skill check to make a complex item, such as Craft (bow making) check to make straight arrow shafts.\n\nAttempting to use any created object as a material component causes the spell to fail.\n\n{i}Material Component{/i}: A tiny piece of matter of the same sort of item you plan to create with {i}minor creation{/i}&#151;a bit of twisted hemp to create rope, and so forth." compset="Spell" summary="Creates one cloth or wood object.">
+    <fieldval field="sRange" value="0 ft"/>
+    <fieldval field="sDuration" value="1 hour/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="sRange" tag="Feet" name="Feet" abbrev="Feet"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Creation" name="Creation" abbrev="Creation"/>
+    <tag group="sCastTime" tag="Minute1" name="1 Minute(s)" abbrev="Minute1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt4008" name="Rusting Grasp" description="Any iron or iron alloy item you touch becomes instantaneously rusted, pitted, and worthless, effectively destroyed. If the item is so large that it cannot fit within a 3 foot radius (a large iron door or a {i}wall of iron{/i}), a 3-foot-radius volume of the metal is rusted and destroyed. Magic items made of metal are immune to this spell.\n\nYou may employ {i}rusting grasp{/i} in combat with a successful melee touch attack. {i}Rusting grasp{/i} used in this way instantaneously destroys 1d6 points of Armor Class gained from metal armor (to the maximum amount of protection the armor offered) through corrosion. For example, full plate armor (AC +8) could be reduced to +7 or as low as +2 in protection, depending on the die roll.\n\nWeapons in use by an opponent targeted by the spell are more difficult to grasp. You must succeed on a melee touch attack against the weapon. A metal weapon that is hit is destroyed.\n\n{i}Note{/i}: Striking at an opponent&#146;s weapon provokes an attack of opportunity. Also, you must touch the weapon and not the other way around.\n\nAgainst a ferrous creature, {i}rusting grasp{/i} instantaneously deals 3d6 points of damage +1 per caster level (maximum +15) per successful attack. The spell lasts for 1 round per level, and you can make one melee touch attack per round." compset="Spell" summary="Your touch corrodes iron and alloys.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Special; See Text"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sDuration" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt5001" name="Disrupting Weapon" description="This spell makes a melee weapon deadly to undead. Any undead creature with HD equal to or less than your caster level must succeed on a Will save or be destroyed utterly if struck in combat with this weapon. Spell resistance does not apply against the destruction effect." compset="Spell" summary="Melee weapon destroys undead.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Special; See Text"/>
+    <fieldval field="sResist" value="Yes (Harmless, Object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    </thing>
+  <thing id="sArt5002" name="Fabricate" description="You convert material {b}(up to 10 cu. ft./level){/b} of one sort into a product that is of the same material. Thus, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, clothes from flax or wool, and so forth. Creatures or magic items cannot be created or transmuted by the {i}fabricate{/i} spell. The quality of items made by this spell is commensurate with the quality of material used as the basis for the new fabrication. If you work with a mineral, the target is reduced to 1 cubic foot per level instead of 10 cubic feet.\n\nYou must make an appropriate Craft check to fabricate articles requiring a high degree of craftsmanship (jewelry, swords, glass, crystal, and the like).\n\nCasting requires 1 round per 10 cubic feet (or 1 cubic foot) of material to be affected by the spell.\n\n{i}Material Component{/i}: The original material, which costs the same amount as the raw materials required to craft the item to be created." compset="Spell" summary="Transforms raw materials into finished items.">
+    <fieldval field="sRange" value="Close (25 ft.+5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Close" name="Close" abbrev="{ref s_Close}Cls{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="SeeText" name="See Text" abbrev="SeeText"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt5003" name="Major Creation" description="This spell functions like {i}minor creation{/i}, except that you can also create an object of mineral nature: stone, crystal, metal, or the like. The duration of the created item varies with its relative hardness and rarity, as indicated on the following table.\n\n{b}Hardness and Rarity Examples &#151; Duration{/b}\nVegetable matter &#151; 2 hr./level\nStone, crystal, base metals &#151; 1 hr./level\nPrecious metals &#151; 20 min./level\nGems &#151; 10 min./level\nRare metal* &#151; 1 round/level\n* Includes adamantine, alchemical silver, and mithral. You can&#146;t use major creation to create a cold iron item. See the Dungeon Master&#146;s Guide for details." compset="Spell" summary="As minor creation, plus stone and metal.">
+    <fieldval field="sRange" value="Close (25 ft.+5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Special; See Text"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sDuration" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Close" name="Close" abbrev="{ref s_Close}Cls{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Creation" name="Creation" abbrev="Creation"/>
+    <tag group="sCastTime" tag="Minute10" name="10 Minute(s)" abbrev="Minute10"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt5004" name="Wall of Force" description="A {i}wall of force{/i} spell creates an invisible wall of force {b}whose area is up to one 10-ft. square/level{/b}. The wall cannot move, it is immune to damage of all kinds, and it is unaffected by most spells, including {i}dispel magic{/i}. However, {i}disintegrate{/i} immediately destroys it, as does a {i}rod of cancellation{/i}, a {i}sphere of annihilation{/i}, or a {i}Mordenkainen&#146;s disjunction{/i} spell. Breath weapons and spells cannot pass through the wall in either direction, although {i}dimension door{/i}, {i}teleport{/i}, and similar effects can bypass the barrier. It blocks ethereal creatures as well as material ones (though ethereal creatures can usually get around the wall by floating under or over it through material floors and ceilings). Gaze attacks can operate through a {i}wall of force{/i}.\n\nThe caster can form the wall into a flat, vertical plane whose area is up to one 10 foot square per level. The wall must be continuous and unbroken when formed. If its surface is broken by any object or creature, the spell fails.\n\n{i}Wall of force{/i} can be made permanent with a {i}permanency{/i} spell.\n\n{i}Material Component{/i}: A pinch of powder made from a clear gem." compset="Spell" summary="Wall is immune to damage.">
+    <fieldval field="sRange" value="Close (25 ft.+5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Close" name="Close" abbrev="{ref s_Close}Cls{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Evocation" name="Evocation" abbrev="Evoc"/>
+    <tag group="sSubschool" tag="Force" name="Force" abbrev="Force"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt5005" name="Wall of Stone" description="This spell creates a wall of rock {b}(whose area is up to one 5-ft. square/level, shapeable){/b} that merges into adjoining rock surfaces. It is typically employed to close passages, portals, and breaches against opponents. A {i}wall of stone{/i} is 1 inch thick per four caster levels and composed of up to one 5-foot square per level. You can double the wall&#146;s area by halving its thickness. The wall cannot be conjured so that it occupies the same space as a creature or another object.\n\nUnlike a {i}wall of iron{/i}, you can create a {i}wall of stone{/i} in almost any shape you desire. The wall created need not be vertical, nor rest upon any firm foundation; however, it must merge with and be solidly supported by existing stone. It can be used to bridge a chasm, for instance, or as a ramp. For this use, if the span is more than 20 feet, the wall must be arched and buttressed. This requirement reduces the spell&#146;s area by half. Thus, a 20th-level caster can create span with a surface area of ten 5-foot squares. The wall can be crudely shaped to allow crenellations, battlements, and so forth by likewise reducing the area.\n\nLike any other stone wall, this one can be destroyed by a {i}disintegrate{/i} spell or by normal means such as breaking and chipping. Each 5-foot square of the wall has 15 hit points per inch of thickness and hardness 8. A section of wall whose hit points drop to 0 is breached. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 20 + 2 per inch of thickness.\n\nIt is possible, but difficult, to trap mobile opponents within or under a {i}wall of stone{/i}, provided the wall is shaped so it can hold the creatures. Creatures can avoid entrapment with successful Reflex saves.\n\n{i}Arcane Material Component{/i}: A small block of granite." compset="Spell" summary="Creates a stone wall that can be shaped.">
+    <comment>7 26 17 41</comment>
+    <fieldval field="sRange" value="Medium (100 ft.+10 ft./level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Special; See Text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Medium" name="Medium" abbrev="{ref s_Medium}Med{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Creation" name="Creation" abbrev="Creation"/>
+    <tag group="sSubschool" tag="Earth" name="Earth" abbrev="Earth"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt6001" name="Blade Barrier" description="An immobile, vertical curtain {b}(wall up to 20 ft. long/level, or a ringed with a radius of up to 5 ft. per two levels; either form 20 ft. high){/b} of whirling blades shaped of pure force springs into existence. Any creature passing through the wall takes 1d6 points of damage per caster level (maximum 15d6), with a Reflex save for half damage.\n\nIf you evoke the barrier so that it appears where creatures are, each creature takes damage as if passing through the wall. Each such creature can avoid the wall (ending up on the side of its choice) and thus take no damage by making a successful Reflex save.\n\nA {i}blade barrier{/i} provides cover (+4 bonus to AC, +2 bonus on Reflex saves) against attacks made through it." compset="Spell" summary="Wall of blades deals 1d6/level damage.">
+    <fieldval field="sRange" value="Medium (100 ft.+10 ft./level)"/>
+    <fieldval field="sDuration" value="1 minute/level (D)"/>
+    <fieldval field="sSave" value="Reflex Half or Reflex Negates; See Text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="6" name="6" abbrev="6"/>
+    <tag group="sRange" tag="Medium" name="Medium" abbrev="{ref s_Medium}Med{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="RefHalf" name="Reflex Half" abbrev="Reflex Half"/>
+    <tag group="sSave" tag="RefNeg" name="Reflex Negates" abbrev="Reflex Negates"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSchool" tag="Evocation" name="Evocation" abbrev="Evoc"/>
+    <tag group="sSubschool" tag="Force" name="Force" abbrev="Force"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    </thing>
+  <thing id="sArt6002" name="Disable Construct" description="{i}Disable construct{/i} transmutes the structure of a construct to deal 10 points of damage per caster level (to a maximum of 150 points at 15th level). If the construct successfully saves, {i}disable construct{/i} deals half this amount, but it cannot reduce the target&#146;s hit points to less than 1." compset="Spell" summary="Deals 10/level damage to target construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Will half; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillHalf"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt6003" name="Globe of Invulnerability" description="This spell functions like {i}lesser globe of invulnerability{/i}, except that it also excludes 4th-level spells and spell-like effects." compset="Spell" summary="As lesser globe of invulnerability, plus 4th-level spell effects.">
+    <fieldval field="sRange" value="10 ft"/>
+    <fieldval field="sDuration" value="1 round/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
+    <tag group="sLevel" tag="6" name="6" abbrev="6"/>
+    <tag group="sRange" tag="Feet" name="Feet" abbrev="Feet"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt6004" name="Hardening" description="This spell increases the hardness of materials. Paper becomes harder to tear, glass becomes harder to break, wood becomes more durable, and so on. For every two caster levels, add 1 point of hardness to the material targeted by the spell. This hardness increase improves only the material&#146;s resistance to damage. Nothing else is modified by the improvement. For example, a longsword (hardness 10) affected by a hardening spell cast by a 12th-level caster would have a new hardness of 16 for purposes of ignoring damage caused by an opponent&#146;s successful sunder attempt. The sword&#146;s hit points, attack and damage modifi ers, and other factors are not affected. The hardening spell does not in any way affect the item&#146;s resistance to other forms of transformation. Ice still melts, paper and wood still burn, rock still becomes transmutable to mud with the proper spell, and so on.\n\nThis spell affects up to 10 cubic feet of material per level of the caster. If cast upon a metal or mineral, the volume is reduced to 1 cubic feet per level." compset="Spell" summary="Item&#146;s hardness increases by 1 per 2 levels.">
+    <fieldval field="sRange" value="One item of a volume no greater than 10 cu. ft./level (see text)"/>
+    <fieldval field="sDuration" value="Permanent"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sArt6005" name="Move Earth" description="{i}Move earth{/i} moves dirt (clay, loam, sand), possibly collapsing embankments, moving hillocks, shifting dunes, and so forth. However, in no event can rock formations be collapsed or moved. The area to be affected determines the casting time. For every 150-foot square (up to 10 feet deep), casting takes 10 minutes. The maximum area, 750 feet by 750 feet, takes 4 hours and 10 minutes to move.\n\nThis spell does not violently break the surface of the ground. Instead, it creates wavelike crests and troughs, with the earth reacting with glacier like fluidity until the desired result is achieved. Trees, structures, rock formations, and such are mostly unaffected except for changes in elevation and relative topography.\n\nThe spell cannot be used for tunneling and is generally too slow to trap or bury creatures. Its primary use is for digging or filling moats or for adjusting terrain contours before a battle.\n\nThis spell has no effect on earth creatures.\n\n{i}Material Component{/i}: A mixture of soils (clay, loam, and sand) in a small bag, and an iron blade." compset="Spell" summary="Digs trenches and build hills.">
+    <fieldval field="sRange" value="Long (400 ft.+40 ft./level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="6" name="6" abbrev="6"/>
+    <tag group="sRange" tag="Long" name="Long" abbrev="{ref s_Long}Long{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="Earth" name="Earth" abbrev="Earth"/>
+    <tag group="sCastTime" tag="Round" name="Round(s)" abbrev="Round"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sArt6006" name="Total Repair" description="{i}Total repair{/i} enables you to transmute the structure of a construct to wipe away damage and afflictions. It immediately ends any and all of the following adverse conditions affecting the target: ability damage, blinded, {i}confused{/i}, dazed, dazzled, deafened, {i}feebleminded{/i}, and insanity. It also repairs 10 points of damage per level of the caster, to a maximum of 150 points at 15th level." compset="Spell" summary="Repair 10 points/level of damage to a construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt6007" name="Wall of Iron" description="You cause a flat, vertical iron wall {b}(whose area is up to one 5-ft. square/level){/b} to spring into being. This wall can be used to seal off a passage or close a breach, for the wall inserts itself into any surrounding nonliving material if its area is sufficient to do so. The wall cannot be conjured so that it occupies the same space as a creature or another object. It must always be a flat plane, though you can shape its edges to fit the available space.\n\nA {i}wall of iron{/i} is 1 inch thick per four caster levels. You can double the wall&#146;s area by halving its thickness. Each 5-foot square of the wall has 30 hit points per inch of thickness and hardness 10. A section of wall whose hit points drop to 0 is breached. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 25 + 2 per inch of thickness.\n\nIf you desire, the wall can be created vertically resting on a flat surface but not attached to the surface, so that it can be tipped over to fall on and crush creatures beneath it. The wall is 50% likely to tip in either direction if left unpushed. Creatures can push the wall in one direction rather than letting it fall randomly. A creature must make a DC 40 Strength check to push the wall over. Creatures with room to flee the falling wall may do so by making successful Reflex saves. Any Large or smaller creature that fails takes 10d6 points of damage. The wall cannot crush Huge and larger creatures.\n\nLike any iron wall, this wall is subject to rust, perforation, and other natural phenomena.\n\n{i}Material Component{/i}: A small piece of sheet iron plus gold dust worth 50 gp (1 pound of gold dust)." compset="Spell" summary="30 hp/four levels; can topple onto foes.">
+    <fieldval field="sRange" value="Medium (100 ft.+10 ft./level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Special; See Text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sRange" tag="Medium" name="Medium" abbrev="{ref s_Medium}Med{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Creation" name="Creation" abbrev="Creation"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <exprreq message="Mystic Domain: Forge required."><![CDATA[pickexists[cMysForge] <> 0]]></exprreq>
+    </thing>
+  <thing id="sArt2002" name="Armor Enhancement" description="As {i}lesser armor enhancement{/i}, but you can choose any special ability whose market price is equivalent to a bonus of up to +3 or up to 35,000 gp, such as ghost touch or acid resistance.\n\n{i}Material Component{/i}: An ointment costing 50 gp." compset="Spell" summary="Armor or shield gains special ability with up to +3 bonus market price modifier.">
+    <fieldval field="sRange" value="Armor or shield touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None (object)"/>
+    <fieldval field="sResist" value="No (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="Object"/>
+    </thing>
+  <thing id="sArt3001" name="Armor Enhancement, Greater" description="As {i}lesser armor enhancement{/i}, but you can choose any special ability whose market price is equivalent to a bonus of up to +5 or up to 100,000 gp, such as etherealness or greater fi re resistance.\n\n{i}Material Component{/i}: An ointment costing 100 gp." compset="Spell" summary="Armor or shield gains special ability with up to +5 bonus market price modifier.">
+    <fieldval field="sRange" value="Armor or shield touched"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None (object)"/>
+    <fieldval field="sResist" value="No (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="Object"/>
+    </thing>
+  <thing id="sArt2010" name="Inflict Moderate Damage" description="As {i}inflict light damage{/i}, except {i}inflict moderate damage{/i} deals 2d8 points of damage + 1 point per caster level (maximum +10)." compset="Spell" summary="Deals 2d8 + 1/level damage (maximum +10) to a construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt3003" name="Inflict Serious Damage" description="As {i}inflict light damage{/i}, except {i}inflict serious damage{/i} deals 3d8 points of damage + 1 point per caster level (maximum +15)." compset="Spell" summary="Deals 3d8 + 1/level damage (maximum +15) to a construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sArt2012" name="Repair Moderate Damage" description="As {i}repair light damage{/i}, except {i}repair moderate damage{/i} repairs 2d8 points of damage + 1 point per caster level (maximum +10)." compset="Spell" summary="&#147;Cures&#148; 2d8 + 1/level damage (maximum +10) to a construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sArt3007" name="Repair Serious Damage" description="As {i}repair light damage{/i], except {i}repair serious damage{/i} repairs 3d8 points of damage + 1 point per caster level (maximum +15)." compset="Spell" summary="&#147;Cures&#148; 3d8 + 1/level damage (maximum +15) to a construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sArt4007" name="Repair Critical Damage" description="As {i}repair light damage{/i}, except {i}repair critical damage{/i} repairs 4d8 points of damage + 1 point per caster level (maximum +20)." compset="Spell" summary="&#147;Cures&#148; 4d8+1/level damage (maximum +20) to a construct.">
+    <fieldval field="sRange" value="Construct touched"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sArt4009" name="Shield of Faith, Legion&apos;s" description="This spell functions like {i}shield of faith{/i} (see page 278 of the Player&#146;s Handbook), except that it affects multiple allies at a distance." compset="Spell" summary="Allies gain +3 or higher AC bonus.">
+    <fieldval field="sRange" value="Medium (100 ft. +10 ft./level) ; Allied creatures in a 20-ft.-radius burst"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates (Harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sRange" tag="20"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sRange" tag="Feet"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="Radius"/>
+    </thing>
+  <thing id="sArt2014" name="Weapon Augmentation, Lesser" description="As {i}personal weapon augmentation{/i}, but any character can wield the weapon you augment.\n\nAlternatively, you can affect as many as fifty arrows, bolts, or bullets. The projectiles must be of the same kind, and they have to be together (in the same quiver or other container). Projectiles, but not thrown weapons, lose their transmutation when used. (Treat shuriken as projectiles rather than thrown weapons for the purpose of this spell.)\n\n{i}Material Component{/i}: An ointment made from rare spices and minerals, costing 20 gp." compset="Spell" summary="Weapon gains special ability with +1 bonus market price modifier.">
+    <fieldval field="sRange" value="One weapon or fifty projectiles, all of which must be in contact with each other at the time of cast"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None (object)"/>
+    <fieldval field="sResist" value="No (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="Object"/>
+    </thing>
+  <thing id="sArt4010" name="Weapon Augmentation" description="As {i}lesser weapon augmentation{/i}, but you can choose any special ability whose market price is equivalent to a bonus of up to +3 or up to 70,000 gp, such as speed.\n\n{i}Material Component{/i}: An ointment costing 100 gp." compset="Spell" summary="Weapon gains special ability with up to +3 bonus market price modifier.">
+    <fieldval field="sRange" value="One weapon or fifty projectiles, all of which must be in contact with each other at the time of cast"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None (object)"/>
+    <fieldval field="sResist" value="No (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="Object"/>
+    </thing>
+  <thing id="sArt6008" name="Weapon Augmentation" description="As {i}lesser weapon augmentation{/i}, but you can choose any special ability whose market price is equivalent to a bonus of up to +5 or up to 200,000 gp, such as vorpal.\n\n{i}Material Component{/i}: An ointment costing 200 gp." compset="Spell" summary="Weapon gains special ability with up to +5 bonus market price modifier.">
+    <fieldval field="sRange" value="One weapon or fifty projectiles, all of which must be in contact with each other at the time of cast"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="None (object)"/>
+    <fieldval field="sResist" value="No (object)"/>
+    <usesource source="EbCamSet"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sClass" tag="Artificer"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="10_Minutes"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="Object"/>
+    </thing>
+  <thing id="fBindEleme" name="Bind Elemental" description="You can craft magic items that use bound elementals for special effects, including weapons, armor, airships, and elemental galleons.\n\n{b}Prerequisites{/b}: Craft Wondrous Item, caster level 9th.\n\n{b}Benefit:{/b} Crafting an item with a bound elemental is similar to making a wondrous item, except that calling and binding an elemental is an integral part of creating the item. All bound-elemental items have a {i}planar binding{/i} spell as a prerequisite, but simply casting the spell as part of the item creation is not sufficient. You must cast the spell normally, using the item that is to hold the elemental and a Khyber dragonshard as a receptacle. The elemental receives its normal saving throw to resist. While the elemental resides in the receptacle, you must compel it to accept bondage in the item by making an opposed Charisma check, as specified in the {i}lesser planar binding{/i} spell description.\n\nIf you are an artificer, this feat allows you to cast a {i}planar binding{/i} spell by successfully emulating it with a Use Magic Device check (DC 20 + caster level), but only when you attempt to craft a bound-elemental item. In this case, your effective caster level equals your Use Magic Device check result &#150;20 for the purpose of opposing the elemental&#146;s attempts to escape." compset="Feat" summary="Create bound-elemental items">
+    <usesource source="EbCamSet"/>
+    <tag group="fCategory" tag="ItemCreate"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Craft Wondrous Item required."><![CDATA[#hasfeat[fCraftWond] <> 0]]></exprreq>
+    <prereq message="Caster level 9th required.">
+      <validate><![CDATA[if (herofield[tMaxCaster].value >= 9) then
+  @valid = 1
+elseif (tagcount[Classes.Artificer] >= 1) then
+  if (hero.child[cHelpArt].field[cCasterLev].value >= 9) then
+    @valid = 1
+  endif
+endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="ipEbBurnA" name="Burning" description="A Large fire elemental is bound into this armor, which smolders with a reddish glow. The wearer of this armor gains resistance to cold 10. Three times per day, the wearer can command the armor to burst into flames. The flames do not harm the wearer, but any creature hitting the wearer with its body or a handheld weapon takes 2d6 points of fire damage and also catches on fire unless it succeeds on a DC 17 Reflex save. Creatures wielding reach weapons, such as longspears, are not subject to this damage. The flames last for 11 rounds.\n\n{b}Moderate conjuration{/b}; CL 11th; Bind Elemental, {i}planar binding{/i}; Price +90,000 gp." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPriceCash" value="90000"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Armor"/>
+    </thing>
+  <thing id="ipEbStonem" name="Stonemeld" description="A Large earth elemental is bound into this armor, and crystalline structures appear on various areas of its surface. The wearer of this armor gains damage reduction 5/&#151; and can use meld into stone on command three times per day.\n\n{b}Moderate conjuration{/b}; CL 11th; Bind Elemental, {i}planar binding{/i}; Price +80,000 gp." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPriceCash" value="80000"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Armor"/>
+    </thing>
+  <thing id="ipEbUndAct" name="Underwater Action" description="A Large water elemental is bound into this armor, giving it a milky blue-white appearance. The wearer of this armor can breathe water as if under the effect of a water breathing spell, and the armor imposes no armor check penalty on Swim checks. Twice per day, the wearer can command the armor to produce a quench effect.\n\n{b}Moderate conjuration{/b}; CL 11th; Bind Elemental, {i}planar binding{/i}; Price +86,000 gp." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPriceCash" value="86000"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Armor"/>
+    </thing>
+  <thing id="ipEbWhirlw" name="Whirlwind" description="A Large air elemental is bound into this armor, which takes on an almost translucent appearance. When the wearer of this armor speaks a command word, the armor allows him to f ly at a speed of 60 feet (good maneuverability). Once per day the wearer can transform himself (and all his gear) into a whirlwind exactly as though he were a Large air elemental, remaining in that form for up to 4 rounds.\n\n{b}Moderate conjuration{/b}; CL 11th; Bind Elemental, {i}planar binding{/i}; Price +90,000 gp." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPriceCash" value="90000"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Armor"/>
+    </thing>
+  <thing id="ipEbBurnW" name="Burning" description="A burning weapon has a Small fire elemental bound to it, and has all the characteristics of a flaming weapon. In addition, creatures hit by the weapon must succeed on a DC 11 Reflex save or catch on fire. The fame burns for 1d4 rounds. A burning creature can take a move action to put out the flame. The wielder also gains a +2 bonus on his initiative check if he is holding the weapon at the start of combat.\n\n{b}Moderate conjuration{/b}; CL 9th; Bind Elemental, {i}lesser planar binding{/i}; Price +2 bonus." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPrice" value="+2"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Weapon"/>
+    </thing>
+  <thing id="ipEbEarthb" name="Earthbound" description="An earthbound weapon has a Small earth elemental bound to it, and has a heavy, crystalline appearance. As long as the wielder and his opponent are both touching the ground, the weapon grants its wielder an additional +2 bonus on attack and damage rolls. If the wielder is flying, the weapon&#146;s enhancement bonus from this property does not apply to his attacks (though the +1 enhancement bonus on his attack rolls for using a masterwork weapon still applies).\n\n{b}Moderate conjuration{/b}; CL 9th; Bind Elemental, {i}lesser planar binding{/i}; Price +1 bonus." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Weapon"/>
+    </thing>
+  <thing id="ipEbFiness" name="Finesse" description="A finesse weapon has a Small air elemental bound to it, and has a slightly translucent appearance. This property can be applied only to a light weapon, a rapier, a whip, or a spiked chain, and its benefits apply only if the wielder is the size of creature that the weapon was made for. The wielder can use a finesse weapon as if he had the Weapon Finesse feat. In addition, the weapon grants a +2 enhancement bonus to the wielder&#146;s Dexterity score.\n\n{b}Moderate conjuration{/b}; CL 9th; Bind Elemental, {i}lesser planar binding{/i}; Price +3 bonus." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPrice" value="+3"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Weapon"/>
+    </thing>
+  <thing id="ipEbKeepFa" name="Keeper&apos;s Fang" description="The Keeper is the Sovereign Lord of Death and Decay. He is said to have a vast domain hidden beneath the Demon Wastes, populated by souls that he has snatched away from Dolurrh. A Keeper&#146;s fang weapon has been consecrated to the Lord of Death, and incorporates a Khyber shard into the hilt. If it is used to strike a killing blow, the soul of the victim is trapped in the Keeper&#146;s domain, and the victim cannot be brought back to life using resurrection, raise dead, reincarnate, or similar effects. But all is not lost &#151; stories tell of heroes who have found the lair of the Keeper and brought the souls of their companions back from bondage.\n\nA Keeper&#146;s fang weapon is evil-aligned. The blade or stock of the weapon is engraved with the runes of the Keeper; a successful DC 20 Knowledge (religion) check allows a character to recognize the nature and purpose of the weapon. Most followers of the Sovereign Host consider the mere possession of a Keeper&#146;s fang weapon to be an abominable act; the use of the weapon is a heinous and unforgivable crime.\n\nOnly melee weapons can be dedicated as Keeper&#146;s fang weapons.\n\n{b}Moderate conjuration{/b}; CL 17th; Craft Magic Arms and Armor, {i}align weapon, soul bind{/i}; Price +4 bonus." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPrice" value="+4"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Weapon"/>
+    <tag group="PowerReq" tag="Melee"/>
+    </thing>
+  <thing id="ipEbWaterb" name="Waterborn" description="A waterborn weapon has a Small water elemental bound to it, and takes on a milky blue-white appearance. If the weapon is a slashing or bludgeoning weapon, this property negates the normal penalties for using such a weapon underwater, as if the wielder were under the effect of a {i}freedom of movement{/i} spell. If the weapon is a piercing weapon, this property grants an additional +2 bonus on its wielder&#146;s attack rolls and damage rolls when both the wielder and his opponent are touching water.\n\nWhen the wielder of a waterborn weapon uses it from land to attack a creature in the water, this property negates the cover normally granted to swimming creatures against attacks from land, again as if the wielder were under the effect of {i}freedom of movement{/i}.\n\n{b}Moderate conjuration{/b}; CL 9th; Bind Elemental, {i}lesser planar binding{/i}; Price +1 bonus." compset="ItemPower" uniqueness="unique">
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="EbCamSet"/>
+    <tag group="PowerType" tag="Weapon"/>
+    </thing>
+  </document>

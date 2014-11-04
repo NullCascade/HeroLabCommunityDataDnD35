@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="gSasPoison" name="Sassone leaf residue (Poison)" description="Sassone leaf residue\n\nContact DC 16 \n\nInitial Damage 2d12 hp \n\nSecondary Damage 1d6 Con\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Sassone leaf residue (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <fieldval field="gCost" value="300"/>
+    <fieldval field="gWeight" value="-1"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="gType" tag="Poisons"/>
+    </thing>
+  <thing id="gMalPoison" name="Malyss root paste (Poison)" description="Malyss root paste\n\nContact DC 16\n\nInitial Damage 1 Dex \n\nSecondary Damage 2d4 Dex\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Malyss root paste (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <fieldval field="gCost" value="500"/>
+    <fieldval field="gWeight" value="-1"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="gType" tag="Poisons"/>
+    </thing>
+  <thing id="gNitPoison" name="Nitharit (Poison)" description="Nitharit\n\nContact DC 13\n\nInitial Damage 0\n\nSecondary Damage 3d6 Con\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Nitharit (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <fieldval field="gCost" value="650"/>
+    <fieldval field="gWeight" value="-1"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="gType" tag="Poisons"/>
+    </thing>
+  <thing id="gIdMPoison" name="Id Moss (Poison)" description="Id moss\n\nIngested DC 14\n\nInitial Damage 1d4 Int\n\nSecondary Damage 2d6 Int\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Id Moss (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <fieldval field="gCost" value="125"/>
+    <fieldval field="gWeight" value="-1"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="gType" tag="Poisons"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="GearSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="gStrPoison" name="Striped toadstool (Poison)" description="Striped toadstool\n\nIngested DC 11\n\nInitial Damage 1 Wis\n\nSecondary 2d6 Wis + 1d4 Int\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Striped toadstool (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <fieldval field="gCost" value="180"/>
+    <fieldval field="gWeight" value="-1"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="gType" tag="Poisons"/>
+    </thing>
+  <thing id="gTerPoison" name="Terinav root (Poison)" description="Terinav root\n\nContact DC 16\n\nInitial Damage 1d6 Dex\n\nSecondary Damage 2d6 Dex\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Terinav root (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <fieldval field="gCost" value="750"/>
+    <fieldval field="gWeight" value="-1"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gBlkPoison" name="Black lotus extract (Poison)" description="Black lotus extract\n\nContact DC 20\n\nInitial Damage 3d6 Con\n\nSecondary Damage 3d6 Con\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Black lotus extract (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="4500"/>
+    <usesource source="DMGPoison"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="gDraPoison" name="Dragon bile (Poison)" description="Dragon bile\n\nContact DC 26\n\nInitial Damage 3d6 Str\n\nSecondary Damage 0\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Dragon bile (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="1500"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="gArsenic" name="Arsenic (Poison)" description="Arsenic\n\nIngested DC 13\n\nInitial Damage 1 Con\n\nSecondary Damage 1d8 Con\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Arsenic (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="120"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    </thing>
+  <thing id="goiloftagg" name="Oil of taggit  (Poison)" description="Oil of taggit \n\nIngested DC 15\n\nInitial Damage 0\n\nSecondary Damage  Unconsciousness\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Oil of taggit  (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="90"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    </thing>
+  <thing id="gLichdust" name="Lich dust (Poison)" description="Lich dust\n\nIngested DC 17\n\nInitial Damage 2d6 Str\n\nSecondary Damage 1d6 Str\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Lich dust (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="gCost" value="250"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gDarkreave" name="Dark reaver powder (Poison)" description="Dark reaver powder\n\nIngested DC 18\n\nInitial Damage 2d6 Con\n\nSecondary Damage 1d6 Con + 1d6 Str\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Dark reaver powder (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="300"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    </thing>
+  <thing id="gUngoldust" name="Ungol dust (Poison)" description="Ungol dust\n\nInhaled DC 15\n\nInitial Damage 1 Cha Damage\n\nSecondary Damage 1d6 Cha Damage + 1 Cha Drain\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Ungol dust (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="1000"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    </thing>
+  <thing id="gInsanityM" name="Insanity mist (Poison)" description="Insanity mist\n\nInhaled DC 15 \n\nInitial Damage 1d4 Wis\n\nSecondary Damage 2d6 Wis\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Insanity mist (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="1500"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    </thing>
+  <thing id="gBurntothu" name="Burnt othur fumes (Poison)" description="Burnt othur fumes\n\nInhaled DC 18\n\nInitial Damage 1 Con Drain\n\nSecondary Damage 3d6 Con Damage\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Burnt othur fumes (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="2100"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    </thing>
+  <thing id="gBlackadde" name="Black adder venom  (Poison)" description="Black adder venom\n\nInjury DC 11\n\nInitial Damage 1d6 Con\n\nSecondary Damage 1d6 Con\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Black adder venom  (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="120"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    </thing>
+  <thing id="gSmallcent" name="Small centipede poison (Poison)" description="Small centipede poison\n\nInjury DC 11\n\nInitial Damage 1d2 Dex\n\nSecondary Damage 1d2 Dex\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Small centipede poison (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="90"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    </thing>
+  <thing id="gBloodroot" name="Bloodroot (Poison)" description="Bloodroot\n\nInjury DC 12\n\nInitial Damage 0\n\nSecondary Damage 1d4 Con + 1d3 Wis\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Bloodroot (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="100"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gDrowpois" name="Drow poison (Poison)" description="Drow poison\n\nInjury DC 13\n\nInitial Damage Unconsciousness\n\nSecondary Damage Unconsciousness for 2d4 hours\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Drow poison (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="75"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gGreenbl" name="Greenblood oil (Poison)" description="Greenblood oil\n\nInjury DC 13\n\nInitial Damage 1 Con\n\nSecondary Damage 1d2 Con\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Greenblood oil (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="100"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gBluewhin" name="Blue whinnis  (Poison)" description="Blue whinnis\n\nInjury DC 14\n\nInitial Damage 1 Con\n\nSecondary Damage Unconsciousness\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Blue whinnis  (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="120"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gMediumsp" name="Medium spider venom (Poison)" description="Medium spider venom\n\nInjury DC 14\n\nInitial Damage 1d4 Str\n\nSecondary Damage 1d4 Str\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Medium spider venom (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="150"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gShadowes" name="Shadow essence  (Poison)" description="Shadow essence\n\nInjury DC 17\n\nInitial Damage 1 Str Drain\n\nSecondary Damage 2d6 Str\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Shadow essence  (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="250"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gWyvernpo" name="Wyvern poison (Poison)" description="Wyvern poison\n\nInjury DC 17\n\nInitial Damage 2d6 Con\n\nSecondary Damage 2d6 Con\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Wyvern poison (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="3000"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gLargescor" name="Large scorpion venom (Poison)" description="Large scorpion venom\n\nInjury DC 18\n\nInitial Damage 1d6 Str\n\nSecondary Damage 1d6 Str\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Large scorpion venom (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="200"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gGiantwas" name="Giant wasp poison (Poison)" description="Giant wasp poison\n\nInjury DC 18\n\nInitial Damage 1d6 Dex\n\nSecondary Damage 1d6 Dex\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Giant wasp poison (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="210"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gDeathbla" name="Deathblade (Poison)" description="Deathblade\n\nInjury DC 20\n\nInitial Damage 1d6 Con\n\nSecondary Damage 2d6 Con\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Deathblade (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="1800"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="gPurplewo" name="Purple worm poison (Poison)" description="Purple worm poison\n\nInjury DC 24\n\nInitial Damage 1d6 Str\n\nSecondary Damage 2d6 Str\n\nPerils Of Using Poison\n\nA character has a 5% chance of exposing himself to a poison whenever he applies it to a weapon or otherwise readies it for use. Additionally, a character who rolls a natural 1 on an attack roll with a poisoned weapon must make a DC 15 Reflex save or accidentally poison himself with the weapon. A creature with a poison attack is immune to its own poison and the poison of others of its kind." compset="Gear" summary="Purple worm poison (Poison)" stacking="merge">
+    <comment>Posions added because they are missing from the standard gear!
+
+Added by Bodrin</comment>
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="700"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="5% chance to poison yourself"/>
+    <usesource source="DMGPoison" parent="p35" name="Dungeon Masters Guide"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="GearSize" name="GearSize" abbrev="GearSize"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="gType" tag="Poisons" name="Poisons" abbrev="Poisons"/>
+    </thing>
+  <thing id="iwUnsnSrvt" name="Wand of Unseen Servant" description="An invisible force performs simple tasks on command. Str 2 (lift 20 lbs, drag 100 lbs); no tasks w/skill check DC &gt; 10 &amp; only w/untrained skills. Speed 15 feet. Can&apos;t attack. 6 hp damage from area attack dissipates it. Lasts 1 hr/level, close range (25 +5/level ft)." compset="Wand">
+    <fieldval field="gCost" value="750"/>
+    <fieldval field="hTotal" value="50"/>
+    <tag group="gType" tag="Wand" name="Wand" abbrev="Wand"/>
+    </thing>
+  <thing id="iwRayEnfe1" name="Wand of Ray of Enfeeblement" description="Ray deals 1d6 +1 per two levels Str damage." compset="Wand">
+    <fieldval field="gCost" value="750"/>
+    <fieldval field="hTotal" value="50"/>
+    <tag group="gType" tag="Wand" name="Wand" abbrev="Wand"/>
+    </thing>
+  </document>

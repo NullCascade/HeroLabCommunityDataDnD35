@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="fEasyMM" name="Easy Metamagic" description="{b}Prerequisite{/b}: Any other metamagic feat.\n\n{b}Benefit{/b}: Choose a metamagic feat you already have. When preparing or casting a spell modified by that feat, lower the spell-slot cost by one. You can never reduce the spell-slot cost below one level higher than the spell&apos;s actual level. For example, taking this feat for the Quicken Spell feat reduces the spell slot cost of a quickened spell from four levels higher than the spell&apos;s actual level to three levels higher than the spell&apos;s actual level.\n\n{b}Special{/b}: You can gain this feat multiple times. Each time you take this feat, you must choose a new metamagic feat.\n\n{b}Source{/b}: Dragon #325" compset="Feat" summary="One of your metamagic feats is easier to use.">
+    <fieldval field="ftCandExpr" value="User.EasyMM"/>
+    <usesource source="pDragon"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[var Lvl as number
+var LvlRed as number
+var MMg as string
+var nlvl as number
+var BLvl as number
+
+doneif (field[fChosen].ischosen = 0)
+
+MMg = field[fChosen].chosen.field[mmAbbr].text
+
+foreach pick in hero where "NeedHelper.CustomSpl"
+~Grab current level of the customized spell
+Lvl = eachpick.field[sLevel].value
+LvlRed=0
+~Need the level of the base spell; I anticipate that this foreach
+~will only find one thing.
+
+foreach pick in eachpick.gizmo from BaseSpell
+BLvl=eachpick.field[sLevel].value
+nexteach
+
+~Look for the metamagic chosen within the gizmos
+foreach pick in eachpick.gizmo from BaseMetamg
+if (compare(eachpick.field[mmAbbr].text,MMg) = 0) then
+LvlRed += 1
+endif
+nexteach
+
+nlvl=maximum(Lvl-LvlRed,BLvl)
+perform eachpick.delete[sLevel.?]
+
+~Set the field.
+eachpick.field[sLevel].value=nlvl
+
+~Set the correct tag
+if (eachpick.field[sLevel].value = 0) then
+perform eachpick.assign[sLevel.0]
+elseif (eachpick.field[sLevel].value = 1) then
+perform eachpick.assign[sLevel.1]
+elseif (eachpick.field[sLevel].value = 2) then
+perform eachpick.assign[sLevel.2]
+elseif (eachpick.field[sLevel].value = 3) then
+perform eachpick.assign[sLevel.3]
+elseif (eachpick.field[sLevel].value = 4) then
+perform eachpick.assign[sLevel.4]
+elseif (eachpick.field[sLevel].value = 5) then
+perform eachpick.assign[sLevel.5]
+elseif (eachpick.field[sLevel].value = 6) then
+perform eachpick.assign[sLevel.6]
+elseif (eachpick.field[sLevel].value = 7) then
+perform eachpick.assign[sLevel.7]
+elseif (eachpick.field[sLevel].value = 8) then
+perform eachpick.assign[sLevel.8]
+else
+perform eachpick.assign[sLevel.9]
+endif
+nexteach]]></eval>
+    <exprreq message="Any other metamagic feat required"><![CDATA[tagcount[fCategory.Metamagic] - tagcount[HasFeat.fEasyMM] <> 0]]></exprreq>
+    </thing>
+  <thing id="fEldClaws" name="Eldritch Claws" description="{b}Prerequisite{/b}: Eldritch blast 2d6.\n\n{b}Benefit{/b}: As a free action, you can form the energy of your eldritch blast into a set of claws extending almost an entire foot from your hands. While your eldritch claws exist you may make up to two claw attacks as natural weapons. You are automatically proficient with your eldritch claws. On a successful attack with an eldritch claw, you deal your normal amount of unarmed strike damage plus your eldritch blast damage. Once you form your eldritch claws they remain until just before the beginning of your next turn. You cannot use your normal eldritch blast ability while your eldritch claws exist. A monk may not use eldritch claws as part of her flurry of blows.\n\n{b}Source{/b}: Dragon #358" compset="Feat" summary="You can deliver your eldritch blast as a melee attack.">
+    <fieldval field="hName1" value="Extend Claws"/>
+    <usesource source="pDragon"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="PostLevel" priority="900"><![CDATA[doneif (field[hIsOn1].value = 0)
+
+ perform hero.childfound[wEldBlast].delete[Helper.NoEquip]
+ perform hero.childfound[wEldBlast].delete[wCategory.RangeProj]
+ perform hero.childfound[wEldBlast].delete[wRangeInc.60]
+ perform hero.childfound[wEldBlast].assign[wCategory.Melee]
+
+ hero.childfound[wEldBlast].field[livename].text = "Eldritch Claws"
+
+ perform hero.childfound[wUnarmed].pulltags[wMain.?]
+ perform hero.childfound[wEldBlast].pushtags[wMain.?]]]></eval>
+    <eval phase="Final" priority="9000" index="2"><![CDATA[doneif (field[hIsOn1].value = 0)
+
+hero.childfound[wEldBlast].field[wFixDamage].text = "Unarmed Strike + " & hero.childfound[xEldrBlast].field[Value].value & "d6"]]></eval>
+    <exprreq message="Eldritch blast 2d6 required"><![CDATA[hero.childfound[cWrlEldBl2].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    </thing>
+  <thing id="fHolyMount" name="Holy Mount" description="Your special mount is a divine gift.\n\n{b}Prerequisite{/b}: Ability to gain a paladin special mount, any other divine spellcasting class level 1st.\n\n{b}Benefit{/b}: When determining the abilities of your paladin special mount, you can combine the levels of your paladin class with those of your other divine spellcasting classes. For example, a 5th-level paladin/3rd-level cleric with this feat grants his paladin special mount abilities as an 8th-level paladin.\n\n{b}Source{/b}: Dragon #325" compset="Feat" summary="Your special mount is a divine gift.">
+    <usesource source="pDragon"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="First" priority="497"><![CDATA[var lvl as number
+
+foreach pick in hero from BaseClHelp where "CasterSrc.Divine & !thingid.cHelpPal"
+ lvl += eachpick.field[cTotalLev].value
+nexteach
+
+hero.childfound[cPalMClass].field[CompClLev].value += lvl
+hero.childfound[cPalMount].field[CompLevBas].value += lvl
+
+~ First/497
+~  hero.childfound[cAnimClass].field[CompClLev].value += bonus
+~  hero.childfound[cAnimComp].field[CompLevBas].value += bonus]]></eval>
+    <exprreq message="Ability to gain a paladin special mount required"><![CDATA[tagis[CompAvail.cPalMount] <> 0]]></exprreq>
+    <prereq message="Any other divine spellcasting class level 1st required">
+      <validate><![CDATA[foreach pick in hero from BaseClHelp where "!thingid.cHelpPal"
+ validif (eachpick.tagis[CasterSrc.Divine] <> 0)
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  </document>

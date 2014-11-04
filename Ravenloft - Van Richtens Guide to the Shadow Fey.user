@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="tmRvnHlfFy" name="Half-Fey Template" description="Half-fey are the first-generation offspring of a shadow fey and another mortal creature. Generally, sentient humanoids are the preferred mates of the fey, but they can mate with just about any mortal being.\n\nHalf-fey children do not always look unusual at birth, partly because they have not yet chosen a form. As they age, they choose a breed, generally within the first year of life. Often, this breed is the same as their fey parent, but not always. The fey parent also indicates base alignment. Of course, their alignment may change, but their breed does not after the point. They have lost the mutability of their parents.\n\nHalf-fey&apos;s appearances can vary widely, but they generally pick up a few qualities from their chosen breed. Note that fey blood mixes strangely with the blood of other creatures, and the outcome is unpredictable. While fey descendants may have abilities resembling those of the fey breeds, these abilities often manifest in unique ways.\n\nA half-fey might have one or more attributes based on their chosen breed.\n\nHalf-fey characters often have a character class, generally following the favored class of their breed. They do not gain additional special attacks as they advance in character level. Half-fey characters have a +5 Outcast Rating bonus.\n\n{b}Source{/b}: Van Richten&apos;s Guide to the Shadow Fey" compset="Template" uniqueness="unique">
+    <fieldval field="tmDEX" value="2"/>
+    <fieldval field="tmCON" value="-2"/>
+    <fieldval field="tmWIS" value="2"/>
+    <fieldval field="tmCHA" value="4"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="tmInfHD" value="Racial HD change to a d6"/>
+    <usesource source="VRGShaFey" parent="pRaven" name="Van Richten&apos;s Guide to the Shadow Fey"/>
+    <tag group="TemplHelp" tag="Inherited"/>
+    <bootstrap thing="fRvnHFBree"></bootstrap>
+    <bootstrap thing="xRvnHFSuVu"></bootstrap>
+    <bootstrap thing="xRvnHFLuck"></bootstrap>
+    <bootstrap thing="xRvnHFBrSp">
+      <containerreq phase="First" priority="8000">hero#Hero.PreClassHD</containerreq>
+      </bootstrap>
+    <bootstrap thing="typFey"></bootstrap>
+    <bootstrap thing="xRvnHFBrAb">
+      <containerreq phase="First" priority="8000">hero#Hero.PreClassHD</containerreq>
+      </bootstrap>
+    <bootstrap thing="xFly2"></bootstrap>
+    <eval phase="First" priority="50000"><![CDATA[~ assign correct Race tags
+  perform hero.delete[Race.typ?]
+  perform hero.delete[Race.styp?]
+  perform hero.assign[Race.typFey]
+
+~ remove other types and subtypes
+  foreach pick in hero from BaseSpec where "thingid.styp? | thingid.typ? & !thingid.typFey"
+   perform each.delete[Helper.ShowSpec]
+  nexteach]]></eval>
+    </thing>
+  <thing id="fRvnHFBree" name="Breed" description="Use this to choose your Breed." compset="Feat">
+    <fieldval field="ftCandExpr" value="thingid.xRvnBrAlve | thingid.xRvnBrBrag | thingid.xRvnBrFir | thingid.xRvnBrMury | thingid.xRvnBrOthr | thingid.xRvnBrPort | thingid.xRvnBrPowr | thingid.xRvnBrShee | thingid.xRvnBrSith | thingid.xRvnBrTeg"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="fCategory" tag="Racial"/>
+    <bootstrap thing="xRvnBrBrag">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 2</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrFir">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 3</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrMury">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 4</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrOthr">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 5</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrPort">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 6</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrPowr">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 7</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrShee">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 8</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrSith">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 9</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrTeg">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 10</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnBrAlve">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 1</containerreq>
+      </bootstrap>
+    <eval phase="First" priority="9500">doneif (field[fChosen].ischosen = 0)
+
+~set hTotal field for bootstrapping purposes
+field[hTotal].value = field[fChosen].chosen.field[Value].value</eval>
+    </thing>
+  <thing id="xRvnBrAlve" name="Alven" description="Members of this breed typically have bright orange hair, olive skin, antennae, and/or a high-pitched voice.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Plant Cleric Domain." compset="Special" summary="You are a member of the Alven breed of the Shadow Fey.">
+    <fieldval field="Value" value="1"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fRvnHFBrQu"></bootstrap>
+    </thing>
+  <thing id="xRvnBrBrag" name="Brag" description="Members of this breed typically have black eyes and nails, albino skin, horse tail, horse mane, and/or hooves for feet.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Animal Cleric Domain." compset="Special" summary="You are a member of the Brag breed of the Shadow Fey.">
+    <fieldval field="Value" value="2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fRvnHFBrQu"></bootstrap>
+    </thing>
+  <thing id="xRvnBrFir" name="Fir" description="Members of this breed typically have long fingers and nails, silver hair, and/or fine, brown fur covereing their body.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Knowledge Cleric Domain." compset="Special" summary="You are a member of the Fir breed of the Shadow Fey.">
+    <fieldval field="Value" value="3"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xDamRsCold">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnBrMury" name="Muryan" description="Members of this breed typically have extremely long, unkempt hair.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the War Cleric Domain." compset="Special" summary="You are a member of the Muryan breed of the Shadow Fey.">
+    <fieldval field="Value" value="4"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xDamRsElec">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnBrPort" name="Portune" description="Members of this breed typically have pitch-black skin, reptile skin, white hair, and/or white eyes with no pupils.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Healing Cleric Domain." compset="Special" summary="You are a member of the Portune breed of the Shadow Fey.">
+    <fieldval field="Value" value="6"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fRvnHFBrQu"></bootstrap>
+    </thing>
+  <thing id="xRvnBrPowr" name="Powrie" description="Members of this breed typically have needle-like teeth, snake eyes, insect eyes, gray skin, wiry hair and beard, and/or a wicked smile.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Trickery Cleric Domain." compset="Special" summary="You are a member of the Powrie breed of the Shadow Fey.">
+    <fieldval field="Value" value="7"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fRvnHFBrQu"></bootstrap>
+    </thing>
+  <thing id="xRvnBrShee" name="Shee" description="Members of this breed typically have pale hair and skin, amber eyes, and/or feathered brows.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Luck Cleric Domain." compset="Special" summary="You are a member of the Shee breed of the Shadow Fey.">
+    <fieldval field="Value" value="8"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xDamRsFire">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnBrSith" name="Sith" description="Members of this breed typically have pale skin, long white hair, and/or a whispering voice.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Evil Cleric Domain." compset="Special" summary="You are a member of the Sith breed of the Shadow Fey.">
+    <fieldval field="Value" value="9"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xDamRsFire">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnBrTeg" name="Teg" description="Members of this breed typically have cat eyes, fox ears, clawed fingers, pointed teeth, and/or a fox tail.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Chaos Cleric Domain." compset="Special" summary="You are a member of the Teg breed of the Shadow Fey.">
+    <fieldval field="Value" value="10"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xDamRsCold">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnBrOthr" name="Other" description="Members of this breed typically have warty skin, multi-hued skin, ichor coating, bulbous eyes, glowing eyes, feathers for hair, long noses, claws, and/or antennae.\n\nIf you have any racial HD, you may choose at least one spell to cast as a spell-like ability from the Trickery Cleric Domain." compset="Special" summary="You are a member of the Other breed of the Shadow Fey.">
+    <fieldval field="Value" value="5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fRvnHFBrQu"></bootstrap>
+    </thing>
+  <thing id="xRvnHFSuVu" name="Sunlight Vulnerability" description="Half-fey lose all of their special attacks in natural sunlight." compset="Special">
+    <fieldval field="xSource" value="Half-fey"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="xRvnHFLuck" name="Luck" description="Half-fey gain a +2 luck bonus to AC." compset="Special">
+    <fieldval field="xSource" value="Half-fey"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostAttr" priority="12000">hero.child[ArmorClass].field[BonLuck].value += 2</eval>
+    </thing>
+  <thing id="fRvnHFBrQu" name="Breed Qualities" description="Some breeds allow a choice of special abilities." compset="Feat">
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <bootstrap thing="xRvnHFEndu">
+      <containerreq phase="First" priority="10900">fieldval:hTotal = 1</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFInWi">
+      <containerreq phase="First" priority="10900">fieldval:hTotal = 2</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFMoWi">
+      <containerreq phase="First" priority="10900">fieldval:hTotal = 3</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFDRA">
+      <containerreq phase="First" priority="10900">fieldval:hTotal = 4</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFDRC">
+      <containerreq phase="First" priority="10900">fieldval:hTotal = 5</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFDRE">
+      <containerreq phase="First" priority="10900">fieldval:hTotal = 6</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFDRF">
+      <containerreq phase="First" priority="10900">fieldval:hTotal = 7</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFDRS">
+      <containerreq phase="First" priority="10900">fieldval:hTotal = 8</containerreq>
+      </bootstrap>
+    <eval phase="First" priority="10500"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text = "thingid.xRvnHFDRE | thingid.xRvnHFInWi"
+elseif (breed = 2) then
+ field[ftCandExpr].text = "thingid.xRvnHFDRC | thingid.xRvnHFEndu"
+elseif (breed = 5) then
+ field[ftCandExpr].text = "thingid.xRvnHFDRA | thingid.xRvnHFDRC | thingid.xRvnHFDRE | thingid.xRvnHFDRF | thingid.xRvnHFDRS | thingid.xRvnHFInWi"
+elseif (breed = 6) then
+ field[ftCandExpr].text = "thingid.xRvnHFDRF | thingid.xRvnHFMoWi"
+elseif (breed = 7) then
+ field[ftCandExpr].text = "thingid.xRvnHFDRE | thingid.xRvnHFInWi"
+endif]]></eval>
+    <eval phase="First" priority="10750" index="2">doneif (field[fChosen].ischosen = 0)
+
+~set hTotal field for bootstrapping purposes
+field[hTotal].value = field[fChosen].chosen.field[Value].value</eval>
+    </thing>
+  <thing id="xRvnHFInWi" name="Insect Wings" description="Fly at base movement rate, good maneuverability." compset="Special">
+    <fieldval field="Value" value="2"/>
+    <eval phase="PreLevel" priority="9500">hero.childfound[xFly2].field[Value].value = hero.child[Speed].field[tSpeed].value
+
+perform hero.childfound[xFly2].assign[Maneuver.Good]</eval>
+    </thing>
+  <thing id="xRvnHFMoWi" name="Moth Wings" description="Fly at base movement rate, good maneuverability." compset="Special">
+    <fieldval field="Value" value="3"/>
+    <eval phase="PreLevel" priority="9500">hero.childfound[xFly2].field[Value].value = hero.child[Speed].field[tSpeed].value
+
+perform hero.childfound[xFly2].assign[Maneuver.Good]</eval>
+    </thing>
+  <thing id="xRvnHFEndu" name="Endurance" compset="Special">
+    <fieldval field="Value" value="1"/>
+    <bootstrap thing="fEndure"></bootstrap>
+    </thing>
+  <thing id="xRvnHFDRA" name="Damage Resistance Acid" compset="Special">
+    <fieldval field="Value" value="4"/>
+    <bootstrap thing="xDamRsAcid">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnHFDRC" name="Damage Resistance Cold" compset="Special">
+    <fieldval field="Value" value="5"/>
+    <bootstrap thing="xDamRsCold">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnHFDRE" name="Damage Resistance Electricity" compset="Special">
+    <fieldval field="Value" value="6"/>
+    <bootstrap thing="xDamRsElec">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnHFDRF" name="Damage Resistance Fire" compset="Special">
+    <fieldval field="Value" value="7"/>
+    <bootstrap thing="xDamRsFire">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="xRvnHFDRS" name="Damage Resistance Sonic" compset="Special">
+    <fieldval field="Value" value="8"/>
+    <bootstrap thing="xDamRsSoni">
+      <assignval field="Value" value="5"/>
+      </bootstrap>
+    </thing>
+  <thing id="fRvnHFBrS1" name="Breed Spell 1st" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.1 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFBrS2" name="Breed Spell 2nd" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.2 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="xRvnHFBrSp" name="Breed Spells" description="A half-fey with a Charisma of 10 or higher gains spell-like abilities. It casts spells as a sorcerer of a level equal to its Hit Dice. Table 9-6 lists the abilities available. These abilities are cumulative. A half-fey with 3 HD can use the abilities on the 1st through 3rd ability table.\n\nIn addition to the spells they can choose, a half-fey with at least 1 racial HD gains the ability to use the following spells as spell-like abilities: {i}daze, dancing lights, ghost sound{/i} 1/day. They also gain the ability to use {i}charm person{/i} at will." compset="Special" summary="Cast selected spells as a Sorcerer 1/day.">
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fRvnHFBrS2">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 3]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS3">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 5]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS4">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 7]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS5">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 9]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS6">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 11]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS7">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 13]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS7">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 13]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS8">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 15]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS8">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 15]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS9">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 17]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFBrS1">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 1]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFBSCP">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 1]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFBSDL">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 1]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFBSDa">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 1]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHFBSGS">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 1]]></containerreq>
+      </bootstrap>
+    <eval phase="PostLevel" priority="9000"><![CDATA[var CL as number
+CL = herofield[tHitDice].value
+
+field[livename].text = field[name].text & " (CL " & CL & ")"]]></eval>
+    <eval phase="First" priority="9000" index="2">foreach pick in hero from BaseRace
+ field[Value].value = eachpick.tagcount[Hero.HitDice]
+nexteach</eval>
+    </thing>
+  <thing id="fRvnHFBrS3" name="Breed Spell 3rd" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.3 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFBrS4" name="Breed Spell 4th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.4 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFBrS5" name="Breed Spell 5th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.5 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFBrS6" name="Breed Spell 6th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.6 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFBrS7" name="Breed Spell 7th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.7 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFBrS8" name="Breed Spell 8th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.8 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFBrS9" name="Breed Spell 9th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Sorcerer &amp; sLevel.9 &amp; (sSchool.Enchant | sSchool.Illusion)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="xRvnHFBSDa" name="Breed Spells: Daze" description="This enchantment clouds the mind of a humanoid creature with 4 or fewer Hit Dice so that it takes no actions. Humanoids of 5 or more HD are not affected. A dazed subject is not stunned, so attackers get no special advantage against it." compset="Special" summary="Use {i}Daze{/i} 1/day as a spell-like ability.">
+    <fieldval field="xSource" value="Half-fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="xRvnHFBSDL" name="Breed Spells: Dancing Lights" description="Depending on the version selected, you create up to four lights {b}(all within a 10-ft.-radius area){/b} that resemble lanterns or torches (and cast that amount of light), or up to four glowing spheres of light (which look like will-o&#146;-wisps), or one faintly glowing, vaguely humanoid shape. The {i}dancing lights{/i} must stay within a 10 foot-radius area in relation to each other but otherwise move as you desire (no concentration required): forward or back, up or down, straight or turning corners, or the like. The lights can move up to 100 feet per round. A light winks out if the distance between you and it exceeds the spell&#146;s range." compset="Special" summary="Use {i}Dancing Lights{/i} 1/day as a spell-like ability.">
+    <fieldval field="xSource" value="Half-fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="xRvnHFBSGS" name="Breed Spells: Ghost Sound" description="{i}Ghost sound{/i} allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound {i}ghost sound{/i} creates when casting it and cannot thereafter change the sound&#146;s basic character.\n\nThe volume of sound created depends on your level. You can produce as much noise as four normal humans per caster level (maximum twenty humans). Thus, talking, singing, shouting, walking, marching, or running sounds can be created. The noise a {i}ghost sound{/i} spell produces can be virtually any type of sound within the volume limit. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans. {i}Ghost sound{/i} can enhance the effectiveness of a {i}silent image{/i} spell." compset="Special" summary="Use {i}Ghost Sound{/i} 1/day as a spell-like ability.">
+    <fieldval field="xSource" value="Half-fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="xRvnHFBSCP" name="Breed Spells: Charm Person" description="This charm makes a humanoid creature regard you as its trusted friend and ally (treat the target&#146;s attitude as friendly; see Influencing NPC Attitudes, page 72). If the creature is currently being threatened or attacked by you or your allies, however, it receives a +5 bonus on its saving throw.\n\nThe spell does not enable you to control the {i}charmed{/i} person as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn&#146;t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but a {i}charmed{/i} fighter, for example, might believe you if you assured him that the only chance to save your life is for him to hold back an onrushing red dragon for &#147;just a few seconds.&#148; Any act by you or your apparent allies that threatens the {i}charmed{/i} person breaks the spell. You must speak the person&#146;s language to communicate your commands, or else be good at pantomiming." compset="Special" summary="Use {i}Charm Person{/i} at will as a spell-like ability.">
+    <fieldval field="xSource" value="Half-fey"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="xRvnHFBrAb" name="Breed Abilities" description="Half-fey also gain additional spell-like abilities from a clerical domain corresponding to their breed. These spells are cast using the half-fey&apos;s Charisma modifier." compset="Special" summary="Cast chosen domain spells as a spell-like ability.">
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fRvnHFDoS1">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 1]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFDoS2">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 3]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFDoS3">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 5]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFDoS4">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 7]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFDoS5">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 9]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFDoS6">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 11]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFDoS7">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 13]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFDoS8">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 15]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnHFDoS9">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:Value >= 17]]></containerreq>
+      </bootstrap>
+    <eval phase="First" priority="9000" index="2">foreach pick in hero from BaseRace
+ field[Value].value = eachpick.tagcount[Hero.HitDice]
+nexteach</eval>
+    <eval phase="PostLevel" priority="9000"><![CDATA[var CL as number
+CL = herofield[tHitDice].value
+
+field[livename].text = field[name].text & " (CL " & CL & ")"]]></eval>
+    </thing>
+  <thing id="fRvnHFDoS1" name="Breed Domain Spell 1st" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.1"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFDoS2" name="Breed Domain Spell 2nd" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.2"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFDoS3" name="Breed Domain Spell 3rd" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.3"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFDoS4" name="Breed Domain Spell 4th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.4"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFDoS5" name="Breed Domain Spell 5th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.5"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFDoS6" name="Breed Domain Spell 6th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.6"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFDoS7" name="Breed Domain Spell 7th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.7"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFDoS8" name="Breed Domain Spell 8th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.8"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnHFDoS9" name="Breed Domain Spell 9th" compset="Feat">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; Helper.Domain &amp; sLevel.9"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="First" priority="12000" index="2"><![CDATA[var breed as number
+breed = hero.childfound[fRvnHFBree].field[fChosen].chosen.field[Value].value
+
+if (breed = 1) then
+ field[ftCandExpr].text &= " & sClass.Plant"
+elseif (breed = 2) then
+ field[ftCandExpr].text &= " & sClass.Animal"
+elseif (breed = 3) then
+ field[ftCandExpr].text &= " & sClass.Knowledge"
+elseif (breed = 4) then
+ field[ftCandExpr].text &= " & sClass.War"
+elseif (breed = 5) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 6) then
+ field[ftCandExpr].text &= " & sClass.Healing"
+elseif (breed = 7) then
+ field[ftCandExpr].text &= " & sClass.Trickery"
+elseif (breed = 8) then
+ field[ftCandExpr].text &= " & sclass.Luck"
+elseif (breed = 9) then
+ field[ftCandExpr].text &= " & sClass.Evil"
+elseif (breed = 10) then
+ field[ftCandExpr].text &= " & sClass.Chaos"
+endif]]></eval>
+    <eval phase="Final" priority="10000">field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  </document>

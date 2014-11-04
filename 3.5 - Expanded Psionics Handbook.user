@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>Sendric</info_author>
+    <info_history>10-25-2011
+Added monsters from Expanded Psionics Handbook required for Complete Psionics feats.</info_history>
+    </fileinfo>
+  <thing id="rGithZPsi" name="Githzerai, Psionic" description="{i}This creature is a thin and tall humanoid with sharp features, a somber face, and yellow eyes.{/i}\n\nGithzerai are a hard-hearted, humanlike people who dwell on the plane of Limbo, secure in the protection of their hidden monasteries.\n\nGithzerai average more than 6 feet tall and weigh about 160 pounds. Some have gray eyes instead of yellow. All of them dress in drab, unadorned clothing.\n\nAs a rule, githzerai are close-mouthed, keep their own counsel, and trust few outside their own kind.\n\nThey speak their own language (similar enough to the tongue of the githyanki that either could understand the other if they chose to speak instead of fight), but many also speak Common.\n\nMany githzerai are monks; however, sorcerers, rogues, and multiclass githzerai (called zerths) are also indispensable members of a monastery." compset="Race">
+    <fieldval field="rDEX" value="6"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rInfFavor" value="Monk"/>
+    <fieldval field="rInfAutoLn" value="Common, Gith"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rBonusPP" value="2"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lInfernal" name="Infernal" abbrev="Infernal"/>
+    <tag group="Language" tag="lUndercomm" name="Undercommon" abbrev="Undercommon"/>
+    <tag group="Race" tag="Githzerai" name="Githzerai" abbrev="Githzerai"/>
+    <tag group="Race" tag="stypExPlan" name="Subtype - Extraplanar" abbrev="Subtype - Extraplanar"/>
+    <tag group="Race" tag="Psi"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="Race" tag="typHumanoi" name="Type - Humanoid" abbrev="Type - Humanoid"/>
+    <tag group="Language" tag="lAbyssal"/>
+    <tag group="Language" tag="lCelestial"/>
+    <tag group="Language" tag="lCommonND"/>
+    <tag group="Language" tag="lGithzerai"/>
+    <tag group="Language" tag="lSlaad"/>
+    <bootstrap thing="lGithzerai"></bootstrap>
+    <bootstrap thing="xPowResist"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="xInertArm"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="xGithZPSA"></bootstrap>
+    <eval phase="PostLevel" priority="10000">~ Set up our power resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 5
+      hero.child[xPowResist].field[Value].value=damage</eval>
+    </thing>
+  <thing id="xGithYPSA" name="Githyanki Psi-like Abilities" description="Psionic githyanki gain the following psi-like abilities instead of the spell-like abilities described in the Monster Manual.\n\n{b}Level{/b}    {b}Psi-Like Abilities{/b}\n1st&#150;2nd 3/day&#151;far hand, psionic daze\n3rd&#150;5th 3/day&#151;concealing amorpha\n6th&#150;8th 3/day&#151;psionic dimension door\n9th+ 3/day&#151;telekinetic thrust; 1/day&#151;plane shift\n\nManifester level equal to 1/2 Hit Dice (minimum 1st). The save DCs are Charisma-based." compset="Special">
+    <comment>Make charges, bootstrap so that only come into play at appropriate levels. (Done)</comment>
+    <usesource source="SRDPsionic"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <bootstrap thing="xGitYMagHa">
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <bootstrap thing="xGitYBlur">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.? >= 3]]></containerreq>
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <bootstrap thing="xGitYDimDo">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.? >= 6]]></containerreq>
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <bootstrap thing="xGitYTelek">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.? >= 9]]></containerreq>
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <bootstrap thing="xGitYPlaSh">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.? >= 9]]></containerreq>
+      <assignval field="hTotal" value="1"/>
+      </bootstrap>
+    <bootstrap thing="xGitYDaze">
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <eval phase="First" priority="500"><![CDATA[  var level as number
+  level = hero.tagcount[Classes.?]
+  field[xSumm].text = "3/day, use {i}far hand{/i}, {i}psionic daze{/i}"
+
+if (level >= 3) then
+  field[xSumm].text = field[xSumm].text & ", {i}concealing amorpha{/i}"
+endif
+
+if (level >= 6) then
+  field[xSumm].text = field[xSumm].text & ", {i}psionic dim. door{/i}"
+endif
+
+if (level >= 9) then
+  field[xSumm].text = field[xSumm].text & ", {i}telekinetic thrust{/i}. 1/day, {i}plane shift{/i}"
+endif
+
+  field[xSumm].text = field[xSumm].text & "."]]></eval>
+    </thing>
+  <thing id="xGithZPSA" name="Githzerai Psi-like Abilities" description="Psionic githzerai gain the following psi-like abilities instead of the spell-like abilities described in the Monster Manual and their inertial armor ability:\n\n3/day&#151;catfall, concussion blast, psionic daze (DC 10 + 1/2 HD + Cha modifier), inertial armor.\n\nGithzerai of 11th level or higher also gain psionic plane shift 1/day. \n\nManifester level is equal to 1/2 the Githzerai&#146;s Hit Dice (minimum 1st). The save DC is Charisma-based." compset="Special">
+    <comment>Make charges, bootstrap so that only come into play at appropriate levels. (Done)</comment>
+    <usesource source="SRDPsionic"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <bootstrap thing="xGitZFeaFa">
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <bootstrap thing="xGitZShatt">
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <bootstrap thing="xGitYPlaSh">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.? >= 11]]></containerreq>
+      <assignval field="hTotal" value="1"/>
+      </bootstrap>
+    <bootstrap thing="xGitYDaze">
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <eval phase="First" priority="500"><![CDATA[  var level as number
+  level = hero.tagcount[Classes.?]
+  field[xSumm].text = "3/day, use {i}catfall{/i}, {i}concussion blast{/i}, {i}psionic daze{/i}, {i}inertial armor{/i}"
+
+if (level >= 11) then
+  field[xSumm].text = field[xSumm].text & ". 1/day, {i}plane shift{/i}"
+endif
+
+  field[xSumm].text = field[xSumm].text & "."]]></eval>
+    </thing>
+  <thing id="xPowResist" name="Power Resistance" description="You have Power Resistance." compset="Special" uniqueness="unique">
+    <usesource source="SRDPsionic"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the quality of spell resistance
+      field[livename].text = field[name].text & " (" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="rThriKreen" name="Thri-Kreen" description="{i}This creature resembles a bipedal praying mantis, complete with six limbs; the lower two are used for walking, and the upper four end in four-fi ngered clawlike hands. It has large, dangerous mandibles, compound eyes, and two small antennae sprouting from its head.{/i}\n\nFierce hunters and faultless trackers, the thri-kreen are a race of insect-folk sometimes known as &#147;mantis warriors.&#148; They are alien and inscrutable creatures who seem to be bloodthirsty monsters to those who do not know them well. Thrikreen are near-perfect hunters, nomadic folk who spend their brief lives roaming vast distances of the deserts, scrublands, and savannas of the south.\n\nA thri-kreen&#146;s exoskeleton is a sandy yellow in color, well suited for the dry savannas and grasslands these creatures favor. Thri-kreen wear little clothing other than a simple harness for carrying weapons and equipment.\n\nThri-kreen speak their own language, and some also know Common." compset="Race">
+    <comment>Eval script is a work-around until EasyRace works with new races (as assigned by the weapon).</comment>
+    <fieldval field="rDEX" value="5"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="-3"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rAC" value="3"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rInfFavor" value="Ranger"/>
+    <fieldval field="rInfHit" value="2d8 HD (2 levels of Monstrous Humanoid)"/>
+    <fieldval field="rHitDice" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rNumHands" value="4"/>
+    <fieldval field="rBonusPP" value="1"/>
+    <fieldval field="rCON" value="1"/>
+    <fieldval field="rRef" value="3"/>
+    <fieldval field="rWill" value="3"/>
+    <fieldval field="rAttack" value="2"/>
+    <fieldval field="rSTR" value="2"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Race" tag="ThriKreen"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Language" tag="lElven"/>
+    <tag group="Language" tag="lGiant"/>
+    <tag group="Language" tag="lGnoll"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Language" tag="lHalfling"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="Race" tag="typMonHuma"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lThriKreen"></bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <assignval field="livename" value="+4 racial bonus in sandy or arid settings"/>
+      </bootstrap>
+    <bootstrap thing="xLeap"></bootstrap>
+    <bootstrap thing="xTKPoison"></bootstrap>
+    <bootstrap thing="xTKPSA"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Value" tag="1"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      </bootstrap>
+    <bootstrap thing="xImmSleep"></bootstrap>
+    <bootstrap thing="fDefArrow">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="4"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      </bootstrap>
+    <bootstrap thing="typMonsHum"></bootstrap>
+    <eval phase="First" priority="1000"><![CDATA[if (hero.tagis[Hero.ProfMart] <> 0) then
+ perform hero.assign[WepProf.wGythka]
+ perform hero.assign[WepProf.wChatkcha]
+endif]]></eval>
+    </thing>
+  <thing id="lThriKreen" name="Thri-Kreen" compset="Language">
+    <usesource source="SRDPsionic"/>
+    </thing>
+  <thing id="xTKPoison" name="Poison" description="Injury, Fortitude DC 11, initial damage 1d6 Dex, secondary damage paralysis for 2d6 minutes. A thri-kreen can use its poison bite once per day. The save DC is Constitution-based." compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPostAt"><![CDATA[      var DC as number
+      var uses as number
+
+      DC = 10 + hero.child[aCON].field[aModBonus].value
+      uses = hero.childfound[xTKPoison].field[hTotal].value
+
+      field[xSumm].text = "Bite - DC" & DC & " - paralysis 2d6 minutes " & uses & "/day."]]></eval>
+    </thing>
+  <thing id="xTKPSA" name="Thri-Kreen Psi-like Abilities" compset="Special" summary="Gain psi-like abilities.">
+    <usesource source="SRDPsionic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xChamPLA"></bootstrap>
+    <bootstrap thing="xKnowPLA"></bootstrap>
+    <bootstrap thing="xGCAPLA"></bootstrap>
+    <bootstrap thing="xClawPLA"></bootstrap>
+    <eval phase="First" priority="10000"><![CDATA[var conceal as number
+var claw as number
+
+conceal = hero.childfound[xGCAPLA].field[hTotal].value
+claw = hero.childfound[xClawPLA].field[hTotal].value
+
+if (conceal = claw) then
+
+field[CustDesc].text = "3/day: {i}chameleon{/i}, {i}know direction and location{/i}; "& conceal &"/day {i}greater concealing amorpha{/i}, {i}metaphysical claw{/i}"
+
+else
+
+field[CustDesc].text = "3/day: {i}chameleon{/i}, {i}know direction and location{/i}; "& conceal &"/day {i}greater concealing amorpha{/i}; "& claw &"/day {i}metaphysical claw{/i}"
+
+endif]]></eval>
+    </thing>
+  <thing id="xLeap" name="Leap" description="A thri-kreen is a natural jumper. It has a +30 racial bonus on Jump checks." compset="Special" summary="+30 racial bonus on Jump checks.">
+    <usesource source="SRDPsionic"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First" priority="5000">#skillbonus[kJump] += 30</eval>
+    </thing>
+  <thing id="rGithYPsi" name="Githyanki, Psionic" description="{i}This tall, gaunt humanoid has rough, yellow skin and russet hair pulled into a pair of topknots. Its eyes have a sinister gleam, and its ears are pointed and serrated in back.{/i}\n\nGithyanki are an ancient line of humanlike beings residing on the Astral Plane, filling their armories for their next skirmish, raid, or war.\n\nGithyanki are gaunt, averaging a little over 6 feet tall and typically weighing around 170 pounds. They enjoy elaborate dress and baroque armor. In fact, they revere weapons and armor, and it is not uncommon for a githyanki to show more regard for panoply of possessions than for its mate.\n\nLike dwarves, githyanki are craftmasters, although they focus exclusively on items of warfare. Their items are distinctive, and non githyanki who acquire them run the risk of immediate retribution should they encounter githyanki.\n\nGithyanki speak their own secret tongue, but most also know Common and Draconic.\n\nMost githyanki encountered outside their homes are fighters. However, wizards (called warlocks) and multiclass githyanki (called gish) are also found." compset="Race">
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rInfFavor" value="Fighter"/>
+    <fieldval field="rInfAutoLn" value="Common, Gith"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rBonusPP" value="3"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="Language" tag="lCommon" name="Common" abbrev="Common"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lInfernal" name="Infernal" abbrev="Infernal"/>
+    <tag group="Language" tag="lUndercomm" name="Undercommon" abbrev="Undercommon"/>
+    <tag group="Race" tag="Githyanki" name="Githyanki" abbrev="Githyanki"/>
+    <tag group="Race" tag="stypExPlan" name="Subtype - Extraplanar" abbrev="Subtype - Extraplanar"/>
+    <tag group="Race" tag="Psi" name="Subtype - Psionic"/>
+    <tag group="Race" tag="typHumanoi" name="Type - Humanoid" abbrev="Type - Humanoid"/>
+    <tag group="Language" tag="lAbyssal"/>
+    <tag group="Language" tag="lCelestial"/>
+    <tag group="Language" tag="lGithyanki"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <bootstrap thing="lGithyanki"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <bootstrap thing="xPowResist"></bootstrap>
+    <bootstrap thing="xGithYPSA"></bootstrap>
+    <eval phase="PostLevel" priority="10000">~ Set up our power resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 5
+      hero.child[xPowResist].field[Value].value=damage</eval>
+    </thing>
+  <thing id="wGythka" name="Gythka" description="This two-handed exotic melee weapon is a polearm with a blade at each end. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a one-handed weapon and a light weapon. A thrikreen can wield two gythkas at once as double weapons due to its four arms, but takes penalties as if its off-hand weapon were a one-handed weapon, not a light weapon." compset="Weapon">
+    <fieldval field="gSizeCost" value="60"/>
+    <fieldval field="gWeight" value="25"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d10_304"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Double"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    <tag group="wEasyRace" tag="ThriKreen"/>
+    <tag group="wOff" tag="1d10_304"/>
+    </thing>
+  <thing id="wChatkcha" name="Chatkcha" description="This exotic ranged weapon is a crystalline throwing wedge." compset="Weapon">
+    <fieldval field="gSizeCost" value="1"/>
+    <fieldval field="gWeight" value="3"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="wCritMin" tag="18"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wRangeInc" tag="20"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wEasyRace" tag="ThriKreen"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="xChamPLA" name="Chameleon" compset="Special">
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="AbilType" tag="PsiLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="xKnowPLA" name="Know Direction and Location" compset="Special">
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="AbilType" tag="PsiLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="xGCAPLA" name="Greater Concealing Amorpha" compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="AbilType" tag="PsiLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="xClawPLA" name="Metaphysical Claw" compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="AbilType" tag="PsiLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="iPsiPsyKi" name="Psychokinetic (Psionic)" description="Upon command, a psychokinetic weapon glows from the inside with lethal psionic energy.\n\nThe energy does not harm the hands that hold the weapon. Such a weapon deals an extra 1d4 points of damage on a successful hit.\n\nThis extra damage is ectoplasmic (Force) in nature and is not affected by damage reduction. Bows, crossbows, and slings bestow this ability upon their ammunition.\n\nModerate psychokinesis; ML 10th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor; blast of force or concussion blast; Price +1 bonus." compset="ItemPower" summary="+1d4 Ectoplasmic Damage overcomes DR" uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiBodyf" name="Bodyfeeder (Psionic)" description="All feeder weapons have a special ability that functions only upon scoring a successful critical hit.\n\nA bodyfeeder weapon grants its wielder temporary hit points equal to the total damage dealt by a successful critical hit. These temporary hit points last for 10 minutes.\n\nThus, if the wielder of a bodyfeeder weapon successfully scores a critical hit while the wielder still enjoys temporary hit points from a previous critical hit, the wielder gains only the better of the two values: either his current number of temporary hit points, or the new influx of temporary hit points, whichever is higher.\n\nStrong psychometabolism; ML 12th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor; claws of the vampire; Price +3 bonus." compset="ItemPower" summary="Grants Temporary hit points on critical hit." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+3"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiColli" name="Collision (Psionic)" description="Collision weapons psionically increase their own mass at the end point of each swing or shot.\n\nSuch weapons deal an extra 5 points of damage on each successful strike, in addition to the weapon&#146;s enhancement bonus. \n\nBows, crossbows, and slings bestow the extra damage upon their ammunition.\n\nModerate metacreativity; ML 10th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, matter manipulation; Price +2 bonus." compset="ItemPower" summary="Extra 5 points of damage with each hit." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+2"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiCoupd" name="Coup de grace (Psionic)" description="Coup de grace weapons are exceptionally dangerous. On a successful critical hit, the foe must succeed on a DC 27 Will save or be paralyzed for 1 round.\n\nWhile this ability does work on creatures that are immune to extra damage from critical hits, it does not work on creatures without an Intelligence score. \n\nBows, crossbows, and slings bestow this ability on their ammunition.\n\nStrong telepathy; ML 19th;Craft Psionic Arms and Armor or Craft Magic Arms and Armor, psionic dominate; Price +5 bonus." compset="ItemPower" summary="Foe must succeed on a DC 27 Will save or be paralyzed for 1 round." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+5"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiDislo" name="Dislocater (Psionic)" description="The wielder of this kind of weapon can attempt to dislocate a designated foe up to three times per day.\n\nOn a successful hit, the foe must succeed on a DC 17 Will save or be teleported 1-100 miles in a random direction.\n\nIf the weapon misses, the use is wasted. Bows, crossbows, and slings bestow this ability on their ammunition.\n\nStrong psychoportation; ML 12th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, psionic teleport; Price +3 bonus." compset="ItemPower" summary="Dislocate a designated foe up to three times per day." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerReq" tag="Ranged" name="Ranged Weapon" abbrev="Ranged Weapon"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiDislG" name="Great Dislocater (Psionic) [Synergy]" description="The wielder of this kind of weapon can attempt to greatly dislocate a designated foe up to three times per day.\n\nOn a successful hit, the foe must succeed on a DC 20 Will save or be cast into a random alternate plane of existence.\n\nIf the weapon misses, the use is wasted. Bows, crossbows, and slings bestow this ability upon their ammunition.\n\nStrong psychoportation; ML 12th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor,Psionic plane shift; Price +4 bonus." compset="ItemPower" summary="Dislocate a designated foe up to three times per day." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    <tag group="PowerReq" tag="Ranged" name="Ranged Weapon" abbrev="Ranged Weapon"/>
+    <eval phase="First"><![CDATA[~ Done by Lawful_G
+~ Adapted by Bodrin for 
+~ Don't show the previous version of Dislocater Weapon, to avoid clutter on the weapon description.
+
+ perform hero.childfound[iPsiDislG].delete[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="iPsiPsyKB" name="Psychokinetic Burst (Psionic) [Synergy]" description="This weapon functions as a psychokinetic weapon that also releases a blast of destructive psionic energy upon scoring a successful critical hit.\n\nIn addition to the extra damage of the psychokinetic ability +1d4 Ectoplasmic (Force) Damage, a psychokinetic burst weapon deals an extra 1d6 points of damage on a successful critical hit. \n\nIf the weapon&#146;s critical multiplier is &#215;3, add 2d6 points of extra damage instead, and if the multiplier is &#215;4, add 3d6 points of extra damage.\n\nThis extra damage is Ectoplasmic (Force) in nature and is not affected by damage reduction. Bows, crossbows, and slings bestow this ability upon their ammunition.\n\nStrong psychokinesis; ML 12th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, blast of force or concussion blast; Price +1 bonus." compset="ItemPower" summary="+1d4 and +1d6 Ectoplasmic Damage" uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    <eval phase="UserPreLv" index="2"><![CDATA[~ Done by Lawful_G
+~ Adapted by Bodrin for 
+~ Don't show the previous version of Psychokinetic Weapon, to avoid clutter on the weapon description.
+
+ perform hero.childfound[iPsiPsyKi].delete[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="iPsiTelep" name="Teleporting (Psionic)" description="This ability can be imbedded only in weapons that can be thrown.\n\nA teleporting weapon returns through the Astral Plane to the creature that threw it. It teleports into the throwing creature&#146;s empty hand in the round following the round when it was thrown, just before that creature&#146;s turn. \n\nIt is therefore ready to use again on that turn.\n\nFaint psychoportation; ML 5th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, psionic dimension door; Price +1 bonus." compset="ItemPower" summary="Weapon teleports back to wielders hand once thrown." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerReq" tag="Ranged" name="Ranged Weapon" abbrev="Ranged Weapon"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiDissi" name="Dissipater (Psionic)" description="This kind of weapon is devastating to creatures and objects composed of or originally formed from ectoplasm (such as astral constructs, walls of ectoplasm, creatures in ectoplasmic form, and items created using the metacreativity discipline).\n\nAgainst qualifying targets, a dissipater weapon ignores damage reduction and hardness, and treats all successful hits as critical hits.\n\nStrong metacreativity; ML 12th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, dismiss ectoplasm; Price +1 bonus." compset="ItemPower" summary="Devastating to creatures and objects composed of or originally formed from ectoplasm" uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiLucky" name="Lucky (Psionic)" description="A lucky weapon offers a second chance at success.\n\nOnce per day, the wielder can reroll a failed attack roll (whether a single attack or one in a series of multiple attacks) as a free action.\n\nThe rerolled attack uses the same bonuses or penalties as the missed roll.\n\nModerate clairsentience; ML 8th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, Moment of Prescience or Fate of one; Price +1 bonus." compset="ItemPower" summary="Once per day, the wielder can reroll a failed attack roll" uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    </thing>
+  <thing id="iPsiManif" name="Manifester (Psionic)" description="This kind of weapon generates 5 power points once per day that the wearer can use when manifesting a power he knows.\n\nThese power points must all be used on the same power.\n\nAs usual, a psionic character cannot pay a power&#146;s cost with power points from more than one source, so the power points in the weapon must be used for discrete manifestations.\n\nModerate clairsentience; ML 8th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, knowledge of any 3rd-level power; Price +12,000 gp." compset="ItemPower" summary="Weapon generates 5 power points once per day." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPriceCash" value="12000"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiMindC" name="Mindcrusher (Psionic)" description="Any psionic creature struck in combat by a mindcrusher weapon loses a number of power points equal to half the amount of hit point damage the weapon deals (only the base damage of the weapon contributes to the power point loss; additional damage from high Strength or other sources does not cause additional power point loss).\n\nA psionic creature that is out of power points (or has none) must succeed on a DC 17 Will save or take 1d2 points of Wisdom damage.\n\nA projectile weapon bestows this property upon it&apos;s ammunition.\n\nStrong psychometabolism; ML 12th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, psychic vampire; Price +2 bonus." compset="ItemPower" summary="Creature struck in combat loses a number of power points." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+2"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    </thing>
+  <thing id="iPsiPowSt" name="Power storing (Psionic)" description="A power storing weapon allows a manifester to store a single targeted power of up to 5 power points in the weapon.\n(The power must have a manifesting time of 1 standard action.) \n\nAny time the weapon strikes a creature and the creature takes damage from it, the weapon can immediately manifest the power on that creature as a swift action if the wielder desires.\n\n(This ability is an exception to the rule that manifesting a power from an item takes at least as long as manifesting that power normally.)\n\nOnce the power is manifested, the weapon is empty, and a manifester can imbed any other targeted power of up to 5 power points into it. The weapon telepathically whispers to the wearer the name of the power currently stored within it.\n\nA randomly generated power storing weapon has a 50% chance to have a power stored in it already.\n\nStrong psychokinesis; ML 12th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, creator must be a manifester of at least 12th level; Price +1 bonus." compset="ItemPower" summary="Store a single targeted power of up to 5 power points in the weapon" uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    </thing>
+  <thing id="iPsiPsych" name="Psychic (Psionic)" description="A psychic weapon&#146;s power depends on its wielder. \n\nIn the hands of a nonpsionic creature, the weapon possesses the qualities of a nonmagical, nonpsionic masterwork weapon.\n\nWhen wielded by a psionic creature, this weapon has an enhancement bonus based on the wielder&#146;s current power point reserve, as shown on the following table.\n\nThe weapon&#146;s enhancement bonus decreases as the wielder spends power points, and it increases whenever the wielder gains enough power points (by any means) to put his power point reserve into the next higher category.\n\n{b}Power Point     {i}Enhancement Bonus{/b}\nReserve{/b}\n\n0                      =    +1\n1 - 29               =    +2\n30 - 79             =    +3\n80 - 129           =    +4\n130 or higher    =    +5\n\nStrong clairsentience; ML 17th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, reality revision; Price +2 bonus." compset="ItemPower" summary="Enhancement bonus based on the wielder&#146;s current power point reserve." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+2"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiSoulB" name="Soulbreaker (Psionic)" description="This weapon has a special ability that functions only upon scoring a successful critical hit. \n\nOn a successful critical hit, a soulbreaker weapon bestows one negative level on the foe.\n\nOne day after being struck, if the negative levels have not been purged, the subject must succeed on a DC 18 Fortitude save for each negative level or lose a character level.\n\nStrong telepathy; ML 12th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, energy drain or mindwipe; Price +1 bonus." compset="ItemPower" summary="On a successful critical hit, a soulbreaker weapon bestows one negative level on the foe." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    </thing>
+  <thing id="iPsiSuppr" name="Suppression (Psionic)" description="An opponent or object struck by this kind of weapon is subject to a targeted dispel psionics power.\n\nThe wielder makes a dispel check (1d20 + 5 + manifester level, maximum +15) against a DC of 11 + the manifester level of the power to be dispelled. Bows, crossbows, and slings bestow this ability upon their ammunition, but can do so only three times per day.\n\nModerate psychokinesis ML 10th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, dispel psionics; Price +2 bonus." compset="ItemPower" summary="Opponent is subject to a targeted dispel psionics power." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+2"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiSunde" name="Sundering (Psionic)" description="This kind of weapon allows a wielder to attack opponents&#146; weapons as if he had the Improved Sunder feat.\n\nFaint metacreativity; ML 5th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, improved Sunder,weapon of impact or  metaphysical weapon; Price +1 bonus." compset="ItemPower" summary="Attack opponents&#146; weapons as having the Improved Sunder feat." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiPsiBa" name="Psibane (Psionic)" description="A psibane weapon is crafted to oppose psionic beings. \nWhen used against such creatures, its effective enhancement bonus is 2 higher than its actual enhancement bonus. \nIt deals an extra 2d6 points of damage against psionic opponents. It bestows one negative level on any psionic creature attempting to wield it. This negative level remains as long as the weapon is in hand and disappears when the weapon is no longer wielded. This negative level never results in actual level loss, but it cannot be overcome in any way while the weapon is wielded. Psibane bows, crossbows, and slings bestow this ability upon their ammunition.\n\nStrong clairsentience; ML 15th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, bend reality; Price +2 bonus." compset="ItemPower" summary="Against psionic beings weapons effective enhancement bonus is 2 higher." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+2"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    </thing>
+  <thing id="iPsiMindF" name="Mindfeeder (Psionic)" description="All feeder weapons have a special ability that functions only upon scoring a successful critical hit.\n\nOnce per day, a mindfeeder weapon grants its wielder temporary power points equal to the total lethal damage dealt by a successful critical hit.\n\nThe wielder must decide to use the mindfeeder ability after successfully confirming a critical hit, but prior to rolling critical hit damage. These temporary power points last for 10 minutes.\n\nThe wielder may not exceed his natural maximum power points per day using the mindfeeder ability. The wielder gains power points even if the target has none (effectively, its hit point damage is converted to power points). \nConstructs and undead are not subject to mindfeeder weapons. As with temporary hit points, temporary power points do not stack with each other; they overlap. \n\nThus, if a mindfeeder weapon successfully scores a critical hit while the wielder still enjoys temporary power points from a previous critical hit, the wielder gains only the better of the two values: either her current number of temporary power points, or the new influx of temporary power points, whichever is higher.\n\nStrong psychometabolism; ML 15th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, psychic vampire; Price +1 bonus." compset="ItemPower" summary="Gain temporary power points on critical hit." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+1"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    </thing>
+  <thing id="iPsiParry" name="Parrying (Psionic)" description="A parrying weapon perceives an instant into the future, and of its own accord resists melee and ranged attacks aimed at the wielder, granting a +1 insight bonus to the wielder&#146;s Armor Class. \n\nThe weapon is so adept at parrying that it even affects incoming powers, granting the wielder a +1 insight bonus on saving throws. The bonuses are granted whenever the wielder holds the weapon, even if flat-footed.\n\nFaint clairsentience; ML 5th; Craft Psionic Arms and Armor or Craft Magic Arms and Armor, defensive precognition; Price +2 bonus." compset="ItemPower" summary="Grants a +1 insight bonus to the wielder&#146;s Armor Class." uniqueness="unique">
+    <comment>Weapon Abilities missed from the D20 SRD Psionics Support
+
+Inputted by bodrin because his Psychic Warrior wanted to upgrade a Longsword!
+
+Modified to comply with the Magic Item Compendium as its a newer source!</comment>
+    <fieldval field="iPrice" value="+2"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="PowerType" tag="Weapon" name="Weapon" abbrev="Weapon"/>
+    <tag group="PowerReq" tag="Melee" name="Melee Weapon" abbrev="Melee Weapon"/>
+    </thing>
+  </document>

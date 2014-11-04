@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>u7-29-09</info_history>
+    </fileinfo>
+  <thing id="lKalinese" name="Kalinese" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lNordmaar" name="Nordmaarian" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lSaifhum" name="Saifhum" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lSolamnic" name="Solamnic" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lHammer" name="Hammertalk" description="Communicate through tunnels with short and long taps on stone walls." compset="Language" summary="Tap Tap TAAAP" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lOgre" name="Ogre" description="Typically spoken by Ogres" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lErgot" name="Ergot" description="Typically spoken by humans descended from the ancient Ergothan Empire, or lands once under thier sway." compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    <tag group="Language" tag="lCommon" name="Common" abbrev="Common"/>
+    </thing>
+  <thing id="lKender" name="Kenderspeak" description="Typically spoken by kender, it is a mishmash of many languages, freely borrowing words at need." compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    </thing>
+  <thing id="lNerakese" name="Nerakese" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lGullytalk" name="Gullytalk" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lKhurish" name="Khurish" description="The language spoken by the human peoples of Khur." compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lAbanasini" name="Abanasinian" compset="Language" uniqueness="unique">
+    <comment>Need to add Alphabet information from DLCS and also Magius language</comment>
+    <usesource source="KrynnLang" parent="pDL" name="Krynn Languages"/>
+    </thing>
+  <thing id="lKharolian" name="Kharolian" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lDargonest" name="Dargonesti" description="Spoken by Dargonesti Sea Elves" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lDargoi" name="Dargoi" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lDimernest" name="Dimernesti" description="Spoken by Dimernesti Sea Elves" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lIstarian" name="Istarian" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lIcefolk" name="Icefolk" description="Spoken by the ice barbarians of the far south." compset="Language">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lThanoi" name="Thanoi" description="Spoken by the brutish walrus folk." compset="Language">
+    <usesource source="KrynnLang"/>
+    </thing>
+  <thing id="lKothian" name="Kothian" compset="Language" uniqueness="unique">
+    <usesource source="KrynnLang"/>
+    </thing>
+  </document>

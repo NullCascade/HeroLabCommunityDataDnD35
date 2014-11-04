@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>c6-07-10</info_history>
+    </fileinfo>
+  <thing id="cHelpBeM" name="Beholder Mage" compset="ClassHelp" uniqueness="unique">
+    <comment><![CDATA[Spell errata? Didn't check, obviously an error, fixed (Done)
+
+DONE!!!]]></comment>
+    <fieldval field="cHDSides" value="4"/>
+    <fieldval field="cAbbr" value="BeM"/>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="cSpecName" value="Spellstalks"/>
+    <arrayval field="cCastTot" index="0" value="6"/>
+    <arrayval field="cCastTot" index="0" column="1" value="3"/>
+    <arrayval field="cCastTot" index="1" value="6"/>
+    <arrayval field="cCastTot" index="1" column="1" value="5"/>
+    <arrayval field="cCastTot" index="1" column="2" value="3"/>
+    <arrayval field="cCastTot" index="2" value="6"/>
+    <arrayval field="cCastTot" index="2" column="1" value="6"/>
+    <arrayval field="cCastTot" index="2" column="2" value="5"/>
+    <arrayval field="cCastTot" index="2" column="3" value="3"/>
+    <arrayval field="cCastTot" index="3" value="6"/>
+    <arrayval field="cCastTot" index="3" column="1" value="6"/>
+    <arrayval field="cCastTot" index="3" column="2" value="6"/>
+    <arrayval field="cCastTot" index="3" column="3" value="5"/>
+    <arrayval field="cCastTot" index="3" column="4" value="3"/>
+    <arrayval field="cCastTot" index="4" value="6"/>
+    <arrayval field="cCastTot" index="4" column="1" value="6"/>
+    <arrayval field="cCastTot" index="4" column="2" value="6"/>
+    <arrayval field="cCastTot" index="4" column="3" value="6"/>
+    <arrayval field="cCastTot" index="4" column="4" value="5"/>
+    <arrayval field="cCastTot" index="4" column="5" value="3"/>
+    <arrayval field="cCastTot" index="5" value="6"/>
+    <arrayval field="cCastTot" index="5" column="1" value="6"/>
+    <arrayval field="cCastTot" index="5" column="2" value="6"/>
+    <arrayval field="cCastTot" index="5" column="3" value="6"/>
+    <arrayval field="cCastTot" index="5" column="4" value="6"/>
+    <arrayval field="cCastTot" index="5" column="5" value="5"/>
+    <arrayval field="cCastTot" index="5" column="6" value="3"/>
+    <arrayval field="cCastTot" index="6" value="6"/>
+    <arrayval field="cCastTot" index="6" column="1" value="6"/>
+    <arrayval field="cCastTot" index="6" column="2" value="6"/>
+    <arrayval field="cCastTot" index="6" column="3" value="6"/>
+    <arrayval field="cCastTot" index="6" column="4" value="6"/>
+    <arrayval field="cCastTot" index="6" column="5" value="6"/>
+    <arrayval field="cCastTot" index="6" column="6" value="5"/>
+    <arrayval field="cCastTot" index="6" column="7" value="3"/>
+    <arrayval field="cCastTot" index="7" value="6"/>
+    <arrayval field="cCastTot" index="7" column="1" value="6"/>
+    <arrayval field="cCastTot" index="7" column="2" value="6"/>
+    <arrayval field="cCastTot" index="7" column="3" value="6"/>
+    <arrayval field="cCastTot" index="7" column="4" value="6"/>
+    <arrayval field="cCastTot" index="7" column="5" value="6"/>
+    <arrayval field="cCastTot" index="7" column="6" value="6"/>
+    <arrayval field="cCastTot" index="7" column="7" value="5"/>
+    <arrayval field="cCastTot" index="7" column="8" value="3"/>
+    <arrayval field="cCastTot" index="8" value="6"/>
+    <arrayval field="cCastTot" index="8" column="1" value="6"/>
+    <arrayval field="cCastTot" index="8" column="2" value="6"/>
+    <arrayval field="cCastTot" index="8" column="3" value="6"/>
+    <arrayval field="cCastTot" index="8" column="4" value="6"/>
+    <arrayval field="cCastTot" index="8" column="5" value="6"/>
+    <arrayval field="cCastTot" index="8" column="6" value="6"/>
+    <arrayval field="cCastTot" index="8" column="7" value="6"/>
+    <arrayval field="cCastTot" index="8" column="8" value="5"/>
+    <arrayval field="cCastTot" index="8" column="9" value="3"/>
+    <arrayval field="cCastTot" index="9" value="6"/>
+    <arrayval field="cCastTot" index="9" column="1" value="6"/>
+    <arrayval field="cCastTot" index="9" column="2" value="6"/>
+    <arrayval field="cCastTot" index="9" column="3" value="6"/>
+    <arrayval field="cCastTot" index="9" column="4" value="6"/>
+    <arrayval field="cCastTot" index="9" column="5" value="6"/>
+    <arrayval field="cCastTot" index="9" column="6" value="6"/>
+    <arrayval field="cCastTot" index="9" column="7" value="6"/>
+    <arrayval field="cCastTot" index="9" column="8" value="6"/>
+    <arrayval field="cCastTot" index="9" column="9" value="5"/>
+    <arrayval field="cSpell" index="0" value="6x0, 3x1"/>
+    <arrayval field="cSpell" index="1" value="6x0, 5x1, 3x2"/>
+    <arrayval field="cSpell" index="2" value="6x0, 6x1, 5x2, 3x3"/>
+    <arrayval field="cSpell" index="3" value="6x0, 6x1, 6x2, 5x3, 3x4"/>
+    <arrayval field="cSpell" index="4" value="6x0, 6x1, 6x2, 6x3, 5x4, 3x5"/>
+    <arrayval field="cSpell" index="5" value="6x0, 6x1, 6x2, 6x3, 6x4, 5x5, 3x6"/>
+    <arrayval field="cSpell" index="6" value="6x0, 6x1, 6x2, 6x3, 6x4, 6x5, 5x6, 3x7"/>
+    <arrayval field="cSpell" index="7" value="6x0, 6x1, 6x2, 6x3, 6x4, 6x5, 6x6, 5x7, 3x8"/>
+    <arrayval field="cSpell" index="8" value="6x0, 6x1, 6x2, 6x3, 6x4, 6x5, 6x6, 6x7, 5x8, 3x9"/>
+    <arrayval field="cSpell" index="9" value="6x0, 6x1, 6x2, 6x3, 6x4, 6x5, 6x6, 6x7, 6x8, 5x9"/>
+    <arrayval field="cSpecial" index="0" value="Arcane hands"/>
+    <arrayval field="cSpecial" index="1" value="&#151;"/>
+    <arrayval field="cSpecial" index="2" value="&#151;"/>
+    <arrayval field="cSpecial" index="3" value="&#151;"/>
+    <arrayval field="cSpecial" index="4" value="&#151;"/>
+    <arrayval field="cSpecial" index="5" value="&#151;"/>
+    <arrayval field="cSpecial" index="6" value="&#151;"/>
+    <arrayval field="cSpecial" index="7" value="&#151;"/>
+    <arrayval field="cSpecial" index="8" value="&#151;"/>
+    <arrayval field="cSpecial" index="9" value="Ocular transformation"/>
+    <arrayval field="cCustTot" index="0" value="2"/>
+    <arrayval field="cCustTot" index="1" value="3"/>
+    <arrayval field="cCustTot" index="2" value="4"/>
+    <arrayval field="cCustTot" index="3" value="5"/>
+    <arrayval field="cCustTot" index="4" value="6"/>
+    <arrayval field="cCustTot" index="5" value="7"/>
+    <arrayval field="cCustTot" index="6" value="8"/>
+    <arrayval field="cCustTot" index="7" value="9"/>
+    <arrayval field="cCustTot" index="8" value="10"/>
+    <usesource source="LordMadnes"/>
+    <tag group="CasterSrc" tag="Arcane"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="Classes" tag="BeholMage" name="Beholder Mage"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="User" tag="NoCentrEye" name="No Central Eye"/>
+    <tag group="CasterType" tag="SpontAll"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cAttack" tag="Poor"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="kAppraise"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kCrafAlch"/>
+    <tag group="ClassSkill" tag="kDecScript"/>
+    <tag group="ClassSkill" tag="kSpeakLang"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kUseMagic"/>
+    <bootstrap thing="cBeMArcHan"></bootstrap>
+    <bootstrap thing="cBeMSpells"></bootstrap>
+    <bootstrap thing="cBeMOcuTra"></bootstrap>
+    <link linkage="spellattr" thing="aINT"/>
+    <eval phase="First">perform hero.child[xAntiMagCo].delete[Helper.ShowSpec]
+
+perform hero.assign[User.NoCentrEye]</eval>
+    </thing>
+  <thing id="cBeholMage" name="Beholder Mage" description="{b}Special{/b}: Must put out central antimagic eye.\n\nA normal beholder can become a wizard or sorcerer. The more ancient beholders are powerful arcanists (see Elder Orbs, above) that have used magic to extend their lifespans. Nevertheless, two practical limitations keep beholders from becoming spellcasters. First, their lack of hands makes it hard for them to use large numbers of spell components. Second, their central eye&#146;s antimagic cone makes the study and use of arcane magic difficult.\n\nHowever, an increasing number of beholders are embracing a practice once held to be vile and unthinkable to their kind. Through ritual destruction of its central eye, a beholder can learn to channel and use magic much more quickly and efficiently than can almost any other race. These are the members of the beholder mage prestige class, and the power they wield is truly impressive." compset="ClassLevel" maxlimit="10">
+    <usesource source="LordMadnes"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpBeM"></bootstrap>
+    <link linkage="helper" thing="cHelpBeM"/>
+    <exprreq message="True Beholder race required."><![CDATA[hero.tagis[Race.Beholder] <> 0]]></exprreq>
+    </thing>
+  <thing id="cBeMSpells" name="Beholder Mage Spellcasting" description="A beholder mage gains the ability to cast arcane spells. These spells are drawn from the sorcerer/wizard spell list. At 1st level, a beholder mage masters all the cantrips detailed in the Player&#146;s Handbook and also knows two 1st-level spells. Each time it gains a level, it automatically learns two more spells of any level it can cast.\n\nTo learn or cast a spell, a beholder mage must have an Intelligence score equal to at least 10 + the spell level. The Difficulty Class for a saving throw against a beholder mage&#146;s spell is 10 + the spell level + the beholder mage&#146;s Intelligence modifier. A beholder mage&#146;s spells function at a caster level equal to twice its beholder mage level.\n\nA beholder mage can cast only a certain number of spells of each spell level per day. Its base daily spell allotment is given in Table 3&#150;1. In addition, it receives bonus spells per day if it has a high Intelligence score.\n\nA beholder mage combines the best of two worlds; it can learn new spells as a wizard can, and there is no upper limit to the number of spells it can learn and know. However, it casts its spells on the fl y like a sorcerer. A beholder mage of high level typically knows a huge number of spells and can call upon any one of them at any time, providing it has a spell slot open of the appropriate spell level.\n\nStarting at 1st level, whenever a beholder mage gains the ability to cast a new level of spells, it must sacrifice the use of its eye rays from one of its ten small eyestalks. From then on, that eyestalk casts spells of that level and is referred to as a spell-stalk. At 10th level, all of its eyestalks are spell-stalks.\n\nAs with its eye rays, casting a spell from a spell-stalk is a free action (although a single spell-stalk can cast only one spell per round). The spell is technically considered a cast spell (as opposed to the use of a spell-like ability), and thus the act of casting provokes attacks of opportunity normally. A spell cast from a spell-stalk otherwise resolves normally; unlike an eye ray, it does not need to make a ranged touch attack to successfully strike a target (unless the spell itself requires a touch attack). The standard beholder limitation against turning more than three eyestalks in any particular direction (that is, forward, backward, left, right, up, or down) still applies.\n\nBeholder mages do not require material components to cast their spells. The ruined central eye acts as an arcane focus for all the creature&#146;s spells. If a spell normally requires a material component that carries with it a gold-piece cost, the beholder mage instead spends a number of experience points equal to one-fifth of the normal gold-piece cost (minimum of 1 experience point). The somatic components of a beholder mage&#146;s spells are supplied by the weaving and waving of its spell-stalks. The verbal component of a beholder mage&#146;s spells is the creature&#146;s special spellcasting song. The song takes effort; a beholder mage that is casting spells cannot speak or use its mouth to do anything else that round, including making bite attacks." compset="ClSpecial" summary="No comp/focus needed, use XP if cost, free act to cast 3 eyes per arc.">
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    </thing>
+  <thing id="cBeMChaPer" name="Charm Person" description="Sacrifice {i}charm person{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}charm person{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERChPer].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMChaMon" name="Charm Monster" description="Sacrifice {i}charm monster{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}charm monster{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERChMon].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMDisint" name="Disintigrate" description="Sacrifice {i}disintigrate{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}disintigrate{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERDisin].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMFear" name="Fear" description="Sacrifice {i}fear{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}fear{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERFear].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMFinDea" name="Finger of Death" description="Sacrifice {i}finger of death{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}finger of death{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERFinDe].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMFleSto" name="Flesh to Stone" description="Sacrifice {i}flesh to stone{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}flesh to stone{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERFlSto].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMInMoWo" name="Inflict Moderate Wounds" description="Sacrifice {i}inflict moderate wounds{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}inflict mod wounds{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERInMoW].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMSleep" name="Sleep" description="Sacrifice {i}sleep{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}sleep{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERSleep].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMSlow" name="Slow" description="Sacrifice {i}slow{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}slow{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERSlow].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMTele" name="Telekinesis" description="Sacrifice {i}telekinesis{/i} eye to gain spellstalk for new level of spells." compset="CustomSpec" summary="Sacrifice {i}telekinesis{/i} eye to gain spellstalk for new level of spells." uniqueness="useronce">
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></eval>
+    <eval phase="First" index="2">perform hero.child[xBeERTelek].delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cBeMArcHan" name="Arcane Hands" description="A beholder mage develops the ability to manipulate objects as if with a {i}mage hand{/i} spell. This ability is constantly active and can not only manipulate objects but also use magic items like wands, staffs, rods, and some wondrous items (like a {i}bag of tricks{/i}). The hand cannot activate items that must be worn to utilize an effect (such as a {i}helm of brilliance{/i}).\n\nA beholder mage&#146;s arcane hand has an effective Strength score equal to the creature&#146;s beholder mage class level. An arcane hand can be used to perform any attack or defensive action for which a regular hand can be used. Using an arcane hand to make an unarmed strike provokes attacks of opportunity unless the beholder mage has the Improved Unarmed Strike feat. Theoretically, a beholder mage with monk levels could use its arcane hand for its unarmed attacks." compset="ClSpecial" summary="Constant {i}mage hand{/i} which can activate some magic items or attack.">
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cBeMOcuTra" name="Ocular Transformation" description="At 10th level, a beholder mage&#146;s ruined central eye undergoes a supernatural transformation and can absorb magic energy directed at the beholder. This grants the beholder spell resistance equal to its Hit Dice +5 (maximum spell resistance of 30).\n\nIf the creature&#146;s spell resistance succeeds in preventing the effect of a spell, its central eye begins to glow with red light equivalent to that of a torch. While it glows, the eye no longer grants spell resistance. In order to regain spell resistance, the beholder must spend a full-round action to absorb the energy stored in the eye. At the end of the full-round action, the eye stops glowing, and the beholder&#146;s spell resistance is again effective.\n\nAbsorbing the energy stored in the eye does not provoke attacks of opportunity, and it heals the beholder of 5 points of damage per spell level absorbed. Hit points gained in excess of the beholder&#146;s normal maximum are lost." compset="ClSpecial" summary="Gain SR until spell is absorbed, then full rd to heal spl lvl x 5 Hp &amp; regain SR.">
+    <comment>~ Set up our spell resistance
+      var damage as number
+      damage = minimum(hero.child[Totals].field[tHitDice].value + 5, 30)
+      #applysr[damage]</comment>
+    <fieldval field="hName1" value="Eye Full"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpBeM"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      if (field[hIsOn1].value <> 0) then
+         done
+      endif
+
+~ Set up our spell resistance
+      var damage as number
+      damage = minimum(herofield[tHitDice].value + 5, 30)
+      #applysr[damage]]]></eval>
+    </thing>
+  <thing id="fCrafAbGly" name="Craft Aboleth Glyph" description="An aboleth with this feat can create magic glyphs that store spells or have specialized effects of their own.\n\n{b}Prerequisites{/b}: Aboleth, caster level 5th.\n\n{b}Benefit{/b}: The creature can create a permanent {i}glyph of warding{/i} effect that automatically recharges and replenishes its own energy after a short period of inactivity after it is triggered. Crafting an aboleth glyph takes one day for each 1,000 gp in its base price. The base price of an aboleth glyph is its caster level &#215; spell level &#215; 1,000 gp. To create the glyph, the creature must spend 1/25 of the base price in XP and use up raw materials costing one-half of the base price.\n\nA newly created glyph functions exactly as if the creature had cast {i}glyph of warding{/i} on the affected area, except that the glyph automatically reappears 1 minute after it is discharged. Similarly, if the glyph is dispelled, it reforms as good as new 1 minute later. An aboleth glyph can be destroyed only in the same manner that a magic item can be destroyed&#151;{i}Mordenkainen&#146;s disjunction{/i}, physical destruction of the glyph, and so on.\n\nAlternatively, the aboleth can create a master glyph. Each master glyph is a unique glyph with specific effects and base costs; several sample master glyphs are detailed later in this chapter." compset="Feat" summary="Create permanent {i}glyphs of warding{/i} that recharge themselves." uniqueness="useronce">
+    <comment>Pre-req. (done)</comment>
+    <usesource source="LordMadnes" parent="p35" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="ItemCreate"/>
+    <exprreq message="Aboleth race required."><![CDATA[hero.tagis[Race.Aboleth] <> 0]]></exprreq>
+    <exprreq message="Caster level 5th required."><![CDATA[tagcount[Hero.Caster] >= 5]]></exprreq>
+    </thing>
+  <thing id="fDeaFrenzy" name="Death Frenzy" description="When an aboleth takes this feat, its sense of immortality rebels against the very concept of death. If threatened with death, the creature becomes frenzied with speed and fury.\n\n{b}Prerequisites{/b}: Aboleth, Diehard, Endurance.\n\n{b}Benefit{/b}: If the aboleth is reduced to fewer hit points than its total Hit Dice, it automatically enters a death frenzy. Entering this state is an immediate action; the aboleth can enter a death frenzy even when it&#146;s not its turn. While in a death frenzy, the aboleth cannot cast spells, use spell-like abilities, or use supernatural special attacks.\n\nWhen an aboleth enters a death frenzy, it gains a +4 morale bonus to its Strength and Dexterity, and the threat range for all its natural attacks doubles. When it makes a full attack, it can make one additional attack each round at its highest base attack bonus. Its land speed increases by 10 feet, and its swim speed increases by 20 feet. Finally, it gains fast healing 2.\n\nA death frenzy lasts until the creature is killed or until its hit points rise enough to equal or exceed its total number of Hit Dice. Upon emerging from a death frenzy, the creature immediately takes 1d4 points of Strength damage." compset="Feat" summary="Imm, if Hp &lt; HD +4 Str &amp; Dex, dbl threat, extra att, +10/20 spd, fast heal 2." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="AbilType" tag="Extra"/>
+    <exprreq message="Aboleth race required."><![CDATA[tagis[Race.Aboleth] <> 0]]></exprreq>
+    <exprreq message="Diehard required."><![CDATA[#hasfeat[fDiehard] <> 0]]></exprreq>
+    <exprreq message="Endurance required."><![CDATA[#hasfeat[fEndure] <> 0]]></exprreq>
+    </thing>
+  <thing id="fEnlMuClo" name="Enlarge Mucus Cloud" description="An aboleth with this feat can extend its mucus cloud into a wider area.\n\n{b}Prerequisites{/b}: Aboleth, Con 20.\n\n{b}Benefit{/b}: The aboleth&#146;s mucus cloud extends to fill an area equal to its natural reach (a 10-foot radius for most aboleths).\n\n{b}Normal{/b}: The aboleth&#146;s mucus cloud has a radius of only 1 foot.\n\n{b}Special{/b}: On land, the aboleth&#146;s mucus cloud becomes a mucus puddle of an equal radius. The mucus can affect other beings in contact with the puddle (including any that move through it using their base land speed), but beings that jump or fly over it, or otherwise avoid the puddle, are safe." compset="Feat" summary="Mucus cloud increases to reach, forms puddle on land of equal radius." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Aboleth race required."><![CDATA[hero.tagis[Race.Aboleth] <> 0]]></exprreq>
+    <exprreq message="Constitution 20 required."><![CDATA[child[aCON].field[aFinalVal].value >= 20]]></exprreq>
+    </thing>
+  <thing id="fMemoEater" name="Memory Eater" description="An aboleth with this feat is particularly adept at extracting memories and knowledge from the bodies of those it consumes.\n\n{b}Prerequisites{/b}: Aboleth, Cha 21.\n\n{b}Benefit{/b}: The aboleth processes and remembers countless memories of those it has eaten. It can make untrained skill checks in any skill, including those in which it has no ranks and that normally cannot be used untrained.\n\n{b}Normal{/b}: Aboleths receive only random flashes of memory that quickly fade while eating the flesh of an intelligent creature." compset="Feat" summary="Retain memories of those eaten &amp; make untrained checks for train only skills." uniqueness="useronce">
+    <comment>Pre-req. (Done)
+
+Eval (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="First"><![CDATA[    var result as number
+  foreach pick in hero from BaseSkill where "Helper.TrainOnly"
+   perform each.delete[Helper.TrainOnly]
+  nexteach]]></eval>
+    <exprreq message="Charisma 21 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 21]]></exprreq>
+    <exprreq message="Aboleth race required."><![CDATA[hero.tagis[Race.Aboleth] <> 0]]></exprreq>
+    </thing>
+  <thing id="fAbPowBite" name="Powerful Bite" description="An aboleth with this feat develops jaws that are much more muscular than normal, allowing it to bite more efficiently.\n\n{b}Prerequisites{/b}: Aboleth, Str 28, Weapon Focus (bite).\n\n{b}Benefit{/b}: An aboleth with this feat gains a natural bite attack that deals 2d6 points of damage plus half its Strength modifier. If the aboleth makes a full attack, this bite attack is a secondary attack and is made with a &#150;5 penalty on the attack roll.\n\n{b}Normal{/b}: The aboleth&#146;s bite attack is an unarmed strike that takes a full round action to use and deals 1d4 points of damage on a hit." compset="Feat" uniqueness="useronce">
+    <comment>Pre-req. (Done)
+
+Eval (Done)
+
+Test? (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <bootstrap thing="xAbPowBite"></bootstrap>
+    <exprreq message="Strength 28 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 28]]></exprreq>
+    <exprreq message="Weapon Focus (bite) required."><![CDATA[tagis[WepFocus.wBite] <> 0]]></exprreq>
+    <exprreq message="Aboleth race required."><![CDATA[hero.tagis[Race.Aboleth] <> 0]]></exprreq>
+    </thing>
+  <thing id="fQuickslim" name="Quickslime" description="The slime attack of an aboleth with this feat is particularly fast and difficult to resist.\n\n{b}Prerequisites{/b}: Aboleth, Ability Focus (slime).\n\n{b}Benefit{/b}: The save DC of the creature&#146;s slime attack gains a +2 bonus; this stacks with the bonus granted by the Ability Focus (slime) feat. Further, the transformation process takes only 1d4+1 rounds to affect the victim&#146;s skin.\n\n{b}Normal{/b}: The transformation process takes 1d4+1 minutes." compset="Feat" summary="+2 DC for slime and skin transforms in 1d4+1 rds." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Aboleth race required."><![CDATA[hero.tagis[Race.Aboleth] <> 0]]></exprreq>
+    <exprreq message="Ability Focus (slime) required."><![CDATA[#hasfeat[fAbilFoc] <> 0]]></exprreq>
+    </thing>
+  <thing id="fReachBite" name="Reach Bite" description="An aboleth with this feat can extend its jaws and esophagus out from its body to make attacks beyond its normal reach.\n\n{b}Prerequisites{/b}: Aboleth, Str 28, Powerful Bite, Weapon Focus (bite).\n\n{b}Benefit{/b}: The creature&#146;s reach with its bite attack extends by an additional 5 feet.\n\n{b}Normal{/b}: The creature&#146;s bite attack has a reach equal to its standard reach (10 feet for most aboleths)." compset="Feat" summary="+5 ft reach for bite attack." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Aboleth race required."><![CDATA[hero.tagis[Race.Aboleth] <> 0]]></exprreq>
+    <exprreq message="Strength 28 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 28]]></exprreq>
+    <exprreq message="Powerful Bite required."><![CDATA[#hasfeat[fAbPowBite] <> 0]]></exprreq>
+    <exprreq message="Weapon Focus (bite) required."><![CDATA[tagis[WepFocus.wBite] <> 0]]></exprreq>
+    </thing>
+  <thing id="fThickMucu" name="Thicken Mucus" description="An aboleth with this feat can produce mucus that is thicker than normal, and other creatures find it difficult to swim through.\n\n{b}Prerequisites{/b}: Aboleth, Con 22, Enlarge Mucus Cloud.\n\n{b}Benefit{/b}: Creatures within range of the mucus cloud have their swim speed reduced by half if they start their movement in the cloud. Additionally, all creatures in melee with this aboleth take a &#150;1 penalty on attack rolls, Armor Class, and Reflex saving throws.\n\nAboleths, skum, and creatures transformed by an aboleth&#146;s slime attack are unaffected by Thicken Mucus and can move through the cloud without penalty.\n\n{b}Special{/b}: When on land, this ability affects only non aboleth (or non transformed creatures) that walk through the mucus puddle. The land speed of these creatures is reduced by half, and their swim speed is not affected. Flying creatures are not affected.\n\n{i}Freedom of movement{/i} negates these penalties." compset="Feat" summary="Foe in mucus cloud swim &#189; spd, in melee take -1 attack, AC &amp; Ref saves." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Aboleth race required."><![CDATA[hero.tagis[Race.Aboleth] <> 0]]></exprreq>
+    <exprreq message="Constitution 22 required."><![CDATA[child[aCON].field[aFinalVal].value >= 22]]></exprreq>
+    <exprreq message="Enlarge Mucus Cloud required."><![CDATA[#hasfeat[fEnlMuClo] <> 0]]></exprreq>
+    </thing>
+  <thing id="fToxicMucu" name="Toxic Mucus" description="An aboleth with this feat can produce mucus that is poisonous to other creatures.\n\n{b}Prerequisites{/b}: Aboleth, Con 22, Enlarge Mucus Cloud, Thicken Mucus.\n\n{b}Benefit{/b}: Any creature that comes in contact with the mucus cloud becomes poisoned. The creature must make a successful Fortitude save (DC 10 + half the aboleth&#146;s Hit Dice + Con modifier) or take 1d4 points of Dexterity damage. One minute later, the creature must save again against the same DC or take another 1d4 points of Dexterity damage. Creatures that remain in the mucus cloud for multiple rounds must make additional saving throws each round.\n\nAboleths, skum, and creatures transformed by an aboleth&#146;s slime attack are immune to the effect of Toxic Mucus and can move through the cloud without penalty.\n\n{b}Special{/b}: When on land, this ability affects only non aboleth (or non transformed creatures) that walk through the mucus puddle; flying creatures are not affected.\n\nAn aboleth must replenish its mucus constantly to maintain the poisonous qualities. Samples taken from the aboleth retain their toxic qualities for only 1 minute." compset="Feat" summary="Mucus is poisonous, does 1d4 Dex/1d4 Dex (DCXX Fort neg)." uniqueness="useronce">
+    <comment>Pre-req. (Done)
+
+xSumm (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      var DC as number
+      DC = 10 + herofield[tHitDice].value/2 + hero.child[aCON].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[xSumm].text = "Mucus is poisonous, does 1d4 Dex/1d4 Dex (DC" & DC & " Fort neg)."]]></eval>
+    <exprreq message="Constitution 22 required."><![CDATA[child[aCON].field[aFinalVal].value >= 22]]></exprreq>
+    <exprreq message="Enlarge Mucus Cloud required."><![CDATA[#hasfeat[fEnlMuClo] <> 0]]></exprreq>
+    <exprreq message="Thicken Mucus required."><![CDATA[#hasfeat[fThickMucu] <> 0]]></exprreq>
+    <exprreq message="Aboleth race required."><![CDATA[hero.tagis[Race.Aboleth] <> 0]]></exprreq>
+    </thing>
+  <thing id="fAgiTyrant" name="Agile Tyrant" description="A creature with this feat develops longer, more flexible eyestalks than its kin. This extra flexibility allows it to bring additional eye rays to bear against its foes.\n\n{b}Prerequisite{/b}: True beholder or beholderkin.\n\n{b}Benefit{/b}: The creature can direct an extra eye ray into a single 90-degree arc." compset="Feat" summary="Can direct an extra eye ray into each 90 degree arc." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="True beholder or beholderkin race required."><![CDATA[hero.tagis[Race.Beholder] + hero.tagis[Race.Beholdrkin] <> 0]]></exprreq>
+    </thing>
+  <thing id="fBaneUncle" name="Bane of the Unclean" description="A creature with this feat hates aberrant beholders so strongly that it gains bonuses when fighting them.\n\n{b}Prerequisite{/b}: True beholder or must have aberration as a favored enemy.\n\n{b}Benefit{/b}: The creature gains a +2 morale bonus on attack rolls, weapon damage rolls, touch Armor Class, and saving throws when fighting a beholderkin.\n\n{b}Special{/b}: If the creature is a true beholder, the benefits of this feat apply to other true beholders as well as to beholderkin." compset="Feat" summary="+2 morale bon to att, weap dam, touch AC &amp; saves vs beholderkin." uniqueness="useronce">
+    <comment>Pre-req. (done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="True beholder or Favored Enemy: Aberration required."><![CDATA[hero.tagis[Race.Beholder] + childfound[feAberr].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDisintFin" name="Disintigration Finesse" description="A creature with this feat can use disintegrate effects to affect smaller, more exacting areas.\n\n{b}Prerequisites{/b}: Dex 13, ability to cast {i}disintegrate{/i} as a spell or use it as a spell-like or supernatural ability.\n\n{b}Benefit{/b}: When the creature uses disintegrate on a target, it can elect to disintegrate only portions of the target. Against living targets, it still does the normal amount of damage, but any parts of the target it wishes to spare remain unaffected by the spell. The creature could, for example, disintegrate only a target&#146;s skeleton, leaving its skull untouched. It also can voluntarily reduce the amount of damage dealt.\n\nAgainst non living targets, the creature can use disintegrate to sculpt and reshape the object in any manner desired, as long as the result is no larger in volume or size than the original object. The quality of the result is determined by a Craft (sculpting) check.\n\n{b}Normal{/b}: A disintegrate effect destroys all of a slain creature, an entire object, or one 10-foot cube of nonliving matter.\n\n{b}Special{/b}: If your campaign uses the Damage to Specific Areas variant rule on page 27 of the Dungeon Master&#146;s Guide, a creature with this feat can disintegrate a single part of a target&#146;s body, such as its hand, arm, head, eyes, ears, feet, legs, and so on, as long as the target is not killed outright by the damage caused by the spell." compset="Feat" summary="May disintigrate only part of foe, reduce dam, or sculpt unliving material." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fDisjunRay" name="Disjunction Ray" description="A beholder with this feat can narrow its antimagic cone down to an eye ray that disjoins magic.\n\n{b}Prerequisites{/b}: Cha 19, Focused Antimagic, beholder with functional antimagic ability.\n\n{b}Benefit{/b}: As a standard action, the creature can reduce the cone-shaped area of effect of its central eye&#146;s antimagic cone down to a razor-thin eye ray. If the creature hits a magical effect or magic item with this narrowed eye ray, it disjoins the effect or item as if it had cast {i}Mordenkainen&#146;s disjunction{/i} on the effect or item.\n\nBeholders avoid using this narrowed ray on magic items since the destruction of a magic item also destroys a potential source of magic that could be used to charge their dweomerlobes." compset="Feat" summary="Stand, narrow antimagic cone to thin ray to disjoin an item or effect." uniqueness="useronce">
+    <comment>Pre-req. (done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Charisma 19 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 19]]></exprreq>
+    <exprreq message="Focused Antimagic required."><![CDATA[#hasfeat[fFocAntMag] <> 0]]></exprreq>
+    <exprreq message="Beholder with functional central eye required."><![CDATA[hero.tagis[Race.Beholder] - hero.tagis[User.NoCentrEye] > 0]]></exprreq>
+    </thing>
+  <thing id="fFocAntMag" name="Focused Antimagic" description="A beholder with this feat can focus the antimagic of its central eye to target a single person or object.\n\n{b}Prerequisite{/b}: Beholder with functional antimagic ability.\n\n{b}Benefit{/b}: The creature can reduce the cone-shaped area of effect of its central eye to target a single creature or object. The target must be within range of its normal cone-shaped effect (150 feet)." compset="Feat" summary="Can narrow antimagic cone to affect only a single creature/item." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Beholder with functional central eye required."><![CDATA[hero.tagis[Race.Beholder] - hero.tagis[User.NoCentrEye] > 0]]></exprreq>
+    </thing>
+  <thing id="fMetaray" name="Metaray" description="A beholder with this feat can apply the effects of metamagic feats to its eye rays.\n\n{b}Prerequisites{/b}: True beholder or beholderkin, at least one metamagic feat.\n\n{b}Benefit{/b}: Once per round, as a standard action, the creature can enhance one of its eye rays with the effect of a metamagic feat that it possesses. Enhancing an eye ray in this manner burns the eyestalk out for a number of rounds equal to the amount by which the metamagic would normally increase a spell level. Since firing an eye ray that hasn&#146;t been enhanced with metamagic is a free action, the creature still can use its other eye rays in a round in which it enhances one ray with metamagic.\n\nFor example, if a beholder had the Maximize Spell feat and the Metaray feat, it could take a standard action to fire a maximized {i}inflict moderate wounds{/i} eye ray that would cause 26 points of damage on a hit. Its {i}inflict moderate wounds{/i} eyestalk would then not be usable for the next 3 rounds.\n\n{b}Special{/b}: The creature cannot use this ability with a metamagic feat that would increase the level of a spell by more than three levels." compset="Feat" summary="1/rd, stand, add known MM to eye ray (max 3 lvl) then dormant for lvl rds." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="True beholder or beholderkin race required."><![CDATA[hero.tagis[Race.Beholder] + hero.tagis[Race.Beholdrkin] <> 0]]></exprreq>
+    <exprreq message="Any metamagic feat required."><![CDATA[hero.tagcount[fCategory.Metamagic] >= 1]]></exprreq>
+    </thing>
+  <thing id="fSkilTelek" name="Skilled Telekinetic" description="A creature with this feat becomes so skilled with its {i}telekinesis{/i} ability that it can manipulate and use magic items via telekinesis.\n\n{b}Prerequisite{/b}: Ability to use telekinesis as a supernatural ability.\n\n{b}Benefit{/b}: As a standard action, the creature can use its telekinetic power to trigger a command word, spell completion, or spell trigger magic item as long as the item is unattended and the creature could normally utilize the item when holding it. The magic item must be within reach of the creature&#146;s {i}telekinesis{/i} ability, the creature must have line of sight with its target, and the creature must have line of effect between the magic item and the target. The item must otherwise fulfill all the requirements for manipulating an object via {i}telekinesis{/i} (such as weight)." compset="Feat" summary="Stand, use unattended command word, spell comp/trigger item via telekinesis." uniqueness="useronce">
+    <comment>Pre-req. (Done)
+
+Only Ghost and Beholder get Telekinesis as Su ability, others Spell like ability (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message=" Ability to use telekinesis as a supernatural ability required."><![CDATA[hero.tagis[User.SuTelekine] <> 0]]></exprreq>
+    </thing>
+  <thing id="fAberBaMag" name="Aberration Banemagic" description="You can cast spells that do additional damage to aberrations.\n\n{b}Benefit{/b}: When you cast a spell that deals damage to an aberration, you deal an extra 2d6 points of damage.\n\nA single spell can never gain this extra damage more than once per casting. For instance, a {i}fireball{/i} deals the extra damage to all aberrations in the area it affects. However, if a 3rd-level wizard casts {i}magic missile{/i} and produces two missiles, only one of them (of the wizard&#146;s choice) gains the extra damage, whether or not both missiles are directed at the same aberration or two different aberrations. If a spell deals damage for more than 1 round, it deals this extra damage in each round.\n\nScrolls scribed by you do not gain any benefit from Aberration Banemagic. Scrolls activated by you also gain no benefit from Aberration Banemagic. The same is true for most other magic items, such as wands and potions. However, staffs activated by you use not only your caster level but also gain the benefit of this feat, if applicable.\n\nIf the spell allows a saving throw, the DC of the saving throw increases by 2. The additional damage dealt by this spell is either halved on a successful saving throw or negated entirely, depending on how the regular damage dealt by the spell is affected by a successful saving throw." compset="Feat" summary="+2 DC and +2d6 spell dam vs aberrations." uniqueness="useronce">
+    <comment>DONE!!!</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="xAberrFeat" name="Aberrant Feat Penalties" description="This book adds a new feat type: the aberrant feat. Unlike typical feats, aberrant feats manifest as physical changes to your character&#146;s features (or as additions to your character&#146;s appearance). These feats twist and reshape your form, and you become alien in appearance.\n\nA character who has selected at least one aberrant feat gains an inhuman, unsettling presence. You take a &#150;1 penalty on Diplomacy, Disguise, Gather Information, Handle Animal, and wild empathy checks for every aberrant feat you possess (&#150;2 with two feats, &#150;3 with three feats, and so on).\n\nSome aberrant feats have an additional cumulative effect based on your total number of aberrant feats. This accumulation increases as you gain additional aberrant feats. For example, a character with Aberration Blood who selects Durable Form gains 4 hit points (two for each aberrant feat he possesses). If he later selects Bestial Hide, he gains another 2 hit points (in addition to the normal benefit of Bestial Hide)." compset="Special" uniqueness="unique">
+    <comment>Test? (Done)</comment>
+    <eval phase="UserPostLv" priority="11000">var pen as number
+pen = hero.tagcount[fCategory.Aberrant]
+
+#skillbonus[kDiplomacy] -= pen
+#skillbonus[kDisguise] -= pen
+#skillbonus[kGatherInf] -= pen
+#skillbonus[kHandleAnm] -= pen</eval>
+    </thing>
+  <thing id="fAberWiSha" name="Aberration Wild Shape" description="Most druids detest aberrations and think of them as outside nature, but some view them simply as examples of nature from an extreme and alien world. Thanks to your heritage, you are one of these latter, and have learned to channel your inhuman bloodline into your shapeshifting power.\n\n{b}Prerequisites{/b}: Aberration Blood, wild shape ability.\n\n{b}Benefit{/b}: You can use your wild shape ability to assume the form of an aberration. This otherwise functions identically to your normal wild shape ability. The size of the aberration is limited by the size of animal you can normally assume the shape of with wild shape." compset="Feat" summary="Wild shape includes aberration forms as well as animals." uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    <exprreq message="Wild Shape required."><![CDATA[hero.tagis[Hero.WildShape] <> 0]]></exprreq>
+    </thing>
+  <thing id="fAquaSpell" name="Aquatic Spellcasting" description="You know how to cast spells that work equally well in or out of water.\n\n{b}Benefit{/b}: Water does not impede your spells. Creatures partially or completely submerged do not gain cover or total cover when you cast a spell from outside the water. The surface does not block line of effect for any spell, including spells with the fire descriptor. You need not make a Spellcraft check to cast a fire spell underwater.\n\n{b}Normal{/b}: Partially or completely submerged creatures gain improved or total cover against attacks from land. The water surface blocks line of effect for fire spells. Fire spells do not function underwater unless the caster succeeds on a Spellcraft check (DC 20 + spell level)." compset="Feat" summary="Water never grants cover/blocks line of effect, &amp; no spellcraft chk for fire spells." uniqueness="useronce">
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fBeastHide" name="Beastial Hide" description="Your skin is thicker, scalier, or furrier than normal.\n\n{b}Prerequisite{/b}: Aberration Blood.\n\n{b}Benefit{/b}: Your natural armor bonus to AC improves by 1 for every two aberrant feats you possess." compset="Feat" uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Eval (Done)
+
+Test? (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+     var aber as number
+     aber = round(hero.tagcount[fCategory.Aberrant]/2, 0, -1)
+
+     ~ Bonus to Natural Armor
+     hero.child[ArmorClass].field[tACNatural].value += aber]]></eval>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDarkstalk" name="Darkstalker" description="You have learned how to stalk and surprise creatures whose senses are very different from those of a humanoid.\n\n{b}Benefit{/b}: When you hide, creatures with blindsense, blindsight, scent, or tremorsense must make a Listen check or a Spot check (whichever DC is higher) to notice you, just as sighted creatures would make Spot checks to detect you. You cannot hide in plain sight unless you have that ability as a class feature. In addition, you can flank creatures that have the all-around vision special quality.\n\n{b}Normal{/b}: Creatures with these senses do not need to make Spot or Listen checks to notice other creatures within range. Creatures with all-around vision can&#146;t be flanked." compset="Feat" summary="Blindsense/sight, scent, or tremorsense need spot/listen chk to sense." uniqueness="useronce">
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fDeepspawn" name="Deepspawn" description="The abnormalities of your aberration-tainted heritage grow more pronounced. Your body undergoes a shocking degeneration into something that is strikingly inhuman.\n\n{b}Prerequisites{/b}: Aberration Blood, one other aberrant feat.\n\n{b}Benefit{/b}: Two short but powerful tentacles sprout from your waist. You gain two tentacle natural attacks that each deal 1d4 points of damage (for a Medium creature) plus your Strength modifier. The tentacle attacks are treated as primary weapons.\n\nYou can attack with weapons and also make tentacle attacks, but your tentacle attacks are treated as secondary weapons: The attacks are made with a &#150;5 penalty on the attack roll, and you add only 1/2 your Strength bonus to the damage roll.\n\nYou gain a +2 racial bonus on grapple checks." compset="Feat" summary="Gain two primary tentacle attacks." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Eval (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <bootstrap thing="xDSTentacl"></bootstrap>
+    <eval phase="First" priority="105000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      hero.child[Attack].field[tGrapple].value += 2]]></eval>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    <prereq message="One aberrant feat other than Aberration Blood required.">
+      <validate><![CDATA[   var result as number
+   foreach pick in hero from BaseFeat where "fCategory.Aberrant & !thingid.fAberBl? & !thingid.fDeepspawn"
+     result += 1
+   nexteach
+
+   validif (result <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fDuraForm" name="Durable Form" description="You are much more resilient than the fragile humanoids that do not share your aberrant heritage.\n\n{b}Prerequisite{/b}: Aberration Blood.\n\n{b}Benefit{/b}: You gain 2 hit points for each aberrant feat you have." compset="Feat" uniqueness="useronce">
+    <comment>Pre-req. (Done)
+
+Eval (Done)
+
+Test? (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+     var aber as number
+     aber = hero.tagcount[fCategory.Aberrant] * 2
+
+     container.child[Totals].field[tHP].value += aber]]></eval>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    </thing>
+  <thing id="fInhuReach" name="Inhuman Reach" description="Your arms elongate, allowing you to touch the floor with your hands. In addition, you can bend them in strange and unnatural ways. The arms may vary in appearance, perhaps seeming scaly and snakelike, or slimy like tentacles; conversely, they may resemble normal but longer arms with a second elbow joint. Unless you wear a large cloak to conceal these deformities, you are disturbing to behold.\n\n{b}Prerequisite{/b}: Aberration Blood.\n\n{b}Benefit{/b}: You gain an additional 5 feet of reach. For most Small and Medium creatures, this benefit increases natural reach to 10 feet. If you already have a reach of more than 5 feet for some reason, this feat extends your reach by another 5 feet. As described on page 112 of the Player&#146;s Handbook, a reach weapon doubles your normal reach; for example, if you have this feat and you wield a longspear, you can attack targets 15 or 20 feet away. Your elongated arms also grant you a +2 bonus on Climb checks.\n\n{b}Special{/b}: Due to the disfigured nature of your new limbs, you take a &#150;1 penalty on all melee attack rolls." compset="Feat" summary="+5 ft to reach, but take -1 pen on melee attacks." uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    </thing>
+  <thing id="fInhuVisio" name="Inhuman Vision" description="You possess the inhuman eyes of some strange creature. They might look segmented or larger or without pupils. You might even have eyestalks.\n\n{b}Prerequisite{/b}: Aberration Blood.\n\n{b}Benefit{/b}: You gain a racial bonus on Spot checks equal to the number of aberrant feats you possess.\n\nThe range of your darkvision improves by 5 feet for every aberrant feat that you possess.\n\nIf you do not already have darkvision, you gain darkvision out to 5 feet for each aberrant feat you possess." compset="Feat" uniqueness="useronce">
+    <comment>Pre req (done)
+
+Special for other darkvision (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <bootstrap thing="xDarkVis2"></bootstrap>
+    <eval phase="UserPostLv" priority="10000" index="2"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+     var aber as number
+     aber = hero.tagcount[fCategory.Aberrant] * 5
+
+  if (hero.childfound[rDarkVis].field[Value].value <> 0) then
+     hero.childfound[rDarkVis].field[Value].value += aber
+  else
+     hero.childfound[xDarkVis2].field[Value].value += aber
+  endif]]></eval>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+     var aber as number
+     aber = hero.tagcount[fCategory.Aberrant]
+
+     #skillbonus[kSpot] += aber]]></eval>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    </thing>
+  <thing id="fMusOutSph" name="Music of the Outer Spheres" description="You can use your bardic music to create discordant, insane sounds. This music is particularly effective against aberrations, and can sicken them, vitalize them, or fill them with lethargy.\n\n{b}Prerequisites{/b}: Perform (any) 11 ranks, bard level 9th.\n\n{b}Benefit{/b}: You can now use the following additional bardic music abilities.\n\n{i}Lull Aberration (Sp){/i}: You must target a single aberration within 30 feet with this ability. You can target an additional aberration for every three bard levels above 9th that you possess. A targeted aberration must make a Will save (DC 10 + 1/2 bard&#146;s level + bard&#146;s Cha modifier) or become lethargic and partially hypnotized by the discordant sounds of your performance. Affected aberrations are {i}slowed{/i}, as per the spell.\n\n{i}Sicken Aberration (Sp){/i}: Any aberration within a 30-foot spread centered on you must make a Fortitude saving throw (DC 10 + 1/2 bard&#146;s level + bard&#146;s Cha modifier) or become sickened for as long as you continue to use this ability. If an aberration makes this saving throw, it does not have to make another saving throw to avoid becoming sickened unless you activate this ability again.\n\n{i}Vitalize Aberration (Sp){/i}: All aberrations within a 30-foot spread centered on you gain a +2 morale bonus to all special attack and spell-like ability save DCs and a +1 dodge bonus to Armor Class." compset="Feat" summary="Bardic music can now slow, sicken, or inspire aberrations." uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Bard level 9th required."><![CDATA[tagcount[Classes.Bard] >= 9]]></exprreq>
+    <prereq message="Perform (any) 11 ranks required.">
+      <validate><![CDATA[~ Loop through all perform skills
+var result as number
+foreach pick in hero where "Helper.SkCatPerf"
+
+~ If this skill has 11 or more ranks, we are valid
+  if (each.field[kUserRanks].value >= 11) then
+    result += 1
+  endif
+nexteach
+
+if (result >= 1) then
+  @valid = 1
+  endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fOculSpell" name="Ocular Spell" description="Your study of the terrible powers of the beholder has given you insight into new ways to prepare and cast spells.\n\n{b}Prerequisites{/b}: Knowledge (dungeoneering) 4 ranks, two or more eyes.\n\n{b}Benefit{/b}: You can cast a spell with a casting time of 1 full round or less as an ocular spell. An ocular spell does not take effect immediately, but is instead held in one of your eyes for up to 8 hours. You can store only two ocular spells in this fashion, even if you have more than two eyes. Only ray spells and spells with a target other than personal can be cast as ocular spells.\n\nWhen you choose, you can then cast both of the ocular spells as a full-round action; the spells become brilliant blasts that shoot out from your eyes. You can choose different targets for the two ocular spells.\n\nWhen you release an ocular spell, its effect changes to a ray with a range of up to 60 feet. If the spell previously would have affected multiple creatures, it now affects only the creature struck by the ray. You must succeed on a ranged touch attack to strike your target with an ocular spell, and the target is still permitted any saving throw allowed by the spell.\n\n{i}Example{/i}: Ferno, an 11th-level wizard with the Ocular Spell feat, could prepare two {i}scorching ray{/i} spells as ocular spells, casting them at the beginning of the day. In combat, he can take a full-round action to fire off both {i}scorching ray{/i} spells. He can fire each spell at a different target, and he gets all three rays from each spell.\n\nAn ocular spell uses up a spell slot two levels higher than the spell&#146;s actual level." compset="Feat" summary="Store up to two spells in eyes, release both as full rd. +2 Level." uniqueness="useronce">
+    <comment>Make MM (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <exprreq message="Knowledge (Dungeoneering) 4 ranks required."><![CDATA[#skillranks[kKnowDun] >= 4]]></exprreq>
+    </thing>
+  <thing id="fParryShl" name="Parrying Shield" description="You have studied advanced techniques for battling foes whose attacks normally bypass armor. You use your shield to block or deflect rays and other touch attacks.\n\n{b}Prerequisite{/b}: Shield proficiency.\n\n{b}Benefit{/b}: You gain your shield bonus (and the shield&#146;s enhancement bonus, if any) as an addition to your touch AC.\n\n{b}Special{/b}: A fighter can select Parrying Shield as one of his fighter bonus feats (see Player&#146;s Handbook page 38)." compset="Feat" summary="Add shield bonus to touch AC" uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="LordMadnes"/>
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="Final" priority="10100">hero.child[ArmorClass].field[tACTouch].value += hero.child[ArmorClass].field[tACShield].value
+hero.child[ArmorClass].field[tACTchDsp].value += hero.child[ArmorClass].field[tACShield].value</eval>
+    <exprreq message="Shield Proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    </thing>
+  <thing id="fQuickReco" name="Quick Recovery" description="It&#146;s hard to keep you down for long. You have a talent for shaking off effects that leave others unable to act.\n\n{b}Benefit{/b}: Whenever you begin your turn stunned or dazed, you can make a new saving throw at the original DC of the effect that stunned or dazed you in an attempt to recover. Recovering from being stunned or dazed in this way is a move action. If the effect that caused you to become stunned or dazed did not allow a saving throw, you can recover by succeeding on a Will save (DC 10 + 1/2 HD or caster level of originator of effect + relevant ability modifier, or Cha modifier if there is not an obvious ability linked to the effect).\n\n{b}Normal{/b}: You are stunned or dazed as long as the effect calls for, and do not have an opportunity to recover early." compset="Feat" summary="Move, reroll save to recover from stun/daze condition vs original DC." uniqueness="useronce">
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fScaveGull" name="Scavenging Gullet" description="The taint of the aberration in your blood has gifted you with the ability to gain nourishment from things that others would never consider as food.\n\n{b}Prerequisite{/b}: Aberration Blood.\n\n{b}Benefit{/b}: You gain nourishment from eating any organic material, despite its freshness or source.\n\nYou gain a +4 racial bonus on Fortitude saves to resist the effect of ingested poisons, as well as on Fortitude saves to resist diseases caused by ingested substances (such as spoiled food)." compset="Feat" summary="Can eat any organic material, +4 bon to Fort vs ingested poison/disease." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    </thing>
+  <thing id="fStarspawn" name="Starspawn" description="Your abnormal body and heritage has become more pronounced. You grow membranous wings and are comfortable in extreme elevations.\n\n{b}Prerequisites{/b}: Aberration Blood, one other aberrant feat.\n\n{b}Benefit{/b}: You gain a fly speed (with average maneuverability) equal to one-half your base land speed (round down to the nearest 5-foot increment). You can use your flight for a number of consecutive rounds equal to 1 + your Constitution modifier (minimum 1 round); between these uses you cannot fly for 1 round.\n\nYou gain resistance to cold 5. You are immune to altitude fatigue and altitude sickness." compset="Feat" summary="Fly for X consecutive rds, rest for 1 rd between. Imm to altitude effects." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Eval for Fly/Cold Res (Done)
+
+Test? (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <bootstrap thing="xFly"></bootstrap>
+    <bootstrap thing="xDamRsCold"></bootstrap>
+    <eval phase="First" priority="10000">#applyresist[xDamRsCold, 5]</eval>
+    <eval phase="Final" priority="10550" index="2"><![CDATA[    var bonus as number
+    bonus = hero.child[Speed].field[tSpeedMod].value
+ 
+  ~ divide by 5, then round down
+    bonus = round(bonus/5,0,-1)
+
+  ~ Halve this
+    bonus /= 2
+ 
+  ~ and multiply by 5
+    bonus *= 5
+
+    hero.child[xFly].field[Value].value = maximum(hero.child[xFly].field[Value].value, bonus)
+    perform hero.child[xFly].assign[Maneuver.Average]
+
+field[xSumm].text = "Fly for " & hero.child[aCON].field[aModBonus].value & " consecutive rds, rest for 1 rd between. Imm to altitude effects."]]></eval>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    <prereq message="One aberrant feat other than Aberration Blood required.">
+      <validate><![CDATA[   var result as number
+   foreach pick in hero from BaseFeat where "fCategory.Aberrant & !thingid.fAberBl? & !thingid.fStarspawn"
+     result += 1
+   nexteach
+
+   validif (result <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fWarpMind" name="Warped Mind" description="Your tainted form has altered the physical nature of your brain, making you resistant to mental effects and more capable of unleashing the power of your mind on others.\n\n{b}Prerequisite{/b}: Aberration Blood.\n\n{b}Benefit{/b}: You gain a racial bonus on Will saves against mind affecting spells and abilities equal to one-half the number of aberrant feats you possess.\n\nYou gain 1 psionic power point for each aberrant feat you possess." compset="Feat" summary="+X bonus to Will saves vs mind affecting." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+xSumm (Done)
+
+Test? (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      var aber as number
+      aber = hero.tagcount[fCategory.Aberrant]
+      perform hero.assign[Hero.Psionic]
+      hero.child[Psionics].field[tPPTotal].value += aber
+
+      var aber2 as number
+      aber2 = round(hero.tagcount[fCategory.Aberrant]/2, 0, -1)
+
+      field[xSumm].text = "+" & aber2 & " bonus to Will saves vs mind affecting effects. Gain " & aber & " PP."]]></eval>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    </thing>
+  <thing id="fWaterspaw" name="Waterspawn" description="Your abnormal body and heritage has become more pronounced. You have prominent fins and are supremely well adapted to the icy deeps.\n\n{b}Prerequisites{/b}: Aberration Blood, one other aberrant feat.\n\n{b}Benefit{/b}: You gain a Swim speed equal to your land speed. This also grants you a +8 racial bonus on Swim checks, the ability to take 10 on any Swim check, and the ability to use the run action while swimming.\n\nYou gain resistance to cold 5. You can breathe air and water with equal ease." compset="Feat" summary="You can breath air and water with equal ease." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Eval for Swim Speed and Swim and Cold Res (Done)
+
+Test? (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xAberrFeat"></bootstrap>
+    <bootstrap thing="xSwim"></bootstrap>
+    <bootstrap thing="xDamRsCold"></bootstrap>
+    <eval phase="First" priority="10000">#applyresist[xDamRsCold, 5]
+#skillbonus[kSwim] += 8</eval>
+    <eval phase="Final" priority="10500" index="2">var bonus as number
+    bonus = hero.child[Speed].field[tSpeedMod].value
+
+    hero.child[xSwim].field[Value].value = maximum(hero.child[xSwim].field[Value].value, bonus)</eval>
+    <exprreq message="Aberration Blood required."><![CDATA[#hasfeat[fAberBlood] <> 0]]></exprreq>
+    <prereq message="One aberrant feat other than Aberration Blood required.">
+      <validate><![CDATA[   var result as number
+   foreach pick in hero from BaseFeat where "fCategory.Aberrant & !thingid.fAberBl? & !thingid.fWaterspaw"
+     result += 1
+   nexteach
+
+   validif (result <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fThralBred" name="Thrall Bred" description="You were spawned in the breeding pits of the mind flayers or the beholders. You were bred for unusual strength, hardiness, and loyalty to your unhuman masters, and you can now choose to bestow your loyalty on other worthy masters.\n\n{b}Prerequisites{/b}: Humanoid, Con 13.\n\n{b}Benefit{/b}: When you are within 30 feet of the individual you have designated as your special charge, you gain a +1 morale bonus on damage rolls and saving throws. If your special charge is not within 30 feet, or is dead or incapacitated, you take a &#150;2 morale penalty on damage rolls and saving throws.\n\nYou can designate a special charge only once per month. If your charge dies or abandons you, you take the morale penalty until you have the opportunity to choose a new charge (or choose to have no special charge at all).\n\nYour charge must have more Hit Dice than you." compset="Feat" summary="1/month, choose master. If in 30 ft +1 morale bon to dam &amp; saves, else -2." uniqueness="useronce">
+    <comment>Pre-req. (Done)</comment>
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fWildTalen" name="Wild Talent" description="Your mind wakes to a previously unrealized talent for psionics.\n\n{b}Benefit{/b}: Your latent power of psionics flares to life, conferring upon you the designation of a psionic character. As a psionic character, you gain a reserve of 2 power points and can take psionic feats, metapsionic feats, and psionic item creation feats (see the Expanded Psionics Handbook). You do not, however, gain the ability to manifest powers simply by virtue of having this feat." compset="Feat" summary="Gain 2 PP and can take Psionic feats, but can&apos;t manifest powers." replaces="fWildTalnt" uniqueness="useronce">
+    <usesource source="LordMadnes" name="Lords of Madness"/>
+    <usesource source="SRDPsionic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      var result as number
+      result = hero.assign[Hero.Psionic]
+      hero.child[Psionics].field[tPPTotal].value += 2]]></eval>
+    </thing>
+  <thing id="xDSTentacl" name="Deepspawn Tentacle" description="This should be hidden" compset="Special">
+    <comment><![CDATA[elseif (hero.field[tSize].value = 3) then
+ perform hero.child[xDSTentacl].child[wTentacle].assign[wMain.2d6_104]
+elseif (hero.field[tSize].value = 2) then
+ perform hero.child[xDSTentacl].child[wTentacle].assign[wMain.1d8_6]
+elseif (hero.field[tSize].value = 1) then
+ perform hero.child[xDSTentacl].child[wTentacle].assign[wMain.1d6_5]
+elseif (hero.field[tSize].value = 0) then
+ perform hero.child[xDSTentacl].child[wTentacle].assign[wMain.1d4_4]
+elseif (hero.field[tSize].value = -1) then
+ perform hero.child[xDSTentacl].child[wTentacle].assign[wMain.1d3_3]
+elseif (hero.field[tSize].value = -2) then
+ perform hero.child[xDSTentacl].child[wTentacle].assign[wMain.1d2_2]
+elseif (hero.field[tSize].value = -3) then
+ perform hero.child[xDSTentacl].child[wTentacle].assign[wMain.1d1_1]
+elseif (hero.field[tSize].value <= -4) then
+ done]]></comment>
+    <tag group="User" tag="Deepspawn"/>
+    <bootstrap thing="wTentacle">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="User" tag="Deepspawn"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="9900"><![CDATA[
+foreach pick in hero from BaseNatWep where "thingid.wTentacle & User.Deepspawn"
+if (herofield[tSize].value >= 4) then
+ perform each.assign[wMain.3d6_8]
+elseif (herofield[tSize].value = 3) then
+ perform each.assign[wMain.2d6_104]
+elseif (herofield[tSize].value = 2) then
+ perform each.assign[wMain.1d8_6]
+elseif (herofield[tSize].value = 1) then
+ perform each.assign[wMain.1d6_5]
+elseif (herofield[tSize].value = 0) then
+ perform each.assign[wMain.1d4_4]
+elseif (herofield[tSize].value = -1) then
+ perform each.assign[wMain.1d3_3]
+elseif (herofield[tSize].value = -2) then
+ perform each.assign[wMain.1d2_2]
+elseif (herofield[tSize].value = -3) then
+ perform each.assign[wMain.1_1]
+elseif (herofield[tSize].value <= -4) then
+ done
+endif
+
+nexteach]]></eval>
+    </thing>
+  <thing id="mmOcular" name="Ocular Spell" description="Your study of the terrible powers of the beholder has given you insight into new ways to prepare and cast spells.\n\n{b}Prerequisites{/b}: Knowledge (dungeoneering) 4 ranks, two or more eyes.\n\n{b}Benefit{/b}: You can cast a spell with a casting time of 1 full round or less as an ocular spell. An ocular spell does not take effect immediately, but is instead held in one of your eyes for up to 8 hours. You can store only two ocular spells in this fashion, even if you have more than two eyes. Only ray spells and spells with a target other than personal can be cast as ocular spells.\n\nWhen you choose, you can then cast both of the ocular spells as a full-round action; the spells become brilliant blasts that shoot out from your eyes. You can choose different targets for the two ocular spells.\n\nWhen you release an ocular spell, its effect changes to a ray with a range of up to 60 feet. If the spell previously would have affected multiple creatures, it now affects only the creature struck by the ray. You must succeed on a ranged touch attack to strike your target with an ocular spell, and the target is still permitted any saving throw allowed by the spell.\n\n{i}Example{/i}: Ferno, an 11th-level wizard with the Ocular Spell feat, could prepare two {i}scorching ray{/i} spells as ocular spells, casting them at the beginning of the day. In combat, he can take a full-round action to fire off both {i}scorching ray{/i} spells. He can fire each spell at a different target, and he gets all three rays from each spell.\n\nAn ocular spell uses up a spell slot two levels higher than the spell&#146;s actual level." compset="Metamagic" summary="Store up to two spells in eyes, release both as full rd. +2 Level." uniqueness="unique">
+    <fieldval field="mmLevel" value="2"/>
+    <fieldval field="mmAbbr" value="Ocular"/>
+    <usesource source="LordMadnes"/>
+    <tag group="User" tag="EasyMM"/>
+    <prereq message="Ocular Spell feat required.">
+      <validate>@valid = hero.pickexists[fOculSpell] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="xAbPowBite" name="Aboleth Powerful Bite" description="This should be hidden" compset="Special">
+    <tag group="User" tag="AboPowBite" name="Aboleth Powerful Bite"/>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatSecond"/>
+      <autotag group="User" tag="AboPowBite"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="9900"><![CDATA[
+foreach pick in hero from BaseNatWep where "thingid.wBite & User.AboPowBite"
+ each.field[wAttBonus].value += 5
+if (herofield[tSize].value >= 4) then
+ perform each.assign[wMain.4d6_106]
+elseif (herofield[tSize].value = 3) then
+ perform each.assign[wMain.3d6_8]
+elseif (herofield[tSize].value = 2) then
+ perform each.assign[wMain.2d6_104]
+elseif (herofield[tSize].value = 1) then
+ perform each.assign[wMain.1d8_6]
+elseif (herofield[tSize].value = 0) then
+ perform each.assign[wMain.1d6_5]
+elseif (herofield[tSize].value = -1) then
+ perform each.assign[wMain.1d4_4]
+elseif (herofield[tSize].value = -2) then
+ perform each.assign[wMain.1d3_3]
+elseif (herofield[tSize].value = -3) then
+ perform each.assign[wMain.1d2_2]
+elseif (herofield[tSize].value <= -4) then
+ perform each.assign[wMain.1_1]
+endif
+
+nexteach]]></eval>
+    </thing>
+  <thing id="xGhostTel2" name="Telekinesis" description="Use Telekinesis as a standard action (caster level 12th or ghost&apos;s HD, whichever is higher). After using it, the ghost must wait 1d4 rounds before using it again." compset="Special" summary="[1-3 abilities] Use Telekinesis every 1d4 rounds as standard action." replaces="xGhostTele" uniqueness="unique">
+    <comment>Added to replace original and forward a User tag.</comment>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecSource" tag="Ghost" name="Ghost" abbrev="Ghost"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="User" tag="SuTelekine" name="Supernatural Telekinesis"/>
+    <eval phase="First">perform hero.assign[User.SuTelekine]</eval>
+    </thing>
+  <thing id="xBulgEye" name="Bulging Eyes" compset="Special" uniqueness="unique">
+    <tag group="User" tag="PickAbBl" name="Aberration Blood Selection"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+  if (tagis[User.Activated] <> 0) then
+      #skillbonus[kSpot] += 2
+  endif]]></eval>
+    </thing>
+  <thing id="fAberBlood" name="Aberration Blood" description="One of your ancestors was an aberration and has passed the taint of its aberrant physiology down through the generations to you. This taint manifests physically in your appearance in some noticeable way.\n\n{b}Prerequisite{/b}: Humanoid.\n\n{b}Benefit{/b}: You gain a physical feature that grants you a racial bonus on one type of check; once you select the check to which this bonus applies (as well as the corresponding feature) you cannot change it later. The bonus must be chosen from the following list:\n\n{b}Aberrant Feature &#151; Benefit{/b}\nBulging eyes &#151; +2 bonus on Spot checks\nFlexible limbs &#151; +2 bonus on Grapple checks\nSegmented eyes &#151; +3 bonus on Search checks\nSlimy skin &#151; +4 bonus on Escape Artist checks\nSticky fingers &#151; +3 bonus on Climb checks\nTail &#151; +4 bonus on Balance checks\nWebbed hands &#151; +4 bonus on Swim checks\n\n{b}Special{/b}: You can select this feat more than once. Each time you select this feat, choose a different aberrant feature and gain the bonus associated with it." compset="Feat">
+    <fieldval field="ftCandExpr" value="User.PickAbBl"/>
+    <usesource source="LordMadnes"/>
+    <tag group="User" tag="Activated"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <tag group="fCategory" tag="Aberrant"/>
+    <bootstrap thing="xFlexLimb"></bootstrap>
+    <bootstrap thing="xSegmenEye"></bootstrap>
+    <bootstrap thing="xSlimySkin"></bootstrap>
+    <bootstrap thing="xStickyFin"></bootstrap>
+    <bootstrap thing="xTail"></bootstrap>
+    <bootstrap thing="xWebbHands"></bootstrap>
+    <bootstrap thing="xBulgEye"></bootstrap>
+    <eval phase="First"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      ~ If we haven't chosen anything, get out now
+      if (field[fChosen].ischosen = 0) then
+        done
+        endif
+
+      ~ Set our 'short name'
+      if (field[fChosen].ischosen <> 0) then
+        field[fShortName].text = "Aberration Blood: " & field[fChosen].chosen.field[name].text
+      endif
+
+      perform field[fChosen].chosen.assign[User.Activated]]]></eval>
+    </thing>
+  <thing id="xSegmenEye" name="Segmented Eyes" compset="Special" uniqueness="unique">
+    <tag group="User" tag="PickAbBl" name="Aberration Blood Selection"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+  if (tagis[User.Activated] <> 0) then
+      #skillbonus[kSearch] += 3
+  endif]]></eval>
+    </thing>
+  <thing id="xFlexLimb" name="Flexible Limbs" compset="Special" uniqueness="unique">
+    <tag group="User" tag="PickAbBl" name="Aberration Blood Selection"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+  if (tagis[User.Activated] <> 0) then
+      hero.child[Attack].field[tGrapple].value += 2
+  endif]]></eval>
+    </thing>
+  <thing id="xSlimySkin" name="Slimy Skin" compset="Special" uniqueness="unique">
+    <tag group="User" tag="PickAbBl" name="Aberration Blood Selection"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+  if (tagis[User.Activated] <> 0) then
+      #skillbonus[kEscape] += 4
+  endif]]></eval>
+    </thing>
+  <thing id="xStickyFin" name="Sticky Fingers" compset="Special" uniqueness="unique">
+    <tag group="User" tag="PickAbBl" name="Aberration Blood Selection"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+  if (tagis[User.Activated] <> 0) then
+      #skillbonus[kClimb] += 3
+  endif]]></eval>
+    </thing>
+  <thing id="xTail" name="Tail" compset="Special" uniqueness="unique">
+    <tag group="User" tag="PickAbBl" name="Aberration Blood Selection"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+  if (tagis[User.Activated] <> 0) then
+      #skillbonus[kBalance] += 4
+  endif]]></eval>
+    </thing>
+  <thing id="xWebbHands" name="Webbed Hands" compset="Special" uniqueness="unique">
+    <tag group="User" tag="PickAbBl" name="Aberration Blood Selection"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+  if (tagis[User.Activated] <> 0) then
+      #skillbonus[kSwim] += 4
+  endif]]></eval>
+    </thing>
+  </document>

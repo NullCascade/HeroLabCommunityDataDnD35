@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>02-24-11 Sendric
+- Removed (DotU) from feat names.
+
+c8-12-10
+
+02-2-2014 TobyFox
+- Added Everything Else from Drow of the Underdark except monsters.
+02-3-2014 TobyFox
+- Merged Files, Underdark - Chitine into Drow of the Underdark tested... Done.
+
+02-20-2014
+Races:  Gloaming was incorrectly being considered a planetouched.  Fixed.</info_history>
+    <info_todo><![CDATA[02-02-2014
+Scripting work for various items beyond my ability.
+
+Some incorrectly functioning items include:
+
+Adjustments:
+Spell Effect - Yotchlol's Blessing
+Spell Effect - Beblith's Bessing - (Removed, badly malfunctioning)
+
+Item Power:
+
+Spider Boon - Don't know how to add charges to this item for its per day use.
+Spider Bound - Don't know how to change the price based on the type of shield.
+
+Ring of Drow Blood - Do not know how to add more than one set of charges to an item.
+Ring of Drow Blood - Ring of Drow blood adds an additional use to Drow Spell-Like abilities.
+
+Rods:
+
+Rod of the Matriarch - Not applying negative levels properly.  Grants 1 neg level if it is possed by a non-drow or non-female.]]></info_todo>
+    </fileinfo>
+  <thing id="sBrdVerShC" name="Verraketh&apos;s Shadow Crown" description="Created by the legendary Shadowking of the Talfir, Verraketh&apos;s shadow crown cloaks the top of your head in a crown of magical shadow.\nFor the duration of this spell, your bardic music abilities tap the Shadow Weave instead of the Weave.\nYou receive a +4 competence bonus on Perform checks while under the effects of this spell.\nThe effects of this spell do not stack with the Shadow Weave Magic feat.\n\n{b}Source:{/b} {i}Races of Faer&#251;n{/i}, 3.5 Edition" compset="Spell" summary="+4 comp bonus to Perform checks, bardic abilities tap shadow weave.">
+    <comment>Also in Spell Compendium</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <usesource source="pPGtF"/>
+    <usesource source="RoF"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Bard" name="Bard" abbrev="Bard"/>
+    <tag group="sSchool" tag="Enchant"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sDuration" tag="1Rd"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sBrdPortVe" name="Portal View" description="Portal view makes a portal transparent from your side only for the duration of the spell.\nIt does not actually open the portal, so no line of effect is established, but it does enable line of sight.\nPortal view does not reveal any of the portal&apos;s special properties (such as one-way or creature-only); it only allows creature on your side to view the portal&apos;s destination.\n\n{b}Arcane Focus:{/b} A glass eye.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <comment>Also Applies to the Portal (Alternative) Domain.</comment>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels); One Portal"/>
+    <usesource source="pPGtF"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sSubschool" tag="Scrying"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Minute1"/>
+    <tag group="sClass" tag="Bard" name="Bard" abbrev="Bard"/>
+    </thing>
+  <thing id="sSorPortVe" name="Portal View" description="Portal view makes a portal transparent from your side only for the duration of the spell.\nIt does not actually open the portal, so no line of effect is established, but it does enable line of sight.\nPortal view does not reveal any of the portal&apos;s special properties (such as one-way or creature-only); it only allows creature on your side to view the portal&apos;s destination.\n\n{b}Arcane Focus:{/b} A glass eye.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <comment>Also Applies to the Portal (Alternative) Domain.</comment>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels); One Portal"/>
+    <usesource source="pPGtF"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sSubschool" tag="Scrying"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Minute1"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    </thing>
+  <thing id="sWizPortVe" name="Portal View" description="Portal view makes a portal transparent from your side only for the duration of the spell.\nIt does not actually open the portal, so no line of effect is established, but it does enable line of sight.\nPortal view does not reveal any of the portal&apos;s special properties (such as one-way or creature-only); it only allows creature on your side to view the portal&apos;s destination.\n\n{b}Arcane Focus:{/b} A glass eye.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <comment>Also Applies to the Portal (Alternative) Domain.</comment>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels); One Portal"/>
+    <usesource source="pPGtF"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sSubschool" tag="Scrying"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Minute1"/>
+    <tag group="sClass" tag="Wizard"/>
+    </thing>
+  <thing id="sBlkClaMin" name="Clarity of Mind" description="You grant the subject a +4 insight bonus on saving throws against all spells with the charm, compulsion, or glamer descriptors.\nClarity of mind also reduces any miss chance the target might have when attacking an opponent that has\nconcealment from a glamer spell (such as blur and displacement) by 10%.\nThus, a subject that attacks an opponent protected by a displacement spell suffers only a 40% miss chance, instead of the customary 50%.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="1 hour/level"/>
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="pPGtF"/>
+    <usesource source="srcUndark"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sClass" tag="Blackguard"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sPalClaMin" name="Clarity of Mind" description="You grant the subject a +4 insight bonus on saving throws against all spells with the charm, compulsion, or glamer descriptors.\nClarity of mind also reduces any miss chance the target might have when attacking an opponent that has\nconcealment from a glamer spell (such as blur and displacement) by 10%.\nThus, a subject that attacks an opponent protected by a displacement spell suffers only a 40% miss chance, instead of the customary 50%.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="1 hour/level"/>
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="pPGtF"/>
+    <usesource source="srcUndark"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sClass" tag="Paladin"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sDrdLocNod" name="Locate Node" description="You sense the direction of any earth node within range.\nYou can choose to locate either the nearest node or a specific node you have visited before.\n(In the latter case, the range is 2 miles/level and the area is a circle, centered on you, with a radius of 2 miles/level).\nThe spell is blocked by even a thin sheet of lead, and it cannot detect nodes protected by a node lock spell.\n\n{b}Arcane/Divine Focus:{/b} A pebble found in an earth node.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sRange" value="1mile/level radius circle centered on caster"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sDuration" tag="Minute1"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sRange" tag="Miles"/>
+    <tag group="sRange" tag="Radius"/>
+    </thing>
+  <thing id="sClrLocNod" name="Locate Node" description="You sense the direction of any earth node within range.\nYou can choose to locate either the nearest node or a specific node you have visited before.\n(In the latter case, the range is 2 miles/level and the area is a circle, centered on you, with a radius of 2 miles/level).\nThe spell is blocked by even a thin sheet of lead, and it cannot detect nodes protected by a node lock spell.\n\n{b}Arcane/Divine Focus:{/b} A pebble found in an earth node.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sRange" value="1mile/level radius circle centered on caster"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sDuration" tag="Minute1"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sRange" tag="Miles"/>
+    <tag group="sRange" tag="Radius"/>
+    </thing>
+  <thing id="sSorLocNod" name="Locate Node" description="You sense the direction of any earth node within range.\nYou can choose to locate either the nearest node or a specific node you have visited before.\n(In the latter case, the range is 2 miles/level and the area is a circle, centered on you, with a radius of 2 miles/level).\nThe spell is blocked by even a thin sheet of lead, and it cannot detect nodes protected by a node lock spell.\n\n{b}Arcane/Divine Focus:{/b} A pebble found in an earth node.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sRange" value="1mile/level radius circle centered on caster"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sDuration" tag="Minute1"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sRange" tag="Miles"/>
+    <tag group="sRange" tag="Radius"/>
+    </thing>
+  <thing id="sWizLocNod" name="Locate Node" description="You sense the direction of any earth node within range.\nYou can choose to locate either the nearest node or a specific node you have visited before.\n(In the latter case, the range is 2 miles/level and the area is a circle, centered on you, with a radius of 2 miles/level).\nThe spell is blocked by even a thin sheet of lead, and it cannot detect nodes protected by a node lock spell.\n\n{b}Arcane/Divine Focus:{/b} A pebble found in an earth node.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sRange" value="1mile/level radius circle centered on caster"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sDuration" tag="Minute1"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sRange" tag="Miles"/>
+    <tag group="sRange" tag="Radius"/>
+    </thing>
+  <thing id="sDrdChngSt" name="Changestones" description="When you place specially prepared stones on the ground and speak a command to conclude the casting of this spell, the stones transform into creatures that look and fight just like liths (see Chapter 6).\nThese stone-born creatures are not true liths, however; they cannot converse with actual liths or use any of a lith&apos;s psionic powers.\nThese stone-born liths defend you and obey any spoken commands.\nWhen reduced to 0 or fewer hit points, a stone-born lith crumbles to powder, and the prepared stone used to create it is destroyed.\nOtherwise, the stone-born liths revert to prepared stones when the duration of the spell expires, and these stones can be used as the focus for another casting of the spell.\nThe stone-born liths are always at full strength when created, despite any damage they may have taken the last time they appeared.\nYou can prepare up to one stone per four caster levels, to a maximum of five stones at 20th level.\nA stone can remain prepared indefinitely; the spell isn&apos;t actually cast until you complete it by changing the stone into a lith.\n\n{b}Focus:{/b} The requisite number of stones, which must be specially prepared.\nThe materials for polishing and smoothing each stone cost 200 gp.\nOnce the stones are prepared, you must perform a rite of purification that requires one day per stone.\nYou cannot adventure or engage in any other strenuous activity during the purification process.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 hour/level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sSorChngSt" name="Changestones" description="When you place specially prepared stones on the ground and speak a command to conclude the casting of this spell, the stones transform into creatures that look and fight just like liths (see Chapter 6).\nThese stone-born creatures are not true liths, however; they cannot converse with actual liths or use any of a lith&apos;s psionic powers.\nThese stone-born liths defend you and obey any spoken commands.\nWhen reduced to 0 or fewer hit points, a stone-born lith crumbles to powder, and the prepared stone used to create it is destroyed.\nOtherwise, the stone-born liths revert to prepared stones when the duration of the spell expires, and these stones can be used as the focus for another casting of the spell.\nThe stone-born liths are always at full strength when created, despite any damage they may have taken the last time they appeared.\nYou can prepare up to one stone per four caster levels, to a maximum of five stones at 20th level.\nA stone can remain prepared indefinitely; the spell isn&apos;t actually cast until you complete it by changing the stone into a lith.\n\n{b}Focus:{/b} The requisite number of stones, which must be specially prepared.\nThe materials for polishing and smoothing each stone cost 200 gp.\nOnce the stones are prepared, you must perform a rite of purification that requires one day per stone.\nYou cannot adventure or engage in any other strenuous activity during the purification process.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 hour/level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sWizChngSt" name="Changestones" description="When you place specially prepared stones on the ground and speak a command to conclude the casting of this spell, the stones transform into creatures that look and fight just like liths (see Chapter 6).\nThese stone-born creatures are not true liths, however; they cannot converse with actual liths or use any of a lith&apos;s psionic powers.\nThese stone-born liths defend you and obey any spoken commands.\nWhen reduced to 0 or fewer hit points, a stone-born lith crumbles to powder, and the prepared stone used to create it is destroyed.\nOtherwise, the stone-born liths revert to prepared stones when the duration of the spell expires, and these stones can be used as the focus for another casting of the spell.\nThe stone-born liths are always at full strength when created, despite any damage they may have taken the last time they appeared.\nYou can prepare up to one stone per four caster levels, to a maximum of five stones at 20th level.\nA stone can remain prepared indefinitely; the spell isn&apos;t actually cast until you complete it by changing the stone into a lith.\n\n{b}Focus:{/b} The requisite number of stones, which must be specially prepared.\nThe materials for polishing and smoothing each stone cost 200 gp.\nOnce the stones are prepared, you must perform a rite of purification that requires one day per stone.\nYou cannot adventure or engage in any other strenuous activity during the purification process.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 hour/level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    </thing>
+  <thing id="sSorNodeLo" name="Node Lock" description="A node lock spell cast upon an earth node magically &quot;locks&quot; it against others who might wish to use its power.\nYou can affect an earth node whose class is equal to one-half your caster level or less.\nFor any caster except you, the node lock adds +15 to each Spellcraft DC associated with the use of the node&apos;s standard powers.\nA successful dispel magic breaks the node lock.\n{b}Special:{/b} You must have the Node Spellcasting feat to cast this spell.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <comment>Also Applies to the Portal (Alternative) Domain.</comment>
+    <fieldval field="sDuration" value="Permanent"/>
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels); One Portal"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sDuration" tag="Permanent"/>
+    </thing>
+  <thing id="sWizNodeLo" name="Node Lock" description="A node lock spell cast upon an earth node magically &quot;locks&quot; it against others who might wish to use its power.\nYou can affect an earth node whose class is equal to one-half your caster level or less.\nFor any caster except you, the node lock adds +15 to each Spellcraft DC associated with the use of the node&apos;s standard powers.\nA successful dispel magic breaks the node lock.\n{b}Special:{/b} You must have the Node Spellcasting feat to cast this spell.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <comment>Also Applies to the Portal (Alternative) Domain.</comment>
+    <fieldval field="sDuration" value="Permanent"/>
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels); One Portal"/>
+    <usesource source="srcUndark"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sDuration" tag="Permanent"/>
+    </thing>
+  <thing id="sDrdNodDoo" name="Node Door" description="You instantly transfer yourself from your current earth node to any other earth node you have visited.\nYou always arrive exactly at the spot desired&#151;whether by simply visualizing the area or by describing your destination (for example, &quot;the earth node that serves the kuo-toa as a secret temple to Blibdoolpoolp&quot;).\nAfter using this spell, you can&apos;t take any other actions until your next turn.\nIf you arrive in an earth node that is already partially occupied by a newly added object, you arrive in the closest clear space in that node.\nIf the earth node is completely filled or has been destroyed by any means, you bounce to the next closest earth node (determined randomly or by the DM).\nEach such &quot;bounce&quot; deals you and any who accompany you 2d6 points of damage.\n{b}Special:{/b} You must have the Node Spellcasting feat to cast this spell.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Varies"/>
+    <fieldval field="sSave" value="None and Will negates (object)"/>
+    <fieldval field="sResist" value="No and Yes (object)"/>
+    <usesource source="srcUndark"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Teleport"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sRange" tag="Special"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="WillNegObj"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sSorNodDoo" name="Node Door" description="You instantly transfer yourself from your current earth node to any other earth node you have visited.\nYou always arrive exactly at the spot desired&#151;whether by simply visualizing the area or by describing your destination (for example, &quot;the earth node that serves the kuo-toa as a secret temple to Blibdoolpoolp&quot;).\nAfter using this spell, you can&apos;t take any other actions until your next turn.\nIf you arrive in an earth node that is already partially occupied by a newly added object, you arrive in the closest clear space in that node.\nIf the earth node is completely filled or has been destroyed by any means, you bounce to the next closest earth node (determined randomly or by the DM).\nEach such &quot;bounce&quot; deals you and any who accompany you 2d6 points of damage.\n{b}Special:{/b} You must have the Node Spellcasting feat to cast this spell.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Varies"/>
+    <fieldval field="sSave" value="None and Will negates (object)"/>
+    <fieldval field="sResist" value="No and Yes (object)"/>
+    <usesource source="srcUndark"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Teleport"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sRange" tag="Special"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="WillNegObj"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sWizNodDoo" name="Node Door" description="You instantly transfer yourself from your current earth node to any other earth node you have visited.\nYou always arrive exactly at the spot desired&#151;whether by simply visualizing the area or by describing your destination (for example, &quot;the earth node that serves the kuo-toa as a secret temple to Blibdoolpoolp&quot;).\nAfter using this spell, you can&apos;t take any other actions until your next turn.\nIf you arrive in an earth node that is already partially occupied by a newly added object, you arrive in the closest clear space in that node.\nIf the earth node is completely filled or has been destroyed by any means, you bounce to the next closest earth node (determined randomly or by the DM).\nEach such &quot;bounce&quot; deals you and any who accompany you 2d6 points of damage.\n{b}Special:{/b} You must have the Node Spellcasting feat to cast this spell.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Varies"/>
+    <fieldval field="sSave" value="None and Will negates (object)"/>
+    <fieldval field="sResist" value="No and Yes (object)"/>
+    <usesource source="srcUndark"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Teleport"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sRange" tag="Special"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="WillNegObj"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="YesObj"/>
+    </thing>
+  <thing id="sSorBurrMa" name="Burrow, Mass" description="This spell functions like {i}burrow{/i}, except that it affects multiple creatures.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell" summary="As burrow, but affects 1/level subjects.">
+    <comment>Also Harper Scout 4, Prime Underdark Guide 4</comment>
+    <fieldval field="sDuration" value="1 minute/level (D)"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="srcUndark"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="F" name="Focus" abbrev="{ref s_F}F{ref}"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sWizBurrMa" name="Burrow, Mass" description="This spell functions like {i}burrow{/i}, except that it affects multiple creatures.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell" summary="As burrow, but affects 1/level subjects.">
+    <comment>Also Harper Scout 4, Prime Underdark Guide 4</comment>
+    <fieldval field="sDuration" value="1 minute/level (D)"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="srcUndark"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="F" name="Focus" abbrev="{ref s_F}F{ref}"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sSorMinWar" name="Mineralize Warrior" description="You infuse a willing humanoid with minerals and an elemental spirit of earth.\nThe subject may have no more Hit Dice than you do, and it must be restrained in a coffinlike enclosure of stone for the duration of the casting.\n(Thus, you cannot be the subject of your own spell).\nUpon completion of the spell, the subject is shot through with minerals and gains the mineral warrior template (see Chapter 6).\nThe minerals give its body the look of a petrified creature, though it retains its normal freedom of movement.\nThe newly created mineral warrior is under compulsion to serve you for a year and a day, after which time it is free to go its own way.\nNo matter how many times you use this spell or other spells that grant you control of creatures with the earth subtype, you can control only 2 Hit Dice worth of mineral warriors per caster level.\nIf you try to control mineral warriors in excess of your limit, you gain control of the new creatures normally, but some of the ones from previous castings are released from their compulsion until your total controlled mineral warriors is equal to or below your limit.\n(You choose the specific creatures that are released).\n{b}Material Component:{/b} Gemstones and other expensive minerals worth at least 500 gp per HD of the mineral warrior created.\n{b}XP Cost:{/b} 250 XP per HD of the mineral warrior created.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Hour1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    </thing>
+  <thing id="sWizMinWar" name="Mineralize Warrior" description="You infuse a willing humanoid with minerals and an elemental spirit of earth.\nThe subject may have no more Hit Dice than you do, and it must be restrained in a coffinlike enclosure of stone for the duration of the casting.\n(Thus, you cannot be the subject of your own spell).\nUpon completion of the spell, the subject is shot through with minerals and gains the mineral warrior template (see Chapter 6).\nThe minerals give its body the look of a petrified creature, though it retains its normal freedom of movement.\nThe newly created mineral warrior is under compulsion to serve you for a year and a day, after which time it is free to go its own way.\nNo matter how many times you use this spell or other spells that grant you control of creatures with the earth subtype, you can control only 2 Hit Dice worth of mineral warriors per caster level.\nIf you try to control mineral warriors in excess of your limit, you gain control of the new creatures normally, but some of the ones from previous castings are released from their compulsion until your total controlled mineral warriors is equal to or below your limit.\n(You choose the specific creatures that are released).\n{b}Material Component:{/b} Gemstones and other expensive minerals worth at least 500 gp per HD of the mineral warrior created.\n{b}XP Cost:{/b} 250 XP per HD of the mineral warrior created.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Hour1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    </thing>
+  <thing id="sClrStnMet" name="Stone Metamorphosis" description="You can change an existing piece of rock to another type of rock.\nFor instance, you can make crumblestone into granite, substantially strengthening it.\n(See Chapter 7 for more information on types of stone).\nPrecious and semiprecious gems cannot be manufactured with this spell, and its effect does not change the monetary value of the affected stone object.\n{b}Arcane Material Component:{/b} A grain of talc and a chip of obsidian.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch; object touched, up to 10 cu. ft. + 1 cu. ft./level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    </thing>
+  <thing id="sDrdStnMet" name="Stone Metamorphosis" description="You can change an existing piece of rock to another type of rock.\nFor instance, you can make crumblestone into granite, substantially strengthening it.\n(See Chapter 7 for more information on types of stone).\nPrecious and semiprecious gems cannot be manufactured with this spell, and its effect does not change the monetary value of the affected stone object.\n{b}Arcane Material Component:{/b} A grain of talc and a chip of obsidian.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch; object touched, up to 10 cu. ft. + 1 cu. ft./level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    </thing>
+  <thing id="sSorStnMet" name="Stone Metamorphosis" description="You can change an existing piece of rock to another type of rock.\nFor instance, you can make crumblestone into granite, substantially strengthening it.\n(See Chapter 7 for more information on types of stone).\nPrecious and semiprecious gems cannot be manufactured with this spell, and its effect does not change the monetary value of the affected stone object.\n{b}Arcane Material Component:{/b} A grain of talc and a chip of obsidian.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch; object touched, up to 10 cu. ft. + 1 cu. ft./level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    </thing>
+  <thing id="sWizStnMet" name="Stone Metamorphosis" description="You can change an existing piece of rock to another type of rock.\nFor instance, you can make crumblestone into granite, substantially strengthening it.\n(See Chapter 7 for more information on types of stone).\nPrecious and semiprecious gems cannot be manufactured with this spell, and its effect does not change the monetary value of the affected stone object.\n{b}Arcane Material Component:{/b} A grain of talc and a chip of obsidian.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch; object touched, up to 10 cu. ft. + 1 cu. ft./level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    </thing>
+  <thing id="sClrStMetG" name="Stone Metamorphosis, Greater" description="This spell functions like {i}stone metamorphosis{/i}, except as noted.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch; object touched, up to 10 cu. ft. + 10 cu. ft./level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    </thing>
+  <thing id="sDrdStMetG" name="Stone Metamorphosis, Greater" description="This spell functions like {i}stone metamorphosis{/i}, except as noted.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch; object touched, up to 10 cu. ft. + 10 cu. ft./level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    </thing>
+  <thing id="sSorStMetG" name="Stone Metamorphosis, Greater" description="This spell functions like {i}stone metamorphosis{/i}, except as noted.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch; object touched, up to 10 cu. ft. + 10 cu. ft./level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="8"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    </thing>
+  <thing id="sWizStMetG" name="Stone Metamorphosis, Greater" description="This spell functions like {i}stone metamorphosis{/i}, except as noted.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sRange" value="Touch; object touched, up to 10 cu. ft. + 10 cu. ft./level"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sLevel" tag="8"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    </thing>
+  <thing id="sWizNodGen" name="Node Genesis" description="You can cast this spell only while you are on or under the surface of the earth.\nThe spell&apos;s energy reroutes local ley lines and telluric currents, precipitating the creation of a Class 1 earth node.\nThe new node is 20 feet in diameter, centered on and emanating from the point touched.\nThe rough boundary of the new earth node may enclose a hollow space, an area of solid rock, or a combination of materials.\nIf node genesis is cast on the surface of the earth, at least a portion of the earth node must be contiguous with the natural ground.\nYou have some leeway in determining the initial shape of your earth node&apos;s outer boundary&#151;it doesn&apos;t have to be a perfect sphere, though no portion of its volume can be less than 3 cubic feet.\nThe newly generated earth node retains its Class 1 status for one year.\nThereafter, its diameter increases at a rate of 20 feet per year, until it eventually reaches a diameter equal to 20 feet per caster level you possessed at the time of casting.\nWhen the node&apos;s diameter reaches the low end of the range for the next higher class (see Table 4-1), its class increases by +1.\nFor example, a Class 1 node becomes Class 2 when its diameter reaches 40 feet, and Class 3 when its diameter reaches 120 feet.\nEarth nodes you create with this spell are automatically considered node locked by you.\nThey are otherwise just like natural earth nodes and subject to destruction in the same ways.\n{b}XP Cost:{/b} 5,000 XP.\n{b}Special:{/b} You must have the Node Spellcasting feat to cast this spell.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <comment>Add duration tag for 1 tenday</comment>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Will partial; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Creation"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sCastTime" tag="1Week8h"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sClass" tag="Wizard"/>
+    </thing>
+  <thing id="sSorNodGen" name="Node Genesis" description="You can cast this spell only while you are on or under the surface of the earth.\nThe spell&apos;s energy reroutes local ley lines and telluric currents, precipitating the creation of a Class 1 earth node.\nThe new node is 20 feet in diameter, centered on and emanating from the point touched.\nThe rough boundary of the new earth node may enclose a hollow space, an area of solid rock, or a combination of materials.\nIf node genesis is cast on the surface of the earth, at least a portion of the earth node must be contiguous with the natural ground.\nYou have some leeway in determining the initial shape of your earth node&apos;s outer boundary&#151;it doesn&apos;t have to be a perfect sphere, though no portion of its volume can be less than 3 cubic feet.\nThe newly generated earth node retains its Class 1 status for one year.\nThereafter, its diameter increases at a rate of 20 feet per year, until it eventually reaches a diameter equal to 20 feet per caster level you possessed at the time of casting.\nWhen the node&apos;s diameter reaches the low end of the range for the next higher class (see Table 4-1), its class increases by +1.\nFor example, a Class 1 node becomes Class 2 when its diameter reaches 40 feet, and Class 3 when its diameter reaches 120 feet.\nEarth nodes you create with this spell are automatically considered node locked by you.\nThey are otherwise just like natural earth nodes and subject to destruction in the same ways.\n{b}XP Cost:{/b} 5,000 XP.\n{b}Special:{/b} You must have the Node Spellcasting feat to cast this spell.\n\n{b}Source:{/b} {i}Underdark{/i}, 3.5 Edition" compset="Spell">
+    <comment>Add duration tag for 1 tenday</comment>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Will partial; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="srcUndark"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Creation"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sCastTime" tag="1Week8h"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    </thing>
+  <thing id="rImaskari" name="Deep Imaskari" description="{b}Deep Imaskari{/b}\nSee Underdark, p. 9\nRacial Traits\n&#149; +2 Intelligence, &#150;2 Dexterity. Deep Imaskari are bright and quick to learn arcane lore, but they lack the balance and agility of most other humanoid races.\n&#149; Medium size. Deep Imaskari have no bonuses or penalties due to their size.\n&#149; A deep Imaskari&#146;s base land speed is 30 feet. \n&#149; Low-Light Vision: A deep Imaskari can see twice as far as a human in starlight, moonlight, torchlight, or similar conditions of poor illumination. She retains the ability to distinguish color and detail under these conditions.\n&#149; Spell Clutch (Su): Because the deep Imaskari have studied magic for ages on end, a certain facility with magic has seeped into their blood. Once per day, a deep Imaskari can recall any 1st-level spell that she has already prepared and then cast. The spell is then prepared again, just as if it hadn&#146;t been cast.\n&#149; +4 bonus on Hide checks when underground: A deep Imaskari&#146;s marblelike skin helps her hide in underground terrain.\n&#149; Automatic Languages: Common and Roushoum.\nBonus Languages: Aquan, Dwarven, Elven, Terran, and Undercommon (or by character region).\n&#149; Favored Class: Wizard.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Race">
+    <fieldval field="rDEX" value="-2"/>
+    <fieldval field="rINT" value="+2"/>
+    <fieldval field="rInfFavor" value="Wizard"/>
+    <fieldval field="rAgeMin" value="20"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rHeightMnF" value="52"/>
+    <fieldval field="rWeightMnM" value="126"/>
+    <fieldval field="rWeightMnF" value="86"/>
+    <usesource source="DrowUnderD"/>
+    <tag group="Language" tag="lRoushoum"/>
+    <tag group="AgeC1Dice" tag="4"/>
+    <tag group="AgeC1Size" tag="6"/>
+    <tag group="AgeC2Dice" tag="6"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="3"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="Race" tag="Imaskari" name="Deep Imaskari" abbrev="Imaskari"/>
+    <tag group="Language" tag="lCommon"/>
+    <tag group="WeightDice" tag="1"/>
+    <tag group="WeightSize" tag="6"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <bootstrap thing="lUndercomm"></bootstrap>
+    <bootstrap thing="lAquan"></bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <assignval field="xSumm" value="+4 bonus on Hide checks when underground."/>
+      </bootstrap>
+    <bootstrap thing="xSplClutch"></bootstrap>
+    <bootstrap thing="lElven"></bootstrap>
+    <bootstrap thing="lTerran"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    </thing>
+  <thing id="xSplClutch" name="Spell Clutch" description="Because the deep Imaskari have studied magic for ages on end, a certain facility with magic has seeped into their blood. Once per day, a deep Imaskari can recall any 1st-level spell that she has already prepared and then cast. The spell is then prepared again, just as if it hadn&#146;t been cast." compset="Special" summary="1/day, Can recall any 1st spell than they have prep. and cast.">
+    <usesource source="DrowUnderD"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="rGloaming" name="Gloaming" description="Gloaming Racial Traits\n&#149; &#150;2 Strength, +2 Dexterity, &#150;2 Wisdom, +2 Charisma. Gloamings are lithe but not very strong. Their exotic appearance is appealing to many, but their curiosity sometimes makes them choose courses of action that are less than wise.\n&#149; Outsider: Gloamings are native outsiders (see the Planetouched entry in the FORGOTTEN REALMS Campaign Setting).\n&#149; Small size. A gloaming has a +1 size bonus to Armor Class, a +1 size bonus on attack rolls, and a +4 size bonus on Hide checks, but her lifting and carrying limits are three-quarters of those of a Medium character.\n&#149; A gloaming&#146;s base land speed is 20 feet. A gloaming also has a fly speed of 40 feet with average maneuverability.\n&#149; Light Blindness (Ex): Abrupt exposure to bright light (such as sunlight or a daylight spell) blinds a gloaming for 1 round. In addition, she takes a &#150;1 circumstance penalty on all attack rolls, saves, and checks while operating in bright light. Gloamings are eligible to take the Daylight Adaptation feat from the FORGOTTEN REALMS Campaign Setting.\n&#149; Shadow Spells: Gloamings have a racial predilection for shadow-based spells. They cast illusion (shadow) spells at +1 caster level.\n&#149; Racial Bonuses: A gloaming has a +2 racial bonus on saves against illusion (shadow) spells or effects and a +4 racial bonus on saves against psionic abilities, such as those possessed by mind flayers or yuan-ti. She also gains a +4 racial bonus on Move Silently checks.\n&#149; Low-Light Vision: A gloaming can see twice as far as a human in starlight, moonlight, torchlight, or similar conditions of poor illumination. She retains the ability to distinguish color and detail under these conditions.\n&#149; Luminescence (Ex): As a standard action, a gloaming can make her skin provide illumination equal to that produced by any light source up to and including a torch, or she can mute the glow altogether. A gloaming&#146;s luminescence lasts until she chooses to change it. When a gloaming dies, her luminescence fades to nothing over the course of 10 minutes.\n&#149; A gloaming has Portal Sensitive as a bonus feat.\n&#149; Automatic Language: Undercommon. Bonus Languages: By character region.\n&#149; Favored Class: Sorcerer.\n&#149; Level Adjustment: +2." compset="Race">
+    <fieldval field="rInfFavor" value="Sorcerer"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rSTR" value="-2"/>
+    <fieldval field="rDEX" value="+2"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rCHA" value="+2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rHeightMnF" value="30"/>
+    <fieldval field="rHeightMnM" value="30"/>
+    <fieldval field="rWeightMnF" value="25"/>
+    <fieldval field="rWeightMnM" value="25"/>
+    <fieldval field="rAgeMin" value="13"/>
+    <usesource source="DrowUnderD"/>
+    <tag group="RaceSize" tag="Small11"/>
+    <tag group="Language" tag="lUndercomm"/>
+    <tag group="Race" tag="Gloaming" name="Gloaming" abbrev="Gloaming"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="HeightDice" tag="1"/>
+    <tag group="HeightSize" tag="4"/>
+    <tag group="WeightDice" tag="1"/>
+    <tag group="WeightSize" tag="0"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="4"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="4"/>
+    <bootstrap thing="fPortSens">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Average"/>
+      <autotag group="Value" tag="40"/>
+      </bootstrap>
+    <bootstrap thing="xLightBlin"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+2 vs Illusion (shadow), +4 vs Psionic, +4 Hide."/>
+      <assignval field="CustDesc" value="A gloaming has a +2 racial bonus on saves against illusion (shadow) spells or effects and a +4 racial bonus on saves against psionic abilities, such as those possessed by mind flayers or yuan-ti.  She also gains a +4 racial bonus on Move Silently checks."/>
+      </bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="xShdwSpls"></bootstrap>
+    <bootstrap thing="xLuminesc"></bootstrap>
+    </thing>
+  <thing id="xShdwSpls" name="Shadow Spells" description="Gloamings have a racial predilection for shadow-based spells. They cast illusion (shadow) spells at +1 caster level." compset="Special">
+    <usesource source="DrowUnderD"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xLuminesc" name="Luminescence" description="As a standard action, a gloaming can make her skin provide illumination equal to that produced by any light source up to and including a torch, or she can mute the glow altogether. A gloaming&#146;s luminescence lasts until she chooses to change it. When a gloaming dies, her luminescence fades to nothing over the course of 10 minutes." compset="Special">
+    <usesource source="DrowUnderD"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="fAxeshield" name="Axeshield" description="You know how to defend yourself with a battleaxe.\n\n{b}Prerequisite:{/b} Grimlock\n\n{b}Benefit:{/b} When you wield a battleaxe, you can deflect some blows that would otherwise strike you. In any combat round during which you make a full attack while wielding a battleaxe, you gain a +2 dodge bonus to Armor Class that lasts until your next action.\n\n{b}Special:{/b} A fighter may select Axeshield as one of his fighter bonus feats.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat" summary="+2 dodge bonus to AC after making a full attack with a battleaxe.">
+    <usesource source="srcUndark"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Grimlock required."><![CDATA[tagis[Race.Grimlock] <> 0]]></exprreq>
+    </thing>
+  <thing id="fBowsling" name="Bowslinger" description="You can ready ranged weapons surprisingly quickly.\n\n{b}Prerequisite:{/b} Base attack bonus +1\n\n{b}Benefit:{/b} You gain a +2 bonus on your attack roll when you fire or throw a ranged weapon at a flat-footed opponent.\n\n{b}Special:{/b} A fighter may select Bowslinger as one of his fighter bonus feats.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Base attack bonus +1 required."><![CDATA[child[Attack].field[tAtkBase].value >= 1]]></exprreq>
+    </thing>
+  <thing id="fCausAdapt" name="Caustic Adaptation" description="Long have your ancestors hunted and been hunted in the depths. Natural selection has given your blood an unpalatable, acidic quality.\n\n{b}Prerequisite:{/b} Kuo-toa\n\n{b}Benefit:{/b} A creature that makes a successful bite attack against you takes 1d4 points of acid damage. Creatures immune to poison are not affected.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Kuo-toa required."><![CDATA[tagis[Race.Kuotoa] <> 0]]></exprreq>
+    </thing>
+  <thing id="fCaver" name="Caver" description="The Underdark&apos;s cave systems stretch for thousands of miles below the surface. You are knowledgeable about the secrets of the subterranean world and wise in its ways.\n\n{b}Benefit:{/b} You gain a +2 bonus on Heal checks and Survival checks made in the Underdark.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat" summary="+2 Heal and Survival checks in the Underdark">
+    <usesource source="srcUndark"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fElfhunter" name="Elfhunter" description="Because of your cultural hatred for elves, you have had specific training in how best to fight them.\n\n{b}Prerequisite:{/b} Drow\n\n{b}Benefit:{/b} Choose one subrace of elf. When fighting elves of this kind, you gain a +1 competence bonus on melee damage rolls and on ranged attack rolls made at ranges of up to 30 feet. You also gain the benefit of the Improved Critical feat for the weapon you are using in any such attack. This benefit does not stack with that of the Improved Critical feat.\n\n{b}Special:{/b} You may take this feat multiple times. Its effects do not stack. Each time you take the feat you must choose a new subrace of elf to which it will apply.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Drow required."><![CDATA[hero.tagis[Race.Drow] <> 0]]></exprreq>
+    </thing>
+  <thing id="fEnhAdhesi" name="Enhanced Adhesive" description="The natural adhesive you secrete becomes stickier.\n\n{b}Prerequisite:{/b} Kuo-toa\n\n{b}Benefit:{/b} When your shield is coated with your natural adhesive, it is more difficult than usual for an opponent to avoid becoming stuck to it and to break free once stuck. The DC for the opponent&apos;s Reflex save to avoid getting stuck after an unsuccessful melee attack increases by +2. The DC for the opponent&apos;s Strength check to free itself or its weapon after becoming stuck increases by the same amount.\n\n{b}Normal:{/b} The DC for the Reflex save is 11 + your Constitution modifier. The only way to increase the DC is to increase your Constitution modifier. The DC for the Strength check is normally a flat value that cannot be increased.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat" summary="+2 to the DC for your natural adhesive.">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Kuo-toa required."><![CDATA[tagis[Race.Kuotoa] <> 0]]></exprreq>
+    </thing>
+  <thing id="fFamiliSpl" name="Familiar Spell" description="You are so well acquainted with the spells you have mastered that you can store the prepared spells in the mind of your familiar.\n\n{b}Prerequisite:{/b} Spell Mastery (PH), Ability to acquire a familiar\n\n{b}Benefit:{/b} You may prepare one spell of any level that you have mastered with the Spell Mastery feat in your familiar&apos;s mind instead of your own, treating the extra preparation as if you had one extra spell slot per day, which can be used only for a mastered spell. You can cast this spell normally as long as your familiar is within one square of you. Once cast, the spell is used up, just as if you had held it in your own mind. Your familiar cannot cast this spell itself, even if it is a creature that normally has spellcasting ability.\n\n{b}Special:{/b} You may gain this feat multiple times. Each time you take the feat, your familiar&apos;s mind can hold one additional prepared mastered spell per day.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat" summary="+2 to the DC for your natural adhesive.">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Epic"/>
+    <exprreq message="Spell Mastery required."><![CDATA[#hasfeat[fSpellMas] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGrIllithF" name="Graft Illithid Flesh" description="You can apply illithid grafts to other living creatures or to yourself. (See Illithid Grafts in Chapter 5: Equipment and Magic Items.)\n\n{b}Prerequisite:{/b} Heal (10 ranks), Illithid\n\n{b}Benefit:{/b} You can create illithid grafts and apply them to other living creatures or to yourself. Creating a graft takes one day for each 1,000 gp of its price. To create a graft, you must spend 1/25 of the graft&apos;s price in XP and use up raw materials costing one-half of this price.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat" summary="You can apply illithid grafts to other living creatures or self.">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="ItemCreate"/>
+    <exprreq message="Illithid race required."><![CDATA[tagis[Race.Illithid] <> 0]]></exprreq>
+    <exprreq message="Heal 10 ranks required."><![CDATA[#skillranks[kHeal] >= 10]]></exprreq>
+    </thing>
+  <thing id="fLolthMeat" name="Lolth&apos;s Meat" description="Like all drow raised in cities that are ruled by Lolth&apos;s priestesses, you know that you exist only to provide your goddess with food and pleasure. This knowledge lends you a certain bloodthirsty readiness.\n\n{b}Prerequisite:{/b} Drow\n\n{b}Benefit:{/b} If you kill a living creature that has an Intelligence score of 3 or higher with a melee attack, you gain a +1 morale bonus on attack rolls, damage rolls, and saving throws for the rest of the encounter. If you kill such an opponent either by performing a coup de grace or with a touch spell, you gain a +2 morale bonus on attack rolls, damage rolls, and saving throws for the rest of the encounter. To qualify for this bonus, you must either reduce the target to &#151;10 hp with your blow or kill it with a touch spell (such as slay living).\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="fCategory" tag="ItemCreate"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Drow required."><![CDATA[hero.tagis[Race.Drow] <> 0]]></exprreq>
+    </thing>
+  <thing id="fNodeSplcs" name="Node Spellcasting" description="You have discovered the secret of node magic (see Node Magic in Chapter 4: Magic and Spells).\n\n{b}Prerequisite:{/b} Spellcaster Level 1\n\n{b}Benefit:{/b} You may take full advantage of earth nodes and node magic, as described in Chapter 4: Magic and Spells. This feat grants you access to the various node magic feats and allows you to make a Spellcraft check instead of an Intelligence check to notice nearby nodes and manipulate various node powers.\n\n{b}Normal:{/b} A creature without this feat cannot take other noderelated feats, cannot access an earth node&apos;s full potential, and must make an intelligence check to notice nearby nodes or to manipulate node powers.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="fCategory" tag="NodeMagic" name="Node Magic" abbrev="Node Magic"/>
+    <exprreq message="Caster level 1th required." iserror="no"><![CDATA[herofield[tMaxCaster].value >= 1]]></exprreq>
+    </thing>
+  <thing id="fMetanoSpl" name="Metanode Spell" description="You cast metamagic spells to greater effect in earth nodes than elsewhere (see Node Magic in Chapter 4: Magic and Spells).\n\n{b}Prerequisite:{/b} Node Spellcasting (Und), Spellcaster Level 1\n\n{b}Benefit:{/b} When casting a spell improved by a metamagic feat, you can deduct the class of the earth node layer in which you currently stand from the increased spell level. (The class of the layer does not equal the class of the node unless you are standing in the innermost portion of it.) For example, if you use Maximize Spell to augment the 3rd level spell fireball in the innermost (+1) layer of a Class 1 earth node, you cast the spell as if it were only two levels higher than normal, not three, because the earth node pays one spell level&apos;s worth of the metamagic cost. This feat is most useful to casters who do not prepare their spells (such as bards and sorcerers) and to wizards who rarely leave their earth nodes and can therefore prepare and cast their spells at the adjusted level.\n\nIf you use this feat to reduce the cost of preparing a metamagic spell and then leave the earth node, the spell you prepared becomes unavailable until you return to an earth node layer of at least the same class as the one in which the spell was prepared.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat" summary="You cast metamagic spells in earth nodes with of greater effect.">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <tag group="fCategory" tag="NodeMagic" name="Node Magic" abbrev="Node Magic"/>
+    <exprreq message="Caster level 1st required." iserror="no"><![CDATA[herofield[tMaxCaster].value >= 1]]></exprreq>
+    <exprreq message="Node Spellcasting required."><![CDATA[#hasfeat[fNodeSplcs] <> 0]]></exprreq>
+    </thing>
+  <thing id="fNodeDefen" name="Node Defense" description="You can use the magical power of an earth node to defend yourself from harm.\n\n{b}Prerequisite:{/b} Node Spellcasting (Und) , Spellcaster Level 1\n\n{b}Benefit:{/b} You receive an insight bonus to your Armor Class and saving throws equal to the class of any earth node layer you currently occupy, up to a maximum of +4. For example, if you are inside the middle (+2) layer of a Class 3 earth node, you gain a +2 insight bonus to your AC and saves.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="fCategory" tag="NodeMagic" name="Node Magic" abbrev="Node Magic"/>
+    <exprreq message="Caster level 1th required." iserror="no"><![CDATA[herofield[tMaxCaster].value >= 1]]></exprreq>
+    <exprreq message="Node Spellcasting required."><![CDATA[#hasfeat[fNodeSplcs] <> 0]]></exprreq>
+    </thing>
+  <thing id="fNodeSens" name="Node Sensitive" description="You can perceive an earth node just by passing near it.\n\n{b}Benefit:{/b} You automatically note the presence of any earth node within 30 feet.\n\n{b}Normal:{/b} A creature without this feat that comes within 30 feet of the outermost layer of an earth node can make a DC 20 Intelligence check to note the presence of an earth node. A creature with the Node Spellcasting feat can attempt either an Intelligence check or a Spellcraft check at the same DC to notice the node.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="fNodeStore" name="Node Store" description="You can store a prepared spell in an earth node (see Node Magic in Chapter 4: Magic and Spells).\n\n{b}Prerequisite:{/b} Node Spellcasting (Und), caster level 1st\n\n{b}Benefit:{/b} Each time you take this feat, choose two spells of any level that you know and can cast. If you are a spellcaster who prepares spells, you may now prepare those two spells in addition to your normal spell complement as long as you are in an earth node, just as if you had two extra spell slots per day. These extra prepared spells are stored in the earth node instead of in your mind. You can cast them normally while you are within that earth node, even if you have left it and returned since storing them there. If you are a spellcaster who does not prepare spells, choose two spells that you know. You may now cast those two spells while in that earth node as if you had two extra spell slots per day available. Each such slot can be used only to cast its designated spell; it cannot be used for any other spell (including the other spell designated with this feat). If you leave the node, these extra spell slots become unavailable to you, but you can use them again if you return, provided that you haven&apos;t already used them since the last time you rested. You do not need to designate a specific node in which to store your spells when you choose this feat, but you can have spells stored in only one earth node at a time. You can change the earth node in which your spells are stored by meditating for 1 hour inside the new node you have selected.\n\n{b}Special:{/b} You may gain this feat multiple times. Each time you take the feat, it applies to two new spells.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="fCategory" tag="NodeMagic" name="Node Magic" abbrev="Node Magic"/>
+    <exprreq message="Caster level 1th required." iserror="no"><![CDATA[herofield[tMaxCaster].value >= 1]]></exprreq>
+    <exprreq message="Node Spellcasting required."><![CDATA[#hasfeat[fNodeSplcs] <> 0]]></exprreq>
+    </thing>
+  <thing id="fStoneSoul" name="Stone Soul" description="You were born with a dwarflike, innate sense about rock, stone, and construction.\n\n{b}Prerequisite:{/b} Deep Imaskar or slyth\n\n{b}Benefit:{/b} You gain a +2 bonus on Search checks made to notice unusual stonework, such as sliding walls, stonework traps, new construction (even when built to match the old), unsafe stone surfaces, shaky stone ceilings, and the like. A construction that isn&apos;t stone but is disguised to look like stone also counts as unusual stonework. A character with the Stone Soul feat who merely comes within 10 feet of unusual stonework can make a check as if actively searching.\n\n{b}Special:{/b} You may take this feat only as a 1st-level character.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat" summary=" You gain a +2 bonus on Search checks made to notice unusual stonework.">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Imaskari or Slyth required."><![CDATA[tagis[Race.Imaskari] + tagis[Race.Slyth] <> 0]]></exprreq>
+    </thing>
+  <thing id="fStrngMind" name="Strong Mind" description="You are unusually difficult to affect with psionic powers and mind attacks.\n\n{b}Prerequisite:{/b} WIS 11\n\n{b}Benefit:{/b} You gain a +3 bonus on saving throws against psionic abilities and mind blast attacks. Psionic abilities include the spelllike abilities of monsters such as aboleths, mind flayers, yuan-ti, and any other creatures whose special attacks are described as psionics. Mind blast attacks include the mind flayer&apos;s mind blast ability, as well as any similar supernatural ability (at the DM&apos;s discretion) that uses sheer mental force to stun or disable an opponent.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Wisdom 11 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fTunnelrun" name="Tunnelrunner" description="You can move naturally in the cramped quarters of caves and tunnels.\n\n{b}Prerequisite:{/b} Chitine or grimlock\n\n{b}Benefit:{/b} You ignore the speed reduction for hampered movement when moving in a narrow space (an area smaller than but at least one-half of your space) or a low space (an area shorter than but at least one-half of your height). You also retain your Dexterity bonus to your Armor Class. If the space is both narrow and low, you function as if only one of those conditions applied.\n\n{b}Normal:{/b} In a narrow or low space, a creature without this feat is reduced to one-half normal speed and loses its Dexterity bonus to Armor Class. In a space that is both narrow and low, speed is reduced to one-quarter normal.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <comment>Chitine and Grimlock not tagged.</comment>
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Chitine or Grimlock required."><![CDATA[tagis[Race.Chitine] + tagis[Race.Grimlock] <> 0]]></exprreq>
+    </thing>
+  <thing id="fTunnelfig" name="Tunnelfighter" description="You can fight more naturally in the cramped and close quarters of caves and tunnels than usual.\n\n{b}Prerequisite:{/b} Tunnelrunner (Und) (or) , DEX 13\n\n{b}Benefit:{/b} You ignore the penalty for hampered melee when fighting in a narrow space (an area smaller than but at least one-half of your space) or a low space (an area shorter than but at least one-half of your height) with light or one-handed melee weapons. Furthermore, you take only a &#151;4 circumstance penalty when using a two-handed weapon in such conditions. In a space both narrow and low, you function as if only one of those conditions applied (see Chapter 7: Exploring the Underdark for rules on fighting and moving in cramped spaces). In addition, when fighting in cramped quarters, you do not lose your Dexterity bonus to Armor Class.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Dex 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Tunnelrunner required."><![CDATA[#hasfeat[fTunnelrun] <> 0]]></exprreq>
+    </thing>
+  <thing id="fWisBreCau" name="Wisdom Breeds Caution" description="Not getting into a dangerous situation is generally the wisest course, but if danger is unavoidable, you&apos;re prepared. You rely more on caution and forethought than you do on physical prowess.\n\n{b}Prerequisite:{/b} Slyth or svirfneblin\n\n{b}Benefit:{/b} At 1st level, you may use your Wisdom modifier instead of your Constitution modifier to determine bonus hit points. At each level thereafter, you use your Constitution modifier normally to determine bonus hit points, but you also gain +1 hit point for every point of permanent Wisdom you gain.\n\n{b}Special:{/b} You may take this feat only as a 1st-level character.\n\n{b}Normal:{/b} Your Constitution modifier determines your bonus hit points at every character level.\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Slyth or Svirfnelbin required."><![CDATA[tagis[Race.Gnome] + tagis[Race.Slyth] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPortSens" name="Portal Sensitive" description="You can perceive a portal just by passing near it.\n\n{b}Prerequisite:{/b} Deep Imaskar or gloaming\n\n{b}Benefit:{/b} You can detect an active or inactive portal as if it were a normal secret door (Search DC 20). If you merely pass within 5 feet of a portal, you are entitled to a Search check to notice it as if you were actively looking for it. You also gain a +2 bonus on your caster level check when trying to discern portal properties with the analyze portal spell.\n\n{b}Normal:{/b} Portals can be found only by using analyze portal, detect magic, or the granted power from the Portal domain\n\n{b}Source:{/b} {i}Underdark{/i} 3.5 Edition" compset="Feat">
+    <usesource source="srcUndark"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Deep Imaskari or Gloaming required."><![CDATA[tagis[Race.Imaskari] + tagis[Race.Gloaming] <> 0]]></exprreq>
+    </thing>
+  <thing id="rSlyth" name="Slyth" description="Slyth Racial Traits\n&#149; &#150;2 Strength, +2 Dexterity, +2 Wisdom. Slyths are wise in the ways of nature and reasonably agile, but their amorphous forms are not especially strong.\n&#149; Medium size. Slyths have no bonuses or penalties due to size.\n&#149; A slyth&#146;s base land speed is 30 feet. A slyth in amorphous form (see below) has a swim speed of 30 feet.\n&#149; Alternate Form (Su): As a standard action, a slyth can change shape, assuming an amorphous form. Any equipment the slyth is wearing or carrying transforms to become part of this new form.\nMaterial armor (including natural armor) becomes worthless, though the slyth&#146;s Dexterity bonus, deflection bonus, and any armor bonuses from force effects (for example, from the mage armor spell) still apply. In her amorphous form, she cannot be flanked or stunned and she is immune to critical hits, but she can&#146;t attack or cast spells with verbal, somatic, material, or focus\ncomponents. (This limitation does not rule out spells that the slyth may have prepared using the metamagic feats Eschew Materials, Silent Spell, and Still Spell.) The slyth loses all other supernatural abilities while in amorphous form, and her magic items cease functioning. Her amorphous form is nearly fluid and boneless, enabling her to pass through holes or narrow openings as small as 2 inches in diameter. Resuming her normal form is a full-round action that does not provoke an attack of opportunity.\nA slyth can remain in amorphous form for up to 10 minutes per class level, but after resuming her normal form she cannot change again for as long as she spent in amorphous form.\n&#149; Water Breathing (Ex): A slyth can breathe underwater indefinitely.\n&#149; Immunities (Ex): Because of their shapechanging abilities, slyths are immune to polymorphing and poison.\n&#149; Resistances (Ex): A slyth has sonic resistance 5.\n&#149; Racial Bonuses: A slyth has a +4 racial bonus on Disguise, Escape Artist, and Survival checks.\n&#149; Weapon Familiarity: A slyth may treat flutter blades (see Chapter 5: Equipment and Magic Items) as martial weapons rather than exotic weapons.\n&#149; Automatic Languages: Common and Undercommon. Bonus Languages: Aquan, Elven, Gnome, and Terran (or by character region).\n&#149; Favored Class: Druid.\n&#149; Level Adjustment: +2." compset="Race">
+    <fieldval field="rSTR" value="-2"/>
+    <fieldval field="rDEX" value="+2"/>
+    <fieldval field="rWIS" value="+2"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <fieldval field="rCR" value="+2"/>
+    <fieldval field="rInfAutoLn" value="Common and Undercommon"/>
+    <fieldval field="rAgeMin" value="30"/>
+    <fieldval field="rHeightMnM" value="62"/>
+    <fieldval field="rHeightMnF" value="54"/>
+    <fieldval field="rWeightMnF" value="100"/>
+    <fieldval field="rWeightMnM" value="135"/>
+    <usesource source="srcUndark"/>
+    <tag group="Race" tag="Slyth" name="Slyth" abbrev="Slyth"/>
+    <tag group="Race" tag="stypShChan"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="Language" tag="lAquan"/>
+    <tag group="AgeC1Dice" tag="3"/>
+    <tag group="AgeC1Size" tag="6"/>
+    <tag group="AgeC2Dice" tag="2"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="4"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="Language" tag="lElven"/>
+    <tag group="Language" tag="lGnome"/>
+    <tag group="Language" tag="lTerran"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="6"/>
+    <bootstrap thing="xWatBreath">
+      <assignval field="xSumm" value="A slyth can breathe underwater indefinitely."/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 Disguise, Escape Artist, and Survival."/>
+      </bootstrap>
+    <bootstrap thing="xDamRsSoni"></bootstrap>
+    <bootstrap thing="xImmPoly"></bootstrap>
+    <bootstrap thing="xImmPois"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lUndercomm"></bootstrap>
+    <bootstrap thing="xAlterForm"></bootstrap>
+    <bootstrap thing="xSwim">
+      <autotag group="Value" tag="30"/>
+      <assignval field="xSumm" value="Swim speed applies only while in alternate form."/>
+      </bootstrap>
+    <eval phase="Render" index="2">hero.child[xAlterForm].field[CustDesc].text = &quot;Alternate Form (Su): As a standard action, a slyth can change shape, assuming an amorphous form. Any equipment the slyth is wearing or carrying transforms to become part of this new form.{BR}Material armor (including natural armor) becomes worthless, though the slyth&#146;s Dexterity bonus, deflection bonus, and any armor bonuses from force effects (for example, from the {i}mage armor{/i} spell) still apply. In her amorphous form, she cannot be flanked or stunned and she is immune to critical hits, but she can&#146;t attack or cast spells with verbal, somatic, material, or focus components. (This limitation does not rule out spells that the slyth may have prepared using the metamagic feats Eschew Materials, Silent Spell, and Still Spell.) The slyth loses all other supernatural abilities while in amorphous form, and her magic items cease functioning. Her amorphous form is nearly fluid and boneless, enabling her to pass through holes or narrow openings as small as 2 inches in diameter. Resuming her normal form is a full-round action that does not provoke an attack of opportunity.{BR}A slyth can remain in amorphous form for up to 10 minutes per class level, but after resuming her normal form she cannot change again for as long as she spent in amorphous form.&quot;</eval>
+    <eval phase="PostLevel" priority="5000">#applyresist[xDamRsSoni, 5]</eval>
+    </thing>
+  <thing id="rChitine" name="Chitine" description="The spiderlike chitines exemplify the unnatural changes that can be incorporated into a humanoid with the aid of evil-inspired magic. Once their ancestors were humanoid in form, but their enforced slavery to the drow entailed more than simple execution of duty. The drow of Ched Nasad selectively bred and magically meddled with their slaves, incorporating ghastly &#147;improvements&#148; as well as the results of fumbled experiments. Eventually these alterations became permanent, resulting in a race of spiderlike, four-armed humanoids. \n\n{b}Personality{/b}: The chitines won their independence from their former drow masters in the Year of the Creeping Fang (1305 DR), although drow inattention and boredom played a larger role in their emancipation than active rebellion did. The most desperate and opportunistic chitines slipped away into unguarded passages and made their way to freedom. Those who did not seize the opportunity to escape met a variety of bad ends under the blades and whips of their drow masters. \n\nThe common chitine of Yathchol is a quiet craftsperson concerned primarily with building the next web-based home, tower, or fortification. But the legacy of the drow remains strong in the chitines, and betrayal is expected&#151;nay, almost required&#151;to survive. At best, chitines are opportunistic and self-serving creatures; at worst, they are scheming backstabbers. Chitines who don&#146;t find this way of life fulfilling often leave their villages and strike out on their own, in search of adventure.\n\n{b}Physical Description{/b}: A typical chitine stands just under 4 feet tall and weighs about 85 pounds. His four lean arms are long, and each has an extra joint, allowing a greater range of movement than most humanoids have. His face is humanlike, but his eyes are faceted, and mandibles jut from his mouth. A chitine has mottled gray skin, and his stringy black hair grows in a tangle from his head, extending down his back like the mane of a horse.\n\nA chitine can spin various kinds of webbing through an aperture in his belly. In addition, he constantly secretes an oil that keeps him from becoming stuck in his own web and provides his body with a sheen under some light sources. His palms and feet are covered with hooks that allow him to climb up walls and across ceilings.\n\nThe typical chitine dresses in loose robes or a tunic. The thread for his clothing is usually spun from his own fine silk.\n\n{b}Relations{/b}: Chitines distrust most Underdark races on general principles, and they absolutely refuse to work with drow except when planning a secret, nasty surprise for their former tormenters. A chitine is much more likely to trust upperworld races than Underdark ones, mostly out of ignorance.\n\n{b}Alignment{/b}: The chitines won their freedom from the drow through a strong streak of independence, and this trait has manifested itself in their descendents as a chaotic nature. But because they existed so long without values and a culture of their own, the chitines also picked up many of the evil behaviors of their former drow masters. For instance, chitines cull members of their own race who are judged too weak to survive. Those chitines who break with their villages may learn to temper their outlooks, becoming chaotic neutral or chaotic good.\n\n{b}Religion{/b}: Like their former drow masters, chitines venerate Lolth. But since they revere her mostly out of fear, clerics of Lolth are very rare in this race. \n\n{b}Language{/b}: Chitines speak Undercommon. Bonus languages most often include Abyssal, Common, and Terran.\n\n{b}Names{/b}: Chitine first names tend to be simple, with no more than two syllables. Surnames are often descriptive and related to spiders.\n\n{i}Male Names{/i}: Awa, Caullum, Cyten, Garlome, Kawa, Nullum, Vald.\n{i}Female Names{/i}: Caulwen, Garwen, Neulwen, Qid, Qod, Uelwen.\n{i}Surnames{/i}: Spinner, Lowweb, Shrouder, Backspeaker, Drowtaker." compset="Race">
+    <comment>Why is there a replacement for short sword? No reason, deleted (Done)
+
+Wonky abilities and desc... (Done)</comment>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rInfFavor" value="Rogue"/>
+    <fieldval field="rInfAutoLn" value="Undercommon"/>
+    <fieldval field="rHitDice" value="2"/>
+    <fieldval field="rInfHit" value="2d8 (2 levels of Monstrous Humanoid)"/>
+    <fieldval field="rAttack" value="2"/>
+    <fieldval field="rRef" value="3"/>
+    <fieldval field="rWill" value="3"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <fieldval field="rNumHands" value="4"/>
+    <fieldval field="rHeightMnF" value="32"/>
+    <fieldval field="rWeightMnF" value="47"/>
+    <fieldval field="rHeightMnM" value="37"/>
+    <fieldval field="rWeightMnM" value="67"/>
+    <fieldval field="rHeightMxF" value="38"/>
+    <fieldval field="rHeightMxM" value="40"/>
+    <fieldval field="rWeightMxF" value="33"/>
+    <fieldval field="rWeightMxM" value="38"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <usesource source="srcUndark" parent="pFR" name="Underdark"/>
+    <tag group="Race" tag="typMonHuma" name="Type - Monstrous Humanoid" abbrev="Type - Monstrous Humanoid"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="SpecSource" tag="Chitine" name="Chitine" abbrev="Chitine"/>
+    <tag group="WeightDice" tag="1" name="1" abbrev="1"/>
+    <tag group="WeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="WepProf" tag="wShortswd" name="Shortsword" abbrev="Shortsword"/>
+    <tag group="AgeC1Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC1Size" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC2Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="ClassSkill" tag="kBalance" name="Balance" abbrev="Balance"/>
+    <tag group="ClassSkill" tag="kClimb" name="Climb" abbrev="Climb"/>
+    <tag group="ClassSkill" tag="kCrafTrap" name="Craft: Trapmaking" abbrev="Craft: Trapmaking"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kJump" name="Jump" abbrev="Jump"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="8" name="d8" abbrev="d8"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="Language" tag="lAbyssal" name="Abyssal" abbrev="Abyssal"/>
+    <tag group="Language" tag="lCommon" name="Common" abbrev="Common"/>
+    <tag group="Language" tag="lDwarven" name="Dwarven" abbrev="Dwarven"/>
+    <tag group="Language" tag="lElven" name="Elven" abbrev="Elven"/>
+    <tag group="Language" tag="lGnome" name="Gnome" abbrev="Gnome"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <tag group="Language" tag="lTerran" name="Terran" abbrev="Terran"/>
+    <tag group="Race" tag="Chitine" name="Chitine" abbrev="Chitine"/>
+    <bootstrap thing="xChiDifDis">
+      <autotag group="SpecSource" tag="Chitine"/>
+      </bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="lUndercomm"></bootstrap>
+    <bootstrap thing="typMonsHum">
+      <autotag group="SpecSource" tag="Chitine"/>
+      </bootstrap>
+    <bootstrap thing="xClimb">
+      <autotag group="Value" tag="20"/>
+      <autotag group="SpecSource" tag="Chitine"/>
+      </bootstrap>
+    <bootstrap thing="xDazzled"></bootstrap>
+    <bootstrap thing="fMultiWep">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xChiCliSpi">
+      <autotag group="SpecSource" tag="Chitine"/>
+      </bootstrap>
+    <bootstrap thing="xChiGrpBon">
+      <autotag group="SpecSource" tag="Chitine"/>
+      </bootstrap>
+    <eval phase="First" priority="10500" index="2">hero.child[Attack].field[tGrapple].value += 4</eval>
+    <eval phase="First"><![CDATA[
+hero.child[xDazzled].field[CustDesc].text = "In sunlight or bright magical light (such as a {i}daylight{/i} spell), chitines are dazzled."
+hero.child[xDazzled].field[livename].text = "Sensitive to Sunlight"
+hero.child[xDazzled].field[xSumm].text = "Dazzled by bright sunlight or the {i}daylight{/i} spell."
+
+perform hero.child[xDazzled].delete[SpecSource.Orc]
+perform hero.child[xDazzled].assign[SpecSource.Chitine]
+perform hero.child[xDazzled].assign[AbilType.Extra]]]></eval>
+    </thing>
+  <thing id="xChiCliSpi" name="Climb like the Spider" description="The hooks on a chitine&apos;s palms and feet enable them to climb up walls and across ceilings, as if under the effect of a {i}spider climb{/i} spell." compset="Special" summary="Climb walls &amp; across ceilings, as if under the effect of a {i}spider climb{/i} spell.">
+    <usesource source="srcUndark" parent="pFR" name="Underdark"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Movement" name="Movement" abbrev="Movement"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="xChiDifDis" name="Difficult to Disarm" description="Because of the hooks in a chitine&#146;s palm, he gains a +4 bonus on his opposed check to avoid being disarmed." compset="Special" summary="+4 bonus on opposed checks to avoid being disarmed.">
+    <usesource source="srcUndark" parent="pFR" name="Underdark"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Defense" name="Defense" abbrev="Defense"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="xChiGrpBon" name="Grappling Bonus" description="A chitine&#146;s four arms grant a +4 bonus on grapple checks, which makes him as good a grappler as a Medium creature." compset="Special" summary="+4 bonus on Grapple checks.">
+    <usesource source="srcUndark" parent="pFR" name="Underdark"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="wFlutterbl" name="Flutter Blade" description="This exotic weapon has a serrated blade with a center-mounted hinge and handle. When folded up, it deals piercing damage; when unfolded, it becomes a slashing weapon.  Folding or unfolding a flutter blade is a move action." compset="Weapon">
+    <fieldval field="gSizeCost" value="15"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="srcUndark"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wGroup" tag="rSlyth"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="wEasyRace" tag="Slyth" name="Slyth" abbrev="Slyth"/>
+    </thing>
+  <thing id="wPincStaff" name="Pincer Staff" description="Kuo-toa fighters and whips often employ this two-handed exotic weapon. It has a 10-foot reach and cannot be used against an adjacent opponent. If you hit an opponent within one size category of yourself with a pincer staff, you may attempt to start a grapple as a free action without provoking an attack of opportunity. (For instance, a Small wielder may use a pincer staff to grapple a Tiny or a Medium opponent.) If you get a hold, the staff grabs the opponent and deals its normal damage each round the hold is maintained." compset="Weapon">
+    <fieldval field="gSizeCost" value="20"/>
+    <fieldval field="gWeight" value="15"/>
+    <usesource source="srcUndark"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wGroup" tag="rKuotoa"/>
+    <tag group="wGroup" tag="rKuotouCra"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wType" tag="B"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    </thing>
+  <thing id="wNekode" name="Nekode" description="Special monk weapon.\n\nThis exotic weapon is a strap or glove fitted with spikes in the palm. It is favored both as a weapon and as a climbing tool by many inhabitants of the Underdark. Your opponent cannot use a disarm action to disarm you of a nekode, and an attack with it is considered an armed attack. A nekode is a special monk weapon, so a monk wielding it has special options (see the monk entry in Chapter 3: Classes in the Player&#146;s Handbook).\n\nUsing a pair of nekodes while climbing gives you a +1 circumstance bonus on Climb checks. This bonus stacks with the +2 bonus you get from using a climber&#146;s kit." compset="Weapon">
+    <fieldval field="gWeight" value="2"/>
+    <fieldval field="gSizeCost" value="5"/>
+    <usesource source="srcUndark"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    <tag group="wCritMult" tag="2" name="2" abbrev="2"/>
+    <tag group="wGroup" tag="cHelpMnk" name="Monk" abbrev="Monk"/>
+    <tag group="wMain" tag="1d4_4" name="1d4" abbrev="1d4"/>
+    <tag group="wProfReq" tag="Exotic" name="Exotic" abbrev="Exotic"/>
+    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
+    <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
+    <tag group="wClass" tag="Light" name="Light" abbrev="Light"/>
+    <tag group="wType" tag="S"/>
+    <eval phase="PostAttr">#skillbonus[kClimb] += 1</eval>
+    </thing>
+  <thing id="wSteelFins" name="Steel Fins" description="This exotic weapon is made by the kuo-toa and used primarily by monitors. It resembles a heavy, rubbery glove with sharp steel claws at the tips of the thumb and the middle two fingers. Your opponent cannot use a disarm action to disarm you of this weapon. Steel fins are a special monk weapon, so a monk wielding it has special options (see the monk entry in Chapter 3: Classes in the Player&#146;s Handbook)." compset="Weapon">
+    <fieldval field="gSizeCost" value="15"/>
+    <usesource source="srcUndark"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wGroup" tag="cHelpMnk"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wType" tag="S"/>
+    </thing>
+  <thing id="wDartThrus" name="Dart Thruster" description="This spring-loaded weapon fires darts with great accuracy and force. Deep gnomes favor the dart thruster because it is a missile weapon, not a thrown weapon, so the wielder&#146;s Strength score does not affect the damage roll.\nA dart thruster holds up to three darts at a time, and you can fire multiple darts from it in a full attack action. Reloading the dart thruster is a move action that provokes attacks of opportunity." compset="Weapon">
+    <fieldval field="gSizeCost" value="40"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="srcUndark"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wRangeInc" tag="40"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  </document>

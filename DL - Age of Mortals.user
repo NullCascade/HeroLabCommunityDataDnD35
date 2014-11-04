@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>7-19-10</info_history>
+    </fileinfo>
+  <thing id="cHelpMaA" name="Master Ambassador" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="MaA"/>
+    <fieldval field="cSkills" value="6"/>
+    <usesource source="AgeMortals" parent="pDL" name="Age of Mortals"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="MasAmbass" name="Master Ambassador"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="kAppraise"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kDecScript"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kForgery"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpeakLang"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="AlgnForbid" tag="Chaotic"/>
+    <tag group="cRef" tag="Poor"/>
+    <bootstrap thing="cMaABonLa1"></bootstrap>
+    <bootstrap thing="cMaABonLa2"></bootstrap>
+    <bootstrap thing="cMaABonLa3"></bootstrap>
+    <bootstrap thing="cMaAFavEm1"></bootstrap>
+    <bootstrap thing="cMaAFavEm2"></bootstrap>
+    <bootstrap thing="cMaAFavEm3"></bootstrap>
+    <bootstrap thing="cMaAFavEm4"></bootstrap>
+    <bootstrap thing="cMaAInsAcc"></bootstrap>
+    <bootstrap thing="cMaARetin1"></bootstrap>
+    <bootstrap thing="cMaARetin2"></bootstrap>
+    <bootstrap thing="cMaARetin3"></bootstrap>
+    </thing>
+  <thing id="cMasAmbass" name="Master Ambassador" description="{b}Special{/b}: Must have held a diplomatic office or position in which some courtly or political matter was resolved through the efforts of the character.\n\nThe master ambassador represents the individual who has the ability to conduct sensitive diplomatic missions, handle difficult negotiations, and formulate effective government policy&#150;all skills that are highly valued in a war-torn world. Such a person might be the representative of princes in foreign lands and often hostile courts. He may be acting in the interests of his liege or for his own ends, if the ambition of the master ambassador eclipses his loyalties. Whatever his cause, his skill in diplomacy remains keen.\n\nAll master ambassadors are experienced in political intrigue, in drafting agreements and treaties, and in understanding a foreign mindset. The master ambassador has the ability to lead a kingdom to riches or into ruin with the turn of a phrase.\n\nNobles, rogues and bards make the best master ambassadors because they have substantial skill backgrounds and their abilities complement the diplomatic nature of this class. Clerics, mystics, wizards and sorcerers are also good candidates, though their allegiances may often be divided if they are also bound to an arcane or religious agenda. Wilderness-oriented classes such as barbarians or rangers are rarely suited for the role of a master ambassador, usually due to social requirements.\n\nMaster ambassadors are ideal adventurers because they are always being sent to other lands and regions to engage in diplomatic missions or to act in the service of their liege lords. NPC master ambassadors are often found in foreign courts manipulating the affairs of local nobility or representing a nation&apos;s interests in times of crisis. As the eyes and ears of their rulers, master ambassadors are excellent contacts for adventuring parties seeking to hear news of home." compset="ClassLevel" maxlimit="10">
+    <comment>If we are only a barbarian, we must have literacy....
+
+If we are human, we must speak 3+ languages, otherwise 4+ languages. (Done)</comment>
+    <usesource source="AgeMortals"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpMaA"></bootstrap>
+    <link linkage="helper" thing="cHelpMaA"/>
+    <exprreq message="Bluff 4 ranks required."><![CDATA[#skillranks[kBluff] >= 4]]></exprreq>
+    <exprreq message="Diplomacy 8 ranks required."><![CDATA[#skillranks[kDiplomacy] >= 8]]></exprreq>
+    <exprreq message="Gather Information 4 ranks required."><![CDATA[#skillranks[kGatherInf] >= 4]]></exprreq>
+    <exprreq message="Knowledge (nobility &amp; royalty) 8 ranks required."><![CDATA[#skillranks[kKnowNoble] >= 8]]></exprreq>
+    <exprreq message="Sense Motive 8 ranks required."><![CDATA[#skillranks[kSenseMot] >= 8]]></exprreq>
+    <prereq message="Able to speak, read, and write in two languages other than Common and own racial language.">
+      <validate><![CDATA[~ If we have only Barbarian levels, we must be literate (have 1 rank in the literacy skill)
+if (hero.tagcount[Classes.Barbarian] = hero.tagcount[Classes.?]) then
+   doneif (hero.child[kLiterBbn].field[kUserRanks].value < 1)
+endif
+
+~ Otherwise, only Humans & those without common as a default start off with 1 language, they must have 3 total. Other races have 2 languages to start with, and must total 4.
+  if (hero.tagis[Race.Human] <> 0) then
+    var result as number
+      ~ Count how many languages we have.
+      foreach pick in hero from BaseLang where "thingid.?"
+        result += 1
+      nexteach
+    validif (result >= 3)
+    doneif (result >= 3)
+  endif
+
+  if (hero.tagis[Hero.NoDefComm] <> 0) then
+    var result2 as number
+      ~ Count how many languages we have.
+      foreach pick in hero from BaseLang where "thingid.?"
+        result2 += 1
+      nexteach
+    validif (result2 >= 3)
+    doneif (result2 >= 3)
+  endif
+
+    var result3 as number
+      ~ Count how many languages we have.
+      foreach pick in hero from BaseLang where "thingid.?"
+        result3 += 1
+      nexteach
+    validif (result3 >= 4)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cMaAFavEm1" name="Favored Embassy" description="A master ambassador becomes intimately familiar with the political arenas to which she is assigned, and learns to adjust to the unique customs and quirks of courtly life. Beginning at 1st level, the master ambassador chooses one politcal environment, usually the capital city of a kingdom, to which she has been assigned as an ambassador. Whenever she is in the chosen environment, she gains a +2 bonus to all Diplomacy, Gather Information, Knowledge (nobility and royalty) and Sense Motive checks.\n\nAt 4th level, 7th level, and 10th level the master ambassador may add additional favored embassies, or increase the bonus of an existing embassy by +2. A master ambassador may also attempt to abandon an existing embassy in favor of a different one. This process takes a month, during which time the master ambassador loses all favored embassy bonuses in the court that she is abandoning. The master ambassador must then make a successful Diplomacy check (DC 20 + former favored embassy bonus). Success indicates that she has established a new favored embassy with a bonus equal to that of the previous favored embassy.\n\nEven in times of war, conflict and revolution, the master ambassador does not lose her favored embassy bonus, due to her keen understanding of the changing political climate. However, the difficulty of any diplomatic actions in such an environment may worsen." compset="ClSpecial" summary="+2 bon to Diplomacy, Gather Info, Know (Noble) &amp; Sense Mot in chosen arena.">
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    <tag group="Helper" tag="OptDomain"/>
+    <tag group="Helper" tag="NeedDomain"/>
+    </thing>
+  <thing id="cMaAInsAcc" name="Insightful Acclimation" description="A master ambassador needs to be receptive to new and different ideas, cultures and beliefs in order to have any success in her career. Whenever she is interacting with somebody from a different culture, race, political background or religion than her own, she may attempt a Sense Motive check to gather or assemble information from the individual&apos;s body language, non-verbal cues, attitude, and cultural quirks.\n\nThis resembles a bard&apos;s bardic knowledge ability, but is more immediate and direct, and requires at least ten minutes of engaged conversation or close observation of the individual to work. The DC of the Sense Motive check depends on the kind of information the master ambassador is trying to learn, and is summarized below. The information gained must have some cultural, local, or tradition-related context, and will rarely be more than a few key points, but is often enough to give the master ambassador a sense of the individual&apos;s background.\n\n{b}DC{/b} &#150;&#150; {b}Type of Knowledge{/b}\n10 &#150;&#150; Common, known by at least a substantial minority of the subject&apos;s culture.\n20 &#150;&#150; Uncommon but available, privately known or of some relevance to the subject&apos;s culture\n25 &#150;&#150; Obscure, carefully-guarded or somewhat unfamiliar to subject&apos;s culture\n30 &#150;&#150; Extremely obscure, possibly highly secret or taboo in subject&apos;s culture" compset="ClSpecial" summary="10 min, use Sense Motive to determine cultural information about target.">
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cMaARetin1" name="Retinue +1" description="Most master ambassadors choose to travel with a support staff that may consist of aides, bodyguards, experts, and advisors. At 2nd level the master ambassador effectively gains the Leadership feat, and her leadership score gains a +1 bonus. This bonus increases to +2 at 5th level and +3 at 8th level. If the master ambassador already has the Leadership feat, she still gains the leadership score bonus but gains no additional benefit." compset="ClSpecial" summary="Gain listed bonus to Leadership score.">
+    <comment>xSumm (Done)</comment>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <bootstrap thing="fLeader">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.MasAmbass >=2]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[if (field[xTotalLev].value >= 8) then
+   field[livename].text = "Retinue +3"
+elseif (field[xTotalLev].value >= 5) then
+   field[livename].text = "Retinue +2"
+else
+   field[livename].text = "Retinue +1"
+endif]]></eval>
+    </thing>
+  <thing id="cMaABonLa1" name="Bonus Language" description="The master ambassador needs to be extremely well versed in languages in order to carry out her duties in foreign courts. At 3rd level, and again at 6th and 9th levels, she can choose a new language." compset="ClSpecial" summary="Gain an additional language known.">
+    <comment>Eval (Done)
+
+Test?</comment>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[if (field[xTotalLev].value >= 9) then
+   herofield[tLangsSpk].value += 3
+elseif (field[xTotalLev].value >= 6) then
+   herofield[tLangsSpk].value += 2
+elseif (field[xTotalLev].value >= 3) then
+   herofield[tLangsSpk].value += 1
+endif]]></eval>
+    </thing>
+  <thing id="cMaABonLa2" name="Bonus Language" description="The master ambassador needs to be extremely well versed in languages in order to carry out her duties in foreign courts. At 3rd level, and again at 6th and 9th levels, she can choose a new language." compset="ClSpecial" summary="Gain an additional language known.">
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cMaABonLa3" name="Bonus Language" description="The master ambassador needs to be extremely well versed in languages in order to carry out her duties in foreign courts. At 3rd level, and again at 6th and 9th levels, she can choose a new language." compset="ClSpecial" summary="Gain an additional language known.">
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cMaAFavEm2" name="Favored Embassy" description="A master ambassador becomes intimately familiar with the political arenas to which she is assigned, and learns to adjust to the unique customs and quirks of courtly life. Beginning at 1st level, the master ambassador chooses one politcal environment, usually the capital city of a kingdom, to which she has been assigned as an ambassador. Whenever she is in the chosen environment, she gains a +2 bonus to all Diplomacy, Gather Information, Knowledge (nobility and royalty) and Sense Motive checks.\n\nAt 4th level, 7th level, and 10th level the master ambassador may add additional favored embassies, or increase the bonus of an existing embassy by +2. A master ambassador may also attempt to abandon an existing embassy in favor of a different one. This process takes a month, during which time the master ambassador loses all favored embassy bonuses in the court that she is abandoning. The master ambassador must then make a successful Diplomacy check (DC 20 + former favored embassy bonus). Success indicates that she has established a new favored embassy with a bonus equal to that of the previous favored embassy.\n\nEven in times of war, conflict and revolution, the master ambassador does not lose her favored embassy bonus, due to her keen understanding of the changing political climate. However, the difficulty of any diplomatic actions in such an environment may worsen." compset="ClSpecial" summary="+2 bon to Diplomacy, Gather Info, Know (Noble) &amp; Sense Mot in chosen arena.">
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    <tag group="Helper" tag="NeedDomain"/>
+    <tag group="Helper" tag="OptDomain"/>
+    </thing>
+  <thing id="cMaAFavEm3" name="Favored Embassy" description="A master ambassador becomes intimately familiar with the political arenas to which she is assigned, and learns to adjust to the unique customs and quirks of courtly life. Beginning at 1st level, the master ambassador chooses one politcal environment, usually the capital city of a kingdom, to which she has been assigned as an ambassador. Whenever she is in the chosen environment, she gains a +2 bonus to all Diplomacy, Gather Information, Knowledge (nobility and royalty) and Sense Motive checks.\n\nAt 4th level, 7th level, and 10th level the master ambassador may add additional favored embassies, or increase the bonus of an existing embassy by +2. A master ambassador may also attempt to abandon an existing embassy in favor of a different one. This process takes a month, during which time the master ambassador loses all favored embassy bonuses in the court that she is abandoning. The master ambassador must then make a successful Diplomacy check (DC 20 + former favored embassy bonus). Success indicates that she has established a new favored embassy with a bonus equal to that of the previous favored embassy.\n\nEven in times of war, conflict and revolution, the master ambassador does not lose her favored embassy bonus, due to her keen understanding of the changing political climate. However, the difficulty of any diplomatic actions in such an environment may worsen." compset="ClSpecial" summary="+2 bon to Diplomacy, Gather Info, Know (Noble) &amp; Sense Mot in chosen arena.">
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    <tag group="Helper" tag="NeedDomain"/>
+    <tag group="Helper" tag="OptDomain"/>
+    </thing>
+  <thing id="cMaAFavEm4" name="Favored Embassy" description="A master ambassador becomes intimately familiar with the political arenas to which she is assigned, and learns to adjust to the unique customs and quirks of courtly life. Beginning at 1st level, the master ambassador chooses one politcal environment, usually the capital city of a kingdom, to which she has been assigned as an ambassador. Whenever she is in the chosen environment, she gains a +2 bonus to all Diplomacy, Gather Information, Knowledge (nobility and royalty) and Sense Motive checks.\n\nAt 4th level, 7th level, and 10th level the master ambassador may add additional favored embassies, or increase the bonus of an existing embassy by +2. A master ambassador may also attempt to abandon an existing embassy in favor of a different one. This process takes a month, during which time the master ambassador loses all favored embassy bonuses in the court that she is abandoning. The master ambassador must then make a successful Diplomacy check (DC 20 + former favored embassy bonus). Success indicates that she has established a new favored embassy with a bonus equal to that of the previous favored embassy.\n\nEven in times of war, conflict and revolution, the master ambassador does not lose her favored embassy bonus, due to her keen understanding of the changing political climate. However, the difficulty of any diplomatic actions in such an environment may worsen." compset="ClSpecial" summary="+2 bon to Diplomacy, Gather Info, Know (Noble) &amp; Sense Mot in chosen arena.">
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    <tag group="Helper" tag="OptDomain"/>
+    <tag group="Helper" tag="NeedDomain"/>
+    </thing>
+  <thing id="cMaARetin2" name="Retinue +2" description="Bonus to Leadership increases." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cMaARetin3" name="Retinue +3" description="Bonus to Leadership increases." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpMaA"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHelpWaW" name="War Wizard" compset="ClassHelp" uniqueness="unique">
+    <comment>DONE!!!</comment>
+    <fieldval field="cAbbr" value="WaW"/>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="cHDSides" value="4"/>
+    <arrayval field="cSpecial" index="1" value="Armored spellcasting (-5%), metamagic"/>
+    <arrayval field="cSpecial" index="2" value="Arcane aegis (2 allies), battle magic +2"/>
+    <arrayval field="cSpecial" index="3" value="Armored spellcasting (-10%), metamagic"/>
+    <arrayval field="cSpecial" index="4" value="Arcane aegis (3 allies), battle magic +3"/>
+    <arrayval field="cBonFtTot" index="1" value="1"/>
+    <arrayval field="cBonFtTot" index="3" value="2"/>
+    <arrayval field="cSpell" index="0" value="+1 level of existing class"/>
+    <arrayval field="cSpell" index="1" value="+1 level of existing class"/>
+    <arrayval field="cSpell" index="2" value="+1 level of existing class"/>
+    <arrayval field="cSpell" index="3" value="+1 level of existing class"/>
+    <arrayval field="cSpell" index="4" value="+1 level of existing class"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="3"/>
+    <arrayval field="cMagLevTot" index="3" value="4"/>
+    <arrayval field="cMagLevTot" index="4" value="5"/>
+    <arrayval field="cSpecial" index="0" value="Arcane aegis (1 ally), battle magic +1"/>
+    <usesource source="AgeMortals"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kHeal"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="fInclude" tag="fEmpSpell"/>
+    <tag group="fInclude" tag="fEnlSpell"/>
+    <tag group="fInclude" tag="fMaxSpell"/>
+    <tag group="fInclude" tag="fWidenSpl"/>
+    <tag group="Classes" tag="WarWizard" name="War Wizard"/>
+    <tag group="cAttack" tag="Poor"/>
+    <bootstrap thing="cWaWArcAe3"></bootstrap>
+    <bootstrap thing="cWaWArmSp1"></bootstrap>
+    <bootstrap thing="cWaWArmSp2"></bootstrap>
+    <bootstrap thing="cWaWBatMa1"></bootstrap>
+    <bootstrap thing="cWaWBatMa2"></bootstrap>
+    <bootstrap thing="cWaWBatMa3"></bootstrap>
+    <bootstrap thing="cWaWMetaM1"></bootstrap>
+    <bootstrap thing="cWaWMetaM2"></bootstrap>
+    <bootstrap thing="cWaWArcAe1"></bootstrap>
+    <bootstrap thing="cWaWArcAe2"></bootstrap>
+    </thing>
+  <thing id="cWarWizard" name="War Wizard" description="{i}&quot;I don&apos;t care about your name, Red. I don&apos;t want to know your name. If you survive your first three or so battles, then maybe I&apos;ll learn your name. Not before. I used to learn the names, but it was a goddamned waste of time. Soon as I&apos;d get to know a puke, he&apos;d up and die on me. These days I don&apos;t bother.&quot;{/i}\n&#150; Horkin, Master-At-Wizardry\n{i}Brothers in Arms by Margaret Weis &amp; Don Perrin{/i}\n\nWar mages are the masters of magical warfare, using their arcane might to turn the tide of battle. War mages use their talents for a variety of causes and against a variety of foes, dating back to the time of Magius and beyond.\n\nWar mages are found in many groups throughout Ansalon, whether they are White Robed Mages fighting for the Whitestone forces, Black Robed Mages fighting for the dragonarmies, Thorn Knights in the service of the Knights of Takhisis, or Legion Sorcerers fighting against the forces of the Dragon Overlords. War mages may also be independant operators, acting as mercenaries, joining the ranks of various military organizations.\n\nWizards and sorcerers are the most common classes that take the war mage prestige class. Sorcerers are valued for their ability to cast spells on the fly, and to not be bound by a spellbook. Wizards are valued for the variety of spells they can cast. Bards can also take the war mage prestige class, singing war ballads to inspire their allies while also using magic in their defense.\n\nThe mage Raistlin Majere once studied as a war mage when he and his brother Caramon served as mercenaries. Perhaps the most famous of all war mages is the wizard Magius, who fought at Huma&apos;s side during the Third Dragonwar." compset="ClassLevel" maxlimit="5">
+    <usesource source="AgeMortals"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpWaW"></bootstrap>
+    <link linkage="helper" thing="cHelpWaW"/>
+    <exprreq message="Spellcraft 8 ranks required."><![CDATA[#skillranks[kSpellcr] >= 8]]></exprreq>
+    <exprreq message="Combat Casting required."><![CDATA[#hasfeat[fComCast] <> 0]]></exprreq>
+    <exprreq message="Eschew Materials required."><![CDATA[#hasfeat[fEschewMat] <> 0]]></exprreq>
+    <exprreq message="Weapon Focus required."><![CDATA[#hasfeat[fWepFoc] <> 0]]></exprreq>
+    <exprreq message="Ability to cast 3rd level Arcane spells required."><![CDATA[tagcount[Hero.Arcane] >= 3 + 1]]></exprreq>
+    <exprreq message="Concentration 8 ranks required."><![CDATA[#skillranks[kConcent] >= 8]]></exprreq>
+    </thing>
+  <thing id="cWaWArcAe1" name="Arcane Aegis" description="The war mage may designate one ally within 30 ft and add his Charisma modifier (if positive) as a morale bonus to the ally&apos;s AC. Every other level (at 3rd and at 5th level) the number of allies so aided increases by 1." compset="ClSpecial" summary="Grant X allies in 30 ft +Y morale bon to AC.">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[var bonus as number
+var level as number
+level = field[xTotalLev].value
+
+if (level >= 5) then
+  bonus = 3
+  field[livename].text = "Arcane Aegis (3 allies)"
+elseif (level >= 3) then
+  bonus = 2
+  field[livename].text = "Arcane Aegis (2 allies)"
+else
+  bonus = 1
+  field[livename].text = "Arcane Aegis (1 ally)"
+endif
+
+field[xSumm].text = "Grant " & bonus & " allies in 30 ft +" & hero.child[aCHA].field[aModBonus].value & " morale bon to AC."]]></eval>
+    </thing>
+  <thing id="cWaWBatMa1" name="Battle Magic" description="At 1st level, the War Mage increases the effectiveness of his combat spells. Any spell cast by the War Mage that causes damage gains a +1 bonus hit point per die of damage. At 3rd level, this bonus increases to +2, and at 5th level, this bonus increases to +3." compset="ClSpecial" summary="Spells dealing Hp dam gain +X dam bonus per die.">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[var bonus as number
+var level as number
+level = field[xTotalLev].value
+
+if (level >= 5) then
+  bonus = 3
+elseif (level >= 3) then
+  bonus = 2
+else
+  bonus = 1
+endif
+
+field[xSumm].text = "Spells dealing Hp dam gain +" & bonus & " dam bonus per die."]]></eval>
+    </thing>
+  <thing id="cWaWArmSp1" name="Armored Spellcasting -5%" description="A war mage is better able than other characters to cast arcane spells while wearing armor. At 2nd level, the war mage reduces the arcane spell failure chance for any armor he wears by -5%. At 4th level, this ability increases to -10%. This ability stacks with the benefits of other classes that have this ability, such as the Knight of the Thorn. (Note that this does not lift the armor restrictions of other classes, such as Wizards of High Sorcery.)" compset="ClSpecial" summary="Arcane spell failure chance from armor is reduced.">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <bootstrap thing="xArcFailRe">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.WarWizard >= 2]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cWaWMetaM1" name="Metamagic" description="A war mage learns to use his spells to maximum effectiveness against his enemies. At 2nd level and again at 4th, the war mage gains a bonus metamagic feat, selected from the following list: Empower Spell, Enlarge Spell, Maximize Spell, and Widen Spell." compset="ClSpecial" summary="Gain a bonus metamagic feat from a small list.">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    </thing>
+  <thing id="cWaWMetaM2" name="Metamagic" description="Gain another bonus metamagic feat from a small list." compset="ClSpecial">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    </thing>
+  <thing id="cWaWArmSp2" name="Armored Spellcasting -10%" description="The spell failure reduction increases." compset="ClSpecial">
+    <comment><![CDATA[if (field[xTotalLev].value >= 4) then
+  foreach pick in hero from BaseArmor where "EquipType.Armor"
+    each.field[mArcFail].value -= 5
+  nexteach
+endif]]></comment>
+    <usesource source="AgeMortals"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <bootstrap thing="xArcFailRe">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.WarWizard >= 4]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cWaWArcAe2" name="Arcane Aegis (2 allies)" description="Arcane Aegis affects an additional ally." compset="ClSpecial">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    </thing>
+  <thing id="cWaWArcAe3" name="Arcane Aegis (3 allies)" description="Arcane Aegis affects an additional ally." compset="ClSpecial">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    </thing>
+  <thing id="cWaWBatMa2" name="Battle Magic +2" description="Battle magic&apos;s damage bonus increases." compset="ClSpecial">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    </thing>
+  <thing id="cWaWBatMa3" name="Battle Magic +3" description="Battle magic&apos;s damage bonus increases." compset="ClSpecial">
+    <usesource source="AgeMortals"/>
+    <tag group="SpecSource" tag="cHelpWaW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    </thing>
+  <thing id="xArcFailRe" name="Armor Arcane Fail Reduction" compset="Special">
+    <eval phase="PreLevel" priority="2500"><![CDATA[
+  foreach pick in hero from BaseArmor where "EquipType.Armor"
+    each.field[mArcFail].value -= 5
+  nexteach]]></eval>
+    </thing>
+  </document>

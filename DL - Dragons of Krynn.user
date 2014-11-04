@@ -1,0 +1,1472 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>07-19-11 Lawful_G
+Modified Baaz and Bozak to have 2 claw attacks instead of 1. Also adjusted the custom description Evals and xSumms where appropriate.
+
+02-04-11 Lawful_G
+Moved Death Throes ability to the Core Monster Powers file, since used for Balor and Frost Wyrm as well, gave it a DC first.
+Adjusted Aurak to new abilities.
+
+12-26-10 Lawful G
+Change Poison
+
+12-24-10 Lawful G
+Switched to new spellcasting,
+Modified Aurak breath Weapon DC to give +2 racial bon,
+Aurak Breath Weapon also now uses the standard breath Weapon special.
+Changed Death throe ability to be Supernatural.
+
+u6-24-10</info_history>
+    <info_todo>Draconians are missing some of their Immunities (Sleep, and Paralysis) from Dragon Type.
+
+Check DLCS, should Aurak Breath weapon get +2 racial DC?
+Bozak and Sivak Death Throe also seems to be getting +2 racial bonus.
+Change Kapak Saliva abiliy to only note that can lick weapon to envenom for males, add the general poison ability and hide it if gender is female.
+Change Death Throe abilities to use Value field and set up with DC in name... mod each race to eliminate the DC in xSumm
+Move Death throe into general monster powers... since Frost Wyrm also has it.
+Replace Sivak Trip Power with General Trip Power (like wolves have)
+
+Make the Racial Classes on pg 90-95
+
+Create the Noble Draconian races</info_todo>
+    </fileinfo>
+  <thing id="rGallop" name="Gallop" description="Winged dragonians are exceptionally swift and gain Run as a bonus feat" compset="Special" summary="Gain Run as bonus feat.">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="rGlide" name="Glide" description="Winged draconians can use thier wings to glide, negating any damage from a fall of any height. They can also travel horizontally up to four times the vertical distance they descend." compset="Special" summary="Negate fall damage, travel horizontally 4x distance fallen.">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="rDrcInsp" name="Inspired by Dragons" description="Draconians are drawn to dragons and revere them. When under the command of a true dragon whose alignment is within one step of thier own, or when entering a battle under the command of such a dragon, draconians recieve a +1 morale bonus on all attacks and saving throws." compset="Special" summary="+1 morale bon on attacks/saves when commanded by similar align dragons.">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="rDrcLowMet" name="Low Metabolism" description="Draconians can survive on one-tenth the food and water it takes to sustain a human." compset="Special" summary="1/10 food and water requirements">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Resist"/>
+    </thing>
+  <thing id="rDracBozak" name="Draconian, Bozak" description="All base draconians possess the following racial traits:\n&#149; Dragon: Draconians are creatures of the dragon type. They are immune to paralysis and magic sleep effects, and have both darkvision (60-foot range) and low-light vision.\n&#149; Disease Immunity (Ex): Draconians are immune to all diseases.\n&#149; Gallop: Winged draconians are exceptionally swift, and gain Run as a bonus feat.\n&#149; Glide (Ex): Winged draconians can use their wings to glide, negating any damage from a fall of any height. They can also travel horizontally up to four times the vertical distance they descend.\n&#149; Inspired by Dragons (Ex): Draconians are drawn to dragons and revere them. When under the command of a true dragon whose alignment is within one step of their own, or when entering a battle under the command of such a dragon, draconians receive a +1 morale bonus on all attacks and saving throws.\n&#149; Low Metabolism: Draconians can survive on one-tenth the food and water it takes to sustain a human.\n\nBozaks possess the following racial traits in addition to the draconian racial traits:\n&#149; +2 Strength, +2 Intelligence, +2 Charisma.\n&#149; Bozak base land speed is 30 feet.\n&#149; Racial Hit Dice: A bozak begins with four levels of dragon, which provide 4d12 Hit Dice, a base attack bonus of +4, and base saving throw bonuses of Fort +4, Ref +4, and Will +4. A bozak character receives maximum hit points for its first dragon Hit Die and rolls all other Hit Dice normally. Bozaks with class levels add their class attack and save bonuses to their racial attack and save bonuses.\n&#149; Racial Skills: A bozak&#146;s dragon levels give it skill points equal to 7 x (6 + Int modifier, minimum 1). Its class skills are Bluff, Concentration, Diplomacy, Intimidate, Knowledge (arcana), Listen, Search, Spellcraft, and Spot. A bozak character does not receive the x4 multiplier for skill points acquired from its first class level.\n&#149; Racial Feats: A bozak&#146;s dragon levels give it two feats. Bozaks gain Martial Weapon Proficiency (longbow, short sword) and Simple Weapon Proficiency as bonus feats.\n&#149; Natural Weapons: 2 claws (1d4) and bite (1d4). A bozak&#146;s primary natural weapons are its claws.\n&#149; +8 natural armor bonus.\n&#149; Death Throe (Su): When a bozak dies, its scaly flesh shrivels and crumbles from its bones in a cloud of dust. The bones immediately explode, dealing 1d6 points of damage to all affected creatures within a 10-foot radius. Affected creatures can attempt a Reflex save (DC 14 + the bozak&#146;s Con modifier) for half damage. Bozaks can only be restored to life through the use of a {i}resurrection{/i}, {i}true resurrection{/i}, or {i}wish{/i} spell.\n&#149; Sorcerer Abilities: A bozak has the spellcasting ability of a 4th-level sorcerer. A bozak that takes additional levels in sorcerer adds its innate sorcerer level to its class level to determine its caster level, spells known, and spells per day. Bozaks do not gain familiars unless they take levels in a class which grants them the ability to summon a familiar.\n&#149; Spell resistance equal to 14 + class levels.\n&#149; Automatic Language: Common. \nBonus Languages: Draconic, Goblin, Nerakese, Nordmaarian, Ogre.\n&#149; Favored Class: Sorcerer.\n&#149; Level Adjustment: +3. A bozak has an effective character level (ECL) of 7 + its class levels." compset="Race">
+    <comment>DONE!!!</comment>
+    <fieldval field="rInfFavor" value="Sorceror"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="rInfHit" value="4d12 Hit Dice (4 levels of  Dragon)"/>
+    <fieldval field="rHitDice" value="4"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rSkillMult" value="7"/>
+    <fieldval field="rAC" value="8"/>
+    <fieldval field="rFort" value="4"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rAgeMin" value="5"/>
+    <fieldval field="rHeightMnM" value="64"/>
+    <fieldval field="rHeightMxM" value="80"/>
+    <fieldval field="rWeightMnF" value="100"/>
+    <fieldval field="rWeightMxF" value="224"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="rWeightMxM" value="248"/>
+    <fieldval field="rSTR" value="2"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rHeightMnF" value="62"/>
+    <fieldval field="rHeightMxF" value="78"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="cMagicLev" value="4"/>
+    <usesource source="DOK"/>
+    <tag group="SpecSource" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="WepProf" tag="wBite"/>
+    <tag group="WepProf" tag="wClaw"/>
+    <tag group="Race" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="Language" tag="lDraconic"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="WepProf" tag="wLongbow"/>
+    <tag group="WepProf" tag="wShortswd"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Language" tag="lNerakese"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="Bozak"/>
+    <tag group="WepProf" tag="wCompLong"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="8"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="Language" tag="lNordmaar"/>
+    <tag group="Race" tag="typDragon"/>
+    <tag group="Helper" tag="ExtraRace"/>
+    <tag group="SplLookup" tag="cHelpSor"/>
+    <tag group="Language" tag="lOgre"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rGallop">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rGlide">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcLowMet">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcInsp">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="xImmDis">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="xDeathThro">
+      <autotag group="SpecSource" tag="Draconian"/>
+      <assignval field="xSumm" value="On death bones explode, 1d6 damage to all within 10 ft (Ref half)."/>
+      </bootstrap>
+    <bootstrap thing="rBozNatSpe">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="fRun"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="typDragon">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Helper" tag="NatSecond"/>
+      </bootstrap>
+    <eval phase="Render" index="3">
+   ~ Set the custom description of our Death throes ability.
+   hero.child[xDeathThro].field[CustDesc].text = &quot;When a bozak dies, its scaly flesh shrivels and crumbles from its bones in a cloud of dust. The bones immediately explode, dealing 1d6 points of damage to all affected creatures within a 10-foot radius. Affected creatures can attempt a Reflex save (DC 14 + the bozak&#146;s Con modifier) for half damage. Bozaks can only be restored to life through the use of a {i}resurrection{/i}, {i}true resurrection{/i}, or {i}wish{/i} spell.&quot;</eval>
+    <eval phase="PostLevel" index="2">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 10
+      #applysr[damage]</eval>
+    </thing>
+  <thing id="rBozNatSpe" name="Natural Spellcasting" description="You cast spells as a 4th level sorceror. This spellcasting stacks with levels of sorceror that you take for the purposes of Caster level, Spells per day, and Spells known, but not for Familiars." compset="Special" summary="Cast spells as a 4th level Sorceror">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="rKDraSkill" name="Racial Skill Bonuses" description="+8 racial bonus to Move Silently checks" compset="Special" summary="+8 to Move Silently">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="rSivShapeS" name="Shapeshift" description="A male sivak can assume the form of a Large or smaller humanoid that it has just killed. The shapeshift is a standard action that must be performed within one round of killing the victim. The sivak&#146;s appearance and voice are an exact match of its victim&#146;s but the sivak does not gain the memories, skills, or spell use of its victim. The sivak can remain in its alternate form until it chooses to assume the form of a new victim or it returns to its natural form." compset="Special" summary="Assume form of Large or smaller humanoid just killed">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="rDracKapak" name="Draconian, Kapak" description="All base draconians possess the following racial traits:\n&#149; Dragon: Draconians are creatures of the dragon type. They are immune to paralysis and magic sleep effects, and have both darkvision (60-foot range) and low-light vision.\n&#149; Disease Immunity (Ex): Draconians are immune to all diseases.\n&#149; Gallop: Winged draconians are exceptionally swift, and gain Run as a bonus feat.\n&#149; Glide (Ex): Winged draconians can use their wings to glide, negating any damage from a fall of any height. They can also travel horizontally up to four times the vertical distance they descend.\n&#149; Inspired by Dragons (Ex): Draconians are drawn to dragons and revere them. When under the command of a true dragon whose alignment is within one step of their own, or when entering a battle under the command of such a dragon, draconians receive a +1 morale bonus on all attacks and saving throws.\n&#149; Low Metabolism: Draconians can survive on one-tenth the food and water it takes to sustain a human.\n\nKapaks possess the following racial traits in addition to the draconian racial traits:\n&#149; +2 Dexterity, +2 Constitution, -2 Intelligence, -2 Wisdom.\n&#149; Kapak base land speed is 30 feet.\n&#149; Racial Hit Dice: A kapak begins with two levels of dragon, which provide 2d12 Hit Dice, a base attack bonus of +2, and base saving throw bonuses of Fort +3, Ref +3, and Will +3. A kapak character receives maximum hit points for its first dragon Hit Die and rolls all other Hit Dice normally. Kapaks with class levels add their class attack and save bonuses to their racial attack and save bonuses.\n&#149; Racial Skills: A kapak&#129;&apos;s dragon levels give it skill points equal to 5 x (6 + Int modifier, minimum 1). Its class skills are Hide, Listen, Move Silently, Search, and Spot. A kapak character does not receive the x4 multiplier for skill points acquired from its first class level.\n&#149; Racial Feats: A kapak&#129;&apos;s dragon levels give it one feat. Kapaks gain Armor Proficiency (light), Martial Weapon Proficiency (short sword, shortbow), and Simple Weapon Proficiency as bonus feats.\n&#149; +8 racial bonus to Move Silently.\n&#149; Natural Weapons: Bite (1d4).\n&#149; +2 natural armor bonus.\n&#149; Death Throe (Su): A kapak&#129;&apos;s body dissolves into a pool of acid 5 feet in radius the moment it dies. Everyone within the affected area (as well as each unattended object) suffers 1d6 points of acid damage per round of exposure. The acid evaporates in 1d6 rounds. Kapaks can only be restored to life through the use of a {i}resurrection{/i}, {i}true resurrection{/i}, or {i}wish{/i} spell.\n&#149; Saliva (Ex or Su): The supernatural saliva of a female kapak cures wounds. If she licks an injured living creature (a standard action), the saliva heals 2d6 points of damage. A creature can only be healed with female kapak saliva once every four hours. The saliva of a female kapak does not heal when delivered by her bite. The extraordinary saliva of a male kapak carries a paralyzing poison (bite or licked weapon, Fort DC 11 + kapak&#129;&apos;s Con modifier, initial damage 1d6 Dex, secondary damage 1d6 Dex), which can be delivered either through a bite or by licking any piercing weapon. Envenoming a weapon is a full-round action that provokes an attack of opportunity; the poison remains on the weapon for 3 rounds or until the kapak hits with the weapon, whichever comes first.\n&#149; Sneak Attack (Ex): A kapak deals an extra 1d6 points of damage whenever its target would be denied her Dexterity bonus, or when the kapak is flanking an opponent. This extra damage applies to ranged attacks if the target is within 30 feet. This is otherwise identical to the rogue class feature described in the Player&#129;fs Handbook. If a kapak gets a sneak attack bonus from another source (such as rogue levels), the bonuses to damage stack.\n&#149; Spell resistance equal to 11 + class levels.\n&#149; Automatic Language: Common. \nBonus Languages: Draconic, Goblin, Nerakese, Nordmaarian, Ogre.\n&#149; Favored Class: Rogue.\n&#149; Level Adjustment: +2. A kapak has an effective character level (ECL) of 4 + its class levels." compset="Race">
+    <comment>DONE!!!</comment>
+    <fieldval field="rInfFavor" value="Rogue"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rInfHit" value="2d12 Hit Dice (2 levels of  Dragon)"/>
+    <fieldval field="rHitDice" value="2"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rSkillMult" value="5"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rFort" value="3"/>
+    <fieldval field="rRef" value="3"/>
+    <fieldval field="rWill" value="3"/>
+    <fieldval field="rAttack" value="2"/>
+    <fieldval field="rAgeMin" value="5"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rHeightMnF" value="58"/>
+    <fieldval field="rHeightMxF" value="76"/>
+    <fieldval field="rWeightMnF" value="100"/>
+    <fieldval field="rWeightMxF" value="244"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rHeightMnM" value="60"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <usesource source="DOK"/>
+    <tag group="Race" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="Language" tag="lDraconic"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="WepProf" tag="wShortswd"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Language" tag="lNerakese"/>
+    <tag group="Language" tag="lNordmaar"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="WepProf" tag="wShortbow"/>
+    <tag group="Language" tag="lOgre"/>
+    <tag group="Helper" tag="ExtraRace"/>
+    <tag group="SpecSource" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="Kapak"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="WepProf" tag="wBite"/>
+    <tag group="HeightDice" tag="3"/>
+    <tag group="HeightSize" tag="6"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <tag group="Race" tag="typDragon"/>
+    <bootstrap thing="rDrcLowMet">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcInsp">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="fWepSimple"></bootstrap>
+    <bootstrap thing="xImmDis">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="xDeathThro">
+      <autotag group="SpecSource" tag="Draconian"/>
+      <assignval field="xSumm" value="On death body dissolves into 5 ft radius acid pool, 1d6 dam per rd exposed."/>
+      </bootstrap>
+    <bootstrap thing="fRun"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="typDragon">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d4_4"/>
+      </bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="rKDraSkill">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rKapSaliva">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="xSneakAtt"></bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rGallop">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rGlide">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="xPoison">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.Male <> 0]]></containerreq>
+      <autotag group="User" tag="1d6_5"/>
+      <autotag group="User" tag="Sc1d6_5"/>
+      <autotag group="User" tag="PriDEX"/>
+      <autotag group="User" tag="SecDEX"/>
+      <autotag group="User" tag="Bite"/>
+      </bootstrap>
+    <eval phase="PreLevel" priority="10000" index="2">~ +8 to Move Silently checks
+      #skillbonus[kMoveSil] += 8</eval>
+    <eval phase="PostLevel" priority="10000" index="3">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 9
+      #applysr[damage]
+
+~ Add one to our Sneak Attack
+      hero.child[xSneakAtt].field[Value].value += 1</eval>
+    <eval phase="Render" index="4">
+    ~ Set the custom description of our Death throes ability.
+    hero.child[xDeathThro].field[CustDesc].text = &quot;A kapak&#129;&apos;s body dissolves into a pool of acid 5 feet in radius the moment it dies. Everyone within the affected area (as well as each unattended object) suffers 1d6 points of acid damage per round of exposure. The acid evaporates in 1d6 rounds. Kapaks can only be restored to life through the use of a {i}resurrection{/i}, {i}true resurrection{/i}, or {i}wish{/i} spell.&quot;
+
+~ Set the custom description and summary of our Saliva ability.
+   if (hero.tagis[Hero.Female] &lt;&gt; 0) then
+     hero.child[rKapSaliva].field[CustDesc].text = &quot;The supernatural saliva of a female kapak cures wounds. If she licks an injured living creature (a standard action), the saliva heals 2d6 points of damage. A creature can only be healed with female kapak saliva once every four hours. The saliva of a female kapak does not heal when delivered by her bite.&quot;
+     hero.child[rKapSaliva].field[xSumm].text = &quot;Standard, licking wounds heals 2d6 hp, target benefits once per 4 hours.&quot;
+     perform hero.child[rKapSaliva].assign[AbilType.Super]
+   elseif (hero.tagis[Hero.Male] &lt;&gt; 0) then
+     hero.child[rKapSaliva].field[CustDesc].text = &quot;The extraordinary saliva of a male kapak carries a paralyzing poison (bite or licked weapon, Fort DC 11 + kapak&#129;&apos;s Con modifier, initial damage 1d6 Dex, secondary damage 1d6 Dex), which can be delivered either through a bite or by licking any piercing weapon. Envenoming a weapon is a full-round action that provokes an attack of opportunity; the poison remains on the weapon for 3 rounds or until the kapak hits with the weapon, whichever comes first.&quot;
+     hero.child[rKapSaliva].field[xSumm].text = &quot;Full round, lick weapon to envenom it.&quot;
+     perform hero.child[rKapSaliva].assign[AbilType.Extra]
+   endif</eval>
+    </thing>
+  <thing id="rKapSaliva" name="Kapak Saliva" description="The supernatural saliva of a female Kapak cures wounds. If she licks an injured living creature (a standard action) the saliva heals 2d6 points of damage. A creature can only be healed by Kapak saliza once every 4 hours. The saliva of a female Kapak does not heal when delivered by her bite." compset="Special" summary="Licking wounds heals 2d6 hp, any target may benefit once per 4 hours">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="rDracSivak" name="Draconian, Sivak" description="All base draconians possess the following racial traits:\n&#149; Dragon: Draconians are creatures of the dragon type. They are immune to paralysis and magic sleep effects, and have both darkvision (60-foot range) and low-light vision.\n&#149; Disease Immunity (Ex): Draconians are immune to all diseases.\n&#149; Gallop: Winged draconians are exceptionally swift, and gain Run as a bonus feat.\n&#149; Glide (Ex): Winged draconians can use their wings to glide, negating any damage from a fall of any height. They can also travel horizontally up to four times the vertical distance they descend.\n&#149; Inspired by Dragons (Ex): Draconians are drawn to dragons and revere them. When under the command of a true dragon whose alignment is within one step of their own, or when entering a battle under the command of such a dragon, draconians receive a +1 morale bonus on all attacks and saving throws.\n&#149; Low Metabolism: Draconians can survive on one-tenth the food and water it takes to sustain a human.\n\nSivaks possess the following racial traits in addition to the draconian racial traits:\n&#149; +6 Strength, +4 Constitution.\n&#149; Large: As Large creatures, sivaks receive a -1 penalty to their attack rolls and Armor Class due to their size, a -4 penalty on Hide checks, and a +4 bonus on grapple checks. Sivaks&#146; lifting and carrying limits are twice those of Medium creatures of an equivalent strength. Sivaks must wear armor suited to their bulky frames, which costs and weighs twice as much as a comparable suit of Medium armor.\n&#149; Sivak base land speed is 30 feet.\n&#149; Flight (Ex): Sivaks can fly at a speed of 60 feet (poor maneuverability).\n&#149; Racial Hit Dice: A sivak begins with six levels of dragon, which provide 6d12 Hit Dice, a base attack bonus of +6, and base saving throw bonuses of Fort +5, Ref +5, and Will +5. A sivak character receives maximum hit points for its first dragon Hit Die and rolls all other Hit Dice normally. Sivaks with class levels add their class attack and save bonuses to their racial attack and save bonuses.\n&#149; Racial Skills: A sivak&#146;s dragon levels give it skill points equal to 9 x (6 + Int modifier, minimum 1). Its class skills are Bluff, Climb, Diplomacy, Disguise, Gather Information, Intimidate, Jump, and Listen. A sivak character does not receive the x4 multiplier for skill points acquired from its first class level.\n&#149; Racial Feats: A sivak&#146;s dragon levels give it three feats. Sivaks gain Armor Proficiency (light, medium, heavy), Martial Weapon Proficiency (greatsword) and Simple Weapon Proficiency as bonus feats.\n&#149; Natural Weapons: 2 claws (1d6), bite (1d8), and tail (2d4). A sivak&#146;s primary natural weapons are its claws.\n&#149; +4 natural armor bonus.\n&#149; Death Throe (Su): When a male sivak dies, it changes shape, assuming the form of the humanoid being that killed it. This death shape lasts for three days, then the entire body decomposes into black soot. If the sivak&#146;s slayer is larger than the sivak or not humanoid, or if the sivak is female, it instead bursts into flame, dealing 2d4 points of fire damage to all creatures within a 10-foot radius. Affected creatures can attempt a Reflex save (DC 15 + the sivak&#146;s Con modifier) to avoid damage. Sivaks can only be restored to life through the use of a {i}resurrection{/i}, {i}true resurrection{/i} or {i}wish{/i} spell.\n&#149; Blend (Ex): Sivak females have a chameleon-like ability to blend in with their surroundings. This gives the sivak female a +10 circumstance bonus on her Hide checks and allows her to disguise self at will.\n&#149; Shapeshift (Su): A male sivak can assume the form of a Large or smaller humanoid that it has just killed. The shapeshift is a standard action that must be performed within one round of killing the victim. The sivak&#146;s appearance and voice are an exact match of its victim&#146;s but the sivak does not gain the memories, skills, or spell use of its victim. The sivak can remain in its alternate form until it chooses to assume the form of a new victim or it returns to its natural form.\n&#149; Trip (Ex): A sivak that hits with its tail attack can attempt to trip the opponent as a free action without making a touch attack or provoking an attack of opportunity. If the attempt fails, the opponent cannot react to trip the sivak.\n&#149; Spell resistance equal to 16 + class levels.\n&#149; Automatic Language: Common. \nBonus Languages: Draconic, Goblin, Nerakese, Nordmaarian, Ogre.\n&#149; Favored Class: Fighter.\n&#149; Level Adjustment: +4. A sivak has an effective character level (ECL) of 10 + its class levels." compset="Race">
+    <comment>DONE!!!</comment>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="cLevelAdj" value="4"/>
+    <fieldval field="rInfHit" value="6d12 Hit Dice (6 levels of Dragon)"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rSkillMult" value="9"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="5"/>
+    <fieldval field="rWill" value="5"/>
+    <fieldval field="rAttack" value="6"/>
+    <fieldval field="rAgeMin" value="5"/>
+    <fieldval field="rWeightMnF" value="300"/>
+    <fieldval field="rWeightMxF" value="516"/>
+    <fieldval field="rCON" value="4"/>
+    <fieldval field="rSTR" value="6"/>
+    <fieldval field="rHeightMnF" value="68"/>
+    <fieldval field="rHeightMxF" value="86"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <fieldval field="rHeightMnM" value="70"/>
+    <fieldval field="rWeightMnM" value="350"/>
+    <fieldval field="rInfFavor" value="Fighter"/>
+    <usesource source="DOK"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Language" tag="lNerakese"/>
+    <tag group="Language" tag="lNordmaar"/>
+    <tag group="Language" tag="lOgre"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="WepProf" tag="wClaw"/>
+    <tag group="WepProf" tag="wGreatswd"/>
+    <tag group="Helper" tag="ExtraRace"/>
+    <tag group="SpecSource" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="Sivak"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="WepProf" tag="wBite"/>
+    <tag group="Race" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="HeightDice" tag="3"/>
+    <tag group="HeightSize" tag="6"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="6"/>
+    <tag group="Language" tag="lDraconic"/>
+    <tag group="Race" tag="typDragon"/>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="typDragon">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rGallop">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcLowMet">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcInsp">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="fWepSimple"></bootstrap>
+    <bootstrap thing="xImmDis">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="fArmHeavy"></bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="fRun"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Value" tag="60"/>
+      <autotag group="Maneuver" tag="Poor"/>
+      </bootstrap>
+    <bootstrap thing="xDeathThro"></bootstrap>
+    <bootstrap thing="rSivShapeS"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d8_6"/>
+      </bootstrap>
+    <bootstrap thing="wTentacle">
+      <autotag group="wMain" tag="2d4_6"/>
+      </bootstrap>
+    <bootstrap thing="xTrip">
+      <autotag group="User" tag="Tail"/>
+      </bootstrap>
+    <eval phase="PostLevel" index="2"><![CDATA[~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 10
+      #applysr[damage]
+
+   if (hero.tagis[Hero.Female] <> 0) then
+     #competencebonus[hero.child[kHide], 10]
+   endif]]></eval>
+    <eval phase="UserPostAt" index="3">var DC as number
+   DC = 15 + hero.child[aCON].field[aModBonus].value
+
+    ~ Set the custom description and summary of our Death throes ability.
+    hero.child[xDeathThro].field[CustDesc].text = &quot;When a male sivak dies, it changes shape, assuming the form of the humanoid being that killed it. This death shape lasts for three days, then the entire body decomposes into black soot. If the sivak&#146;s slayer is larger than the sivak or not humanoid, or if the sivak is female, it instead bursts into flame, dealing 2d4 points of fire damage to all creatures within a 10-foot radius. Affected creatures can attempt a Reflex save (DC 15 + the sivak&#146;s Con modifier) to avoid damage. Sivaks can only be restored to life through the use of a {i}resurrection{/i}, {i}true resurrection{/i} or {i}wish{/i} spell.&quot;
+
+   if (hero.tagis[Hero.Female] &lt;&gt; 0) then
+     hero.child[xDeathThro].field[xSumm].text = &quot;On death 2d4 fire dam in 10 ft rad (Ref neg).&quot;
+     hero.child[rSivShapeS].field[CustDesc].text = &quot;Sivak females have a chameleon-like ability to blend in with their surroundings. This gives the sivak female a +10 circumstance bonus on her Hide checks and allows her to {i}disguise self{/i} at will.&quot;
+     hero.child[rSivShapeS].field[xSumm].text = &quot;Blend into surroundings, {i}disguise self{/i} at will, +10 circ to Hide.&quot;
+     hero.child[rSivShapeS].field[livename].text = &quot;Blend&quot;
+     perform hero.child[rSivShapeS].assign[AbilType.Extra]
+     perform hero.child[rSivShapeS].delete[AbilType.Super]
+
+   elseif (hero.tagis[Hero.Male] &lt;&gt; 0) then
+     hero.child[xDeathThro].field[xSumm].text = &quot;If die take slayer&apos;s form, if Huge+/not humanoid 2d4 fire in 10 ft (Ref neg).&quot;
+     hero.child[rSivShapeS].field[CustDesc].text = &quot;A male sivak can assume the form of a Large or smaller humanoid that it has just killed. The shapeshift is a standard action that must be performed within one round of killing the victim. The sivak&#146;s appearance and voice are an exact match of its victim&#146;s but the sivak does not gain the memories, skills, or spell use of its victim. The sivak can remain in its alternate form until it chooses to assume the form of a new victim or it returns to its natural form.&quot;
+     hero.child[rSivShapeS].field[xSumm].text = &quot;Standard, 1 rd after kill Large or smaller humanoid, take form and voice of slain.&quot;
+     hero.child[rSivShapeS].field[livename].text = &quot;Shapeshift&quot;
+     perform hero.child[rSivShapeS].assign[AbilType.Super]
+   endif</eval>
+    <eval phase="PreLevel" priority="10000" index="4">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    <eval phase="First" priority="0"><![CDATA[      ~ Rename to Tail
+      hero.child[wTentacle].field[livename].text = "Tail"
+      perform hero.child[wTentacle].delete[wType.S]
+      perform hero.child[wBite].delete[wType.B]
+      perform hero.child[wBite].delete[wType.S]]]></eval>
+    </thing>
+  <thing id="rDracBaaz" name="Draconian, Baaz" description="All base draconians possess the following racial traits:\n&#149; Dragon: Draconians are creatures of the dragon type. They are immune to paralysis and magic sleep effects, and have both darkvision (60-foot range) and low-light vision.\n&#149; Disease Immunity (Ex): Draconians are immune to all diseases.\n&#149; Gallop: Winged draconians are exceptionally swift, and gain Run as a bonus feat.\n&#149; Glide (Ex): Winged draconians can use their wings to glide, negating any damage from a fall of any height. They can also travel horizontally up to four times the vertical distance they descend.\n&#149; Inspired by Dragons (Ex): Draconians are drawn to dragons and revere them. When under the command of a true dragon whose alignment is within one step of their own, or when entering a battle under the command of such a dragon, draconians receive a +1 morale bonus on all attacks and saving throws.\n&#149; Low Metabolism: Draconians can survive on one-tenth the food and water it takes to sustain a human.\n\nBaaz possess the following racial traits in addition to the draconian racial traits:\n&#149; +2 Constitution, -2 Intelligence, -2 Wisdom.\n&#149; Baaz base land speed is 30 feet.\n&#149; Racial Hit Dice: A baaz begins with two levels of dragon, which provide 2d12 Hit Dice, a base attack bonus of +2, and base saving throw bonuses of Fort +3, Ref +3, and Will +3. A baaz character receives maximum hit points for its first dragon Hit Die and rolls all other Hit Dice normally. Baaz with class levels add their class attack and save bonuses to their racial attack and save bonuses.\n&#149; Racial Skills: A baaz&#146;s dragon levels give it skill points equal to 5 x (6 + Int modifier, minimum 1). Its class skills are Bluff (for males) or Diplomacy (for females), as well as Disguise, Intimidate, Listen, and Spot. A baaz character does not receive the x4 multiplier for skill points acquired from its first class level.\n&#149; Racial Feats: A baaz&#146;s dragon levels give it one feat. Baaz gain Armor Proficiency (light), Martial Weapon Proficiency (longsword), Shield Proficiency, and Simple Weapon Proficiency as bonus feats.\n&#149; Natural Weapons: 2 claws (1d4) and bite (1d4). A baaz&#146;s primary natural weapons are its claws.\n&#149; +2 natural armor bonus.\n&#149; Death Throe (Su): A baaz&#146;s body petrifies to stone the moment it dies. If the creature that struck the deathblow used a slashing or piercing weapon, it must make a Reflex save (DC 11 + the baaz&#146;s Con modifier) or have its weapon fused inside the baaz&#146;s stone body. The baaz &#147;statue&#148; crumbles to dust after 1d4 minutes. Items carried by the baaz, or any trapped within its stone body, are unaffected by the process. Baaz can only be restored to life through the use of a resurrection, true resurrection, or wish spell.\n&#149; Spell resistance equal to 8 + class levels.\n&#149; Automatic Language: Common. \nBonus Languages: Draconic, Goblin, Nerakese, Nordmaarian, Ogre.\n&#149; Favored Class: Fighter.\n&#149; Level Adjustment: +1. A baaz has an effective character level (ECL) of 3 + its class levels." compset="Race">
+    <comment>DONE!!!</comment>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rInfFavor" value="Fighter"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="rInfHit" value="2d12 Hit Dice (2 levels of  Dragon)"/>
+    <fieldval field="rHitDice" value="2"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rSkillMult" value="5"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rFort" value="3"/>
+    <fieldval field="rRef" value="3"/>
+    <fieldval field="rWill" value="3"/>
+    <fieldval field="rAttack" value="2"/>
+    <fieldval field="rAgeMin" value="5"/>
+    <fieldval field="rHeightMnF" value="58"/>
+    <fieldval field="rHeightMxF" value="70"/>
+    <fieldval field="rWeightMnF" value="80"/>
+    <fieldval field="rWeightMxF" value="176"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rHeightMnM" value="60"/>
+    <fieldval field="rWeightMnM" value="90"/>
+    <usesource source="DOK"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Language" tag="lNerakese"/>
+    <tag group="Language" tag="lNordmaar"/>
+    <tag group="Language" tag="lOgre"/>
+    <tag group="Helper" tag="ExtraRace"/>
+    <tag group="SpecSource" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="WepProf" tag="wBite"/>
+    <tag group="WepProf" tag="wClaw"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="Race" tag="Baaz"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="WepProf" tag="wLongsword"/>
+    <tag group="Language" tag="lDraconic"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="6"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <tag group="Race" tag="typDragon"/>
+    <bootstrap thing="rGallop">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rGlide">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcLowMet">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcInsp">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="xImmDis">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="fRun"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="typDragon">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d4_4"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="xDeathThro">
+      <assignval field="xSumm" value="On death petrify, P/S weapon may become stuck (Ref neg)."/>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <eval phase="First" index="4"><![CDATA[   if (hero.tagis[Hero.Female] <> 0) then
+      perform hero.child[rDracBaaz].assign[ClassSkill.kDiplomacy]
+   elseif (hero.tagis[Hero.Male] <> 0) then
+      perform hero.child[rDracBaaz].assign[ClassSkill.kBluff]
+   endif]]></eval>
+    <eval phase="Render" index="3">  ~ Set the custom description of our Death throes ability.
+  hero.child[xDeathThro].field[CustDesc].text = &quot;A baaz&#146;s body petrifies to stone the moment it dies. If the creature that struck the deathblow used a slashing or piercing weapon, it must make a Reflex save (DC 11 + the baaz&#146;s Con modifier) or have its weapon fused inside the baaz&#146;s stone body. The baaz &#147;statue&#148; crumbles to dust after 1d4 minutes. Items carried by the baaz, or any trapped within its stone body, are unaffected by the process. Baaz can only be restored to life through the use of a {i}resurrection{/i}, {i}true resurrection{/i}, or {i}wish{/i} spell.&quot;</eval>
+    <eval phase="PostLevel" priority="10000" index="2">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 6
+      #applysr[damage]</eval>
+    </thing>
+  <thing id="rDracAurak" name="Draconian, Aurak" description="All base draconians possess the following racial traits:\n&#149; Dragon: Draconians are creatures of the dragon type. They are immune to paralysis and magic sleep effects, and have both darkvision (60-foot range) and low-light vision.\n&#149; Disease Immunity (Ex): Draconians are immune to all diseases.\n&#149; Inspired by Dragons (Ex): Draconians are drawn to dragons and revere them. When under the command of a true dragon whose alignment is within one step of their own, or when entering a battle under the command of such a dragon, draconians receive a +1 morale bonus on all attacks and saving throws.\n&#149; Low Metabolism: Draconians can survive on one-tenth the food and water it takes to sustain a human.\n\nAuraks possess the following racial traits in addition to the base draconian racial traits:\n&#149; +2 Dexterity, +4 Intelligence, +4 Charisma.\n&#149; Aurak base land speed is 30 feet.\n&#149; Racial Hit Dice: An aurak begins with eight levels of dragon, which provide 8d12 Hit Dice, a base attack bonus of +8, and base saving throw bonuses of Fort +6, Ref +6, and Will +6. An aurak character receives maximum hit points for its first dragon Hit Die and rolls all other Hit Dice normally. Auraks with class levels add their class attack and save bonuses to their racial attack and save bonuses.\n&#149; Racial Skills: An aurak&#129;&apos;s dragon levels give it skill points equal to 11 x (6 + Int modifier, minimum 1). Its class skills are Concentration, Diplomacy, Intimidate, Knowledge (arcana), Listen, Spellcraft, Search, and Spot. An aurak character does not receive the x4 multiplier for skill points acquired from its first class level.\n&#149; Racial Feats: An aurak&#129;&apos;s dragon levels give it three feats. Auraks gain Simple Weapon Proficiency as a bonus feat.\n&#149; Natural Weapons: 2 claws (1d4) and bite (1d4).\n&#149; +6 natural armor bonus.\n&#149; Alternate Form (Su): A male aurak can assume any animal form of Small or Medium size three times per day. This ability functions as a polymorph spell cast on itself by an 8th-level sorcerer, except that the aurak does not regain hit points for changing form and can only assume the form of an animal. The aurak can remain in its animal form until it chooses to assume a new one or return to its natural form.\n&#149; Breath Weapon (Su): An aurak can breathe a noxious cloud in a 5-foot cone three times per day. Affected creatures must make a Fortitude save (DC 16) or suffer 1d4 points of Strength damage and be blinded for 1d4 rounds.\n&#149; Death Throe (Su): When an aurak dies, it explodes in a blast of magical energy. This blast deals 3d6 points of damage to all creatures within 5 feet of the aurak. Affected creatures can attempt a Reflex save (DC 16 + the aurak&#129;&apos;s Con modifier) for half damage. Auraks can only be restored to life through the use of a resurrection, true resurrection, or wish spell.\n&#149; Dimensional Step (Sp): Up to three times per day, auraks can perform limited short-range teleportation. This ability functions exactly like the {i}dimension door{/i} spell except that it has a range of 60 feet and the aurak can only transport itself and items carried. An aurak&#129;&apos;s dimensional step is the equivalent of a 3rd-level spell and has a caster level equal to the aurak&#129;&apos;s Hit Dice.\n&#149; Disguise Self (Sp): Up to three times per day, an aurak can make itself perfectly resemble an individual humanoid and perfectly imitate its voice. This ability functions exactly like the {i}disguise self{/i} spell except that it has a duration of 2d6+6 minutes, and the aurak can only assume the form of a humanoid that it has seen. When an aurak fires energy rays (see below) while under the effects of its disguise self ability, it appears to be using a weapon appropriate to its form.\n&#149; Energy Ray (Sp): An aurak can generate rays of energy from its hands at will. These rays have a range of 60 feet and deal up to 4d6 points of force damage, divided any way the aurak sees fit as long as each ray deals at least 1d6 points of force damage. The aurak must make a ranged touch attack to hit with each ray. An aurak&#129;&apos;s energy ray is the equivalent of a 1st-level spell and has a caster level equal to the aurak&#129;&apos;s Hit Dice.\n&#149; No Wings: As wingless draconians, auraks do not gain the Gallop or Glide abilities possessed by other draconians.\n&#149; Sorcerer Abilities: An aurak has the spellcasting ability of an 8th-level sorcerer. An aurak that takes additional levels in sorcerer adds its innate sorcerer level to its class level to determine its caster level, spells known, and spells per day. Auraks do not gain familiars unless they take levels in a class which grants them the ability to summon a familiar.\n&#149; Spell-Like Abilities: At will &#150; {i}greater invisibility{/i}, {i}suggestion{/i} (DC 15); 1/day &#150; {i}dominate person{/i} (DC 17). Caster level 8th; save DC 12 + spell level.\n&#149; Spell resistance equal to 20 + class levels.\n&#149; Automatic Language: Common. \nBonus Languages: Draconic, Goblin, Nerakese, Nordmaarian, Ogre.\n&#149; Favored Class: Sorcerer.\n&#149; Level Adjustment: +4. An aurak has an effective character level (ECL) of 12 + its class levels." compset="Race">
+    <comment>We appear to have a +2 racial bonus to our Breath Weapon and Death Throes DC (Done)</comment>
+    <fieldval field="rInfFavor" value="Sorceror"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="cLevelAdj" value="4"/>
+    <fieldval field="rInfHit" value="8d12 Hit Dice (8 levels of  Dragon)"/>
+    <fieldval field="rHitDice" value="8"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rSkillMult" value="11"/>
+    <fieldval field="rAC" value="6"/>
+    <fieldval field="rFort" value="6"/>
+    <fieldval field="rRef" value="6"/>
+    <fieldval field="rAttack" value="8"/>
+    <fieldval field="rAgeMin" value="5"/>
+    <fieldval field="rHeightMnF" value="70"/>
+    <fieldval field="rHeightMnM" value="72"/>
+    <fieldval field="rHeightMxM" value="92"/>
+    <fieldval field="rWeightMnF" value="100"/>
+    <fieldval field="rWeightMxF" value="260"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="rWeightMxM" value="280"/>
+    <fieldval field="rCHA" value="4"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rHeightMxF" value="90"/>
+    <fieldval field="rINT" value="4"/>
+    <fieldval field="rWill" value="6"/>
+    <fieldval field="cMagicLev" value="8"/>
+    <usesource source="DOK"/>
+    <tag group="SpecSource" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="WepProf" tag="wBite"/>
+    <tag group="WepProf" tag="wClaw"/>
+    <tag group="Race" tag="Draconian" name="Draconian" abbrev="Drac"/>
+    <tag group="Language" tag="lDraconic"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="WepProf" tag="wAurEnRay"/>
+    <tag group="Language" tag="lNerakese"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Language" tag="lNordmaar"/>
+    <tag group="Race" tag="Aurak"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="Race" tag="typDragon"/>
+    <tag group="Helper" tag="ExtraRace"/>
+    <tag group="SplLookup" tag="cHelpSor"/>
+    <tag group="Language" tag="lOgre"/>
+    <bootstrap thing="xDeathThro">
+      <assignval field="xSumm" value="On death explode, 3d6 untyped dam to all in 5 feet."/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d4_4"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcLowMet">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDrcInsp">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="xImmDis">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rAurNatSpe">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <bootstrap thing="rAurAltFor"></bootstrap>
+    <bootstrap thing="rAurDiStep"></bootstrap>
+    <bootstrap thing="rAurDiSelf"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="xBreathWea">
+      <autotag group="Helper" tag="ShowCharge"/>
+      <assignval field="livename" value="Breath Weapon, 1d4 Str dam &amp; blind 1d4 rd, 5 ft cone"/>
+      <assignval field="hTotal" value="3"/>
+      </bootstrap>
+    <bootstrap thing="rAurSpell"></bootstrap>
+    <bootstrap thing="rAurEnRay"></bootstrap>
+    <bootstrap thing="wAurEnRay">
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="typDragon">
+      <autotag group="SpecSource" tag="Draconian"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10000" index="2">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 12
+      #applysr[damage]</eval>
+    <eval phase="First" priority="5000" index="4">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)
+
+~ +2 racial bonus to Breath Weapon DC
+      hero.child[xBreathWea].field[Value].value += 2
+
+~ +2 racial bonus to Death Throes DC
+      hero.child[xDeathThro].field[Value].value += 2</eval>
+    <eval phase="Render" index="5">~ Set the custom description and summary of our Death throes ability.
+hero.child[xDeathThro].field[CustDesc].text = &quot;When an aurak dies, it explodes in a blast of magical energy. This blast deals 3d6 points of damage to all creatures within 5 feet of the aurak. Affected creatures can attempt a Reflex save (DC 16 + the aurak&#129;&apos;s Con modifier) for half damage. Auraks can only be restored to life through the use of a {i}resurrection{/i}, {i}true resurrection{/i}, or {i}wish{/i} spell.&quot;
+
+      hero.child[xBreathWea].field[CustDesc].text = &quot;An aurak can breathe a noxious cloud in a 5-foot cone three times per day. Affected creatures must make a Fortitude save (DC 16) or suffer 1d4 points of Strength damage and be blinded for 1d4 rounds.&quot;
+
+   if (hero.tagis[Hero.Female] + hero.tagis[Hero.NoGender] &lt;&gt; 0) then
+      perform hero.child[rAurAltFor].delete[Helper.ShowSpec]
+      perform hero.child[rAurAltFor].delete[Helper.ShowCharge]
+   endif</eval>
+    </thing>
+  <thing id="rAurAltFor" name="Alternate Form" description="A male aurak can assume any animal form of Small or Medium size three times per day. This ability functions as a {i}polymorph{/i} spell cast on itself by an 8th-level sorcerer, except that the aurak does not regain hit points for changing form and can only assume the form of an animal. The aurak can remain in its animal form until it chooses to assume a new one or return to its natural form." compset="Special" summary="3/day, assume form of small/medium sized animal." uniqueness="unique">
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="Aurak"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="rAurDiStep" name="Dimensional Step" description="Up to three times per day, auraks can perform limited short-range teleportation. This ability functions exactly like the {i}dimension door{/i} spell except that it has a range of 60 feet and the aurak can only transport itself and items carried. An aurak&#129;&apos;s dimensional step is the equivalent of a 3rd-level spell and has a caster level equal to the aurak&#129;&apos;s Hit Dice." compset="Special" summary="3/day, 60 foot {i}dimension door{/i}, self only." uniqueness="unique">
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="Aurak"/>
+    </thing>
+  <thing id="rAurDiSelf" name="Disguise Self" description="Up to three times per a day, auraks can make itself perfectly resemble an individual humanoid and perfectly mimic it&apos;s voice. This ability functions exactly like the {i}disguise self{/i} spell, except that it has a duration of 2d6+6 minutes and the aurak can only assume the form of a humanoid that it has seen. When an aurak fires energy rays while under the effect of it&apos;s disguise self ability, it appears to be using a weapon appropriate to its form." compset="Special" summary="3/day, use {i}disguise self{/i} for 2d6+6 min with perfect visual and voice mimicry." uniqueness="unique">
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="Aurak"/>
+    </thing>
+  <thing id="rAurDomPer" name="Dominate Person" description="An aurak can cast the {i}dominate person{/i} spell once per a day at caster level 8th (Will DC15+Cha modifier)" compset="Special" summary="Cast Dominate Person once per day" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DOK"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="Aurak"/>
+    <eval phase="UserPostAt"><![CDATA[  var DP as number
+    DP = 15 + hero.child[aCHA].field[aModBonus].value
+
+  field[CustDesc].text = "An aurak can cast the {i}dominate person{/i} spell once per a day at caster level 8th (Will DC" & DP & ")"
+  field[xSumm].text = "1/day, use {i}dominate person{/i} as spell like ability, CL8 (Will DC" & DP & ")"]]></eval>
+    </thing>
+  <thing id="rAurSpell" name="Spell-like Abilities" description="At will &#150; {i}greater invisibility{/i}, {i}suggestion{/i} (DC 15); 1/day &#150; {i}dominate person{/i} (DC 17). Caster level 8th; save DC 10 + Charisma Modifier + spell level." compset="Special" summary="At will&#150;{i}greater invisibility{/i}, {i}suggestion{/i} (DC15); 1/day&#150;{i}dominate person{/i} (DC17)." uniqueness="unique">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="Aurak"/>
+    <bootstrap thing="rAurDomPer"></bootstrap>
+    <eval phase="UserPostAt">var DP as number
+  var Sug as number
+    DP = 15 + hero.child[aCHA].field[aModBonus].value
+    Sug = 13 + hero.child[aCHA].field[aModBonus].value
+
+field[CustDesc].text = &quot;At will &#150; {i}greater invisibility{/i}, {i}suggestion{/i} (DC &quot; &amp; Sug &amp; &quot;); 1/day &#150; {i}dominate person{/i} (DC &quot; &amp; DP &amp; &quot;). Caster level 8th; save DC 10 + Charisma Modifier + spell level.&quot;
+field[xSumm].text = &quot;At will&#150;{i}greater invisibility{/i}, {i}suggestion{/i} (DC&quot; &amp; Sug &amp; &quot;); 1/day&#150;{i}dominate person{/i} (DC&quot; &amp; DP &amp; &quot;).&quot;</eval>
+    </thing>
+  <thing id="rAurNatSpe" name="Natural Spellcasting" description="You cast spells as a 8th level sorceror. This spellcasting stacks with levels of sorceror that you take for the purposes of Caster level, Spells per day, and Spells known, but not for Familiars." compset="Special" summary="Cast spells as a 8th level Sorceror">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="Aurak"/>
+    </thing>
+  <thing id="rAurEnRay" name="Energy Ray" description="An aurak can generate rays of energy from its hands at will. These rays have a range of 60 feet and deal up to 4d6 points of force damage, divided any way the aurak sees fit as long as each ray deals at least 1d6 points of force damage. The aurak must make a ranged touch attack to hit with each ray. An aurak&#129;&apos;s energy ray is the equivalent of a 1st-level spell and has a caster level equal to the aurak&#129;&apos;s Hit Dice." compset="Special" summary="At will, fire rays of force energy, 4d6 dam divided between up to 4 rays." uniqueness="unique">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="Aurak"/>
+    </thing>
+  <thing id="wAurEnRay" name="Energy Ray" description="An aurak can generate rays of energy from its hands at will. These rays have a range of 60 feet and deal up to 4d6 points of force damage, divided any way the aurak sees fit as long as each ray deals at least 1d6 points of force damage. The aurak must make a ranged touch attack to hit with each ray. An aurak&#129;&apos;s energy ray is the equivalent of a 1st-level spell and has a caster level equal to the aurak&#129;&apos;s Hit Dice." compset="Weapon" uniqueness="unique">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="Helper" tag="NatSecond" name="NatSecond" abbrev="NatSecond"/>
+    <tag group="Helper" tag="NoOutGear" name="NoOutGear" abbrev="NoOutGear"/>
+    <tag group="Helper" tag="Proficient" name="Proficient" abbrev="Proficient"/>
+    <tag group="wClass" tag="Light" name="Light" abbrev="Light"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    <tag group="wCritMult" tag="2" name="2" abbrev="2"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wMain" tag="4d6_106"/>
+    <tag group="IsWeapon" tag="wRay"/>
+    <tag group="Helper" tag="NoDblStr"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wRangeInc" tag="60"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="Helper" tag="FixSizeDmg"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <tag group="Helper" tag="BucklerOK"/>
+    </thing>
+  <thing id="fAltFormDK" name="Alternate Form" description="You have learned how to assume the form of an animal or humanoid, much as a bronze, gold, or silver dragon can.\n\n{b}Prerequisite{/b}: Dragon, Adult age or older, caster level 5th.\n\n{b}Benefit{/b}: You are able to assume a single specific alternate humanoid or animal form of Medium size or smaller once per day. This ability is otherwise identical to the alternate form ability of bronze, gold, or silver dragons. You can remain in your alternate form until you choose to return to your natural form.\n\n{b}Special{/b}: This feat may be taken more than once and each time it adds to the number of times you may change form each day. Silver, gold, and bronze dragons that take this feat may change form an additional time each day." compset="Feat">
+    <comment>Change bootstrap. (Done)
+
+Make special to count number taken and gen charges. or add to existing charges. (Done)</comment>
+    <usesource source="DOK" parent="pDL" name="Dragons of Krynn"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="fShowWhat" tag="Freeform" name="Freeform edit control" abbrev="Freeform edit control"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <bootstrap thing="xAlterForm"></bootstrap>
+    <bootstrap thing="xfAltForm"></bootstrap>
+    <exprreq message="Adult age category or older required."><![CDATA[hero.childfound[xAgeCat].field[Value].value >= 6]]></exprreq>
+    <exprreq message="Caster level 5th required."><![CDATA[herofield[tMaxCaster].value >= 5]]></exprreq>
+    <exprreq message="Dragon type required."><![CDATA[tagis[Race.typDragon] <> 0]]></exprreq>
+    </thing>
+  <thing id="fChBloodDK" name="Charged Blood" description="You have suffused your blood with the energy of your draconic progenitor, so that when your enemies strike you with edged weapons they risk additional injury.\n\n{b}Prerequisites{/b}: Dragon, death throe extraordinary ability, Con 15.\n\n{b}Benefit{/b}: When you take damage from a slashing or stabbing weapon from an opponent in an adjacent square, the opponent must make a Reflex save (DC 10 + 1/2 racial HD + Con modifier) or take 1 point of damage. Refer to the following table for the type of damage based on the draconian type; dragonspawn with this feat deal damage based on their breath weapon energy type.\n\n{b}Type &#150;&#150;&#150; Damage{/b}\nAurak &#150;&#150;&#150; fire\nBaaz &#150;&#150;&#150; fire\nBozak &#150;&#150;&#150; electricity\nFlame &#150;&#150;&#150; fire\nFrost &#150;&#150;&#150; cold\nKapak &#150;&#150;&#150; acid\nLightning &#150;&#150;&#150; electricity\nSivak &#150;&#150;&#150; cold\nVapor &#150;&#150;&#150; acid\nVenom &#150;&#150;&#150; acid" compset="Feat" summary="Adj foe who hits you with S or P wep takes 1 dam (Ref neg)." uniqueness="useronce">
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[var DC as number
+DC = 10 + (#levelcount[Race]/2) + hero.child[aCON].field[aModBonus].value
+DC = round(DC, 0, -1)
+
+field[xSumm].text = "Adj foe who hits you with S or P wep takes 1 dam (DC" & DC & " Ref neg)."]]></eval>
+    <exprreq message="Death Throe ability required."><![CDATA[hero.childfound[xDeathThro].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <exprreq message="Constitution 15 required."><![CDATA[child[aCON].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Dragon type required."><![CDATA[tagis[Race.typDragon] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDisDeThDK" name="Disciplined Death Throes" description="You have learned to control your death throes so as not to harm those close to you.\n\n{b}Prerequisite{/b}: Death throe special ability.\n\n{b}Benefit{/b}: As a standard action, you may lower or raise your ability to produce death throes. If you die while your ability to produce death throes is lowered, your corpse does not produce any death throes.\n\n{b}Normal{/b}: You automatically go into death throes upon your death." compset="Feat" summary="Standard, lower ability to produce death throes, use standard to raise again." uniqueness="useronce">
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <exprreq message="Death Throe ability required."><![CDATA[hero.childfound[xDeathThro].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDracMetDK" name="Draconic Metabolism" description="Your metabolism is slowed to the point where you no longer need to consume food or water to survive.\n\n{b}Prerequisites{/b}: Con 17, low metabolism extraordinary ability.\n\n{b}Benefit{/b}: You do not suffer from the effects of starvation or dehydration unless they are inflicted magically.\n\n{b}Normal{/b}: Creatures with the low metabolism extraordinary ability can survive on one-tenth the food and water it takes to sustain a human." compset="Feat" summary="You are immune to starvation/dehydration unless inflicted magically." uniqueness="useronce">
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <exprreq message="Constitution 17 required."><![CDATA[child[aCON].field[aFinalVal].value >= 17]]></exprreq>
+    <exprreq message="Low Metabolism extraordinary ability required."><![CDATA[pickexists[rDrcLowMet] <> 0]]></exprreq>
+    </thing>
+  <thing id="fDracFlyDK" name="Draconian Flight" description="You have strengthened your wings and learned the basics of flight.\n\n{b}Prerequisites{/b}: Draconian, Str 15, Dex 13, Improved Glide, glide extraordinary ability.\n\n{b}Benefit{/b}: You gain a fly speed of 1 1/2 times your base land speed (clumsy maneuverability)." compset="Feat" uniqueness="useronce">
+    <comment>Need script to set  fly speed (Done)</comment>
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <bootstrap thing="xFly"></bootstrap>
+    <eval phase="Final" priority="10550">var bonus as number
+    bonus = hero.child[Speed].field[tSpeedMod].value * 1.5
+
+    hero.child[xFly].field[Value].value = maximum(hero.child[xFly].field[Value].value, bonus)
+    perform hero.child[xFly].assign[Maneuver.Clumsy]</eval>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Improved Glide required."><![CDATA[#hasfeat[fImpGlidDK] <> 0]]></exprreq>
+    <exprreq message="Glide ability required."><![CDATA[pickexists[rGlide] <> 0]]></exprreq>
+    <exprreq message="Draconian race required."><![CDATA[tagis[Race.Draconian] <> 0]]></exprreq>
+    <exprreq message="Strength 15 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fDracVamDK" name="Draconic Vampirism" description="You are able to absorb the fleeing life energy from a dying dragon using the energy to temporarily increase your own strength.\n\n{b}Prerequisites{/b}: Juvenile or older true dragon, caster level 1st.\n\n{b}Benefits{/b}: If you strike the killing blow against a true dragon (a creature of the dragon type that possesses an age category), you can attempt to absorb the dragon&#146;s soul as it departs its body. The spirit of the deceased dragon is allowed to make a Will save (equal to the DC of your breath weapon). If successful, you are unable to absorb the dragon&#146;s spirit. If the saving throw is failed, you absorb the dragon&#146;s essence.\n\nThe dragon killed must be able to cast spells (typically of adult age or higher) in order to enjoy the full benefits of draconic vampirism. For every age category of the dragon killed, you gain one temporary Hit Die. These temporary Hit Dice increase your abilities just as if you had gained age, increasing your power and your size, although you do not age any. Each week, you lose one temporary Hit Die and decrease in power. Without a {i}skull totem{/i}, the loss cannot be halted by any means, and the maximum number of additional temporary Hit Dice you may gain cannot exceed your Charisma bonus.\n\nIf the dragon you killed does not cast spells, you instead recover a number of hit points equal to 1d12 times the dragon&#146;s age category. Hit points recovered this way may not increase your hit point total past its normal maximum." compset="Feat" summary="Heal or gain HD after killing a true dragon." uniqueness="useronce">
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <exprreq message="Juvenile age category or older required."><![CDATA[hero.childfound[xAgeCat].field[Value].value >= 4]]></exprreq>
+    <exprreq message="Caster level 1st required."><![CDATA[herofield[tMaxCaster].value >= 1]]></exprreq>
+    </thing>
+  <thing id="fFreDeThDK" name="Frenzied Death Throes" description="When you are near death, the energy bound up within you is released in the form of dynamic action, enabling you to deal a final series of attacks upon your foes before you finally succumb to death.\n\n{b}Prerequisites{/b}: Dragon, death throe supernatural ability, Spectacular Death Throes.\n\n{b}Benefit{/b}: When you are reduced to 0 or fewer hit points, you do not lose consciousness. Instead, you temporarily gain a +4 bonus to Strength and a +2 dodge bonus to Armor Class and on Reflex saves. Each round you are in this state you may take either a move action or a standard action; if you make an attack, you may make one extra attack in a round at your highest base attack bonus, but this attack takes a -2 penalty, as does each other attack made that round. This penalty applies for 1 round, so it also affects attacks of opportunity you might make before your next action. You continue to lose 1 hit point every round, with no chance of stabilizing. If you are restored to at least 1 hit point, your frenzied state ends. Otherwise, your death throes are eventually triggered and you die.\n\n{b}Special{/b}: If you also possess the Diehard feat, you may opt to do nothing for a round (i.e. take no action) in order to stabilize and prevent losing additional hit points. If you do, however, your frenzied state ends.\n\nIf you also possess the Charged Blood feat, during each round you spend in a frenzied state your body is surrounded by a wreath of energy that deals 1d6 points of damage to anyone targeting you with a melee attack from an adjacent square (Reflex save from Charged Blood applies.) The type of damage is dependent on the type of energy damage dealt by the Charged Blood feat." compset="Feat" summary="When &lt; 0 Hp, remain standing, frenzy to gain +4 Str, +2 to AC and Ref saves." uniqueness="useronce">
+    <comment>Button for changes. (Done)
+
+Test?</comment>
+    <fieldval field="hName1" value="Frenzied"/>
+    <usesource source="DOK"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="SpecType" tag="Attack"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      if (field[hIsOn1].value <> 0) then
+        hero.child[aSTR].field[Bonus].value += 4
+        hero.child[vRef].field[Bonus].value += 2
+        hero.child[ArmorClass].field[Bonus].value += 2
+      endif]]></eval>
+    <exprreq message="Death Throe extraordinary ability required."><![CDATA[pickexists[xDeathThro] <> 0]]></exprreq>
+    <exprreq message="Dragon type required."><![CDATA[tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Spectacular Death Throes required."><![CDATA[#hasfeat[fSpeDeath] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGrDrFlyDK" name="Greater Draconian Flight" description="You have mastered draconian flight.\n\n{b}Prerequisites{/b}: Draconian, Str 17, Dex 15, Draconian Flight, Improved Glide, glide extraordinary ability.\n\n{b}Benefit{/b}: Your fly speed improves to twice your base land speed. Your maneuverability increases to poor." compset="Feat" uniqueness="useronce">
+    <comment>Eval Script to set fly speed. (Done)</comment>
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final" priority="10551">var bonus as number
+    bonus = hero.child[Speed].field[tSpeedMod].value * 2
+
+    hero.child[xFly].field[Value].value = maximum(hero.child[xFly].field[Value].value, bonus)
+    perform hero.child[xFly].delete[Maneuver.Clumsy]
+    perform hero.child[xFly].assign[Maneuver.Poor]</eval>
+    <exprreq message="Dexterity 15 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Improved Glide required."><![CDATA[#hasfeat[fImpGlidDK] <> 0]]></exprreq>
+    <exprreq message="Draconian Flight required."><![CDATA[#hasfeat[fDracFlyDK] <> 0]]></exprreq>
+    <exprreq message="Glide extraordinary ability required."><![CDATA[pickexists[rGlide] <> 0]]></exprreq>
+    <exprreq message="Draconian race required."><![CDATA[tagis[Race.Draconian] <> 0]]></exprreq>
+    <exprreq message="Strength 17 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 17]]></exprreq>
+    </thing>
+  <thing id="fGrPoSalDK" name="Greater Potent Saliva" description="Your saliva is extremely enhanced.\n\n{b}Prerequisites{/b}: Kapak draconian, Endurance, Potent Saliva, Con 15.\n\n{b}Benefit{/b}: The damage or effect of your saliva is increased to a die-type of d10. A male kapak delivers initial and secondary damage of 1d10 each with his poison attack; a female kapak heals 2d10 points of damage." compset="Feat" summary="Saliva die increases to d10s." uniqueness="useronce">
+    <comment>Disable prev feat. (Done)
+
+Test?</comment>
+    <usesource source="DOK"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="First">perform hero.child[fPotSaliDK].delete[Helper.ShowSpec]</eval>
+    <exprreq message="Potent Saliva required."><![CDATA[#hasfeat[fPotSaliDK] <> 0]]></exprreq>
+    <exprreq message="Endurance required."><![CDATA[#hasfeat[fEndure] <> 0]]></exprreq>
+    <exprreq message="Kapak draconian race required."><![CDATA[tagis[Race.Draconian] + tagis[Race.Kapak] >= 2]]></exprreq>
+    <exprreq message="Constitution 15 required."><![CDATA[child[aCON].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fHardFleDK" name="Hardened Flesh" description="You have tapped into the arcane chemicals inside your body that will petrify your flesh upon your death.\n\n{b}Prerequisites{/b}: Baaz draconian, Con 15, Great Fortitude.\n\n{b}Benefit{/b}: Your natural armor bonus increases by 2 (for a total of +4).\n\n{b}Normal{/b}: A baaz draconian&#146;s natural armor bonus is +2." compset="Feat" uniqueness="useronce">
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="First">hero.child[mNatural].field[mBonus].value += 2</eval>
+    <exprreq message="Great Fortitude required."><![CDATA[#hasfeat[fGreatFort] <> 0]]></exprreq>
+    <exprreq message="Baaz draconian race required."><![CDATA[tagis[Race.Draconian] + tagis[Race.Baaz] >= 2]]></exprreq>
+    <exprreq message="Constitution 15 required."><![CDATA[child[aCON].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fImChBloDK" name="Improved Charged Blood" description="Your blood has become sufficiently charged with energy that it causes even more damage to your enemies.\n\n{b}Prerequisites{/b}: Dragon, Charged Blood, death throe extraordinary ability, Con 17.\n\n{b}Benefit{/b}: The damage effect from your Charged Blood feat increases to 1d4." compset="Feat" summary="Charged blood damage increases to d4." uniqueness="useronce">
+    <comment>Change summary of other feat (Done)
+
+Test?</comment>
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostAt" priority="10100"><![CDATA[var DC as number
+DC = 10 + (#levelcount[Race]/2) + hero.child[aCON].field[aModBonus].value
+DC = round(DC, 0, -1)
+
+field[xSumm].text = "Adj foe who hits you with S or P wep takes 1d4 dam (DC" & DC & " Ref neg)."]]></eval>
+    <exprreq message="Death Throe extraordinary ability required."><![CDATA[pickexists[xDeathThro] <> 0]]></exprreq>
+    <exprreq message="Dragon type required."><![CDATA[tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Constitution 17 required."><![CDATA[child[aCON].field[aFinalVal].value >= 17]]></exprreq>
+    <exprreq message="Charged Blood required."><![CDATA[#hasfeat[fChBloodDK] <> 0]]></exprreq>
+    </thing>
+  <thing id="fImEnRayDK" name="Improved Energy Ray" description="Your mastery of your energy ray has given you access to additional benefits.\n\n{b}Prerequisites{/b}: Aurak draconian, Cha 19.\n\n{b}Benefit{/b}: The die type of your energy ray increases to d8. In addition, you may choose to combine the energy ray with a single attack with a melee weapon (including natural weapons and unarmed attacks). This reduces the force damage by half but adds it directly to the weapon damage of the attack without requiring a separate attack roll. When used in this fashion, the aurak&#146;s energy ray may not be used again for 1 minute." compset="Feat" summary="May combine energy ray with melee att (add &#189; force dam), 1 min recharge." uniqueness="useronce">
+    <comment>Need to change the damage of energy ray. (done)</comment>
+    <usesource source="DOK"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="First">perform hero.child[wAurEnRay].delete[wMain.4d6_106]
+perform hero.child[wAurEnRay].assign[wMain.4d8_307]</eval>
+    <exprreq message="Aurak draconian race required."><![CDATA[tagis[Race.Draconian] + tagis[Race.Aurak] >= 2]]></exprreq>
+    <exprreq message="Charisma 19 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 19]]></exprreq>
+    </thing>
+  <thing id="fImpGallDK" name="Improved Gallop" description="By running on all fours and using your wings, you can move at amazing speed.\n\n{b}Prerequisites{/b}: Dex 13, gallop extraordinary ability.\n\n{b}Benefit{/b}: You must have your hands free, your wings unhindered, and must be wearing light or no armor and carrying no more than a light load to gain the benefits of this feat. When running on all fours with your wings spread, you may run up to six times your base land speed." compset="Feat" summary="Run at 6x speed when hands &amp; wings free, light/no armor and galloping." uniqueness="useronce">
+    <comment>with hands free, unhindered wings, and light or no armor. (Done)</comment>
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Gallop extraordinary ability required."><![CDATA[pickexists[rGallop] <> 0]]></exprreq>
+    </thing>
+  <thing id="fImpGlidDK" name="Improved Glide" description="Your gliding abilities are more capable than those of other draconians.\n\n{b}Prerequisites{/b}: Dex 13, glide extraordinary ability.\n\n{b}Benefit{/b}: You may extend the duration of a glide by a number of rounds equal to your Dexterity bonus. Every round the glide continues after the first you may maintain an elevation from 20 to 40 feet (your choice each round) and move horizontally up to twice your normal speed. You have a maneuverability of clumsy or that of your flying movement (whichever is greater).\n\n{b}Normal{/b}: A glide negates any damage taken from a fall and allows horizontal travel up to 4 times the vertical distance descended." compset="Feat" summary="Extend duration of glide by X rds at 20-40 ft. Clumsy maneuver unless fly better." uniqueness="useronce">
+    <comment>Script to set xSUmm (Done)</comment>
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[var duration as number
+duration = hero.child[aDEX].field[aModBonus].value
+
+field[xSumm].text = "+" & duration & " rds to glide duration at 20-40 ft. Clumsy maneuver unless fly better."]]></eval>
+    <exprreq message="Glide extraordinary ability required."><![CDATA[pickexists[rGlide] <> 0]]></exprreq>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fImpHaFlDK" name="Improved Hardened Flesh" description="You have learned to release a flood of the arcane chemicals within your body just short of what will occur with your death throe.\n\n{b}Prerequisites{/b}: Baaz draconian, Con 17, Hardened Flesh, Great Fortitude.\n\n{b}Benefit{/b}: You gain damage resistance 3/adamantine." compset="Feat" uniqueness="useronce">
+    <comment>Script to set DR (Done)</comment>
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    <bootstrap thing="xDamRdAdam"></bootstrap>
+    <eval phase="First">#applydr[xDamRdAdam, 3]</eval>
+    <exprreq message="Great Fortitude required."><![CDATA[#hasfeat[fGreatFort] <> 0]]></exprreq>
+    <exprreq message="Hardened Flesh required."><![CDATA[#hasfeat[fHardFleDK] <> 0]]></exprreq>
+    <exprreq message="Baaz draconian race required."><![CDATA[tagis[Race.Draconian] + tagis[Race.Baaz] >= 2]]></exprreq>
+    <exprreq message="Constitution 17 required."><![CDATA[child[aCON].field[aFinalVal].value >= 17]]></exprreq>
+    </thing>
+  <thing id="fImpShShDK" name="Improved Shapeshift" description="You are able to retain a number of alternate forms consisting of individuals that you have killed.\n\n{b}Prerequisites{/b}: Male sivak draconian, Cha 13.\n\n{b}Benefit{/b}: You may take the form of a number of additional previous forms equal to your Charisma bonus. Each time that you kill another Large or smaller giant or humanoid, you may replace one of your stored alternate forms with the new one.\n\n{b}Normal{/b}: Male sivaks may assume the form of the last Large or smaller giant or humanoid creature that they have killed." compset="Feat" summary="You keep up to X alternate forms, and you can replace them each time you kill." uniqueness="useronce">
+    <comment>Script to set xSumm (Done)</comment>
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xDamRdAdam"></bootstrap>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[var bonus as number
+bonus = hero.child[aCHA].field[aModBonus].value
+
+field[xSumm].text = "You keep up to " & bonus & " alternate forms, and you can replace one each time you kill."]]></eval>
+    <exprreq message="Sivak draconian race required."><![CDATA[tagis[Race.Draconian] + tagis[Race.Sivak] >= 2]]></exprreq>
+    <exprreq message="Male gender required."><![CDATA[tagis[Hero.Male] <> 0]]></exprreq>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fMigSteeDK" name="Mighty Steed" description="This creature&#146;s exceptionally large stature allows it to carry more than it normally could.\n\n{b}Prerequisite{/b}: Any creature capable of carrying a rider.\n\n{b}Benefit{/b}: For the purposes of determining carrying capacity as well as the size of riders it can bear, this creature is considered to be one size category larger than it actually is.\n\n{b}Normal{/b}: A creature without this feat can only carry riders one size category smaller, and carries the standard amount according to its Strength and size. See &#147;Carrying Capacity&#148; in Chapter 9 of the Player&#146;s Handbook." compset="Feat" summary="Mount considered 1 catagory larger for bearing riders and carry capacity" uniqueness="useronce">
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Mount or Minion race required."><![CDATA[hero.tagis[system_tag.minion] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPotSaliDK" name="Potent Saliva" description="Your saliva has increased efficacy.\n\n{b}Prerequisites{/b}: Kapak draconian, Con 13, Endurance.\n\n{b}Benefit{/b}: The damage or effect of your saliva is increased to a die-type of d8. A male kapak delivers initial and secondary damage of 1d8 each with his poison attack; a female kapak heals 2d8 points of damage.\n\n{b}Normal{/b}: Male kapak initial and secondary damage is 1d6 points of Dexterity; female kapaks heal 2d6 points of damage." compset="Feat" summary="Saliva die increases to d8s." uniqueness="useronce">
+    <usesource source="DOK"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Endurance required."><![CDATA[#hasfeat[fEndure] <> 0]]></exprreq>
+    <exprreq message="Kapak draconian race required."><![CDATA[tagis[Race.Draconian] + tagis[Race.Kapak] >= 2]]></exprreq>
+    </thing>
+  <thing id="sClrDDraDK" name="Detect Dragon" description="You can detect creatures with the dragon type. You need not know the specific breed of dragon you are looking for, as the spell detects true dragons and dragonkin equally well as long as the creature possesses the dragon type (thus it will not sense dragonnes). The spell will pierce through even the deceptions of illusions and {i}polymorph{/i} magicks (but not through spells like {i}misdirection{/i} or {i}nondetection{/i} that are specifically designed to defeat divinations).\n\nThe amount of information revealed through using the spell depends upon how long you search a particular area (400 ft. + 40 ft./level cone-shaped emanation) or focus on a specific type of dragon.\n\n{i}1st Round{/i}: Presence or absence of a dragon in the area.\n{i}2nd Round{/i}: Number of dragons in the area, as well as the condition (see below) of the healthiest specimen.\n{i}3rd Round{/i}: The condition and location of each individual present as well as the general breed (true dragon, draconian,  dragon turtle, etc.) of the healthiest specimen.\n{i}4th Round{/i}: The condition, location, and general breed of each individual present as well as the age category (if applicable) of the healthiest specimen. \n{i}5th Round{/i}: The condition, location, general breed, and age category (if applicable) of each individual present.\n\n{b}Conditions{/b}: For purposes of this spell, the categories of conditions are as follows:\n\n{i}Normal{/i}: Has at least 90% of full normal hit points, free of disease.\n{i}Fair{/i}: 30% to 90% of full normal hit points remaining.\n{i}Poor{/i}: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.\n{i}Weak{/i}: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.\n\nIf a creature falls into more than one category, the spell indicates the weaker of the two.\n\nEach round, you can turn to detect dragons in a new area. The spell can penetrate barriers, such as earth and stone, as well as magical disguises, but if a dragon is outside of direct line of sight, then you can discern its direction but not its exact location.\n\nThis spell became rare after Huma&#146;s time, as true dragons had long since passed into the realm of &#147;legend.&#148; However, it was wielded particularly well by the forces of the Dark Queen in the Age of Despair to track down the lairs of the metallic dragons so their eggs could be stolen.\n\n{b}Arcane Material Component{/b}: A scale from a true dragon." compset="Spell">
+    <fieldval field="sRange" value="Long (400 ft. + 40 ft./level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Emanation"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sDrdDDraDK" name="Detect Dragon" description="You can detect creatures with the dragon type. You need not know the specific breed of dragon you are looking for, as the spell detects true dragons and dragonkin equally well as long as the creature possesses the dragon type (thus it will not sense dragonnes). The spell will pierce through even the deceptions of illusions and {i}polymorph{/i} magicks (but not through spells like {i}misdirection{/i} or {i}nondetection{/i} that are specifically designed to defeat divinations).\n\nThe amount of information revealed through using the spell depends upon how long you search a particular area (400 ft. + 40 ft./level cone-shaped emanation) or focus on a specific type of dragon.\n\n{i}1st Round{/i}: Presence or absence of a dragon in the area.\n{i}2nd Round{/i}: Number of dragons in the area, as well as the condition (see below) of the healthiest specimen.\n{i}3rd Round{/i}: The condition and location of each individual present as well as the general breed (true dragon, draconian,  dragon turtle, etc.) of the healthiest specimen.\n{i}4th Round{/i}: The condition, location, and general breed of each individual present as well as the age category (if applicable) of the healthiest specimen. \n{i}5th Round{/i}: The condition, location, general breed, and age category (if applicable) of each individual present.\n\n{b}Conditions{/b}: For purposes of this spell, the categories of conditions are as follows:\n\n{i}Normal{/i}: Has at least 90% of full normal hit points, free of disease.\n{i}Fair{/i}: 30% to 90% of full normal hit points remaining.\n{i}Poor{/i}: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.\n{i}Weak{/i}: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.\n\nIf a creature falls into more than one category, the spell indicates the weaker of the two.\n\nEach round, you can turn to detect dragons in a new area. The spell can penetrate barriers, such as earth and stone, as well as magical disguises, but if a dragon is outside of direct line of sight, then you can discern its direction but not its exact location.\n\nThis spell became rare after Huma&#146;s time, as true dragons had long since passed into the realm of &#147;legend.&#148; However, it was wielded particularly well by the forces of the Dark Queen in the Age of Despair to track down the lairs of the metallic dragons so their eggs could be stolen.\n\n{b}Arcane Material Component{/b}: A scale from a true dragon." compset="Spell">
+    <fieldval field="sRange" value="Long (400 ft. + 40 ft./level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Emanation"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sMysDDraDK" name="Detect Dragon" description="You can detect creatures with the dragon type. You need not know the specific breed of dragon you are looking for, as the spell detects true dragons and dragonkin equally well as long as the creature possesses the dragon type (thus it will not sense dragonnes). The spell will pierce through even the deceptions of illusions and {i}polymorph{/i} magicks (but not through spells like {i}misdirection{/i} or {i}nondetection{/i} that are specifically designed to defeat divinations).\n\nThe amount of information revealed through using the spell depends upon how long you search a particular area (400 ft. + 40 ft./level cone-shaped emanation) or focus on a specific type of dragon.\n\n{i}1st Round{/i}: Presence or absence of a dragon in the area.\n{i}2nd Round{/i}: Number of dragons in the area, as well as the condition (see below) of the healthiest specimen.\n{i}3rd Round{/i}: The condition and location of each individual present as well as the general breed (true dragon, draconian,  dragon turtle, etc.) of the healthiest specimen.\n{i}4th Round{/i}: The condition, location, and general breed of each individual present as well as the age category (if applicable) of the healthiest specimen. \n{i}5th Round{/i}: The condition, location, general breed, and age category (if applicable) of each individual present.\n\n{b}Conditions{/b}: For purposes of this spell, the categories of conditions are as follows:\n\n{i}Normal{/i}: Has at least 90% of full normal hit points, free of disease.\n{i}Fair{/i}: 30% to 90% of full normal hit points remaining.\n{i}Poor{/i}: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.\n{i}Weak{/i}: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.\n\nIf a creature falls into more than one category, the spell indicates the weaker of the two.\n\nEach round, you can turn to detect dragons in a new area. The spell can penetrate barriers, such as earth and stone, as well as magical disguises, but if a dragon is outside of direct line of sight, then you can discern its direction but not its exact location.\n\nThis spell became rare after Huma&#146;s time, as true dragons had long since passed into the realm of &#147;legend.&#148; However, it was wielded particularly well by the forces of the Dark Queen in the Age of Despair to track down the lairs of the metallic dragons so their eggs could be stolen.\n\n{b}Arcane Material Component{/b}: A scale from a true dragon." compset="Spell">
+    <fieldval field="sRange" value="Long (400 ft. + 40 ft./level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sClass" tag="Mystic"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Emanation"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sRgrDDraDK" name="Detect Dragon" description="You can detect creatures with the dragon type. You need not know the specific breed of dragon you are looking for, as the spell detects true dragons and dragonkin equally well as long as the creature possesses the dragon type (thus it will not sense dragonnes). The spell will pierce through even the deceptions of illusions and {i}polymorph{/i} magicks (but not through spells like {i}misdirection{/i} or {i}nondetection{/i} that are specifically designed to defeat divinations).\n\nThe amount of information revealed through using the spell depends upon how long you search a particular area (400 ft. + 40 ft./level cone-shaped emanation) or focus on a specific type of dragon.\n\n{i}1st Round{/i}: Presence or absence of a dragon in the area.\n{i}2nd Round{/i}: Number of dragons in the area, as well as the condition (see below) of the healthiest specimen.\n{i}3rd Round{/i}: The condition and location of each individual present as well as the general breed (true dragon, draconian,  dragon turtle, etc.) of the healthiest specimen.\n{i}4th Round{/i}: The condition, location, and general breed of each individual present as well as the age category (if applicable) of the healthiest specimen. \n{i}5th Round{/i}: The condition, location, general breed, and age category (if applicable) of each individual present.\n\n{b}Conditions{/b}: For purposes of this spell, the categories of conditions are as follows:\n\n{i}Normal{/i}: Has at least 90% of full normal hit points, free of disease.\n{i}Fair{/i}: 30% to 90% of full normal hit points remaining.\n{i}Poor{/i}: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.\n{i}Weak{/i}: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.\n\nIf a creature falls into more than one category, the spell indicates the weaker of the two.\n\nEach round, you can turn to detect dragons in a new area. The spell can penetrate barriers, such as earth and stone, as well as magical disguises, but if a dragon is outside of direct line of sight, then you can discern its direction but not its exact location.\n\nThis spell became rare after Huma&#146;s time, as true dragons had long since passed into the realm of &#147;legend.&#148; However, it was wielded particularly well by the forces of the Dark Queen in the Age of Despair to track down the lairs of the metallic dragons so their eggs could be stolen.\n\n{b}Arcane Material Component{/b}: A scale from a true dragon." compset="Spell">
+    <fieldval field="sRange" value="Long (400 ft. + 40 ft./level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sClass" tag="Ranger"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Emanation"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorDDraDK" name="Detect Dragon" description="You can detect creatures with the dragon type. You need not know the specific breed of dragon you are looking for, as the spell detects true dragons and dragonkin equally well as long as the creature possesses the dragon type (thus it will not sense dragonnes). The spell will pierce through even the deceptions of illusions and {i}polymorph{/i} magicks (but not through spells like {i}misdirection{/i} or {i}nondetection{/i} that are specifically designed to defeat divinations).\n\nThe amount of information revealed through using the spell depends upon how long you search a particular area (400 ft. + 40 ft./level cone-shaped emanation) or focus on a specific type of dragon.\n\n{i}1st Round{/i}: Presence or absence of a dragon in the area.\n{i}2nd Round{/i}: Number of dragons in the area, as well as the condition (see below) of the healthiest specimen.\n{i}3rd Round{/i}: The condition and location of each individual present as well as the general breed (true dragon, draconian,  dragon turtle, etc.) of the healthiest specimen.\n{i}4th Round{/i}: The condition, location, and general breed of each individual present as well as the age category (if applicable) of the healthiest specimen. \n{i}5th Round{/i}: The condition, location, general breed, and age category (if applicable) of each individual present.\n\n{b}Conditions{/b}: For purposes of this spell, the categories of conditions are as follows:\n\n{i}Normal{/i}: Has at least 90% of full normal hit points, free of disease.\n{i}Fair{/i}: 30% to 90% of full normal hit points remaining.\n{i}Poor{/i}: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.\n{i}Weak{/i}: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.\n\nIf a creature falls into more than one category, the spell indicates the weaker of the two.\n\nEach round, you can turn to detect dragons in a new area. The spell can penetrate barriers, such as earth and stone, as well as magical disguises, but if a dragon is outside of direct line of sight, then you can discern its direction but not its exact location.\n\nThis spell became rare after Huma&#146;s time, as true dragons had long since passed into the realm of &#147;legend.&#148; However, it was wielded particularly well by the forces of the Dark Queen in the Age of Despair to track down the lairs of the metallic dragons so their eggs could be stolen.\n\n{b}Arcane Material Component{/b}: A scale from a true dragon." compset="Spell">
+    <fieldval field="sRange" value="Long (400 ft. + 40 ft./level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Emanation"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizDDraDK" name="Detect Dragon" description="You can detect creatures with the dragon type. You need not know the specific breed of dragon you are looking for, as the spell detects true dragons and dragonkin equally well as long as the creature possesses the dragon type (thus it will not sense dragonnes). The spell will pierce through even the deceptions of illusions and {i}polymorph{/i} magicks (but not through spells like {i}misdirection{/i} or {i}nondetection{/i} that are specifically designed to defeat divinations).\n\nThe amount of information revealed through using the spell depends upon how long you search a particular area (400 ft. + 40 ft./level cone-shaped emanation) or focus on a specific type of dragon.\n\n{i}1st Round{/i}: Presence or absence of a dragon in the area.\n{i}2nd Round{/i}: Number of dragons in the area, as well as the condition (see below) of the healthiest specimen.\n{i}3rd Round{/i}: The condition and location of each individual present as well as the general breed (true dragon, draconian,  dragon turtle, etc.) of the healthiest specimen.\n{i}4th Round{/i}: The condition, location, and general breed of each individual present as well as the age category (if applicable) of the healthiest specimen. \n{i}5th Round{/i}: The condition, location, general breed, and age category (if applicable) of each individual present.\n\n{b}Conditions{/b}: For purposes of this spell, the categories of conditions are as follows:\n\n{i}Normal{/i}: Has at least 90% of full normal hit points, free of disease.\n{i}Fair{/i}: 30% to 90% of full normal hit points remaining.\n{i}Poor{/i}: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.\n{i}Weak{/i}: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.\n\nIf a creature falls into more than one category, the spell indicates the weaker of the two.\n\nEach round, you can turn to detect dragons in a new area. The spell can penetrate barriers, such as earth and stone, as well as magical disguises, but if a dragon is outside of direct line of sight, then you can discern its direction but not its exact location.\n\nThis spell became rare after Huma&#146;s time, as true dragons had long since passed into the realm of &#147;legend.&#148; However, it was wielded particularly well by the forces of the Dark Queen in the Age of Despair to track down the lairs of the metallic dragons so their eggs could be stolen.\n\n{b}Arcane Material Component{/b}: A scale from a true dragon." compset="Spell">
+    <fieldval field="sRange" value="Long (400 ft. + 40 ft./level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Emanation"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sClrDraBlo" name="Dragon&apos;s Blood" description="This spell temporarily gives a creature the characteristics of a dragon, enabling it to better resist the effects of dragon fear, dragon magic, and dragon breath weapons.\n\nWhen you cast this spell, select a single type of true dragon (red, white, gold, etc.). For the duration of the spell, the subject is unaffected by the frightful presence of that dragon type. The subject also gains a +1 resistance bonus for every 5 caster levels (+4 maximum bonus at 20th level) on all saving throws to resist the spells, spell-like abilities, and supernatural abilities used by the particular dragon type.\n\n{b}Arcane Material Component{/b}: A dragon&#146;s scale of the type to be protected against." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sMysDraBlo" name="Dragon&apos;s Blood" description="This spell temporarily gives a creature the characteristics of a dragon, enabling it to better resist the effects of dragon fear, dragon magic, and dragon breath weapons.\n\nWhen you cast this spell, select a single type of true dragon (red, white, gold, etc.). For the duration of the spell, the subject is unaffected by the frightful presence of that dragon type. The subject also gains a +1 resistance bonus for every 5 caster levels (+4 maximum bonus at 20th level) on all saving throws to resist the spells, spell-like abilities, and supernatural abilities used by the particular dragon type.\n\n{b}Arcane Material Component{/b}: A dragon&#146;s scale of the type to be protected against." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Mystic"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorDraBlo" name="Dragon&apos;s Blood" description="This spell temporarily gives a creature the characteristics of a dragon, enabling it to better resist the effects of dragon fear, dragon magic, and dragon breath weapons.\n\nWhen you cast this spell, select a single type of true dragon (red, white, gold, etc.). For the duration of the spell, the subject is unaffected by the frightful presence of that dragon type. The subject also gains a +1 resistance bonus for every 5 caster levels (+4 maximum bonus at 20th level) on all saving throws to resist the spells, spell-like abilities, and supernatural abilities used by the particular dragon type.\n\n{b}Arcane Material Component{/b}: A dragon&#146;s scale of the type to be protected against." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizDraBlo" name="Dragon&apos;s Blood" description="This spell temporarily gives a creature the characteristics of a dragon, enabling it to better resist the effects of dragon fear, dragon magic, and dragon breath weapons.\n\nWhen you cast this spell, select a single type of true dragon (red, white, gold, etc.). For the duration of the spell, the subject is unaffected by the frightful presence of that dragon type. The subject also gains a +1 resistance bonus for every 5 caster levels (+4 maximum bonus at 20th level) on all saving throws to resist the spells, spell-like abilities, and supernatural abilities used by the particular dragon type.\n\n{b}Arcane Material Component{/b}: A dragon&#146;s scale of the type to be protected against." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sClrDraBan" name="Dragonbane" description="When you cast this spell upon a weapon, you imbue it with the ability to inflict increased harm against any creature of the dragon type. The spell has three effects:\n\nFirst, the weapon automatically bypasses any dragon&#146;s natural damage reduction, as well as any damage reduction the dragon may have gained through magic or supernatural means (such as spells or magic items that grant damage reduction).\n\nSecondly, the amount of damage inflicted by the weapon on a successful critical hit is increased by one multiplier. Thus, a weapon that normally inflicts x2 damage on a successful critical hit deals x3 damage.\n\nThirdly, the weapon remains unaffected by any draconian death throes&#151;a sword blade easily slides free of a baaz draconian&#146;s petrified corpse and remains untouched by a deceased kapak draconian&#146;s acidic meltdown.\n\n{b}Arcane Material Component{/b}: Three drops of any dragon&#146;s blood." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (item, harmless)"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sMysDraBan" name="Dragonbane" description="When you cast this spell upon a weapon, you imbue it with the ability to inflict increased harm against any creature of the dragon type. The spell has three effects:\n\nFirst, the weapon automatically bypasses any dragon&#146;s natural damage reduction, as well as any damage reduction the dragon may have gained through magic or supernatural means (such as spells or magic items that grant damage reduction).\n\nSecondly, the amount of damage inflicted by the weapon on a successful critical hit is increased by one multiplier. Thus, a weapon that normally inflicts x2 damage on a successful critical hit deals x3 damage.\n\nThirdly, the weapon remains unaffected by any draconian death throes&#151;a sword blade easily slides free of a baaz draconian&#146;s petrified corpse and remains untouched by a deceased kapak draconian&#146;s acidic meltdown.\n\n{b}Arcane Material Component{/b}: Three drops of any dragon&#146;s blood." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (item, harmless)"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Mystic"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sPalDraBan" name="Dragonbane" description="When you cast this spell upon a weapon, you imbue it with the ability to inflict increased harm against any creature of the dragon type. The spell has three effects:\n\nFirst, the weapon automatically bypasses any dragon&#146;s natural damage reduction, as well as any damage reduction the dragon may have gained through magic or supernatural means (such as spells or magic items that grant damage reduction).\n\nSecondly, the amount of damage inflicted by the weapon on a successful critical hit is increased by one multiplier. Thus, a weapon that normally inflicts x2 damage on a successful critical hit deals x3 damage.\n\nThirdly, the weapon remains unaffected by any draconian death throes&#151;a sword blade easily slides free of a baaz draconian&#146;s petrified corpse and remains untouched by a deceased kapak draconian&#146;s acidic meltdown.\n\n{b}Arcane Material Component{/b}: Three drops of any dragon&#146;s blood." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (item, harmless)"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Paladin"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorDraBan" name="Dragonbane" description="When you cast this spell upon a weapon, you imbue it with the ability to inflict increased harm against any creature of the dragon type. The spell has three effects:\n\nFirst, the weapon automatically bypasses any dragon&#146;s natural damage reduction, as well as any damage reduction the dragon may have gained through magic or supernatural means (such as spells or magic items that grant damage reduction).\n\nSecondly, the amount of damage inflicted by the weapon on a successful critical hit is increased by one multiplier. Thus, a weapon that normally inflicts x2 damage on a successful critical hit deals x3 damage.\n\nThirdly, the weapon remains unaffected by any draconian death throes&#151;a sword blade easily slides free of a baaz draconian&#146;s petrified corpse and remains untouched by a deceased kapak draconian&#146;s acidic meltdown.\n\n{b}Arcane Material Component{/b}: Three drops of any dragon&#146;s blood." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (item, harmless)"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizDraBan" name="Dragonbane" description="When you cast this spell upon a weapon, you imbue it with the ability to inflict increased harm against any creature of the dragon type. The spell has three effects:\n\nFirst, the weapon automatically bypasses any dragon&#146;s natural damage reduction, as well as any damage reduction the dragon may have gained through magic or supernatural means (such as spells or magic items that grant damage reduction).\n\nSecondly, the amount of damage inflicted by the weapon on a successful critical hit is increased by one multiplier. Thus, a weapon that normally inflicts x2 damage on a successful critical hit deals x3 damage.\n\nThirdly, the weapon remains unaffected by any draconian death throes&#151;a sword blade easily slides free of a baaz draconian&#146;s petrified corpse and remains untouched by a deceased kapak draconian&#146;s acidic meltdown.\n\n{b}Arcane Material Component{/b}: Three drops of any dragon&#146;s blood." compset="Spell">
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fortitude negates (item, harmless)"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="MorDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sClrDraWis" name="Dragonwise" description="After casting this spell, you take on the mindset of a dragon. You become immune to the frightful presence of all dragons and gain a +10 bonus on all Charisma-based skill checks and Sense Motive checks when dealing with creatures of the dragon type." compset="Spell">
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sMysDraWis" name="Dragonwise" description="After casting this spell, you take on the mindset of a dragon. You become immune to the frightful presence of all dragons and gain a +10 bonus on all Charisma-based skill checks and Sense Motive checks when dealing with creatures of the dragon type." compset="Spell">
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Mystic"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorDraWis" name="Dragonwise" description="After casting this spell, you take on the mindset of a dragon. You become immune to the frightful presence of all dragons and gain a +10 bonus on all Charisma-based skill checks and Sense Motive checks when dealing with creatures of the dragon type." compset="Spell">
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWisDraWis" name="Dragonwise" description="After casting this spell, you take on the mindset of a dragon. You become immune to the frightful presence of all dragons and gain a +10 bonus on all Charisma-based skill checks and Sense Motive checks when dealing with creatures of the dragon type." compset="Spell">
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizGloHor" name="Globular Hoard" description="This spell bonds all unattended objects that are touching one another within the spell&#146;s effect {b}(up to one 5-ft. cube/level){/b}. The {i}hoard{/i} is considered one item, with a total weight equal to the combined weight of every affected object. A {i}globular hoard{/i} is often difficult (if not impossible) to move, since a large collection of items can easily weigh several hundred pounds. It is likewise difficult to place the hoard in any container, including magical containers such as {i}bags of holding{/i}, as its total size is usually larger than the container&#146;s opening.\n\nYou can force an individual object free from the hoard by making a DC 32 Strength check. Once an object has been removed, it is no longer affected by this casting of the spell&#151;another casting is required. All objects to be affected must be in contact with one another when the spell is cast. Thus, you must cast this spell twice if you want to protect two piles of objects, or if you want to add an object (such as a magic item) to an existing {i}globular hoard{/i}.\n\nDragons developed this spell to secure their hoards when they must leave for extended periods of time. This spell can be made permanent with a {i}permanency{/i} spell.\n\n{b}Material Component{/b}: 250 gp worth of gold dust, encased in gum arabic." compset="Spell">
+    <fieldval field="sRange" value="Medium (100 ft. + 10 ft./level)"/>
+    <fieldval field="sDuration" value="1 day/level"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    </thing>
+  <thing id="sSorGloHor" name="Globular Hoard" description="This spell bonds all unattended objects that are touching one another within the spell&#146;s effect {b}(up to one 5-ft. cube/level){/b}. The {i}hoard{/i} is considered one item, with a total weight equal to the combined weight of every affected object. A {i}globular hoard{/i} is often difficult (if not impossible) to move, since a large collection of items can easily weigh several hundred pounds. It is likewise difficult to place the hoard in any container, including magical containers such as {i}bags of holding{/i}, as its total size is usually larger than the container&#146;s opening.\n\nYou can force an individual object free from the hoard by making a DC 32 Strength check. Once an object has been removed, it is no longer affected by this casting of the spell&#151;another casting is required. All objects to be affected must be in contact with one another when the spell is cast. Thus, you must cast this spell twice if you want to protect two piles of objects, or if you want to add an object (such as a magic item) to an existing {i}globular hoard{/i}.\n\nDragons developed this spell to secure their hoards when they must leave for extended periods of time. This spell can be made permanent with a {i}permanency{/i} spell.\n\n{b}Material Component{/b}: 250 gp worth of gold dust, encased in gum arabic." compset="Spell">
+    <fieldval field="sRange" value="Medium (100 ft. + 10 ft./level)"/>
+    <fieldval field="sDuration" value="1 day/level"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="DOK"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    </thing>
+  </document>

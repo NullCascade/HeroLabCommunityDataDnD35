@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="cHelpHHM" name="Healing Hand of Mishakal" compset="ClassHelp" uniqueness="unique">
+    <comment>Tested and Done</comment>
+    <fieldval field="cAbbr" value="HHM"/>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="shortname" value="Hand of Mishakal"/>
+    <fieldval field="cHDSides" value="8"/>
+    <arrayval field="cSpecial" index="2" value="Mishakal&#146;s peace"/>
+    <arrayval field="cSpecial" index="3" value="Mishakal&#146;s mercy"/>
+    <arrayval field="cSpecial" index="4" value="Mishakal&#146;s strength"/>
+    <arrayval field="cSpecial" index="0" value="Mishakal&#146;s resolve, pacifist"/>
+    <arrayval field="cSpell" index="0" value="+1 level of existing divine spellcasting class"/>
+    <arrayval field="cSpell" index="1" value="+1 level of existing divine spellcasting class"/>
+    <arrayval field="cSpell" index="2" value="+1 level of existing divine spellcasting class"/>
+    <arrayval field="cSpell" index="3" value="+1 level of existing divine spellcasting class"/>
+    <arrayval field="cSpell" index="4" value="+1 level of existing divine spellcasting class"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="3"/>
+    <arrayval field="cMagLevTot" index="3" value="4"/>
+    <arrayval field="cMagLevTot" index="4" value="5"/>
+    <arrayval field="cSpecial" index="1" value="Mishakal&#146;s light"/>
+    <usesource source="HOotS" parent="pDL" name="Holy Order of the Stars"/>
+    <tag group="cAttack" tag="Poor"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kHeal"/>
+    <tag group="ClassSkill" tag="kKnowRel"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="HealMisha" name="Healing Hand of Mishakal"/>
+    <tag group="AlgnReq" tag="Good"/>
+    <tag group="ClassPanel" tag="ExNeeded"/>
+    <bootstrap thing="cHHMMiLigh"></bootstrap>
+    <bootstrap thing="cHHMPacifi"></bootstrap>
+    <bootstrap thing="cHHMMiMerc"></bootstrap>
+    <bootstrap thing="cHHMMiPeac"></bootstrap>
+    <bootstrap thing="cHHMMiReso"></bootstrap>
+    <bootstrap thing="cHHMMiStre"></bootstrap>
+    </thing>
+  <thing id="cHealMisha" name="Healing Hand of Mishakal" description="{b}Patron Deity{/b}: Mishakal.\n\n{b}Special{/b}: The candidate must have served at least 6 months in a shrine or temple of Mishakal tending solely for the sick, the diseased, and the wounded.\n\nIn times of war and turmoil, Mishakal&#146;s priests find themselves marching alongside armies, tending to the sick and the wounded. Certain Mishakite clerics take their healing arts a step further, learning to channel even more sacred energy into their work and conduct themselves with confidence in the thick of battle. These brave souls, known as the healing hands of Mishakal, comprise the goddess&#146;s most devoted and respected sect of acolytes, always ready to help a fallen soldier or heal the wounds of innocents caught in the conflict that surrounds them.\n\nMost healing hands are clerics. After the War of Souls, when Mishakal once again returns to Krynn, a small number of paladins arise among the healing hands. A healing hand can benefit from martial training, especially if they are attached to an auxiliary or relief shelter in the middle of enemy territory, but their oath of peace forbids them from striking directly against others.\n\nNPC healing hands can be found wherever and whenever Mishakal&#146;s azure light of healing is needed. Mid-level healing hands are assigned in good lands to shrines and temples, ready for adventurers to arrive on the doorstep. High-level healing hands often go out into dangerous, unexplored territory, which is where they might meet player characters and aid them in their efforts against evil." compset="ClassLevel" maxlimit="5">
+  <usesource source="HOotS"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpHHM"></bootstrap>
+    <link linkage="helper" thing="cHelpHHM"/>
+    <exprreq message="Heal 8 ranks required."><![CDATA[#skillranks[kHeal] >= 8]]></exprreq>
+    <exprreq message="Knowledge (religion) 4 ranks required."><![CDATA[#skillranks[kKnowRel] >= 4]]></exprreq>
+    <exprreq message="Skill Focus (Heal) required."><![CDATA[childfound[kHeal].tagis[Helper.SkillFocus] <> 0]]></exprreq>
+    <exprreq message="Able to cast {i}cure serious wounds{/i} as a divine spell."><![CDATA[tagcount[Hero.Divine] >= 3 + 1]]></exprreq>
+    </thing>
+  <thing id="cHHMMiReso" name="Mishakal&apos;s Resolve" description="At 1st level, the healing hand learns to channel her healing powers even in dangerous environments. She does not provoke an attack of opportunity when casting any spell with the healing descriptor." compset="ClSpecial" summary="Casting spells with healing descriptor never provokes AoO.">
+<usesource source="HOotS"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="SpecSource" tag="cHelpHHM"/>
+    </thing>
+  <thing id="cHHMPacifi" name="Pacifist" description="A 1st level, the healing hand has sworn an oath of nonviolent action. Although this oath does not prevent her from defending herself or her charges from enemies, she is forbidden to take a life or cause the death of another. For the purposes of this oath, the following creatures are exempt: constructs, elementals, oozes, plants, undead, and vermin. A healing hand that willingly or accidentally breaks this oath suffers the consequences detailed under ex-healing hands of Mishakal, below." compset="ClSpecial" summary="Can not kill, except: constructs, elementals, oozes, plants, undead or vermin.">
+    <comment>Too long? (Done)</comment>
+    <usesource source="HOotS"/>
+    <tag group="SpecSource" tag="cHelpHHM"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    </thing>
+  <thing id="cHHMMiLigh" name="Mishakal&apos;s Light" description="At 2nd level, the curative magic of the healing hand of Mishakal is enhanced. Whenever she casts a spell that cures hit point damage, she adds her Charisma bonus (if any) to the amount of damage healed." compset="ClSpecial" summary="Hp curing spells gain +X bonus to damage healed.">
+  <usesource source="HOotS"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="SpecSource" tag="cHelpHHM"/>
+    <eval phase="UserPostAt"><![CDATA[field[xSumm].text = "Hp curing spells gain +" & hero.child[aCHA].field[aModBonus].value & " bonus to damage healed."]]></eval>
+    </thing>
+  <thing id="cHHMMiPeac" name="Mishakal&apos;s Peace" description="By 3rd level, the healing hand no longer needs to voice her prayers to Mishakal when healing others. Any spell she casts with the healing descriptor may be cast without a verbal component (as with the Silent Spell feat). This does not change the effective level of the spell." compset="ClSpecial" summary="Spells with the healing descriptor may be Stilled for free.">
+  <usesource source="HOotS"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpHHM"/>
+    <tag group="SpecType" tag="Immune"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cHHMMiMerc" name="Mishakal&apos;s Mercy" description="A 4th-level healing hand is granted the power to confront her enemies directly without inflicting great harm upon them. Once a day, any single bludgeoning weapon she uses may be turned into a {i}merciful{/i} weapon for a number of rounds equal to the healing hand&#146;s class level plus Wisdom bonus (if any). Attacks with this weapon add +2d6 to weapon damage rolls, but all damage caused is non-lethal." compset="ClSpecial" summary="1/day, free, wielded bludgeoning weap is {i}merciful{/i} and +2d6 dam for X rds.">
+    <fieldval field="hTotal" value="1"/>
+<usesource source="HOotS"/>
+    <tag group="SpecSource" tag="cHelpHHM"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[    var duration as number
+    duration = hero.child[cHelpHHM].field[cTotalLev].value + hero.child[aWIS].field[aModBonus].value
+
+field[xSumm].text = "1/day, free, wielded bludgeoning weap is {i}merciful{/i} and +2d6 dam for " & duration & " rds."]]></eval>
+    </thing>
+  <thing id="cHHMMiStre" name="Mishakal&apos;s Strength" description="A healing hand&#146;s curative magic is strengthened at 5th level. Any {i}cure{/i} spell she casts restores half again as many hit points as normal (as with the Empower Spell feat). This does not change the effective level of these spells." compset="ClSpecial" summary="All {i}cure{/i} spells may be Empowered for free.">
+  <usesource source="HOotS"/>
+    <tag group="SpecSource" tag="cHelpHHM"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="wEmmide" name="Emmide" description="An emmide is a long, willowy pole weapon related to the quarterstaff. Originally used by the elves as a means of knocking fruit from trees, its use has been refined by the monks of Majere into a versatile means of self defense and protection.\n\nAn emmide has reach, so you can strike opponents up to 10 feet away with it. In addition, unlike most other weapons with reach, it can be used against an adjacent foe. Like the quarterstaff, the emmide is a double weapon. You can fight with it as if fighting with two weapons but if you do, you incur all the normal penalties associated with fighting with two weapons, just as if you were using a one-handed weapon and a light weapon. If you make attacks with both ends of the emmide, you can alternate reach with each end or keep it the same for both.\n\nThe unique fighting style associated with the emmide focuses on unbalancing an opponent. It can therefore be used to make trip attacks, and if you are tripped during your own trip attempt, you can drop the emmide to avoid being tripped.\n\nAn emmide is an exotic weapon. Without spending an Exotic Weapon Proficiency (emmide) feat on the weapon, it functions exactly like a quarterstaff. A monk may use an emmide as a special monk weapon, allowing access to additional options. A monk with the Exotic Weapon Proficiency (emmide) feat has the most options of all." compset="Weapon">
+    <fieldval field="gSizeCost" value="1"/>
+    <fieldval field="gWeight" value="4"/>
+<usesource source="HOotS"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wOff" tag="1d6_5"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Double"/>
+    <tag group="wCategory" tag="Reach"/>
+    <tag group="wType" tag="B"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="IsWeapon" tag="wQtrstaff"/>
+    </thing>
+  </document>

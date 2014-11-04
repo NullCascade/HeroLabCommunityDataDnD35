@@ -1,0 +1,1933 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>c4-14-10</info_history>
+    </fileinfo>
+  <thing id="cvArmiger1" name="Armiger (1st)" description="The armiger is a noble with martial training. Although all nobles receive some education in the arts of warfare, armigers embrace it, learning to trust other knights and officers with their lives and to honor the codes and laws that they live by. Armigers are not as skilled as fighters, nor as well-connected as standard nobles, but they represent a segment of the population that aspires towards glory, esprit de corps, and skill at arms. Many knights begin as armigers, and many armigers begin as simple folk who have risen from humble beginnings and reached beyond their station.\n\nThese substitution levels make it somewhat easier for a noble or fighter character to meet the requirements of the various knightly prestige classes, but they are just as suited for those who wish to play knights in service to a lord or noble without sacrificing skill ranks or competence." compset="ClassVary" uniqueness="unique">
+    <comment>Problem with Armor proficiencies adding (Done)</comment>
+    <fieldval field="cvLevel" value="1"/>
+    <arrayval field="cvBonFtMod" index="0" value="1"/>
+    <arrayval field="cvCustTot" index="0" value="-1"/>
+    <usesource source="KniAnsalon" parent="pDL" name="Knightly Orders of Ansalon"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="fInclude" tag="fHonorBoun"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="ClVaryName" tag="Replace"/>
+    <tag group="AlgnForbid" tag="Chaotic"/>
+    <bootstrap thing="xArmArmPro"></bootstrap>
+    <bootstrap thing="cArmCalA22"></bootstrap>
+    <link linkage="varies" thing="cHelpNbl"/>
+    <eval phase="First">perform hero.assign[User.MedArmAdd]
+
+   hero.child[xFavor].field[Value].value -= 1</eval>
+    </thing>
+  <thing id="cArmCalA22" name="Call to Arms" description="The Armiger is part of a brotherhood of knights, whether this includes others in his lords household or his companions in a knightly order or chapter. Once a week for each substitution level taken, the armiger can summon the aid of other knights and men-at-arms without having to take the Leadership feat for a cohort or henchmen.\n\nTo summon the aid of his companions the armiger makes a call to arms check. Roll d20 and add a bonus equal to the number of armiger substitution levels taken plus the armiger&apos;s Charisma bonus (if any). The DC varies depending on the kinds of assistance required.\n\nDC 10: 1 ally of the armiger&apos;s class level\nDC 15: 1 ally of the armiger&apos;s class level +1\nDC 20: 1 ally of the armiger&apos;s class level +2\nDC 25: 1 ally of the armiger&apos;s class level +3\n\nAdditional modifiers to DC:\n+3: For each additional ally\n+5: For additional 1d6 men-at-arms (War1)\n+5: Allies to arrive in 12 hours instead of 24\n\nAllies are either fighters or Nobles of the same class (armiger) level as the PC or higher (based on the DC) and are equipped appropriately for NPCs of thier level. Allies have a maximum level of 10th (Arm1), 13th (Arm3), or 16th (Arm7)\n\nAllies are never members of non-knightly classes, such as wizards or rogues, unless unless they are members of a knightly order (such as the Legion of Steel or the Knights of the Thorn). Allies are not cohorts and are still under the control of the DM; though they do have an attitude of Helpful, they will respond to poor treatment as any other NPC. They assist the armiger who summoned them with tasks in accordance with their summoners order, noble lord, or code of conduct and remain to help for a number of days equal to the armiger&apos;s Charisma bonus (minimum 1)." compset="ClSpecial" summary="Call upon brother knights to fight for or assist you" sortorder="1">
+    <comment><![CDATA[Need to make it so don't get added multi times
+
+
+elseif (#tagis[cvArmiger1] + #tagis[cvArmiger3] + #tagis[cvArmiger7] = 2) then
+     total = 2
+elseif (#tagis[cvArmiger1] + #tagis[cvArmiger3] + #tagis[cvArmiger7] = 1) then
+     total = 1
+
+if (hero.tagis[cvArmiger1] + hero.tagis[cvArmiger3] + hero.tagis[cvArmiger7] = 3) then
+     total = 3
+  endif]]></comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="Armiger"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xCalltoArm"></bootstrap>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[~ Only show this ability if previous Armiger levels have not added it
+
+~ Find out how many Armiger substitution levels we have taken
+    var total as number
+    total = hero.tagis[ClassVary.cvArmiger1] + hero.tagis[ClassVary.cvArmiger3] + hero.tagis[ClassVary.cvArmiger7] 
+
+~ Set our charges
+   field[hTotal].value += total
+
+~ Set our bonus
+   var bonus as number
+    bonus = total + hero.child[aCHA].field[aModBonus].value
+
+~ Set our duration
+   var duration as number
+    duration = hero.child[aCHA].field[aModBonus].value
+      if (duration < 1) then
+        duration = 1
+     endif
+
+~ Set our name
+   field[livename].text = "Call to Arms +" & bonus & ""
+
+~ Set our description
+    if (duration = 1) then
+      field[xSumm].text = "" & total & "/week call upon brother knights to aid you for up to " & duration & " day."
+    elseif (duration > 1) then
+      field[xSumm].text = "" & total & "/week call upon brother knights to aid you for up to " & duration & " days."
+  endif]]></eval>
+    </thing>
+  <thing id="cvArmiger3" name="Armiger (3rd)" description="The armiger is a noble with martial training. Although all nobles receive some education in the arts of warfare, armigers embrace it, learning to trust other knights and officers with their lives and to honor the codes and laws that they live by. Armigers are not as skilled as fighters, nor as well-connected as standard nobles, but they represent a segment of the population that aspires towards glory, esprit de corps, and skill at arms. Many knights begin as armigers, and many armigers begin as simple folk who have risen from humble beginnings and reached beyond their station.\n\nThese substitution levels make it somewhat easier for a noble or fighter character to meet the requirements of the various knightly prestige classes, but they are just as suited for those who wish to play knights in service to a lord or noble without sacrificing skill ranks or competence." compset="ClassVary" uniqueness="unique">
+    <comment>Problem with Armor proficiencies adding (Done)</comment>
+    <fieldval field="cvLevel" value="3"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="ClVaryName" tag="Replace"/>
+    <tag group="AlgnForbid" tag="Chaotic"/>
+    <tag group="cWill" tag="Poor"/>
+    <bootstrap thing="cArmCalA22"></bootstrap>
+    <bootstrap thing="xArmArmPro"></bootstrap>
+    <link linkage="varies" thing="cHelpNbl"/>
+    <eval phase="First">perform hero.assign[User.MedArmAdd]
+
+   hero.child[xFavor].field[Value].value -= 1</eval>
+    </thing>
+  <thing id="cvArmiger7" name="Armiger (7th)" description="The armiger is a noble with martial training. Although all nobles receive some education in the arts of warfare, armigers embrace it, learning to trust other knights and officers with their lives and to honor the codes and laws that they live by. Armigers are not as skilled as fighters, nor as well-connected as standard nobles, but they represent a segment of the population that aspires towards glory, esprit de corps, and skill at arms. Many knights begin as armigers, and many armigers begin as simple folk who have risen from humble beginnings and reached beyond their station.\n\nThese substitution levels make it somewhat easier for a noble or fighter character to meet the requirements of the various knightly prestige classes, but they are just as suited for those who wish to play knights in service to a lord or noble without sacrificing skill ranks or competence." compset="ClassVary" uniqueness="unique">
+    <comment>Problem with Armor proficiencies adding (Done)</comment>
+    <fieldval field="cvLevel" value="7"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="AlgnForbid" tag="Chaotic"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="ClVaryName" tag="Replace"/>
+    <bootstrap thing="xArmArmPro"></bootstrap>
+    <bootstrap thing="cArmCalA22"></bootstrap>
+    <link linkage="varies" thing="cHelpNbl"/>
+    <eval phase="First">perform hero.assign[User.MedArmAdd]
+
+   hero.child[xFavor].field[Value].value -= 1</eval>
+    </thing>
+  <thing id="xCalltoArm" name="Call to Arms" description="The Armiger is part of a brotherhood of knights, whether this includes others in his lords household or his companions in a knightly order or chapter. Once a week for each substitution level taken, the armiger can summon the aid of other knights and men-at-arms without having to take the Leadership feat for a cohort or henchmen.\n\nTo summon the aid of his companions the armiger makes a call to arms check. Roll d20 and add a bonus equal to the number of armiger substitution levels taken plus the armiger&apos;s Charisma bonus (if any). The DC varies depending on the kinds of assistance required.\n\nDC 10: 1 ally of the armiger&apos;s class level\nDC 15: 1 ally of the armiger&apos;s class level +1\nDC 20: 1 ally of the armiger&apos;s class level +2\nDC 25: 1 ally of the armiger&apos;s class level +3\n\nAdditional modifiers to DC:\n+3: For each additional ally\n+5: For additional 1d6 men-at-arms (War1)\n+5: Allies to arrive in 12 hours instead of 24\n\nAllies are either fighters or Nobles of the same class (armiger) level as the PC or higher (based on the DC) and are equipped appropriately for NPCs of thier level. Allies have a maximum level of 10th (Arm1), 13th (Arm3), or 16th (Arm7)\n\nAllies are never members of non-knightly classes, such as wizards or rogues, unless they are members of a knightly order (such as the Legion of Steel or the Knights of the Thorn). Allies are not cohorts and are still under the control of the DM; though they do have an attitude of Helpful, they will respond to poor treatment as any other NPC. They assist the armiger who summoned them with tasks in accordance with their summoners order, noble lord, or code of conduct and remain to help for a number of days equal to the armiger&apos;s Charisma bonus (minimum 1)." compset="Special" uniqueness="unique">
+    <usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="Armiger"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[~ Find out how many Armiger substitution levels we have taken
+    var total as number
+    total = hero.tagis[ClassVary.cvArmiger1] + hero.tagis[ClassVary.cvArmiger3] + hero.tagis[ClassVary.cvArmiger7] 
+
+~ Set our charges
+   field[hTotal].value = total
+
+~ Set our bonus
+   var bonus as number
+    bonus = total + hero.child[aCHA].field[aModBonus].value
+
+~ Set our duration
+   var duration as number
+    duration = hero.child[aCHA].field[aModBonus].value
+      if (duration < 1) then
+        duration = 1
+     endif
+
+~ Set our name
+   field[livename].text = "Call to Arms +" & bonus & ""
+
+~ Set our description
+    if (duration = 1) then
+      field[xSumm].text = "" & total & "/week call upon brother knights to aid you for up to " & duration & " day."
+    elseif (duration > 1) then
+      field[xSumm].text = "" & total & "/week call upon brother knights to aid you for up to " & duration & " days."
+    endif]]></eval>
+    </thing>
+  <thing id="xArmArmPro" name="Armiger Armor Proficiencies." description="This is a holder." compset="Special" uniqueness="unique">
+    <comment><![CDATA[  var result as number
+
+if (hero.tagis[ClassVary.cvArmiger1] <> 0) then
+  result += 1
+endif
+
+if (hero.tagis[ClassVary.cvArmiger3] <> 0) then
+  result += 1
+endif
+
+if (hero.tagis[ClassVary.cvArmiger7] <> 0) then
+  result += 1
+endif
+
+if (result >= 1) then
+  perform hero.assign[User.MedArmAdd]
+endif
+
+if (result >= 2) then
+  perform hero.assign[User.HvyArmAdd]
+endif]]></comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="User" tag="MedArmAdd"/>
+    <bootstrap thing="fArmHeavy">
+      <containerreq phase="First" priority="10500"><![CDATA[count:User.MedArmAdd >= 2]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fArmMedium">
+      <containerreq phase="First" priority="10500"><![CDATA[count:User.MedArmAdd >=1]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="fCharming" name="Charming" description="Others find your company appealing.\n\n{b}Benefit{/b}: You get a +2 bonus on all Diplomacy checks and Bluff checks." compset="Feat" summary="You get a +2 bonus on all Diplomacy checks and Bluff checks." uniqueness="useronce">
+    <comment>Expanded Aura of Courage and Extra Smiting still need work. (Done)</comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="PreLevel" priority="5000">hero.childfound[kDiplomacy].field[Bonus].value = hero.childfound[kDiplomacy].field[Bonus].value + 2
+      hero.childfound[kBluff].field[Bonus].value = hero.childfound[kBluff].field[Bonus].value + 2</eval>
+    </thing>
+  <thing id="fDefCleave" name="Defensive Cleave" description="You are skilled at using your mighty blows to ward off attacks from other foes.\n\n{b}Prerequisites{/b}: Str 13, Cleave, Power Attack, base attack bonus +4.\n\n{b}Benefit{/b}: If you make at least 1 additional attack in a round with the use of the Cleave or Great Cleave feats, you gain a +4 dodge bonus to your Armor Class against Melee attacks until the beginning of your next turn\n\n{b}Special{/b}: A fighter may select Great Cleave as one of his fighter bonus feats." compset="Feat" summary="+4 dodge bonus to AC vs Melee in any round you cleave." uniqueness="useronce">
+    <usesource source="KniAnsalon"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <exprreq message="Cleave required."><![CDATA[#hasfeat[fCleave] <> 0]]></exprreq>
+    <exprreq message="Power Attack required."><![CDATA[#hasfeat[fCleave] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +4 required."><![CDATA[child[Attack].field[tAtkBase].value >= 4]]></exprreq>
+    <exprreq message="Strength 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fDisciplin" name="Disciplined" description="You maintain composure even in life threatening situations.\n\n{b}Benefit{/b}: You get a +1 bonus on Will saves and a +2 bonus on Concentration checks" compset="Feat" summary="You get a +2 bonus on Concetration checks and +1 to WIll saves." uniqueness="useronce">
+    <usesource source="KniAnsalon"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="PreLevel" priority="5000">hero.childfound[kConcent].field[Bonus].value = hero.childfound[kConcent].field[Bonus].value + 2
+      container.child[vWill].field[Bonus].value = container.child[vWill].field[Bonus].value + 1</eval>
+    </thing>
+  <thing id="fExpAuraCr" name="Expanded Aura of Courage" description="Your aura of courage protects more allies than normal.\n\n{b}Prerequisites{/b}: Aura of Courage class feature\n\n{b}Benefit{/b}: Your aura of courage now affect allies within 60 feet of you." compset="Feat" summary="Aura of Courage affects allies within 60 ft." uniqueness="useronce">
+    <comment>Need to add User tag to Aura of courage abilities in other class, fwd to hero. (Done)
+
+cKRoAuraCr
+cKSwAuraCr
+cKCrAuraCr
+cPalAuraCr
+cPfChvAura</comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="AuraCour"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <exprreq message="Aura of Courage required."><![CDATA[hero.childfound[cPalAuraCr].tagis[Helper.ShowSpec] + hero.childfound[cPfChvAura].tagis[Helper.ShowSpec] + hero.tagis[User.AuraCour] <> 0]]></exprreq>
+    </thing>
+  <thing id="fExtraSmi" name="Extra Smiting" description="You can make more smite attacks.\n\n{b}Prerequisites{/b}: Smite ability, base attack bonus +4.\n\n{b}Benefit{/b}: When you take this feat, you gain two extra attempts to smite per day. Use whatever smite ability you have (the paladin&#146;s smite evil ability or the Knight of the Skull&#146;s smite good ability, for example).\n\n{b}Special{/b}: You can take this feat multiple times. Its effects stack." compset="Feat" summary="Smite 2 extra times a day.">
+    <comment>Should affect more than just paladin smiting. (Done)</comment>
+    <fieldval field="ftCandExpr" value="User.PickSmite"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+      endif
+
+      ~ If we haven't chosen anything, get out now
+      if (field[fChosen].ischosen = 0) then
+        done
+      endif
+
+      if (field[fChosen].ischosen <> 0) then
+        field[fChosen].chosen.field[hTotal].value += 2
+      endif]]></eval>
+    <exprreq message="Base attack bonus +4 required."><![CDATA[child[Attack].field[tAtkBase].value >= 4]]></exprreq>
+    <exprreq message="Smite required."><![CDATA[hero.tagis[User.Smite] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGrShieldF" name="Greater Shield Focus" description="You have mastered the techniques of using a shield for defense.\n\n{b}Prerequisites{/b}: Shield Focus, Shield Proficiency, base attack bonus +4.\n\n{b}Benefit{/b}: When you are using a shield your shield bonus increases by 1. This stacks with other abilities and enhancements that grant shield bonuses, including shield focus\n\n{b}Special{/b}: A fighter may select Greater Shield Focus as one of his fighter bonus feats." compset="Feat" summary="Shield bonus increases by +1, stacks with Shield Focus." uniqueness="useronce">
+    <usesource source="KniAnsalon"/>
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <exprreq message="Shield Proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +4 required."><![CDATA[child[Attack].field[tAtkBase].value >= 4]]></exprreq>
+    <exprreq message="Shield Focus required."><![CDATA[#hasfeat[fShieldFoc] <> 0]]></exprreq>
+    </thing>
+  <thing id="fHeroSurge" name="Heroic Surge" description="You may draw on inner reserves of energy to perform additional actions in a round.\n\n{b}Benefit{/b}: You may take an additional move or attack action, either before or after your regular actions. You may never use Heroic Surge more than once per round, and only 1/day from 1st-4th level, 2/day 5th-8th, 3/day 9th-12th, 4/day 13th-16th, 5/day 17th-20th" compset="Feat" summary="Extra attack or move action once per round, few times a day." uniqueness="useronce">
+    <comment>xSumm and Charges (Done)</comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      var bonus as number
+      bonus = herofield[tHitDice].value/4
+      bonus = round(bonus, 0, 1)
+
+field[hTotal].value += bonus
+
+field[xSumm].text = "" & field[hTotal].value & "/day, extra att/move action before or after normal actions, once per rd."]]></eval>
+    </thing>
+  <thing id="fIconInvok" name="Iconic Invocation" description="You draw upon the legacy of one of your order&apos;s greatest heroes for inspiraction.\n\n{b}Prerequisites{/b}: Knowledge (Nobility and Royalty) 4 ranks, membership in an order of knighthood.\n\n{b}Benefits{/b}: Choose an icon from your knighthood: Vinas Solamnus (Knights of Solamnia, Ergothian Cavaliers), Huma Dragonbane (Knights of Solamnia), Sturm Brightblade (Knights of Solamnia), Steel Brightblade (Legion of Steel, Dark Knights), Ariakan (Dark Knights), Sara Dunstan (Legion of Steel), or any others the DM feels are appropriate. Three times a day as a standard action, you may call upon their name to grant yourself a +4 morale bonus. This bonus applies to a different check or die roll based on your knightly order, as follows:\n\n{i}{b}Knights of Solamnia{/b}{/i}: Your next attack with a lance, longsword, or heavy mace.\n{i}{b}Dark Knights{/b}{/i}: Your next weapon damage roll.\n{i}{b}Legion of Steel{/b}{/i}: The benefits of your next aid another check in combat.\n{i}{b}Ergothian Cavaliers{/b}{/i}: Your next mounted charge attack.\n{i}{b}Minor Order (Golden Hammers, Minotaur Legions, etc){/b}{/i}: Your next Saving Throw\n\n{b}Special{/b}: If you are disgraced, dishonored, or leave your knightly order, you lose the benefits of this feat until you regain membership in your original order or join another (at which point the benefit of this feat may change)." compset="Feat" summary="3/day, +4 morale bonus on checks based on your order of knighthood." uniqueness="useronce">
+    <comment>xSumm (Done)</comment>
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    <exprreq message="Knowledge (nobility and royalty) 4 ranks required."><![CDATA[#skillranks[kKnowNoble] >= 4]]></exprreq>
+    </thing>
+  <thing id="fImpFavor" name="Improved Favor" description="Your ability to call in favors is exceptional.\n\n{b}Prerequisites{/b}: Cha 15+, favor class ability.\n\n{b}Benefit{/b}: You may call in 2 additional favors per week and your favor bonus is increased by +1.\n\n{b}Special{/b}: You may take this feat multiple times, it&apos;s effects stack." compset="Feat" summary="Favor bonus +1, additional 2 times a week.">
+    <comment>Favor is not counting it correctly when added multiple times (Fixed)
+
+Eval Script? (Done)
+
+~ hero.child[cNblFavor].field[hTotal].value = hero.child[cNblFavor].field[hTotal].value + 2</comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostLv" priority="10000">hero.child[xFavor].field[Value].value += 1
+hero.child[xFavor].field[hTotal].value += 2</eval>
+    <exprreq message="Charisma 15 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Favor class ability required."><![CDATA[hero.childfound[cNblFavor].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    </thing>
+  <thing id="fIntimChar" name="Intimidating Charge" description="You know how to take advantage of a mounted charge to strike fear into your opponent.\n\n{b}Prerequisites{/b}: Intimidate 4 ranks, Mounted Combat.\n\n{b}Benefit{/b}: You may make a demoralize attempt (see the Intimidate skill in the Players Handbook) as part of a mounted charge. The target of the demoralize attempt must be the target of the charge. For the purpose of the Intimidate check, you use the size catagory of your mount to determine if you gain a bonus or penalty, not your own size.\n\n{b}Normal{/b}: Demoralizing an opponent is a standard action and cannot be combined with a charge.\n\n{b}Special{/b}: A Fighter may select Intimidating charge as one of his fighter bonus feats." compset="Feat" summary="Combine demoralize attempt with charge, use mount&apos;s size modifier." uniqueness="useronce">
+    <usesource source="KniAnsalon"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Mounted Combat required."><![CDATA[#hasfeat[fMountCom] <> 0]]></exprreq>
+    <exprreq message="Intimidate 4 ranks required."><![CDATA[#skillranks[kIntim] >= 4]]></exprreq>
+    </thing>
+  <thing id="fMigSteed" name="Mighty Steed" description="The creature&apos;s exceptionally large stature allows it to carry more than it normally could.\n\n{b}Prerequisite{/b}: Any mount\n\n{b}Benefit{/b}: For the purposes of determining carrying capacity as well as the size of riders it can bear, the creature is considered one size catagory larger than it actually is.\n\n{b}Normal{/b}: A creature without this feat can only carry creatures of one size catagory smaller than it&apos;s actual size and can carry less wieght. See &quot;Carrying Capacity&quot; in {b}Chapter Nine: Adventuring{/b} of the Player&apos;s Handbook" compset="Feat" summary="Mount considered 1 catagory larger for bearing riders and carry capacity." uniqueness="useronce">
+    <comment>Is there a way to limit this to NPC races or animal type or something? (Done)</comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Mount or Minion race required."><![CDATA[hero.tagis[system_tag.minion] <> 0]]></exprreq>
+    </thing>
+  <thing id="fShieldFoc" name="Shield Focus" description="You are skilled at using your shield to greater advantage.\n\n{b}Prerequisites{/b}: Shield Proficiency, base attack bonus +1.\n\n{b}Benefit{/b}: When you are using a shield your shield bonus increases by 1. \n\n{b}Special{/b}: A fighter may select Shield Focus as one of his fighter bonus feats." compset="Feat" summary="Shield bonus increases by +1 when wielding a shield." uniqueness="useronce">
+    <usesource source="KniAnsalon"/>
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="Final" priority="10000"><![CDATA[var bonus as number 
+
+bonus = #hasfeat[fShieldFoc] + #hasfeat[fGrShieldF] 
+
+~ is a 1 if one of them, 2 if both 
+
+~ NOTE: this is going to add the number of Shield Focus feats in.  This is non-SRD stuff :p 
+
+if (hero.tagis[Hero.EquipShld] <> 0) then 
+ hero.child[ArmorClass].field[tACShield].value += bonus 
+ hero.child[ArmorClass].field[tAC].value += bonus 
+ hero.child[ArmorClass].field[tACFlat].value += bonus 
+endif]]></eval>
+    <exprreq message="Base attack bonus +1 required."><![CDATA[child[Attack].field[tAtkBase].value >= 1]]></exprreq>
+    <exprreq message="Shield Proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    </thing>
+  <thing id="fShieldWal" name="Shield Wall" description="You are skilled at using shields when in formation with other shield bearers.\n\n{b}Prerequisites{/b}: Shield Proficiency.\n\n{b}Benefits{/b}: When you and an adjacent ally are each using a shield, your shield bonus to armor class increases by 2.\n\n{b}Special{/b}: A Fighter may select Shield Wall as one of his fighter bonus feats." compset="Feat" summary="When you and adjacent ally both use shields, +2 shield bonus to AC." uniqueness="useronce">
+    <usesource source="KniAnsalon"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Shield Proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    </thing>
+  <thing id="fEducation" name="Education" description="You have received several years of formal schooling in which you were an excellent student.\n\n{b}Prerequisites{/b}: Civilized human, half-elf, Silvanesti elf, or Qualinesti elf.\n\n{b}Benefit{/b}: All Knowledge skills are class skills for you, regardless of your character class. You gain a +2 bonus on two Knowledge skills of your choosing.\n\n{b}Special{/b}: You may only take this feat as a 1st level character" compset="Feat" summary="All knowledge skills are class skills, +2 to two selected skills." uniqueness="useronce">
+    <comment>thingid.kKnowNoble|thingid.kKnowRel</comment>
+    <fieldval field="ftCandExpr" value="component.BaseSkill &amp; Helper.SkCatKnow"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <tag group="fCategory" tag="Upbringing"/>
+    <bootstrap thing="fEduHelp"></bootstrap>
+    <eval phase="UserFirst" priority="10000" index="2">var result as number
+    result = hero.assign[ClassSkill.Knowledge]</eval>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      ~ Add 2 to our chosen skill
+      focus.field[Bonus].value += 2
+
+      ~ Set our 'short name'
+      field[fShortName].text = "Education: " & focus.field[name].text]]></eval>
+    </thing>
+  <thing id="fEduHelp" name="Education Helper" description="Choose a second knowledge skill to gain a +2 bonus." compset="Feat" summary="Choose a second knowledge skill to gain a +2 bonus." uniqueness="useronce">
+    <fieldval field="ftCandExpr" value="component.BaseSkill &amp; Helper.SkCatKnow"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="fCategory" tag="Special"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="fSelFrom" tag="Hero" name="Picks on Hero" abbrev="Picks on Hero"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      ~ Add 2 to our chosen skill
+      focus.field[Bonus].value += 2
+
+      ~ Set our 'short name'
+      field[fShortName].text = "Education: " & focus.field[name].text]]></eval>
+    <exprreq message="Education required."><![CDATA[pickexists[fEducation] <> 0]]></exprreq>
+    </thing>
+  <thing id="cHelpKCr" name="Knight of the Crown" compset="ClassHelp" uniqueness="unique">
+    <comment><![CDATA[Check to see that this applies to the Knightly Orders of Ansalon Version
+
+Also add text and does Str of Honor need a 1st effect?
+
+Also, change to be own Ex button?
+
+Taken from the old Ranger scripts
+      ~ If we're level 2+, we need a fighting style
+      var result as number
+      if (field[cTotalLev].value >= 2) then
+        result = hero.assign[Hero.NeedRgrSt]
+        endif
+
+      ~ Get our number of favored enemies and upgrades
+      var enemies as number
+      enemies = field[cTotalLev].value / 5
+      enemies = round(enemies, 0, -1) + 1
+      hero.child[cFavEnemy].field[feTotal].value = hero.child[cFavEnemy].field[feTotal].value + enemies
+      hero.child[cFavEnemy].field[feUpTotal].value = hero.child[cFavEnemy].field[feUpTotal].value + enemies - 1
+
+      ~ Get our companion level
+      var complevel as number
+      complevel = field[cTotalLev].value - 3
+      if (complevel <= 0) then
+        done
+        endif
+      hero.child[cAnimComp].field[CompLevel].value = hero.child[cAnimComp].field[CompLevel].value + complevel]]></comment>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="cAbbr" value="KCr"/>
+    <fieldval field="cHDSides" value="10"/>
+    <arrayval field="cSpecial" index="2" value="Fight to the death"/>
+    <arrayval field="cSpecial" index="3" value="Honorable will, strength of honor 2/day"/>
+    <arrayval field="cSpecial" index="4" value="Heroic initiative +2"/>
+    <arrayval field="cSpecial" index="5" value="Might of honor"/>
+    <arrayval field="cSpecial" index="6" value="Armored mobility, strength of honor 3/day"/>
+    <arrayval field="cSpecial" index="7" value="Heroic initiative +3"/>
+    <arrayval field="cSpecial" index="8" value="Aura of courage"/>
+    <arrayval field="cSpecial" index="9" value="Crown of knighthood, strength of honor 4/day"/>
+    <arrayval field="cSpecial" index="0" value="Strength of honor 1/day, knightly courage"/>
+    <arrayval field="cSpecial" index="1" value="Heroic initiative +1"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="ClassSkill" tag="kDiplomacy" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="ClassSkill" tag="kHandleAnm" name="Handle Animal" abbrev="Handle Animal"/>
+    <tag group="ClassSkill" tag="kIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="ClassSkill" tag="kKnowRel" name="Knowledge: Religion" abbrev="Knowledge: Religion"/>
+    <tag group="ClassSkill" tag="kRide" name="Ride" abbrev="Ride"/>
+    <tag group="Classes" tag="CrownKni" name="Knight of the Crown" abbrev="Blackguard"/>
+    <tag group="cAttack" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="cFort" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="cRef" tag="Poor" name="Poor" abbrev="Poor"/>
+    <tag group="cWill" tag="Poor" name="Poor" abbrev="Poor"/>
+    <tag group="ClassSkill" tag="Craft" name="All Craft Skills" abbrev="All Craft Skills"/>
+    <tag group="ClassPanel" tag="ExNeeded"/>
+    <tag group="ClassSkill" tag="Profession" name="All Profession Skills" abbrev="All Profession Skills"/>
+    <tag group="AlgnReq" tag="LawGood"/>
+    <tag group="ClassSkill" tag="kKnowNoble"/>
+    <bootstrap thing="cKCrKniCou"></bootstrap>
+    <bootstrap thing="cKCrFightD"></bootstrap>
+    <bootstrap thing="cKCrHoWill"></bootstrap>
+    <bootstrap thing="cKCrMHonor"></bootstrap>
+    <bootstrap thing="cKCrArmorM"></bootstrap>
+    <bootstrap thing="cKCrAuraCr"></bootstrap>
+    <bootstrap thing="cKCrKCrown"></bootstrap>
+    <bootstrap thing="cKCrHeroI2"></bootstrap>
+    <bootstrap thing="cKCrHeroI3"></bootstrap>
+    <bootstrap thing="cKCrStHon2"></bootstrap>
+    <bootstrap thing="cKCrStHon3"></bootstrap>
+    <bootstrap thing="cKCrStHon4"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="cKCrStHon1"></bootstrap>
+    <bootstrap thing="cKCrHeroIn"></bootstrap>
+    <bootstrap thing="fWepSimple"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="xArmMobile">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.CrownKni >=7]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cCrownKni" name="Knight of the Crown" description="{b}Special{/b}: Must be a member of the Order of the Crown\n\nKnights of the Crown make up the body of the Knights of Solamnia. This is the first Order of the Knighthood, one to which all Knights belong at the beginning of their careers. Knights of the Crown embody the precepts of loyalty and obedience and are charged with upholding the honor of the Knighthood and of their Order.\n\nMost Knights of the Crown are younger than those of the higher Orders and, as such, are eager to accept any challenge given to them. The Measure, however, teaches them to temper their sword arm with wisdom and to be obedient to those they serve.\n\nFighters and nobles (many with armiger substitution levels) are the most common Crown Knights, though there are a fair number of clerics and a few rangers, mariners, and paladins who have sworn to follow the Oath and the Measure. Rarely do other classes meet the requirements for becoming a Knight of the Crown, nor do they usually wish to be Knights. PCs wishing to become a Knight of the Crown must have undergone the Knight&#146;s Trial and been admitted to the Order of the Crown." compset="ClassLevel" maxlimit="10">
+    <comment>Check weapon proficiency requirements. All those still valid, all have at least 1 martial weapon? (Done)
+
+Modify feats needing Shield Proficiency to also check for Hero.ProfShield
+
+Mod light shield Proficiency to forward that tag to hero....</comment>
+    <fieldval field="cHitDice" value="10"/>
+<usesource source="KniAnsalon"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <tag group="Helper" tag="Prestige"/>
+    <bootstrap thing="cHelpKCr"></bootstrap>
+    <link linkage="helper" thing="cHelpKCr"/>
+    <exprreq message="Armor Proficiency (Heavy) required."><![CDATA[#hasfeat[fArmHeavy] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +3 required."><![CDATA[child[Attack].field[tAtkBase].value >= 3]]></exprreq>
+    <exprreq message="Shield Proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    <exprreq message="Honor-bound required."><![CDATA[#hasfeat[fHonorBoun] <> 0]]></exprreq>
+    <exprreq message="Base Fortitude save +4 required."><![CDATA[child[vFort].field[vBase].value >= 4]]></exprreq>
+    <exprreq message="Diplomacy 2 ranks required."><![CDATA[#skillranks[kDiplomacy] >= 2]]></exprreq>
+    <exprreq message="Knowledge (nobility and royalty) 2 ranks required."><![CDATA[#skillranks[kKnowNoble] >= 2]]></exprreq>
+    <exprreq message="Ride 2 ranks required."><![CDATA[#skillranks[kRide] >= 2]]></exprreq>
+    <exprreq message="Martial Weapon Proficiency (any one) required."><![CDATA[#hasfeat[fMartial] + #hasfeat[fWepMart] + #hasfeat[fWepRog] + #hasfeat[fWepDrd] + #hasfeat[fWepBrd] + #hasfeat[fWepMnk] + #hasfeat[fWepMarine] + #hasfeat[fWepAsn] <> 0]]></exprreq>
+    </thing>
+  <thing id="cKCrStHon1" name="Strength of Honor +4" description="Once a day, as a free action, you can gain a +4 morale bonus to your Strength score for a number of rounds equal to 3 + your Charisma modifier. You may use this ability twice a day at 4th level, three times a day at 7th level, and four times a day at 10th level." compset="ClSpecial" summary="Free, X/day add Y morale bonus to Str for Z rounds." sortorder="1">
+    <comment>Make sure is Morale bon to Str. (Done)
+
+xSUmm and livename when Str bon increases (Done)</comment>
+    <fieldval field="hName1" value="Active"/>
+<usesource source="KniAnsalon"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <eval phase="UserPostLv" priority="10000" index="2"><![CDATA[      ~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+
+      ~ Set up the Str bonus we recieve
+      var bonus as number
+      if (level >= 6) then
+        bonus = 6
+      else
+        bonus = 4
+        endif
+
+      ~ If we're using Strength of Honor, apply stat modifiers
+      if (field[hIsOn1].value <> 0) then
+        #applybonus[BonMorale, hero.child[aSTR], bonus]
+      endif]]></eval>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      ~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+
+      var total as number
+      if (level >= 10) then
+        total = 4
+      elseif (level >= 7) then
+        total = 3
+      elseif (level >= 4) then
+        total = 2
+      else
+        total = 1
+      endif
+
+      var duration as number
+      duration = 3 + hero.child[aCHA].field[aModBonus].value
+      duration = maximum(duration, 1)
+
+      ~ Set up the Str bonus we recieve
+      var bonus as number
+      if (level >= 6) then
+        bonus = 6
+      else
+        bonus = 4
+        endif
+
+      ~ Set our name and custom description
+      field[livename].text = "Strength of Honor +" & bonus & ""
+
+      field[CustDesc].text = "Once a day, as a free action, you can gain a +" & bonus & " morale bonus to your Strength score for a number of rounds equal to 3 + your Charisma modifier. You may use this ability twice a day at 4th level, three times a day at 7th level, and four times a day at 10th level."
+
+    ~ Set our Charges
+    field[hTotal].value += total
+
+    ~ Set our Summary
+      field[xSumm].text = "Free, " & field[hTotal].value & "/day, add +" & bonus & " morale bonus to Str for " & duration & " rounds."]]></eval>
+    </thing>
+  <thing id="cKCrStHon2" name="Strength of Honor (2/day)" description="You may use Strength of Honor twice each day." compset="ClSpecial" summary="You gain another daily use of Strength of Honor." sortorder="4">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cKCrStHon3" name="Strength of Honor (3/day)" description="You may use Strength of Honor thrice each day." compset="ClSpecial" summary="You gain another daily use of Strength of Honor." sortorder="7">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cKCrStHon4" name="Strength of Honor (4/day)" description="You may use Strength of Honor four times each day." compset="ClSpecial" summary="You gain another daily use of Strength of Honor." sortorder="10">
+<usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cKCrKniCou" name="Knightly Courage" description="You apply your Charisma modifier (if positive) as a morale bonus on all saving throws against fear effects." compset="ClSpecial" summary="Gain morale bonus to saves against fear spells/effects." sortorder="1">
+    <comment>Eval Script, hide if Charisma bonus is 0 or less. (Done)
+
+xSumm (Done)
+
+Test? (Done)</comment>
+<usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Resist"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      ~ Hide us after 9th level, note that our class level is all that matters, not any extra levels added here.
+
+      var level as number
+      level = hero.child[cHelpKCr].field[cTotalLev].value
+
+      if (level >= 9) then
+        perform delete[Helper.ShowSpec]
+        done
+      endif
+
+      var bonus as number
+      bonus = hero.child[aCHA].field[aModBonus].value
+
+~ Hide us if our Charisma modifier is 0 or less.
+      if (bonus <= 0) then
+        perform delete[Helper.ShowSpec]
+        done
+      endif
+
+    ~ Set our Summary
+      field[xSumm].text = "+" & bonus & " morale bonus to saves against fear spells/effects."]]></eval>
+    </thing>
+  <thing id="cKCrHeroIn" name="Heroic Initiative +1" description="Beginning at 2nd level, you gain a +1 bonus on initiative checks. This bonus increases to +2 at 5th level and +3 at 8th level. If you gain this ability from another class, the bonuses stack." compset="ClSpecial" summary="Add listed bonus to your Initiative modifier." sortorder="2">
+    <comment>check eval script, need both variables? (Done)</comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 2) then
+        hero.child[xHeroInit].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKCrFightD" name="Fight to the Death" description="At 3rd level, you gain the Diehard feat as a bonus feat even if you do not meet the prerequisites." compset="ClSpecial" summary="You gain Diehard as a bonus feat." sortorder="3">
+    <comment><![CDATA[      var result as number
+      var level as number
+      level = hero.child[cHelpKCr].field[cTotalLev].value
+      ~ Check to see if our level is high enough for us to have this       ~ ability
+       if (level >= 3) then
+      ~ Check to see if we already have the Diehard feat
+        if (#hasfeat[fDiehard] <> 0) then
+        result = assign[Helper.SpcDisable]
+      ~ Since we already have Diehard, add 1 to feats allowed so we can       ~ take something else in it's place
+      hero.child[Totals].field[tFeats].value += 1
+       endif
+      endif]]></comment>
+      <usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <bootstrap thing="fDiehard">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.CrownKni >= 3]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cKCrHoWill" name="Honorable Will" description="Your powerful sense of honor and loyalty to your Order strengthens your will. At 4th level, you apply your Charisma modifier (if positive) as a morale bonus on saving throws against compulsion spells and effects." compset="ClSpecial" summary="Gain morale bonus to saves against compulsion spells/effects." sortorder="4">
+    <comment>Eval Script, hide if Charisma bonus is 0 or less. (Done)
+
+What is deal with eval script disable after 9 levels? (Done)
+
+xSumm (Done)</comment>
+<usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Resist"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      ~ Hide us at 10th level, note that our class level is all that matters, not any extra levels added here.
+
+      var level as number
+      level = hero.child[cHelpKCr].field[cTotalLev].value
+
+      if (level >= 10) then
+        perform delete[Helper.ShowSpec]
+        done
+      endif
+
+      var bonus as number
+      bonus = hero.child[aCHA].field[aModBonus].value
+
+~ Hide us if our Charisma modifier is 0 or less.
+      if (bonus <= 0) then
+        perform delete[Helper.ShowSpec]
+        done
+      endif
+
+    ~ Set our Summary
+      field[xSumm].text = "+" & bonus & " morale bonus to saves against compulsion spells/effects."]]></eval>
+    </thing>
+  <thing id="cKCrMHonor" name="Might of Honor" description="At 6th level, when you use your strength of honor ability you gain a +6 morale bonus instead of +4." compset="ClSpecial" summary="Your bonus to Str when using Strength of Honor increases to +6." sortorder="6">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cKCrArmorM" name="Armored Mobility" description="At 7th level, you treat heavy armor as medium armor for all purposes, including running speed. Your armor check penalty when wearing heavy armor is reduced by &#150;1. This benefit stacks with the armor check penalty reduction granted by masterwork or dragonmetal armor." compset="ClSpecial" summary="Treat Heavy armor as Medium, reduce armor check penalty by 1." sortorder="7">
+    <comment><![CDATA[      ~ Only apply this if we are high enough level
+      var level as number
+      level = field[xTotalLev].value
+      doneif (level < 7)]]></comment>
+      <usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    </thing>
+  <thing id="cKCrAuraCr" name="Aura of Courage" description="At 9th level, you are immune to fear (magical or otherwise). Allies within 10 ft. of you gain a +4 morale bonus on saving throws against fear. This ability functions only while you remain conscious." compset="ClSpecial" summary="You are immune to fear, +4 morale bon vs fear for allies in 10 ft." sortorder="9">
+    <comment>Eval script to hide Knightly Courage? (Done)
+
+Test to make sure Expanded Aura of Courage correctly finds this (Done)</comment>
+<usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Immune"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="User" tag="AuraCour"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 9) then
+        perform hero.assign[User.AuraCour]
+      endif
+
+     if (hero.childfound[cPfChvAura].tagis[Helper.ShowSpec] + hero.childfound[cPalAuraCr].tagis[Helper.ShowSpec] + hero.childfound[cKSwAuraCr].tagis[Helper.ShowSpec] + hero.childfound[cKRoAuraCr].tagis[Helper.ShowSpec] <> 0) then
+        perform delete[Helper.ShowSpec]
+        done
+     endif]]></eval>
+    </thing>
+  <thing id="cKCrKCrown" name="Crown of Knighthood" description="At 10th level, you are the living embodiment of the principles of honor, obedience, and loyalty. You add your Charisma modifier as a morale bonus on all saving throws and gain an additional +4 bonus on all saving throws against compulsions. This ability replaces the bonus from honorable will. In addition, you may act as if under the effects of a {i}heroic valor{/i} spell once per day, gaining a +4 morale bonus on attack rolls, weapon damage rolls, and saving throws, and gaining 15 temporary hit points. This effect lasts for 10 minutes." compset="ClSpecial" summary="Gain morale bon to saves, additional +4 vs compulsion, 1/day use {i}heroic valor{/i}." sortorder="10">
+    <comment>Morale bon for saves, test the button (Done)
+
+xSumm (Done)</comment>
+    <fieldval field="hName1" value="Heroic Valor"/>
+    <fieldval field="hTotal" value="1"/>
+<usesource source="KniAnsalon"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="SpecType" tag="Resist"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <eval phase="First"><![CDATA[      ~ If we're using Heroic Valor, apply stat modifiers
+      if (field[hIsOn1].value <> 0) then
+      ~ Add 15 to our HP
+        hero.child[Totals].field[tHP].value += 15
+            endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      ~ Add to our saves.
+      var bonus as number
+      bonus = maximum(hero.child[aCHA].field[aModBonus].value, 0)
+      #applybonus[BonMorale, hero.child[vFort], bonus]
+      #applybonus[BonMorale, hero.child[vRef], bonus]
+      #applybonus[BonMorale, hero.child[vWill], bonus]
+
+      ~ Set our Summary.
+      field[xSumm].text = "+" & bonus & " morale bon to saves, additional +4 vs compulsion, 1/day use {i}heroic valor{/i}. "]]></eval>
+    <eval phase="UserPreLv" priority="10000" index="3"><![CDATA[      ~ If we're using Heroic Valor, apply stat modifiers
+      if (field[hIsOn1].value <> 0) then
+
+      ~ +4 morale bonus on saves (doesn't stack, highest applies).
+      #applybonus[BonMorale, hero.child[vFort], 4]
+      #applybonus[BonMorale, hero.child[vRef], 4]
+      #applybonus[BonMorale, hero.child[vWill], 4]
+      ~ +4 morale bonus to weapon attack and damage
+foreach pick in hero from BaseWep where "IsWeapon.?"
+      #applybonus[BonMorale, each, 4]
+nexteach
+      endif]]></eval>
+    </thing>
+  <thing id="cKCrHeroI2" name="Heroic Initiative +2" description="Your Heroic Inititiative bonus increases." compset="ClSpecial" sortorder="5">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 5) then
+        hero.child[xHeroInit].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKCrHeroI3" name="Heroic Initiative +3" description="Your Heroic Inititiative bonus increases." compset="ClSpecial" sortorder="8">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpKCr"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 8) then
+        hero.child[xHeroInit].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="xArmMobile" name="Armored Mobility" description="Holder" compset="Special">
+    <eval phase="PreLevel" priority="2500"><![CDATA[foreach pick in hero from BaseArmor where "mClass.Heavy"
+ each.field[mArmorChk].value += 1
+ perform each.delete[mClass.Heavy]
+ perform each.assign[mClass.Medium]
+nexteach]]></eval>
+    </thing>
+  <thing id="cHelpKRo" name="Knight of the Rose" compset="ClassHelp" uniqueness="unique">
+    <comment>Need to add Text, also verify this is the  Knightly Orders of Ansalon Version (Done)</comment>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="cAbbr" value="KRo"/>
+    <fieldval field="cHDSides" value="10"/>
+    <arrayval field="cSpecial" index="2" value="Leadership bonus +1"/>
+    <arrayval field="cSpecial" index="3" value="Inspire greatness (1 ally)"/>
+    <arrayval field="cSpecial" index="4" value="Inspire courage (+3, 3/day)"/>
+    <arrayval field="cSpecial" index="5" value="Heroic initiative +2, wisdom of the measure"/>
+    <arrayval field="cSpecial" index="6" value="Leadership bonus +2, inspire greatness (2 allies)"/>
+    <arrayval field="cSpecial" index="7" value="Inspire courage (+4, 4/day)"/>
+    <arrayval field="cSpecial" index="8" value="Final stand"/>
+    <arrayval field="cSpecial" index="9" value="Heroic initiative +3, knighthood&apos;s flower, inspire greatness (3 allies)"/>
+    <arrayval field="cSpecial" index="0" value="Aura of courage, rallying cry"/>
+    <arrayval field="cSpecial" index="1" value="Heroic initiative +1, inspire courage (+2, 2/day)"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="ClassPanel" tag="ExNeeded" name="ExNeeded" abbrev="ExNeeded"/>
+    <tag group="ClassSkill" tag="Craft" name="All Craft Skills" abbrev="All Craft Skills"/>
+    <tag group="ClassSkill" tag="Profession" name="All Profession Skills" abbrev="All Profession Skills"/>
+    <tag group="ClassSkill" tag="kDiplomacy" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="ClassSkill" tag="kHandleAnm" name="Handle Animal" abbrev="Handle Animal"/>
+    <tag group="ClassSkill" tag="kIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="ClassSkill" tag="kKnowNoble" name="Knowledge: Nobility &amp; Royalty" abbrev="Knowledge: Nobility &amp; Royalty"/>
+    <tag group="ClassSkill" tag="kKnowRel" name="Knowledge: Religion" abbrev="Knowledge: Religion"/>
+    <tag group="ClassSkill" tag="kRide" name="Ride" abbrev="Ride"/>
+    <tag group="Classes" tag="RosKnight" name="Knight of the Rose" abbrev="Blackguard"/>
+    <tag group="cAttack" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="cFort" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="cRef" tag="Poor" name="Poor" abbrev="Poor"/>
+    <tag group="cWill" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="AlgnReq" tag="LawGood"/>
+    <bootstrap thing="cKRoHeroI2"></bootstrap>
+    <bootstrap thing="cKRoHeroI3"></bootstrap>
+    <bootstrap thing="cKRoInspCr"></bootstrap>
+    <bootstrap thing="cKRoInspC2"></bootstrap>
+    <bootstrap thing="cKRoInspC3"></bootstrap>
+    <bootstrap thing="cKRoLdBon1"></bootstrap>
+    <bootstrap thing="cKRoLdBon2"></bootstrap>
+    <bootstrap thing="cKRoInspGr"></bootstrap>
+    <bootstrap thing="cKRoInspG2"></bootstrap>
+    <bootstrap thing="cKRoInspG3"></bootstrap>
+    <bootstrap thing="cKRoWisMea"></bootstrap>
+    <bootstrap thing="cKRoFinalS"></bootstrap>
+    <bootstrap thing="cKRoFlower"></bootstrap>
+    <bootstrap thing="cKRoAuraCr"></bootstrap>
+    <bootstrap thing="cKRoRallyC"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="cKRoHeroIn"></bootstrap>
+    </thing>
+  <thing id="cRosKnight" name="Knight of the Rose" description="{b}Special{/b}: Must be a member of the Order of the Rose\n\nKnights of the Rose are the mind of the Knights of Solamnia. This is the highest Order of the Knighthood, one that embraces honor guided by justice and wisdom. Knights of the Rose hold themselves up as examples of nobility, bravery, and honor to the Knighthood and those who serve under their command.\n\nKnights of the Rose are leaders who must provide guidance and direction to their charges as well as inspiration and courage when they must lead troops into battle. They act as diplomats and advisors to other governments, as well as forming a large part of the governing body of the Knights of Solamnia themselves.\n\nAs with the other two Orders, fighters and nobles (many with armiger substitution levels) make up the majority of Rose Knights, though clerics, paladins, rangers, and mariners have representatives among the Order. PCs wishing to become a Knight of the Rose must have been a member of the Order of the Sword (though they are not required to have taken the Sword Knight prestige class), must have completed a second Quest of Virtue, and must be a member of the Order of the Rose." compset="ClassLevel" maxlimit="10">
+    <fieldval field="cHitDice" value="10"/>
+<usesource source="KniAnsalon"/>
+    <tag group="Helper" tag="Prestige"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpKRo"></bootstrap>
+    <link linkage="helper" thing="cHelpKRo"/>
+    <exprreq message="Base attack bonus +8 required."><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
+    <exprreq message="Diplomacy 6 ranks required."><![CDATA[#skillranks[kDiplomacy] >= 6]]></exprreq>
+    <exprreq message="Knowledge (nobility and royalty) 6 ranks required."><![CDATA[#skillranks[kKnowNoble] >= 6]]></exprreq>
+    <exprreq message="Knowledge (religion) 2 ranks required."><![CDATA[#skillranks[kKnowRel] >= 2]]></exprreq>
+    <exprreq message="Ride 6 ranks required."><![CDATA[#skillranks[kRide] >= 6]]></exprreq>
+    <exprreq message="Heavy Armor Proficiency required."><![CDATA[#hasfeat[fArmHeavy] <> 0]]></exprreq>
+    <exprreq message="Shield Proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    <exprreq message="Martial Weapon Proficiency (any one) required."><![CDATA[#hasfeat[fMartial] + #hasfeat[fWepMart] + #hasfeat[fWepRog] + #hasfeat[fWepDrd] + #hasfeat[fWepBrd] + #hasfeat[fWepMnk] + #hasfeat[fWepMarine] + #hasfeat[fWepAsn] <> 0]]></exprreq>
+    <exprreq message="Honor-bound required."><![CDATA[#hasfeat[fHonorBoun] <> 0]]></exprreq>
+    <exprreq message="Diehard required."><![CDATA[#hasfeat[fDiehard] <> 0]]></exprreq>
+    <exprreq message="Endurance required."><![CDATA[#hasfeat[fEndure] <> 0]]></exprreq>
+    <exprreq message="Mounted Combat required."><![CDATA[#hasfeat[fMountCom] <> 0]]></exprreq>
+    <exprreq message="Leadership required."><![CDATA[#hasfeat[fLeader] <> 0]]></exprreq>
+    <exprreq message="Base Will save +3 required."><![CDATA[child[vWill].field[vBase].value >= 3]]></exprreq>
+    </thing>
+  <thing id="cKRoAuraCr" name="Aura of Courage" description="You are immune to fear (magical or otherwise). Allies within 10 ft. of you gain a +4 morale bonus on saving throws against fear. This ability functions only while you remain conscious." compset="ClSpecial" summary="You are immune to fear, +4 morale bon vs fear for allies in 10 ft." sortorder="1">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="User" tag="AuraCour"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[        perform hero.assign[User.AuraCour]
+
+     if (hero.childfound[cPfChvAura].tagis[Helper.ShowSpec] + hero.childfound[cPalAuraCr].tagis[Helper.ShowSpec] + hero.childfound[cKCrAuraCr].tagis[Helper.ShowSpec] + hero.childfound[cKSwAuraCr].tagis[Helper.ShowSpec] <> 0) then
+        perform delete[Helper.ShowSpec]
+        done
+     endif]]></eval>
+    </thing>
+  <thing id="cKRoRallyC" name="Rallying Cry" description="Three times a day, as a free action, you may utter a powerful shout that causes all allies within 60 ft. to gain a +1 morale bonus on their next attack roll and increase their base ground speed by 5 ft. on their next move action. This is a mind-affecting ability. Only allies who can hear your rallying cry may benefit from it." compset="ClSpecial" summary="3/day, free, allies in 60 ft gain +1 morale bon to hit, +5 ft to speed for 1 rd." sortorder="1">
+    <fieldval field="hTotal" value="3"/>
+<usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cKRoHeroIn" name="Heroic Initiative +1" description="At 2nd level, you gain a +1 bonus on initiative checks. This bonus increases to +2 at 6th level and +3 at 10th level. If you gain this ability from another class, the bonuses stack." compset="ClSpecial" summary="Add listed bonus to your Initiative rolls" sortorder="2">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 2) then
+        hero.child[xHeroInit].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKRoHeroI2" name="Heroic Initiative +2" description="Your Heroic Inititiative bonus increases." compset="ClSpecial" sortorder="6">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 6) then
+        hero.child[xHeroInit].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKRoHeroI3" name="Heroic Initiative +3" description="Your Heroic Inititiative bonus increases." compset="ClSpecial" sortorder="10">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 10) then
+        hero.child[xHeroInit].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKRoInspCr" name="Inspire Courage (+2, 2/day)" description="At 2nd level, you are able to inspire courage in your allies and yourself twice a day. To be affected, an ally must hear you speak. The effect lasts for as long as you continue to speak and for 5 rounds afterwards. While speaking, you can fight but cannot cast spells, activate magic items by spell completion (such as scrolls), or activate magic items with command words (such as wands). Allies you affect with this ability gain a +2 morale bonus on saving throws against fear and charm effects and a +2 morale bonus on attack and weapon damage rolls. At 5th level, the bonus increases to +3 and you may use this ability three times a day. At 8th level, the bonus increases to +4 and you may use it four times a day. This is considered a mind-affecting ability." compset="ClSpecial" summary="Allies in earshot gain listed morale bon vs charm/fear and on attack &amp; dam." sortorder="2">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+
+      var total as number
+      if (level >= 8) then
+        total = 4
+      elseif (level >= 5) then
+        total = 3
+      elseif (level >= 2) then
+        total = 2
+        endif
+
+      field[hTotal].value += total
+      field[livename].text = "Inspire Courage (+" & total & ", " & field[hTotal].value & "/day)"]]></eval>
+    </thing>
+  <thing id="cKRoInspC2" name="Inspire Courage (+3, 3/day)" description="The inspire courage ability increases to +3 and can be used an additional time per day." compset="ClSpecial" sortorder="5">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cKRoInspC3" name="Inspire Courage (+4, 4/day)" description="The inspire courage ability increases to +4 and can be used an additional time per day." compset="ClSpecial" sortorder="8">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cKRoLdBon1" name="Leadership Bonus +1" description="At 3rd level, you gain a +1 bonus to your leadership score. This increases to +2 at 7th level." compset="ClSpecial" summary="Gain listed bonus to Leadership score." sortorder="3">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+      
+      var total as number
+      if (level >= 7) then
+        total = 2
+      elseif (level >= 3) then
+        total = 1
+        endif
+
+      field[livename].text = "Leadership Bonus +" & total & ""]]></eval>
+    </thing>
+  <thing id="cKRoLdBon2" name="Leadership Bonus +2" description="Leadership bonus increases." compset="ClSpecial" sortorder="7">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cKRoInspGr" name="Inspire Greatness (1 ally)" description="At 4th level you become able to inspire greatness in yourself or a single willing ally within 60 ft. The number of affected allies increases to two at 7th level and three at 10th level. Using this ability counts as a daily use of your inspire courage ability. The effect lasts for as long as you continue to speak and for 5 rounds afterwards. A creature inspired with greatness gains 2d10 temporary hit points, a +2 competence bonus on attack rolls, and a +1 competence bonus on Fortitude saves. For the purposes of effects, such as the sleep spell, that depend on a target&#146;s Hit Dice, an inspired character has two additional HD. This is considered a mind-affecting ability." compset="ClSpecial" summary="Self/ally gain 2d10 temp hp, +2 comp bon to hit, +1 comp bon to Fort, +2 HD." sortorder="4">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+
+      var total as number
+      if (level >= 10) then
+        total = 3
+      elseif (level >= 7) then
+        total = 2
+      else
+        total = 1
+        endif
+
+    if (total >= 2) then
+      field[livename].text = "Inspire Greatness (" & total & " allies)"
+    else
+      field[livename].text = "Inspire Greatness (" & total & " ally)"
+    endif]]></eval>
+    </thing>
+  <thing id="cKRoInspG2" name="Inspire Greatness (2 allies)" description="Inspire Greatness can now affect 2 allies." compset="ClSpecial" sortorder="7">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cKRoInspG3" name="Inspire Greatness (3 allies)" description="Inspire Greatness can now affect 3 allies." compset="ClSpecial" sortorder="10">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cKRoWisMea" name="Wisdom of the Measure" description="Twice a day, at 6th level, you may use your extensive knowledge of the Solamnic Measure to inform your actions. If you succeed at a DC 20 Knowledge (nobility and royalty) check, you are granted the effects of an {i}augury{/i} spell cast by a cleric of equal level. The information provided by this ability always comes in the form of a historical anecdote, proverb, or law written in the Measure." compset="ClSpecial" summary="2/day, use {i}augury{/i} by consulting the Measure (DC20 Know: Nobility ck)." sortorder="6">
+    <fieldval field="hTotal" value="2"/>
+<usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cKRoFinalS" name="Final Stand" description="At 9th level you may inspire your troops toward a heroic effort once a day, temporarily increasing their vitality. All allies within 10 ft. of you gain 2d10 temporary hit points. This ability affects a number of creatures equal to your class level + your Charisma modifier and lasts an equal number of rounds." compset="ClSpecial" summary="1/day, X allies in 10 ft gain 2d10 temp hp for X rds." sortorder="9">
+    <fieldval field="hTotal" value="1"/>
+<usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[    var bonus as number
+    bonus = #levelcount[RosKnight] + hero.child[aCHA].field[aModBonus].value
+
+    field[xSumm].text = "1/day, " & bonus & " allies in 10 ft gain 2d10 temp hp for " & bonus & " rds."]]></eval>
+    </thing>
+  <thing id="xInspireGr" name="Inspire Greatness" compset="Special">
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostAttr"><![CDATA[      var level as number
+      level = hero.child[cHelpKRo].field[cTotalLev].value
+      var total as number
+      if (level > 7) then
+        total = 4
+      elseif (level > 4) then
+        total = 3
+      elseif (level > 0) then
+        total = 2
+        endif
+
+      field[hTotal].value = total]]></eval>
+    </thing>
+  <thing id="cKRoFlower" name="Knighthood&apos;s Flower" description="At 10th level you become the living embodiment of all that the Knights of Solamnia stand for: honor, wisdom, and justice. You gain immunity to compulsions (except for harmless ones, such as {i}aid{/i}), and once a day you may call upon the wisdom of the Measure to grant yourself the benefits of a {i}foresight{/i} spell for a duration of 100 minutes. You may only gain foresight regarding yourself, not others. Thus, while this effect is active, you cannot be surprised or flat-footed, and you gain a +2 insight bonus to AC and Reflex saves." compset="ClSpecial" summary="You are immune to compulsions, 1/day use {i}foresight{/i} on self for 100 min." sortorder="10">
+    <comment>container.child[vRef].field[BonInsight].value += 2</comment>
+    <fieldval field="hName1" value="{i}Foresight{/i}"/>
+    <fieldval field="hTotal" value="1"/>
+<usesource source="KniAnsalon"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpKRo"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ClSpecWhen" tag="10" name="10" abbrev="10"/>
+    <eval phase="PreLevel"><![CDATA[      ~ If we're using Foresight, apply stat modifiers.
+      if (field[hIsOn1].value <> 0) then
+         ~ Add to our armor class
+         #applybonus[BonInsight, hero.child[ArmorClass], 2]
+      endif]]></eval>
+    <eval phase="UserPreLv" priority="5000" index="2"><![CDATA[      ~ If we're using Foresight, apply stat modifiers
+      if (field[hIsOn1].value <> 0) then
+         #applybonus[BonInsight, hero.child[vRef], 2]
+      endif]]></eval>
+    </thing>
+  <thing id="cHelpKSw" name="Knight of the Sword" compset="ClassHelp" uniqueness="unique">
+    <comment>Need to add text and verify is version from Knightly Orders of Ansalon. (Done)
+
+Also need to add variant with spellcasting (Done)
+
+Error with disappearing Magic Levels Panel. (Fixed, done)
+DONE!!!!</comment>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="cAbbr" value="KSw"/>
+    <fieldval field="cHDSides" value="10"/>
+    <fieldval field="cSplMaxLvl" value="8"/>
+    <arrayval field="cSpecial" index="4" value="Smite evil 2/day"/>
+    <arrayval field="cSpecial" index="6" value="Heroic initiative +3"/>
+    <arrayval field="cSpecial" index="7" value="Defend the weak +3"/>
+    <arrayval field="cSpecial" index="9" value="Soul of knighthood, smite evil 3/day"/>
+    <arrayval field="cSpecial" index="0" value="Defend the weak +1, heroic initiative +1"/>
+    <arrayval field="cSpecial" index="1" value="Divine grace, smite evil 1/day"/>
+    <arrayval field="cSpecial" index="2" value="Aura of courage"/>
+    <arrayval field="cSpecial" index="3" value="Defend the weak +2, heroic initiative +2"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="ClassSkill" tag="kHandleAnm" name="Handle Animal" abbrev="Handle Animal"/>
+    <tag group="ClassSkill" tag="kIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="ClassSkill" tag="kKnowNoble" name="Knowledge: Nobility &amp; Royalty" abbrev="Knowledge: Nobility &amp; Royalty"/>
+    <tag group="ClassSkill" tag="kKnowRel" name="Knowledge: Religion" abbrev="Knowledge: Religion"/>
+    <tag group="ClassSkill" tag="kRide" name="Ride" abbrev="Ride"/>
+    <tag group="Classes" tag="SwoKnight" name="Knight of the Sword" abbrev="Blackguard"/>
+    <tag group="cAttack" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="ClassPanel" tag="ExNeeded"/>
+    <tag group="cFort" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="cRef" tag="Poor" name="Poor" abbrev="Poor"/>
+    <tag group="AlgnReq" tag="LawGood"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="ClassSkill" tag="Craft" name="All Craft Skills" abbrev="All Craft Skills"/>
+    <tag group="Helper" tag="NoExSpells"/>
+    <tag group="ClassSkill" tag="Profession" name="All Profession Skills" abbrev="All Profession Skills"/>
+    <tag group="ClassSkill" tag="kDiplomacy" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="ClassPanel" tag="ExtraMagic"/>
+    <bootstrap thing="cKSwDivGra"></bootstrap>
+    <bootstrap thing="cKSwSmite1"></bootstrap>
+    <bootstrap thing="cKSwSmite2"></bootstrap>
+    <bootstrap thing="cKSwSmite3"></bootstrap>
+    <bootstrap thing="cKSwSoulKn"></bootstrap>
+    <bootstrap thing="cKSwHeroI2"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="cKSwHeroI3"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="cKSwHeroIn"></bootstrap>
+    <bootstrap thing="fWepSimple"></bootstrap>
+    <bootstrap thing="cKSwAuraCr"></bootstrap>
+    <bootstrap thing="cKSwDWeak1"></bootstrap>
+    <bootstrap thing="cKSwDWeak2"></bootstrap>
+    <bootstrap thing="cKSwDWeak3"></bootstrap>
+    <eval phase="First" priority="10500"><![CDATA[~the Clerist variant class can add extra spell levels to us
+~the variant classes add all their levels at once, to our level 1
+~so, we'll limit that to our level
+
+if (field[cTotalLev].value <= 6) then
+  ~up to L6, limit us to our class level
+  field[cMagLevTot].arrayvalue[0] = minimum(field[cMagLevTot].arrayvalue[0], field[cTotalLev].value)
+else
+  ~beyond L6, limit us to 1 less than our class level
+  ~this is because the third variant is available at 8th level
+  ~and not 7th, so this progression needs to skip a level, too
+  field[cMagLevTot].arrayvalue[0] = minimum(field[cMagLevTot].arrayvalue[0], field[cTotalLev].value - 1)
+  endif]]></eval>
+    </thing>
+  <thing id="cSwoKnight" name="Knight of the Sword" description="{b}Special{/b}: Must be a member of the Order of the Sword\n\nKnights of the Sword are the heart of the Knights of Solamnia. This is the second Order of the Knighthood, warriors who fight with power and faith to defend justice and truth. Knights of the Sword embody the precepts of courage and heroism and believe that the spirit is the wellspring from which courage and heroism flow. Their willingness to sacrifice their own needs&#151;even their own lives, if necessary&#151;makes the Knights of the Sword powerful champions of Good.\n\nKiri-Jolith grants Sword Knights strength in battle, the power to defeat dangerous opponents, and the ability to protect others in need. Even in times when their deity is absent, faith and courage sustain them.\n\nAs with Knights of the Crown, fighters and nobles (many with armiger substitution levels) make up the majority of Sword Knights, along with a few rangers, mariners, and paladins. However, unlike the other two Orders, clerics make up a large percentage of Sword Knights. They don&#146;t outnumber the fighters, but there are enough to make the distinction. Most clerics choose to enter the Order of the Clerist within the Order of the Sword. PCs wishing to become a Knight of the Sword must have been a member of the Order of the Crown (though they are not required to have taken the Crown Knight prestige class), must have completed a Quest of Virtue, and must be a member of the Order of the Sword." compset="ClassLevel" maxlimit="10">
+    <comment>Change Pre req (Done)</comment>
+    <fieldval field="cHitDice" value="10"/>
+<usesource source="KniAnsalon"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <tag group="Helper" tag="Prestige"/>
+    <bootstrap thing="cHelpKSw"></bootstrap>
+    <link linkage="helper" thing="cHelpKSw"/>
+    <exprreq message="Martial Weapon Proficiency (any one) required."><![CDATA[#hasfeat[fMartial] + #hasfeat[fWepMart] + #hasfeat[fWepMarine] + #hasfeat[fWepRog] + #hasfeat[fWepDrd] + #hasfeat[fWepBrd] + #hasfeat[fWepMnk] + #hasfeat[fWepAsn] <> 0]]></exprreq>
+    <exprreq message="Heavy Armor Proficiency required."><![CDATA[#hasfeat[fArmHeavy] <> 0]]></exprreq>
+    <exprreq message="Shield Proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    <exprreq message="Diehard required."><![CDATA[#hasfeat[fDiehard] <> 0]]></exprreq>
+    <exprreq message="Endurance required."><![CDATA[#hasfeat[fEndure] <> 0]]></exprreq>
+    <exprreq message="Ride 4 ranks required."><![CDATA[#skillranks[kRide] >= 4]]></exprreq>
+    <exprreq message="Knowledge (religion) 2 ranks required."><![CDATA[#skillranks[kKnowRel] >= 2]]></exprreq>
+    <exprreq message="Knowledge (nobility and royalty) 4 ranks required."><![CDATA[#skillranks[kKnowNoble] >= 4]]></exprreq>
+    <exprreq message="Diplomacy 2 ranks required."><![CDATA[#skillranks[kDiplomacy] >= 2]]></exprreq>
+    <exprreq message="Base Will save +2 required."><![CDATA[child[vWill].field[vBase].value >= 2]]></exprreq>
+    <exprreq message="Base attack bonus +6 required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <exprreq message="Honor-bound required."><![CDATA[#hasfeat[fHonorBoun] <> 0]]></exprreq>
+    </thing>
+  <thing id="cKSwHeroIn" name="Heroic Initiative +1" description="Beginning at 1st level, you gain a +1 bonus on initiative checks. This bonus increases to +2 at 4th level and +3 at 7th level. If you gain this ability from another class, the bonuses stack." compset="ClSpecial" summary="Add listed bonus to your Initiative rolls." sortorder="1">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000">hero.child[xHeroInit].field[Value].value += 1</eval>
+    </thing>
+  <thing id="cKSwHeroI2" name="Heroic Initiative +2" description="Your Heroic Inititiative bonus increases." compset="ClSpecial" sortorder="4">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 4) then
+        hero.child[xHeroInit].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKSwHeroI3" name="Heroic Initiative +3" description="Your Heroic Inititiative bonus increases." compset="ClSpecial" sortorder="7">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xHeroInit"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 7) then
+        hero.child[xHeroInit].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKSwDWeak1" name="Defend the Weak +1" description="As a Sword Knight, it is your duty to protect those weaker than yourself. Each round you may choose a single adjacent ally (within 5 ft.) with fewer effective character levels or hit dice than you. Against any opponent who threatens that ally (i.e. who is capable of making a melee or ranged attack against them), you gain a +1 bonus on melee attack and weapon damage rolls, and your ally gains a +1 to AC for as long as you remain adjacent. The bonus increases to +2 at 4th level and +3 at 8th level. These bonuses only apply while you are adjacent to your ally.\n\nAn ally with more than one defender with this ability only benefits from the highest bonus of all defenders. For example, a character with a 1st-level Sword Knight and a 4th-level Sword Knight adjacent to him only gets a +2 bonus to AC, not a +3 bonus." compset="ClSpecial" summary="If adj to weaker ally, +X bon to att/dam vs foes threaten him, +X AC bon for ally." sortorder="1">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xDefWeak"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+
+      var total as number
+      if (level >= 8) then
+        total = 3
+      elseif (level >= 4) then
+        total = 2
+      elseif (level >= 1) then
+        total = 1
+      endif
+
+      hero.child[xDefWeak].field[Value].value += 1
+
+      field[livename].text = "Defend the Weak +" & total & ""
+      field[xSumm].text = "If adj to weaker ally, +" & total & " bon to att/dam vs foes threaten him, +" & total & " AC bon for ally."]]></eval>
+    </thing>
+  <thing id="cKSwDWeak2" name="Defend the Weak +2" description="Defend the Weak bonus increases." compset="ClSpecial" sortorder="4">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xDefWeak"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 4) then
+        hero.child[xDefWeak].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKSwDWeak3" name="Defend the Weak +3" description="Defend the Weak bonus increases." compset="ClSpecial" sortorder="8">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xDefWeak"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 8) then
+        hero.child[xDefWeak].field[Value].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cKSwDivGra" name="Divine Grace" description="Beginning at 2nd level, you gain a bonus to all saving throws equal to your Charisma modifier (if positive). This ability does not stack with any similar ability from another class." compset="ClSpecial" summary="You gain your Charisma Bonus as a bonus to all saving throws." sortorder="2">
+    <comment>Conf not stack with pal (Done)</comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="User" tag="DivineGrc"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+      endif
+
+      if (field[xTotalLev].value >= 2) then
+        perform hero.assign[User.DivineGrc]
+      endif
+
+      var bonus as number
+      bonus = hero.child[aCHA].field[aModBonus].value
+
+      if (bonus <= 0) then
+         perform delete[Helper.ShowSpec]
+         done
+      endif
+
+      field[xSumm].text = "+" & bonus & " bonus to all saves, does not stack with similar abilities."
+
+     if (hero.childfound[cPalDivGrc].tagis[Helper.ShowSpec] <> 0) then
+        perform delete[Helper.ShowSpec]
+        done
+     endif
+
+      hero.child[vFort].field[Bonus].value += bonus
+      hero.child[vRef].field[Bonus].value += bonus
+      hero.child[vWill].field[Bonus].value += bonus]]></eval>
+    </thing>
+  <thing id="cKSwAuraCr" name="Aura of Courage" description="At 3rd level, you are immune to fear (magical or otherwise). Allies within 10 ft. of you gain a +4 morale bonus on saving throws against fear. This ability functions only while you remain conscious." compset="ClSpecial" summary="You are immune to fear, +4 morale bon vs fear for allies in 10 ft." sortorder="3">
+    <comment>Test to make sure Expanded Aura of Courage correctly finds this (Done)</comment>
+    <usesource source="KniAnsalon"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="ClSpecWhen" tag="3" name="3" abbrev="3"/>
+    <tag group="User" tag="AuraCour"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      var level as number
+      level = field[xTotalLev].value
+
+      if (level >= 3) then
+        perform hero.assign[User.AuraCour]
+      endif
+
+     if (hero.childfound[cPfChvAura].tagis[Helper.ShowSpec] + hero.childfound[cPalAuraCr].tagis[Helper.ShowSpec] + hero.childfound[cKCrAuraCr].tagis[Helper.ShowSpec] + hero.childfound[cKRoAuraCr].tagis[Helper.ShowSpec] <> 0) then
+        perform delete[Helper.ShowSpec]
+        done
+     endif]]></eval>
+    </thing>
+  <thing id="cKSwSmite1" name="Smite Evil (1/day)" description="Once a day at 2nd level, you may attempt to smite evil with one normal melee attack. Add your Charisma modifier (if positive) to your attack roll and add 1 point of damage per class level. If you accidentally smite a creature that is not evil, the smite has no effect but is still used up for that day. At 5th level, you may use this ability twice a day. At 10th level, you may use it three times a day. If you gain this ability from another class, class levels stack and you may use it an additional number of times per day." compset="ClSpecial" summary="+Charisma bon to hit evil foe, +Sword Knight level to damage." sortorder="2">
+    <comment>Need to make this stack with Smite Evil, adding to that ability rather than here if present. (Done)
+
+Test? (Done)
+
+Need to add the User Smite tag (Done)</comment>
+<usesource source="KniAnsalon"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="User" tag="Smite"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="User" tag="SmiteEvil"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xSmiteEvil"></bootstrap>
+    <eval phase="UserPostAt" priority="10000" index="2"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      var level as number
+      level = field[xTotalLev].value
+
+      var total as number
+      if (level >= 10) then
+        total = 3
+      elseif (level >= 5) then
+        total = 2
+      elseif (level >= 2) then
+        total = 1
+      else
+        total = 0
+        endif
+
+      field[livename].text = "Smite Evil (" & total & "/day)"
+
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      if (level >= 2) then
+        perform hero.assign[User.Smite]
+        perform hero.assign[User.SmiteEvil]
+        hero.child[xSmiteEvil].field[hTotal].value += total
+        hero.child[xSmiteEvil].field[Value].value += level
+      endif]]></eval>
+    </thing>
+  <thing id="cKSwSmite2" name="Smite Evil (2/day)" description="You gain another daily use of Smite Evil." compset="ClSpecial" sortorder="5">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cKSwSmite3" name="Smite Evil (3/day)" description="You gain another daily use of Smite Evil." compset="ClSpecial" sortorder="10">
+  <usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cKSwSoulKn" name="Soul of Knighthood" description="At 10th level, you are the living embodiment of devotion to the cause of the gods of Light and the principles of your alignment. Any weapon you use in combat is considered good-aligned for the purposes of overcoming the damage reduction of evil outsiders. In addition, once per day you may cloak yourself in a {i}holy aura{/i}, as the spell, with a duration of 10 rounds. Only you are protected by this aura." compset="ClSpecial" summary="Any weapon wielded is good aligned, 1/day use {i}holy aura{/i} for 10 rds." sortorder="10">
+    <comment>(Done)</comment>
+    <fieldval field="hName1" value="Holy Aura"/>
+    <fieldval field="hTotal" value="1"/>
+<usesource source="KniAnsalon"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPreLv" priority="5000"><![CDATA[
+      if (field[hIsOn1].value <> 0) then
+        hero.child[ArmorClass].field[tACDeflect].value = maximum(hero.child[ArmorClass].field[tACDeflect].value, 4)
+
+        hero.child[vFort].field[vResist].value = maximum(hero.child[vFort].field[vResist].value, 4)
+        hero.child[vRef].field[vResist].value = maximum(hero.child[vRef].field[vResist].value, 4)
+        hero.child[vWill].field[vResist].value = maximum(hero.child[vWill].field[vResist].value, 4)
+      endif]]></eval>
+    </thing>
+  <thing id="cvClerist1" name="Clerist - Add Previous (1st)" description="Choose this version of the varient if you have divine spellcasting classes that you want to add levels of spellcasting onto." compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvLevel" value="1"/>
+    <fieldval field="cvHitDice" value="8"/>
+    <arrayval field="cvMagLevTo" index="0" value="3"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="SplAttr" tag="aWIS"/>
+    <tag group="SpcReplace" tag="cKSwDWeak1"/>
+    <tag group="SpcReplace" tag="cKSwHeroIn"/>
+    <tag group="MaxSplAttr" tag="aWIS"/>
+    <bootstrap thing="xCleristS2"></bootstrap>
+    <bootstrap thing="cKSwAurGoo"></bootstrap>
+    <link linkage="varies" thing="cHelpKSw"/>
+    <eval phase="UserPostLv" priority="10100">hero.child[xDefWeak].field[Value].value -= 1
+   hero.child[xHeroInit].field[Value].value -= 1</eval>
+    <eval phase="First" index="2">perform hero.assign[User.Clerist2]</eval>
+    </thing>
+  <thing id="xDefWeak" name="Defend the Weak" description="As a Sword Knight, it is your duty to protect those weaker than yourself. Each round you may choose a single adjacent ally (within 5 ft.) with fewer effective character levels or hit dice than you. Against any opponent who threatens that ally (i.e. who is capable of making a melee or ranged attack against them), you gain a +1 bonus on melee attack and weapon damage rolls, and your ally gains a +1 to AC for as long as you remain adjacent. The bonus increases to +2 at 4th level and +3 at 8th level. These bonuses only apply while you are adjacent to your ally.\n\nAn ally with more than one defender with this ability only benefits from the highest bonus of all defenders. For example, a character with a 1st-level Sword Knight and a 4th-level Sword Knight adjacent to him only gets a +2 bonus to AC, not a +3 bonus." compset="Special" uniqueness="unique">
+  <usesource source="KniAnsalon"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPostLv" priority="20000" index="2"><![CDATA[
+      call CalcValue
+
+      field[livename].text = "Defend the Weak +" & field[Value].value & ""
+      field[xSumm].text = "If adj to weaker ally, +" & field[Value].value & " bon to att/dam vs foes threaten him, +" & field[Value].value & " AC bon for ally."
+
+  if (hero.child[xDefWeak].field[Value].value <= 0) then
+     perform delete[Helper.ShowSpec]
+  endif]]></eval>
+    </thing>
+  <thing id="cvClerist4" name="Clerist - Add Previous (4th)" description="Choose this version of the varient if you have divine spellcasting classes that you want to add levels of spellcasting onto." compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvLevel" value="4"/>
+    <fieldval field="cvHitDice" value="8"/>
+    <arrayval field="cvMagLevTo" index="0" value="3"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="SplAttr" tag="aWIS"/>
+    <tag group="SpcReplace" tag="cKSwHeroI2"/>
+    <tag group="SpcReplace" tag="cKSwDWeak2"/>
+    <tag group="MaxSplAttr" tag="aWIS"/>
+    <bootstrap thing="xCleristS2"></bootstrap>
+    <bootstrap thing="cPalTurnUn"></bootstrap>
+    <link linkage="varies" thing="cHelpKSw"/>
+    <eval phase="UserPostLv" priority="10100"><![CDATA[  if (#levelcount[SwoKnight] >= 4) then
+     hero.child[xDefWeak].field[Value].value -= 1
+     hero.child[xHeroInit].field[Value].value -= 1
+  endif]]></eval>
+    <eval phase="First" index="2">perform hero.assign[User.Clerist2]</eval>
+    </thing>
+  <thing id="cvClerist8" name="Clerist - Add Previous (8th)" description="Choose this version of the varient if you have divine spellcasting classes that you want to add levels of spellcasting onto." compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvLevel" value="8"/>
+    <fieldval field="cvHitDice" value="8"/>
+    <arrayval field="cvMagLevTo" index="0" value="3"/>
+    <usesource source="KniAnsalon"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="SplAttr" tag="aWIS"/>
+    <tag group="MaxSplAttr" tag="aWIS"/>
+    <bootstrap thing="xCleristS2"></bootstrap>
+    <link linkage="varies" thing="cHelpKSw"/>
+    <eval phase="UserPostLv" priority="9900"><![CDATA[  if (#levelcount[SwoKnight] >= 8) then
+      hero.child[cKSwSmite1].field[hTotal].value += 1
+  endif]]></eval>
+    <eval phase="First" index="2">perform hero.assign[User.Clerist2]</eval>
+    </thing>
+  <thing id="xHeroInit" name="Heroic Initiative" description="Beginning at 1st level, you gain a +1 bonus on initiative checks. This bonus increases to +2 at 4th level and +3 at 7th level. If you gain this ability from another class, the bonuses stack." compset="Special" summary="Add listed bonus to your Initiative rolls." uniqueness="unique">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostLv" priority="20000" index="2"><![CDATA[
+      call CalcValue
+
+      field[livename].text = "Heroic Initiative +" & field[Value].value & ""
+
+      hero.child[Initiative].field[Bonus].value += field[Value].value]]></eval>
+    </thing>
+  <thing id="cvClerNSp1" name="Clerist - New Spells (1st)" description="Choose this version of the varient if you have no divine spellcasting classes and want the Knight of the Sword to have it&apos;s own spellcasting." compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvLevel" value="1"/>
+    <fieldval field="cvHitDice" value="8"/>
+<usesource source="KniAnsalon"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="SplAttr" tag="aWIS"/>
+    <tag group="SpcReplace" tag="cKSwDWeak1"/>
+    <tag group="SpcReplace" tag="cKSwHeroIn"/>
+    <tag group="CastArmor" tag="Light"/>
+    <tag group="CastArmor" tag="Medium"/>
+    <tag group="CastArmor" tag="Heavy"/>
+    <tag group="CastArmor" tag="Shield"/>
+    <tag group="MaxSplAttr" tag="aWIS"/>
+    <bootstrap thing="cKSwAurGoo"></bootstrap>
+    <bootstrap thing="xCleristSp"></bootstrap>
+    <link linkage="varies" thing="cHelpKSw"/>
+    <eval phase="First" index="2">perform hero.childfound[cHelpKSw].assign[CasterSrc.Divine]
+perform hero.childfound[cHelpKSw].assign[CasterType.MemAll]
+
+perform hero.assign[User.Clerist]</eval>
+    <eval phase="UserPostLv" priority="10100">hero.child[xDefWeak].field[Value].value -= 1
+   hero.child[xHeroInit].field[Value].value -= 1</eval>
+    </thing>
+  <thing id="xCleristSp" name="Clerist Spellcasting" description="Each time a Clerist substitution level is taken, the Knight of the Sword gains access to divine spells. The Knight chooses her spells from the cleric spell list, although she is forbidden from casting spells with the chaotic or evil descriptors. The Knight prepares and casts spells as a cleric does, and like a cleric she gains bonus spells for having a high Wisdom score and may only cast spells of a given level if her Wisdom score equals 10 + spell level. However, Knights of the Sword with Clerist substitution levels do not have access to cleric domains (including domain powers or bonus domain spells) or spontaneous curing.\n\nA Knight of the Sword&#146;s effective caster level is equal to her class level, which determines spells per day. For each additional Clerist substitution level she takes past the first, her effective caster level increases by +3. Thus, a Knight who takes her second Clerist substitution level at 4th level of Knight of the Sword will have an effective caster level of 7.\n\nA Knight of the Sword has a limit on the level of spells she can cast based on the number of substitution levels she has acquired. If she has one Clerist substitution level, she may cast 0-level, 1st-level, and 2nd-level spells. If she has two substitution levels, she may also cast 3rd-level, 4th-level, and 5th-level spells when they become available. A Knight with three Clerist substitution levels may cast spells of 6th-level, 7th-level, and 8th-level when they become available (and if she has a high enough Wisdom score).\n\nAlthough Knights of the Sword prepare spells as a cleric does, they only do so once per week, during their day of meditation and prayer. The spells the Knight prepares on this day remain in place until the following week; every morning at sunrise the Knight&#146;s spells refresh, but her selection will not change until she once again spends time in prayer. Thus, a Clerist needs to consider the week&#146;s challenges farther ahead than a cleric normally does.\n\nIf a Knight of the Sword already has levels in cleric or mystic, she may instead add a number of levels of Knight of the Sword to her cleric or mystic levels for the purposes of caster level, spells per day, and spells known (if appropriate). If she takes one Clerist substitution level, she may add up to 3 of her Knight of the Sword levels to her cleric or mystic levels. If she takes two Clerist substitution levels, she may add up to 6 of her Knight of the Sword levels, while if she has all three substitution levels, she may add up to 9 of her Knight of the Sword levels. Clerics and mystics who choose this option benefit from increased access to domain spells and they may still prepare different spells each morning; however, they are limited by the Clerist&#146;s weekly meditation requirement. Clerics and mystics who do not spend a day in meditation and prayer do not gain additional caster level or spellcasting benefits from their levels in Knight of the Sword until they do so.\n\nThis spellcasting ability replaces a Knight of the Sword&#146;s heroic initiative at 1st and 4th levels. If the Clerist gains the heroic initiative ability at later levels, the bonus is reduced by one for each instance of heroic initiative that was replaced by spellcasting." compset="Special" uniqueness="useronce">
+  <usesource source="KniAnsalon"/>
+    <tag group="User" tag="Clerist"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostAttr" priority="10100"><![CDATA[    ~ Get our Caster Level, it is equal to Sword Knight level, + (Sub levels - 1) * 3
+    var CL as number
+    CL = #levelcount[SwoKnight] + ((hero.tagcount[User.Clerist] - 1) * 3)
+    field[livename].text = "Clerist Spellcasting (CL " & CL & ")"
+
+
+    ~ Find out our Wisdom mod, and define bonus spells based on that.
+    var bon8 as number
+    var bon7 as number
+    var bon6 as number
+    var bon5 as number
+    var bon4 as number
+    var bon3 as number
+    var bon2 as number
+    var bon1 as number
+
+  if (hero.child[aWIS].field[aModBonus].value = 17) then
+    bon8 = 3
+    bon7 = 3
+    bon6 = 3
+    bon5 = 4
+    bon4 = 4
+    bon3 = 4
+    bon2 = 4
+    bon1 = 5
+  elseif (hero.child[aWIS].field[aModBonus].value = 16) then
+    bon8 = 3
+    bon7 = 3
+    bon6 = 3
+    bon5 = 3
+    bon4 = 4
+    bon3 = 4
+    bon2 = 4
+    bon1 = 4
+  elseif (hero.child[aWIS].field[aModBonus].value = 15) then
+    bon8 = 2
+    bon7 = 3
+    bon6 = 3
+    bon5 = 3
+    bon4 = 3
+    bon3 = 4
+    bon2 = 4
+    bon1 = 4
+  elseif (hero.child[aWIS].field[aModBonus].value = 14) then
+    bon8 = 2
+    bon7 = 2
+    bon6 = 3
+    bon5 = 3
+    bon4 = 3
+    bon3 = 3
+    bon2 = 4
+    bon1 = 4
+  elseif (hero.child[aWIS].field[aModBonus].value = 13) then
+    bon8 = 2
+    bon7 = 2
+    bon6 = 2
+    bon5 = 3
+    bon4 = 3
+    bon3 = 3
+    bon2 = 3
+    bon1 = 4
+  elseif (hero.child[aWIS].field[aModBonus].value = 12) then
+    bon8 = 2
+    bon7 = 2
+    bon6 = 2
+    bon5 = 2
+    bon4 = 3
+    bon3 = 3
+    bon2 = 3
+    bon1 = 3
+  elseif (hero.child[aWIS].field[aModBonus].value = 11) then
+    bon8 = 1
+    bon7 = 2
+    bon6 = 2
+    bon5 = 2
+    bon4 = 2
+    bon3 = 3
+    bon2 = 3
+    bon1 = 3
+  elseif (hero.child[aWIS].field[aModBonus].value = 10) then
+    bon8 = 1
+    bon7 = 1
+    bon6 = 2
+    bon5 = 2
+    bon4 = 2
+    bon3 = 2
+    bon2 = 3
+    bon1 = 3
+  elseif (hero.child[aWIS].field[aModBonus].value = 9) then
+    bon8 = 1
+    bon7 = 1
+    bon6 = 1
+    bon5 = 2
+    bon4 = 2
+    bon3 = 2
+    bon2 = 2
+    bon1 = 3
+  elseif (hero.child[aWIS].field[aModBonus].value = 8) then
+    bon8 = 1
+    bon7 = 1
+    bon6 = 1
+    bon5 = 1
+    bon4 = 2
+    bon3 = 2
+    bon2 = 2
+    bon1 = 2
+  elseif (hero.child[aWIS].field[aModBonus].value = 7) then
+    bon8 = 0
+    bon7 = 1
+    bon6 = 1
+    bon5 = 1
+    bon4 = 1
+    bon3 = 2
+    bon2 = 2
+    bon1 = 2
+  elseif (hero.child[aWIS].field[aModBonus].value = 6) then
+    bon8 = 0
+    bon7 = 0
+    bon6 = 1
+    bon5 = 1
+    bon4 = 1
+    bon3 = 1
+    bon2 = 2
+    bon1 = 2
+  elseif (hero.child[aWIS].field[aModBonus].value = 5) then
+    bon8 = 0
+    bon7 = 0
+    bon6 = 0
+    bon5 = 1
+    bon4 = 1
+    bon3 = 1
+    bon2 = 1
+    bon1 = 2
+  elseif (hero.child[aWIS].field[aModBonus].value = 4) then
+    bon8 = 0
+    bon7 = 0
+    bon6 = 0
+    bon5 = 0
+    bon4 = 1
+    bon3 = 1
+    bon2 = 1
+    bon1 = 1
+  elseif (hero.child[aWIS].field[aModBonus].value = 3) then
+    bon8 = 0
+    bon7 = 0
+    bon6 = 0
+    bon5 = 0
+    bon4 = 0
+    bon3 = 1
+    bon2 = 1
+    bon1 = 1
+  elseif (hero.child[aWIS].field[aModBonus].value = 2) then
+    bon8 = 0
+    bon7 = 0
+    bon6 = 0
+    bon5 = 0
+    bon4 = 0
+    bon3 = 0
+    bon2 = 1
+    bon1 = 1
+  elseif (hero.child[aWIS].field[aModBonus].value = 1) then
+    bon8 = 0
+    bon7 = 0
+    bon6 = 0
+    bon5 = 0
+    bon4 = 0
+    bon3 = 0
+    bon2 = 0
+    bon1 = 1
+  endif
+
+    ~ Maximum CL is 16, add base spellcasting as 16th level cleric, then count down each level, adding extra spell levels appropriately.
+
+    if (CL >= 16) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] += 2 + bon8
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] += 3 + bon7
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] += 3 + bon6
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] += 4 + bon5
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 4 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 5 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 5 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 5 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 15) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] += 1 + bon8
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] += 2 + bon7
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] += 3 + bon6
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] += 4 + bon5
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 4 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 5 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 5 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 5 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 14) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] += 2 + bon7
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] += 3 + bon6
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] += 3 + bon5
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 4 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 4 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 5 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 5 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 13) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] += 1 + bon7
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] += 2 + bon6
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] += 3 + bon5
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 4 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 4 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 5 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 5 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 12) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] += 2 + bon6
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] += 3 + bon5
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 3 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 4 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 4 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 5 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 11) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] += 1 + bon6
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] += 2 + bon5
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 3 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 4 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 4 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 5 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 10) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] += 2 + bon5
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 3 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 3 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 4 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 4 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 9) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] += 1 + bon5
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 2 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 3 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 4 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 4 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 8) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 2 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 3 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 3 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 4 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 7) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] += 1 + bon4
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 2 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 3 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 4 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 6
+    elseif (CL = 6) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 2 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 3 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 3 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 5
+    elseif (CL = 5) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] += 1 + bon3
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 2 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 3 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 5
+    elseif (CL = 4) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] = 2 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] = 3 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] = 5
+    elseif (CL = 3) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] += 1 + bon2
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 2 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 4
+    elseif (CL = 2) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 2 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 4
+    elseif (CL = 1) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] += 1 + bon1
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] += 3
+    endif
+
+    ~ We have a cap based on wisdom
+    if (hero.child[aWIS].field[aFinalVal].value >= 18) then
+       ~ We're fine, do nothing
+    elseif (hero.child[aWIS].field[aFinalVal].value = 17) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+    elseif (hero.child[aWIS].field[aFinalVal].value = 16) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+    elseif (hero.child[aWIS].field[aFinalVal].value = 15) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+    elseif (hero.child[aWIS].field[aFinalVal].value = 14) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] = 0
+    elseif (hero.child[aWIS].field[aFinalVal].value = 13) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] = 0
+    elseif (hero.child[aWIS].field[aFinalVal].value = 12) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] = 0
+    elseif (hero.child[aWIS].field[aFinalVal].value = 11) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] = 0
+    elseif (hero.child[aWIS].field[aFinalVal].value = 10) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] = 0
+    elseif (hero.child[aWIS].field[aFinalVal].value <= 9) then
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[2] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[1] = 0
+      hero.child[cHelpKSw].field[cMemMax].arrayvalue[0] = 0
+    endif
+
+    ~ We have a cap based on Clerist Substitution Levels taken.
+      if (hero.tagcount[User.Clerist] >= 3) then
+         ~ We're fine, don't cap anything
+      elseif (hero.tagcount[User.Clerist] = 2) then
+         ~ We cap at 5th level
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+      elseif (hero.tagcount[User.Clerist] = 1) then
+         ~ We cap at 2nd level
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[8] = 0
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[7] = 0
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[6] = 0
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[5] = 0
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[4] = 0
+         hero.child[cHelpKSw].field[cMemMax].arrayvalue[3] = 0
+      endif]]></eval>
+    </thing>
+  <thing id="cvClerNSp4" name="Clerist - New Spells (4th)" description="Choose this version of the varient if you have no divine spellcasting classes and want the Knight of the Sword to have it&apos;s own spellcasting." compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvLevel" value="4"/>
+    <fieldval field="cvHitDice" value="8"/>
+<usesource source="KniAnsalon"/>
+    <tag group="MaxSplAttr" tag="aWIS"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="SplAttr" tag="aWIS"/>
+    <tag group="SpcReplace" tag="cKSwHeroI2"/>
+    <tag group="SpcReplace" tag="cKSwDWeak2"/>
+    <bootstrap thing="xCleristSp"></bootstrap>
+    <bootstrap thing="cPalTurnUn"></bootstrap>
+    <link linkage="varies" thing="cHelpKSw"/>
+    <eval phase="UserPostLv" priority="10100"><![CDATA[  if (#levelcount[SwoKnight] >= 4) then
+     hero.child[xDefWeak].field[Value].value -= 1
+     hero.child[xHeroInit].field[Value].value -= 1
+  endif]]></eval>
+    <eval phase="First" index="2">perform hero.assign[User.Clerist]</eval>
+    </thing>
+  <thing id="cvClerNSp8" name="Clerist - New Spells (8th)" description="Choose this version of the varient if you have no divine spellcasting classes and want the Knight of the Sword to have it&apos;s own spellcasting." compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvLevel" value="8"/>
+    <fieldval field="cvHitDice" value="8"/>
+<usesource source="KniAnsalon"/>
+    <tag group="MaxSplAttr" tag="aWIS"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="SplAttr" tag="aWIS"/>
+    <link linkage="varies" thing="cHelpKSw"/>
+    <eval phase="UserPostLv" priority="9900"><![CDATA[  if (#levelcount[SwoKnight] >= 8) then
+      hero.child[cKSwSmite1].field[hTotal].value += 1
+  endif]]></eval>
+    <eval phase="First" index="2">perform hero.assign[User.Clerist]</eval>
+    </thing>
+  <thing id="cKSwAurGoo" name="Aura of Good" description="The power of a Clerist&#146;s aura of good (see the {i}detect good{/i} spell) is equal to his Knight of the Sword class level plus his cleric or mystic levels, if any.\n\nThis ability replaces the standard Knight of the Sword&#146;s defend the weak class ability. If the Knight gains access to defend the weak at a higher level, the bonus is reduced by one." compset="ClSpecial">
+  <usesource source="KniAnsalon"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="Helper" tag="ClExLose" name="ClExLose" abbrev="ClExLose"/>
+    <tag group="SpecSource" tag="cHelpKSw"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[     if (hero.childfound[cPalAuraGd].tagis[Helper.ShowSpec] <> 0) then
+        perform delete[Helper.ShowSpec]
+        done
+     endif]]></eval>
+    </thing>
+  <thing id="xCleristS2" name="Clerist Spellcasting" description="Each time a Clerist substitution level is taken, the Knight of the Sword gains access to divine spells. The Knight chooses her spells from the cleric spell list, although she is forbidden from casting spells with the chaotic or evil descriptors. The Knight prepares and casts spells as a cleric does, and like a cleric she gains bonus spells for having a high Wisdom score and may only cast spells of a given level if her Wisdom score equals 10 + spell level. However, Knights of the Sword with Clerist substitution levels do not have access to cleric domains (including domain powers or bonus domain spells) or spontaneous curing.\n\nA Knight of the Sword&#146;s effective caster level is equal to her class level, which determines spells per day. For each additional Clerist substitution level she takes past the first, her effective caster level increases by +3. Thus, a Knight who takes her second Clerist substitution level at 4th level of Knight of the Sword will have an effective caster level of 7.\n\nA Knight of the Sword has a limit on the level of spells she can cast based on the number of substitution levels she has acquired. If she has one Clerist substitution level, she may cast 0-level, 1st-level, and 2nd-level spells. If she has two substitution levels, she may also cast 3rd-level, 4th-level, and 5th-level spells when they become available. A Knight with three Clerist substitution levels may cast spells of 6th-level, 7th-level, and 8th-level when they become available (and if she has a high enough Wisdom score).\n\nAlthough Knights of the Sword prepare spells as a cleric does, they only do so once per week, during their day of meditation and prayer. The spells the Knight prepares on this day remain in place until the following week; every morning at sunrise the Knight&#146;s spells refresh, but her selection will not change until she once again spends time in prayer. Thus, a Clerist needs to consider the week&#146;s challenges farther ahead than a cleric normally does.\n\nIf a Knight of the Sword already has levels in cleric or mystic, she may instead add a number of levels of Knight of the Sword to her cleric or mystic levels for the purposes of caster level, spells per day, and spells known (if appropriate). If she takes one Clerist substitution level, she may add up to 3 of her Knight of the Sword levels to her cleric or mystic levels. If she takes two Clerist substitution levels, she may add up to 6 of her Knight of the Sword levels, while if she has all three substitution levels, she may add up to 9 of her Knight of the Sword levels. Clerics and mystics who choose this option benefit from increased access to domain spells and they may still prepare different spells each morning; however, they are limited by the Clerist&#146;s weekly meditation requirement. Clerics and mystics who do not spend a day in meditation and prayer do not gain additional caster level or spellcasting benefits from their levels in Knight of the Sword until they do so.\n\nThis spellcasting ability replaces a Knight of the Sword&#146;s heroic initiative at 1st and 4th levels. If the Clerist gains the heroic initiative ability at later levels, the bonus is reduced by one for each instance of heroic initiative that was replaced by spellcasting." compset="Special" uniqueness="unique">
+  <usesource source="KniAnsalon"/>
+    <tag group="User" tag="Clerist2"/>
+    <eval phase="UserPostLv" priority="10100"><![CDATA[    var maxlevel as number
+    maxlevel = hero.tagcount[User.Clerist2] * 3
+
+ if (#levelcount[SwoKnight] >= 10) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 9)
+ elseif (#levelcount[SwoKnight] = 9) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 8)
+ elseif (#levelcount[SwoKnight] = 8) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 7)
+ elseif (#levelcount[SwoKnight] = 7) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 6)
+ elseif (#levelcount[SwoKnight] = 6) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 6)
+ elseif (#levelcount[SwoKnight] = 5) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 5)
+ elseif (#levelcount[SwoKnight] = 4) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 4)
+ elseif (#levelcount[SwoKnight] = 3) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 3)
+ elseif (#levelcount[SwoKnight] = 2) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 2)
+ elseif (#levelcount[SwoKnight] = 1) then
+  hero.child[cHelpKSw].field[cGiveMagic].value += minimum(maxlevel, 1)
+ endif]]></eval>
+    </thing>
+  </document>

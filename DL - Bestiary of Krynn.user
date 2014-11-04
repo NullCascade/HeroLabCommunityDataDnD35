@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>c6-24-10</info_history>
+    </fileinfo>
+  <thing id="rEMWater" name="Elemental Minion (Water)" description="{i}This creature looks like a fountain of foaming blue-green water in a vaguely humanoid shape. It has no legs, just a swirling column of water, but it does have arms holding a greataxe that appears to be an extension of its body. It has a somewhat bullet-shaped head with a spray of water fanning out in a crest behind it and dark blue spots for eyes.{/i}\n\nWater minions are peerless waterborne fighters. They are most comfortable being sent on retrieval missions and in battles where the capture of prisoners is important. A water minion looks like a humanoid fountain of water almost eight feet tall. Fluid and graceful, they are equally at home coasting along the tops of bodies of water or fully submerged. When they speak, they have soft and sonorous voices, surprisingly calming.\n\n{b}Strategies and Tactics{/b}\nWater minions abhor violence, quite at odds with their physical strength and choice of manifested weapon. Because their attacks are capable of being non-lethal, they almost always seek to render foes unconscious and take prisoners." compset="Race">
+    <fieldval field="rSTR" value="6"/>
+    <fieldval field="rDEX" value="4"/>
+    <fieldval field="rCON" value="4"/>
+    <fieldval field="rINT" value="4"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rAC" value="6"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rCR" value="4"/>
+    <fieldval field="rInfAutoLn" value="Aquan, Common"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rInfHit" value="6d8 Hit Dice (6 levels of Elemental)"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <usesource source="BestKrynn"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="WepProf" tag="wGreataxe"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="AlgnReq" tag="LawNeut"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="stypWater"/>
+    <tag group="Race" tag="typElement"/>
+    <bootstrap thing="xWatMaster"></bootstrap>
+    <bootstrap thing="xSwim"></bootstrap>
+    <bootstrap thing="xDamRd"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="xImmElem"></bootstrap>
+    <bootstrap thing="typElement"></bootstrap>
+    <bootstrap thing="stypWater"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="lAquan"></bootstrap>
+    <bootstrap thing="iElMercyGA"></bootstrap>
+    <bootstrap thing="xElHealWat"></bootstrap>
+    <eval phase="PostLevel">~ Set our swim speed
+      hero.child[xSwim].field[Value].value = maximum(hero.child[xSwim].field[Value].value, 90)</eval>
+    <eval phase="First" priority="0" index="2">~ Set up our damage reduction
+      #applydr[xDamRd, 5]</eval>
+    <eval phase="PreLevel" priority="10000" index="3">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="xWatMaster" name="Water Mastery" description="A water minion gains a +1 bonus on attack and damage rolls if both it and its foe are touching water. If an opponent is touching the ground, the minion takes a &#150;4 penalty on attack and damage rolls. These modifiers are not included in the statistics block." compset="Special" summary="+1 to hit and damage when you and foe touch water, -4 if foe is on dry ground." uniqueness="unique">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xElHealWat" name="Elemental Healing, Water" description="All elemental minions are considered to have fast healing 5 when they are fully surrounded by or immersed in their element." compset="Special" summary="Fast healing 5 when immersed in water.">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="iElMercyGA" name="Elemental {i}+1 merciful greataxe{/i}" description="Elemental minions are capable of forming the equivalent of armor, weapons, and other items from the elemental substance of which they are made. Elemental weapons have specific magical qualities depending on the type of minion; the details of these weapons are described in the individual entries. A minion&#146;s equipment is destroyed when separated from its owner or if the minion is killed. Disarming an elemental minion only temporarily impedes the minion&#146;s progress, as it can simply reform any lost item and continue. This is the equivalent of drawing a weapon and does not provoke an attack of opportunity. All equipment, regardless of its apparent nature, has a hardness of 10 and 15 hit points." compset="MagicWep" uniqueness="unique">
+    <fieldval field="BonEnhance" value="1"/>
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <child entity="wSpecMagic">
+      <bootstrap thing="wGreataxe"></bootstrap>
+      </child>
+    </thing>
+  <thing id="rEMAir" name="Elemental Minion (Air)" description="{i}This humanoid creature appears to be made of swirling vapors and condensed clouds of white, off-white, and blue. It has a thin, translucent rapier-like weapon in one hand and a disk-like shield in the other, apparently extensions of its body. Its features are vague and indistinct with only bright blue spots of light for eyes and a shadow for a mouth.{/i}\n\nAir minions are masters of aerial combat. They relish fast moving battles and orders which call for them to challenge flying opponents. \n\nAir minions look like humanoid clouds or whirlwinds and are usually between seven and nine feet tall. They are typically quick-thinking and witty beings, likely to engage in witty banter and sarcasm in the middle of a fight. Their voices are high-pitched and rapid.\n\n{b}Strategies and Tactics{/b}\nAir minions are chosen for their speed and ability to carry the fight to the air. Their manifested weapon of choice is the rapier, and they favor a quick, nimble fighting style that emphasizes their airy natures." compset="Race">
+    <fieldval field="rSTR" value="4"/>
+    <fieldval field="rDEX" value="8"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rINT" value="4"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rAC" value="3"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="5"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rCR" value="4"/>
+    <fieldval field="rInfAutoLn" value="Auran, Common"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rInfHit" value="6d8 Hit Dice (6 levels of Elemental)"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="rSpeed" value="0"/>
+    <usesource source="BestKrynn"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="AlgnReq" tag="LawNeut"/>
+    <tag group="WepProf" tag="wRapier"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="Race" tag="stypAir"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typElement"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <bootstrap thing="xElHealAir"></bootstrap>
+    <bootstrap thing="iElKeenRap"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="xAirMaster"></bootstrap>
+    <bootstrap thing="xDamRd"></bootstrap>
+    <bootstrap thing="xImmElem"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="typElement"></bootstrap>
+    <bootstrap thing="stypAir"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Perfect"/>
+      <autotag group="Value" tag="90"/>
+      </bootstrap>
+    <bootstrap thing="lAuran"></bootstrap>
+    <bootstrap thing="iElLigShl"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <eval phase="PreLevel" priority="10000" index="3">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    <eval phase="First" priority="0" index="2">~ Set up our damage reduction
+      #applydr[xDamRd, 5]</eval>
+    </thing>
+  <thing id="iElKeenRap" name="Elemental {i}+1 keen rapier{/i}" description="Elemental minions are capable of forming the equivalent of armor, weapons, and other items from the elemental substance of which they are made. Elemental weapons have specific magical qualities depending on the type of minion; the details of these weapons are described in the individual entries. A minion&#146;s equipment is destroyed when separated from its owner or if the minion is killed. Disarming an elemental minion only temporarily impedes the minion&#146;s progress, as it can simply reform any lost item and continue. This is the equivalent of drawing a weapon and does not provoke an attack of opportunity. All equipment, regardless of its apparent nature, has a hardness of 10 and 15 hit points." compset="MagicWep" uniqueness="unique">
+    <fieldval field="BonEnhance" value="1"/>
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="wCritMin" tag="15"/>
+    <child entity="wSpecMagic">
+      <bootstrap thing="wRapier"></bootstrap>
+      </child>
+    </thing>
+  <thing id="iElLigShl" name="Elemental Light Shield" description="Elemental minions are capable of forming the equivalent of armor, weapons, and other items from the elemental substance of which they are made. Elemental weapons have specific magical qualities depending on the type of minion; the details of these weapons are described in the individual entries. A minion&#146;s equipment is destroyed when separated from its owner or if the minion is killed. Disarming an elemental minion only temporarily impedes the minion&#146;s progress, as it can simply reform any lost item and continue. This is the equivalent of drawing a weapon and does not provoke an attack of opportunity. All equipment, regardless of its apparent nature, has a hardness of 10 and 15 hit points." compset="MagicArmor">
+    <usesource source="BestKrynn" parent="pDL" name="Bestiary of Krynn"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <child entity="mSpecMagic">
+      <bootstrap thing="mShlLtWood"></bootstrap>
+      </child>
+    </thing>
+  <thing id="xElHealAir" name="Elemental Healing, Air" description="All elemental minions are considered to have fast healing 5 when they are fully surrounded by or immersed in their element." compset="Special" summary="Fast healing 5 when immersed in air.">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="xAirMaster" name="Air Mastery" description="Airborne creatures take a &#150;1 penalty on attack and damage rolls against an air minion." compset="Special" summary="Airborne foes take -1 penalty to hit and damage vs air minions." uniqueness="unique">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="rEMEarth" name="Elemental Minion (Earth)" description="{i}This creature is a shambling humanoid-shaped creature of rock and dirt; it carries a heavy, block-headed hammer or mace-like weapon that appears to be an extension of its body. Its head is crudely cut into the form of a closed-faced helmet, anonymous and menacing.{/i}\n\nEarth minions are experts at using brute force to achieve results. They enjoy being assigned to duties involving pounding opponents into the ground or setting up fortifications and defenses for troops.\n\nEarth minions appear to be humanoids made of soil and stone and, when not hunched over, will reach to a height of almost ten feet. They are slow and deliberate in manner and not very talkative. When they do speak, it is with a low, grinding voice.\n\n{b}Strategies and Tactics{/b}\nEarth minions are chosen for their ability to quickly deal a lot of damage. Their manifested weapon of choice is the warhammer, which they always wield in two hands for maximum benefit." compset="Race">
+    <fieldval field="rSTR" value="8"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="6"/>
+    <fieldval field="rINT" value="4"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rAC" value="7"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rCR" value="4"/>
+    <fieldval field="rInfAutoLn" value="Terran, Common"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rInfHit" value="6d8 Hit Dice (6 levels of Elemental)"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="rSpeed" value="20"/>
+    <usesource source="BestKrynn"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="AlgnReq" tag="LawNeut"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="WepProf" tag="wWarhammer"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="Race" tag="stypEarth"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typElement"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <bootstrap thing="iElMigCWaH"></bootstrap>
+    <bootstrap thing="xElHealEar"></bootstrap>
+    <bootstrap thing="xBurrow"></bootstrap>
+    <bootstrap thing="xEarMaster"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="xImmElem"></bootstrap>
+    <bootstrap thing="typElement"></bootstrap>
+    <bootstrap thing="stypEarth"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="xDamRd"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="lTerran"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <eval phase="PostLevel" index="3">~ Set our swim speed
+      hero.child[xBurrow].field[Value].value = maximum(hero.child[xBurrow].field[Value].value, 40)</eval>
+    <eval phase="PreLevel" priority="10000" index="4">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    <eval phase="First" priority="0" index="2">~ Set up our damage reduction
+      #applydr[xDamRd, 5]</eval>
+    </thing>
+  <thing id="xEarMaster" name="Earth Mastery" description="An earth minion gains a +1 bonus on attack and damage rolls if both it and its foe are touching the ground. If an opponent is airborne or waterborne, the minion takes a &#150;4 penalty on attack and damage rolls. These modifiers are not included in the statistics block." compset="Special" summary="+1 to hit and dam vs foes touching ground, -4 otherwise." uniqueness="unique">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xElHealEar" name="Elemental Healing, Earth" description="All elemental minions are considered to have fast healing 5 when they are fully surrounded by or immersed in their element." compset="Special" summary="Fast healing 5 when surrounded by earth.">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="iElMigCWaH" name="Elemental {i}+1 mighty cleaving warhammer{/i}" description="Elemental minions are capable of forming the equivalent of armor, weapons, and other items from the elemental substance of which they are made. Elemental weapons have specific magical qualities depending on the type of minion; the details of these weapons are described in the individual entries. A minion&#146;s equipment is destroyed when separated from its owner or if the minion is killed. Disarming an elemental minion only temporarily impedes the minion&#146;s progress, as it can simply reform any lost item and continue. This is the equivalent of drawing a weapon and does not provoke an attack of opportunity. All equipment, regardless of its apparent nature, has a hardness of 10 and 15 hit points." compset="MagicWep" uniqueness="unique">
+    <fieldval field="BonEnhance" value="1"/>
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <child entity="wSpecMagic">
+      <bootstrap thing="wWarhammer"></bootstrap>
+      </child>
+    </thing>
+  <thing id="rEMFire" name="Elemental Minion (Fire)" description="{i}This is a tall humanoid composed entirely of orange and yellow flame, wielding a flaming sword that appears to be an extension of its body. A disk of fire acts as a shield on the other arm. It has no discernable features apart from white hot spots of light for eyes.{/i}\n\nFire minions are skilled marauders. They prefer surprise tactics and slash-and-burn warfare, striking suddenly with precision.\n\nFire minions appear to be humanoid firestorms, ranging from seven to nine feet in height. They move in quick flickering motions, never remaining still. Because of their radiant heat, fire minions usually keep clear of other soldiers and warriors with whom they are assigned; therefore, they prefer to be given solo tasks or duties which have them working with other fire minions. Fire minions speak in hissing, sibilant tones when they choose to talk at all.\n\n{b}Strategies and Tactics{/b}\nFire minions typically set things on fire early on in any battle, especially dry or flammable objects, to aid in recovering from injuries incurred. Their manifested weapon of choice is a flaming longsword with which they possess a considerable degree of precise and insightful skill." compset="Race">
+    <fieldval field="rSTR" value="6"/>
+    <fieldval field="rDEX" value="6"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rINT" value="4"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="5"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rCR" value="4"/>
+    <fieldval field="rInfAutoLn" value="Ignan, Common"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rInfHit" value="6d8 Hit Dice (6 levels of Elemental)"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="rSpeed" value="40"/>
+    <usesource source="BestKrynn"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="AlgnReq" tag="LawNeut"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="WepProf" tag="wLongsword"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="stypFire"/>
+    <tag group="Race" tag="typElement"/>
+    <bootstrap thing="xHeat"></bootstrap>
+    <bootstrap thing="xBurn"></bootstrap>
+    <bootstrap thing="xVulCold"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="wMain" tag="1d6_5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRd"></bootstrap>
+    <bootstrap thing="lIgnan"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="iElLigShl"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="xImmElem"></bootstrap>
+    <bootstrap thing="typElement"></bootstrap>
+    <bootstrap thing="stypFire"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="iElFlaLonS"></bootstrap>
+    <bootstrap thing="xElHealFir"></bootstrap>
+    <eval phase="First" priority="0" index="2">~ Set up our damage reduction
+      #applydr[xDamRd, 5]</eval>
+    <eval phase="PreLevel" priority="10000" index="3">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="xElHealFir" name="Elemental Healing, Fire" description="All elemental minions are considered to have fast healing 5 when they are fully surrounded by or immersed in their element." compset="Special" summary="Fast healing 5 when surrounded by fire.">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="xBurn" name="Burn" description="When a fire minion hits with its slam attack, the opponent must succeed on a DC 14 Reflex save or catch fire. The save DC is Constitution-based. The flame burns for 1d4 rounds if not extinguished sooner. A burning creature can use a full-round action to put out the flame." compset="Special" summary="Foes hit with slam attack catch fire for 1d4 rds (DCXX Ref neg).">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[
+var DC as number
+DC = 13 + hero.child[aCON].field[aModBonus].value
+
+field[xSumm].text = "Foes hit with slam attack catch fire for 1d4 rds (DC" & DC & " Ref neg)."]]></eval>
+    </thing>
+  <thing id="iElFlaLonS" name="Elemental {i}+1 flaming longsword{/i}" description="Elemental minions are capable of forming the equivalent of armor, weapons, and other items from the elemental substance of which they are made. Elemental weapons have specific magical qualities depending on the type of minion; the details of these weapons are described in the individual entries. A minion&#146;s equipment is destroyed when separated from its owner or if the minion is killed. Disarming an elemental minion only temporarily impedes the minion&#146;s progress, as it can simply reform any lost item and continue. This is the equivalent of drawing a weapon and does not provoke an attack of opportunity. All equipment, regardless of its apparent nature, has a hardness of 10 and 15 hit points." compset="MagicWep" uniqueness="unique">
+    <fieldval field="BonEnhance" value="1"/>
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <child entity="wSpecMagic">
+      <bootstrap thing="wLongsword"></bootstrap>
+      </child>
+    </thing>
+  <thing id="xHeat" name="Heat" description="Merely touching or being touched by a fire minion automatically deals 2d4 fire damage." compset="Special" summary="Touching causes 2d4 fire dam, this is also added to Slam attack dam.">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecType" tag="Defense"/>
+    </thing>
+  <thing id="xRejuvena" name="Rejuvenation" description="A knight haunt that is destroyed will usually restore itself at the rise of the next full moon that corresponds to its alignment (Solinari if good, Lunitari if neutral, or Nuitari if evil). Knight haunts whose armor or weapons have been taken may attempt to manifest within the armor with a successful DC 16 level check (1d20 + knight haunt HD). If the armor is being worn by another person, it immediately falls apart and reforms around the knight haunt&#146;s spirit. If the knight haunt&#146;s weapon or shield is being carried by another person, the knight haunt can attempt to wrest it free with a successful Charisma check opposed by the bearer&#146;s Strength check. Pouring holy water on the armor, or casting a {i}hallow{/i} spell upon the area where the knight haunt was destroyed, frees the knight haunt from its undeath and allows it to pass out of the world and through the Gate of Souls." compset="Special" summary="Return at rise of next full moon after destroyed, reclaiming arms/armor.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    </thing>
+  <thing id="xHorrorApp" name="Horrific Appearance - 1d4 Strength" description="Any living creature within 60 feet that views a knight haunt must make a successful DC 16 Fortitude save or immediately take 1d4 points of Strength damage. The save DC is Charisma-based. A creature that successfully saves against this effect cannot be affected by the same knight haunt&#146;s horrific appearance for 24 hours." compset="Special" summary="Living foes in 60 ft at start of turn take strength dam until succeed at save.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <eval phase="PostAttr" priority="20000">~ Count our Racial HD and get our base DC.
+      var HD as number
+      HD = herofield[tHitDice].value - #totallevelcount[] + #levelcount[Race]
+      var DC as number
+      DC = 10 + HD/2 + hero.child[aCHA].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[
+  field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="iKniHauBl" name="The Knight Haunt&apos;s Blade" description="The average knight haunt has a +2 longsword, depicted here." compset="MagicWep" uniqueness="unique">
+    <fieldval field="BonEnhance" value="2"/>
+    <tag group="Helper" tag="Helper"/>
+    <bootstrap thing="xPFKazavon">
+      <containerreq phase="GlobalTest" priority="0"><![CDATA[fieldval:hIsOn2 <>0]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="hPFDeepDar">
+      <autotag group="SpecSource" tag="iPFBoundBl"/>
+      </bootstrap>
+    <bootstrap thing="hPFRage"></bootstrap>
+    <bootstrap thing="hPFSlow"></bootstrap>
+    <child entity="wSpecMagic">
+      <bootstrap thing="wLongsword"></bootstrap>
+      </child>
+    </thing>
+  <thing id="iKniHauArm" name="The Knight Haunt&apos;s Armor" description="The average knight haunt has a suit of +1 Full Plate, depicted here." compset="MagicArmor">
+    <fieldval field="BonEnhance" value="1"/>
+    <child entity="mSpecMagic">
+      <bootstrap thing="mFullPlate"></bootstrap>
+      </child>
+    </thing>
+  <thing id="iKniHauShi" name="The Knight Haunt&apos;s Shield" description="The average knight haunt bears a +1 Heavy Steel Shield, depicted here." compset="MagicArmor">
+    <fieldval field="BonEnhance" value="1"/>
+    <child entity="mSpecMagic">
+      <bootstrap thing="mShlHvStl"></bootstrap>
+      </child>
+    </thing>
+  <thing id="xKniHauSp" name="Knight Haunt&apos;s Spell Like Abilities" description="You may cast Detect Chaos, Detect Evil (or Detect Good if you are evil), Detect Magic at will at caster level 8th." compset="Special" summary="At will&#151;det. chaos, det. evil (or det. good if evil), det. magic">
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="rKniHaunt" name="Knight Haunt" description="{i}A suit of knightly armor, with accompanying sword and shield, seems to float in the air independent of an actual body. A vague golden glow fills out the equipment in the absence of a wearer. The armor is patterned in swirling symbols, and emblazoned across the breastplate is a stylized kingfisher with a rose in one claw, a sword in the other, and a crown above it.{/i}\n\nKnight haunts are the spectral remains of members of one of Krynn&#146;s Knightly Orders whose spirits now inhabit the armor and weapons they bore in life.\n\nA knight haunt looks like a floating suit of highly polished and well-maintained armor, bearing a shield, and weapon of similar quality. The type of armor, shield and weapon can vary depending on those borne by the knight when it was alive; the previous stat block represents a typically well-equipped example. A golden light forms the vague outline of the body of the knight, but no features can be distinguished.\n\nUp until the Chaos War, almost all knight haunts were former Knights of Solamnia who, for some reason, were unable to pass onto the hereafter. Many had fallen in battle and had unfinished business, while others remained after death as guardians of places which they had once sworn to defend. With the formation of the Knights of Takhisis, a few fallen individuals of that Order also rose as knight haunts. The War of Souls brought about a marked rise in the numbers of knight haunts, not only the from Solamnics and Dark Knights, but also some members of the Legion of Steel. However, after the return of the gods and the opening of the Gate of Souls once again, these numbers dropped considerably.\n\nAll knight haunts are honorable, just, and continue to possess the knowledge of the code they held to when they were living. However, their undead nature has reduced them to a fraction of their living intelligence. Unfortunately for the knights, their minds are locked into a rigid state not unlike the hard steel of their plate armor, fixated on their undying task.\n\nThe knight haunt described in the previous stat block represents a former Knight of Solamnia. Other magic arms and armor are possible." compset="Race">
+    <fieldval field="rSTR" value="4"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rINT" value="-4"/>
+    <fieldval field="rWIS" value="6"/>
+    <fieldval field="rCHA" value="4"/>
+    <fieldval field="rCR" value="7"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="6"/>
+    <fieldval field="rInfAutoLn" value="Common, Solamnic"/>
+    <fieldval field="rInfHit" value="8d12 (8 levels of Undead)"/>
+    <fieldval field="rHitDice" value="8"/>
+    <fieldval field="rSkillPlus" value="4"/>
+    <fieldval field="rHPStart" value="54"/>
+    <usesource source="BestKrynn"/>
+    <tag group="Alignment" tag="Lawful"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Race" tag="typUndead"/>
+    <tag group="ClassSkill" tag="kKnowNoble"/>
+    <tag group="ClassSkill" tag="kKnowRel"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kRide"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Alignment" tag="Good"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <bootstrap thing="iKniHauShi"></bootstrap>
+    <bootstrap thing="xDamRdAdam"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="kKnowRel"></bootstrap>
+    <bootstrap thing="kKnowNoble"></bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <bootstrap thing="iKniHauArm"></bootstrap>
+    <bootstrap thing="iKniHauBl"></bootstrap>
+    <bootstrap thing="xHorrorApp"></bootstrap>
+    <bootstrap thing="xRejuvena"></bootstrap>
+    <bootstrap thing="fArmHeavy"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="fArmTower"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+12 to Move Silently"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xTurnRes"></bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Maneuver" tag="Perfect"/>
+      <autotag group="Value" tag="20"/>
+      </bootstrap>
+    <bootstrap thing="xKniHauSp"></bootstrap>
+    <bootstrap thing="lSolamnic"></bootstrap>
+    <eval phase="PostLevel" priority="10000" index="3">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 6
+      #applysr[damage]</eval>
+    <eval phase="First" priority="5000"><![CDATA[~ Set up our damage reduction
+      #applydr[xDamRdAdam, 5]
+
+~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)
+
+      ~ We don't have a CON score because we're undead, and above that sort of petty nonsense
+      perform hero.child[aCON].assign[Helper.NoScore]
+
+      ~ +2 Turn Resistance
+      hero.child[xTurnRes].field[Value].value = maximum(hero.child[xTurnRes].field[Value].value, 2)
+
+      ~ Change the attributes on Concentration
+      perform hero.child[kConcent].assign[SkillOver.aCHA]
+
+      var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kKnowNoble].field[kInnate].arrayvalue[index] += 11
+      hero.child[kKnowRel].field[kInnate].arrayvalue[index] += 3
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 4
+      hero.child[kRide].field[kInnate].arrayvalue[index] += 4
+      #skillbonus[kMoveSil] += 12]]></eval>
+    <eval phase="PostAttr" priority="20000" index="2">~ We gain our charisma modifier as a deflection bonus to AC, Minimum 1
+    hero.child[ArmorClass].field[tACDeflect].value = maximum(hero.child[ArmorClass].field[tACDeflect].value, hero.child[aCHA].field[aModBonus].value)
+    hero.child[ArmorClass].field[tACDeflect].value = maximum(hero.child[ArmorClass].field[tACDeflect].value, 1)</eval>
+    </thing>
+  <thing id="tmTaintBlo" name="Tainted-Blood" description="The wicked Dragon Overlord Onysablet was well-known for her twisted experimentation upon living creatures in order to create horrifying monsters to torture and torment those within her realm. One of her creations was the tainted-blood creature, whose blood is magically imbued with a potent acid.\n\nMost creatures transformed into tainted-blood are driven insane, living in near constant pain from the acid coursing through their blood. The transformation causes boils and pustules to form on the creature&#146;s skin with open wounds constantly oozing dark-colored blood. Most of the creature&#146;s hair falls out, while its skin changes to either a sickly yellow or darkens to the blue black color of a bruise, giving the creature a jaundiced look. The scent of rotting citrus seems to surround the tainted blood creatures at all times, making them fairly easy (in most circumstances) to track.\n\nUnfortunately, it does not seem that Onysablet is the only being to take an interest in creating more of these twisted creatures. Some priests of Morgion have been working on refining the transformation process to make it an affliction that can easily be transmitted to others. Thankfully, they have yet to prove successful." compset="Template" uniqueness="unique">
+    <comment>Done!!!
+
+Giants or humanoids with this template
+become monstrous humanoids; otherwise, the creature
+type is unchanged. Size is unchanged. Do not recalculate
+base attack bonus, saves, or skill points if its type changes.</comment>
+    <fieldval field="tmCON" value="4"/>
+    <fieldval field="tmAC" value="2"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="tmSTR" value="2"/>
+    <usesource source="BestKrynn"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <tag group="AlgnReq" tag="ChaotEvil"/>
+    <tag group="SpecSource" tag="TaintBlood" name="Tainted-Blood"/>
+    <bootstrap thing="xDeathThro"></bootstrap>
+    <bootstrap thing="xTBPoiFume"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="xImmAcid"></bootstrap>
+    <bootstrap thing="xImmPois"></bootstrap>
+    <bootstrap thing="xTBScented"></bootstrap>
+    <bootstrap thing="fImpGrapp">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xAcidRefle"></bootstrap>
+    <bootstrap thing="xBurnEmbra"></bootstrap>
+    <eval phase="First" priority="50" index="2"><![CDATA[~ Go through type specials looking for the Giant or Humanoid typese and assign a tag to disable them. Also set the hTotal field to <> 0 so that bootstrap conditions will fail. 
+   foreach pick in hero from BaseSpec where "thingid.typeGiant | thingid.typHumanoi"
+     perform each.assign[Helper.SpcDisable]
+     each.field[hTotal].value = 1
+
+~ Even though we are no longer that type, we do not recalculate BAB, saves, or anything else.
+     perform each.assign[User.OverUseTyp]
+
+     ~ Eliminate the appropriate tags from the hero and add Monstrous Humanoid tags.
+     if (each.tagis[thingid.typGiant] <> 0) then
+       perform hero.delete[Race.typGiant]
+       perform hero.assign[Race.typMonHuma]
+     elseif (each.tagis[thingid.typHumanoi] <> 0) then
+       perform hero.delete[Race.typHumanoi]
+       perform hero.assign[Race.typMonHuma]
+     endif
+
+     ~ Change one of our fields so that the Monstrous Humanoid type's bootstrap condition is fulfilled and it is added to the hero.
+     hero.childfound[xBurnEmbra].field[hTotal].value += 1
+
+   nexteach]]></eval>
+    <eval phase="PreLevel" priority="10000">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    <eval phase="Render" index="3">~ Set our Death Throes CustDesc.
+   hero.child[xDeathThro].field[CustDesc].text = &quot;When killed, the body of the tainted-blood falls to the ground and begins to smoke and smolder. 1d4 rounds later, the corpse explodes in a burst of acid. Creatures within the area of effect are allowed a Reflex saving throw for half damage. Additionally, one round after the death throes, any creature still within the area of effect must save against the poison fumes.&quot;
+
+~ Set our Death Throes xSumm based on our size.
+if (herofield[tSize].value &gt;= 4) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 30 ft rad burst for 6d6 acid dam (Ref &#189;).&quot;
+elseif (herofield[tSize].value = 3) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 20 ft rad burst for 4d8 acid dam (Ref &#189;).&quot;
+elseif (herofield[tSize].value = 2) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 15 ft rad burst for 4d6 acid dam (Ref &#189;).&quot;
+elseif (herofield[tSize].value = 1) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 10 ft rad burst for 2d8 acid dam (Ref &#189;).&quot;
+elseif (herofield[tSize].value = 0) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 5 ft rad burst for 2d6 acid dam (Ref &#189;).&quot;
+elseif (herofield[tSize].value = -1) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 5 ft rad burst for 1d8 acid dam (Ref &#189;).&quot;
+elseif (herofield[tSize].value = -2) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 0 ft rad burst for 1d6 acid dam (Ref &#189;).&quot;
+elseif (herofield[tSize].value = -3) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 0 ft rad burst for 1d4 acid dam (Ref &#189;).&quot;
+elseif (herofield[tSize].value &lt;= -4) then
+   hero.child[xDeathThro].field[xSumm].text = &quot;1d4 rds after death explode in 0 ft rad burst for 1d3 acid dam (Ref &#189;).&quot;
+endif</eval>
+    <exprreq message="Must have a Constitution score!">hero.child[aCON].tagis[Helper.NoScore] = 0</exprreq>
+    <exprreq message="Incorporeal subtype forbidden.">tagis[Race.stypIncorp] = 0</exprreq>
+    </thing>
+  <thing id="xAcidRefle" name="Acid Reflex" description="The acid-filled pustules covering a tainted-blood&#146;s body are extremely fragile. Any time the tainted-blood is struck by a physical attack (whether a melee attack or a ranged attack), some of these pustules burst, releasing a 5-foot line of acid. Individuals in the area must make a Reflex save or else take an amount of acid damage based upon the tainted-blood&#146;s size." compset="Special" summary="If hit by physical att release 5 ft line of acid for listed dam (DCXX Ref neg).">
+    <usesource source="BestKrynn"/>
+    <tag group="SpecSource" tag="TaintBlood"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="User" tag="PickFocus"/>
+    <eval phase="Render" index="2"><![CDATA[  field[livename].text = field[livename].text & " (DC" & field[Value].value & ")"]]></eval>
+    <eval phase="PostAttr" priority="20000"><![CDATA[~ Count our Racial HD and get our base DC.
+      var HD as number
+      HD = herofield[tHitDice].value - #totallevelcount[] + #levelcount[Race]
+      var DC as number
+      DC = 10 + HD/2 + hero.child[aCON].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[Value].value += DC
+
+      if (herofield[tSize].value >= 4) then
+        field[livename].text = "Acid Reflex (4d6)"
+      elseif (herofield[tSize].value = 3) then
+        field[livename].text = "Acid Reflex (2d8)"
+      elseif (herofield[tSize].value = 2) then
+        field[livename].text = "Acid Reflex (2d6)"
+      elseif (herofield[tSize].value = 1) then
+        field[livename].text = "Acid Reflex (1d8)"
+      elseif (herofield[tSize].value = 0) then
+        field[livename].text = "Acid Reflex (1d6)"
+      elseif (herofield[tSize].value = -1) then
+        field[livename].text = "Acid Reflex (1d4)"
+      elseif (herofield[tSize].value = -2) then
+        field[livename].text = "Acid Reflex (1d3)"
+      elseif (herofield[tSize].value = -3) then
+        field[livename].text = "Acid Reflex (1d2)"
+      elseif (herofield[tSize].value <= -4) then
+        field[livename].text = "Acid Reflex (1 dam)"
+      endif]]></eval>
+    </thing>
+  <thing id="xBurnEmbra" name="Burning Embrace" description="With a successful grapple check, the tainted-blood manages to get a tight grip on an individual, crushing its body against its opponent and purposefully causing its pustules to burst. This damage is automatic each round that the victim remains grappled by the tainted-blood. Additionally, after the first round, victims must make a saving throw against the poisonous fumes of the tainted-blood&#146;s acid." compset="Special" summary="Grappled foes take listed acid dam each rd &amp; must save vs fumes.">
+    <usesource source="BestKrynn"/>
+    <tag group="SpecSource" tag="TaintBlood"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <bootstrap thing="typMonsHum">
+      <containerreq phase="First" priority="70"><![CDATA[fieldval:hTotal <> 0]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="stypAugmen">
+      <containerreq phase="First" priority="70"><![CDATA[fieldval:hTotal <> 0]]></containerreq>
+      </bootstrap>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[
+if (herofield[tSize].value >= 4) then
+ field[livename].text = "Burning Embrace (4d8)"
+elseif (herofield[tSize].value = 3) then
+ field[livename].text = "Burning Embrace (4d6)"
+elseif (herofield[tSize].value = 2) then
+ field[livename].text = "Burning Embrace (2d8)"
+elseif (herofield[tSize].value = 1) then
+ field[livename].text = "Burning Embrace (2d6)"
+elseif (herofield[tSize].value = 0) then
+ field[livename].text = "Burning Embrace (1d8)"
+elseif (herofield[tSize].value = -1) then
+ field[livename].text = "Burning Embrace (1d6)"
+elseif (herofield[tSize].value = -2) then
+ field[livename].text = "Burning Embrace (1d4)"
+elseif (herofield[tSize].value = -3) then
+ field[livename].text = "Burning Embrace (1d3)"
+elseif (herofield[tSize].value <= -4) then
+ field[livename].text = "Burning Embrace (1d2 dam)"
+endif]]></eval>
+    </thing>
+  <thing id="xTBPoiFume" name="Poison Fumes - 1 Con/1d4 Con" description="The fumes of the tainted-blood&#146;s acid are toxic. Creatures within the area of effect of its death throes, as well as any creature held in its burning embrace, may be affected by the fumes. The initial damage of the fumes is 1 Constitution. One minute later, those who failed their first saving throw must make another save or take 1d4 Constitution damage." compset="Special" summary="Initial save after embraced 1 rd, secondary only if fail 1st save (Fort neg).">
+    <usesource source="BestKrynn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecSource" tag="TaintBlood"/>
+    <tag group="User" tag="PickFocus"/>
+    <eval phase="PostAttr" priority="20000">~ Count our Racial HD and get our base DC.
+      var HD as number
+      HD = herofield[tHitDice].value - #totallevelcount[] + #levelcount[Race]
+      var DC as number
+      DC = 10 + HD/2 + hero.child[aCON].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[  field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xTBScented" name="Scented" description="The fumes of the acid in its blood, combined with the oozing wounds that leave a trail of acid droplets in its wake, make tainted-blood creatures very easy to track. Those following the tainted-blood gain a +5 circumstance bonus to Survival checks to track the creature. The bonus increases to +10 if the tracker has the Scent special quality." compset="Special" summary="+5 circ bonus to track a tainted blood, +10 if use scent.">
+    <usesource source="BestKrynn"/>
+    <tag group="SpecSource" tag="TaintBlood"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xRibSpur" name="Rib Spurs, 2d8+10" description="A stahnk can try to trap a grabbed opponent by making a successful grapple check. Once inside, the opponent takes 1d8+4 points of crushing damage plus 1d8+6 points of slashing damage per round from the constricting rib cage. A trapped creature may free itself by succeeding at a DC 30 Escape Artist check or break its way out by dealing 15 points of damage to the stahnk&#146;s rib cage (AC 15); damage reduction applies as usual. Once a creature has freed itself in such a manner, the stahnk cannot trap a creature in its rib spurs until it has regained 15 hit points through its fast healing (5 rounds). A stahnk&#146;s rib cage can hold 2 Medium or 4 Small creatures. Creatures any smaller are too small to be held and automatically fall out of the creature&#146;s rib cage on the following round." compset="Special" summary="Grapple chk to store foe inside ribs, dam each rd &amp; stahnk is not grappling.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="rUnBStahnk" name="Undead Beast, Stahnk" description="{i}This undead creature resembles a wingless dragon in shape and size, covered in loose flesh. A massive barbed rib cage protrudes through its chest.{/i}\n\nA stahnk exists only to kill the living. It is a highly territorial creature, often adopting a few acres of land as its home territory and killing any and all faunae that come its way. Because of this, the area that a stahnk makes its lair is often covered with the treasure of former adventurers. Although some of it is crushed as a result of any rampage the stahnk may have visited upon others, the creature generally leaves such items alone.\n\nThe stahnk is 20 feet long and weighs 1,500 pounds. Its shape is vaguely dragon-like in nature, and its skeleton is covered in sharp barbs, particularly focused on the ribs. Its head is long and horned. Splotchy gray flesh covers it, often hanging off bony areas.\n\nUndead beasts are the result of wanton destruction visited upon forest animals by priests of Chemosh. Many believe that after the slaughter of countless animals, the priests conduct a foul rite that twists the remains of the animals into the unnatural shape of a stahnk or gholor. The resulting creature is then utilized for various acts such as guarding a sacred location of Chemosh or bestowed to allies. Naturally, this foul treatment of the wildlife has not gone unnoticed by Chislev and Habakkuk, who are infuriated by Chemosh&#146;s perversion of innocent animals.\n\nLike all matters supernatural, rumors abound that sometimes the intervention of a cleric of Chemosh is not needed to bring forth an undead beast. Legends tell of a game-hunting Ergothian whose kills melted together and took the form of a stahnk to avenge their senseless deaths. If this tale is indeed true, then it deserves close scrutiny to determine how anyone managed to survive to relate the events." compset="Race">
+    <fieldval field="rSTR" value="18"/>
+    <fieldval field="rDEX" value="4"/>
+    <fieldval field="rINT" value="-8"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rSpeed" value="50"/>
+    <fieldval field="rAttack" value="7"/>
+    <fieldval field="rFort" value="4"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rWill" value="9"/>
+    <fieldval field="rAC" value="10"/>
+    <fieldval field="rCR" value="8"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="14d12 (14 Levels of Undead)"/>
+    <fieldval field="rHitDice" value="14"/>
+    <fieldval field="rSkillPlus" value="4"/>
+    <fieldval field="rHPStart" value="91"/>
+    <usesource source="BestKrynn"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceSize" tag="Huge2"/>
+    <tag group="Race" tag="typUndead"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="Alignment" tag="Evil"/>
+    <tag group="RaceType" tag="NPC"/>
+    <bootstrap thing="xTrample">
+      <autotag group="User" tag="DamHighStr"/>
+      <autotag group="User" tag="1d8_6"/>
+      </bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="2d6_104"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Value" tag="2"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      </bootstrap>
+    <bootstrap thing="xDamRdB"></bootstrap>
+    <bootstrap thing="xImpGrab">
+      <assignval field="livename" value="Improved Grab - Trample"/>
+      </bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <bootstrap thing="xImmFire"></bootstrap>
+    <bootstrap thing="xRibSpur"></bootstrap>
+    <bootstrap thing="xFastHeal">
+      <autotag group="Value" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <eval phase="First" priority="5000" index="2"><![CDATA[      ~ Set up our damage reduction
+      #applydr[xDamRdB, 10]
+
+      ~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)
+
+      ~ We don't have a CON score because we're undead, and above that sort of petty nonsense
+      perform hero.child[aCON].assign[Helper.NoScore]
+
+      ~ Change the attributes on Concentration
+      perform hero.child[kConcent].assign[SkillOver.aCHA]
+
+      var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 5
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 5
+      hero.child[kSurvival].field[kInnate].arrayvalue[index] += 7]]></eval>
+    <eval phase="PostLevel" priority="10000">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 3
+      #applysr[damage]</eval>
+    </thing>
+  </document>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>Input by Bodrin 20/03/2011
+
+bodrinbarlow@gmail.com</info_author>
+    <info_history>7-19-11 Lawful_G
+Removed the (Su) from the names of the specials, were being listed twice
+Added pre-reqs for the template.
+Added eval script to mod the CustDesc of the fast healing.
+Deleted the ImmCold and VulnFire as folded into the Cold subtype.
+
+Version 1.1</info_history>
+    </fileinfo>
+  <thing id="xFrigidTou" name="Frigid Touch" description="Once per day, a dark ice creature may make a touch attack against a foe to deal 1d6 points of dexterity damage by freezing its blood in its veins and numbing its bones." compset="Special" summary="1d6 dexterity damage once per day on touch attack." uniqueness="unique">
+    <comment>Input by Bodrin 20/03/2011
+Template from Gamemastery Module for 3.5 OGL D20 rules
+
+Carnival of Tears by Paizo publishing</comment>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="CoT"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="DarkIce"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    </thing>
+  <thing id="xFrostGras" name="Frosty Grasp" description="A dark ice creature&apos;s natural attacks, as well as any weapons it wields, deal an additional 1d6 points of cold damage." compset="Special" summary="1d6 additional cold damage on all attacks." uniqueness="unique">
+    <comment>Input by Bodrin 20/03/2011
+Template from Gamemastery Module for 3.5 OGL D20 rules
+
+Carnival of Tears by Paizo publishing</comment>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="CoT"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecSource" tag="DarkIce" name="DarkIce" abbrev="DarkIce"/>
+    </thing>
+  <thing id="tmDarkIce" name="Dark Ice Creature Template" description="{b}Creating a Dark Ice Creature{/b}\n\n&quot;Dark Ice Creature&quot; is an acquired template that can be applied to any fey that does not possess the fire subtype.\n\nA Dark Ice creature uses all of the base creatures statistics except where noted below.\n\nChallenge Rating : +1\n\nSize and type : The creatures size and type remains unchanged, but it gains the cold subtype.\n\n{b}Weaknesses{/b} :\nA dark ice creature retains the base creatures weaknesses and gains the following.\nFire Vulnerability (Ex) : A dark ice creature takes 1-1/2 times as much damage from fire.\n\n{b}Special attacks{/b} :\nA dark ice creature grows jagged oversized icicle talons in place of fingers, paws, or hooves, and it gains two vicious claw attacks if it did not already have them.\n\n{b}Defensive abilities{/b} :\nA dark ice creature retains the base creatures defensive abilities and gains the following.\n\nFast Healing (Su) : As long as a dark ice creature is in contact with ice or snow it heals 3 hit points per round.\n\nImmunity to cold (Ex) : A dark ice creature is immune to cold." compset="Template" uniqueness="unique">
+    <comment>Input by Bodrin 20/03/2011
+Template from Gamemastery Module for 3.5 OGL D20 rules
+
+Carnival of Tears by Paizo publishing</comment>
+    <fieldval field="tmCON" value="2"/>
+    <fieldval field="tmAC" value="4"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="tmSTR" value="2"/>
+    <usesource source="CoT" parent="pPaizo" name="Carnival of Tears"/>
+    <tag group="SpecSource" tag="DarkIce"/>
+    <tag group="TemplHelp" tag="Acquired" name="Acquired" abbrev="Acquired"/>
+    <bootstrap thing="xFastHeal">
+      <autotag group="Value" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="xFrigidTou"></bootstrap>
+    <bootstrap thing="xFrostGras"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Helper" tag="RaceHands"/>
+      <autotag group="Helper" tag="NatSizeDmg"/>
+      </bootstrap>
+    <bootstrap thing="stypCold"></bootstrap>
+    <eval phase="Render"><![CDATA[hero.childfound[xFastHeal].field[CustDesc].text = "A dark ice creature heals only if it is touching ice or snow."]]></eval>
+    <eval phase="First" priority="50" index="2">  perform hero.assign[Race.stypCold]</eval>
+    <exprreq message="Fey type required."><![CDATA[tagis[Race.typFey] <> 0]]></exprreq>
+    <exprreq message="Fire type forbidden.">tagis[Race.stypFire] = 0</exprreq>
+    </thing>
+  </document>

@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="xBurn3" name="Burn" description="The listed attacks gain extra dice of acid damage." compset="Special" summary="Extra acid dam on listed attacks.">
+    <comment>Maybe use as a template for other extra energy damage abilities?
+
+Authors Should:
+Bootstrap with a User.Bite/Claw/Etc...
+Bootstrap with a User.1_1/1d2_2/Etc...</comment>
+    <usesource source="MonManual1" parent="p35" name="Monster Manual"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="Render"><![CDATA[~ Set the target based on tags
+if (tagis[User.Bite] <> 0) then
+  field[livename].text = field[name].text & "ic Bite"
+elseif (tagis[User.Claw] <> 0) then
+  field[livename].text = field[name].text & "ic Claw"
+elseif (tagis[User.Sting] <> 0) then
+  field[livename].text = field[name].text & "ic Sting"
+elseif (tagis[User.Tentacle] <> 0) then
+  field[livename].text = field[name].text & "ic Tentacle"
+elseif (tagis[User.Gore] <> 0) then
+  field[livename].text = field[name].text & "ic Gore"
+elseif (tagis[User.Headbutt] <> 0) then
+  field[livename].text = field[name].text & "ic Headbutt"
+elseif (tagis[User.Hooves] <> 0) then
+  field[livename].text = field[name].text & "ic Hooves"
+elseif (tagis[User.Kick] <> 0) then
+  field[livename].text = field[name].text & "ic Kick"
+elseif (tagis[User.Rake] <> 0) then
+  field[livename].text = field[name].text & "ic Rake"
+elseif (tagis[User.Stamp] <> 0) then
+  field[livename].text = field[name].text & "ic Stamp"
+elseif (tagis[User.Tail] <> 0) then
+  field[livename].text = field[name].text & "ic Tail"
+elseif (tagis[User.Slam] <> 0) then
+  field[livename].text = field[name].text & "ic Slam"
+endif
+
+if (tagis[User.ScConstric] <> 0) then
+  field[livename].text = field[name].text & " and Constrict"
+endif
+
+~ Set the damage based on User.? tags
+if (tagis[User.1_1] <> 0) then
+  field[livename].text = field[livename].text & ", +1"
+elseif (tagis[User.1d2_2] <> 0) then
+  field[livename].text = field[livename].text & ", +1d2"
+elseif (tagis[User.1d3_3] <> 0) then
+  field[livename].text = field[livename].text & ", +1d3"
+elseif (tagis[User.1d4_4] <> 0) then
+  field[livename].text = field[livename].text & ", +1d4"
+elseif (tagis[User.1d6_5] <> 0) then
+  field[livename].text = field[livename].text & ", +1d6"
+elseif (tagis[User.1d8_6] <> 0) then
+  field[livename].text = field[livename].text & ", +1d8"
+elseif (tagis[User.1d10_304] <> 0) then
+  field[livename].text = field[livename].text & ", +1d10"
+elseif (tagis[User.1d12_404] <> 0) then
+  field[livename].text = field[livename].text & ", +1d12"
+elseif (tagis[User.2d4_6] <> 0) then
+  field[livename].text = field[livename].text & ", +2d4"
+elseif (tagis[User.2d6_104] <> 0) then
+  field[livename].text = field[livename].text & ", +2d6"
+elseif (tagis[User.2d8_204] + tagis[User.2d8_305] <> 0) then
+  field[livename].text = field[livename].text & ", +2d8"
+elseif (tagis[User.2d10_205] <> 0) then
+  field[livename].text = field[livename].text & ", +2d10"
+elseif (tagis[User.3d6_8] <> 0) then
+  field[livename].text = field[livename].text & ", +3d6"
+elseif (tagis[User.3d8_306] <> 0) then
+  field[livename].text = field[livename].text & ", +3d8"
+elseif (tagis[User.4d6_106] <> 0) then
+  field[livename].text = field[livename].text & ", +4d6"
+elseif (tagis[User.4d8_307] <> 0) then
+  field[livename].text = field[livename].text & ", +4d8"
+endif
+
+~ We go forward to make a DC only if we have more HasDC tags than NoDC tags
+var result as number
+result = tagcount[User.HasDC] - tagcount[User.NoDC]
+
+doneif (result <= 0)
+
+  field[livename].text = field[livename].text & " (DC" & field[Value].value & ")"]]></eval>
+    <eval phase="PostAttr" priority="20000" index="2"><![CDATA[~ We go forward to make a DC only if we have more HasDC tags than NoDC tags
+var result as number
+result = tagcount[User.HasDC] - tagcount[User.NoDC]
+
+doneif (result <= 0)
+
+~ Count our Racial HD and get our base DC.
+      var HD as number
+      HD = herofield[tHitDice].value - #totallevelcount[] + #levelcount[Race]
+      var DC as number
+      DC = 10 + HD/2 + hero.child[aCON].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[Value].value += DC
+
+      ~ Assign a tag to ourselves so we become a target for Ability Focus.
+      perform assign[User.PickFocus]]]></eval>
+    </thing>
+  <thing id="rOozLava" name="Ooze, Lava" description="{b}Environment:{/b} Underground\n{b}Organization:{/b} Solitary\n{b}Treasure:{/b} No coins; 50% goods (gems only); no items\n{b}Alignment:{/b} Always neutral\n{b}Advancement:{/b} 9&#150;12 HD (Large); 13&#150;24 HD (Huge)\n{b}Level Adjustment:{/b} &#151;\n\nA fiery mass of lava surges forward, pseudopods of white-orange stretching out before it.  A flamestorm surrounds it, and its trail is a hot, glassy channel through the sand.\nA lava ooze favors hot underground caves and lava tubes formed over still-hot magma.  It consumes stone and metallic items.  As it feeds, its body becomes filled with &#147;indigestible&#148; gems.\nA typical lava ooze is 5 to 10 feet across and 1 foot thick.\nIt weighs about 2,000 pounds\n\nCombat\nA lava ooze flows through tunnels, melting and consuming stone and metal that it engulfs.  It is able to detect high concentrations of nutritious minerals, and characters wearing heavy armor are at risk of becoming a meal. (The ooze does not mind ingesting organic material along with the metal.)" compset="Race">
+    <fieldval field="rSTR" value="9"/>
+    <fieldval field="rDEX" value="-9"/>
+    <fieldval field="rCON" value="14"/>
+    <fieldval field="rWIS" value="-9"/>
+    <fieldval field="rCHA" value="-9"/>
+    <fieldval field="rSpeed" value="10"/>
+    <fieldval field="rInfHit" value="8d10+84 (8 Levels of Ooze)"/>
+    <fieldval field="rAttack" value="6"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rCR" value="6"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rHitDice" value="8"/>
+    <fieldval field="rFeat" value="-3"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Race" tag="stypFire"/>
+    <tag group="Race" tag="typOoze" name="Type - Ooze" abbrev="Type - Ooze"/>
+    <tag group="Alignment" tag="NeutralGE"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="RaceSize" tag="Large1" name="Large" abbrev="Large"/>
+    <bootstrap thing="xBurn2">
+      <autotag group="User" tag="Slam"/>
+      <autotag group="User" tag="HasDC"/>
+      <autotag group="User" tag="2d6_104"/>
+      <assignval field="CustDesc" value="A lava ooze&#146;s body has the temperature and consistency of thick lava With a successful slam attack, the ooze leaves behind some of its substance and might set flesh and clothing aflame. A struck creature must make a DC 21 Reflex save or catch on fire. The flames burn for 1d4 rounds. See Catching on Fire, page 303 of the Dungeon Master&#146;s Guide. The save DC is Constitution-based.{BR}Creatures that strike a lava ooze with a natural weapon or an unarmed attack take 2d6 points of fire damage and catch on fire unless they succeed on a Reflex save."/>
+      </bootstrap>
+    <bootstrap thing="xConstrict"></bootstrap>
+    <bootstrap thing="xImpGrab"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+8 racial bonus to climb, can always take 10."/>
+      <assignval field="CustDesc" value="A lava ooze receives a +8 racial bonus on Climb checks and can always choose to take 10 on Climb checks, even if rushed or threatened."/>
+      </bootstrap>
+    <bootstrap thing="rBlindSi">
+      <autotag group="Value" tag="60"/>
+      </bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="xClimb">
+      <autotag group="Value" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="typOoze"></bootstrap>
+    <bootstrap thing="stypFire"></bootstrap>
+    <eval phase="PostLevel" priority="9000">#skillbonus[kClimb] += 8</eval>
+    </thing>
+  <thing id="mFeatherCl" name="Feather Cloak" description="The waste is home to many birds, especially vultures. These creatures spend hours circling in the bright sunlight and baking updrafts of the desert, and their plumage helps protect them and keep them cool. Some clever waste-dwellers collect feathers and sew them onto a framework to create lightweight protection. Collecting so many feathers can take months, and considerable expertise is needed to create the garment, so feather cloaks are the purview of the wealthy and powerful. A feather cloak covers your torso and upper legs, having a broad brimmed cap to protect the head. This type of armor does not impose the usual &#150;4 penalty on Fortitude saves against damage dealt by hot environments and on Constitution checks to avoid heatstroke." compset="Armor">
+    <fieldval field="gWeight" value="3"/>
+    <fieldval field="gSizeCost" value="1000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="mArcFail" tag="10"/>
+    <tag group="mClass" tag="Light"/>
+    <tag group="mAC" tag="2"/>
+    <tag group="mMaxDex" tag="6"/>
+    <tag group="mArmorChk" tag="0"/>
+    <bootstrap thing="xCoolArmor"></bootstrap>
+    </thing>
+  <thing id="mSilkSwath" name="Silk Swathes" description="Although the desert does not support silkworms, some inhabitants of the waste have access to this exotic fabric through trade. This sheer material is perfect for clothing in hot environments, and it can be used for armor. Silk swathes are nothing more than elaborately wrapped cloth strips. Air trapped between layers allows the skin to respire, while the material itself absorbs moisture readily and dries quickly. The wrapped layers are surprisingly effective against weapon blows. However, donning this armor is time-consuming and difficult, taking as long and following the same rules as for donning full plate. Silk swathes do not impose the usual &#150;4 penalty on Fortitude saves against damage dealt by hot environments and on Constitution checks to avoid heatstroke." compset="Armor">
+    <fieldval field="gWeight" value="6"/>
+    <fieldval field="gSizeCost" value="400"/>
+    <usesource source="Sandstorm"/>
+    <tag group="mArcFail" tag="5"/>
+    <tag group="mClass" tag="Light"/>
+    <tag group="mAC" tag="1"/>
+    <tag group="mMaxDex" tag="8"/>
+    <tag group="mArmorChk" tag="0"/>
+    <bootstrap thing="xCoolArmor"></bootstrap>
+    </thing>
+  <thing id="mShlHide" name="Shield, Hide" description="This tall, oval shield is made of animal hide stretched tightly over a wood or bone framework and reinforced with strips of hide. It is relatively lightweight while still providing cover as a tower shield does. By giving up your attacks for the round, you gain total cover. The shield does not, however, provide cover against targeted spells; a spellcaster can target the shield. Since it is made of lighter material than a tower shield, you take only a &#150;1 penalty on attack rolls while wielding a hide shield in combat. You cannot bash with a hide shield, nor can you use your shield hand for anything else." compset="Armor">
+    <fieldval field="gWeight" value="30"/>
+    <fieldval field="gSizeCost" value="50"/>
+    <usesource source="Sandstorm"/>
+    <tag group="mArcFail" tag="30"/>
+    <tag group="mClass" tag="Tower"/>
+    <tag group="mAC" tag="3"/>
+    <tag group="mMaxDex" tag="4"/>
+    <tag group="ShldClass" tag="Tower"/>
+    <tag group="mArmorChk" tag="3"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ Work out if we're equipped, or, if we're the child of a magic item, if
+      ~ our parent is equipped
+      var result as number
+      result = field[gIsEquip].value
+      if (container.ishero = 0) then
+        result += container.parent.field[gIsEquip].value
+        endif
+
+      ~ If equipped, -1 attack bonus
+      if (result <> 0) then
+        hero.child[Attack].field[Bonus].value = hero.child[Attack].field[Bonus].value - 1
+        endif]]></eval>
+    </thing>
+  <thing id="xCoolArmor" name="Cooling Armor" description="This type of armor does not impose the usual &#150;4 penalty on Fortitude saves against damage dealt by hot environments and on Constitution checks to avoid heatstroke." compset="Special" summary="No penalty on Fort saves vs heat and on Con checks vs heatstroke.">
+    <tag group="Helper" tag="SpSourceEq"/>
+    </thing>
+  <thing id="fBlazeBerz" name="Blazing Berserker" description="When you enter your rage, your body becomes infused with fire.\n\n{b}Prerequisite{/b}: Ability to rage.\n\n{b}Benefit{/b}: As long as you are under the effects of a rage, you gain the fire subtype. You gain immunity to fire, but have vulnerability to cold, which means you take +50% damage from cold, regardless of whether a saving throw is allowed, or if the save is a success or failure." compset="Feat" summary="While raging you gain the fire subtype" uniqueness="useronce">
+    <comment>Feats DONE!!!
+
+Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Rage required."><![CDATA[hero.childfound[cAveRage].tagis[Helper.ShowSpec] + hero.childfound[cBbnRage].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    </thing>
+  <thing id="fBlessTEN" name="Blessed by Tem-Et-Nu" description="Tem-Et-Nu has marked you as having an important destiny in her temple.\n\n{b}Prerequisites{/b}: Patron deity Tem-Et-Nu, must have defeated a hippopotamus in single combat.\n\n{b}Benefit{/b}: Hippopotami cannot attack you unless they are magically compelled. In addition, if you possess the turn or rebuke undead class feature, you can rebuke and command hippopotami as an evil cleric rebukes or commands undead. You gain a +2 sacred bonus to your Armor Class against chaotic-aligned creatures with the fire subtype.\n\nCleric is now an additional favored class for you; the cleric class does not count when determining whether you take an experience point penalty for multiclassing.\n\n{b}Special{/b}: Your aura radiates law with a strength equal to your character level (see {i}detect law{/i}, page 219 of the Player&#146;s Handbook). If you ever lose favor with Tem-Et-Nu, or change your patron deity to another deity, you lose all benefits of this feat and take damage as if you were bitten by a hippopotamus. You do not gain a replacement feat. If you later return to Tem-Et-Nu&#146;s faithful and receive an {i}atonement{/i} spell, you regain the benefit of this feat." compset="Feat" summary="Cleric is favored, can rebuke hippos, +2 sac bon to AC vs chaotic fire foes." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fDriftMagi" name="Drift Magic" description="You can tap the power of drift magic.\n\n{b}Prerequisites{/b}: Knowledge (local wasteland region) 4 ranks, ability to cast spells.\n\n{b}Benefit{/b}: You can use drift magic, as described on page 105.\n\nDrift magic is the process of tapping the natural strata and tides of magic inherent in large collections of sand, ash, and dust. Such gatherings speak to eons of time, weathering, and history. This power is not visible to the unpracticed eye, but for those with the appropriate sensitivity, even common sand is awash with potential that can be tapped to increase the effects of spells and produce other special effects.\n\n{b}Limitations of Use{/b}: Drift magic requires a connection to the waste, in the form of sand or other desert soil. In waste environments, the soil surrounding a character is sufficient to meet this requirement. When traveling in other environments, a practitioner of drift magic must carry 1 pound of such material among her equipment.\n\n{b}Using Drift Magic{/b}: To use drift magic, a character must merely keep in mind her special knowledge of the desert. No checks are required. In natural areas of sand, dust, or ash, a practitioner can use drift magic as a free action. Other areas require the practitioner to expend a move action to utilize drift magic. Spells with a casting time of longer than 1 standard action cannot benefit from drift magic.\n\n{b}Bonus to Effective Caster Level{/b}: A practitioner of drift magic adds 1 to the effective caster level of any spell that has the earth descriptor or that deals dessication damage. Even if a spell meets both these criteria, the effective caster level only increases by 1.\n\n{b}Flaywind Burst{/b}: Characters with the Drift Magic feat can learn {i}flaywind burst{/i} as a 4th-level spell, instead of a 5th-level one." compset="Feat" summary="In ash/sand area free, otherwise move, +1 CL to earth or dessicating spell." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Knowledge (Local) 4 ranks required."><![CDATA[#skillranks[kKnowLocal] >= 4]]></exprreq>
+    </thing>
+  <thing id="fEagleFury" name="Eagle&apos;s Fury" description="You know how to wield the eagle&#146;s claw with deadly speed.\n\n{b}Prerequisites{/b}: Dex 15, proficiency with eagle&#146;s claw.\n\n{b}Benefit{/b}: You can get one extra attack per round with an eagle&#146;s claw (see page 96). The attack is at your highest base attack bonus, but each attack you make in that round (the extra one and the normal ones) takes a &#150;2 penalty. You must take a full attack action to use this feat." compset="Feat" summary="When full att with eagle claw, gain extra att but all take -2 penalty." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Dexterity 15 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Exotic Weapon Proficiency (Eagle&apos;s Claw) required."><![CDATA[tagis[WepProf.wEagleClaw] <> 0]]></exprreq>
+    </thing>
+  <thing id="fFierySpel" name="Fiery Spell" description="Your fire magic is bolstered, further scorching your enemies.\n\n{b}Benefit{/b}: A fiery spell deals an extra 1 point of fire damage for each die of damage the spell deals. This feat can be applied only to spells with the fire descriptor. For example, if a 9th-level wizard with this feat casts a fiery {i}fireball{/i}, the {i}fireball{/i} deals 9d6+9 points of damage. A fiery spell uses up a spell slot one level higher than the spell&#146;s actual level." compset="Feat" summary="Fire spl does +1 bonus fire dam per die. +1 Level." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)
+
+MM (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fHeatEndur" name="Heat Endurance" description="Either as a result of growing up in the waste, or by training your body and mind to ignore the effects of searing heat, you can exist with ease in high-temperature environments.\n\n{b}Prerequisite{/b}: Base Fortitude save +2.\n\n{b}Benefit{/b}: You gain a +2 bonus on saving throws against fire effects. You can exist comfortably in temperatures up to 120&#176; F without having to make Fortitude saves (see Heat Dangers, page 12). Your protection against heat is level 1 (see Protection against Heat, page 14)." compset="Feat" summary="+2 bon to saves vs fire, no checks up to 120&#176; F, protection lvl 1 vs heat." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Base Fortitude save +2 required."><![CDATA[child[vFort].field[vBase].value >= 2]]></exprreq>
+    </thing>
+  <thing id="fImpHeatEn" name="Improved Heat Endurance" description="You can survive even in the most extreme natural heat conditions.\n\n{b}Prerequisites{/b}: Base Fortitude save +6, Heat Endurance.\n\n{b}Benefit{/b}: You gain fire resistance 5. If you already have fire resistance, it increases by 5. You can exist comfortably in temperatures up to 160&#176; F without having to make Fortitude saves (see Heat Dangers, page 12). Your protection against heat is level 3 (see Protection against Heat, page 14)." compset="Feat" summary="+2 bon to saves vs fire, no checks up to 160&#176; F, protection lvl 3 vs heat." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)
+
+Hide prev (Done)
+
+Test? (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xImpHeaRes"></bootstrap>
+    <eval phase="First">perform hero.childfound[fHeatEndur].delete[Helper.ShowSpec]</eval>
+    <exprreq message="Base Fortitude save +6 required."><![CDATA[child[vFort].field[vBase].value >= 6]]></exprreq>
+    <exprreq message="Heat Endurance required."><![CDATA[#hasfeat[fHeatEndur] <> 0]]></exprreq>
+    </thing>
+  <thing id="fJudgeAuri" name="Judged by Aurifar" description="Aurifar, the Caliph of the Sky, has judged you, and he now shows you special favor.\n\n{b}Prerequisites{/b}: Patron deity Aurifar, must have survived at least three days in the waste without water.\n\n{b}Benefit{/b}: You gain a +2 sacred bonus on Constitution checks to avoid the negative effects of thirst (see Dehydration, page 15). You gain a +2 sacred bonus to your Armor Class against undead creatures that are adversely affected by sunlight, such as vampires and wraiths.\n\nCleric is now an additional favored class for you; the cleric class does not count when determining whether you take an experience point penalty for multiclassing.\n\n{b}Special{/b}: Your aura shows faint abjuration magic. If you ever lose favor with Aurifar, or change your patron deity to another deity, you lose the benefit of this feat, and you immediately begin experiencing the effects of thirst as though you had gone without water for one week. You do not gain a replacement feat. If you later return to Aurifar&#146;s faithful and receive an {i}atonement{/i} spell, you regain the benefit of this feat." compset="Feat" summary="Cleric is favored, +2 sacred bon to Con chk vs thirst &amp; AC vs sun weak undead." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fLightAuri" name="Light of Aurifar" description="Undead that you turn or rebuke immolate.\n\n{b}Prerequisites{/b}: Ability to turn or rebuke undead, access to either the Fire or Sun domain.\n\n{b}Benefit{/b}: Any undead that you successfully turn or rebuke take 2d6 points of fire damage in addition to the normal turning or rebuking effect." compset="Feat" summary="Undead that you turn or rebuke take 2d6 fire dam." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Ability to turn or rebuke undead required."><![CDATA[tagis[Hero.TurnUndead] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPharaFist" name="Pharaoh&#146;s Fist" description="Your unarmed strikes echo with thunder, stunning your foe and those nearby.\n\n{b}Prerequisites{/b}: Str 15, Improved Unarmed Strike, Stunning Fist.\n\n{b}Benefit{/b}: You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). By expending one Stunning Fist use for the day, you force an opponent successfully struck by your unarmed attack, and all creatures adjacent to that opponent, to make a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier) or be stunned for 1 round. The opponent struck by the unarmed attack is dealt damage normally. This feat can be used only once per round.\n\n{b}Special{/b}: A fighter may select Pharaoh&#146;s Fist as one of his fighter bonus feats." compset="Feat" summary="Use 1 stun, struck foe &amp; adj creatures are stunned 1 rd (DCXX Fort neg)." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      var DC as number
+      DC = 10 + round(#totallevelcount[]/2,0,-1) + hero.child[aWIS].field[aModBonus].value
+
+      field[xSumm].text = "Use 1 stun, struck foe & adj creatures are stunned 1 rd (DC" & DC & " Fort neg)."]]></eval>
+    <exprreq message="Improved Unarmed Strike required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <exprreq message="Stunning Fist required."><![CDATA[#hasfeat[fStunFist] <> 0]]></exprreq>
+    <exprreq message="Strength 15 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fPrieWaste" name="Priest of the Wastes" description="You can swap out prepared spells for others that aid in exploring and surviving in wastelands.\n\n{b}Prerequisite{/b}: Access to the Fire, Summer&#134;, Sun, Travel, or Water domain.\n\n{b}Benefit{/b}: You can use a spell slot currently occupied by a prepared spell that is not a domain spell to cast a spell of equal or lower level that appears on the following list: {i}cloak of shade{/i}&#134;, {i}control weather{/i}, {i}create food and water{/i}, {i}create water{/i}, {i}endure elements{/i}, {i}heroes&#146; feast{/i}, {i}hydrate{/i}&#134;, {i}protection from dessication{/i}&#134;, {i}protection from energy{/i}, and {i}resist energy{/i}.\n&#134; New domain or spell described in Chapter 5." compset="Feat" summary="Spontaneously convert cleric spells into a small list useful in survival." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fRSnakeStr" name="Rattlesnake Strike" description="Having observed the ways of a desert viper, you have learned to use {i}ki{/i} in a fashion similar to poison.\n\n{b}Prerequisites{/b}: Wis 15, Improved Initiative, Improved Unarmed Strike, Stunning Fist.\n\n{b}Benefit{/b}: You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). By expending one of your Stunning Fist uses for the day, you imbue your next unarmed attack with disruptive {i}ki{/i} that mimics the effects of mild viper venom. If that attack hits, it deals normal damage and forces the target to make a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier). A creature that fails the saving throw takes 1d3 points of Constitution damage and must make a similar saving throw 1 minute later or take another 1d3 points of Constitution damage. This feat can be used only once per round.\n\n{b}Special{/b}: A fighter may select Rattlesnake Strike as one of his fighter bonus feats." compset="Feat" summary="Use 1 stun, struck foe is poisoned for 1d3/1d3 Con (DCXX Fort neg)." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      var DC as number
+      DC = 10 + round(#totallevelcount[]/2,0,-1) + hero.child[aWIS].field[aModBonus].value
+
+      field[xSumm].text = "Use 1 stun, struck foe is poisoned for 1d3/1d3 Con (DC" & DC & " Fort neg)."]]></eval>
+    <exprreq message="Improved Initiative required."><![CDATA[#hasfeat[fImpInit] <> 0]]></exprreq>
+    <exprreq message="Improved Unarmed Strike required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <exprreq message="Stunning Fist required."><![CDATA[#hasfeat[fStunFist] <> 0]]></exprreq>
+    <exprreq message="Wisdom 15 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fSandCamou" name="Sand Camouflage" description="You can hide yourself in sand with a moment&#146;s notice.\n\n{b}Prerequisites{/b}: Hide 5 ranks, Sandskimmer.\n\n{b}Benefit{/b}: As a standard action, you can quickly camouflage yourself in any area of ash, dust, loose earth, or sand that is at least 1 inch deep. In areas with 1 to 11 inches of appropriate loose soil, you gain a +4 bonus on Hide checks. In areas with 12 inches or more of appropriate loose soil, you instead gain a +10 bonus on Hide checks. You must still have cover or concealment to make a Hide check, as described on page 76 of the Player&#146;s Handbook." compset="Feat" summary="Stand, camou self in at least 1 in sand/ash, 1-11/12+ in +4/+10 bon to Hide." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Hide 5 ranks required."><![CDATA[#skillranks[kHide] >= 5]]></exprreq>
+    <exprreq message="Sandskimmer required."><![CDATA[#hasfeat[fSandskimm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fSandDance" name="Sand Dancer" description="While making another attack, you attempt to blind a foe with thrown sand.\n\n{b}Prerequisites{/b}: Wis 13, Tumble 4 ranks.\n\n{b}Benefit{/b}: In any round when you first move at least 10 feet using your Tumble skill in an area covered in a layer of at least 1 inch of ash, dust, loose earth, or sand, you can supplement an attack made in that same round with flung or kicked material. A foe damaged by your attack must make a Fortitude saving throw (DC 10 + &#189; your character level + your Wis modifier) or be blinded for 1 round." compset="Feat" summary="If tumble 10 ft over 1+ in sand/ash blind struck foe 1 rd (DCXX Fort neg)." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      var DC as number
+      DC = 10 + round(#totallevelcount[]/2,0,-1) + hero.child[aWIS].field[aModBonus].value
+
+      field[xSumm].text = "If tumble 10 ft over 1+ in sand/ash blind struck foe 1 rd (DC" & DC & " Fort neg)."]]></eval>
+    <exprreq message="Tumble 4 ranks required."><![CDATA[#skillranks[kTumble] >= 4]]></exprreq>
+    <exprreq message="Wisdom 13 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fSandSnare" name="Sand Snare" description="When you knock your foes into the sand, they have a hard time regaining their feet.\n\n{b}Prerequisites{/b}: Combat Expertise, Improved Trip.\n\n{b}Benefit{/b}: If you successfully trip an opponent in any area of ash, dust, loose earth, or sand that is at least 1 inch deep, that opponent must take a full round action to stand during the round after being tripped. Following that round, the target can get to his feet with a move action (as normal). The opponent still provokes attacks of opportunity while attempting to stand, as normal." compset="Feat" summary="If trip foe on 1+ in of ash/sand, full rd to stand on next turn, then normal." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Combat Expertise required."><![CDATA[#hasfeat[fComExpert] <> 0]]></exprreq>
+    <exprreq message="Improved Trip required."><![CDATA[#hasfeat[fImpTrip] <> 0]]></exprreq>
+    </thing>
+  <thing id="fSandSpinn" name="Sand Spinner" description="You spray sand with your acrobatic maneuvers.\n\n{b}Prerequisites{/b}: Wis 13, Tumble 8 ranks, Sand Dancer.\n\n{b}Benefit{/b}: In any round when you first move at least 10 feet using your Tumble skill in an area covered in a layer of at least 1 inch of ash, dust, loose earth, or sand, you can take a standard action to hurl a spray of sand into the eyes of all creatures in a 5-foot-radius burst. Those within the area must make Fortitude saving throws (DC 10 + 1/2 your character level + your Wis modifier) or be blinded for 1 round." compset="Feat" summary="Stand, after tumble 10 ft over 1+ in sand blind all in 5 ft rad burst (DCXX Fort neg)." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[      var DC as number
+      DC = 10 + round(#totallevelcount[]/2,0,-1) + hero.child[aWIS].field[aModBonus].value
+
+      field[xSumm].text = "Stand, if tumble 10 ft over 1+ in sand blind all in 5 ft rad burst (DC" & DC & " Fort neg)."]]></eval>
+    <exprreq message="Tumble 8 ranks required."><![CDATA[#skillranks[kTumble] >= 8]]></exprreq>
+    <exprreq message="Sand Dancer required"><![CDATA[#hasfeat[fSandDance] <> 0]]></exprreq>
+    <exprreq message="Wisdom 13 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fSandskimm" name="Sandskimmer" description="You are particularly adept at moving over sand.\n\n{b}Benefit{/b}: You treat shallow sand as normal terrain and deep sand as shallow sand. Sand crust does not break beneath your feet, allowing you to move atop it as if it were normal terrain.\n\n{b}Special{/b}: This feat can be taken twice, allowing a creature to treat all sand as normal terrain. Its effects also stack similarly with other abilities that improve movement over sand. For example, if a bhuka takes Sand skimmer, she treats all sand as normal terrain and never breaks through sand crust by moving across it." compset="Feat" summary="Treat sand as one step shallower, sand crust doesn&apos;t break under you.">
+    <comment>Pre req (Done)
+
+Summ (Done)
+
+Special for twice... maybe make 2. Delete own Helper.Helper tag with the second? (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <bootstrap thing="xSandskimm"></bootstrap>
+    </thing>
+  <thing id="fScorpGras" name="Scorpion&apos;s Grasp" description="Like the scorpion, you can grab and hold your prey.\n\n{b}Prerequisites{/b}: Str 13, Improved Unarmed Strike, Improved Grapple.\n\n{b}Benefit{/b}: If your attack with an unarmed strike or a light or one-handed melee weapon hits, the strike deals normal damage and you can attempt to start a grapple as a free action; no initial touch attack is required. If you succeed in starting the grapple, you must drop your one handed weapon, but if you started the grapple with a light weapon, you can use it in each round to make an attack against the creature you are grappling without taking the normal &#150;4 penalty on the attack roll. If you initiated the grapple while armed, however, you cannot make additional grapple checks to deal damage during the round in which you use this feat.\n\nYou have the option to conduct the grapple normally, or you may hold a creature one or more sizes smaller than you with your off hand. If you choose to do the latter, you take a &#150;20 penalty on grapple checks against that creature and you cannot deal damage with your grapple checks, but you are not considered grappled yourself. You don&#146;t lose your Dexterity bonus to AC, you still threaten an area, and you can use remaining attacks against other opponents. While maintaining this latter type of hold, you can move normally (possibly carrying your opponent away), provided you can drag the opponent&#146;s weight." compset="Feat" summary="On melee hit with non 2 hand wep start grapple, if light wep no -4 for grappling." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Strength 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Improved Unarmed Strike required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <exprreq message="Improved Grapple required."><![CDATA[#hasfeat[fImpGrapp] <> 0]]></exprreq>
+    </thing>
+  <thing id="fScorpInst" name="Scorpion&apos;s Instincts" description="You are hard to find in the waste.\n\n{b}Prerequisites{/b}: Dex 13, Hide 5 ranks.\n\n{b}Benefit{/b}: You have an inborn sense of where to lurk without being seen, gaining a +2 bonus on your Hide checks and reducing the distance within which creatures can detect you by scent to 10 feet (20 feet if upwind, 5 feet if downwind). If you are in an area covered in a layer of at least 1 inch of ash, dust, loose earth, or sand, you gain an additional +2 bonus on Hide checks, a +2 bonus on Move Silently checks, and a creature can detect you by scent only if it is within 5 feet (pinpointing your location as normal)." compset="Feat" summary="Scent detects at 10 ft, 5 ft if in 1+ in ash/sand &amp; +2 to Hide &amp; Move Silent." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First">#skillbonus[kHide] += 2</eval>
+    <exprreq message="Hide 5 ranks required."><![CDATA[#skillranks[kHide] >= 5]]></exprreq>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fScorpReso" name="Scorpion&apos;s Resolve" description="Like the scorpion, you are not easily distracted.\n\n{b}Benefit{/b}: You gain a +4 bonus on saving throws against mind-affecting spells and abilities." compset="Feat" summary="+4 bon to saves vs mind affecting spells/abilities." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fScorpSens" name="Scorpion&apos;s Sense" description="Like the scorpion, you sense other creatures simply by perceiving their contact with the sand.\n\n{b}Prerequisite{/b}: Scorpion&#146;s Resolve.\n\n{b}Benefit{/b}: You are sensitive to vibrations in the ground and can automatically pinpoint the location of anything that is moving and in contact with the ground so long as it is within 10 feet. The range expands to 20 feet if you are in an area covered in a layer of at least 1 inch of ash, dust, loose earth, or sand. This ability only tells you what square the creature is in, so you still have the normal miss chance from concealment if you cannot see the creature." compset="Feat" summary="Pinpoint sq of moving foes that touch ground  in 10 ft, 20 ft if on 1+ in ash/sand." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Scorpion&apos;s Resolve required."><![CDATA[#hasfeat[fScorpReso] <> 0]]></exprreq>
+    </thing>
+  <thing id="fSearSpell" name="Searing Spell" description="Your fire spells are so hot that they can damage creatures that normally have resistance or immunity to fire.\n\n{b}Benefit{/b}: A searing spell is so hot that it ignores the resistance to fire of creatures affected by the spell, and affected creatures with immunity to fire still take half damage. This feat can be applied only to spells with the fire descriptor.\n\nCreatures with the cold subtype take double damage from a searing spell. Creatures affected by a searing spell are still entitled to whatever saving throw the spell normally allows. A searing spell uses up a spell slot one level higher than the spell&#146;s actual level." compset="Feat" summary="Fire spell ignore fire resist, 1/2 dam vs imm, dbl dam vs cold. +1 Level." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)
+
+MM (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fSerpFang" name="Serpent Fang" description="You are able to project your {i}ki{/i} to strike foes as though you had extended reach.\n\n{b}Prerequisite{/b}: Wis 15, Improved Unarmed Strike, Stunning Fist.\n\n{b}Benefit{/b}: You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). By expending one Stunning Fist use for the day, you can project your {i}ki{/i} to strike an opponent that is 5 feet beyond your normal unarmed reach. If the blow hits, it deals normal unarmed damage. This feat can be used only once per round.\n\n{b}Special{/b}: Monks can use special monk weapons when using this feat, dealing damage according to the weapon." compset="Feat" summary="Use 1 stun, +5 ft to reach for next unarmed strike/monk weapon attack." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Wisdom 15 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Improved Unarmed Strike required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <exprreq message="Stunning Fist required."><![CDATA[#hasfeat[fStunFist] <> 0]]></exprreq>
+    </thing>
+  <thing id="fTouchston" name="Touchstone" description="You forge a link with a power-rich location, referred to as a touchstone site.\n\n{b}Prerequisites{/b}: Knowledge (local) 8 ranks for the area in which the touchstone lies, or possession of a touchstone key (a portable object native to the touchstone&#146;s area and worth at least 250 gp). To forge a link between yourself and the touchstone, you must spend a day in meditation, spending 10 XP and 250 gp in material components. Alternatively, the key object for the touchstone can be destroyed as part of the ritual, in place of the material components.\n\n{b}Benefit{/b}: You gain the base ability associated with the touchstone to which you are linked. If you physically visit the location to which you have forged a link, you can also gain a higher-order ability with a limited number of uses, as described for that touchstone. You can swap sites any time you visit a new one and fulfill its higher-order recharge condition. See Touchstone Sites for more information.\n\n{b}Special{/b}: You can take this feat more than once. Each time you do, you are able to retain one more touchstone site&#146;s base ability. You also gain the capacity to retain uses of one more touchstone&#146;s higher-order ability. Thus, by taking this feat twice, you could retain the base abilities for both the Shrine at Kahar and the Sunken City of Pazar simultaneously, as well as both sites&#146; higher-order abilities and uses. If you then visit a third touchstone site and fulfill its recharge condition, unless you have taken this feat three times, you must choose which of your two previous touchstone site abilities to lose as you gain the abilities of the new touchstone site." compset="Feat" summary="Gain ability to link with chosen touchstone and use its ability.">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="Sandstorm"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    </thing>
+  <thing id="xImpHeaRes" name="Improved Heat Endurance" description="You have the specified Damage Resistance against Fire attacks." compset="Special" uniqueness="unique">
+    <tag group="SpecSource" tag="Feat" name="Feat" abbrev="Feat"/>
+    <bootstrap thing="xDamRsFire"></bootstrap>
+    <eval phase="Final" priority="10100" index="2"><![CDATA[    ~ if we have no fire resistance, apply our ShowSpec tag and rename ourselves to Fire Resistance 5. Else rename the fire resistance thing to current value +5.
+    if (hero.child[xDamRsFire].field[Value].value = 0) then
+      perform assign[Helper.ShowSpec]
+      field[livename].text = "Damage Resistance, Fire (5)"
+    else
+      var nat as number
+      nat = hero.child[xDamRsFire].field[Value].value
+
+      var total as number
+      total = 5 + nat
+
+      hero.child[xDamRsFire].field[livename].text = "Damage Resistance, Fire (" & total & ")"      
+    endif]]></eval>
+    </thing>
+  <thing id="xSandskimm" name="Sandskimmer" description="You are particularly adept at moving over sand.\n\n{b}Benefit{/b}: You treat shallow sand as normal terrain and deep sand as shallow sand. Sand crust does not break beneath your feet, allowing you to move atop it as if it were normal terrain.\n\n{b}Special{/b}: This feat can be taken twice, allowing a creature to treat all sand as normal terrain. Its effects also stack similarly with other abilities that improve movement over sand. For example, if a bhuka takes Sand skimmer, she treats all sand as normal terrain and never breaks through sand crust by moving across it." compset="Special" summary="Treat sand as one step shallower, sand crust doesn&apos;t break under you." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[var result as number
+   result = hero.tagcount[HasFeat.fSandskimm] + hero.tagis[Race.Bhuka]
+
+   if (result >= 2) then
+     field[xSumm].text = "Sand never impedes & sand crust doesn't break under your weight."
+     perform hero.childfound[xSureFeet].delete[Helper.ShowSpec]
+   endif]]></eval>
+    </thing>
+  <thing id="mmSearSpel" name="Searing Spell" description="Your fire spells are so hot that they can damage creatures that normally have resistance or immunity to fire.\n\n{b}Benefit{/b}: A searing spell is so hot that it ignores the resistance to fire of creatures affected by the spell, and affected creatures with immunity to fire still take half damage. This feat can be applied only to spells with the fire descriptor.\n\nCreatures with the cold subtype take double damage from a searing spell. Creatures affected by a searing spell are still entitled to whatever saving throw the spell normally allows. A searing spell uses up a spell slot one level higher than the spell&#146;s actual level." compset="Metamagic" summary="Half of the energy dam of spell cast in city ignores resist/immune. +0 Level." uniqueness="unique">
+    <fieldval field="mmAbbr" value="Searing"/>
+    <fieldval field="mmLevel" value="1"/>
+    <usesource source="Sandstorm"/>
+    <prereq message="Searing Spell required.">
+      <validate>@valid = hero.pickexists[fSearSpell] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="mmFierySpl" name="Fiery Spell" description="Your fire magic is bolstered, further scorching your enemies.\n\n{b}Benefit{/b}: A fiery spell deals an extra 1 point of fire damage for each die of damage the spell deals. This feat can be applied only to spells with the fire descriptor. For example, if a 9th-level wizard with this feat casts a fiery {i}fireball{/i}, the {i}fireball{/i} deals 9d6+9 points of damage. A fiery spell uses up a spell slot one level higher than the spell&#146;s actual level." compset="Metamagic" summary="Half of the energy dam of spell cast in city ignores resist/immune. +0 Level." uniqueness="unique">
+    <fieldval field="mmAbbr" value="Fiery"/>
+    <fieldval field="mmLevel" value="1"/>
+    <usesource source="Sandstorm"/>
+    <prereq message="Fiery Spell required.">
+      <validate>@valid = hero.pickexists[fFierySpel] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="rBhuka" name="Bhuka" description="The bhukas are a goblinoid people who claim descent from the first inhabitants of the world. Their culture celebrates and preserves ancestral ways of living.\n\n{b}Personality{/b}: Although not technologically advanced, bhukas are a sophisticated people with developed art and social organization. They are not warlike, so they avoid conflict via stealth. A bhuka never approaches strangers but observes from hiding as long as possible to gauge thier intent.\n\n{b}Physical Description{/b}: Bhukas are slight (4-5 ft tall and rarely more than 90 lb), with sand-colored skin and brick-red, tightly curled hair. Their large ears, networked with veins, fold flat against the head to retain heat at night and keep out sand. A neck frill has spines that can lift it for cooling. The face of a bhuka is flat, with slit nostrils protected by skinflaps. Bhuka&#146;s have long lashes to keep out dust, and the skin around the eyes is dark, resembling a mask. Their wide feet aid movement over sand. Body paint signifies social position (a simple stripe on a youth&#146;s neck frill to elaborate spotted, striped or whorled patterns on a matriarch). Clothing is woven from desert grasses that protect from heat.\n\n{b}Relations{/b}: From the beginning of their history, bhukas have been a gentle people exploited by others. When the first people emerged from the Lower World, bhukas were the last to choose a home and had to adapt to the waste. Cruder goblinoids call them weak, while badland dwarves and painted elves are often friendly. Warlike races drove bhukas away from fertile lands, yet they take pride in flourishing in the waste. They aren&apos;t cowards&#151;push too hard, and they reveal a toughness bred of harsh living. They have trade relations with crucians but the asheratis&#146; presence below the sand challenges a bhuka&#146;s perception of reality and standing in the waste heirarchy.\n\n{b}Alignment{/b}: A complex system of relationships hold bhuka villages together. Respect for superiors and contribution to the common good is drilled into all members of society, and those who will not become outcasts. Bhuka society is lawful, with most tending toward good.\n\n{b}Bhuka Lands{/b}: Bhukas form extended groups of several related clans, called phratries. Each claims ancestry from one couple who emerged from the Lower World in the beginning and must maintain a particular tradition of the people. Bhukas inhabit adobe or sandstone dwellings built into and against cliffs or dug into the upper levels of desert canyons. The entrance to a house is well above ground level for defense&#151;access is by ladders or rope lifts. A central spring provides water to the community.\n\nFarms use traditional dry-farming techniques to grow their staple foods of beans, sunflowers, desert grasses, and corn. \n\n{b}Religion{/b}: Each phratry is responsible for protecting a relic of the Emergence, the time when the first people came out from under the earth. For example, members of the Wokuhoo (Moon Owl) phratry are the caretakers of the Talon, a relic of the bird that led their ancestors into the Upper World. \n\nVillages are headed by a Grandmother who presides over a council of male and female elders. The Lower World from which they came is called Second Womb, where Kikanuti nurtured and taught them until they were ready to emerge. Their savage cousins are immature and must stay underground. Grandmother is the link to Kikanuti and presides over ceremonies where clan elders don ritual masks to dance.\n\n{b}Language{/b}: All Bhuka lore is oral, supplemented by a rich library of symbols that adorn both artistic and everyday objects. Their tongue is related to Goblin, but has diverged enough to be incomprehensible to other goblins.\n\n{b}Names{/b}: Bhuka names carry meaning, but retain harsh Goblin syllables. Most have a given name, mother&#146;s clan (prefix {i}kha{/i}, &#147;born of&#148;), and marriage clan (prefix {i}gi{/i}). Children have pet names until they choose an adult name.\n\n{b}Male Given Names{/b}: Aghila&#146;ak (Runs Like Lizard), Cochik&#146;ukan (Eyes of Sunhawk), Kotigana (Ears of Hare), Niskigan (Snake Fang).\n\n{b}Female Given Names{/b}: Chinkichu (Basket of Corn), Hintak&#146;inai (Painted Frill), Kekkoti (Little Ear), Lakinigo (Slow Smile).\n\n{b}Clan Names{/b}: Clans are named for a totem spirit or relic. Chikuk (Sunhawk), Kekkinna (Ear of Corn), Kichu (Basket), Wiki&#146;i (Swallow).\n\n{b}Adventurers{/b}: Bhuka&apos;s tight-knit community seldom produces wanderers, but ancient migrations remain part of racial memory. Some born with wind in their souls carry messages and gifts to scattered villages or lead trade expeditions to crucian lands. Those in whom the wind blows strongest go to see where the other children of Kikanuti went, or just follow their hearts. \n\nOutcast bhukas (usually bitter, selfish beings) also rove the waste. Some yearn to belong and may find a sense of community among other races." compset="Race">
+    <fieldval field="rSTR" value="-2"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <fieldval field="rInfAutoLn" value="Bhuka, Common"/>
+    <fieldval field="rAgeMin" value="14"/>
+    <fieldval field="rHeightMnM" value="48"/>
+    <fieldval field="rHeightMnF" value="45"/>
+    <fieldval field="rWeightMnF" value="25"/>
+    <fieldval field="rWeightMnM" value="30"/>
+    <usesource source="Sandstorm"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="2"/>
+    <tag group="AgeC2Size" tag="4"/>
+    <tag group="AgeC3Dice" tag="3"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="Race" tag="Bhuka"/>
+    <tag group="Language" tag="lDraconic"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Race" tag="stypGoblin"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <bootstrap thing="xSureFeet"></bootstrap>
+    <bootstrap thing="xWaterSens"></bootstrap>
+    <bootstrap thing="xGlareRes"></bootstrap>
+    <bootstrap thing="fHeatEndur">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="lBhuka"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypGoblin"></bootstrap>
+    </thing>
+  <thing id="lBhuka" name="Bhuka" description="Spoken by the desert dwelling Bhuka, and distantly related to goblin." compset="Language" uniqueness="unique">
+    <usesource source="Sandstorm"/>
+    </thing>
+  <thing id="xSureFeet" name="Sure Feet" description="Bhukas have broad feat and splayed toes that help them travel easily over sand and similar loose surfaces. They treat shallow sand as normal terrain and deep sand as shallow sand. See Sand Travel, page 18, for descriptions of shallow and deep sand." compset="Special" summary="Treat shallow sand as normal terrain and deep sand as shallow.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="SpecSource" tag="rBhuka"/>
+    </thing>
+  <thing id="xGlareRes" name="Glare Resistance" description="Dark skin and long lashes around the eyes protect bhukas from sun glare (see page 18), so these creatures are never dazzled by bright sun." compset="Special" summary="Immune to sun glare, never dazzled by bright sun.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="rBhuka"/>
+    <tag group="SpecType" tag="Resist"/>
+    </thing>
+  <thing id="xWaterSens" name="Water Sense" description="Bhukas have the innate ability to detect a source of drinkable water within a distance of 100 feet. Doing this requires a Survival check; the DC depends on the depth below ground of the water source, according to the following table.\n\n{b}Water Depth &#151;&#151; Survival DC{/b}\n0 feet (on the surface) &#151;&#151; 10\n10 feet or less &#151;&#151; 12\n11&#150;20 feet &#151;&#151; 15\n21&#150;40 feet &#151;&#151; 20\n41&#150;70 feet &#151;&#151; 25\n71&#150;100 feet &#151;&#151; 30" compset="Special" summary="Can make survival checks to detect water to depths of up to 100 ft.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="rBhuka"/>
+    <tag group="SpecType" tag="Resist"/>
+    </thing>
+  <thing id="wAtlatl" name="Atlatl" description="An atlatl is a cross between a thrown weapon and a projectile weapon. It uses a flat, thin board made of wood or antler, ranging from 1 to 3 feet long. One end is held in the hand while the butt of a light spear, 2 to 3 feet long, is placed in a groove at the other end. At the end of the groove is a raised spur or pin to hold the bottom of the spear in place. You hold the loaded spear and handle end of the atlatl in the same hand. With a sidearm or overhead throw, you propel the spear with a force far greater than that of a hand-thrown spear. An atlatl often has a carved stone weight attached to the board&#146;s underside, and many feature a thong of hide or cord to attach to the hand." compset="Weapon">
+    <fieldval field="gSizeCost" value="10"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wRangeInc" tag="50"/>
+    <tag group="wType" tag="P"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="wAtlatlSp" name="Atlatl Spear" description="This is a light spear, 2 to 3 feet long, used in conjunction with the atlatl." compset="Weapon">
+    <fieldval field="gSizeCost" value="1"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1_1"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wType" tag="P"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="wCategory" tag="Ammunition"/>
+    <tag group="Helper" tag="NormalOnly"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="wAtlatlSpM" name="Atlatl Spear" description="This is a light spear, 2 to 3 feet long, used in conjunction with the atlatl." compset="Weapon">
+    <fieldval field="gSizeCost" value="1"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1_1"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wType" tag="P"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="wCategory" tag="Ammunition"/>
+    <tag group="Helper" tag="MagicOnly"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="wBattlHorn" name="Battlehorn" description="A battlehorn is a double weapon that consists of two large horns affixed together, facing in opposite directions. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a one-handed weapon and a light weapon (see Two-Weapon Fighting, page 160 of the Player&#146;s Handbook). A creature wielding a battlehorn in one hand can&#146;t use it as a double weapon&#151;only one end of the weapon can be used in any given round. If you use a ready action to set a battlehorn against a charge, you deal double damage if you score a hit against a charging character." compset="Weapon">
+    <fieldval field="gSizeCost" value="50"/>
+    <fieldval field="gWeight" value="10"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d8_6"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wOff" tag="1d8_6"/>
+    <tag group="wCategory" tag="Double"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    </thing>
+  <thing id="wBoomeraSS" name="Boomerang" description="This weapon is a lightweight throwing stick, flat and curved, that returns to you if it misses its target. It does not deal much damage, but it has good range, and being able to retrieve it is useful. Boomerangs are used mainly for hunting birds and other small creatures." compset="Weapon">
+    <fieldval field="gSizeCost" value="10"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wType" tag="B"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="wRangeInc" tag="20"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="wColCreFan" name="Collapsing Crescent Fan" description="Only a few desert societies have the wherewithal to forge the exotic weapon known as the collapsing crescent fan. Of those, the bhukas are most commonly associated with the weapon, and so another name for this weapon is the &#147;bhuka blade.&#148; When not in use, a crescent blade folds into a compact shape not too much larger than a wand. However, with a mere flick of the wrist, the many segments of a crescent blade slide into view and lock into place. The vanes of the fan are thin, razor-sharp steel sheets. When you attack a flat-footed foe with it, you gain a +4 bonus on the attack roll." compset="Weapon">
+    <fieldval field="gSizeCost" value="40"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wClass" tag="Light"/>
+    </thing>
+  <thing id="wCreScythe" name="Crescent Scythe" description="Consisting of a staff with a half-disc blade on either end, the crescent scythe is a variation of the standard glaive. The edge of the blade is perpendicular to the shaft, allowing you to whirl the weapon in deadly circles. When used in conjunction with the Whirlwind Attack feat, a crescent scythe deals an extra 1 point of damage." compset="Weapon">
+    <fieldval field="gSizeCost" value="18"/>
+    <fieldval field="gWeight" value="20"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d8_6"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wOff" tag="1d8_6"/>
+    <tag group="wCategory" tag="Double"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    </thing>
+  <thing id="wDesThrKni" name="Desert Throwing-knife" description="A desert throwing-knife is unwieldy for melee combat. Even if you are proficient with this weapon, you take a &#150;2 penalty on attack rolls and damage rolls when using it in melee." compset="Weapon">
+    <fieldval field="gSizeCost" value="3"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wRangeInc" tag="15"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="wEagleClaw" name="Eagle&apos;s Claw" description="The asheratis invented the first eagle&#146;s claw. This light, exotic melee weapon has a quarter-circle blade that is equally sharp on both the inner and outer edges. The blade is about 6 inches long and looks very much like an eagle&#146;s claw enlarged and forged in steel. The handle of an eagle&#146;s claw is slightly curved with a hole at the end to facilitate the use of a finger (middle or index) in wielding the weapon, allowing you to instantly swing the blade between differing grips. You get a +1 bonus on Sleight of Hand checks made to conceal an eagle&#146;s claw on your body (see the Sleight of Hand skill, page 81 of the Player&#146;s Handbook)." compset="Weapon">
+    <fieldval field="gSizeCost" value="20"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="18"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wClass" tag="Light"/>
+    </thing>
+  <thing id="wFingerBla" name="Fingerblade" description="In its most basic definition, a fingerblade is a double-edged short sword. However, this weapon is customized to your hand. The hilt is something like a hand crossbow grip. It fits snugly in the palm of your hand such that your attack motion with the weapon is akin to a punch. Held correctly, a fingerblade becomes an extension of your forefinger, allowing maximized control. When an attack is properly executed, the hilt pushes into the palm so that no slippage occurs and maximum force is transferred into the thrust. If you are proficient with a fingerblade, you deal an extra 1d6 points of damage to a foe who is flat-footed on the first round of combat. Creatures with immunity to extra damage from critical hits and sneak attacks are not subject to this extra damage." compset="Weapon">
+    <fieldval field="gSizeCost" value="45"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wClass" tag="Light"/>
+    </thing>
+  <thing id="wFalchioGr" name="Falchion, Great" description="This heavy executioner&#146;s sword has the same basic profile as a falchion, albeit with a much greater blade surface. Because it is an executioner&#146;s weapon, it is often crafted as a masterwork weapon, marked with a royal seal, and created with one or more gems in the hilt." compset="Weapon">
+    <fieldval field="gSizeCost" value="100"/>
+    <fieldval field="gWeight" value="12"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="18"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d12_404"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    </thing>
+  <thing id="wScimitaGr" name="Scimitar, Great" description="A great scimitar is too large to use in one hand without special training (the appropriate Exotic Weapon Proficiency feat). You can use a great scimitar two handed as a martial weapon. Great scimitars are most often the personal weapons of heroes, crafted as masterwork weapons and inscribed with the hero&#146;s deeds and the weapon&#146;s name on the blade. Such names commemorate a great event in the hero&#146;s life, such as &#147;The Blade of the Hundred-Day Sandstorm.&#148;" compset="Weapon">
+    <fieldval field="gSizeCost" value="200"/>
+    <fieldval field="gWeight" value="8"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="18"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d8_6"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="Helper" tag="Easy2H"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="wKhopeshSS" name="Khopesh" description="You can use the hooked blade of a khopesh to make trip attacks. If you are tripped during your own trip attempt, you can drop the khopesh to avoid being tripped." compset="Weapon">
+    <fieldval field="gSizeCost" value="16"/>
+    <fieldval field="gWeight" value="4"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="18"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="wKhopshDbl" name="Khopesh, Double" description="A double khopesh is a double weapon. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a one-handed weapon and a light weapon. A creature wielding a double khopesh in one hand can&#146;t use it as a double weapon&#151;only one end of the weapon can be used in any given round. A double khopesh can be used to make trip attacks like a normal khopesh." compset="Weapon">
+    <fieldval field="gSizeCost" value="30"/>
+    <fieldval field="gWeight" value="8"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="18"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wOff" tag="1d6_5"/>
+    <tag group="wCategory" tag="Double"/>
+    <tag group="wCritMOff" tag="2"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    </thing>
+  <thing id="wKylie" name="Kylie" description="This weapon is a heavy, curved throwing stick, 3 to 4 feet long, used for hunting and as a weapon of war. The shape of the weapon allows it to travel great distances in flat arcs." compset="Weapon">
+    <fieldval field="gSizeCost" value="15"/>
+    <fieldval field="gWeight" value="5"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wType" tag="B"/>
+    <tag group="wRangeInc" tag="20"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="wClass" tag="OneHanded"/>
+    </thing>
+  <thing id="wManople" name="Manople" description="Resembling a sai with blades, a manople is actually a gauntlet worn over your hand. Since it is worn this way, however, you cannot carry anything else in that hand, nor can you use it to cast spells or use skills.\n\nA manople gives you a +1 shield bonus to AC. Unlike with a spiked shield, you retain this bonus to AC even on a round in which you make an attack with the manople. If you lack the appropriate Exotic Weapon Proficiency feat, you do not retain the shield bonus to AC, as you would with a spiked shield. A manople has no armor check penalty and a 5% arcane spell failure chance. Like a spiked shield, a manople can be enhanced as a weapon, as a shield, or both, but such enhancements must be paid for and applied separately.\n\nAn opponent cannot use a disarm action to disarm you of this weapon. The cost and weight given are for a single manople." compset="Weapon">
+    <comment>Test (Done)</comment>
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gSizeCost" value="35"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wType" tag="S"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="19"/>
+    <bootstrap thing="mManople"></bootstrap>
+    </thing>
+  <thing id="mManople" name="Manople" description="Resembling a sai with blades, a manople is actually a gauntlet worn over your hand. Since it is worn this way, however, you cannot carry anything else in that hand, nor can you use it to cast spells or use skills.\n\nA manople gives you a +1 shield bonus to AC. Unlike with a spiked shield, you retain this bonus to AC even on a round in which you make an attack with the manople. If you lack the appropriate Exotic Weapon Proficiency feat, you do not retain the shield bonus to AC, as you would with a spiked shield. A manople has no armor check penalty and a 5% arcane spell failure chance. Like a spiked shield, a manople can be enhanced as a weapon, as a shield, or both, but such enhancements must be paid for and applied separately.\n\nAn opponent cannot use a disarm action to disarm you of this weapon. The cost and weight given are for a single manople." compset="Armor">
+    <usesource source="Sandstorm"/>
+    <tag group="ShldClass" tag="Buckler" name="Buckler" abbrev="Buckler"/>
+    <tag group="mAC" tag="1" name="1" abbrev="1"/>
+    <tag group="mArcFail" tag="5" name="5" abbrev="5"/>
+    <tag group="mArmorChk" tag="0"/>
+    <tag group="mClass" tag="Shield" name="Shield" abbrev="Shield"/>
+    <tag group="mMaxDex" tag="1000" name="1000" abbrev="1000"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    </thing>
+  <thing id="wScorpClaw" name="Scorpion Claws" description="Designed as grappling weapons, scorpion claws are worn over the forearm. These metal weapons resemble scorpion pincers, and they open and close by means of an internal mechanical handle. Scorpion claws grant you a +4 bonus on grapple checks and can be used to deal slashing damage with a successful grapple check. The open claws can be used as a slashing weapon in melee combat, while the closed pincers can be used as a piercing weapon. The claws can be opened or closed as a free action. Since the claws strap onto the arm, you get a +4 bonus on opposed checks to avoid being disarmed. Scorpion claws come in pairs; the cost and weight given is for two." compset="Weapon">
+    <fieldval field="gWeight" value="6"/>
+    <fieldval field="gSizeCost" value="160"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wType" tag="S"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    </thing>
+  <thing id="wScoTailWh" name="Whip, Scorpion-Tail" description="A scorpion-tail whip is made from the dried tail of a Large monstrous scorpion, with the stinger intact. Used by some of the crueler desert tribes, the whip deals nonlethal damage except on a critical hit. On a critical hit, the whip deals lethal damage and injects a small amount of Large monstrous scorpion venom (injury, Fortitude DC 18, initial and secondary damage 1d6 Str), which is stored in a small bladder in the stinger. The bladder can hold only one dose at a time, and adding a dose of venom takes 1 minute. The whip can hold any other contact or injury poison (see page 297 of the Dungeon Master&#146;s Guide for details on other poisons)." compset="Weapon">
+    <fieldval field="gWeight" value="3"/>
+    <fieldval field="gSizeCost" value="75"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="wCritMin" tag="20"/>
+    </thing>
+  <thing id="wThromMele" name="Thrombash" description="This fearsome weapon features two wicked, hooked blades facing in opposite directions at the end, and a third blade jutting at an angle near the hilt. A thrombash is an exotic ranged weapon; it can be up to 30 inches long and is awkward to throw without special training. A character can use a thrombash in melee as a martial weapon." compset="Weapon">
+    <fieldval field="gWeight" value="3"/>
+    <fieldval field="gSizeCost" value="15"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wCritMin" tag="20"/>
+    <bootstrap thing="wThromThro"></bootstrap>
+    </thing>
+  <thing id="wThromThro" name="Thrombash, Thrown" description="This fearsome weapon features two wicked, hooked blades facing in opposite directions at the end, and a third blade jutting at an angle near the hilt. A thrombash is an exotic ranged weapon; it can be up to 30 inches long and is awkward to throw without special training. A character can use a thrombash in melee as a martial weapon." compset="Weapon">
+    <fieldval field="gWeight" value="3"/>
+    <fieldval field="gSizeCost" value="15"/>
+    <usesource source="Sandstorm"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <tag group="IsWeapon" tag="wThromMele"/>
+    <tag group="wCritMin" tag="20"/>
+    </thing>
+  <thing id="mManop" name="Manople" description="This is the armor version, to be added when enchanting the manople&apos;s shield function." compset="Armor">
+    <comment>The other is not showing up in the custom magic selections, so this was made.
+
+Make it check for wepprof? (Done)</comment>
+    <fieldval field="gSizeCost" value="35"/>
+    <usesource source="Sandstorm" parent="p35" name="Sandstorm"/>
+    <tag group="mArcFail" tag="5"/>
+    <tag group="mClass" tag="Shield"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="ShldClass" tag="Buckler"/>
+    <tag group="mAC" tag="1"/>
+    <tag group="mMaxDex" tag="1000"/>
+    <tag group="mArmorChk" tag="0"/>
+    <bootstrap thing="wManople"></bootstrap>
+    </thing>
+  <thing id="rAsherat" name="Asherati" description="An asherati might be mistaken for a thin human under some circumstances&#151;at least until the asherati&apos;s rust-red skin begins to glow with a light all its own, or until he dives headlong into the nearest sand dune, disappearing without a trace.\n\nAsheratis are a geographically established people who live below the sands and dusts of suitable wastelands, rising to the surface to hunt for food, socialize and trade with other races, and make war upon their enemies. As merfolk are to the sea, asheratis are to the sands.\n\n{b}Personality{/b}: Asheratis are a quiet people, given to refl ection and long retreats from the presence of their fellows. However, every asherati acknowledges the value of community and fellowship, and each retreat is followed by a return to a sand-shrouded village where friendships are renewed and the needs of the community are met.\n\n{b}Physical Description{/b}: An asherati appears as a humanoid with smooth skin the color of rust. An asherati can make its skin glow as if with an inner fire, giving off a piercing illumination that suffuses through sand. An asherati has no body hair and eyes the color of ivory. The lithe asherati is a graceful swimmer of the dunes, and thus eschews excessive clothing or equipment, wearing only minimal, skin-hugging garments for modesty&apos;s sake. Some asheratis wear tight leather armor, streamlined so as not to hinder their progress through the sands. A typical asherati stands between 5 and 6 feet tall and weighs about 170 pounds" compset="Race">
+    <fieldval field="rAC" value="+1"/>
+    <fieldval field="rInfFavor" value="Rogue"/>
+    <fieldval field="rInfAutoLn" value="Asherati, Common"/>
+    <fieldval field="rAgeMin" value="20"/>
+    <fieldval field="rHeightMnF" value="57"/>
+    <fieldval field="rWeightMnF" value="65"/>
+    <fieldval field="rHeightMnM" value="60"/>
+    <fieldval field="rWeightMnM" value="70"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Language" tag="lBhuka"/>
+    <tag group="Language" tag="lGiant"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="fHeatEndur">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="lAsherat"></bootstrap>
+    <bootstrap thing="xNatDry"></bootstrap>
+    <bootstrap thing="xSandswim"></bootstrap>
+    <bootstrap thing="xBodyLamp"></bootstrap>
+    <bootstrap thing="xAshStlth"></bootstrap>
+    <bootstrap thing="xWaterVuln"></bootstrap>
+    </thing>
+  <thing id="lAsherat" name="Asherati" description="Spoken by the desert dwelling Asherati." compset="Language" uniqueness="unique">
+    <usesource source="Sandstorm"/>
+    </thing>
+  <thing id="xNatDry" name="Natural Dryness" description="Asheratis drink water, but they are very dry creatures. To survive, they need to drink only one-quarter the amount of water per day that humanoids of their size normally require." compset="Special" summary="Require only 1/4 normal amount of water." uniqueness="unique">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rAsherat"/>
+    </thing>
+  <thing id="cdSand" name="Sand" description="{b}Granted Power{/b}:\nOnce per day, you can shape a small amount of sand into any solid object you can imagine, up to 8 cubic feet in volume. You can shape one object or several, up to a number equal to your Wisdom bonus, as long as the total volume does not exceed 8 cubic feet.\n\nYou must make a special Wisdom check (d20 + your Wis modifier + 1/2 your cleric level) against a DC determined by the size and complexity of the item. The item to be created has a base DC of 5, plus the modifiers on the table below.\n\nItem Complexity | Modifier\nFine details | +2\nFunctioning tool | +2\nFunctioning armor/weapon | +5\nMultiple parts | +5\nMasterwork version | +10\nMoving parts | +10\n\nEach attempt to create an item requires a number of minutes equal to its DC. You can take 10 or take 20 on this check. Created items persist for 1 minute per cleric level, and can only be solid objects. The objects created have no magical properties, though they radiate faint transmutation magic.\n\nAll items created in this fashion have hardness 5 and hit points as follows: Fine 1, Diminutive 2, Tiny 3, Small 5, Medium 8, Large 10.\n\n{b}Domain Spells{/b}:\n1 Waste Strider: Move through waste without penalties.\n2 Black Sand: Creates a 20-ft.-radius area of black sand.\n3 Haboob: Swirling grit obscures vision, blows smaller creatures over, and deals non-lethal damage.\n4 Blast of Sand: Cone deals 1d6 damage/level.\n5 Flaywind Burst: Blows away and knocks down smaller creatures and deals 1d6 damage/level.\n6 Awaken Sand: A region of sand forms into a Huge, sentient creature.\n7 Vitrify: Melts sand into glass.\n8 Desert Binding: Imprisons creature as sand in an hourglass or wind in the waste.\n9 Summon Desert Ally IX: Calls dust form creature to fight." compset="ClerDomain" summary="{b}Granted Power{/b}: Shape sand once per day." uniqueness="unique">
+    <usesource source="Sandstorm"/>
+    <tag group="SecClsAllw" tag="Sand"/>
+    <bootstrap thing="xShapeSand"></bootstrap>
+    </thing>
+  <thing id="sWasteStri" name="Waste Strider" description="The subject can move through desert environments without hindrance, ignoring movement penalties and penalties on skill checks for all types of desert and waste terrain. This spell does not grant a subject immunity to other ill effects of waste environments, such as heat and sun." compset="Spell" summary="Move through waste without penalties.">
+    <fieldval field="sRange" value="One touched creature/level"/>
+    <fieldval field="sDuration" value="1 hour/level (D)"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Lvl_Based"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sBlackSand" name="Black Sand" description="This spell creates an area of black sand (see page 20), infused with shadowstuff and negative energy. A region of black sand literally swallows light, emitting magical darkness rising to a height of 20 feet over the surface. Creatures that come in contact with the sand take 1d4 points of damage per round from negative energy (no save). Those reduced to 0 hit points crumble into black sand themselves. Creatures can make Reflex saves to avoid being caught in the area upon which the spell is first cast. Only the surface of the sand is affected by the spell, so creatures burrowing beneath an area of black sand are unaffected unless they break its surface. Creatures that do so immediately take damage from the spell.\n\n{i}Black sand{/i} can be made permanent with a {i}permanency{/i} spell." compset="Spell" summary="Creates a 20&apos;-radius area of black sand.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="Reflex negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Evil"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="RefNeg"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sSubschool" tag="Darkness"/>
+    </thing>
+  <thing id="sHaboob" name="Haboob" description="A thick haze of swirling dust and sand swirls out from the point you designate. The effect obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment. Creatures farther away have total concealment.\n\nUnprotected, nonmagical flames are automatically extinguished, and there is a 50% chance that protected flames will be snuffed. In addition to obscuring sight, the swirling dust abrades any creature within it or attempting to move through it. Any creature passing through the haze takes 1d4 points of damage per two caster levels (maximum 5d4), with no save allowed. If you conjure haboob so that it appears where creatures are located, each creature takes damage as if passing through the haze. Such creatures take half damage with a successful Reflex save, but if these creatures do not leave the affected area at their next opportunity, they take full damage from the abrading sands (no save) as if they had voluntarily entered the area. Any creature that remains within the affected area for more than 1 round likewise takes damage automatically (no save).\n\nA moderate wind (11+ mph) disperses the dust in 8 rounds; a strong wind (21+ mph) disperses it in 4 rounds.\n\nThis spell does not function underwater.\n\nMaterial Component: A pinch of ash, dust, or sand." compset="Spell" summary="Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level). Abrasive dust spreads in 20-ft. radius, 20 ft. high"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None or Reflex half; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Air"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sBlstSand" name="Blast of Sand" description="Sand sprays from your outstretched palm with enough force to strip flesh from bone and scour surfaces. The spell deals 1d6 points of damage per caster level (maximum 10d6). Do not divide damage from sand scour by four when applying it to objects.\n\nMaterial Component: A pinch of sand." compset="Spell" summary="Cone deals 1d6 damage/level.">
+    <fieldval field="sRange" value="30&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Reflex half"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="30"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sFlwndBrst" name="Flaywind Burst" description="This spell produces a brief windstorm (approximately 70 mph), filled with scouring, supernatural grit that literally strips flesh. In addition to the possible effects of the wind, creatures within the area of a flaywind burst spell take 1d6 points of damage per caster level (maximum 10d6) from the scouring sands. A successful Reflex save halves this damage. A creature within the area of flaywind burst must make a Fortitude save or experience the effects of the wind&apos;s force.\n\nA Small or smaller creature is knocked down and rolled 1d4&#215;10 feet, taking 1d4 points of nonlethal damage per 10 feet. If flying, a Small or smaller creature is blown back 2d6&#215;10 feet and takes 2d6 points of nonlethal damage.\n\nMedium creatures are knocked prone, or if flying are blown back 1d6&#215;10 feet.\n\nLarge or Huge creatures are unable to move forward against the force of the blast, or if flying are blown back 1d6&#215;5 feet.\n\nGargantuan or larger creatures can move normally within a flaywind burst.\n\nFlaywind burst can&apos;t move a creature beyond its range.\n\nIn addition to the effects noted, flaywind burst can do anything else that a windstorm-force sandstorm would be expected to do, such as briefly obscure vision, heel over a boat, or blow gases and vapors to the limit of its area.\n\nMaterial Component: A pinch of sand and the wing feather of a vulture." compset="Spell" summary="Blows away and knocks down smaller creatures and deals 1d6 damage/level.">
+    <fieldval field="sRange" value="60&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Air"/>
+    </thing>
+  <thing id="sAwknSand" name="Awaken Sand" description="You awaken a region of sand, or similar material, to humanlike sentience. To succeed, you must make a DC 18 Will save. The {i}awakened{/i} sand is friendly toward you. You have no special empathy or connection with sand you awaken, although it serves you in specific tasks or endeavours if you communicate your desire to it.\n\nThe sand creature you awaken has the same statistics as a Huge animated object with a base land speed of 40 feet and a burrow speed of 20 feet. Unlike normal animated objects, {i}awakened{/i} sand beings have the earth subtype, and their Intelligence, Wisdom, and Charisma scores are each 3d6. A sand being has immunity to polymorphing. The awakened sand can speak one language you know, plus one additional language that you know per point of Intelligence bonus (if any) it has.\n\nA sand creature can engulf Large or smaller creatures as a standard action. It cannot make a slam attack during a round in which it engulfs. The sand creature merely has to move over the opponents, affecting as many as it can cover. Opponents can make attacks of opportunity against the creature, but if they do so they are not entitled to a saving throw. Those who do not attempt attacks of opportunity must succeed on a DC 19 Reflex save or be engulfed; on a success, they are pushed back or aside (opponent&apos;s choice) as the creature moves forward. Engulfed opponents are considered grappled and are trapped within the sand creature&apos;s body. The sand creature deals 1d6+3 points of damage to trapped opponents each round after the one in which it engulfed them. Opponents that need to breathe risk suffocation (see page 304 of the {i}Dungeon Master&apos;s Guide{/i}). The save DC is Strength-based.\n\nSand creatures are amorphous and can do anything sand would be expected to do&#151;hide perfectly atop other sand, form into dunes and drifts, and pour through small openings (although passing through an opening two size categories smaller than the creature takes a full-round action).\n\n{i}XP Cost{/i}: 500 XP." compset="Spell" summary="A region of sand forms into a Huge, sentient creature.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Hour24"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="Helper" tag="Domain"/>
+    </thing>
+  <thing id="sVitrify" name="Vitrify" description="This spell transforms normal sand of any depth into crude glass. The sand is instantly heated to the melting point and then slowly hardens in its new form. Objects on or in the sand sink into the hot glass.\n\nA creature is allowed a Reflex save to escape before the area is changed. A creature that fails its save and that is unable to levitate, fly, or otherwise free itself sinks partway into the molten glass, reducing its speed to 5 feet and giving it a -2 penalty on attack rolls and to AC. Creatures of the earth subtype can move only 10 feet per round slower in molten glass.\n\nIf a creature is only partially in the area (such as a Large or larger creature on the edge of the effect), it still takes full damage, but its speed is reduced only by half (instead of to 5 feet).\n\nA creature caught in molten glass takes 10d6 points of fire damage on the first round. The transmuted material cools over a period of 10 rounds. Each round, the number of dice of damage the cooling glass deals is reduced by one, until it deals no damage.\n\nThe glass is solid enough to trap creatures by the sixth round. Creatures unable to escape the glass before it hardens become trapped and must be broken out. A creature so caught can break free by making a Strength check to break the glass or by dealing damage to the glass. Glass has hardness 1, 1 hit point per inch of thickness, and a break DC of 12, + 1 per inch of thickness. A creature partially caught in the glass takes a -2 penalty on attack rolls, a -4 penalty to Dexterity, and is unable to move. When breaking glass, a creature takes 1d6 points of damage each time it makes a successful Strength check to break free. If broken free by others, the creature takes 1d6 points of damage from broken glass. A creature trapped beneath the surface of the glass might begin to suffocate (see page 304 of the Dungeon Master&apos;s Guide)." compset="Spell" summary="Melts sand into glass.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Permanent"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Earth"/>
+    </thing>
+  <thing id="sDsrtBndg" name="Desert Binding" description="This spell functions like binding (see page 204 of the Player&apos;s Handbook), except as noted here.\n\nSand in the Hourglass: The subject assumes the form of a minute portion of sand, each grain of which looks like its head. Held in a clear glass container, usually an hourglass, the subject remains aware of its surroundings (from multiple viewpoints) and can speak (from multiple, tiny mouths), but cannot leave the hourglass, attack, or use any other abilities. The subject does not need to breathe, eat, or drink while subject to sand in the hourglass, nor does it age. Shattering the hourglass before the spell ends slays the bound creature, and its body remains sand (effectively destroyed). The duration is one year per caster level, after which time the victim reforms into its original shape, destroying the hourglass.  Reduce the save DC by 4.\n\nWind in the Waste: The subject is transformed into a howling wind blowing across the waste. The victim retains knowledge of its prior existence, but has no abilities other than to howl with the wind. Because of its insubstantial nature, the subject is nearly impossible to define or specifically locate. The DM might allow the victim to be found through special means or through powerful magic (such as limited wish). The duration is one year per caster level, after which time the subject returns to its original shape in the location where it was first subjected to wind in the waste. Reduce the save DC by 4.\n\nMaterial Component: As the binding spell; see page 204 of the Player&apos;s Handbook." compset="Spell" summary="Imprisons creature as sand in an hourglass or wind in the waste.">
+    <fieldval field="sRange" value="Close (20&apos; + 20&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="See text (D)"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sLevel" tag="8"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sSchool" tag="Enchant"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sSubschool" tag="Compulsion"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    </thing>
+  <thing id="sSmDsrtAl9" name="Summon Desert Ally IX" compset="Spell" summary="Calls dustform creature to fight.">
+    <usesource source="Sandstorm"/>
+    <tag group="sClass" tag="Sand"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Summoning"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="Helper" tag="Domain"/>
+    </thing>
+  <thing id="gFltrMask" name="Filter Mask" description="A filter mask is a fine cloth mesh, usually of silk or cotton, that covers your mouth and nose. Cords or straps fasten the cloth around the back of your head to provide a good seal. A filter mask grants a +2 bonus on saves against gas-based effects. It negates the effects of suffocation from dust and sand, as well as the effects of supernatural or magic dust (such as slumber sand) for up to 4 hours. After this time, the mesh is clogged with grit and can no longer allow air to pass through freely. A clogged filter mask requires thorough laundering before it can be reused, but most travellers simply replace it with fresh fabric." compset="Gear" summary="+2 on saves against gas-based effects, immune to magic dust, suffocation from dust/sand for up to 4 hours.">
+    <fieldval field="gCost" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="AdventGear"/>
+    </thing>
+  <thing id="xSandswim" name="Sandswim" description="As a merfolk is to the sea, an asherati is to sand, ash, dust, and even softsand (but not slipsand, packed dirt, or rock). An asherati can sandswim through such materials at his land speed while wearing light armor or carrying a light load. His speed drops to 5 feet if an asherati wears heavier armor or carries a medium load. An asherati cannot make any headway through the sand while carrying a heavy load. An asherati breathes normally while under the sands. This supernatural ability doesn&apos;t allow an asherati to breath in mediums other than sand, dust, or ash, nor does it allow an asherati to hold its breath longer than normal in water or dangerous gases." compset="Special" summary="Swim through sand, ash, dust, or softsand." uniqueness="unique">
+    <usesource source="Sandstorm"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rAsherat"/>
+    </thing>
+  <thing id="xBodyLamp" name="Body Lamp" description="An asherati can make his skin glow at will, providing bright light out to 60 feet and shadowy illumination out to 120 feet. In a medium of loose soil, such as sand, dust, or ash, a peculiar quality of the light allows an asherati to make out solid objects up to 60 feet away. Under the sand, this light is sufficient for navigation and general identification of objects, but not for reading, recognizing individuals, or other similar feats of fi ner perception. This ability does not allow an asherati to see invisible creatures or creatures with concealment more easily than normal. Other creatures in the sand with an asherati do not gain this special sight, but they can see the sand take on a warm, orange glow. Once per day, as a free action, an asherati can bring his skin up to full brilliance so rapidly that it can dazzle all creatures within 30 feet for 1 minute. Creatures can avoid this effect with a successful Fortitude save (DC 10 + 1/2 the asherati&apos;s character level + his Cha modifier)." compset="Special" summary="At-will light to 60 feet and shadowy illumination out to 120 feet.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="SpecSource" tag="rAsherat"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="xAshStlth" name="Sand Stealth" description="+2 racial bonus on Move Silently and Hide checks (an asherati cannot Hide while his skin glows). If in a sandy area, an asherati receives an additional +2 racial bonus on Hide checks." compset="Special" summary="+2 racial bonus to Hide in sandy areas.">
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rAsherat"/>
+    <eval phase="UserPreLv">#skillbonus[kHide] += 2
+#skillbonus[kMoveSil] += 2</eval>
+    </thing>
+  <thing id="xWaterVuln" name="Water Vulnerability" description="Asheratis hate being too wet, and their dry bodies absorb water rapidly when they are submerged. If completely wet, an asherati takes a &#151;1 penalty on all attack rolls, ability checks, and skill checks. If an asherati is immersed in water, he cannot hold his breath and must immediately begin making Constitution checks to avoid drowning (see page 304 of the Dungeon Master&apos;s Guide)." compset="Special" summary="Can&apos;t hold breath in water; -1 to attacks and checks when completely wet.">
+    <usesource source="Sandstorm"/>
+    <tag group="SpecType" tag="Weakness"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rAsherat"/>
+    </thing>
+  <thing id="xShapeSand" name="Shape Sand" description="Once per day, you can shape a small amount of sand into any solid object you can imagine, up to 8 cubic feet in volume. You can shape one object or several, up to a number equal to your Wisdom bonus, as long as the total volume does not exceed 8 cubic feet.\n\nYou must make a special Wisdom check (d20 + your Wis modifier + 1/2 your cleric level) against a DC determined by the size and complexity of the item. The item to be created has a base DC of 5, plus the modifiers on the table below.\n\nItem Complexity | Modifier\nFine details | +2\nFunctioning tool | +2\nFunctioning armor/weapon | +5\nMultiple parts | +5\nMasterwork version | +10\nMoving parts | +10\n\nEach attempt to create an item requires a number of minutes equal to its DC. You can take 10 or take 20 on this check. Created items persist for 1 minute per cleric level, and can only be solid objects. The objects created have no magical properties, though they radiate faint transmutation magic.\n\nAll items created in this fashion have hardness 5 and hit points as follows: Fine 1, Diminutive 2, Tiny 3, Small 5, Medium 8, Large 10." compset="Special" summary="Shape a small amount of sand into any solid object you can imagine, up to 8 cubic feet in volume.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="SpecSource" tag="SandDomain" name="Sand Domain" abbrev="Sand"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="cHelpWtW" name="Walker in the Waste" compset="ClassHelp" summary="A walker in the waste embodies the harsh, unforgiving nature of the desert." uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="WtW"/>
+    <fieldval field="shortname" value="Walker"/>
+    <fieldval field="cSkills" value="2"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cMagLevTot" index="3" value="3"/>
+    <arrayval field="cMagLevTot" index="4" value="4"/>
+    <arrayval field="cMagLevTot" index="5" value="5"/>
+    <arrayval field="cMagLevTot" index="6" value="6"/>
+    <arrayval field="cMagLevTot" index="7" value="7"/>
+    <arrayval field="cMagLevTot" index="8" value="8"/>
+    <usesource source="Sandstorm"/>
+    <tag group="ClassSkill" tag="kDecScript"/>
+    <tag group="ClassSkill" tag="kHeal"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kKnowGeog"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="ClassSkill" tag="kCrafAlch"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="cWlkrWst" name="Walker in the Waste"/>
+    <tag group="cAttack" tag="Poor"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="AlgnForbid" tag="Good"/>
+    <bootstrap thing="cWtWDisTch"></bootstrap>
+    <bootstrap thing="cWtWWastng"></bootstrap>
+    <bootstrap thing="cWtWWthTgh"></bootstrap>
+    <bootstrap thing="cWtWImpHE"></bootstrap>
+    <bootstrap thing="cWtWPlrSlt"></bootstrap>
+    <bootstrap thing="cWtWSndGlm"></bootstrap>
+    <bootstrap thing="cWtWSndMum"></bootstrap>
+    <bootstrap thing="cWtWDrgtGr"></bootstrap>
+    <bootstrap thing="cWtWDrgtLc"></bootstrap>
+    <bootstrap thing="cWtWDryLch"></bootstrap>
+    </thing>
+  <thing id="ccWlkrWst" name="Walker in the Waste" compset="ClassLevel" maxlimit="10">
+    <usesource source="Sandstorm"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpWtW"></bootstrap>
+    <link linkage="helper" thing="cHelpWtW"/>
+    </thing>
+  <thing id="cWtWDisTch" name="Desiccating Touch" description="As a touch attack, you can drain moisture from a living creature. At 1st level, this ability deals 1d6 points of dessication damage, or 1d8 points to plant creatures or elementals with the water subtype. At every odd-numbered level thereafter, the dessication damage increases by 1d6 (or 1d8), to a maximum of 5d6 (or 5d8) at 9th level. The touched creature can make Fortitude save (DC 10 + walker in the waste level + your Wis modifier) for half damage." compset="ClSpecial" summary="As a touch attack, you can drain moisture from a living creature.">
+    <usesource source="Sandstorm"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    </thing>
+  <thing id="cWtWImpHE" name="Improved Heat Endurance" description="You gain Improved Heat Endurance as a bonus feat. If you already have the Improved Heat Endurance feat, you can choose another feat." compset="ClSpecial" summary="You gain Improved Heat Endurance as a bonus feat.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="SpecType" tag="DR"/>
+    <tag group="SpecType" tag="Resist"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <bootstrap thing="fImpHeatEn">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cWtWWastng" name="The Wasting" description="You can transform a handful of dust or sand into a terrible disease. Once per day, you can blow sand into the face of a living opponent within 20 feet. Using this ability is a standard action that provokes attacks of opportunity. You can pick up dust from the ground as a move action or take it from a pouch as a free action. The opponent is entitled to a Reflex save (DC 10 + walker in the waste level + your Wis modifier) to avoid inhaling the dust. On a success, the dust has no effect and drifts harmlessly to the ground. An opponent who fails this save contracts the wasting, a supernatural affliction that gradually mummifies its victims." compset="ClSpecial" summary="Transform a handful of dust or sand into a terrible disease.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <eval phase="UserPostLv"><![CDATA[~ Only show in the "In-Play" tab when you have the required level.
+if (#levelcount[cWlkrWst] >= this.tagvalue[ClSpecWhen.?]) then
+  perform this.assign[Helper.ShowCharge]
+endif]]></eval>
+    </thing>
+  <thing id="cWtWDrgtLc" name="Local Drought" description="You can produce desert conditions in a 20-foot-radius emanation with you at the center. The temperature band in that area rises by one step or to hot, whichever produces the hotter result. You can suppress this effect for 1 round as a free action, but it renews automatically on your next turn unless you consciously suppress it again." compset="ClSpecial" summary="You produce desert conditions in a 20-foot-radius emanation.">
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv"><![CDATA[~ Only show in the "In-Play" tab when you have the required level.
+if (#levelcount[cWlkrWst] >= this.tagvalue[ClSpecWhen.?]) then
+  this.field[hName1].text = "Suppress"
+endif
+
+~ If we have Greater Drought, hide this version.
+if (#levelcount[cWlkrWst] >= 9) then
+  this.field[hName1].text = ""
+  perform this.assign[Helper.SpecUp]
+endif]]></eval>
+    </thing>
+  <thing id="cWtWWthTgh" name="Withered Toughness" description="Your body becomes inured to the arid conditions in which you thrive. Your flesh grows leathery and tough, and your natural armor bonus improves by 2. In addition, you gain immunity to the effects of dehydration (although not the effects of magical dessication damage) and heat dangers (such as heat exhaustion and sunstroke), sun glare, and sunburn, although fire damage affects you normally." compset="ClSpecial" summary="Your body becomes inured to the arid conditions in which you thrive.">
+    <usesource source="Sandstorm"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="SpecType" tag="Immune"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <eval phase="UserPostLv">doneif (tagis[Helper.ShowSpec] = 0)
+
+~ +2 AC (Natural)
+hero.child[ArmorClass].field[tACNatural].value += 2</eval>
+    </thing>
+  <thing id="cWtWPlrSlt" name="Pillar of Salt" description="You can use flesh to salt once per day, duplicating the effect of the spell. Your caster level for this ability is equal to your class level." compset="ClSpecial" summary="Use {i}Flesh to Salt{/i} once per day, duplicating the effect of the spell.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <eval phase="UserPostLv"><![CDATA[~ Only show in the "In-Play" tab when you have the required level.
+if (#levelcount[cWlkrWst] >= this.tagvalue[ClSpecWhen.?]) then
+  perform this.assign[Helper.ShowCharge]
+endif]]></eval>
+    </thing>
+  <thing id="cWtWSndGlm" name="Create Sand Golem" description="You learn the secret of creating a sand golem. You do not need the Craft Golem feat to create a sand golem, as you normally would, but you cannot use this ability to create any other type of golem." compset="ClSpecial" summary="You do not need the Craft Golem feat to create a sand golem.">
+    <usesource source="Sandstorm"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cWtWSndMum" name="Create Salt Mummy" description="You learn a specialized form of the ancient art of mummification. Invested with the dark power of the waste, you are able to preserve and animate a corpse. You also add to it the essence of dehydration to produce a horrid salt mummy." compset="ClSpecial" summary="You learn a specialized form of the ancient art of mummification.">
+    <usesource source="Sandstorm"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cWtWDrgtGr" name="Greater Drought" description="You can produce extreme desert conditions in a 100-foot radius emanation with you at the center. The temperature band in that area rises by two steps or to severe heat, whichever produces the hotter result. You can suppress this effect for 1 round as a free action, but it renews automatically on your next turn unless you consciously suppress it again. This effect supersedes that of the local drought ability." compset="ClSpecial" summary="You can produce extreme desert conditions in a 100-foot radius emanation.">
+    <usesource source="Sandstorm"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <eval phase="UserPostLv"><![CDATA[~ Only show in the "In-Play" tab when you have the required level.
+if (#levelcount[cWlkrWst] >= this.tagvalue[ClSpecWhen.?]) then
+  this.field[hName1].text = "Suppress"
+endif]]></eval>
+    </thing>
+  <thing id="cWtWDryLch" name="Dry Lich" description="You learn to apply the secrets of waste preservation to your own body, becoming a dry lich. You must undergo the Sere Rite, overseen by another dry lich, which includes preserving your flesh, removing your organs and storing them in special canopic jars, and imbuing your body with foul magic to make it undying.\n\nAs a dry lich, you cannot be permanently killed unless the canopic jars containing your life essence are destroyed." compset="ClSpecial" summary="You undergo a ritual to become a dry lich.">
+    <fieldval field="usrChkText" value="Ritual Performed"/>
+    <usesource source="Sandstorm"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpWtW"/>
+    <tag group="Helper" tag="NoAutoName"/>
+    <bootstrap thing="tmDryLich">
+      <containerreq phase="UserFirst" priority="10000"><![CDATA[fieldval:usrIsCheck <> 0]]></containerreq>
+      <assignval field="cLevelAdj" value="0"/>
+      </bootstrap>
+    </thing>
+  <thing id="tmDryLich" name="Dry Lich" description="A dry lich is an especially horrid sort of undead spellcaster, and the ultimate destiny of a walker in the waste.\n\nA dry lich is not purposefully evil, but it is absorbed with its own agenda and has little regard for living things. It spends its unnatural existence continuing to spread the waste and preserve whatever it encounters as dry, mummified monuments.\n\nA dry lich is gaunt, skeletal, and usually humanoid (although some monstrous humanoids and aberrations occasionally follow the walker&apos;s path). Its flesh is parchment-dry and clings tightly to its bones, and a thick encrustation of glittering white salt covers its body. A weird green light lights its hollow eye sockets. It is garbed as it was in life, which is generally in a simple and practical costume rather than the ornate robes of typical liches. Dry lich clerics usually wear heavy armor, since walkers in the waste had immunity to dehydration and heat effects even before they became undead.\n\nThe mysterious Dusty Conclave closely guards the secret of becoming a dry lich, and at least one other dry lich must participate in another&apos;s creation." compset="Template" uniqueness="unique">
+    <fieldval field="tmSTR" value="+2"/>
+    <fieldval field="tmWIS" value="+4"/>
+    <fieldval field="tmCHA" value="+2"/>
+    <fieldval field="tmReplHD" value="12"/>
+    <fieldval field="tmInfHD" value="Increase all current and future Hit Dice to d12s."/>
+    <fieldval field="tmAC" value="+5"/>
+    <fieldval field="cLevelAdj" value="5"/>
+    <usesource source="Sandstorm"/>
+    <tag group="AlgnForbid" tag="Good"/>
+    <tag group="SpecSource" tag="DryLich" name="Dry Lich"/>
+    <tag group="NoScore" tag="aCON"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <bootstrap thing="xADespair"></bootstrap>
+    <eval phase="UserPostLv">~ Skill bonuses.
+#skillbonus[kHide] += 8
+#skillbonus[kIntim] += 8
+#skillbonus[kListen] += 8
+#skillbonus[kMoveSil] += 8
+#skillbonus[kSearch] += 8
+#skillbonus[kSpot] += 8
+
+~ +4 Turn Resistance
+#applyturnresist[4]</eval>
+    </thing>
+  <thing id="xADespair" name="Aura of Despair" description="A dry lich is surrounded by a terrible sense of age, loss, and death. Any creature within a 60-foot radius must succeed on a Will save or be shaken for 1d4 rounds. A creature that successfully saves cannot be affected again by the same dry lich&apos;s aura of despair for 4 hours." compset="Special" summary="A dry lich is surrounded by a terrible sense of age, loss, and death.">
+    <usesource source="Sandstorm"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="DryLich"/>
+    </thing>
+  </document>

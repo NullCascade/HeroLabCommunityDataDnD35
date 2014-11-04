@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="tmGWGhost" name="Ghost Template" description="A ghost is the semitangible soul of a creature that has died. Instead of a physical body made of muscle, bone, and blood, it has a ghost body made of transparent ectoplasm. Ghosts are not undead, although they are often mistaken for undead by the truly ignorant. They do not need to eat (although they can if they want to) or sleep as they did when alive. When a ghost is wounded, it leaks ectoplasm like a living creature leaks blood. \n\nIn general, a ghost appears as it did at the moment its physical body died, although some ghosts learn how to reshape their ectoplasm and alter their appearance. A ghost body is made of transparent ectoplasm, and an alert observer can easily recognize the identity of the ghost and that the ghost is not a physical person. \n\nMost ghosts try to get their bodies raised from the dead (which causes the ghost to merge with the physical body) or search for whoever was responsible for their death, while others become ghosts willingly to pursue some goal or escape some terrible punishment. They otherwise have the same memories and personality they did when they were alive.\n\n&#147;Ghost&#148; is an acquired template that can be applied to any living humanoid creature (referred to hereafter as the character). The creature&#146;s type changes to outsider (incorporeal). It uses all the character&#146;s statistics and special abilities except as noted here.\n\n{b}Source{/b}: Ghostwalk Campaign Source" compset="Template" uniqueness="unique">
+    <comment>might need to disable weapon/armor profs granted by Outsider type
+
+Add extraplanar and augmented humanoid subtypes</comment>
+    <usesource source="Ghostwalk" parent="p30" name="Ghostwalk Campaign Source"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <bootstrap thing="typOutside"></bootstrap>
+    <bootstrap thing="rLowLight2">
+      <autotag group="AbilType" tag="Extra"/>
+      <autotag group="SpecSource" tag="Ghost"/>
+      </bootstrap>
+    <bootstrap thing="xGWDisSoul"></bootstrap>
+    <bootstrap thing="xGWNoDiAn"></bootstrap>
+    <bootstrap thing="xGWEctBdy"></bootstrap>
+    <bootstrap thing="xGWSePhBo"></bootstrap>
+    <bootstrap thing="xGWGhoWea"></bootstrap>
+    <bootstrap thing="xGWManifes"></bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="SpecSource" tag="Ghost"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10000">~check if we are incorporeal
+if (hero.child[xGWManifes].field[hIsOn1].value = 0) then
+
+ ~ Set our fly speed
+   hero.child[xFly].field[Value].value = maximum(hero.child[xFly2].field[Value].value, 30)
+   perform hero.child[xFly2].assign[Maneuver.Good]
+
+endif
+   
+~ We have a bonus to Hide
+  #skillbonus[kHide] += 4
+
+~ Increase our CR by 1
+  herofield[tCR].value += 1</eval>
+    <eval phase="First" priority="50000" index="2"><![CDATA[~ assign correct Race tags
+  perform hero.delete[Race.?]
+  perform hero.assign[Race.typOutside]
+  perform hero.assign[Race.stypIncorp]
+
+~ remove other types and subtypes
+  foreach pick in hero from BaseSpec where "thingid.styp? | thingid.typ? & !thingid.typOutside & !thingid.stypIncorp"
+   perform each.delete[Helper.ShowSpec]
+  nexteach
+
+~ remove Darkvision (bootstrapped by Outsider type)
+      hero.child[rDarkVis2].field[Value].value = 0]]></eval>
+    </thing>
+  <thing id="xGWDisSoul" name="Disembodied Soul" description="As a disembodied soul of a living creature, a ghost can be raised or resurrected if its physical body is present (this causes the ghost to merge with its physical body). A {i}true resurrection{/i}, {i}miracle{/i}, or {i}wish{/i} spell can restore a ghost to life, even if its body is missing. A ghost counts as a living creature for the purpose of effects that affect living creatures. As an outsider, a ghost is subject to spells that affect outsiders and extraplanar creatures, such as {i}banishment{/i}. A ghost&#146;s native plane is beyond the Veil of Souls, and a ghost banished from the Material Plane is sent to the True Afterlife." compset="Special" summary="You are a disembodied soul made of transparent ectoplasm.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="Ghost"/>
+    </thing>
+  <thing id="xGWNoDiAn" name="No Discernable Anatomy" description="A ghost has no discernible anatomy and is therefore immune to critical hits, sneak attacks, or bonuses such as a ranger&#146;s favored enemy bonus that do not work on creatures without a discernible anatomy. It can be polymorphed, but a polymorphed ghost is still an ectoplasmic creature with no discernible anatomy. A ghost is unharmed by diseases or poison that would affect a physical body. Other diseases and poisons that affect only ghosts do exist. Ghosts do not need to eat, breathe, or sleep (although spellcaster ghosts still need to rest in order to prepare spells). Ghosts are subject to stunning effects that would affect living creatures." compset="Special" summary="You are immune to effects that require a discernable anatomy.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="Ghost"/>
+    </thing>
+  <thing id="xGWEctBdy" name="Ectoplasmic Body" description="Because an ectoplasmic body is a poor imitation of a true living body, physical sensations for a ghost are somewhat muted. Ghosts cannot become fatigued or exhausted. Certain sensations, such as the taste of food or the feel of another person&#146;s skin, cannot be detected by ghosts except in the most limited way, which drives many to find other ways to experience and remember the sensations of life. When killed, a ghost&#146;s body reverts to raw ectoplasm, decaying into nothingness after 10 minutes. A {i}gentle repose{/i} spell preserves a ghost&#146;s body as if it were a normal corpse. A ghost&#146;s body is the same temperature as its environment, unlike a physical body." compset="Special" summary="Your sense of touch is muted. You are immune to fatigue and exhaustion.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="Ghost"/>
+    </thing>
+  <thing id="xGWSePhBo" name="Sense Physical Body" description="A ghost can attempt a Survival check (DC 15) once per round to determine the general direction of its physical body. If a ghost doesn&#146;t have the Intuit Direction skill, it can attempt a Wisdom check (DC 15) for the same purpose." compset="Special" summary="You can determine the direction of your physical body.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="Ghost"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="xGWGhoWea" name="Ghost Weakness" description="If a ghost is hit by a sneak attack or a critical hit from a silver weapon, it must make a Fortitude save (DC 15) or be stunned for 1 round. Other than this possible stunning effect, a critical hit or sneak attack does not deal any more damage than a normal hit from that weapon." compset="Special" summary="You may be stunned if struck by a silver weapon.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="Ghost"/>
+    </thing>
+  <thing id="xGWManifes" name="Manifest" description="Use this if your ghost manifests itself." compset="Special">
+    <fieldval field="hName1" value="Manifested"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <bootstrap thing="stypIncorp">
+      <containerreq phase="First" priority="500">fieldval:hIsOn1=0</containerreq>
+      </bootstrap>
+    <eval phase="PostAttr" priority="10001"><![CDATA[if (field[hIsOn1].value <> 0) then
+   hero.child[ArmorClass].field[tACNatural].value += hero.child[aCHA].field[aModBonus].value
+endif]]></eval>
+    </thing>
+  <thing id="cHelpEid" name="Eidolon" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cAbbr" value="Eid"/>
+    <fieldval field="cSkills" value="2"/>
+    <arrayval field="cBonFtTot" index="0" value="1"/>
+    <arrayval field="cBonFtTot" index="1" value="2"/>
+    <arrayval field="cBonFtTot" index="3" value="3"/>
+    <arrayval field="cBonFtTot" index="5" value="4"/>
+    <arrayval field="cBonFtTot" index="7" value="5"/>
+    <arrayval field="cBonFtTot" index="9" value="6"/>
+    <arrayval field="cBonFtTot" index="11" value="7"/>
+    <arrayval field="cBonFtTot" index="13" value="8"/>
+    <arrayval field="cBonFtTot" index="15" value="9"/>
+    <arrayval field="cBonFtTot" index="17" value="10"/>
+    <arrayval field="cBonFtTot" index="19" value="11"/>
+    <usesource source="Ghostwalk"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="Classes" tag="Eidolon" name="Eidolon"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowPlane"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <bootstrap thing="cFreeMulti">
+      <autotag group="SpecSource" tag="cHelpEid"/>
+      </bootstrap>
+    <exprreq message="Must have the Ghost template (from Ghostwalk)"><![CDATA[hero.tagis[Template.tmGWGhost] <> 0]]></exprreq>
+    </thing>
+  <thing id="cEidolon" name="Eidolon" description="The terrifying haunt, the spirit that rots, the raging poltergeist, the body thief&#151;all are kinds of eidolons. Eidolons may be guardian spirits, evil haunts, or adventurers of any type. Some are benign and use their abilities to help others, while others delve into the darker portions of the soul and emerge twisted and profane. Eidolons that are not adventurers may be any sort of person, from a powerful sorcerer to a humble cleric to a greedy mercenary to a common farmer.\n\n{b}Adventures{/b}: Many eidolons see their nature as just another aspect of existence and follow the same goals they had while alive, including adventuring. Others become eidolons only temporarily, forced down this path either when their bodies cannot be raised or when they must remain after dying to take care of unfinished business.\n\n{b}Characteristics{/b}: Eidolons have excellent fighting ability, even though they gain no additional proficiencies in weapons or armor (which are often useless for incorporeal creatures anyway). The greatest benefit of the eidolon class is the rapid acquisition of ghost feats, which allow each individual ghost to progress along a particular path toward advanced ghost abilities. Even nonfighters are helped by advancing in this class because of its good Will saving throw bonus and useful class skills.\n\n{b}Alignment{/b}: Eidolons may be of any alignment. Good eidolons are often benign entities who try to aid others or combat the undead. Lawful eidolons often work to protect the rights of ghosts in general or improve relations between ghosts and the living. Chaotic eidolons may be pranksters or opportunists, using their new abilities for personal gain simply because they can. Evil eidolons tend to be dangerous and malevolent spirits who seek revenge upon the living.\n\n{b}Religion{/b}: Most eidolons worship whatever deity they did in life, although most also revere Aluvan, protector of souls. Some who are intent on entering the True Afterlife pay homage to Dracanish so that the body and soul may be properly united in death. Most ghosts hate and fear Orcus, for worshipers of this foul deity often steal waiting bodies while their ghosts are away, making it difficult to return to life or gain their final peace in the afterlife.\n\n{b}Background{/b}: All eidolons originate in the same manner&#151;a person spends enough time as a ghost and eventually develops ghost abilities. Ghosts have a community of their own, for the bonds of death transcend race, nationality, or any other aspects of a person&#146;s background or personality. They tend to make friends among other ghosts who died in a similar way or with those who are on the same path of ghost powers.\n\n{b}Races{/b}: Because only humanoids can become ghosts under normal circumstances, almost all eidolons are humanoids. Eidolons come from all walks of life, regardless of race; no race is more likely to become a ghost than any other, and no race has a tradition of following certain paths over others.\n\n{b}Other Classes{/b}: Although possessing amazing abilities, an eidolon must sometimes rely upon the skills of others. Eidolons are decent fighters, but lack the specific training of a fighter. Their spellcasting ability does not improve after death, so a live spellcaster of equal experience is usually their better. While an eidolon might be sneaky when incorporeal, a manifested eidolon is no match for the quiet and skill of a true rogue.\n\n{b}Abilities{/b}: Wisdom and Charisma are especially important for eidolons, because many ghost feats rely on these ability scores, and Charisma determines the ghost&#146;s natural deflection bonus when it is incorporeal. A high Dexterity is important, since incorporeal ghosts cannot wear armor unless it has the {i}ghost touch{/i} ability.\n\n{b}Source{/b}: Ghostwalk Campaign Source" compset="ClassLevel" maxlimit="20">
+    <usesource source="Ghostwalk"/>
+    <tag group="ClassType" tag="Normal"/>
+    <bootstrap thing="cHelpEid"></bootstrap>
+    <link linkage="helper" thing="cHelpEid"/>
+    </thing>
+  <thing id="cFreeMulti" name="Free Multiclassing" description="Taking this class does not incur the experience point penalties normally associated with multiclassing (although it does not negate any existing penalties the character may have incurred from multiclassing in standard classes)." compset="ClSpecial" summary="This class is ignored for purposes of xp penalties when multiclassing.">
+    <tag group="ClSpecWhen" tag="1"/>
+    </thing>
+  <thing id="cHelpEdr" name="Eidoloncer" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="Edr"/>
+    <fieldval field="cSkills" value="2"/>
+    <arrayval field="cBonFtTot" index="0" value="1"/>
+    <arrayval field="cBonFtTot" index="4" value="2"/>
+    <arrayval field="cBonFtTot" index="9" value="3"/>
+    <arrayval field="cBonFtTot" index="14" value="4"/>
+    <arrayval field="cBonFtTot" index="19" value="5"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="3"/>
+    <arrayval field="cMagLevTot" index="3" value="4"/>
+    <arrayval field="cMagLevTot" index="4" value="5"/>
+    <arrayval field="cMagLevTot" index="5" value="6"/>
+    <arrayval field="cMagLevTot" index="6" value="7"/>
+    <arrayval field="cMagLevTot" index="7" value="8"/>
+    <arrayval field="cMagLevTot" index="8" value="9"/>
+    <arrayval field="cMagLevTot" index="9" value="10"/>
+    <arrayval field="cMagLevTot" index="10" value="11"/>
+    <arrayval field="cMagLevTot" index="11" value="12"/>
+    <arrayval field="cMagLevTot" index="12" value="13"/>
+    <arrayval field="cMagLevTot" index="13" value="14"/>
+    <arrayval field="cMagLevTot" index="14" value="15"/>
+    <arrayval field="cMagLevTot" index="15" value="16"/>
+    <arrayval field="cMagLevTot" index="16" value="17"/>
+    <arrayval field="cMagLevTot" index="17" value="18"/>
+    <arrayval field="cMagLevTot" index="18" value="19"/>
+    <usesource source="Ghostwalk"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kKnowRel"/>
+    <tag group="ClassSkill" tag="kKnowPlane"/>
+    <tag group="ClassSkill" tag="kScry"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="Classes" tag="Eidolonce" name="Eidoloncer"/>
+    <tag group="cAttack" tag="Poor"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <bootstrap thing="cFreeMulti">
+      <autotag group="SpecSource" tag="cHelpEdr"/>
+      </bootstrap>
+    <exprreq message="Must have the Ghost template (from Ghostwalk)"><![CDATA[hero.tagis[Template.tmGWGhost] <> 0]]></exprreq>
+    </thing>
+  <thing id="cEidolonce" name="Eidoloncer" description="The eidolon class was designed with the idea that ghost characters who want to advance their ghost powers can keep levels in eidolon, while ghost characters who want to advance their abilities in a normal class can gain levels in a normal class. The eidolon class allows most characters willing to dabble in ghost powers to do so, while still advancing their base attack bonus and providing a reasonable selection of skills. However, spellcasters are hurt the most by advancing as eidolons, and players of these characters may become frustrated by the stifled spell progression. For these characters, the optional eidoloncer class is a much better option.\n\nAn eidoloncer follows all the same rules as an eidolon: A ghost character must take levels in either eidolon or eidoloncer, a ghost who is raised from the dead has a life epiphany and may convert eidoloncer levels to levels in another class, and so on.\n\n{b}Adventures{/b}: Most eidoloncers enjoy being ghosts as another aspect of existence and pursue the same interests and studies they had when alive. Others become eidoloncers only temporarily, for the same reason people advance as eidolons.\n\n{b}Characteristics{/b}: Eidoloncers are poor fighters and have few skills. Their greatest gift is to advance their spellcasting ability, although they gain a few ghost feats as well.\n\n{b}Alignment{/b}: Eidoloncers may be of any alignment and have the same habits and morals as their living counterparts and other characters of their spellcasting class. \n\n{b}Religion{/b}: Eidoloncers follow the same religious habits as their living spellcaster counterparts.\n\n{b}Background{/b}: All eidoloncers originate in the same manner: A person spends enough time as a ghost and eventually gains levels in the eidoloncer class. Eidoloncers are part of the same community as eidolons and make friends in that community for the same reasons eidolons do.\n\n{b}Races{/b}: Because only humanoids can become ghosts under normal circumstances, almost all eidoloncers are humanoids. Eidoloncers come from all walks of life, regardless of race, and no race is more likely to become a ghost or has a tradition of following certain paths.\n\n{b}Other Classes{/b}: Eidoloncers tend to fulfill the same roles as whatever spellcasting class they are advancing while ghosts.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="ClassLevel" maxlimit="20">
+    <usesource source="Ghostwalk"/>
+    <tag group="ClassType" tag="Normal"/>
+    <bootstrap thing="cHelpEdr"></bootstrap>
+    <link linkage="helper" thing="cHelpEdr"/>
+    </thing>
+  <thing id="fGWAgoTch" name="Agony Touch" description="[Corruptor]\n\nChoose one physical ability score (Strength, Dexterity, or Constitution). When you touch a creature, you can deal damage to this ability score.\n\n{b}Prerequisites{/b}: Corrupting Touch, Cha 11.\n\n{b}Benefit{/b}: You can make a touch attack that deals 1d4 points of temporary ability damage to the selected ability score of a target. When you are manifested fully or attacking incorporeal opponents, you add your Strength modifier to attack rolls. When you are incorporeal, you add your Dexterity modifier to attack rolls. If the attack scores a critical hit, the damage is doubled (ghosts are not subject to critical hits). Only one kind of damage or effect from the path of the corrupter applies from each attack. You may use this attack once per day per character level.\n\nYou do not have to use this ability when you touch another creature, and creatures that touch you do not take this ability damage.\n\n{b}Normal{/b}: A ghost&#146;s touch attack normally deals no damage.\n\n{b}Special{/b}: You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a different ability score.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" maxlimit="3">
+    <fieldval field="ftCandExpr" value="thingid.aSTR | thingid.aDEX | thingid.aCON"/>
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost" name="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWCorTou"/>
+    <exprreq message="Charisma 11 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fGWCirMag" name="Circle Magic" description="You know how to use your connection to Galaedros the Wood God to channel magical power to another spellcaster of your faith.\n\n{b}Prerequisite{/b}: Divine spellcaster with Galaedros as a patron deity.\n\n{b}Benefit{/b}: You may participate in circle magic. You gain a +2 bonus on Survival checks.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="You must be a divine spellcaster"><![CDATA[tagcount[Hero.Divine] >= 1 + 1]]></exprreq>
+    </thing>
+  <thing id="fGWConVis" name="Control Visage" description="[Haunt]\n\nYour ghost body is shaped as if you were alive and unharmed, and you can control what your ghost body appears to wear.\n\n{b}Benefit{/b}: When you return from death as a ghost, you look like a semitransparent version of your body in the peak of health. As a supernatural ability, you may change your ghostly clothing, armor, weapons, and equipment as a standard action as if using the alter self spell, but cannot change the actual appearance of your ghost body. Thus, you could appear to wear a traveler&#146;s outfit, a cold weather outfit, or even a royal outfit.\n\nYou do not receive any of the penalties or bonuses on Charisma-based skill checks that a corpselike ghost would take because of the means of its death. You gain a +1 bonus on Bluff, Diplomacy, Gather Information, Intimidate, and Perform checks, and Charisma checks made to alter an NPC&#146;s attitude.\n\n{b}Normal{/b}: A ghost without this feat appears as she did at the moment of her death, with wounds and other trauma visible on her ghost body. This affects creatures that see the ghost, as described in the Faces of Death sidebar (earlier in this chapter).\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWCorMal" name="Corpse Malevolence" description="[Dominator]\n\nYou can possess and animate dead bodies.\n\n{b}Prerequisite{/b}: Ghost Ride.\n\n{b}Benefit{/b}: As Ghost Ride, except that you may possess a relatively intact corpse (sufficient to make a zombie). You may not possess corporeal undead with this ability. You use the corpse&#146;s physical ability scores, modified as follows: Str &#150;2, Dex &#150;4, Con &#151; (the corpse has no Constitution score). The corpse does not get a saving throw to resist your possession attempt unless it is being held by another creature. You are still subject to the time limit of the Ghost Ride feat.\n\nPossessing a corpse allows you to use its natural abilities, but not any other abilities it had in life that required special knowledge or skill, including feats, skills, spells, or extraordinary, spell-like, or supernatural abilities. The body gains no benefit from any of its character levels (so possessing a human corpse results in a body with 1 Hit Die). It has hit points equal to the average for a creature of its type, not including any Constitution bonus it may have had when alive.\n\nYou give the body a semblance of life, but it is not truly alive and continues to decay at a normal rate. The body is not undead and does not use undead Hit Dice.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoRide"/>
+    </thing>
+  <thing id="fGWCorArSt" name="Corrupt Arcane Studies" description="You have dabbled in strange magic that has increased your power but adversely affected your mind.\n\n{b}Prerequisites{/b}: Sorcerer or wizard level 3rd, nongood alignment.\n\n{b}Benefit{/b}: Add a +1 bonus to the DC for all sorcerer and wizard spells you cast. You get a +1 bonus on all caster level checks to overcome spell resistance with your sorcerer and wizard spells.\n\n{b}Special{/b}: Your magical research has taken its toll on your mind. When you acquire this feat, your Wisdom score is immediately reduced by 2 points. Restorative spells (such as restoration or greater restoration) do not reverse this Wisdom loss. \n\nPart of the damage to your mind has resulted in behavioral changes. You develop a fixation for dressing in black and gray clothing. If at least three-fourths of what you are clothed in is not black or gray, you lose the bonus to your DCs, but still suffer the reduction in Wisdom.\n\nYou are often plagued by horrible nightmares. Every night, you must succeed on a Wisdom check (DC 10 + 1 per day since the last bout of nightmares) to stave off these dark visions. If you fail this check, you are unable to prepare arcane spells for 24 hours (sorcerers do\nnot recover spent spell slots for 24 hours).\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Any nongood alignment required">hero.tagis[Alignment.Good] = 0</exprreq>
+    <prereq message="Sorcerer or Wizard 3rd level required.">
+      <validate><![CDATA[validif (#levelcount[Sorcerer] >= 3)
+validif (#levelcount[Wizard] >= 3)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fGWCorTou" name="Corrupting Touch" description="[Corruptor]\n\nYour touch can damage creatures.\n\n{b}Benefit{/b}: You can make a touch attack that deals 1d4 points of damage to a creature. When you are manifested fully or attacking incorporeal opponents, you add your Strength modifier to attack rolls. When you are incorporeal, you add your Dexterity modifier to attack rolls. If the attack scores a critical hit, the damage is doubled (ghosts are not subject to critical hits).\n\nYou do not have to use this ability when you touch another creature, and creatures that touch you do not take this damage.\n\n{b}Normal{/b}: A ghost&#146;s touch attack normally deals no damage.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWDanBla" name="Dancing Blade" description="You have an energetic fighting style modeled after traditional Salkirian dancing.\n\n{b}Prerequisites{/b}: Proficient in rapier, Perform (dance) 1 rank, base attack bonus +1. \n\n{b}Benefit{/b}: When fighting with a rapier with the full attack action, you gain a +1 bonus on attack rolls with that weapon.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <exprreq message="Proficiency with rapier required"><![CDATA[hero.tagis[HasFeat.fWepMart] + hero.tagis[WepProf.wRapier] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +1 required"><![CDATA[child[Attack].field[tAtkBase].value >= 1]]></exprreq>
+    <exprreq message="Perform: Dance 1 rank required"><![CDATA[#skillranks[kPerfDance] >= 1]]></exprreq>
+    </thing>
+  <thing id="fGWDiEnFo" name="Divine Energy Focus" description="You have a gift for channeling positive or negative energy.\n\n{b}Prerequisites{/b}: Ability to turn or rebuke undead, Cha 13.\n\n{b}Benefit{/b}: You gain a +2 bonus on turning checks and turning damage rolls. Treat your cleric level as two higher than normal for the purpose of determining if you destroy or command undead rather than just turning or rebuking them.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="xTurning"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGWEctopla" name="Ectoplasm" description="[Shaper]\n\nYou can create ectoplasm, a gooey physical manifestation of base supernatural spiritual energy.\n\n{b}Benefit{/b}: As a standard action, you can create enough ectoplasm to fill a human&#146;s cupped hands (approximately 1 pound, sufficient to coat a 5-foot-square area with a film). You may manifest this ectoplasm from your hands, eyes, mouth, or any other part of your body. Its color may be pale gray, light blue, light green, or pale yellow. Ectoplasm is ghost touch material and is either sticky or slippery at its creator&#146;s discretion. Ectoplasm decays into nothingness after 10 minutes.\n\n{b}Special{/b}: A character with the Ectoplasm feat does not take the normal &#150;5 penalty on Wilderness Lore checks when trying to track a manifested ghost.\n\nA character with sticky ectoplasm on her hands and feet gains a +2 circumstance bonus on Climb checks (this bonus does not stack with similar circumstance bonuses to climbing, such as from a climber&#146;s kit).\n\nA character covered in slippery ectoplasm (10 pounds for a Medium-sized creature, 5 pounds for a Small creature) gains a +4 circumstance bonus on Escape Artist checks.\n\nA character with this feat gains a +2 circumstance bonus on Heal checks made to treat ghosts. \n\nA character with slippery ectoplasm on her feet gains a +2 circumstance bonus on Move Silently checks. If she moves more than half her speed in a round, she must succeed on a Balance check (DC 10) in each round of movement or fall. If she moves more than her speed in a single round, the DC for the Balance check increases to 15.\n\nIf sticky ectoplasm is placed on a weapon, the weapon is treated as a ghost touch weapon, but it deals only half damage. Special properties on a weapon that create energy (such as {i}flaming{/i}, {i}frost{/i}, or {i}shock{/i}) destroy a coating of ectoplasm in 1d4 rounds.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWEducati" name="Education" description="Some lands hold the pen in higher regard than the sword. In your youth, you received the benefit of several years of more or less formal schooling.\n\n{b}Prerequisite{/b}: Raised in Tereppek.\n\n{b}Benefit{/b}: All Knowledge skills are class skills for you. You get a +1 bonus on all skill checks with any two Knowledge skills of your choosing.\n\n{b}Special{/b}: You may take this feat only as a 1st-level character.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Regional"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWEmpTur" name="Empower Turning" description="You can turn or rebuke more undead with a single turning attempt.\n\n{b}Prerequisites{/b}: Ability to turn or rebuke undead, Cha 13, Extra Turning.\n\n{b}Benefit{/b}: You can turn or rebuke more undead than usual, but you have a harder time affecting undead with a larger number of Hit Dice. If you take a &#150;2 penalty on your turning check, you can add +1d6 to your turning damage roll.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fExtraTurn"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Ability to turn or rebuke undead required"><![CDATA[tagis[Hero.TurnUndead] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWEneTou" name="Enervating Touch" description="[Corruptor]\n\nYour touch can bestow negative levels upon creatures.\n\n{b}Prerequisites{/b}: Corrupting Touch, nongood alignment, Cha 15.\n\n{b}Benefit{/b}: You can make a touch attack that bestows one negative level upon a creature. When you are manifested fully or attacking incorporeal opponents, you add your Strength modifier to attack rolls. When you are incorporeal, you add your Dexterity modifier to attack rolls. If the attack scores a critical hit, the number of negative levels is doubled (ghosts are not subject to critical hits). Bestowing negative levels does not heal you. Only one kind of damage or effect from the path of the corrupter applies from each attack. You may use this attack once per day per character level.\n\nNegative levels remain until 24 hours have passed or until removed with a spell such as restoration. At that time, the afflicted opponent must attempt a Fortitude save (DC 10 + 1/2 your HD + your Cha modifier). On a success, the negative level goes away with no harm to the creature. On a failure, the negative level goes away, but the creature&#146;s level is also reduced by one. A separate saving throw is required for each negative level.\n\nYou do not have to use this ability when you touch another creature, and creatures that touch you do not gain negative levels.\n\n{b}Normal{/b}: A ghost&#146;s touch attack normally deals no damage.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostLevel" priority="12000">field[hTotal].value = herofield[tHitDice].value</eval>
+    <pickreq thing="fGWCorTou"/>
+    <exprreq message="Any non-good alignment required">hero.tagis[Alignment.Good] = 0</exprreq>
+    <exprreq message="Charisma 15 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fGWEthSide" name="Ethereal Sidestep" description="[Traveler]\n\nYou can teleport yourself a short distance.\n\n{b}Prerequisites{/b}: Incorporeal Form, Wis 11.\n\n{b}Benefit{/b}: As a standard action, you can transfer yourself up to 30 feet from your current position, as the spell {i}dimension door{/i}.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWIncFor"/>
+    <exprreq message="Wisdom 11 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fGWExpPoss" name="Expanded Possession" description="[Dominator]\n\nYou can ride or possess an additional type of creature.\n\n{b}Prerequisite{/b}: Ghost Ride.\n\n{b}Benefit{/b}: Choose one type of creature, such as giants. You may use any feat from the path of the dominator on that sort of creature as if it were a creature of your own type. For example, a human who selected this feat and chose giants would be able to use Ghost Ride on humanoids or giants. Choosing a creature type that is not affected by mind-affecting abilities (such as constructs, oozes, and undead) has no effect.\n\n{b}Special{/b}: You can gain this feat multiple times. Each time, you choose a new type of creature to be affected.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoRide"/>
+    </thing>
+  <thing id="fGWExFaEn" name="Extra Favored Enemy" description="You select an additional favored enemy.\n\n{b}Prerequisites{/b}: Base attack bonus +5, favored enemy. \n\n{b}Benefit{/b}: You add a new favored enemy to your list of foes (see Table 3&#150;14: Ranger Favored Enemies in the Player&#146;s Handbook). Initially, you gain the standard +2 bonus on certain skill checks and on damage rolls against this new favored enemy. When you advance beyond the level at which you gained Extra Favored Enemy, this bonus increases as other favored enemy bonuses do. For example, suppose you select goblinoids as your first favored enemy when you are a 1stlevel ranger and magical beasts as your second when you reach 5th level. You choose to allocate your extra +2 bonus against goblinoids, giving you a +4 bonus against goblinoids and a +2 bonus against magical beasts. Then you take Extra Favored Enemy as your featat 6th level and select aberrations. At this point, you have a +4 bonus against goblinoids and a +2 bonus against both magical beasts and aberrations. When you reach 10th level, you choose monstrous humanoids as your new favored enemy and allocate your extra +2 to goblinoids. Now your bonuses are +6 against goblinoids and +2 against magical beasts, aberrations, and monstrous humanoids.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Base attack bonus +5 required"><![CDATA[child[Attack].field[tAtkBase].value >= 5]]></exprreq>
+    <exprreq message="Favored Enemy required"><![CDATA[tagis[Hero.FavEnemy] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWFade" name="Fade" description="[Haunt]\n\nYou can make your ghost body more diaphanous and difficult to detect.\n\n{b}Benefit{/b}: As a standard action, you can increase your racial bonus on Hide checks from being a ghost to +8 for 1 minute.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWFoeHun" name="Foe Hunter" description="You have been trained in the methods of fighting various kinds of yuan-ti. \n\n{b}Benefit{/b}: When fighting yuan-ti, you gain a +1 competence bonus on damage rolls for melee attacks and on ranged attacks at ranges of up to 30 feet, and you act as if you had the Improved Critical feat for the weapon you are using. This benefit does not stack with the Improved Critical feat.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWFoStHu" name="Forceful Staff Hunter" description="You can stun people with your quarterstaff and push them around after you stun them.\n\n{b}Prerequisites{/b}: Improved Unarmed Strike, Weapon Focus (quarterstaff).\n\n{b}Benefit{/b}: You may use your quarterstaff to perform your stunning attack.\n\nIf you succeed in stunning your opponent with a quarterstaff attack, you may immediately perform a bull rush against that opponent as if you had not used your melee attack to hit the opponent with your staff. If you have multiple attacks, you may attack before and after the bull rush, as long as you did not move more than 5 feet. If you move more than 5 feet in a round, you cannot follow up an attack with a bull rush in this manner.\n\nFor example, Jelana of Kreel is an 8th-level monk who gets two attacks at base attack bonuses of +6 and +1. In the current round, she attempts to make a stunning attack with her quarterstaff. She succeeds and the opponent is stunned, so she can immediately attempt a bull rush against the stunned opponent. If she moves only the initial 5 feet, she may still use her second attack at a base attack bonus of +1 against the stunned opponent or anyone in her new threatened area.\n\n{b}Normal{/b}: See Bull Rush in Chapter 8 of the {i}Player&#146;s Handbook{/i}.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <pickreq thing="fImpUnarm"/>
+    <exprreq message="Weapon Focus (quarterstaff) required"><![CDATA[hero.tagis[WepFocus.wQtrstaff] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWFreeTou" name="Freezing Touch" description="[Corruptor]\n\nYour touch is supernaturally cold.\n\n{b}Prerequisite{/b}: Corrupting Touch.\n\n{b}Benefit{/b}: You can make a touch attack that deals 1d6 points of cold damage. When you are manifested fully or attacking incorporeal opponents, you add your Strength modifier to attack rolls. When you are incorporeal, you add your Dexterity modifier to attack rolls. If the attack scores a critical hit, the damage is doubled (ghosts are not subject to critical hits). Only one kind of damage or effect from the path of the corrupter applies from each attack. \n\nYou do not have to use this ability when you touch another creature, and creatures that touch you do not take this damage.\n\n{b}Normal{/b}: A ghost&#146;s touch attack normally deals no damage.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWCorTou"/>
+    </thing>
+  <thing id="fGWFriMoa" name="Frightful Moan" description="[Haunt]\n\nYou can unleash a moan that panics creatures near you.\n\n{b}Prerequisites{/b}: Haunting Appearance, Cha 15.\n\n{b}Benefit{/b}: As a standard action, you can moan in a frightful manner. All creatures within a 30-foot radius must succeed on a Will saving throw (DC 10 + 1/2 your HD + your Cha modifier) or become panicked for 2d4 rounds. This is a sonic, necromantic, mind-affecting, fear effect. A creature that successfully saves against your frightful moan cannot be affected by it for one day. Each time you use this ability, you deal 2 points of Charisma damage to yourself.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWHauApp"/>
+    <exprreq message="Charisma 15 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fGWFriPre" name="Frightful Presence" description="[Haunt]\n\nYour very presence can cause others to be stricken with fear.\n\n{b}Prerequisites{/b}: Haunting Appearance, Frightful Moan, Cha 15. \n\n{b}Benefit{/b}: You gain frightful presence as an extraordinary ability. You can activate the ability as a free action whenever you attack, charge, or fly overhead. Creatures with fewer Hit Dice than you that are within a radius of 30 feet are subject to your frightful presence and must succeed on a Will saving throw (DC 10 + 1/2 your HD + your Cha modifier). Creatures with less than half your Hit Dice that fail are panicked for 2d4 rounds, and those with more than half your Hit Dice that fail are shaken for 2d4 rounds. This is a mind-affecting, fear effect. A creature that successfully saves against your frightful presence cannot be affected by it for one day. Each time you use this ability, you deal 2 points of Charisma damage to yourself.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWHauApp"/>
+    <pickreq thing="fGWFriMoa"/>
+    <exprreq message="Charisma 15 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fGWFulMan" name="Full Manifestation" description="[Traveler]\n\nYou can manifest fully when you would otherwise be forced to be incorporeal.\n\n{b}Benefit{/b}: When incorporeal, as a standard action you can make a Will saving throw (DC 15) to manifest fully for 1 round.\n\n{b}Normal{/b}: A ghost without this feat cannot manifest fully outside the Manifest Ward without magical aid.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWGhoFli" name="Ghost Flight" description="[Traveler]\n\nYour fully manifested ghost body can fly.\n\n{b}Prerequisite{/b}: Ghost Glide.\n\n{b}Benefit{/b}: You can fly at your normal land speed with good maneuverability, whether you are incorporeal or manifested fully. You cannot use the run action when you fly.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoGli"/>
+    </thing>
+  <thing id="fGWGhoGli" name="Ghost Glide" description="[Traveler]\n\nYour fully manifested ghost body can slowly fly.\n\n{b}Benefit{/b}: You gain a fly speed of 5 feet (good). You cannot use the run action when you fly.\n\n{b}Normal{/b}: A ghost without this feat is confined to the forms of movement available to corporeal creatures.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWGhoHea" name="Ghost Healing" description="[Shaper]\n\nYou can transfer some of your own ectoplasm to another ghost to heal it.\n\n{b}Prerequisite{/b}: Ectoplasm.\n\n{b}Benefit{/b}: As a standard action, you may sacrifice any number of your own current hit points in order to heal any ghost you are touching a like amount of hit points. You cannot sacrifice more than your current hit points +10, which is enough to kill you.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWEctopla"/>
+    </thing>
+  <thing id="fGWGhoHan" name="Ghost Hand" description="[Poltergeist]\n\nYou can move small objects in a limited manner when you are a ghost.\n\n{b}Benefit{/b}: You can exert force upon an unattended object as if using the mage hand spell, except that the range of this ability is touch, and it does not require concentration. You can hold or move only one object at a time. Holding an item does not take an action.\n\n{b}Normal{/b}: Without this feat, an incorporeal ghost can move only other incorporeal creatures or ghost touch items.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWGhoRide" name="Ghost Ride" description="[Poltergeist]\n\nYou can hide within the physical body of a living creature, perceiving the world through its senses, but without the ability to control the host.\n\n{b}Benefit{/b}: As a standard action, you can attempt to inhabit the physical body of a living creature. You must enter your target&#146;s space, which provokes an attack of opportunity from the target. The target may resist with a Will saving throw (DC 10 + 1/2 your HD + your Cha modifier). A creature that saves against this ability is immune to your attempts to use any feat on the path of the dominator for one day. If the save is failed, your ghost body and any ghost touch equipment you carry vanishes into the target&#146;s physical body (non-ghost touch items you carry drop to the ground in the target&#146;s square). The target gets another Will saving throw every 10 minutes to force you out of its body, causing your ghost body to appear in an adjacent space to your target. This is a mind-affecting ability. You may use this ability a number of times per day equal to your Charisma modifier (minimum 1).\n\nUnlike {i}magic jar{/i}, you do not control the target, but simply ride along in the target&#146;s body. You see, hear, smell, feel, and taste what the subject does. You may remain within a host for a number of minutes equal to 10 &#215; your Hit Dice, after which you are expelled automatically. When you leave a body, any ghost touch equipment you were carrying with you at the start of the possession reforms with your ghost body.\n\nYou may use this feat only on creatures of the same type as you (humanoids may ride only humanoids, for example).\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWGhoSmi" name="Ghost Smiting" description="You can use your smite ability (smite evil for a paladin, smite undead for a Deathwarden chanter, and so on) to smite ghosts.\n\n{b}Prerequisites{/b}: Wis 13, smite ability.\n\n{b}Benefit{/b}: You may use your smite ability to smite ghosts. All normal rules for your smite ability apply, except that you may use the smite on ghosts as well as on your original sort of smite target, whether or not the ghost would normally qualify for your smite (a paladin could use her smite evil ability to smite a neutral or good ghost, for example).\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Wisdom 13 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Smite ability required"><![CDATA[tagis[User.Smite] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWGTSpell" name="Ghost-Touch Spell" description="You know how to tune your damaging spells to affect ghosts without harming other creatures. \n\n{b}Benefit{/b}: A ghost-touch spell affects only ghosts and does no damage to other creatures. Ghosts are affected whether incorporeal or manifested fully and do not have the benefit of their incorporeal miss chance. This metamagic feat works only on spells that deal damage. For example, a ghost-touch fireball cast by a 5th-level wizard deals 5d6 points of fire damage to ghosts, but is harmless to any other creatures in the area. Damaging spells with additional effects not related to damage (such as the ability of a wall of ice to function as a barrier) still affect nonghosts (but if a nonghost passed through an opening in the wall of ice, he would not take any damage from the spell). A ghost-touch spell takes up a slot of the same level as the spell&#146;s actual level.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWGifTon" name="Gift of Tongues" description="You have an intuitive talent for learning languages.\n\n{b}Prerequisite{/b}: Raised in Tereppek.\n\n{b}Benefit{/b}: Your Intelligence is 4 points higher for the purpose of determining how many bonus languages you may start with. Speak Language is always a class skill for you. You gain a +1 bonus on all Bluff and Sense Motive checks.\n\n{b}Special{/b}: You may take this feat only as a 1st-level character.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Regional"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWGraMal" name="Grand Malevolence" description="[Dominator]\n\nYou can possess multiple creatures and control their actions.\n\n{b}Prerequisites{/b}: Ghost Ride, Iron Will, Minor Malevolence, Malevolence, Cha 17.\n\n{b}Benefit{/b}: As the Malevolence feat, except that you can possess a number of creatures equal to your Charisma bonus. Each possession attempt takes a standard action, requires you to move into the target&#146;s square (drawing an attack of opportunity), and affects one creature.\n\nYou may divide your actions among your hosts in any way you see fit. Distance is not a factor. For example, if you are possessing a dwarf, an elf, and a human, you could have the dwarf reload his crossbow (a move-equivalent action), have the elf cast a sleep spell (a standard action), and have the human take a 5- foot step. Alternatively, you could have the dwarf take a 5-foot step and the elf cast {i}summon monster I{/i} (a full-round action), leaving the human with no actions for the round. Since relaxing control on a host is a free action, you can allow any or all of your hosts to act normally in the same round without penalty.\n\nWhen you leave your last possessed host, your {i}ghost touch{/i} equipment reappears with your reformed ghost body.\n\nA creature that saves against this ability is immune to your attempts to use any feat on the path of the dominator for one day.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoRide"/>
+    <pickreq thing="fIronWill"/>
+    <pickreq thing="fGWMinMal"/>
+    <pickreq thing="fGWMalevol"/>
+    <exprreq message="Charisma 17 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 17]]></exprreq>
+    </thing>
+  <thing id="fGWGreWit" name="Greater Witchlight" description="[Shaper]\n\nYour witchlight can last longer, become hotter, or give off more light.\n\n{b}Prerequisites{/b}: Ectoplasm, Witchlight.\n\n{b}Benefit{/b}: Your witchlight can have any one of the following effects. Each invocation of Witchlight may have a different effect, and over the course of 4 rounds, you can create three different types of witchlight, each with a different effect (it is not possible to add another effect to existing witchlight or change the effect once it is started).\n\n{i}Extended Witchlight{/i}: Your witchlight lasts as long as you concentrate + 10 minutes.\n\n{i}Hot Witchlight{/i}: Your witchlight deals 1d6 points of fire damage every round to the target. The target can attempt to extinguish the flames in the same manner as extinguishing burning alchemist&#146;s fire.\n\n{i}Bright Witchlight{/i}: Your witchlight sheds light as a torch.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWEctopla"/>
+    <pickreq thing="fGWWitchli"/>
+    </thing>
+  <thing id="fGWGreBon" name="Green Bond" description="You have an empathic bond with one of the spirit trees around Manifest.\n\n{b}Prerequisites{/b}: Wis 11, permission of a spirit tree.\n\n{b}Benefit{/b}: You gain a +2 bonus on all Knowledge (nature) and Survival checks when within the Spirit Wood. Your bonded spirit tree can communicate with you telepathically at a range of 1 mile. This contact can be initiated only by your bonded tree; you cannot send messages unless you have been contacted first by your bonded tree and it is maintaining the telepathic link.\n\n{b}Special{/b}: You may take this feat multiple times. Its effects do not stack. Each time you take this feat, you become bonded to another spirit tree. Most spirit trees prefer that their guardians are bonded to only one tree at a time, but there are exceptions. If your bonded spirit tree is killed, you lose all benefits of this feat until you bond with another tree.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Wisdom 11 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fGWHauApp" name="Haunting Appearance" description="[Haunt]\n\nYou can make your ghost body assume a terrifying appearance that can frighten observers.\n\n{b}Prerequisites{/b}: Control Visage, Improved Control Visage, Cha 11.\n\n{b}Benefit{/b}: As a standard action, you can momentarily warp your appearance to such a horrible extent that one creature within 30 feet that can see you must succeed on a Will saving throw (DC 10 + 1/2 your HD + your Cha modifier) or be affected as by a cause fear spell. A creature that succeeds on the save cannot be affected by your haunting appearance for one day. This is a necromantic, mind-affecting, fear ability. Each time you use this ability, you deal 2 points of Charisma damage to yourself.\n\n{b}Normal{/b}: A ghost without this feat appears as she did at the moment of her death, with wounds and other trauma visible on her ghost body. This affects creatures that see the ghost, as described in the Faces of Death sidebar (earlier in this chapter).\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWConVis"/>
+    <pickreq thing="fGWImpCoVi"/>
+    <exprreq message="Charisma 11 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fGWHauVoi" name="Haunting Voice" description="[Haunt]\n\nYou can make your voice originate from another location.\n\n{b}Benefit{/b}: You can cause the sound of your voice to originate from any point you can see within 100 feet. While using this ability, all speech and other vocalizations originate from this other location. You cannot use this ability in conjunction with any magical ability that relies on sound, such as bardic music or a {i}shout{/i} spell. Using this ability requires concentration.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWHeiTur" name="Heighten Turning" description="You can affect more powerful undead with your turning or rebuking attempts.\n\n{b}Prerequisites{/b}: Cha 13, Extra Turning.\n\n{b}Benefit{/b}: When you turn or rebuke undead, you may choose a number no higher than your cleric level. Add that number to your turning check result and subtract it from your turning damage roll. \n\nIf you&#146;re not a cleric, you may choose a number no higher than your effective cleric level (for instance, a paladin could choose a number up to two lower than her paladin level). If a prestige class increases your effective turning level, use your effective turning level.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fExtraTurn"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGWHorApp" name="Horrific Appearance" description="[Haunt]\n\nYou can blast creatures with your simple appearance.\n\n{b}Prerequisites{/b}: Control Visage, Haunting Appearance, Improved Control Visage, nongood alignment, Cha 17.\n\n{b}Benefit{/b}: As a standard action, you may assume a horrific appearance for 1 round that affects any creatures within 60 feet that view you. These creatures must succeed on a Fortitude save (DC 10 + 1/2 your HD + your Cha modifier) or take 1d4 points of Strength, 1d4 points of Dexterity, and 1d4 points of Constitution damage. A creature that successfully saves against your horrific appearance cannot be affected by it for one day. Each time you use this ability, you deal 2 points of Charisma damage to yourself.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWConVis"/>
+    <pickreq thing="fGWImpCoVi"/>
+    <pickreq thing="fGWHauApp"/>
+    <exprreq message="Charisma 17 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 17]]></exprreq>
+    <exprreq message="Any nongood alignment required">hero.tagis[Alignment.Good] = 0</exprreq>
+    </thing>
+  <thing id="fGWImpCoVi" name="Improved Control Visage" description="[Haunt]\n\nYou can change your ghost form&#146;s appearance.\n\n{b}Prerequisites{/b}: Control Visage, Cha 11.\n\n{b}Benefit{/b}: You can change the appearance of your ghost body, clothing, armor, weapons, and equipment as a standard action as if using the alter self spell, although the changes are purely cosmetic and do not grant you any additional abilities (such as flight if you create wings). Thus, you could make yourself look like a hobgoblin ghost, an elf ghost, fat, thin, short, tall, and so on, although you still appear semitransparent.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWConVis"/>
+    <exprreq message="Charisma 11 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fGWImpDef" name="Improved Deflection" description="[Poltergeist]\n\nYou are adept at deflecting things before they strike you.\n\n{b}Prerequisite{/b}: Ghost Hand.\n\n{b}Benefit{/b}: Your incorporeal deflection bonus increases by 1. You cannot use this feat to increase the effect of a deflection bonus gained from a magic item or spell; it applies only to the deflection bonus derived from your Charisma score because you are a ghost. \n\n{b}Special{/b}: You may take this feat multiple times. Its effects stack. When you are forced to manifest fully, this feat applies to the natural armor bonus granted by your Charisma (see Monster Abilities, later in this chapter).\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoHan"/>
+    </thing>
+  <thing id="fGWImpGhFl" name="Improved Ghost Flight" description="[Traveler]\n\nYour ghost body can fly rapidly.\n\n{b}Prerequisites{/b}: Ghost Glide, Ghost Flight.\n\n{b}Benefit{/b}: Your ghost fly speed increases by 10 feet, and you can use the run action when you fly.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoGli"/>
+    <pickreq thing="fGWGhoFli"/>
+    </thing>
+  <thing id="fGWImpPoHa" name="Improved Poltergeist Hand" description="[Poltergeist]\n\nYou can move a large object at a distance when you are a ghost.\n\n{b}Prerequisites{/b}: Ghost Hand, Poltergeist Hand, Cha 13.\n\n{b}Benefit{/b}: You can move a single object as if using the sustained force version of the telekinesis spell, except that it lasts as long as you concentrate. Your caster level is equal to your Hit Dice. A creature can resist being moved with a successful Will saving throw (DC 10 + 1/2 your HD + your Cha modifier).\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoHan"/>
+    <pickreq thing="fGWPolHand"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGWImpTuRe" name="Improved Turn Resistance" description="You are better able to resist the channeling of positive or negative energy by clerics and similar classes.\n\n{b}Prerequisite{/b}: Undead. \n\n{b}Benefit{/b}: You gain turn resistance +2. If you already have turn resistance, your turn resistance increases by 2.\n\n{b}Special{/b}: You may take this feat multiple times. Its effects stack. Each time you take it, your turn resistance increases by 2.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Type Undead required"><![CDATA[tagis[Race.typUndead] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWIncFor" name="Incorporeal Form" description="[Traveler]\n\nYou can become incorporeal even when you would otherwise be forced to manifest fully.\n\n{b}Benefit{/b}: When manifested fully, as a standard action, you can make a Will saving throw (DC 15) to become incorporeal for 1 round. If you revert to being manifested fully while inside a material object (such as a solid wall), you are shunted off to the nearest open space and take 1d6 points of damage per 5 feet that you so travel.\n\n{b}Normal{/b}: A ghost without this feat is normally incorporeal, but is manifested fully within the borders of the Manifest Ward and cannot overcome the effect without magic.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWIncSpTr" name="Incorporeal Spell Targeting" description="You know how to cast your spells so they&#146;re more likely to affect incorporeal creatures.\n\n{b}Benefit{/b}: Every time a spell, spell-like ability, or supernatural ability fails to affect an incorporeal creature because of its incorporeal miss chance, you can reroll your miss chance percentile roll one time to see if you actually affect it. If multiple incorporeal creatures are to be affected by the magical effect, you can reroll each creature&#146;s miss chance once.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWIncTaFi" name="Incorporeal Target Fighting" description="You know how to fight incorporeal creatures in melee.\n\n{b}Benefit{/b}: In melee, every time you miss because of a creature&#146;s incorporeal miss chance, you can reroll your miss chance percentile roll one time to see if you actually hit.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    </thing>
+  <thing id="fGWKiShGua" name="Kihu-Sherem Guardian" description="You are one of the Kihu-Sherem, magically altered in the womb to allow you to better protect the ruling sorcerers of your homeland.\n\n{b}Prerequisite{/b}: Male human member of a Bazareene noble family.\n\n{b}Benefit{/b}: For the purpose of determining the effects and DCs of your monk special abilities, treat your Wisdom as 2 points higher than its actual value. Your eyes are a strong, clear green, showing your magical heritage.\n\n{b}Special{/b}: You may take this feat only as a 1st-level character. You can take this feat even if you don&#146;t have any levels in the monk class.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Regional"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must be a human "><![CDATA[tagis[Race.Human] <> 0]]></exprreq>
+    <exprreq message="Must be male"><![CDATA[tagis[Hero.Male] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWMalevol" name="Malevolence" description="[Dominator]\n\nYou can possess a creature and control its actions.\n\n{b}Prerequisites{/b}: Ghost Ride, Iron Will, Minor Malevolence, Cha 15.\n\n{b}Benefit{/b}: As the Minor Malevolence feat, except the maximum duration is a number of hours equal to your Hit Dice. A creature that saves against this ability is immune to your attempts to use any feat on the path of the dominator for one day. Each time you use this ability, you deal 2 points of Charisma damage to yourself.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoRide"/>
+    <pickreq thing="fIronWill"/>
+    <pickreq thing="fGWMinMal"/>
+    <exprreq message="Charisma 15 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fGWMilitia" name="Militia" description="You served in a local militia, training with weapons suitable for use on a battlefield.\n\n{b}Prerequisite{/b}: Raised in Bazareene.\n\n{b}Benefit{/b}: You get proficiency with the light crossbow and either the short sword or the handaxe.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Regional"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWMinMal" name="Minor Malevolence" description="[Dominator]\n\nYou can possess a creature for a short while and control its actions.\n\n{b}Prerequisites{/b}: Ghost Ride, Iron Will, Cha 13.\n\n{b}Benefit{/b}: As the Ghost Ride feat, except that you do control the host. A creature that saves against this ability is immune to your attempts to use any feat on the path of the dominator for one day. Each time you use this ability, you deal 2 points of Charisma damage to yourself.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoRide"/>
+    <pickreq thing="fIronWill"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGWNauTou" name="Nauseating Touch" description="[Corruptor]\n\nWhen you touch a living creature, you can make it nauseated.\n\n{b}Prerequisites{/b}: Corrupting Touch, Cha 13.\n\n{b}Benefit{/b}: You can make a touch attack that nauseates a living creature for a number of rounds equal to 1d4 + your Charisma modifier. The target may resist with a Fortitude saving throw (DC 10 + 1/2 your HD + your Cha modifier). When you are manifested fully or attacking incorporeal opponents, you add your Strength modifier to attack rolls. When you are incorporeal, you add your Dexterity modifier to attack rolls. Only one kind of damage or effect from the path of the corrupter applies from each attack. You may use this attack once per day per character level.\n\nYou do not have to use this ability when you touch another creature, and creatures that touch you are not subject to this effect.\n\n{b}Normal{/b}: A ghost&#146;s touch attack normally deals no damage.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostLevel" priority="12000">field[hTotal].value = herofield[tHitDice].value</eval>
+    <pickreq thing="fGWCorTou"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGWPolHand" name="Poltergeist Hand" description="[Poltergeist]\n\nYou can move small objects in a limited manner at a distance when you are a ghost.\n\n{b}Prerequisite{/b}: Ghost Hand.\n\n{b}Benefit{/b}: You may control, at a distance, a number of unattended objects equal to 1 + your Charisma bonus as if using the mage hand spell, except that doing so does not require concentration.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoHan"/>
+    </thing>
+  <thing id="fGWPolRage" name="Poltergeist Rage" description="[Poltergeist]\n\nYou can throw heavy objects with the power of your mind.\n\n{b}Prerequisites{/b}: Ghost Hand, Poltergeist Hand, Cha 13.\n\n{b}Benefit{/b}: You can move creatures or objects as if using the violent thrust version of the telekinesis spell. Your caster level is equal to your Hit Dice. A creature can resist being thrown with a successful Will saving throw (DC 10 + 1/2 your HD + your Cha modifier). Each time you use this ability, you deal 2 points of Charisma damage to yourself.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWGhoHan"/>
+    <pickreq thing="fGWPolHand"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGWPowLun" name="Power Lunge" description="Your ferocious attack may catch an opponent unprepared.\n\n{b}Prerequisites{/b}: Base attack bonus +3, Power Attack.\n\n{b}Benefit{/b}: A successful attack roll during a charge allows you to add double your normal Strength modifier to the attack&#146;s damage, regardless of whether you&#146;re using one- or two-handed weapons. You provoke an attack of opportunity from the opponent you charged.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <pickreq thing="fPowerAtt"/>
+    <exprreq message="Base Attack Bonus +3 required"><![CDATA[child[Attack].field[tAtkBase].value >= 3]]></exprreq>
+    </thing>
+  <thing id="fGWRenGho" name="Rend Ghost" description="[Corruptor]\n\nYour touch can maul the ectoplasm of another ghost.\n\n{b}Prerequisites{/b}: Corrupting Touch, Ectoplasm.\n\n{b}Benefit{/b}: When you use Corrupting Touch to make a touch attack against a ghost, you deal 1d10 points of damage instead of 1d4.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWCorTou"/>
+    <pickreq thing="fGWEctopla"/>
+    </thing>
+  <thing id="fGWResGho" name="Resist Ghost" description="You are resistant to the effects of ghost powers.\n\n{b}Benefit{/b}: You gain a +4 bonus on all saving throws against ghost powers.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWScGhBo" name="Sculpt Ghost Body" description="[Shaper]\n\nYou can reshape your ghost body&#146;s ectoplasm to enhance one physical ability score at the expense of another.\n\n{b}Prerequisites{/b}: Ectoplasm, Shape Ectoplasm, Wis 11.\n\n{b}Benefit{/b}: As a full-round action, you can alter your ectoplasm to increase your Strength, Dexterity, or Constitution by +2 in exchange for a &#150;2 penalty to one of the two physical ability scores you didn&#146;t change. This change lasts 10 minutes, after which your ability scores revert to their normal values. A creature without an ability score cannot increase or decrease that ability score with this feat.\n\nYou can use this feat on yourself more than once at the same time, increasing one ability score at the expense of two others, or vice versa. The bonuses and penalties stack.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWEctopla"/>
+    <pickreq thing="fGWShaEct"/>
+    <exprreq message="Wisdom 11 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fGWShaEct" name="Shape Ectoplasm" description="[Shaper]\n\nYou can make equipment out of ectoplasm.\n\n{b}Prerequisites{/b}: Ectoplasm, Wis 11.\n\n{b}Benefit{/b}: You can shape available ectoplasm into a facsimile of nonliving material, such as clothing, rope, leather, or wood. For example, you could make a suit of leather armor out of ectoplasm and it would function exactly like normal leather armor (buckles, buttons, and other small parts that would normally be made out of metal are instead made of ectoplasmic wood but are sufficient for this purpose). It takes 1 full round per pound of weight of the object to craft it, so a suit of ectoplasmic leather armor takes 15 rounds to shape. You must make an appropriate Craft check to shape articles requiring a high degree of craftsmanship (a folding chair, a glass vase, and so on).\n\nThe material is obviously formed of ectoplasm and lasts for a number of minutes equal to 10 + (10 &#215; your Wisdom bonus). Shaped ectoplasm has all the properties of raw ectoplasm, except that it lasts longer and maintains whatever form you mold it into.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWEctopla"/>
+    <exprreq message="Wisdom 11 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fGWShLaSo" name="Sherem-Lar Sorcery" description="You are one of the Sherem-Lar, magically altered in the womb to enhance your potential as a sorcerer.\n\n{b}Prerequisite{/b}: Female human member of a Bazareene noble family.\n\n{b}Benefit{/b}: For the purpose of determining bonus spells and the save DCs of spells you cast as a sorcerer, treat your Charisma as 2 points higher than its actual value. Your eyes are a strong, clear green, showing your magical heritage.\n\n{b}Special{/b}: You may take this feat only as a 1st-level character. You can take this feat even if you don&#146;t have any levels in the sorcerer class.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must be human"><![CDATA[tagis[Race.Human] <> 0]]></exprreq>
+    <exprreq message="Must be female"><![CDATA[tagis[Hero.Female] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWShzLaSo" name="Sherezem-Lar Sorcery" description="You are one of the Sherezem-Lar, an elite group within the Sherem-Lar, head and shoulders above the others in power.\n\n{b}Prerequisites{/b}: Sherem-Lar Sorcery, female human member of a Bazareene noble family.\n\n{b}Benefit{/b}: For the purpose of determining bonus spells and the save DCs of spells you cast as a sorcerer, treat your Charisma as 2 points higher than its actual value. This benefit stacks with the bonus from the Sherem-Lar feat. Your eyes are a strong, clear green, showing your magical heritage.\n\n{b}Special{/b}: You may take this feat only as a 1st-level character. You can take this feat even if you don&#146;t have any levels in the sorcerer class.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWShLaSo"/>
+    <exprreq message="Must be human"><![CDATA[tagis[Race.Human] <> 0]]></exprreq>
+    <exprreq message="Must be female"><![CDATA[tagis[Hero.Female] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWShrTou" name="Shriveling Touch" description="[Corruptor]\n\nChoose one physical ability score (Strength, Dexterity, or Constitution). When you touch a living creature or a ghost, you can cause permanent drain to that score.\n\n{b}Prerequisites{/b}: Corrupting Touch, Agony Touch for the same ability score, Cha 13.\n\n{b}Benefit{/b}: You can make a touch attack that deals 1d4 points of permanent ability drain to the selected ability score of a living creature or ghost. When you are manifested fully or attacking incorporeal opponents, you add your Strength modifier to attack rolls. When you are incorporeal, you add your Dexterity modifier to attack rolls. If the attack scores a critical hit, the draining is doubled (ghosts are not subject to critical hits). Only one kind of damage or effect from the path of the corrupter applies from each attack. You may use this attack once per day per character level.\n\nYou do not have to use this ability when you touch another creature, and creatures that touch you are not subject to this ability drain.\n\n{b}Normal{/b}: A ghost&#146;s touch attack normally deals no damage.\n\n{b}Special{/b}: You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a different ability score.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <comment>Pre-req for Agony Touch</comment>
+    <usesource source="Ghostwalk"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <pickreq thing="fGWCorTou"/>
+    <exprreq message="Charisma 13 required"><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGWSolVis" name="Solid Visage" description="[Haunt]\n\nYour ghost body appears solid and alive.\n\n{b}Benefit{/b}: Your ghost body (whether incorporeal or manifested fully) appears solid and alive, although it can also appear like a normal ghost if you choose. Changing from one state to the other is a standard action that does not provoke an attack of opportunity. As long as you appear solid, you lose your ghost +4 racial bonus on Hide checks.\n\n{b}Normal{/b}: A character without this feat has a ghost body that is semitransparent and easily recognizable as a ghost.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWSurvivo" name="Survivor" description="Your people thrive in a region that others find uninhabitable, and you excel at uncovering the secrets of the wilderness and surviving to tell the tale.\n\n{b}Prerequisite{/b}: Raised in Thurkasia.\n\n{b}Benefit{/b}: You gain a +1 bonus on Fortitude saves and a +2 bonus on all Wilderness Lore checks.\n\n{b}Special{/b}: You may take this feat only as a 1st-level character.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGWTemEct" name="Temper Ectoplasm" description="[Shaper]\n\nYou can make durable equipment out of ectoplasm.\n\n{b}Prerequisites{/b}: Ectoplasm, Shape Ectoplasm, Wis 13.\n\n{b}Benefit{/b}: You can shape available ectoplasm into a facsimile of nonliving material, such as stone, crystal, or iron, or anything that can be shaped by the Shape Ectoplasm feat. For example, you could make a suit of half-plate out of ectoplasm and it would function exactly like normal half-plate. It takes 1 full round per pound of weight of the object to craft it, so a suit of ectoplasmic half-plate takes 50 rounds (5 minutes) to shape. You must make an appropriate Craft check to shape articles requiring a high degree of craftsmanship (jewelry, swords, and so on).\n\nThe material is obviously formed of ectoplasm and lasts for a number of hours equal to your Wisdom bonus + 1. Tempered ectoplasm has all the properties of raw ectoplasm, except that it lasts longer and it maintains whatever form you mold it into.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="fGWEctopla"/>
+    <pickreq thing="fGWShaEct"/>
+    <exprreq message="Wisdom 13 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGWToAtSp" name="Touch Attack Specialization" description="[Corruptor]\n\nChoose one of your ghost touch attacks that deals hit point damage, ability damage, or ability drain, such as Corrupting Touch. You are especially good at using this touch attack.\n\n{b}Prerequisites{/b}: Base attack bonus +2 plus any touch attack that deals hit point damage, ability damage, or ability drain.\n\n{b}Benefit{/b}: You add +2 to all damage rolls you make using the selected touch attack.\n\n{b}Special{/b}: You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a different touch attack of the appropriate type.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Base Attack Bonus +2 required"><![CDATA[child[Attack].field[tAtkBase].value >= 2]]></exprreq>
+    </thing>
+  <thing id="fGWWiYoWa" name="Wise to Your Ways" description="You are particularly resistant to the unusual attacks of your favored enemy.\n\n{b}Prerequisite{/b}: Favored enemy.\n\n{b}Benefit{/b}: Choose one type of favored enemy, such as undead. You add your favored enemy bonus for that type of creature to saving throws against the standard extraordinary, spell-like, and supernatural abilities of your favored enemy. You do not gain this bonus against other attacks by the creature. For example, a ranger with undead as a favored enemy would gain his favored enemy bonus on saves against a vampire&#146;s domination ability, but not to saves against the poison on its dagger or any saves against spells it cast from class levels. This saving throw bonus applies to all secondary effects of the favored enemy&#146;s attacks, so the ranger would also get his favored enemy bonus on the Fortitude save to remove a negative level caused by the vampire&#146;s energy drain ability.\n\n{b}Special{/b}: You may take this feat only as a 1st-level character.\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Favored Enemy required"><![CDATA[tagis[Hero.FavEnemy] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGWWitchli" name="Witchlight" description="[Shaper]\n\nYou can create witchlight, a harmless faint light, on yourself or an object.\n\n{b}Prerequisite{/b}: Ectoplasm.\n\n{b}Benefit{/b}: As a standard action, you can cause some or all of your body or an unattended object up to Medium-size that you touch to glow with witchlight, a harmless supernatural flame resembling {i}faerie fire{/i}. Witchlight sheds light as a candle and may be pale red, orange, green, blue, or violet. Maintaining witchlight requires concentration, and you can maintain its effect on an object as long as it is within 100 feet of you. This is a supernatural ability.\n\nYou can use witchlight to outline a creature (such as one under the effects of {i}blur, invisibility{/i}, and so on), but doing so requires a touch attack (which draws an attack of opportunity from the defender).\n\n{b}Source{/b}: Ghostwalk Campaign Setting" compset="Feat" uniqueness="useronce">
+    <usesource source="Ghostwalk"/>
+    <tag group="fCategory" tag="Ghost"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <pickreq thing="fGWEctopla"/>
+    </thing>
+  </document>

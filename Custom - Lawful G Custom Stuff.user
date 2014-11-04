@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="cvAlienAC" name="Alienist with Animal Companion" compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvAnimStar" value="1"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="cWill" tag="Good"/>
+    <bootstrap thing="cAnimClass"></bootstrap>
+    <link linkage="varies" thing="cHelpAln"/>
+    </thing>
+  <thing id="cParaAngel" name="Paragon - Angelounian" description="The epitome of his race, the angelounian paragon gains the ability to peer into the Kael more often and see deeper when he does." compset="ClassLevel" maxlimit="3">
+    <usesource source="LawfulGCus"/>
+    <tag group="ClassType" tag="Normal"/>
+    <bootstrap thing="cHelpAnP"></bootstrap>
+    <link linkage="helper" thing="cHelpAnP"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If this isn't the 3rd level of the class, get out
+      if (field[cThisIndex].value <> 3) then
+        done
+        endif
+
+      ~ Our intelligence goes up by 1 point at this level, which may mean we get a bonus skill point.
+      var v_level as number
+      v_level = field[cIndex].value
+      call aAddIntSkl]]></eval>
+    <exprreq message="Angelounian race required."><![CDATA[hero.tagis[Race.Angelou] <> 0]]></exprreq>
+    </thing>
+  <thing id="cAnPAbiBoo" name="Ability Boost" description="At 3rd level, an angelounian paragon&#146;s Intelligence score increases by 2 points." compset="ClSpecial">
+    <usesource source="LawfulGCus"/>
+    <tag group="ClSpecWhen" tag="3" name="3" abbrev="3"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpAnP"/>
+    <tag group="User" tag="MoreSkill"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (field[xTotalLev].value < 3) then
+        done
+        endif
+
+      ~ NOTE: Changing our intelligence doesn't change our skill points. We need to do that manually in the Paragon class pick.
+      hero.child[aINT].field[aNormMod].value += 2]]></eval>
+    </thing>
+  <thing id="cAnPBonFea" name="Bonus Farsight Feat" description="At 2nd level you gain a bonus feat, which must be a Farsight feat." compset="ClSpecial">
+    <usesource source="LawfulGCus"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpAnP"/>
+    <tag group="User" tag="MoreSkill"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="cAnPSecSig" name="Second Sight" description="At 1st level, an angelounian paragon can use Glimpse the Flow one additional time per day." compset="ClSpecial">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpAnP"/>
+    <tag group="User" tag="MoreSkill"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <eval phase="UserPostLv" priority="10000">~ Add 1 to our Glimpse the Flow uses per day
+hero.childfound[xGlimpsFlo].field[hTotal].value += 1</eval>
+    </thing>
+  <thing id="cHelpAnP" name="Paragon - Angelounian" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="AnP"/>
+    <fieldval field="cSkills" value="4"/>
+    <arrayval field="cBonFtTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="3"/>
+    <arrayval field="cSpecial" index="0" value="Extra Sight"/>
+    <arrayval field="cSpecial" index="1" value="Bonus Farsight feat"/>
+    <arrayval field="cSpecial" index="2" value="Ability boost (Int +2)"/>
+    <arrayval field="cSpell" index="0" value="+1 level of wizard"/>
+    <arrayval field="cSpell" index="1" value="+1 level of wizard"/>
+    <arrayval field="cSpell" index="2" value="+1 level of wizard"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="WepProf" tag="wNaeralDag"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="fCategory" tag="Farsight"/>
+    <tag group="Classes" tag="ParaAngel" name="Paragon - Angelounian"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDecScript"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpeakLang"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kUseMagic"/>
+    <bootstrap thing="cAnPSecSig"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="cAnPBonFea"></bootstrap>
+    <bootstrap thing="cAnPAbiBoo"></bootstrap>
+    </thing>
+  <thing id="rAngSkills" name="Racial Skill Bonuses" description="+2 racial bonus to Bluff, Concentration and Spellcraft checks (included in totals)." compset="Special" summary="+2 to Bluff, Concentration, Spellcraft.">
+    <usesource source="LawfulGCus"/>
+    <tag group="SpecSource" tag="Angelou"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xGlimpsFlo" name="Glimpse the Flow" description="The Angelounians believe the Kael is immutable even with foreknowledge, and all possess the ability to glimpse the flows of the future. While this affords them many advantages, the ability is far from perfect, as currents of destiny are difficult to interpret. \n\nAs an immediate action 1/day, you may add a +2 insight bonus to attacks, saves, AC, skill checks or damage rolls for 1 round. Unlike most immediate actions, Glimpse the Flow can be used while flat footed to give a bonus to initiative checks, although it does not remove any of the other penalties of being flat footed nor does it allow an Angelounian caught unawares to act in the surprise round. \n\nUnless otherwise noted, this bonus only applies to checks that occur completely during the duration. For example, using Glimpse the Flow to boost your saves would give a bonus on the initial save if you were poisoned during its duration, but not on the secondary save a minute later unless the duration extended that far. Similarly, certain skills that take longer than a round to utilize (such as Craft, Perform, and Diplomacy) only gain the bonus if the duration exceeds the amount of time required for the check." compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="Angelou"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPostLv" priority="21000" index="2"><![CDATA[~ Determine the number of charges we have
+   var charges as number
+     charges = hero.childfound[xGlimpsFlo].field[hTotal].value
+
+~ Count our Farsight feats and assign a bonus
+   var bonus as number
+       bonus = tagcount[fCategory.Farsight]
+
+~ Figure out our duration
+   var duration as number
+    if (#hasfeat[fFarsight] + #hasfeat[fIFarsight] + #hasfeat[fGFarsight] = 3) then
+          duration = 8
+    elseif (#hasfeat[fFarsight] + #hasfeat[fIFarsight] + #hasfeat[fGFarsight] = 2) then
+          duration = 4
+    elseif (#hasfeat[fFarsight] + #hasfeat[fIFarsight] + #hasfeat[fGFarsight] = 1) then
+          duration = 2
+    elseif (#hasfeat[fFarsight] + #hasfeat[fIFarsight] + #hasfeat[fGFarsight] = 0) then
+          duration = 1
+   endif
+
+~ Set our custom description
+
+      field[CustDesc].text = "The Angelounians believe the Kael is immutable even with foreknowledge, and all possess the ability to glimpse the flows of the future. While this affords them many advantages, the ability is far from perfect, as currents of destiny are difficult to interpret. {br}{br}As an immediate action " & charges & "/day, you may add a +" & bonus & " insight bonus to attacks, saves, AC, skill checks or damage rolls for " & duration & " rounds. Unlike most immediate actions, Glimpse the Flow can be used while flat footed to give a bonus to initiative checks, although it does not remove any of the other penalties of being flat footed nor does it allow an Angelounian caught unawares to act in the surprise round. {br}{br}Unless otherwise noted, this bonus only applies to checks that occur completely during the duration. For example, using Glimpse the Flow to boost your saves would give a bonus on the initial save if you were poisoned during its duration, but not on the secondary save a minute later unless the duration extended that far. Similarly, certain skills that take longer than a round to utilize (such as Craft, Perform, and Diplomacy) only gain the bonus if the duration exceeds the amount of time required for the check."
+
+~ Set our name
+      field[livename].text = "Glimpse the Flow, " & charges & "/day (Su) "
+
+~ Set our description
+      field[xSumm].text = "Immediate action, gain a +" & bonus & " insight bonus to AC or various rolls for " & duration & " rounds"]]></eval>
+    <eval phase="UserPostLv" priority="10100"><![CDATA[
+~ Boost our tagcount by 2
+      var result as number
+        result = assign[fCategory.Farsight]
+      var result2 as number
+        result2 = assign[fCategory.Farsight]
+
+~ Check whether the Improved sight feat, and add 2 tags if so
+      var result3 as number
+      var result4 as number
+    if (#hasfeat[fImpSight] <> 0) then
+      result3 = assign[fCategory.Farsight]
+      result4 = assign[fCategory.Farsight]
+ endif
+
+~ Check whether the Greater sight feat, and add 2 tags if so
+      var result5 as number
+      var result6 as number
+    if (#hasfeat[fGrSight] <> 0) then
+      result5 = assign[fCategory.Farsight]
+      result6 = assign[fCategory.Farsight]
+ endif]]></eval>
+    </thing>
+  <thing id="xMaskDep" name="Mask Dependant" description="Before the fall, Angelounians were statuesque creatures possessing skin the color of burnished gold and an ethereal beauty surpassing that of the elves. They stood taller than men, with more robust features and great strength coupled with grace. Unfortunately, the Greendeath damaged even the essences of those it touched, and as a result those born of the original 200 bear the same afflictions and deformities as their forebears, leaving them but a shadow of this past vigor. Unfortunately, the imprinting they receive makes them keenly aware of this disparity, causing them to hide their forms behind masks, tightly wrapped bandages, and clothing.\n\nIf an Angelounian is ever significantly exposed (such as by having his mask removed, or going shirtless), the shame and disgust cause them severe discomfort, imposing a -4 morale penalty to attacks, saves, AC and skill checks.\n\nAngelounian masks take up the &quot;Face&quot; magic item slot, and have only two minor powers. The first is the ability to overlay itself with simple, pre-determined glamers. Most creators choose to include no more than a dozen different, highly exaggerated images to represent the major emotions. Switching between them requires nothing more than a thought, and is a free action for the wearer. The second is a strong magical adhesion that keeps the mask properly in place under most mundane conditions. To remove the mask of an unwilling Angelounian a pin must first be achieved, and then a DC20 strength check must succeed. Alternately, the mask can be affected by a targetted dispel magic, although the caster level of the item is equal to it&apos;s creator&apos;s total character level. Should it be suppressed, the mask will fall away unless held in place by hand or a back-up band.\n\nEvery Angelounian knows the minor enchantments necessary to make a simple Angelounian mask, even if they are not a spellcaster. It does however require an appropriately sized piece of wood/porcelain/cloth and 1 day worth of work. To lay further spells upon the mask requires the Craft Wonderous Item feat, and common enchantments include {i}darkvision{/i}, {i}detect{/i} spells, and {i}true seeing{/i}." compset="Special" summary="-4 morale penalty to all checks when unmasked">
+    <usesource source="LawfulGCus"/>
+    <tag group="SpecSource" tag="Angelou"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fExSight" name="Extra Sight" description="You can use your Glimpse the Flow ability more often than you otherwise could.\n\n{b}Prerequisite{/b}: Angelounian race\n\n{b}Benefit{/b}: You can use your Glimpse the Flow two extra times per day.\n\n{b}Normal{/b}: Angelounians without the Extra Sight feat can use Glimpse the Flow once per day.\n\n{b}Special{/b}: You can gain this feat multiple times. Its effects stack." compset="Feat" summary="Gain two extra uses per day of Glimpse the Flow">
+    <usesource source="LawfulGCus"/>
+    <tag group="fCategory" tag="Farsight"/>
+    <eval phase="UserPostLv" priority="10000">~ Add 2 to our Glimpse the Flow uses per day
+hero.childfound[xGlimpsFlo].field[hTotal].value += 2</eval>
+    <exprreq message="Angelounian race required"><![CDATA[tagis[Race.Angelou] <> 0]]></exprreq>
+    </thing>
+  <thing id="lAngelou" name="Angelounian" compset="Language">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="SecretLang"/>
+    </thing>
+  <thing id="fImpSight" name="Improved Sight" description="You have learned deep secrets of time&apos;s flow, and your vision is rarely wrong.\n\n{b}Prerequisite{/b}: Glimpse the Flow, Character level 6th\n\n{b}Benefit{/b}: The insight bonus from Glimpse the Flow increases to +4\n\n{b}Normal{/b}: Glimpse the Flow provides a +2 insight bonus" compset="Feat" summary="Insight bonus from Glimpse the Flow increases to +4">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="FeatUnique"/>
+    <tag group="fCategory" tag="Farsight"/>
+    <exprreq message="Glimpse the Flow required."><![CDATA[hero.childfound[xGlimpsFlo].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <exprreq message="Character level 6th required."><![CDATA[herofield[tLevel].value >= 6]]></exprreq>
+    </thing>
+  <thing id="fGrSight" name="Greater Sight" description="Years of experience have taught you how best to interpret your visions, the future holds little mystery for you.\n\n{b}Prerequisite{/b}: Glimpse the Flow, Improved Sight, Character level 12th\n\n{b}Benefit{/b}: The insight bonus from Glimpse the Flow increases to +6\n\n{b}Normal{/b}: Glimpse the Flow provides a +2 insight bonus" compset="Feat" summary="Insight bonus from Glimpse the Flow increases to +6">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="FeatUnique"/>
+    <tag group="fCategory" tag="Farsight"/>
+    <exprreq message="Improved sight required."><![CDATA[#hasfeat[fImpSight] <> 0]]></exprreq>
+    <exprreq message="Glimpse the Flow required."><![CDATA[hero.childfound[xGlimpsFlo].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <exprreq message="Character level 12th required."><![CDATA[herofield[tLevel].value >= 12]]></exprreq>
+    </thing>
+  <thing id="fFarsight" name="Farsight" description="Through rigorous mental discipline, you have learned to peer farther into the ebbs and flows of the River of Time.\n\n{b}Prerequisite{/b}: Glimpse the Flow\n\n{b}Benefit{/b}: Your Glimpse the Flow ability doubles in duration, to 2 rounds\n\n{b}Normal{/b}: The duration of Glimpse the Flow is 1 round" compset="Feat" summary="Your Glimpse the Flow ability doubles in duration, to 2 rounds" uniqueness="useronce">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="FeatUnique"/>
+    <tag group="fCategory" tag="Farsight"/>
+    <exprreq message="Glimpse the Flow required."><![CDATA[hero.childfound[xGlimpsFlo].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    </thing>
+  <thing id="fIFarsight" name="Improved Farsight" description="Through rigorous mental discipline, you have discovered a way to anchor your mind to the present so you may safely peer even farther upstream. \n\n{b}Prerequisite{/b}: Glimpse the Flow, Farsight\n\n{b}Benefit{/b}: Your Glimpse the Flow ability doubles in duration again, to 4 rounds\n\n{b}Normal{/b}: The duration of Glimpse the Flow is 1 round" compset="Feat" summary="Your Glimpse the Flow ability doubles in duration, to 4 rounds">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="FeatUnique"/>
+    <tag group="fCategory" tag="Farsight"/>
+    <exprreq message="Glimpse the Flow required."><![CDATA[hero.childfound[xGlimpsFlo].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <exprreq message="Farsight feat required."><![CDATA[#hasfeat[fFarsight] <> 0]]></exprreq>
+    </thing>
+  <thing id="fGFarsight" name="Greater Farsight" description="Through rigorous mental discipline, you have strengthened your mental anchor, allowing you to venture even farther afield. \n\n{b}Prerequisite{/b}: Glimpse the Flow, Farsight, Improved Farsight\n\n{b}Benefit{/b}: Your Glimpse the Flow ability doubles in duration again, to 8 rounds\n\n{b}Normal{/b}: The duration of Glimpse the Flow is 1 round" compset="Feat" summary="Your Glimpse the Flow ability doubles in duration, to 8 rounds">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="FeatUnique"/>
+    <tag group="fCategory" tag="Farsight"/>
+    <exprreq message="Farsight required."><![CDATA[#hasfeat[fFarsight] <> 0]]></exprreq>
+    <exprreq message="Glimpse the Flow required."><![CDATA[hero.childfound[xGlimpsFlo].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <exprreq message="Improved Farsight required."><![CDATA[#hasfeat[fIFarsight] <> 0]]></exprreq>
+    </thing>
+  <thing id="fShapeFlow" name="Shape the Flow" description="You cause a ripple in the flows of Fate, subtly shifting them in favor of your own spell&apos;s success.\n\n{b}Benefit{/b}: By expending one use of your Glimpse the Flow ability, you can add 1/2 of your normal bonus to the save DCs of spells from your chosen school. This is a swift action and the bonus applies to all spells cast over the normal duration of Glimpse the Flow, even if the effects of the spells last longer.\n\nFor example, the caster could use Shape the Flow and boost the DC of his {i}major image{/i} spell for as long as he maintained concentration. If his enemies interact with the illusion 1 hour later, they will still have to pass the increased save DC.\n\n{b}Special{/b}: You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new school of magic to which you already have applied the Spell Focus feat." compset="Feat" summary="Use Glimpse the Flow to add 1/2 normal bonus to DCs of chosen school">
+    <usesource source="LawfulGCus"/>
+    <tag group="fShowWhat" tag="FocSchools"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="BonusFor" tag="Wizard"/>
+    <tag group="fCategory" tag="Farsight"/>
+    <exprreq message="Glimpse the Flow required."><![CDATA[hero.childfound[xGlimpsFlo].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <prereq message="Spell Focus required.">
+      <validate><![CDATA[
+        foreach pick in hero where "component.SplSchool"
+          if (eachpick.tagis[Broadcast.SpellFocus] <> 0) then
+            @valid = 1
+            done
+            endif
+          nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="ioAngMask" name="Angelounian Mask" description="These masks range from simple to ornate, but bear only simple enchantments. They are often marked with symbols that those familiar with Angelounian heraldry can interpret to learn something of the wearer." compset="Wondrous">
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gCost" value="1"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Hero" tag="EqpEyes"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="wNaeralDag" name="Dagger, Nae&apos;ral Punching" description="These needle-like punching daggers are frequently used as a pair by Angelounian warriors. They are braced against the wrists in a way that the untrained find awkward, but leads to enhanced control, allowing more frequent critical strikes." compset="Weapon">
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gSizeCost" value="5"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="DexReq" tag="13"/>
+    <tag group="wClass" tag="Light"/>
+    </thing>
+  <thing id="rAngelou" name="Angelounian" description="+2 to Bluff, Concentration, and Spellcraft checks\n\n{b}General Info{/b}: The angelounians are an old race, though weak of body each is strong of mind and possesses an innate ability for prophecy. It is both a gift and a curse, for no matter how they try, they cannot change what must be. Still, thier culture is one that emphasises both stoicism and serenity, so they bear the burden well.\n\n{b}Personality{/b}: Most angelounians are serious and reserved, keeping secrets close, but offering counsel to those who they trusts. They often puzzle those around them by acting on future information, and this makes those around them nervous. Above all, they must struggle to relate to the world as seen by those firmly rooted in the present, or else be shunned as alien by all.\n\n{b}Physical Description{/b}: Modern angelounians bear little resemblance to the Ancients of legend (see Mask Dependant). They are about the same height as humans, though many suffer from twisted spines, resulting in a permanent stoop. Other common afflictions are scaly black scabs, weeping sores, and jaundiced, leathery skin. They are also significantly more slight than the human norm, with long, wasted limbs that somehow still possess a modicum of their ancestor&apos;s grace. Clothing is frequently baggy and always chosen for maximum coverage, with hooded robes of various styles being the norm. The face is concealed by a glamered mask that can change it&apos;s appearance, and any other exposed flesh, such as the hands, is tightly wrapped in linen strips.\n\nIf one can get through the mask and layers of clothing, they will notice angelounian eye color varies but is always an intense shade. Commonly seen are red (light pink to bloody crimson), blue (aqua to sapphire) or green (yellow-green to darkest emerald). Hair comes in all the same colors as the common races, but is frequently patchy and hidden away under a hood. Niether males nor females are known to grow facial hair.\n\n{b}Alignment{/b}: Angelounian culture teaches the ways of Kael (that which must be) and emphasises discipline of mind to meet the future without flinching. Most willingly follow the paths of destiny and fulfill their roles in the Kael, but some few reject this and seek to alter some future fate. Whether motivated by selfish (determined to escape a grim fate) or altruistic (seeking to avert some terrible disaster) reasons, these are among the most desperate and dangerous individuals in the world.\n\nAngelounians tend strongly toward Lawful alignments, and are generally good or nuetral.\n\n{b}Religion{/b}: Angelounians believe first and foremost in Kael. Beyond that, the dualistic philosophy of Len&apos;thi (the mind, a force of discipline) and Dao&apos;len (the physical, a force of chaotic instinct) which roughly translates to Light and Shadow, provides daily instruction. Magic is the imposition of the Len&apos;thi through Kael to forge a change in Dao&apos;len. It requires intense discipline and is considered the highest art.\n\nThough they acknowledge both their existance and power, angelounians do not generally worship the gods. To thier way of thinking, all things have thier parts to play in the Kael, from the mightiest gods to the lowliest ant, and power does not entitle one to worship.\n\n{b}Language{/b}: Much like druidic, Angelounian remains a secret language, imbued in each member of the race upon creation and not taught to others.\n\nAngelounian words consist of syllables of 2, 3, or occasionally 4 letters for particularly powerful words. The second letter of a syllable must be a vowel, unless it is replaced by a soft h, in which it can be pushed forward or back one space, such as in &quot;thi&quot; or ahn. When vowels are paired, the second is modified to say its name, unless they are the first two letters of a word (in which case the first is emphasised). There are few &quot;powerful&quot; sounds such as a hard &quot;k&quot;, which is often replaced by &quot;q&quot; of softer intonation. Syllables are seperated by &apos; which indicates a slight pause when speaking, and words are seperated by spaces, which are longer pauses. \n\n{b}Names{/b}: There is no distinction between male and female names among angelounians. Both have a name of two syllables that they choose upon their birth and never change. There is no such thing as a &quot;family&quot; name, but a third, variable syllable is often added to the end as an honorific to denote position and power. For example, Farseers are often called &quot;Fea&quot;.\n\nCommon examples include: Fai&apos;lon, Lun&apos;ea, Ahn&apos;fe, Hin&apos;sal, Ean&apos;qol, Sha&apos;yan" compset="Race">
+    <comment/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="-2"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="rInfAutoLn" value="Angelounian, Boulmaukan"/>
+    <fieldval field="rInfFavor" value="Wizard"/>
+    <fieldval field="rSTR" value="-2"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Race" tag="Angelou"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="SpecSource" tag="Angelou" name="Angelounian" abbrev="Ang"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Language" tag="Any"/>
+    <bootstrap thing="lAngelou"></bootstrap>
+    <bootstrap thing="rAngSkills"></bootstrap>
+    <bootstrap thing="lBoulmauka"></bootstrap>
+    <bootstrap thing="xMaskDep"></bootstrap>
+    <bootstrap thing="xGlimpsFlo"></bootstrap>
+    <eval phase="UserPreLv" priority="10000">~ +2 to Bluff, Concentration, Spellcraft checks
+      #skillbonus[kBluff] += 2
+      #skillbonus[kConcent] += 2
+      #skillbonus[kSpellcr] += 2</eval>
+    </thing>
+  <thing id="rHumPale" name="Human (Paleface)" description="Paleface is the term boulmaukans use to refer to the light skinned peoples of the various colonies founded by Ansalonian powers. They range from blond haired and blue eyed Solamnians to hook-nosed and curly haired descendants of Ishtar." compset="Race">
+    <fieldval field="rSkill" value="1"/>
+    <fieldval field="rInfFavor" value="Any"/>
+    <fieldval field="rInfAutoLn" value="Common, Regional Language"/>
+    <fieldval field="rAgeMin" value="16"/>
+    <fieldval field="rHeightMnF" value="55"/>
+    <fieldval field="rHeightMxF" value="73"/>
+    <fieldval field="rWeightMnF" value="89"/>
+    <fieldval field="rWeightMxF" value="245"/>
+    <fieldval field="rHeightMnM" value="60"/>
+    <fieldval field="rHeightMxM" value="78"/>
+    <fieldval field="rWeightMnM" value="124"/>
+    <fieldval field="rWeightMxM" value="280"/>
+    <fieldval field="rFeat" value="1"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="Human" name="Human" abbrev="Human"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <bootstrap thing="lOther"></bootstrap>
+    </thing>
+  <thing id="lBoulmauka" name="Boulmaukan" description="Boulmaukan is the lingua franca of more than half the world. It is analagous to Common, but spoken among the various indiginous tribes and peoples rather than the descendants of Ansalonian colonists. Many traders that travel between the groups speak both, and widely traveled adventurers also often find it convienant to know at least a smattering of each.\n\nIt is derived from Balakan, the language originally spoken in Za&apos;angi, the first boulmaukan kingdom." compset="Language">
+    <usesource source="LawfulGCus"/>
+    </thing>
+  <thing id="rHumBoul" name="Human (Boulmaukan)" description="Boulmaukan&apos;s are the human races that occupied Antarria prior to its discovery by Ansalonian explorers. Although initally less technologically advanced than the colonists, they have adapted and progressed rapidly since first contact, while retaining their own culture and worldview. \n\nPhysically, they have dark skin that ranges from ebon black to lighter brown, and tend to have dark hair colors. Beyond that, the only unifying factor that ties them together are a belief in their common pantheon of four elemental gods." compset="Race">
+    <fieldval field="rSkill" value="1"/>
+    <fieldval field="rInfFavor" value="Any"/>
+    <fieldval field="rInfAutoLn" value="Common, Regional Language"/>
+    <fieldval field="rAgeMin" value="16"/>
+    <fieldval field="rHeightMnF" value="55"/>
+    <fieldval field="rHeightMxF" value="73"/>
+    <fieldval field="rWeightMnF" value="89"/>
+    <fieldval field="rWeightMxF" value="245"/>
+    <fieldval field="rHeightMnM" value="60"/>
+    <fieldval field="rHeightMxM" value="78"/>
+    <fieldval field="rWeightMnM" value="124"/>
+    <fieldval field="rWeightMxM" value="280"/>
+    <fieldval field="rFeat" value="1"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="Human" name="Human" abbrev="Human"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <bootstrap thing="lBoulmauka"></bootstrap>
+    <bootstrap thing="lOther"></bootstrap>
+    </thing>
+  <thing id="ioAshLast" name="Ashes of the Last" compset="Wondrous" uniqueness="unique">
+    <fieldval field="gWeight" value="25"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Hero" tag="EqpBack"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="thing" tag="holder"/>
+    <tag group="gType" tag="Wonder"/>
+    <bootstrap thing="xDamRsFire"></bootstrap>
+    <eval phase="UserPreLv" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        hero.child[ArmorClass].field[tACDeflect].value = maximum(hero.child[ArmorClass].field[tACDeflect].value, 5)
+        hero.child[ArmorClass].field[BonInsight].value = maximum(hero.child[ArmorClass].field[BonInsight].value, 5)
+        hero.child[vFort].field[vResist].value = maximum(hero.child[vFort].field[vResist].value, 5)
+        hero.child[vRef].field[vResist].value = maximum(hero.child[vRef].field[vResist].value, 5)
+        hero.child[vWill].field[vResist].value = maximum(hero.child[vWill].field[vResist].value, 5)
+        #applyresist[xDamRsFire, 30]
+        endif]]></eval>
+    </thing>
+  <thing id="xScaleInf" name="Scaly Influence" description="You gain a +2 bonus on all charisma checks made against scaled creatures such as fish and reptiles. Against snake creatures the bonus increases to +5." compset="Special" summary="+2 on Charisma checks vs scaled creatures, +5 vs serpents.">
+    <usesource source="LawfulGCus"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpSourceEq"/>
+    </thing>
+  <thing id="iBarransho" name="Barranshoer" description="Crafted by a dwarven master armorer from the King of Serpents himself, Barranshoer is posessed of many unique powers.\n\nIt seems quite attached to Vadania, and has the power to shift to and from snake form, as well as granting its wearer sway over serpents." compset="MagicArmor" uniqueness="unique">
+    <fieldval field="gWeight" value="30"/>
+    <fieldval field="BonEnhance" value="1"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="mArcFail" tag="25"/>
+    <tag group="mClass" tag="Medium"/>
+    <tag group="mCategory" tag="Slows"/>
+    <tag group="mAC" tag="5"/>
+    <tag group="mMaxDex" tag="4"/>
+    <tag group="mArmorChk" tag="3"/>
+    <bootstrap thing="xScaleInf"></bootstrap>
+    </thing>
+  <thing id="rChaWindRi" name="Chaos Windrider" description="The Chaos twisted these two allies so that they are literally inseparable. The Silvanesti was combined at the waist to his griffin companion, creating a centaurian creature. The once proud elf&#146;s skin is a dusty grey pallor with a mucus like membrane covering it. The griffin&#146;s fur is falling out in tufts, revealing shiny scales underneath and its tail is a meager skeletal remains. The most drastic change is its wings, the feathers all sway with a semblance of sentience, wanting to grasp anything that comes to close and drain life force from the unfortunate victim. The Elf&#146;s face is twisted in pain and his eyes glow with a malice matching the most blood-hungry beasts.\n\nThis creature resides in its old eyrie, protecting it from anything that would approach. It surprises its&#146; target from the air, ripping it apart with its claws before the abominable wings grab it and suck the living soul out of the creature." compset="Race">
+    <fieldval field="rSTR" value="10"/>
+    <fieldval field="rDEX" value="6"/>
+    <fieldval field="rCON" value="8"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rAttack" value="10"/>
+    <fieldval field="rFort" value="7"/>
+    <fieldval field="rRef" value="7"/>
+    <fieldval field="rWill" value="3"/>
+    <fieldval field="rAC" value="9"/>
+    <fieldval field="rCR" value="8"/>
+    <fieldval field="rInfAutoLn" value="Elven"/>
+    <fieldval field="rInfHit" value="10d10 (10 levels of magical beast)"/>
+    <fieldval field="rHitDice" value="10"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rSpace" value="10"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Race" tag="typMagBeas"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Race" tag="stypChaos"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Average"/>
+      <autotag group="Value" tag="80"/>
+      </bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wHeadButt">
+      <autotag group="wMain" tag="1d8_6"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wKick">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="wRake">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="lElven"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="xImpGrab"></bootstrap>
+    <bootstrap thing="xDrainWing"></bootstrap>
+    <eval phase="UserPreLv" priority="10000"><![CDATA[      ~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)
+
+      ~ We have Rapier (rather than Kick) attacks
+      hero.child[wKick].field[wShortName].text = "Rapier"
+      perform hero.child[wKick].delete[wType.B]
+      perform hero.child[wKick].assign[wType.P]
+      perform hero.child[wKick].delete[wCritMin.20]
+      perform hero.child[wKick].assign[wCritMin.18]
+
+      ~ We have Wing (rather than Headbutt) attacks
+      hero.child[wHeadButt].field[wShortName].text = "Wing"]]></eval>
+    </thing>
+  <thing id="xDrainWing" name="Draining Wings" description="Each round that the Chaos tainted windrider begins grappling, it&apos;s wings envelop foes and draw forth their vital fluids, doing XXX Con dam (DCYY Fort neg)." compset="Special" summary="Wings drain blood from grappled foes, XdX Con dam (DCYY Fort neg).">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="ioCircDrea" name="Circlet of Dreams" compset="Wondrous" summary="Enter dreams, 1/month">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="gWeight" value=".5"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipMag"/>
+    </thing>
+  <thing id="rDArgent" name="D&apos;Argent" description="D&apos;Argent is a silver dragon who has been trapped in her humanoid form, yet retains much of her draconic strength and durability." compset="Race">
+    <fieldval field="rSTR" value="22"/>
+    <fieldval field="rCON" value="12"/>
+    <fieldval field="rINT" value="14"/>
+    <fieldval field="rWIS" value="14"/>
+    <fieldval field="rCHA" value="14"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rAttack" value="31"/>
+    <fieldval field="rFort" value="17"/>
+    <fieldval field="rRef" value="17"/>
+    <fieldval field="rWill" value="17"/>
+    <fieldval field="rAC" value="30"/>
+    <fieldval field="rInfAutoLn" value="Common, Draconic"/>
+    <fieldval field="rInfHit" value="31d12 (31 levels of Dragon)"/>
+    <fieldval field="rHitDice" value="31"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <tag group="Race" tag="stypCold"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Race" tag="TrueDragon"/>
+    <tag group="Race" tag="typDragon"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kUseMagic"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="Language" tag="Any"/>
+    <bootstrap thing="xVulFire"></bootstrap>
+    <bootstrap thing="xFrightPre"></bootstrap>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <bootstrap thing="typDragon"></bootstrap>
+    <bootstrap thing="stypCold"></bootstrap>
+    <bootstrap thing="xCloudWalk"></bootstrap>
+    <bootstrap thing="xDamRdMag">
+      <autotag group="Value" tag="15"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Value" tag="27"/>
+      </bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="xImmCold"></bootstrap>
+    <bootstrap thing="xImmAcid"></bootstrap>
+    <bootstrap thing="rDarkVis">
+      <autotag group="Value" tag="120"/>
+      </bootstrap>
+    <bootstrap thing="rBlindsen">
+      <autotag group="Value" tag="60"/>
+      </bootstrap>
+    <bootstrap thing="xKeenSense"></bootstrap>
+    </thing>
+  <thing id="fImpAltFor" name="Improved Alternate Form" description="Alternate form increases in effect and becomes Change Shape, allowing you to keep your superior physical stats, natural armor, and other advantages." compset="Feat" uniqueness="useronce">
+    <usesource source="LawfulGCus"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Caster level 9th required."><![CDATA[herofield[tMaxCaster].value >= 9]]></exprreq>
+    <exprreq message="Dragon type required."><![CDATA[tagis[Race.typDragon] <> 0]]></exprreq>
+    <exprreq message="Alternate Form required."><![CDATA[hero.childfound[xAlterForm].tagis[Helper.ShowSpec] <> 0]]></exprreq>
+    <exprreq message="Old age category or older required."><![CDATA[hero.childfound[xAgeCat].field[Value].value >= 8]]></exprreq>
+    </thing>
+  <thing id="iClawCharo" name="Claws of Charon" description="A living symbiote that lives off the kills of it&apos;s master, the trials that Fai&apos;lon went through to recieve this boon are likely unspeakable.\n\nCharon&apos;s claws are reach weapons that can be used against adjacent foes without penalty. They function as a part of the wearer&apos;s body, effectively becoming natural weapons and so cannot be disarmed, although they can be sundered (hardness 5, Hp 25). If sundered, they cannot be used to attack for 1d4+2 rounds while they regenerate their structure. The claws do not hinder fine manipulations such as spellcasting, but are too bulky to allow the wearing of a shield. They can be affected by either magic weapon or magic fang spells.\n\nAs a full round action, the claws can extend and make a single attack against a target up to 120 ft away. Treat this as a ranged attack." compset="MagicWep">
+    <fieldval field="BonEnhance" value="2"/>
+    <fieldval field="gWeight" value="20"/>
+    <fieldval field="gCost" value="20000"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="IsWeapon" tag="wClaw"/>
+    <tag group="wRangeInc" tag="10"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wMain" tag="1d8_6"/>
+    </thing>
+  <thing id="ioFaiGAStr" name="Fai&apos;lon&apos;s Gloves of Agile Striking" description="{i}These gloves are translucent and jelly-like. They feel like a second skin and are barely distinguishable from the flesh beneath{/i}.\n\n{i}Gloves of agile striking{/i} grant you brief bursts of impressive dexterity in combat. When you activate these gloves, you deal an extra 1d6 points of damage with ranged weapons and light weapons (as well as non light weapons that can be used with Weapon Finesse, such as a rapier). If you are delivering a skirmish attack (see the scout class, CAd 10), this bonus improves to 2d6. This effect lasts for 1 round.\n\nThis ability functions two times per day.\n\nFai&apos;lon&apos;s pair has also been enchanted to provide a +2 enhancement bonus to Dexterity." compset="Wondrous" uniqueness="unique">
+    <fieldval field="hTotal" value="2"/>
+    <fieldval field="gCost" value="6200"/>
+    <usesource source="LawfulGCus" name="Lawful G&apos;s Custom Stuff"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="Hero" tag="EqpHand"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aDEX], 2]
+      endif]]></eval>
+    </thing>
+  <thing id="ioFaiDrMas" name="Fai&apos;lon&apos;s Dragon Mask" description="This specially enchanted dragon mask is essential to the Farseer&apos;s passing unobserved. Like a {i}mask of lies{/i}, it grants the wearer a +5 competence bonus to Bluff &amp; constant {i}undetectable alignment{/i}, and like a {i}dragon mask{/i} it enables the wearer to {i}see invisibility{/i} 2 times per day as a swift action for 5 minutes each. \n\nIt also possesses the unique ability to conceal any number of magical auras that the wearer is in contact with, as {i}Nystul&apos;s magic aura{/i}, though any items set down detect normally after 10 rounds. This effect, when combined with her custom {i}greater alter self{/i} spell, allowed her to pass as any number of mundane people." compset="Wondrous" uniqueness="unique">
+    <fieldval field="hTotal" value="2"/>
+    <fieldval field="gCost" value="12000"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="LawfulGCus" name="Lawful G&apos;s Custom Stuff"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Hero" tag="EqpEyes"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <eval phase="First"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+         #competencebonus[hero.child[kBluff], 5]
+      endif]]></eval>
+    </thing>
+  <thing id="isFeldCane" name="Felden&apos;s Cane (Staff of Divination)" description="Made from a supple length of willow, often with a forked tip, this staff allows use of the following spells:\n\n&#149; Detect secret doors (1 charge)\n&#149; Locate object (1 charge)\n&#149; Tongues (1 charge)\n&#149; Locate creature (2 charges)\n&#149; Prying eyes (2 charges)\n&#149; True seeing (3 charges)\n\nStrong divination; CL 13th; Craft Staff, detect secret doors, locate creature, locate object, prying eyes, tongues, true seeing; Price 73,500 gp." compset="Staff">
+    <fieldval field="gCost" value="73500"/>
+    <fieldval field="hTotal" value="50"/>
+    <tag group="gType" tag="Staff" name="Staff" abbrev="Staff"/>
+    <bootstrap thing="hDetSecret">
+      <autotag group="ChargeUse" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="hTongues">
+      <autotag group="ChargeUse" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="hLocObject">
+      <autotag group="ChargeUse" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="hLocCreat">
+      <autotag group="ChargeUse" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="hPrying">
+      <autotag group="ChargeUse" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="hTrueSee">
+      <autotag group="ChargeUse" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="xFeldVoice"></bootstrap>
+    </thing>
+  <thing id="xFeldVoice" name="Felden&apos;s Voice" description="Crazy old Hermit Felden, once predicted the end of the world, for 100 years (never right)." compset="Special">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="SpSourceEq"/>
+    </thing>
+  <thing id="rSlugMonst" name="Slug, Monstrous" compset="Race">
+    <comment>Done</comment>
+    <fieldval field="rCON" value="16"/>
+    <fieldval field="rAttack" value="5"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rAC" value="6"/>
+    <fieldval field="rCR" value="7"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="7d8 (7 levels of vermin)"/>
+    <fieldval field="rHitDice" value="7"/>
+    <fieldval field="rSpace" value="15"/>
+    <fieldval field="rReach" value="15"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rSTR" value="22"/>
+    <fieldval field="rHPStart" value="34"/>
+    <fieldval field="rDEX" value="4"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceSize" tag="Huge2"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Race" tag="typVermin" name="Type - Vermin"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="Alignment" tag="NeutralGE"/>
+    <tag group="RaceType" tag="NPC"/>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="2d6_104"/>
+      </bootstrap>
+    <bootstrap thing="xBurrow">
+      <autotag group="Value" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="xClimb">
+      <autotag group="Value" tag="30"/>
+      </bootstrap>
+    <bootstrap thing="xDamRdS"></bootstrap>
+    <bootstrap thing="xMindless"></bootstrap>
+    <bootstrap thing="typVermin"></bootstrap>
+    <bootstrap thing="wSpit">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wRangeInc" tag="30"/>
+      <assignval field="wFixDamage" value="2d4 Acid &amp; 1d4/round"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+8 to Escape Artist"/>
+      </bootstrap>
+    <bootstrap thing="xTrample">
+      <autotag group="User" tag="1d8_6"/>
+      <autotag group="User" tag="DamHighStr"/>
+      </bootstrap>
+    <bootstrap thing="xParalyze">
+      <autotag group="User" tag="3d6_8"/>
+      <autotag group="User" tag="DurRd"/>
+      <autotag group="User" tag="Bite"/>
+      <autotag group="AbilType" tag="Extra"/>
+      <assignval field="xSumm" value="Foes struck by Bite, Grapple, or Trample may be paralyzed."/>
+      </bootstrap>
+    <bootstrap thing="xSqueeze"></bootstrap>
+    <bootstrap thing="xTremorsen"></bootstrap>
+    <eval phase="UserPreLv" priority="10000"><![CDATA[      ~ We have 60 foot Blindsense
+      hero.child[xTremorsen].field[Value].value = maximum(60, hero.child[xTremorsen].field[Value].value)
+
+      ~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)
+
+      ~ We don't have INT scores
+      perform hero.child[aINT].assign[Helper.NoScore]
+
+      ~ Our bite is not bludgeoning
+      perform hero.child[wBite].delete[wType.B]]]></eval>
+    <eval phase="Render" index="4">hero.child[xParalyze].field[CustDesc].text = &quot;A monstrous slug&#146;s body secretes an anaesthetizing slime. A target hit by a monstrous slug&#146;s bite, grapple, or trample attack must succeed on a Fortitude save or be paralyzed for 3d6 rounds. The save DC is Constitution-based.&quot;</eval>
+    <eval phase="First" priority="5000" index="2"><![CDATA[      var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kEscape].field[kInnate].arrayvalue[index] += 1
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 5
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 4
+      hero.child[kSurvival].field[kInnate].arrayvalue[index] += 10
+
+      ~Damage reduction 5/slashing
+      #applydr[xDamRdS, 5]
+
+      ~ We're very escapy though
+      #skillbonus[kEscape] += 8]]></eval>
+    </thing>
+  <thing id="xSqueeze" name="Squeeze" description="A monstrous slug&#146;s pliant body is capable of squeezing through narrow spaces with greater ease than its bulk would indicate. Monstrous slugs suffer only half the penalty for squeezing into a narrow space (&#150;2 AC and &#150;2 on attack rolls) and gain a +8 racial bonus on Escape Artist checks." compset="Special" summary="Squeezing penalties are reduced to -2 AC and -2 to attacks.">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="iWyrmslay" name="Wyrmslayer" description="Wyrmslayer was already an ancient sword when it came to Kith-Kanan, prince of Silvanesti, in the Age of Dreams before the founding of Qualinesti. It served him well for many years and was entombed with him when he died as Speaker of the Sun of Qualinesti.\n\nWyrmslayer is a +3 dragonbane longsword. It grants the wielder a +3 resistance bonus to saves against the breath weapons, spells, and spell-like abilities of all dragons. When it passes within 30 ft. of a true dragon, it emits a loud hum, loud enough not only to alert the wielder, but also to awaken and alert any dragon within 300 ft." compset="MagicWep">
+    <fieldval field="gSizeCost" value="15"/>
+    <fieldval field="gCost" value="36300"/>
+    <fieldval field="BonEnhance" value="3"/>
+    <usesource source="LawfulGCus"/>
+    <child entity="wSpecMagic">
+      <bootstrap thing="wLongsword"></bootstrap>
+      </child>
+    </thing>
+  <thing id="gCloak" name="Cloak" compset="Gear">
+    <fieldval field="gCost" value="20"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="Clothing"/>
+    <tag group="Helper" tag="GearSize"/>
+    </thing>
+  <thing id="ipPoSpAn" name="Potion of Speak with Animals" compset="OilPotion" stacking="merge">
+    <fieldval field="gCost" value="50"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="OilPotion"/>
+    </thing>
+  <thing id="gBookBalm" name="Book of Balming" compset="Gear">
+    <fieldval field="gWeight" value=".5"/>
+    <fieldval field="gCost" value="1"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="Books"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gBook" name="Book" description="A spellbook has 100 pages of parchment, and each spell takes up one page per spell level (one page each for 0-level spells)." compset="Gear" stacking="merge">
+    <fieldval field="gWeight" value="3"/>
+    <fieldval field="gCost" value="15"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="gType" tag="Books"/>
+    <tag group="Helper" tag="CustomSpec"/>
+    </thing>
+  <thing id="ipUnIDPotT" name="Potion, Unidentified (Transmutation)" description="This potion has yet to be Identified and has an aura of Transmutation." compset="OilPotion" stacking="merge">
+    <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="OilPotion"/>
+    </thing>
+  <thing id="ipUnIDPotC" name="Potion, Unidentified (Conjuration)" description="This potion has yet to be Identified and has an aura of Conjuration." compset="OilPotion" stacking="merge">
+  <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="OilPotion"/>
+    </thing>
+  <thing id="ipUnIDPotA" name="Potion, Unidentified (Abjuration)" description="This potion has yet to be Identified and has an aura of Abjuration." compset="OilPotion" stacking="merge">
+  <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="OilPotion"/>
+    </thing>
+  <thing id="ioAmHeaNaA" name="Amulet of Health +2, Nat Armor +2" compset="Wondrous">
+    <fieldval field="gCost" value="12000"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="Hero" tag="EqpNeck" name="Neck" abbrev="Neck"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aCON], 2]
+        #enhancementbonus[hero.child[mNatural], 2]
+        endif]]></eval>
+    </thing>
+  <thing id="ioRapCasIn" name="Circlet of Rapid Casting, +2 Intelligence" description="{b}Price (Item Level){/b}: 15,000 gp (14th)\n{b}Body Slot{/b}: Head\n{b}Caster Level{/b}: 11th\n{b}Aura{/b}: Moderate; (DC 20) transmutation\n{b}Activation{/b}: Swift (command)\n{b}Weight{/b}: &#151;\n\n{i}This golden circlet is engraved with dozens of different symbols and runes{/i}.\n\nA {i}circlet of rapid casting{/i} allows you to cast a small number of spells each day more quickly. This circlet has 3 charges, which are renewed each day at dawn. Spending 1 or more charges allows you to cast a single spell as part of the same swift action you used to activate the circlet. This spell must be one that normally has a casting time of no longer than 1 standard action. Doing this expends the prepared spell or spell slot as if you had cast the spell normally.\n\n{i}1 charge{/i}: Cast a single spell of up to 2nd level.\n{i}2 charges{/i}: Cast a single spell of up to 3rd level.\n{i}3 charges{/i}: Cast a single spell of up to 4th level.\n\n{i}Prerequisites{/i}: Craft Wondrous Item, Quicken Spell.\n\n{i}Cost to Create{/i}: 7,500 gp, 600 XP, 15 days." compset="Wondrous">
+    <fieldval field="gCost" value="20900"/>
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpHead" name="Head" abbrev="Head"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        #enhancementbonus[hero.child[aINT], 2]
+        endif]]></eval>
+    </thing>
+  <thing id="tmRemnant" name="Remnant" description="These lobotomized warriors have had most of their essences withdrawn and their best abilities harvested. They are similar to trained animals, but retain the much of the combat prowess they possessed prior to the operation. They move slowly but powerfully and are extremely tough.\n\nLose all racial abilities, including ability modifiers, HD change to d12s, recalculate skill points based on new intelligence (shifting to Climb, Jump, Swim, Hide, Move Silently, Ride, Spot and Listen). Feats remain unchanged (and ignore pre-requisites)." compset="Template" uniqueness="unique">
+    <fieldval field="tmSTR" value="4"/>
+    <fieldval field="tmDEX" value="-4"/>
+    <fieldval field="tmReplHD" value="12"/>
+    <fieldval field="tmInfHD" value="Change all HD to 12"/>
+    <fieldval field="tmCON" value="4"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <tag group="AlgnReq" tag="NeutNeut"/>
+    <bootstrap thing="xRemTough"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="xDamRdL"></bootstrap>
+    <eval phase="UserPreLv" priority="10000" index="2"><![CDATA[      var result as number
+
+      ~ bonus to natural armor based on size
+      var bonus as number
+      if (hero.tagis[Size.Small] <> 0) then
+        bonus = 2
+      elseif (hero.tagis[Size.Medium] <> 0) then
+        bonus = 3
+      elseif (hero.tagis[Size.Large] <> 0) then
+        bonus = 5
+      elseif (hero.tagis[Size.Huge] <> 0) then
+        bonus = 7
+      elseif (hero.tagis[Size.Gargantuan] <> 0) then
+        bonus = 10
+      elseif (hero.tagis[Size.Colossal] <> 0) then
+        bonus = 13
+        endif
+      hero.child[mNatural].field[Bonus].value += bonus
+
+      ~ Force our Wisdom to 10, our Charisma to 1 and our Intelligence to 2
+      hero.child[aINT].field[aNormForce].value = 2
+      hero.child[aWIS].field[aNormForce].value = 10
+      hero.child[aCHA].field[aNormForce].value = 1]]></eval>
+    <eval phase="UserFirst">~Damage reduction 5/lethal
+      #applydr[xDamRdL, 5]</eval>
+    </thing>
+  <thing id="xRemTough" name="Remnant Toughness" compset="Special" summary="Gain bonus Hp according to size">
+    <usesource source="LawfulGCus"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPreLv"><![CDATA[      var bonus as number
+      if (hero.tagis[Size.Small] <> 0) then
+        bonus = 5
+      elseif (hero.tagis[Size.Medium] <> 0) then
+        bonus = 10
+      elseif (hero.tagis[Size.Large] <> 0) then
+        bonus = 15
+      elseif (hero.tagis[Size.Huge] <> 0) then
+        bonus = 25
+      elseif (hero.tagis[Size.Gargantuan] <> 0) then
+        bonus = 40
+      elseif (hero.tagis[Size.Colossal] <> 0) then
+        bonus = 80
+        endif
+
+      ~ Add to our HP
+      herofield[tHP].value += bonus
+
+      ~ Set our name
+      field[livename].text = "Remnant Toughness (+" & bonus & " Hp)"]]></eval>
+    </thing>
+  <thing id="xDamRdL" name="Damage Reduction, Lethal" description="You have Damage Reduction against all except lethal damage." compset="Special" uniqueness="unique">
+    <usesource source="LawfulGCus"/>
+    <tag group="SpecType" tag="DR" name="Damage Reduction" abbrev="Damage Reduction"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the amount of damage we can resist
+      field[livename].text = "Damage Reduction (" & field[Value].value & "/lethal)"]]></eval>
+    </thing>
+  <thing id="iwWScoRay3" name="Wand of Scorching Ray (CL3)" compset="Wand">
+    <fieldval field="gCost" value="4500"/>
+    <fieldval field="hTotal" value="50"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="Wand"/>
+    </thing>
+  <thing id="iwWInvis3" name="Wand of Invisibility (CL 3)" compset="Wand">
+    <fieldval field="hTotal" value="50"/>
+    <fieldval field="gCost" value="4500"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="gType" tag="Wand"/>
+    </thing>
+  <thing id="rSidhe" name="Sidhe" description="Low-light vision (see twice as far as humans in low light conditions).\n+2 to Listen, Search and Spot checks. Passing within 5 feet of a concealed door allows an Elf to make a Search check to notice it." compset="Race">
+    <comment>Is this race really worth the effort? Check with Obsidian Portal stats and confirm abilities</comment>
+    <fieldval field="rCON" value="-2"/>
+    <fieldval field="rInfFavor" value="None"/>
+    <fieldval field="rInfAutoLn" value="Common, Elven"/>
+    <fieldval field="rAgeMin" value="114"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rHeightMxF" value="65"/>
+    <fieldval field="rWeightMnF" value="82"/>
+    <fieldval field="rWeightMxF" value="152"/>
+    <fieldval field="rHeightMnM" value="53"/>
+    <fieldval field="rHeightMxM" value="65"/>
+    <fieldval field="rWeightMnM" value="87"/>
+    <fieldval field="rWeightMxM" value="157"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rDEX" value="2"/>
+    <usesource source="LawfulGCus"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lGnoll" name="Gnoll" abbrev="Gnoll"/>
+    <tag group="Language" tag="lGnome" name="Gnome" abbrev="Gnome"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <tag group="Language" tag="lSylvan" name="Sylvan" abbrev="Sylvan"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <bootstrap thing="fWepElf">
+      <autotag group="SpecSource" tag="rElf"/>
+      </bootstrap>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="rElf"/>
+      </bootstrap>
+    <bootstrap thing="xPreSwift"></bootstrap>
+    <bootstrap thing="rElfSkills">
+      <autotag group="SpecSource" tag="rElf"/>
+      </bootstrap>
+    <eval phase="PreLevel" priority="10000">~ +2 to Listen, Search, Spot checks
+      #skillbonus[kListen] += 2
+      #skillbonus[kSearch] += 2
+      #skillbonus[kSpot] += 2</eval>
+    </thing>
+  <thing id="xPreSwift" name="Preternatural Swiftness" compset="Special">
+    <usesource source="LawfulGCus"/>
+    <tag group="SpecSource" tag="cHelpRgr"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="ioThingREn" name="A thing to reduce encumberance" compset="Wondrous">
+    <usesource source="LGHidden" name="Lawful G&apos;s Hidden stuff"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="User" tag="TestThing"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <eval phase="PostAttr" priority="2050" name="Thing A thing to reduce encumberance: Eval Script #1"><![CDATA[~ Are we equipped?
+if (field[gIsEquip].value <> 0) then
+
+~ This ability only takes place if we are at medium encumberance
+if (hero.tagis[Encumbered.Medium] = 0) then
+ done
+endif
+
+~ First check to see our equipped armor's ACP
+  var ArmPen as number
+
+  foreach pick in hero from BaseArmor where "Helper.CurrArmor"
+     ArmPen += each.field[mArmorChk].value
+  nexteach
+
+~ Then check to see our equipped shield's ACP
+  var ShlPen as number
+
+  foreach pick in hero from BaseArmor where "Helper.CurrShield"
+     ShlPen += each.field[mArmorChk].value
+  nexteach
+
+~ If our total ACP from armor and shield are greater than 3, do nothing
+
+  var TotPen as number
+  TotPen = ShlPen + ArmPen
+
+  if (TotPen <= -3) then
+    done
+  endif
+
+~ We have passed all tests so far, so apply the changes to skills, reducing the penalty from 3 to the Total Penalty...
+  foreach pick in hero from BaseSkill where "Helper.ArmorChk1"
+    each.field[Penalty].value += (3 + TotPen)
+  nexteach
+
+  foreach pick in hero from BaseSkill where "Helper.ArmorChk2"
+    each.field[Penalty].value += 6 + (TotPen * 2)
+  nexteach
+
+endif]]></eval>
+    <eval phase="PostAttr" priority="2100" index="2" name="Thing A thing to reduce encumberance: Eval Script #2"><![CDATA[if (field[gIsEquip].value <> 0) then
+  hero.child[Totals].field[tEncumLev].value = 0
+  hero.child[Totals].field[tEncumAbbr].value = 0
+  perform hero.delete[Encumbered.Medium]
+  perform hero.assign[Encumbered.Light]
+
+~ Now check to see if we are wearing medium or heavy armor, if so do nothing. If not, make our speed as normal.
+  foreach pick in hero from BaseArmor where "Helper.CurrArmor"
+     if (each.tagis[mClass.Medium] <> 0) then
+        done
+     endif
+
+     if (each.tagis[mClass.Heavy] <> 0) then
+        done
+     endif
+  nexteach
+
+  perform hero.delete[Hero.ArmorSpeed]
+
+endif]]></eval>
+    </thing>
+  </document>

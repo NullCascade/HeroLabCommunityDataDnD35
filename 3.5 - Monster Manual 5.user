@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>c7-3-10</info_history>
+    </fileinfo>
+  <thing id="rBlackwing" name="Blackwing" description="{i}This large skeletal bird&#146;s ragged, ebony wings end in masses of sharp, broken-off bones. Its red eyes seem full of malice and malign intelligence. Talons and a curved beak make up its natural armaments.{/i}\n\nBlackwings are the keen-eyed undead guardians of a fallen civilization.\n\n{b}STRATEGIES AND TACTICS{/b}\nBlackwings spend much of their time patrolling the hills and mountains surrounding their lairs. When they spot prey, they immediately plummet down to attack, using their frightful dive to enter combat.\n\nThey use differing tactics based on the nature of their foes. Blackwings facing flying opponents fight a hit-and-run battle, using their superior speed to divide their enemies before picking off stragglers. Against land-bound opponents, they prefer to hover close to the ground, creating debris clouds using their Hover feat (see page 204). Spellcasting within this cloud requires a DC 16 Concentration check.\n\nUnless dealt significant damage by other opponents, black wings focus their attacks on foes shaken or frightened because of frightful dives. Once they have slain their foes, blackwings carry the bodies back to their lair to search for shiny trinkets. Blackwings fight until destroyed.\n\nMembers of a flock of blackwings fight in concert, keeping as many foes as possible within debris clouds. They use wail of despair at the beginning of the battle, then gang up on one enemy at a time. Only when all enemies appear free of fear does a flock of blackwings bother wailing again.\n\nIf their lair is invaded, blackwings bull rush lightly armored or Small foes out of the cave and down the mountainside. Heavily armored enemies are then cornered and ripped apart. Blackwings mercilessly hunt down fleeing invaders." compset="Race">
+    <comment>Evasion</comment>
+    <fieldval field="rSTR" value="16"/>
+    <fieldval field="rDEX" value="6"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="4"/>
+    <fieldval field="rAttack" value="6"/>
+    <fieldval field="rFort" value="4"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rWill" value="8"/>
+    <fieldval field="rAC" value="8"/>
+    <fieldval field="rCR" value="8"/>
+    <fieldval field="rInfAutoLn" value="Auran, Common"/>
+    <fieldval field="rInfHit" value="12d12 (12 levels of Undead)"/>
+    <fieldval field="rHitDice" value="12"/>
+    <fieldval field="rSkillPlus" value="4"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rNumHands" value="0"/>
+    <usesource source="MonManual5" parent="p35" name="Monster Manual 5"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Race" tag="typUndead"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Average"/>
+      <autotag group="Value" tag="80"/>
+      </bootstrap>
+    <bootstrap thing="lAuran"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d8_6"/>
+      </bootstrap>
+    <bootstrap thing="xWailDespa"></bootstrap>
+    <bootstrap thing="xFrightDiv"></bootstrap>
+    <bootstrap thing="cAnimEvas"></bootstrap>
+    <bootstrap thing="xDamRdB"></bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <eval phase="PreLevel" priority="10000">~ Set up our damage reduction
+      #applydr[xDamRdB, 5]
+
+      ~ +4 to Spot checks
+      #skillbonus[kSpot] += 4</eval>
+    <eval phase="First" priority="5000" index="2">~ Change the attributes on Concentration
+      perform hero.child[kConcent].assign[SkillOver.aCHA]</eval>
+    <eval phase="PostLevel" priority="10000" index="3"><![CDATA[      ~ We don't have a CON score because we're undead, and above that sort of petty nonsense
+      perform hero.child[aCON].assign[Helper.NoScore]]]></eval>
+    </thing>
+  <thing id="xFrightDiv" name="Frightful Dive" description="When a flying blackwing charges a target below it, that foe must succeed on a DC 18 Will save or be shaken for 1 round (or frightened if already shaken). In addition, a blackwing can make two claw attacks against a target that fails its save. The save DC is Charisma based. This is a mind-affecting fear effect." compset="Special" summary="Charged foe is shaken 1 rd (DCXX Will neg), 2 claw att vs foe that fails.">
+    <comment>xSumm</comment>
+    <usesource source="MonManual5"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[  var DC as number
+  DC = 10 + herofield[tHitDice].value/2 + hero.child[aCHA].field[aModBonus].value
+  DC = round(DC, 0, -1)
+
+ field[xSumm].text = "Charged foe is shaken 1 rd (DC" & DC & " Will neg), 2 claw att vs foe that fails."]]></eval>
+    </thing>
+  <thing id="xWailDespa" name="Wail of Despair" description="When two or more blackwings within 30 feet of one another scream, their cries combine to create a wail of despair, which affects all creatures within 100 feet of any wailing blackwing. Any creature in the area must succeed on a DC 18 Will save or cower for 1d4 rounds and be shaken for 4 rounds thereafter. For every additional two blackwings participating in a wail of despair, the DC increases by 2. The effect of multiple wails does not stack. The save DC is Charisma-based. This is a mind-affecting fear ability." compset="Special" summary="Need 2, foes in 100 ft cower d4, shaken 4 rds (DCXX Will neg). +2 DC after 2.">
+    <comment>xSumm</comment>
+    <usesource source="MonManual5"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[  var DC as number
+  DC = 10 + herofield[tHitDice].value/2 + hero.child[aCHA].field[aModBonus].value
+  DC = round(DC, 0, -1)
+
+ field[xSumm].text = "Need 2, foes in 100 ft cower d4, shaken 4 rds (DC" & DC & " Will neg). +2 DC after 2."]]></eval>
+    </thing>
+  <thing id="rKuotouCra" name="Kuo-toa, crazed" description="{i}This fishlike humanoid&#146;s eyes bulge out, and it shrieks as it charges you. It swings a massive stone club as if the weapon were as light as a toothpick.{/i}\n\nMadness plagues the kuo-toas. Owing to centuries of inbreeding and dedication to a perverse deity, a large number of kuo-toas are mentally unstable. Some kuo-toas slide over into utter lunacy, turning into murderous creatures. Crazed kuo-toas are no larger than their fellows, but their mental illness makes them animalistic, giving them abnormal might, agility, and resilience.\n\nKuo-toa whips use their crazed underlings as disposable shock troops. In some cases, however, a leader exiles the insane to areas just outside the main settlement, leaving them to fend for themselves. The crazed kuo-toas are then no longer a strain on the community&#146;s resources, but they still act as that settlement&#146;s outermost ring of defense.\n\n{b}Strategies and Tactics{/b}\nCrazed kuo-toas hurl themselves at their enemies, heedless of safety. They use Power Attack at its maximum, reducing their commitment to this tactic only when it becomes evident it&#146;s costing them the opportunity to draw blood." compset="Race">
+    <fieldval field="rSTR" value="7"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="7"/>
+    <fieldval field="rINT" value="-1"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rInfFavor" value="Barbarian"/>
+    <fieldval field="rInfAutoLn" value="Kuo-toun"/>
+    <fieldval field="rInfHit" value="4d8 (4 levels of monstrous humanoid)"/>
+    <fieldval field="rHitDice" value="4"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="6"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <usesource source="MonManual5"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="WepProf" tag="wGreatclub"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Race" tag="stypAqua"/>
+    <tag group="Race" tag="typMonHuma"/>
+    <bootstrap thing="xLightBlin"></bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <bootstrap thing="xSwim">
+      <autotag group="Value" tag="50"/>
+      </bootstrap>
+    <bootstrap thing="lKuoToan"></bootstrap>
+    <bootstrap thing="xImmParaly"></bootstrap>
+    <bootstrap thing="xImmPois"></bootstrap>
+    <bootstrap thing="xImmMind"></bootstrap>
+    <bootstrap thing="xAmphib"></bootstrap>
+    <bootstrap thing="xKeenSight"></bootstrap>
+    <bootstrap thing="xSlippery"></bootstrap>
+    <bootstrap thing="typMonsHum"></bootstrap>
+    <bootstrap thing="stypAqua"></bootstrap>
+    <eval phase="PreLevel" priority="10000" index="2">~ +2 to Hide, Listen, and Spot checks, +8 to swim checks
+      #skillbonus[kEscape] += 8
+      #skillbonus[kSearch] += 4
+      #skillbonus[kSpot] += 4</eval>
+    </thing>
+  <thing id="lKuoToan" name="Kuo-toun" description="Spoken by the terrible fish people, the kuo-tou" compset="Language" uniqueness="unique"></thing>
+  <thing id="xKeenSight" name="Keen Sight" description="Crazed kuo-toas can spot moving objects or creatures that are invisible or ethereal. Only by remaining perfectly still can such objects or creatures avoid notice." compset="Special" summary="Can see moving invisible or ethereal creatures." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Sense"/>
+    </thing>
+  <thing id="xDeathRage" name="Death Rage" description="A crazed kuo-toa that has 10 or fewer hit points gains a +2 bonus on melee attack rolls and melee damage rolls." compset="Special" summary="When less than 10 Hp, +2 to melee attack and damage." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xSlippery" name="Slippery" description="Crazed kuo-toas secrete an oily film. Webs, magical or otherwise, don&#146;t affect crazed kuo-toas, and they can usually wriggle free from most forms of confinement." compset="Special" summary="Immune to magical or mundane webs, can wriggle free of most confinement." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="xLightBlin" name="Light Blindness" description="Blinded for 1 round in daylight, then dazzled when still in daylight." compset="Special" summary="Blinded for 1 round, then dazzled by bright sunlight or the daylight spell." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Weakness" name="Weakness" abbrev="Weakness"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="rSkulSerp" name="Skull Lord, Serpentir" description="{i}A serpentlike abomination of bone crawls stealthily toward you, both ends crowned by a skull with burning eyes. The creature appears to be composed of a series of linked torsos whose moving ribs propel it forward. Two pairs of taloned skeletal arms reach for you as the monstrosity attacks.{/i}\n\nSerpentirs are unnatural predators, preferring to stalk foes from the shadows rather than face them in a stand-up fight. Their talent for stealth and their speed make them favor quick strikes and hit-and-run tactics.\n\n{b}Strategies and Tactics{/b}\nA serpentir conceals itself from foes whenever possible, shadowing them for hours as it sizes up their abilities and learns their habits. It takes great delight in attacking without warning, using walls, ceilings, and difficult terrain to its advantage. A serpentir attempts to grapple a weak-looking creature, draw that foe into its churning ribs, then retreat. If it has had time to prepare, it takes a preplanned Serpentir escape route that is difficult for foes to follow, such as a steep mine shaft or a rubble-filled corridor. If this tactic proves successful, the serpentir continues to stalk the group, attacking in the same way at the next opportunity.\n\nIf cornered or forced to fight, a serpentir does not shy away from battle. It moves quickly as one move action, then brings five claw attacks to bear against individual targets, using its remaining standard and full-round actions. A cornered serpentir faced with only a single creature always attempts to grapple and draw that foe into its churning ribs.\n\n{b}Ecology{/b}\nA serpentir is born with a hunger it can never satisfy. Compelled to devour living prey, these creatures are then forced to watch their mangled meals drop through empty ribs, leaving them eternally ravenous.\n\nThe skull lords created serpentirs, but their uncontrollable urge for slaughter has led a lot of these creatures to escape their servitude. Necromancers have since learned the art of creating these menaces, and chaotic necromantic cabals spawn such dangerous predators as implements of mindless terror.\n\n{b}Environment{/b}: Serpentirs favor underground environments, and they are spawned with an innate understanding of the subterranean world. Their urge to feed on the living leads a large number of free serpentirs to seek hunting grounds near humanoid settlements. Mines are a favored habitat, as are the sewer tunnels beneath human cities. Graveyards riddled with catacombs, shantytowns built around twisting alleyways, and abandoned castles make good serpentir lairs.\n\n{b}Typical Physical Characteristics{/b}: A serpentir consists of a number of skeletal torsos linked together spine to spine, forming a serpentlike mass of twisting ribs and vertebrae some 15 feet long and weighing 300 pounds. At each end, the creature bears a skull and two long arms with clawed hands. The prehensile ribs of a serpentir click softly as they undulate, shifting like the myriad legs of a centipede. Bits of decaying flesh and shreds of rotten cloth cling to the creature&#146;s jagged bones, remnants of its previous unsatisfying meals." compset="Race">
+    <comment>replace all around vis
+
+{b}Although not stated in the MM V entry, the stat block also seems to include a +4 racial bonus to Search and Spot, which has been added here.{/b} (It was part of the All Around Vision thing)</comment>
+    <fieldval field="rDEX" value="10"/>
+    <fieldval field="rINT" value="-6"/>
+    <fieldval field="rWIS" value="6"/>
+    <fieldval field="rCHA" value="1"/>
+    <fieldval field="rSpeed" value="50"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="6"/>
+    <fieldval field="rCR" value="4"/>
+    <fieldval field="rInfAutoLn" value="Understands Creator"/>
+    <fieldval field="rHitDice" value="8"/>
+    <fieldval field="rInfHit" value="8d12 (8 levels of undead)"/>
+    <fieldval field="rSkillPlus" value="4"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rAC" value="1"/>
+    <fieldval field="rSTR" value="4"/>
+    <fieldval field="rHPStart" value="52"/>
+    <usesource source="MonManual5"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="AlgnReq" tag="ChaotEvil"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="SpecSource" tag="Serpentir" name="Serpentir"/>
+    <tag group="Race" tag="typUndead" name="Type - Undead"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <bootstrap thing="xImpGrab">
+      <autotag group="User" tag="Claw"/>
+      <assignval field="xSumm" value="Hit with 2 claws can start a grapple as free action. Pull foe into own space."/>
+      </bootstrap>
+    <bootstrap thing="xSenseEmo">
+      <autotag group="Value" tag="60"/>
+      </bootstrap>
+    <bootstrap thing="xClimb">
+      <autotag group="Value" tag="20"/>
+      </bootstrap>
+    <bootstrap thing="xAllAroVis"></bootstrap>
+    <bootstrap thing="xChurnRib"></bootstrap>
+    <bootstrap thing="xDualAct"></bootstrap>
+    <bootstrap thing="xDamRdB"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <bootstrap thing="rStability"></bootstrap>
+    <bootstrap thing="xImmCold"></bootstrap>
+    <bootstrap thing="xImmFlank"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Listen, +8 to Hide and Move Silently"/>
+      </bootstrap>
+    <eval phase="Render" index="6">hero.child[xImpGrab].field[CustDesc].text = &quot;To use this ability, a serpentir must hit an opponent of up to Medium size with two or more claw attacks. It can then attempt to start a grapple as a free action without provoking attacks of opportunity.{br}{br}A grappled opponent can be drawn into the serpentir&#146;s churning ribs as a free action.&quot;
+
+hero.child[xAllAroVis].field[CustDesc].text = &quot;A serpentir&apos;s two heads allow it to look in any direction, providing a +4 racial bonus on Spot and Search checks. Opponents gain no benefit when flanking a serpentir.&quot;</eval>
+    <eval phase="First" priority="5000" index="3">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 3
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 3
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 2
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 3
+
+      ~ Set up our damage reduction
+      #applydr[xDamRdB, 5]
+
+      ~ +8 to Hide, Move Silently, +4 to Listen checks
+      #skillbonus[kListen] += 4
+      #skillbonus[kHide] += 8
+      #skillbonus[kMoveSil] += 8</eval>
+    <eval phase="PostAttr" priority="10000" index="4">#skillbonus[kConcent] += hero.child[aCHA].field[aModBonus].value</eval>
+    <eval phase="UserPreLv" index="2">~ We have no CON score, as we are undead and above that sort of petty nonsense.
+      perform hero.child[aCON].assign[Helper.NoScore]</eval>
+    </thing>
+  <thing id="xDualAct" name="Dual Actions" description="A serpentir&#146;s two independent heads allow it to take two rounds&#146; worth of action in any given round, as if it were two creatures. Thus, a serpentir can use two standard actions and two move actions, two full-round actions and two 5-foot steps, or some other combination." compset="Special" summary="Take 2 rounds worth of actions each round." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="SpecSource" tag="Race"/>
+    </thing>
+  <thing id="xSenseEmo" name="Sense Emotions" description="This ability functions like blindsense, except that a serpentir can detect only the presence and positions of living creatures." compset="Special" summary="As blindsense, but only detects living creatures." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Sense"/>
+    <tag group="SpecSource" tag="Race"/>
+    <eval phase="Final" priority="10100"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the range of our darkvision.
+      field[livename].text = field[name].text & " (" & field[Value].value & " feet)"]]></eval>
+    </thing>
+  <thing id="xChurnRib" name="Churning Ribs" description="A serpentir&#146;s elongated torso of prehensile ribs can chew creatures to pieces. Any Medium or smaller opponent successfully grappled by a serpentir can be drawn into the churning ribs as a free action. When this occurs, the serpentir is no longer considered to be grappling and can act and move normally, dragging the creature with it as it goes.\n\nOpponents in the churning ribs remain grappled until they succeed on a grapple check against the serpentir, allowing them to claw their way free. A creature within the churning ribs takes 2d6 points of piercing damage at the beginning of each of the serpentir&#146;s turns." compset="Special" summary="Free action, store grappled foe in ribs, no longer grappled, deal 2d6 damage/rd." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecSource" tag="Race"/>
+    </thing>
+  <thing id="rVerdReave" name="Verdant Reaver" description="{i}A creature resembling animated driftwood shambles into view, roots and undergrowth springing up from the ground where it walks. You hear the creak of twisting wood as it strides forward, thick limbs thrashing the ground as they reach for you.{/I}\n\nThose who live their lives in the service of a dryad become changed over time, becoming one with the natural world of their mistress. In the end, they are transformed into verdant reavers, losing all memory of their former lives as they become thralls of the fey.\n\n{b}STRATEGIES AND TACTICS{/b}\nA verdant reaver typically begins combat with a Powerful Charge to measure a foe&#146;s relative strength. Against weaker melee threats or creatures that have reach, a verdant reaver tries to remain adjacent to make use of its verdant rend ability. Foes that make multiple attacks in melee are instead kept 5 feet away, forcing them to move into the area of the reaver&#146;s verdant growth if they wish to attack. Since this movement cannot be accomplished with merely a 5-foot step, such foes cannot make a full attack. Additionally, they might provoke an attack of opportunity when they move through the verdant reaver&#146;s threatened area.\n\n{b}ECOLOGY{/b}\nWhen a dryad {i}charms{/i} a humanoid creature to her service, that creature slowly begins to absorb the essence of his fey mistress and the forest she defends. The life of a dryad&#146;s thrall is a harsh one. Such creatures experience all the wildness of the weather and the changing of the seasons, and they are forced to scramble for shelter, warmth, and food. Thralls must also survive the tasks their dryads set for them, including defending the dryad from threats, delivering messages to other dryads in the area, and searching through the forest for shiny stones, weathered wood, and other items that strike the dryad&#146;s fancy. \n\nIf a humanoid survives this treatment for a year and a day (and assuming the dryad does not simply grow bored and dismiss him), he awakens to find himself rooted to the ground. His transformation into a plant creature takes place over the course of that day. The creature&#146;s hair falls out, and his skin takes on the texture of bark. The thrall&#146;s dryad mistress might attempt to comfort him during this distressing and painful process. Attempting to cut or tear the creature from the ground kills it instantly, but a {i}remove disease{/i} or {i}remove curse{/i} spell frees the thrall from the transformation process.\n\nIf not freed before sundown, the thrall becomes a verdant reaver, forgetting nearly all its past life and possessing undying loyalty to the dryad who created it. \n\nEvil and neutral dryads delight in creating verdant reaver servants, seeking out those hapless souls who pass too close to their domains. Good dryads rarely make verdant reavers intentionally, sometimes discovering the process only after a romantic attraction to a humanoid turns to dark possessiveness. Thereafter, a good dryad creates a verdant reaver only if she believes a thrall is worthy of the punishment.\n\nFreeing a thrall from a dryad can be a simple matter of dispelling the {i}charm{/i} effect that binds it, but such creatures can also be easily freed while they sleep. A dryad&#146;s {i}charm person{/i} spell-like ability normally lasts 6 hours and can be used three times per day. This leaves a 6-hour period during which the thrall is free of the dryad&#146;s {i}charm{/i}. Dryads typically use {i}suggestion{/i} to order the thrall to sleep and take shelter until morning, whereupon the dryad can renew her {i}charm{/i}. If approached and awakened during this period, a thrall might be easily convinced to escape its servitude.\n\n{b}Environment{/b}: Verdant reavers live primarily in the temperate forests where dryads are found. However, those that have broken with or been dismissed by their dryad mistresses wander far afi eld in search of another mistress to obey and protect.\n\nIf properly commanded and treated well, a verdant reaver might follow a new mistress even out of its normal forest environment. Rumors sometimes tell of these creatures living entirely underground as the servants of strange druid sects.\n\n{b}Typical Physical Characteristics{/b}: Weighing 600 to 1,000 pounds, verdant reavers resemble animated fallen logs or driftwood more than living plants. They stand 12 to 15 feet tall, but their hunched posture makes them appear slightly shorter." compset="Race">
+    <fieldval field="rSTR" value="10"/>
+    <fieldval field="rCON" value="12"/>
+    <fieldval field="rINT" value="-4"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rAC" value="7"/>
+    <fieldval field="rCR" value="5"/>
+    <fieldval field="rInfHit" value="6 levels of Plant"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <usesource source="MonManual5"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Race" tag="typPlant"/>
+    <bootstrap thing="xVerdGrow"></bootstrap>
+    <bootstrap thing="xVerdRend"></bootstrap>
+    <bootstrap thing="xWoodStrid"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      </bootstrap>
+    <bootstrap thing="xVulFire"></bootstrap>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <bootstrap thing="typPlant"></bootstrap>
+    </thing>
+  <thing id="xWoodStrid" name="Woodland Stride" description="A verdant reaver can move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at its normal speed and without taking damage or suffering any other impairment. However, thorns, briars, and overgrown areas that have been magically manipulated to impede motion still affect it." compset="Special" summary="Unimpeded by natural terrain unless it has been magically manipulated." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="xVerdGrow" name="Verdant Growth" description="Squares adjacent to a verdant reaver spring up with low brush and tangled roots, even if they are actually bare stone. It costs 2 squares of movement to enter a square of verdant growth, and the DC of Tumble checks increases by 2 in such squares. This growth also imposes a &#150;2 penalty on Move Silently checks. Squares of verdant growth revert to their normal state as soon as a verdant reaver is no longer adjacent." compset="Special" summary="Adjacent squares temporarily grow brush, become difficult terrain." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="xVerdRend" name="Verdant Rend" description="If both of a verdant reaver&#146;s slams hit a single target that is touching the ground and adjacent to the reaver, verdant growth tears at that target, dealing an extra 1d8+7 points of damage." compset="Special" summary="When both slams hit adjacent foe, add extra 1d8+7 damage." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="rCarnagDem" name="Demon, Carnage" description="{i}Rushing forward, uttering an unintelligible battle cry, is a broadshouldered creature with overlong arms that end in massively oversized, clawed hands. Similar creatures follow it, seemingly drawing strength from their proximity to one another.{/i}\n\nCarnage demons exist only to destroy, and they revel in the ruin they wreak.\n\n{b}Strategies and Tactics{/b}\nDespite having massive claws, which they use to climb, carnage demons prefer to pummel their opponents. A lone carnage demon is still a brutal adversary, but such a loner flees if reduced to half of its full normal hit points or fewer. All carnage demons prefer to fight alongside individuals of their kind, venting their hatred on all other creatures.\n\nIn a group, carnage demons remain close to each other as they attack. Each one lets its fury rather than any sense of tactics dictate where its next attack is aimed, usually pounding whoever damaged it the most during the previous round. If fighting opponents that have no silvered weapons, carnage demons gladly provoke attacks of opportunity to get in among their enemies, quickly overwhelming softer targets such as spellcasters.\n\nCarnage demons are a danger to all creatures that aren&#146;t carnage demons. A carnage demon that has succumbed to its destructive appetite attacks nearby allies for no better reason than being unable to move to an enemy and attack it during the current round.\n\n{b}Ecology{/b}\nCarnage demons are the brutes among the lesser fiends of the Abyss. They are the destructive manifestation of chaos, spurred on by a burning desire to batter other creatures in the bloodiest and most painful ways possible. Although they are similar in power to dretches, they don&#146;t share the aimlessness of those dull fiends. Instead, carnage demons are filled with the singular purpose of pure destruction.\n\nSome consider carnage demons to be a forced evolution of the pathetic dretches, the product of a demon lord&#146;s attempt to create a more useful lesser demon. This theory gains some credence from the fact that, unlike most demons, carnage demons are not tanar&#146;ri. Their vulnerability to silvered weapons suggests they might have been created using materials from or related to devils.\n\n{b}Environment{/b}: Carnage demons, like most demons, are extraplanar creatures that are native to the Infinite Layers of the Abyss. Mobs of carnage demons can be found anywhere on that plane. They are always eager to spread destruction and slaughter, so they use any portal or gate they encounter, having no concern for where it might lead. As such, carnage demons can also be found near any place that harbors a gateway to the Abyss.\n\n{b}Typical Physical Characteristics{/b}: A carnage demon has a powerful humanoid build that borders on apelike, with long arms hanging nearly to the ground. Those arms end in forearms the size of tree trunks, as well as stubby hands with thick fingers and claws. The fiend&#146;s fanged mouth takes up most of its face, and its head seems slightly smaller than is proportional for its body.\n\nCarnage demons have skin that ranges from a bloody crimson to a darker red-brown. A typical carnage demon stands nearly 6 feet tall and weighs over 300 pounds.\n\n{b}Society{/b}\nThe carnage demon&#146;s particular purpose of mad destruction doesn&#146;t lend itself to fitting into any organized society, even a demonic one. Its dim intellect allows it to be easily enticed\nby the promise of devastation. In many cases, more powerful fiends, especially the more cunning demons such as adarus or succubi, loosely control groups of carnage demons.\n\nIn the vast hordes of fiendish armies that battle on the Lower Planes, demonic generals send mobs of carnage demons behind the first waves of dretches, since dretches are more likely to rush toward the enemy if the threat of death at the fists of carnage demons is spurring them onward. Carnage demons are perfect shock troops&#151;their savagery brings fear, death, and confusion to the opposing forces." compset="Race">
+    <fieldval field="rSTR" value="10"/>
+    <fieldval field="rCON" value="4"/>
+    <fieldval field="rINT" value="-5"/>
+    <fieldval field="rWIS" value="-4"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rAttack" value="3"/>
+    <fieldval field="rFort" value="3"/>
+    <fieldval field="rRef" value="3"/>
+    <fieldval field="rWill" value="3"/>
+    <fieldval field="rAC" value="3"/>
+    <fieldval field="rCR" value="4"/>
+    <fieldval field="rInfAutoLn" value="Abyssal"/>
+    <fieldval field="rInfHit" value="3d8 (3 levels of Outsider)"/>
+    <fieldval field="rHitDice" value="3"/>
+    <fieldval field="rSkillPlus" value="8"/>
+    <usesource source="MonManual5"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="AlgnReq" tag="ChaotEvil"/>
+    <tag group="Race" tag="stypChaos"/>
+    <tag group="Race" tag="stypEvil"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typOutside"/>
+    <bootstrap thing="xDamRsFire"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="xImmElec"></bootstrap>
+    <bootstrap thing="xImmPois"></bootstrap>
+    <bootstrap thing="xDamRdSil"></bootstrap>
+    <bootstrap thing="xAlignStCh"></bootstrap>
+    <bootstrap thing="xAlignStEv"></bootstrap>
+    <bootstrap thing="xCarnage"></bootstrap>
+    <bootstrap thing="xDestApp"></bootstrap>
+    <bootstrap thing="xReaveFist"></bootstrap>
+    <bootstrap thing="xDamRsAcid"></bootstrap>
+    <bootstrap thing="xDamRsCold"></bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <bootstrap thing="stypChaoti"></bootstrap>
+    <bootstrap thing="stypEvil"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <eval phase="First">#applyresist[xDamRsAcid, 10]
+#applyresist[xDamRsFire, 10]
+#applyresist[xDamRsCold, 10]
+
+#applydr[xDamRdSil, 5]</eval>
+    </thing>
+  <thing id="xAlignStEv" name="Aligned Strike (evil)" compset="Special" summary="Natural weapons count as evil for overcoming DR." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xAlignStCh" name="Aligned Strike (chaotic)" compset="Special" summary="Natural weapons count as chaotic for overcoming DR." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xDestApp" name="Destructive Appetite" description="A carnage demon is a threat even to its allies. After every successful melee attack, a carnage demon must succeed on a DC 14 Will save. If it fails, it attacks the nearest creature that is not a carnage demon whenever it is unable to attack an enemy during a given round." compset="Special" summary="After melee hit, DC14 Will or attack nearest non-carnage demon, even ally." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Weakness"/>
+    </thing>
+  <thing id="xCarnage" name="Carnage" description="For each other carnage demon within 30 feet, a carnage demon gains a +1 bonus on attack rolls and damage rolls, up to a maximum of +5." compset="Special" summary="+1 bonus on attack/damage for each carnage demon within 30 ft, max +5." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xReaveFist" name="Reaving Fists" description="A carnage demon&#146;s slams ignore damage reduction that can be overcome by any metallic material such as silver, cold iron, or adamantine." compset="Special" summary="Ignore DR overcome by silver, cold iron, or adamantine." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="rDemonMand" name="Demonthorn Mandrake" description="{i}Thorny red stalks grow out of a cluster of crimson roots that twitch and shudder. Star-shaped leaves ring the plant around a large, spiny seedpod at its heart. Two bristly vines sprout from either side of this pod.{/i}\n\n{b}STRATEGIES AND TACTICS{/b}\nIf used as a guardian, a demonthorn mandrake hides on a ceiling or wall, waiting for prey. Once combat begins, a demonthorn mandrake spits spore pods until all its enemies are infested with thorns, then it closes to engage in melee. In melee combat, a demonthorn mandrake uses its tangle root ability to prevent escape and thrashes opponents with slams.\n\nIn groups, demonthorn mandrakes fire spore pods to hit as many creatures as possible with little or no overlap. Then, groups of the plants single out enemies to attack, first targeting those who are suffering from spore pod thorns. Demonthorn mandrakes rarely retreat, having little sense of self-preservation.\n\n{b}ECOLOGY{/b}\nDemonthorn mandrakes do not need water or light to live &#151; they derive nourishment from the flesh of their victims. If starved of this food source for more than a month, a plant goes dormant and can continue to live for years without sustenance before finally withering and dying. A demonthorn mandrake&#146;s roots are extremely sensitive, allowing it to sense nearby creatures that are touching the ground even when it is dormant.\n\nDemonthorn mandrakes reproduce by using other living creatures as hosts. Medium or larger victims slain by mandrake spore pod thorns play host to a sapling plant, which grows to maturity in 1d4 hours, consuming most of the host creature&#146;s blood and flesh to fuel the process.\n\n{b}Environment{/b}: Demonthorn mandrakes are most commonly found on the Lower Planes, including the Abyss, the Nine Hells, and Gehenna. In these places, demonthorn mandrakes congregate in large groups.\n\nOn the Material Plane, demonthorn mandrakes are found guarding a specific place, under the direct control of a conjurer who called them, or wandering about, free to do as they please. Uncontrolled mandrakes hide in secluded places such as sewers, caverns, or forest glades, waiting for unsuspecting victims to wander by.\n\n{b}Typical Physical Characteristics{/b}: An average demonthorn mandrake stands about 8 feet tall and weighs 300 pounds. When rooted in place and motionless, demonthorn mandrakes appear more like odd plants than creatures. When it is moving, a demon thorn mandrake&#146;s roots extend and retract at a rapid pace, pulling the body of the plant along.\n\n{b}SOCIETY{/b}\nDemonthorn mandrakes get along well with others of their kind unless the group has not fed for some time, in which case they fight over every last scrap of food. Such battles rarely turn deadly.\n\nAs plant creatures, demonthorn mandrakes do not form societies, but a great demonthorn mandrake, the Mother Seed, exists somewhere in a particularly verdant locale in the Abyss. This Mother Seed is larger than any other demon thorn mandrake, and it possesses a cruel and cunning intellect. It is an authority that other demonthorn mandrakes obey without hesitation." compset="Race">
+    <fieldval field="rSTR" value="8"/>
+    <fieldval field="rCON" value="6"/>
+    <fieldval field="rINT" value="-3"/>
+    <fieldval field="rWIS" value="-1"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rDEX" value="1"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAttack" value="5"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rAC" value="8"/>
+    <fieldval field="rCR" value="5"/>
+    <fieldval field="rInfHit" value="7d8 (7 levels of Plant)"/>
+    <fieldval field="rHitDice" value="7"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <usesource source="MonManual5"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="AlgnReq" tag="NeutEvil"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typPlant"/>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="wMain" tag="2d6_104"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsElec"></bootstrap>
+    <bootstrap thing="xDamRsFire"></bootstrap>
+    <bootstrap thing="xTremorsen">
+      <assignval field="Value" value="40"/>
+      </bootstrap>
+    <bootstrap thing="xTanglRoot"></bootstrap>
+    <bootstrap thing="xSporePod"></bootstrap>
+    <bootstrap thing="typPlant"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <eval phase="First">#applyresist[xDamRsElec, 10]
+#applyresist[xDamRsFire, 10]
+
+      #skillbonus[kClimb] += 4
+      #skillbonus[kMoveSil] += 4</eval>
+    </thing>
+  <thing id="xSporePod" name="Spore Pods" description="As a standard action, a demonthorn mandrake can spit a spore pod to a range of 30 feet. The pod then explodes in a 10-foot-radius burst. All living creatures in the area take 1d8 points of damage as thorny growths burst from their faces. At the start of each of the demonthorn mandrake&#146;s turns, these thorns continue to grow, dealing 5 points of damage.\n\nEach affected opponent is allowed a DC 16 Fortitude save each round. If that save is successful, the thorns become brittle and fall off the creature&#146;s face. The thorns can also be pulled from a creature as a full-round action that deals 1d8 points of damage. Applying a vial of holy water to the thorns causes them to shrivel and die. The save DC is Constitution-based.\n\nIf a creature is already infested with spore pod thorns, it is immune to the damage and effect of this attack. If a Medium or larger creature is killed by damage from a demon thorn mandrake&#146;s thorns, a fully grown demonthorn mandrake emerges from the corpse in 1d4 hours." compset="Special" summary="Standard, shoot pod up to 30 ft, 10 ft burst for 1d8 dam/rd, Fort DC 16 neg." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xTanglRoot" name="Tangle Root" description="A demonthorn mandrake can extend its roots to a radius of 30 feet as a standard action. At the start of the demonthorn mandrake&#146;s turn, opponents in the area must make a DC 16 Reflex save or be entangled. A mandrake can&#146;t move when its roots are extended, but can retract the roots as a free action. The save DC is Constitution-based.\n\nWhen a mandrake&#146;s roots are extended, they scream with humanlike voices until retracted." compset="Special" summary="Standard, foes in 30 ft radius are entangled unless DC 16 Ref negates." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    </thing>
+  <thing id="xImmCrit" name="Immune to Critical Hits" description="You are immune to critical hits." compset="Special" uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Immune"/>
+    </thing>
+  <thing id="rGadacro" name="Demon, Gadacro" description="{i}A creature that looks like a bat-winged child with purple skin dives from the air, its black talons stretching out for your eyes. A necklace that appears to be fashioned from eyeballs dangles about its neck.{/i}\n\n{b}Strategies and Tactics{/b}\nGadacros are wild and reckless, using Flyby Attack to slash and harry their opponents. Once they blind a foe, the gadacros in a group surround that creature, intent on tearing it apart. If the battle turns against them, they fall back to use {i}mirror image{/i} and {i}summon tanar&#146;ri{/i} to seemingly and literally inflate their numbers.\n\n{b}Ecology{/b}\nDespite having no need for sustenance, gadacros crave the flesh of the living all the same. Specifi cally, they relish their victims&#146; eyes, preferably plucked from the skull of a victim that still lives. Gadacros rarely agree on who among them should have the right to eat the tastiest bits.\n\n{b}Environment{/b}: Gadacros can be found anywhere in the Infinite Layers of the Abyss, though they are common in the Screaming Peaks of Yeenoghu&#146;s Realm on the 422nd layer.\n\n{b}Typical Physical Characteristics{/b}: Gadacros are small, with cherubic features and purple scaled skin. Their large heads bear horns. A typical gadacro stands 4 feet tall and weighs 35 pounds.\n\n{b}Society{/b}\nEach gadacro group has a single leader. Smarter, stronger, and quicker than the rest, the leader attains its position by assassinating its rivals. It then pits the other members of the group against one another, using favoritism to engender loyalty in certain members. Of course, the disaffected resent this treatment, and eventually replace the leader with one of theirs." compset="Race">
+    <fieldval field="rSTR" value="-3"/>
+    <fieldval field="rDEX" value="8"/>
+    <fieldval field="rCON" value="5"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="4"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rInfAutoLn" value="Abyssal, Celestial, Draconic; telepathy 100 ft."/>
+    <fieldval field="rInfHit" value="4d8 (4 levels of Outsider)"/>
+    <fieldval field="rHitDice" value="4"/>
+    <fieldval field="rSkillPlus" value="8"/>
+    <usesource source="MonManual5"/>
+    <tag group="RaceSize" tag="Small11"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="AlgnReq" tag="ChaotEvil"/>
+    <tag group="Race" tag="stypChaos"/>
+    <tag group="Race" tag="stypEvil"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="Race" tag="stypTanari" name="Subtype - Tanar&#146;ri"/>
+    <bootstrap thing="wTalon">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      <autotag group="wCritMin" tag="18"/>
+      <autotag group="wCritMult" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="xSneakAtt"></bootstrap>
+    <bootstrap thing="rDarkVis">
+      <assignval field="Value" value="120" behavior="maximum"/>
+      </bootstrap>
+    <bootstrap thing="xEyethief"></bootstrap>
+    <bootstrap thing="xSudEscape"></bootstrap>
+    <bootstrap thing="xSumTanar"></bootstrap>
+    <bootstrap thing="rLowLight2">
+      <assignval field="Value" value="2"/>
+      </bootstrap>
+    <bootstrap thing="xSpEarthbi"></bootstrap>
+    <bootstrap thing="xMirrorIma"></bootstrap>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="lCelestial"></bootstrap>
+    <bootstrap thing="xImmElec"></bootstrap>
+    <bootstrap thing="xImmPois"></bootstrap>
+    <bootstrap thing="xDamRdIron"></bootstrap>
+    <bootstrap thing="xDamRdGood"></bootstrap>
+    <bootstrap thing="xFly">
+      <autotag group="Value" tag="40"/>
+      <autotag group="Maneuver" tag="Perfect"/>
+      </bootstrap>
+    <bootstrap thing="xTelepath2">
+      <assignval field="Value" value="100"/>
+      </bootstrap>
+    <bootstrap thing="xAlignStCh"></bootstrap>
+    <bootstrap thing="xAlignStEv"></bootstrap>
+    <bootstrap thing="xDamRsAcid"></bootstrap>
+    <bootstrap thing="xDamRsCold"></bootstrap>
+    <bootstrap thing="xDamRsFire"></bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <bootstrap thing="stypChaoti"></bootstrap>
+    <bootstrap thing="stypEvil"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="stypTanari"></bootstrap>
+    <eval phase="PostLevel" index="2">~ Adjust our Talon attack
+perform hero.child[wTalon].delete[wCritMin.20]
+perform hero.child[wTalon].delete[wCritMult.2]
+
+      ~ Add one to our Sneak Attack
+hero.child[xSneakAtt].field[Value].value += 1</eval>
+    <eval phase="First">#applyresist[xDamRsAcid, 10]
+#applyresist[xDamRsCold, 10]
+#applyresist[xDamRsFire, 10]
+
+#applydr[xDamRdIron, 5]
+#applydr[xDamRdGood, 5]
+
+      #skillbonus[kSpot] += 4
+      #skillbonus[kEscape] += 4</eval>
+    </thing>
+  <thing id="xSumTanar" name="Summon Tanar&apos;ri" description="35% chance to summon 1d2 gadacros; 1/day; caster level 4th. This ability is the equivalent of a 2nd-level spell." compset="Special" summary="1/day, 35% chance to summon 1d2 gadacros." uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="xEyethief" name="Eyethief" description="An gadacro can forgo its sneak attack damage or extra damage on a confirmed critical hit to instead blind its opponent for 5 rounds. A creature that has been blinded in this way cannot be affected again until it has recovered from the current effect. Creatures that lack eyes are immune." compset="Special" summary="Sacrifice extra sneak attack or critical hit damage to blind for for 5 rounds." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xSudEscape" name="Sudden Escape" description="If an gadacro takes damage from a melee attack, it can, as an immediate action, disappear in a puff of smoke and brimstone and reappear in a square up to 20 feet away to which it has line of sight." compset="Special" summary="Immediate, if damaged in melee teleport to square up to 20 ft away." uniqueness="unique">
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="xSpEarthbi" name="{i}Earthbind{/i}" description="{b}Transmutation{/b}\n{b}Level{/b}: Druid 2, sorcerer/wizard 2\n{b}Components{/b}: V, S\n{b}Casting Time{/b}: 1 standard action\n{b}Range{/b}: Medium (100 ft. + 10 ft./level)\n{b}Target{/b}: One creature\n{b}Duration{/b}: 1 minute/level (D)\n{b}Saving Throw{/b}: Fortitude negates\n{b}Spell Resistance{/b}: Yes\n\n{i}You intone words of binding and point at your foe. Yellow strings of magical energy loop about its wings, dragging it to ground.{/i}\n\nYou hinder the subject&#146;s ability to fly (whether through natural or magical means) for the duration of the spell. If the target fails its saving throw, its fly speed (if any) becomes 0 feet. An airborne creature subjected to this spell falls to the ground as if under the effect of a {i}feather fall{/i} spell. Even if a new effect would grant the creature the ability to fly, that effect is suppressed for the duration of the {i}earthbind{/i} spell.\n\nEarthbind has no effect on other forms of movement, or even on effects that might grant airborne movement without granting a fly speed (such as jumping or {i}levitate{/i} or {i}air walk{/i} spells)." compset="Special" summary="1/day, use {i}earthbind{/i} as the spell" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="xMirrorIma" name="{i}Mirror image{/i}" description="1/day, use {i}mirror image{/i} as the spell." compset="Special" summary="1/day, use {i}mirror image{/i} as the spell." uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="MonManual5"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  </document>

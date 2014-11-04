@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="ioPhUnd2" name="Phylactery of Undead Turning" description="This item is a boon to any character able to turn undead, allowing him to do so as if his class level were four levels higher than it actually is.{br}{br}Moderate necromancy [good]; CL 10th; Craft Wondrous Item, 10th-level cleric; Price 11,000 gp." compset="Wondrous" replaces="ioPhUnd">
+    <fieldval field="gCost" value="11000"/>
+    <tag group="Hero" tag="EqpHead"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        hero.childfound[xTurning].field[Value].value = hero.childfound[xTurning].field[Value].value + 4
+        endif]]></eval>
+    </thing>
+  <thing id="ioPortHol2" name="Portable Hole" description="A portable hole is a circle of cloth spun from the webs of a phase spider interwoven with strands of ether and beams of starlight. When opened fully, a portable hole is 6 feet in diameter, but it can be folded up to be as small as a pocket handkerchief. When spread upon any surface, it causes an extradimensional space 10 feet deep to come into being. This hole can be picked up from inside or out by simply taking hold of the edges of the cloth and folding it up. Either way, the entrance disappears, but anything inside the hole remains.{br}{br}The only air in the hole is that which enters when the hole is opened. It contains enough air to supply one Medium creature or two Small creatures for 10 minutes. The cloth does not accumulate weight even if its hole is filled. Each portable hole opens on its own particular nondimensional space. If a bag of holding is placed within a portable hole, a rift to the Astral Plane is torn in that place. Both the bag and the cloth are sucked into the void and forever lost. If a portable hole is placed within a bag of holding, it opens a gate to the Astral Plane. The hole, the bag, and any creatures within a 10-foot radius are drawn there, the portable hole and bag of holding being destroyed in the process.{br}{br}Moderate conjuration; CL 12th; Craft Wondrous Item, plane shift; Price 20,000 gp." compset="Wondrous" replaces="ioPortHole">
+    <fieldval field="gCost" value="20000"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="thing" tag="holder"/>
+    <gear>~ Our contents count for no weight at all!
+      field[gearNet].value = field[gearWeight].value</gear>
+    </thing>
+  <thing id="gCustHld2" name="- Custom Container -" description="Use this item to represent a bag or other container in which gear can be carried around." compset="Gear" replaces="gCustHold">
+    <tag group="Helper" tag="Custom" name="Custom" abbrev="Custom"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="gType" tag="Custom" name="Custom Gear" abbrev="Custom Gear"/>
+    <tag group="thing" tag="holder" name="Holder" abbrev="???"/>
+    <eval phase="First">~ Override our weight and cost with the user fields
+      field[gWeight].value = field[gUsrWeight].value 
+      field[gCost].value = field[gUsrCost].value</eval>
+    </thing>
+  <thing id="gCustGear" name="- Custom Gear -" description="This item can be customized to represent whatever you want." compset="Gear" replaces="gCustom" stacking="new">
+    <tag group="Helper" tag="Custom" name="Custom" abbrev="Custom"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="gType" tag="Custom" name="Custom Gear" abbrev="Custom Gear"/>
+    <eval phase="First">~ Override our weight and cost with the user fields
+      field[gWeight].value = field[gUsrWeight].value 
+      field[gCost].value = field[gUsrCost].value</eval>
+    </thing>
+  <thing id="gCustLoc" name="- Custom Location -" description="Use this item to represent a place to store your gear - for example, a house, or as buried treasure somewhere." compset="Gear" replaces="gCustTop">
+    <tag group="Helper" tag="Custom" name="Custom" abbrev="Custom"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="gType" tag="Custom" name="Custom Gear" abbrev="Custom Gear"/>
+    <tag group="thing" tag="holder_top" name="Top Holder" abbrev="???"/>
+    <eval phase="First">~ Override our weight and cost with the user fields
+      field[gWeight].value = field[gUsrWeight].value 
+      field[gCost].value = field[gUsrCost].value</eval>
+    </thing>
+  <thing id="gInkBlack2" name="Ink (1 oz., black)" compset="Gear" replaces="fInkBlack" stacking="merge">
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="8"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="gType" tag="AdventGear" name="Adventuring Gear" abbrev="Adventuring"/>
+    </thing>
+  <thing id="gInkColor2" name="Ink (1 oz., colored)" compset="Gear" replaces="fInkColor" stacking="merge">
+    <fieldval field="gWeight" value="-1"/>
+    <fieldval field="gCost" value="16"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="gType" tag="AdventGear" name="Adventuring Gear" abbrev="Adventuring"/>
+    </thing>
+  <thing id="cvRgrWld2" name="Ranger with Wild Shape" description="Trades the Ranger&apos;s Combat style (along with improved combat style and combat style mastery) for Wild shape as a Druid (only gaining small and medium animals), and fast movement as a Barbarian." compset="ClassVary" replaces="cvRgrWild" uniqueness="unique">
+    <arrayval field="cvCustTot" index="1" value="-1"/>
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="SpcReplace" tag="cRgrStyle" name="Combat Style" abbrev="Combat Style"/>
+    <tag group="SpcReplace" tag="cRgrMastSt" name="Combat Style Mastery" abbrev="Combat Style Mastery"/>
+    <tag group="SpcReplace" tag="cRgrImpSt" name="Improved Combat Style" abbrev="Improved Combat Style"/>
+    <bootstrap thing="cDrdWild2">
+      <autotag group="SpecSource" tag="cHelpRgr"/>
+      </bootstrap>
+    <bootstrap thing="cDrdWild3">
+      <autotag group="SpecSource" tag="cHelpRgr"/>
+      </bootstrap>
+    <bootstrap thing="cDrdWild4">
+      <autotag group="SpecSource" tag="cHelpRgr"/>
+      </bootstrap>
+    <bootstrap thing="cDrdWild5">
+      <autotag group="SpecSource" tag="cHelpRgr"/>
+      </bootstrap>
+    <bootstrap thing="cDrdWild6">
+      <autotag group="SpecSource" tag="cHelpRgr"/>
+      </bootstrap>
+    <bootstrap thing="cBbnFast">
+      <autotag group="SpecSource" tag="cHelpRgr"/>
+      </bootstrap>
+    <bootstrap thing="cDrdWild1">
+      <autotag group="SpecSource" tag="cHelpRgr"/>
+      </bootstrap>
+    <link linkage="varies" thing="cHelpRgr"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      ~we're not allowed to take a ranger style
+      perform hero.delete[Hero.NeedRgrSt]]]></eval>
+    </thing>
+  <thing id="tmLich2" name="Lich Template" description="Type changes to Undead, +5 natural armor, paralyzing touch attack, fear aura, turn resistance, damage resistance 15 (bludgeoning, magic), immunity to cold, electricity, polymorph and mind-affecting attacks, +8 to Hide, Listen, Move Silently, Search, Sense Motive and Spot, must be Evil{br}{br}A lich is an undead spellcaster, usually a wizard or sorcerer but sometimes a cleric or other spellcaster, who has used its magical powers to unnaturally extend its life. A lich is a gaunt and skeletal humanoid with withered flesh stretched tight across horribly visible bones. Its eyes have long ago been lost to decay, but bright pinpoints of crimson light burn on in the empty sockets." compset="Template" replaces="tmLich" uniqueness="unique">
+    <fieldval field="tmInfHD" value="All current and future become d12s"/>
+    <fieldval field="tmReplHD" value="12"/>
+    <fieldval field="tmINT" value="2"/>
+    <fieldval field="tmWIS" value="2"/>
+    <fieldval field="tmCHA" value="2"/>
+    <fieldval field="tmAC" value="5"/>
+    <fieldval field="cLevelAdj" value="4"/>
+    <tag group="SpecSource" tag="Lich" name="Lich" abbrev="Lich"/>
+    <tag group="TemplHelp" tag="Acquired" name="Acquired" abbrev="Acquired"/>
+    <tag group="AlgnReq" tag="Evil" name="Any Evil" abbrev="Any Evil"/>
+    <tag group="NoScore" tag="aCON"/>
+    <bootstrap thing="xLichTouch"></bootstrap>
+    <bootstrap thing="xLichFear"></bootstrap>
+    <bootstrap thing="xDamRdMag">
+      <autotag group="SpecSource" tag="Lich"/>
+      </bootstrap>
+    <bootstrap thing="xDamRdB">
+      <autotag group="SpecSource" tag="Lich"/>
+      </bootstrap>
+    <bootstrap thing="xImmCold">
+      <autotag group="SpecSource" tag="Lich"/>
+      </bootstrap>
+    <bootstrap thing="xImmElec">
+      <autotag group="SpecSource" tag="Lich"/>
+      </bootstrap>
+    <bootstrap thing="xImmPoly">
+      <autotag group="SpecSource" tag="Lich"/>
+      </bootstrap>
+    <bootstrap thing="xImmMind">
+      <autotag group="SpecSource" tag="Lich"/>
+      </bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <bootstrap thing="xTurnRes">
+      <autotag group="SpecSource" tag="Lich"/>
+      </bootstrap>
+    <eval phase="First" priority="50000" index="2"><![CDATA[~ assign correct Race tags
+  perform hero.delete[Race.?]
+  perform hero.assign[Race.typUndead]
+
+~ remove other types and subtypes
+  foreach pick in hero from BaseSpec where "thingid.styp? | thingid.typ? & !thingid.typUndead"
+   perform each.delete[Helper.ShowSpec]
+  nexteach]]></eval>
+    <eval phase="PostLevel" priority="10000">~ We have bonuses to Hide, Listen, Search and Spot
+      #skillbonus[kHide] += 8
+      #skillbonus[kListen] += 8
+      #skillbonus[kSearch] += 8
+      #skillbonus[kSpot] += 8
+      #skillbonus[kMoveSil] += 8
+      #skillbonus[kSenseMot] += 8
+
+      ~ Set up our damage reduction
+      var damage as number
+      #applydr[xDamRdMag, 15]
+      #applydr[xDamRdB, 15]
+
+      ~ +4 Turn Resistance
+      hero.child[xTurnRes].field[Value].value = maximum(hero.child[xTurnRes].field[Value].value, 4)</eval>
+    </thing>
+  <thing id="tmGhost2" name="Ghost Template" description="Type changes to Undead, Fly (30 feet, Perfect), Incorporeal, Manifestation, 1-3 other special abilities, Rejuvenation, Turn Resistance{br}{br}Ghosts are the spectral remnants of intelligent beings who, for one reason or another, cannot rest easily in their graves. A ghost greatly resembles its corporeal form in life, but in some cases the spiritual form is somewhat altered." compset="Template" replaces="tmGhost" uniqueness="unique">
+    <fieldval field="tmInfHD" value="All current and future become d12s"/>
+    <fieldval field="tmReplHD" value="12"/>
+    <fieldval field="tmCHA" value="4"/>
+    <fieldval field="cLevelAdj" value="5"/>
+    <tag group="SpecSource" tag="Ghost" name="Ghost" abbrev="Ghost"/>
+    <tag group="TemplHelp" tag="Acquired" name="Acquired" abbrev="Acquired"/>
+    <tag group="NoScore" tag="aCON" name="Constitution" abbrev="Constitution"/>
+    <bootstrap thing="xFly2">
+      <autotag group="SpecSource" tag="Ghost"/>
+      </bootstrap>
+    <bootstrap thing="xTurnRes">
+      <autotag group="SpecSource" tag="Ghost"/>
+      </bootstrap>
+    <bootstrap thing="xGhostMani"></bootstrap>
+    <bootstrap thing="xGhostRej"></bootstrap>
+    <bootstrap thing="xGhostCorG"></bootstrap>
+    <bootstrap thing="xGhostCorT"></bootstrap>
+    <bootstrap thing="xGhostDrn"></bootstrap>
+    <bootstrap thing="xGhostMoan"></bootstrap>
+    <bootstrap thing="xGhostHorr"></bootstrap>
+    <bootstrap thing="xGhostMale"></bootstrap>
+    <bootstrap thing="xGhostTel2"></bootstrap>
+    <bootstrap thing="stypIncorp"></bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <eval phase="PostLevel" priority="10000">~ We have a STR scores
+      perform hero.child[aSTR].delete[Helper.NoScore]
+
+      ~ Set our fly speed
+      #applyvalue[xFly,30]
+      perform hero.child[xFly].assign[Maneuver.Perfect]
+
+      ~ We have bonuses to Hide, Listen, Search and Spot
+      #skillbonus[kHide] += 8
+      #skillbonus[kListen] += 8
+      #skillbonus[kSearch] += 8
+      #skillbonus[kSpot] += 8
+
+      ~ +4 Turn Resistance
+      #applyturnresist[4]</eval>
+    <eval phase="First" priority="50000" index="2"><![CDATA[~ assign correct Race tags
+  perform hero.delete[Race.?]
+  perform hero.assign[Race.typUndead]
+  perform hero.assign[Race.stypIncorp]
+
+~ remove other types and subtypes
+  foreach pick in hero from BaseSpec where "thingid.styp? | thingid.typ? & !thingid.typUndead & !thingid.stypIncorp"
+   perform each.delete[Helper.ShowSpec]
+  nexteach]]></eval>
+    </thing>
+  <thing id="ioBlDwarf2" name="Belt of Dwarvenkind" description="This belt gives the wearer a +4 competence bonus on Charisma checks and Charisma-based skill checks as they relate to dealing with dwarves, a +2 competence bonus on similar checks when dealing with gnomes and halflings, and a -2 competence penalty on similar checks when dealing with anyone else. The wearer can understand, speak, and read Dwarven. If the wearer is not a dwarf, he gains 60-foot darkvision, dwarven stonecunning, a +2 enhancement bonus to Constitution, and a +2 resistance bonus on saves against poison, spells, or spell-like effects.{br}{br}Moderate divination; CL 12th; Craft Wondrous Item, tongues, creator must be a dwarf; Price 14,900 gp; Weight 1 lb." compset="Wondrous" replaces="ioBlDwarf">
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gCost" value="14900"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpWaist" name="Waist" abbrev="Waist"/>
+    <bootstrap thing="lDwarven"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <containerreq phase="PreLevel" priority="5000"><![CDATA[ !Race.Dwarf & fieldval:gIsEquip <> 0]]></containerreq>
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <bootstrap thing="rStonecunn">
+      <containerreq phase="PreLevel" priority="5000"><![CDATA[!Race.Dwarf & fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="rDwSaves">
+      <containerreq phase="PreLevel" priority="5000"><![CDATA[ !Race.Dwarf & fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    <eval phase="PreLevel" priority="5000">doneif (field[gIsEquip].value = 0)
+
+perform hero.assign[Language.lDwarven]
+
+if (hero.tagis[Race.Dwarf] = 0) then
+ #enhancementbonus[hero.child[aCON], 2]
+endif</eval>
+    </thing>
+  </document>

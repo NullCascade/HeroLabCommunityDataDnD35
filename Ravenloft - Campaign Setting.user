@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="kCrafGun" name="Craft: Gunsmithing" description="You are skilled at the creation of gunpowder weapons and bullets." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatCraft" name="Craft Skill" abbrev="Craft Skill"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="wPistol" name="Pistol" description="This pistol holds a single shot and requires a standard action to reload." compset="Weapon">
+    <fieldval field="gSizeCost" value="250"/>
+    <fieldval field="gWeight" value="3"/>
+    <usesource source="RavCamSet" parent="pRaven" name="Ravenloft Campaign Setting"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d10_304"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wRangeInc" tag="50"/>
+    <tag group="IsWeapon" tag="wFirearms"/>
+    <tag group="wClass" tag="Light"/>
+    </thing>
+  <thing id="wMusket" name="Musket" description="The musket holds a single shot and requires a standard action to reload. A musket can be fitted with a bayonet or, as a last resort, used as a club." compset="Weapon">
+    <fieldval field="gSizeCost" value="500"/>
+    <fieldval field="gWeight" value="10"/>
+    <usesource source="RavCamSet"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d12_404"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wRangeInc" tag="150"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="IsWeapon" tag="wFirearms"/>
+    </thing>
+  <thing id="wFirearms" name="Firearms" compset="Weapon">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    </thing>
+  <thing id="cdMists" name="Mists" description="{b}Deity{/b}: Ezra\n\n{b}Granted Power{/b}: Once per day, you may call on the {i}Shield of Ezra{/i}, a film of luminous mist that envelops your body for 1 round per Cleric level. The form of protection granted is determined by your alignment. \n\n{b}{u}Mists Domain Spells{/u}{/b}\n{b}1{/b} - {i}Obscuring Mist{/i}: Fog surrounds you.\n{b}2{/b} - {i}Fog Cloud{/i}: Fog obscures vision.\n{b}3{/b} - {i}Gaseous Form{/i}: Subject becomes insubstantial and can fly slowly.\n{b}4{/b} - {i}Solid Fog{/i}: Blocks vision and slows movement.\n{b}5{/b} - {i}Mind Fog{/i}: Subjects in fog get &#150;10 to Wis and Will checks.\n{b}6{/b} - {i}Wind Walk{/i}: You and your allies turn vaporous and travel fast.\n{b}7{/b} - {i}Teleport, Greater{/i}: As teleport, but no range limit and no off-target arrival.\n{b}8{/b} - {i}Teleport Object{/i}: As teleport, but affects a touched object.\n{b}9{/b} - {i}Imprisonment{/i}: Entombs subject beneath the earth.\n\n{b}Source{/b}: Ravenloft Campaign Setting" compset="ClerDomain" summary="Once per day, you may call on the {i}Shield of Ezra{/i}." uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="SecClsAllw" tag="Mists"/>
+    <tag group="Domain" tag="Mists" name="Mists"/>
+    <bootstrap thing="xRvnShiEzr"></bootstrap>
+    </thing>
+  <thing id="xRvnShiEzr" name="Shield of Ezra" description="Once per day, you may call on the {i}Shield of Ezra{/i}, a film of luminous mist that envelops your body for 1 round per Cleric level. The form of protection granted is determined by your alignment. \n\n{i}Lawful Good{/i}: 25/magic damage reduction against metal weapons.\n\n{i}Lawful Neutral{/i}: 15/magic damage reduction against all physical attacks.\n\n{i}Neutral{/i}: +10 to all Fortitude and Reflex saves against damaging spells.\n\n{i}Lawful Evil{/i}: +10 to all will saves against mind-affecting spells and effects.\n\nThis is a supernatural ability." compset="Special" summary="Once per day, you may call on the {i}Shield of Ezra{/i}">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="sdMstObsMi" name="Obscuring Mist" description="A misty vapor arises around you {b}(a 20 ft. radius from you, 20 ft. high){/b}. It is stationary once created. The vapor obscures all sight, including darkvision, beyond 5 feet. A creature 5 feet away has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker cannot use sight to locate the target).\n\nA moderate wind (11+ mph), such as from a {i}gust of wind{/i} spell, disperses the fog in 4 rounds. A strong wind (21+ mph) disperses the fog in 1 round. A {i}fireball{/i}, {i}flame strike{/i}, or similar spell burns away the fog in the explosive or fiery spell&#146;s area. A {i}wall of fire{/i} burns away the fog in the area into which it deals damage.\n\nThis spell does not function underwater." compset="Spell" summary="Fog surrounds you.">
+    <fieldval field="sRange" value="20 ft"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="1" name="1" abbrev="1"/>
+    <tag group="sRange" tag="Feet" name="Feet" abbrev="Feet"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Creation" name="Creation" abbrev="Creation"/>
+    <tag group="Helper" tag="Domain" name="Domain" abbrev="Domain"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sdMstFogCl" name="Fog Cloud" description="A bank of fog billows out from the point you designate {b}(a 20 ft. radius, 20 ft. high spread){/b}. The fog obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker can&#146;t use sight to locate the target).\n\nA moderate wind (11+ mph) disperses the fog in 4 rounds; a strong wind (21+ mph) disperses the fog in 1 round.\n\nThe spell does not function underwater." compset="Spell" summary="Fog obscures vision.">
+    <fieldval field="sRange" value="Medium (100 ft.+10 ft./level)"/>
+    <fieldval field="sDuration" value="10 minutes/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Medium" name="Medium" abbrev="{ref s_Medium}Med{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Creation" name="Creation" abbrev="Creation"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    </thing>
+  <thing id="sdMstGasFo" name="Gaseous Form" description="The subject and all its gear become insubstantial, misty, and translucent. Its material armor (including natural armor) becomes worthless, though its size, Dexterity, deflection bonuses, and armor bonuses from force effects (for example, from the {i}mage armor{/i} spell) still apply. The subject gains damage reduction 10/magic and becomes immune to poison and critical hits. It can&#146;t attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. (This does not rule out the use of certain spells that the subject may have prepared using the feats Silent Spell, Still Spell, and Eschew Materials.) The subject also loses supernatural abilities while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the {i}gaseous form{/i} spell takes effect.\n\nA gaseous creature can&#146;t run, but it can fly at a speed of 10 feet (maneuverability perfect). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can&#146;t enter water or other liquid. It also can&#146;t manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot (such as those that supply armor or natural armor bonuses).\n\n{i}Arcane Material Component{/i}: A bit of gauze and a wisp of smoke." compset="Spell" summary="Subject becomes insubstantial and can fly slowly.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="2 minutes/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="3" name="3" abbrev="3"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="Helper" tag="Domain" name="Domain" abbrev="Domain"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    </thing>
+  <thing id="sdMstSolFo" name="Solid Fog" description="This spell functions like {i}fog cloud{/i}, but in addition to obscuring sight, the {i}solid fog{/i} is so thick that any creature attempting to move through it progresses at a speed of 5 feet, regardless of its normal speed, and it takes a &#150;2 penalty on all melee attack and melee damage rolls. The vapors prevent effective ranged weapon attacks (except for magic rays and the like). A creature or object that falls into {i}solid fog{/i} is slowed, so that each 10 feet of vapor that it passes through reduces falling damage by 1d6. A creature can&#146;t take a 5-foot step while in {i}solid fog{/i}.\n\nHowever, unlike normal fog, only a severe wind (31+ mph) disperses these vapors, and it does so in 1 round.\n\n{i}Solid fog{/i} can be made permanent with a {i}permanency{/i} spell. A permanent {i}solid fog{/i} dispersed by wind reforms in 10 minutes.\n\n{i}Material Component{/i}: A pinch of dried, powdered peas combined with powdered animal hoof." compset="Spell" summary="Blocks vision and slows movement.">
+    <fieldval field="sRange" value="Medium (100 ft.+10 ft./level)"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="sRange" tag="Medium" name="Medium" abbrev="{ref s_Medium}Med{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Creation" name="Creation" abbrev="Creation"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sdMstMndFo" name="Mind Fog" description="{i}Mind fog{/i} produces a bank of thin mist {b}(a 20 ft. radius, 20 ft. high spread){/b} that weakens the mental resistance of those caught in it. Creatures in the {i}mind fog{/i} take a &#150;10 competence penalty on Wisdom checks and Will saves. (A creature that successfully saves against the fog is not affected and need not make further saves even if it remains in the fog.) Affected creatures take the penalty as long as they remain in the fog and for 2d6 rounds thereafter. The fog is stationary and lasts for 30 minutes (or until dispersed by wind).\n\nA moderate wind (11+ mph) disperses the fog in four rounds; a strong wind (21+ mph) disperses the fog in 1 round.\n\nThe fog is thin and does not significantly hamper vision." compset="Spell" summary="Subjects in fog get &#150;10 to Wis and Will checks.">
+    <fieldval field="sRange" value="Medium (100 ft.+10 ft./level)"/>
+    <fieldval field="sDuration" value="30 mins and 2d6 Rds; See Text"/>
+    <fieldval field="sSave" value="Will Negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
+    <tag group="sDuration" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Medium" name="Medium" abbrev="{ref s_Medium}Med{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Enchant" name="Enchantment" abbrev="Ench"/>
+    <tag group="sSubschool" tag="Compulsion" name="Compulsion" abbrev="Compulsion"/>
+    <tag group="sSubschool" tag="MindAffect" name="Mind-Affecting" abbrev="MindAffect"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    </thing>
+  <thing id="sdMstWinWa" name="Wind Walk" description="You alter the substance of your body to a cloudlike vapor (as the {i}gaseous form{/i} spell) and move through the air, possibly at great speed. You can take other creatures with you {b}(one touched creature per three levels){/b}, each of which acts independently.\n\nNormally, a {i}wind walker{/i} flies at a speed of 10 feet with perfect maneuverability. If desired by the subject, a magical wind wafts a {i}wind walker{/i} along at up to 600 feet per round (60 mph) with poor maneuverability. {i}Wind walkers{/i} are not invisible but rather appear misty and translucent. If fully clothed in white, they are 80% likely to be mistaken for clouds, fog, vapors, or the like.\n\nA {i}wind walker{/i} can regain its physical form as desired and later resume the cloud form. Each change to and from vaporous form takes 5 rounds, which counts toward the duration of the spell (as does any time spent in physical form). As noted above, you can dismiss the spell, and you can even dismiss it for individual wind walkers and not others.\n\nFor the last minute of the spell&#146;s duration, a {i}wind walker{/i} in cloud form automatically descends 60 feet per round (for a total of 600 feet), though it may descend faster if it wishes. This descent serves as a warning that the spell is about to end." compset="Spell" summary="You and your allies turn vaporous and travel fast.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Special; See Text"/>
+    <fieldval field="sSave" value="Special; See Text"/>
+    <fieldval field="sResist" value="Special"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sDuration" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sLevel" tag="6" name="6" abbrev="6"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
+    <tag group="sSubschool" tag="Air" name="Air" abbrev="Air"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sdMstTelGr" name="Teleport, Greater" description="This spell functions like {i}teleport{/i}, except that there is no range limit and there is no chance you arrive off target. In addition, you need not have seen the destination, but in that case you must have at least a reliable description of the place to which you are teleporting (such as a detailed description from someone else or a particularly precise map). If you attempt to teleport with insufficient information (or with misleading information), you disappear and simply reappear in your original location. Interplanar travel is not possible." compset="Spell" summary="As teleport, but no range limit and no off-target arrival.">
+    <fieldval field="sRange" value="Personal and Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None and Will Negates"/>
+    <fieldval field="sResist" value="Special"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Teleport" name="Teleportation" abbrev="Teleport"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sLevel" tag="7" name="7" abbrev="7"/>
+    </thing>
+  <thing id="sdMstImpri" name="Imprisonment" description="When you cast {i}imprisonment{/i} and touch a creature, it is entombed in a state of suspended animation (see the {i}temporal stasis{/i} spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a {i}freedom{/i} spell is cast at the locale where the imprisonment took place. Magical search by a {i}crystal ball{/i}, a {i}locate object{/i} spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but {i}discern location{/i} does. A {i}wish{/i} or {i}miracle{/i} spell will not free the recipient, but will reveal where it is entombed. If you know the target&#146;s name and some facts about its life, the target takes a &#150;4 penalty on its save." compset="Spell" summary="Entombs subject beneath the earth.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sLevel" tag="9" name="9" abbrev="9"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    </thing>
+  <thing id="cdRvnRepos" name="Repose" description="{b}Deities{/b}: The Eternal Order, Osiris\n\n{b}Granted Power{/b}: You can grant [i}final rest{/i} by tracing your deity&#146;s symbol on a newly dead body.\n\n{b}{u}Repose Domain Spells{/u}{/b}\n{b}1{/b} - {i}Detect Undead{/i}: Reveals undead within 60 ft.\n{b}2{/b} - {i}Gentle Repose{/i}: Preserves one corpse.\n{b}3{/b} - {i}Speak with Dead{/i}: Corpse answers one question/two levels.\n{b}4{/b} - {i}Halt Undead{/i}: Immobilizes undead for 1 round/level.\n{b}5{/b} - {i}Raise Dead{/i}: Restores life to subject who died as long as one day/level ago.\n{b}6{/b} - {i}Antilife Shell{/i}: 10-ft.-radius field hedges out living creatures.\n{b}7{/b} - {i}Resurrection{/i}: Fully restore dead subject.\n{b}8{/b} - {i}Control Undead{/i}: Undead don&apos;t attack you while under your command.\n{b}9{/b} - {i}Soul Bind{/i}: Traps newly dead soul to prevent resurrection.\n\n{b}Source{/b}: Ravenloft Campaign Setting" compset="ClerDomain" summary="Once per day, grant a corpse {i}Final Rest{/i}." uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="SecClsAllw" tag="RvnRepose"/>
+    <tag group="Domain" tag="RvnRepose"/>
+    <bootstrap thing="xRvnFinRst"></bootstrap>
+    </thing>
+  <thing id="sdMstTelOb" name="Teleport Object" description="This spell functions like {i}teleport{/i}, except that it teleports an object {b}of up to 50 lb./level and 3 cu. ft./level{/b}, not you. Creatures and magical forces (such as a {i}delayed blast fireball{/i} bead) cannot be teleported.\n\nIf desired, the target object can be sent to a distant location on the Ethereal Plane. In this case, the point from which the object was teleported remains faintly magical until the item is retrieved. A successful targeted {i}dispel magic{/i} spell cast on that point brings the vanished item back from the Ethereal Plane." compset="Spell" summary="As teleport, but affects a touched object.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Will Negates (Object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sLevel" tag="8"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Teleport" name="Teleportation" abbrev="Teleport"/>
+    <tag group="Helper" tag="Domain" name="Domain" abbrev="Domain"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="Mists"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    </thing>
+  <thing id="xRvnFinRst" name="Final Rest" description="You can grant [i}final rest{/i} by tracing your deity&#146;s symbol on a newly dead body. That corpse then receives a Will save (using your Will save bonus) to resist any attempt to transform it into an undead creature, including animate dead and create undead spells and the create spawn ability of undead creatures. This is a spell-like ability us can use once per day." compset="Special" summary="Grant a corpse the ability to resist becoming undead.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="sRRDetUnd" name="Detect Undead" description="You can detect the aura that surrounds undead creatures. The amount of information revealed depends on how long you study a particular area.{br}{vert 7}{i}1st Round:{/i} Presence or absence of undead auras.{br}{vert 7}{i}2nd Round:{/i} Number of undead auras in the area and the strength of the strongest undead aura present. If you are of good alignment, and the strongest undead aura&apos;s strength is overwhelming (see below), and the creature has HD of at least twice your character level, you are stunned for 1 round and the spell ends.{br}{vert 7}{i}3rd Round:{/i} The strength and location of each undead aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.{br}{vert 7}{i}Aura Strength:{/i} The strength of an undead aura is determined by the HD of the undead creature, as given on the following table:{br}{vert 7}{b}HD{/b} - {b}Strength{/b}{br}1 or lower - Faint{br}2-4 - Moderate{br}5-10 - Strong{br}11 or higher - Overwhelming{br}{vert 7}{i}Lingering Aura:{/i} An undead aura lingers after its original source is destroyed. If {i}detect undead{/i} is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power: {br}{vert 7}{b}Original Strength{/b} - {b}Duration of Lingering Aura{/b}{br}Faint - 1d6 rounds{br}Moderate - 1d6 minutes{br}Strong - 1d6x10 minutes{br}Overwhelming - 1d6 days{br}{vert 7}Each round, you can turn to detect undead in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.{br}{vert 7}{i}Arcane Material Component:{/i} A bit of earth from a grave." compset="Spell" summary="Reveals undead within 60 ft.">
+    <fieldval field="sRange" value="60 ft"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 minute/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Concent" name="Concentration" abbrev="Concentration"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="1" name="1" abbrev="1"/>
+    <tag group="sRange" tag="Feet" name="Feet" abbrev="Feet"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Divination" name="Divination" abbrev="Div"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sRRGenRep" name="Gentle Repose" description="You preserve the remains of a dead creature so that they do not decay. Doing so effectively extends the time limit on raising that creature from the dead (see {i}raise dead{/i}). Days spent under the influence of this spell don&#146;t count against the time limit. Additionally, this spell makes transporting a fallen comrade more pleasant.\n\nThe spell also works on severed body parts and the like.\n\n{i}Arcane Material Component{/i}: A pinch of salt, and a copper piece for each eye the corpse has (or had)." compset="Spell" summary="Preserves one corpse.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 day/level"/>
+    <fieldval field="sSave" value="Will Negates (Object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Day" name="1+ Days" abbrev="1+ Days"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="2" name="2" abbrev="2"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Object" name="Object" abbrev="Object"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Necromancy" name="Necromancy" abbrev="Necro"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sRRSpkDead" name="Speak with Dead" description="You grant the semblance of life and intellect to a corpse, allowing it to answer several questions that you put to it. You may ask one question per two caster levels. Unasked questions are wasted if the duration expires. The corpse&#146;s knowledge is limited to what the creature knew during life, including the languages it spoke (if any). Answers are usually brief, cryptic, or repetitive. If the creature&#146;s alignment was different from yours, the corpse gets a Will save to resist the spell as if it were alive.\n\nIf the corpse has been subject to {i}speak with dead{/i} within the past week, the new spell fails. You can cast this spell on a corpse that has been deceased for any amount of time, but the body must be mostly intact to be able to respond. A damaged corpse may be able to give partial answers or partially correct answers, but it must at least have a mouth in order to speak at all.\n\nThis spell does not let you actually speak to the person (whose soul has departed). It instead draws on the imprinted knowledge stored in the corpse. The partially animated body retains the imprint of the soul that once inhabited it, and thus it can speak with all the knowledge that the creature had while alive. The corpse, however, cannot learn new information. Indeed, it can&#146;t even remember being questioned.\n\nThis spell does not affect a corpse that has been turned into an undead creature." compset="Spell" summary="Corpse answers one question/two levels.">
+    <fieldval field="sRange" value="10 ft"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates; See Text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="3" name="3" abbrev="3"/>
+    <tag group="sRange" tag="Feet" name="Feet" abbrev="Feet"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Necromancy" name="Necromancy" abbrev="Necro"/>
+    <tag group="sSubschool" tag="LangDepend" name="Language-Dependent" abbrev="Language-Dependent"/>
+    <tag group="sCastTime" tag="Minute10" name="10 Minute(s)" abbrev="Minute10"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sRRHaltUnd" name="Halt Undead" description="This spell renders as many as three undead creatures {b}(no two of which can be more than 30 ft. apart){/b} immobile. A non-intelligent undead creature (such as a skeleton or zombie) gets no saving throw; an intelligent undead creature does. If the spell is successful, it renders the undead creature immobile for the duration of the spell (similar to the effect of {i}hold person{/i} on a living creature). The effect is broken if the {i}halted{/i} creatures are attacked or take damage.\n\n{i}Material Component{/i}: A pinch of sulfur and powdered garlic." compset="Spell" summary="Immobilizes undead for 1 round/level.">
+    <fieldval field="sRange" value="Medium (100 ft.+10 ft./level)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="None or Will Negates; See Text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sRange" tag="Medium" name="Medium" abbrev="{ref s_Medium}Med{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Necromancy" name="Necromancy" abbrev="Necro"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sRRRaiDead" name="Raise Dead" description="You restore life to a deceased creature. You can raise a creature that has been dead for no longer than one day per caster level. In addition, the subject&#146;s soul must be free and willing to return (see Bringing Back the Dead, page 171). If the subject&#146;s soul is not willing to return, the spell does not work; therefore, a subject that wants to return receives no saving throw.\n\nComing back from the dead is an ordeal. The subject of the spell loses one level (or 1 Hit Die) when it is raised, just as if it had lost a level or a Hit Die to an energy draining creature. If the subject is 1st level, it loses 2 points of Constitution instead (if this would reduce its Con to 0 or less, it can&#146;t be raised). This level/HD loss or Constitution loss cannot be repaired by any means. A character who died with spells prepared has a 50% chance of losing any given spell upon being raised, in addition to losing spells for losing a level. A spellcasting creature that doesn&#146;t prepare spells (such as a sorcerer) has a 50% chance of losing any given unused spell slot as if it had been used to cast a spell, in addition to losing spell slots for losing a level.\n\nA raised creature has a number of hit points equal to its current Hit Dice. Any ability scores damaged to 0 are raised to 1. Normal poison and normal disease are cured in the process of raising the subject, but magical diseases and curses are not undone. While the spell closes mortal wounds and repairs lethal damage of most kinds, the body of the creature to be raised must be whole. Otherwise, missing parts are still missing when the creature is brought back to life. None of the dead creature&#146;s equipment or possessions are affected in any way by this spell.\n\nA creature who has been turned into an undead creature or killed by a death effect can&#146;t be raised by this spell. Constructs, elementals, outsiders, and undead creatures can&#146;t be raised. The spell cannot bring back a creature that has died of old age.\n\n{i}Material Component{/i}: Diamonds worth a total of least 5,000 gp." compset="Spell" summary="Restores life to subject who died as long as one day/level ago.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Special; See Text"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Healing" name="Healing" abbrev="Healing"/>
+    <tag group="sCastTime" tag="Minute1" name="1 Minute(s)" abbrev="Minute1"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    </thing>
+  <thing id="sRRAntShel" name="Antilife Shell" description="You bring into being a mobile, hemispherical energy field {b}(a 10 ft. radius emanation, centered on you){/b} that prevents the entrance of most types of living creatures. The effect hedges out animals, aberrations, dragons, fey, giants, humanoids, magical beasts, monstrous humanoids, oozes, plants, and vermin, but not constructs, elementals, outsiders, or undead. See the Monster Manual for more about creature types.\n\nThis spell may be used only defensively, not aggressively. Forcing an abjuration barrier against creatures that the spell keeps at bay collapses the barrier (see Abjuration, page 172)." compset="Spell" summary="10-ft.-radius field hedges out living creatures.">
+    <fieldval field="sRange" value="10 ft"/>
+    <fieldval field="sDuration" value="10 minutes/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="6" name="6" abbrev="6"/>
+    <tag group="sRange" tag="Feet" name="Feet" abbrev="Feet"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Round1" name="1 Round(s)" abbrev="Round1"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sRRResurec" name="Resurrection" description="This spell functions like {i}raise dead{/i}, except that you are able to restore life and complete strength to any deceased creature. The condition of the remains is not a factor. So long as some small portion of the creature&#146;s body still exists, it can be resurrected, but the portion receiving the spell must have been part of the creature&#146;s body at the time of death. (The remains of a creature hit by a {i}disintegrate{/i} spell count as a small portion of its body.) The creature can have been dead no longer than 10 years per caster level.\n\nUpon completion of the spell, the creature is immediately restored to full hit points, vigor, and health, with no loss of prepared spells. However, the subject loses one level, or 2 points of Constitution if the subject was 1st level. (If this reduction would bring its Con to 0 or lower, it can&#146;t be resurrected). This level loss or Constitution loss cannot be repaired by any means.\n\nYou can resurrect someone killed by a death effect or someone who has been turned into an undead creature and then destroyed. You cannot resurrect someone who has died of old age. Constructs, elementals, outsiders, and undead creatures can&#146;t be resurrected.\n\n{i}Material Component{/i}: A sprinkle of holy water and diamonds worth a total of at least 10,000 gp." compset="Spell" summary="Fully restore dead subject.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Special; See Text"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="7" name="7" abbrev="7"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSave" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
+    <tag group="sSubschool" tag="Healing" name="Healing" abbrev="Healing"/>
+    <tag group="sCastTime" tag="Minute10" name="10 Minute(s)" abbrev="Minute10"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    </thing>
+  <thing id="sRRContUnd" name="Control Undead" description="This spell enables you to command undead creatures {b}(up to 2 HD/level of undead creatures, no two of which can be more than 30 ft. apart){/b} for a short period of time. You command them by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible (in the area of a silence spell, for instance), the controlled undead do not attack you. At the end of the spell, the subjects revert to their normal behavior. Intelligent undead creatures remember that you controlled them.\n\n{i}Material Component{/i}: A small piece of bone and a small piece of raw meat." compset="Spell" summary="Undead don&apos;t attack you while under your command.">
+    <fieldval field="sRange" value="Close (25 ft.+5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="8"/>
+    <tag group="sRange" tag="Close" name="Close" abbrev="{ref s_Close}Cls{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Necromancy" name="Necromancy" abbrev="Necro"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="sRRSoulBnd" name="Soul Bind" description="You draw the soul from a newly dead body and imprison it in a black sapphire gem. The subject must have been dead no more than 1 round per caster level. The soul, once trapped in the gem, cannot be returned through {i}clone{/i}, {i}raise dead{/i}, {i}reincarnation{/i}, {i}resurrection{/i}, {i}true resurrection{/i}, or even a {i}miracle{/i} or a {i}wish{/i}. Only by destroying the gem or dispelling the spell on the gem can one free the soul (which is then still dead).\n\n{i}Focus{/i}: A black sapphire of at least 1,000 gp value for every Hit Die possessed by the creature whose soul is to be bound. If the gem is not valuable enough, it shatters when the binding is attempted. (While creatures have no concept of level or Hit Dice as such, the value of the gem needed to trap an individual can be researched. Remember that this value can change over time as creatures gain more Hit Dice.)" compset="Spell" summary="Traps newly dead soul to prevent resurrection.">
+    <fieldval field="sRange" value="Close (25 ft.+5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Permanent"/>
+    <fieldval field="sSave" value="Will Negates"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="RavCamSet"/>
+    <tag group="sDuration" tag="Permanent" name="Permanent" abbrev="Permanent"/>
+    <tag group="sLevel" tag="9" name="9" abbrev="9"/>
+    <tag group="sRange" tag="Close" name="Close" abbrev="{ref s_Close}Cls{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Necromancy" name="Necromancy" abbrev="Necro"/>
+    <tag group="sSubschool" tag="None" name="None" abbrev="None"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="RvnRepose"/>
+    <tag group="sComp" tag="F" name="Focus" abbrev="{ref s_F}F{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="Helper" tag="Domain"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    </thing>
+  <thing id="rRvnHlfVis" name="Half-Vistani" description="Half-Vistani (or {i}giogoto{/i}, in the Vistani patterna [see below]) are the result of a union between a Vistana and a {i}giorgio{/i} (any non-Vistani human). Unlike the other special races of Ravenloft, half-Vistani are entirely human. However, the traits they inherit from their Vistani blood separate them from normal men.\n\nLove affairs between {i}giorgio{/i} and the Vistani are often torrid and brief. The cultural rift cuts deeply, so precious few {i}giogoto{/i} ever grow up knowing both of their parents. Most often, the Vistana parent moves on in the night, abandoning the child to the {i}giorgio{/i}. Rarely, a {i}giogoto{/i} child is raised by the tribe of its Vistana parent. In either case, the child may be cared for but is never truly accepted. The {i}giogoto&apos;s giorgio{/i} family may fear that the child will develop the peculiar talents of her Vistani kin, and since the {i}giogoto{/i} is not fully &quot;of the blood,&quot; she finds herself unable to share entire worlds of Vistani experiences.\n\n{b}Personality{/b}: Broken homes are the {i}giogoto&apos;s{/i} birthright. Many spend their lives haunted by their youth; a rejected child often matures into a sullen and withdrawn adult.\n\nIt is no small matter to straddle the cultural rift of their birth, so most {i}giogoto{/i} choose to adopt one culture over the other. They either adhere to the customs of their homeland or wrap themselves in the Vistani mystique. Regardless of the heritage they favor, half-Vistani tend to be passionate and pessimistic individuals.\n\n{b}Physical Description{/b}: Half-Vistani resemble their Vistani parents, often inheriting their angular and aquiline features, eyes and hair of deep brown or black, and dusky or olive complexions. Of course, {i}giogoto{/i} often exhibit traits of their {i}giorgio{/i} heritage as well. A {i}giogoto{/i} can conceal her Vistani heritage, fooling {i}giorgio{/i} with a successful Disguise check (considered minor details only). Such tricks fail against true Vistani, however, who can identify those who are &quot;of the blood&quot; with but a glance.\n\n{b}Relations{/b}: {i}Giogoto{/i} are caught between two worlds; {i}giorgio{/i} treat them like Vistani, and the Vistani treat them like {i}giorgio{/i}. A {i}giogoto&apos;s{/i} outlook toward nonhumans usually mirrors that of his homeland. It is not uncommon, however, for half-Vistani to be more accepting toward other &quot;unwelcome&quot; creatures, such as Calibans and half-elves.\n\n{b}Alignment{/b}: In many ways, the {i}giorgio{/i} life mimics that of half-elves. Many half-Vistani spend their lives alienated from society and often grow to distrust authority. {i}Giogoto{/i} ethical alignment tends toward chaos, but they are no more inherently good or evil than any other humans.\n\n{b}Homelands{/b}: The Vistani endlessly wander throughout the Land of Mists, so a {i}giogoto{/i} may be born in any domain. The ruthless oppression of Vistani in Invidia makes native half-Vistani rare in that domain, while {i}giogoto{/i} are slightly more common in neighboring Barovia. No permanent half-Vistani communities exist anywhere in Ravenloft.\n\n{b}Religion{/b}: {i}Giogoto{/i} raised by {i}giorgio{/i} typically adopt the prevalent faith of their homeland. {i}Giogoto{/i} raised by the Vistani are seldom religious; the Vistani worship no gods and have many legends of their cruel mistreatment at the hands of godlike beings in the distant past. Some Vistani, particularly those of the Vatraska tribe, treat fate, the Mists, and the forces of nature with a respect that approaches reverence, however.\n\n{b}Language{/b}: {i}Giogoto{/i} have no language of their own, instead learning the domain languages of their homeland. {i}Giogoto{/i} who embrace their Vistani heritage often also learn {i}pattema{/i}, the Vistani&apos;s spoken language, and {i}tralaks{/i}, the Vistani system of trail symbols.\n\n{b}Names{/b}: {i}Giogoto{/i} raised by giorgio are often given names drawn from their homeland&apos;s cultures. {i}Giogoto{/i} raised by the Vistani are named in the Vistani tradition, and it is not unheard of for a half-Vistani raised by a {i}giorgio{/i} to be named after her wayward Vistana parent.\n\n{b}Vistani Male Names{/b}: Bela, Grigori, losif, Karol, Ludovic, Nicu, Pyotr, Simione, Stefan, Vasile.\n\n{b}Vistani Female Names{/b}: Ana, Eliza, Isabela, Lela, Natasha, Papusza, Rozalina, Sofya, Ursula, Yvonne.\n\n{b}Adventurers{/b}: Many {i}giogoto{/i} become wanderers, seeking happiness in foreign lands. Many fall in with other outcasts and eccentrics during their aimless travels.\n\n{b}Recommended Feats{/b}: Alertness, Ethereal Empathy, Lunatic, Track, Voice of Wrath.\n\n{b}Source{/b}: Ravenloft Campaign Setting" compset="Race">
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rInfFavor" value="See Tribe"/>
+    <fieldval field="rHeightMnF" value="59"/>
+    <fieldval field="rHeightMnM" value="60"/>
+    <fieldval field="rWeightMnF" value="105"/>
+    <fieldval field="rWeightMnM" value="150"/>
+    <fieldval field="rInfAutoLn" value="Any domain language"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="WeightDice" tag="6"/>
+    <tag group="WeightSize" tag="10"/>
+    <tag group="Race" tag="Human"/>
+    <tag group="Language" tag="Any"/>
+    <bootstrap thing="xRvnHlfVis"></bootstrap>
+    <bootstrap thing="xRvnHVDilB"></bootstrap>
+    <bootstrap thing="xRvnHVBOR"></bootstrap>
+    <bootstrap thing="xRvnHVMoMa"></bootstrap>
+    <bootstrap thing="fRvnHVTrHe"></bootstrap>
+    <eval phase="First" priority="12000">herofield[tLangsSta].value += 1</eval>
+    </thing>
+  <thing id="xRvnHlfVis" name="Racial Skill Bonuses" description="+2 racial bonus on Survival checks. A {i}giogoto{/i} inherits her Vistana parent&apos;s affinity for nature. Provided fuel and some means of igniting a spark, half-Vistani can always light a fire as a standard action, even under adverse conditions (pouring rain, gusting winds, and so on). When wilderness survival depends on being able to start a fire, the half-Vistani racial bonus to Survival checks rises to +4." compset="Special" summary="Gain additional +2 bonus to Survival checks to start a fire.">
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First" priority="5000">#skillbonus[kSurvival] += 2</eval>
+    </thing>
+  <thing id="xRvnHVDilB" name="Diluted Blood" description="For all special abilities and effects, half-Vistani are considered human, though they do not gain the extra feat or skill points standard humans receive. Only pureblooded Vistani can use special spells or magic items with racially specific Vistani powers." compset="Special" summary="You are considered human; cannot use Vistani-specific powers.">
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xRvnHVMoMa" name="Moon Madness" description="A {i}giogoto{/i} suffers from the {i}lunatio{/i} during the full moon each month, her mind clouded by restlessness and anxiety. She cannot prepare spells or heal naturally during this period. On each of the three nights of the full moon, she must succeed at a Will save (DC 15) or run wild under the night sky." compset="Special" summary="You suffer from {i}lunatio{/i} during each full moon.">
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fRvnHVTrHe" name="Tribal Heritage" description="A {i}giogoto{/i} character must select a tribe from the following list at the time of creation, reflecting the branch of her Vistani ancestry. (Further information on Vistani {i}tasques{/i} can be found in chapter 5.) This tribe determines additional benefits and favored class." compset="Feat" summary="Choose your tribal heritage.">
+    <fieldval field="ftCandExpr" value="thingid.xRvnHVCanj | thingid.xRvnHVCorv | thingid.xRvnHVEqua | thingid.xRvnHVKami | thingid.xRvnHVNaia | thingid.xRvnHVVatm | thingid.xRvnHVZaro"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="fCategory" tag="Racial"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xRvnHVCorv">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 2</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHVEqua">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 3</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHVKami">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 4</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHVNaia">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 5</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHVVatm">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 6</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHVZaro">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 7</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHVCanj">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 1</containerreq>
+      </bootstrap>
+    <eval phase="First" priority="9500">doneif (field[fChosen].ischosen = 0)
+
+~set hTotal field for bootstrapping purposes
+field[hTotal].value = field[fChosen].chosen.field[Value].value</eval>
+    <eval phase="Final" priority="10000" index="2"><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+~Add to description and summary
+field[xSumm].text = field[fChosen].chosen.field[summary].text
+field[CustDesc].text = field[descript].text & field[fChosen].chosen.field[descript].text]]></eval>
+    </thing>
+  <thing id="xRvnHVCanj" name="Canjar" description="\n\n+2 racial bonus on Spellcraft checks. This bonus rises to +4 when attempting to learn new spells.\n\n{b}Favored Class{/b}: Wizard" compset="Special" summary="Additional +2 bonus to Spellcraft when learning a new spell.">
+    <fieldval field="Value" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <eval phase="First" priority="11000">#skillbonus[kSpellcr] += 2</eval>
+    </thing>
+  <thing id="xRvnHVCorv" name="Corvara" description="\n\n+2 racial bonus on Open Lock and Sense Motive checks.\n\n{b}Favored Class{/b}: Rogue" compset="Special" summary="+2 racial bonus on Open Lock and Sense Motive checks.">
+    <fieldval field="Value" value="2"/>
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <eval phase="First" priority="11000">#skillbonus[kOpenLock] += 2
+#skillbonus[kSenseMot] += 2</eval>
+    </thing>
+  <thing id="xRvnHVEqua" name="Equaar" description="\n\n+2 racial bonus on Handle Animal and Ride checks.\n\n{b}Favored Class{/b}: Ranger" compset="Special" summary="+2 racial bonus on Handle Animal and Ride checks.">
+    <fieldval field="Value" value="3"/>
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <eval phase="First" priority="11000">#skillbonus[kHandleAnm] += 2
+#skillbonus[kRide] += 2</eval>
+    </thing>
+  <thing id="xRvnHVKami" name="Kamii" description="\n\n+2 racial bonus on any metal-based Craft checks (e.g., blacksmithing) With a successful Appraise check, Kamii can identify metals and determine where any metal item originated.\n\n{b}Favored Class{/b}: Rogue" compset="Special" summary="Bonus to craft checks made with metal; Use appriase to identify metal.">
+    <fieldval field="Value" value="4"/>
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    </thing>
+  <thing id="xRvnHVNaia" name="Naiat" description="\n\n+2 racial bonus on Perform checks. Naiat have a base Outcast Rating of 0.\n\n{b}Favored Class{/b}: Bard" compset="Special" summary="+2 racial bonus on Perform checks. Naiat have a base Outcast Rating of 0.">
+    <fieldval field="Value" value="5"/>
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[foreach pick in hero from BaseSkill where "Helper.SkCatPerf"
+ eachpick.field[Bonus].value += 2
+nexteach]]></eval>
+    </thing>
+  <thing id="xRvnHVVatm" name="Vatmska" description="\n\n+2 racial bonus on Heal and Profession (herbalist) checks.\n\n{b}Favored Class{/b}: Cleric" compset="Special" summary="+2 racial bonus on Heal and Profession (herbalist) checks.">
+    <fieldval field="Value" value="6"/>
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <eval phase="First" priority="11000">#skillbonus[kHeal] += 2
+#skillbonus[kProfHerb] += 2</eval>
+    </thing>
+  <thing id="xRvnHVZaro" name="Zarovan" description="\n\nRacial bonus of (1dl0-1d4) to initiative. Roll at the start of each encounter.\n\n{b}Favored Class{/b}: Sorcerer" compset="Special" summary="Racial bonus of (1dl0-1d4) to initiative. Roll at the start of each encounter.">
+    <fieldval field="Value" value="7"/>
+    <usesource source="RavCamSet"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    </thing>
+  <thing id="xRvnHVBOR" name="Base Outcast Rating: 2" description="A {i}giogoto{/i} who hides her Vistani heritage can reduce her base OR to 0 with a successful Disguise check.\n\n{b}Note{/b}: Members of the Naiat tribe start at 0." compset="Special" summary="Reduce OR to 0 with successful Disguise check.">
+    <fieldval field="Value" value="7"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rRvnHlfVis"/>
+    <eval phase="Final" priority="15000"><![CDATA[if (hero.child[fRvnHVTrHe].field[hTotal].value = 5) then
+ field[livename].text = "Base Outcast Rating: 0"
+ field[xSumm].text = "Naiat have a Base OR of 0."
+endif]]></eval>
+    </thing>
+  <thing id="lRvnBalok" name="Balok" description="The oldest language of Ravenloft, Balok spread from its native Barovia throughout the Balinoks and the southwestern Core. Balok is marked by guttural consonants and thick vowels and is not overly pleasant to the ear. However, many of the centrally located domains where Balok is spoken contain trade routes, so it has come into use as a trade tongue by some merchants and innkeepers." compset="Language">
+    <usesource source="RavCamSet"/>
+    </thing>
+  <thing id="lRvnDarkon" name="Darkonese" description="This complex and highly structured language has not spread far beyond the borders of Darkon. However, the sheer size of that kingdom ensures that Darkonese remains significant. Many nonhumans, such as elves and dwarves, are natives of Darkon and mix Darkonese with their racial tongues, and many wizards note that the highly precise definitions of Darkonese words lend themselves well to magical writings." compset="Language">
+    <usesource source="RavCamSet"/>
+    </thing>
+  <thing id="lRvnMorden" name="Mordentish" description="This language is divided into two distinct dialects with markedly different vocabularies. &quot;High&quot; Mordentish is preferred by the upper classes, while speaking the &quot;Low&quot; dialect marks one as a commoner. Scholars posit that this linguistic cleft may have arisen from an imperfect melding of two separate, now-forgotten languages. The result is a highly flexible language that has spread throughout the northwestern Core. Due to its association with the culturally advanced domains of the northwest, Mordentish is widely considered the language of literature." compset="Language">
+    <usesource source="RavCamSet"/>
+    </thing>
+  <thing id="lRvnVaasi" name="Vaasi" description="This language, most recognizable for its harmonious vowels, is strongly associated with the cultures of the southeastern Core. By church law, for example, all religious rites of the Church of the Lawgiver must be recited in Vassi; all texts must use its script. A patois spoken in Kartakass, mixing Vaasi with the Sithican dialect of Elven, is considered highly poetic and is much favored by bards and minstrels." compset="Language">
+    <usesource source="RavCamSet"/>
+    </thing>
+  <thing id="kCrafClock" name="Craft: Clockmaking" description="You are skilled at the creation of mechanical clockworks, ranging from ponderous clock towers to delicate pocket watches. \n\nIf you have 5 or more ranks in clockmaking, you enjoy a +2 synergy bonus to gunsmithing checks when building or repairing wheel-lock weapons." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatCraft" name="Craft Skill" abbrev="Craft Skill"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kKnowRaven" name="Knowledge: Ravenloft" description="This is a specialized form of Knowledge (the planes). It represents an understanding of the planar fabric of the Realm of Dread, including the Mists, the nature of domains, closed borders, darklords, and so on. This is an extremely rare skill, known only by a handful of arcane scholars, most of whom are darklords." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLAberrat" name="Monster Lore: Aberrations" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kHypnosis" name="Hypnosis" description="You have studied the hidden workings of the human mind and can unlock its secrets.\n\n{b}Check{/b}: You can use hypnosis to induce a deep, calming trance in your subject. The effects of a hypnotic trance are identical to those created by the {i}hypnotism{/i} spell.\n\nUnlike the spell, however, the skill allows you to hypnotize only one target at a time, who does not receive the -2 penalty to her Will save. Each attempt to use hypnosis requires 1 hour. If the target is unwilling, you must first succeed at a Bluff check to disguise your intent.\n\nA Hypnosis check is opposed by the target&apos;s Will save. Loud or distracting surroundings grant a +2 circumstance modifier to the target&apos;s Will save. Willing targets can voluntarily choose not to make their saving throw.\n\nOnce the target is hypnotized, you can either plant a suggestion (as per the {i}hypnotism{/i} spell) or aid the recovery of a target who suffers from the effects of a failed Madness save. The latter option is detailed under &quot;Recovering from Madness&quot; in chapter 3.\n\n{b}Retry{/b}: Generally, you cannot retry a Hypnosis check against an unwilling target; the target becomes too suspicious to cooperate. If attempting to hypnotize a willing target, you may retry freely. Retries are a vital component in the process of helping targets recover from Madness effects, in fact." compset="Skill">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="TrainOnly"/>
+    <link linkage="skillattr" thing="aCHA"/>
+    </thing>
+  <thing id="fRvnBckWal" name="Back to the Wall" description="You are at your best when your situation is at its worst. The minions of evil may overwhelm you, but the gods be damned if you don&apos;t take a few of them down with you.\n\n{b}Prerequisite{/b}: Base attack bonus +2.\n\n{b}Benefit{/b}: You gain a +2 bonus to attack rolls and Armor Class when you are at one quarter or less of your maximum hit points." compset="Feat" summary="Gain +2 to attacks and AC when HP drop to 1/4." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="Final" priority="10001"><![CDATA[var chp as number
+chp = round(herofield[tCurrentHP].value/herofield[tHP].value,3,0)
+
+if (chp <= .250) then
+ hero.child[ArmorClass].field[tAC].value += 2
+ hero.child[ArmorClass].field[tACTouch].value += 2
+ hero.child[ArmorClass].field[tACFlat].value += 2
+ foreach pick in hero from BaseWep
+  eachpick.field[wAttBonus].value += 2
+  eachpick.field[wAttack].value += 2
+ nexteach
+endif]]></eval>
+    <exprreq message="Base attack bonus +2 required."><![CDATA[child[Attack].field[tAtkBase].value >= 2]]></exprreq>
+    </thing>
+  <thing id="fRvnCldOne" name="Cold One" description="You are cold and clammy to the touch.\n\n{b}Prerequisite{/b}: You must have lost at least one level to an energy drain attack.\n\n{b}Benefit{/b}: Mindless undead (those without Intelligence scores) ignore you unless you attack them first. Intelligent undead must succeed at a Wisdom check at DC 13 to realize that you are not undead. Due to your slowed metabolism, if you are ever dying (reduced to -1 to -9 hit points), you lose hit points at the rate of only 1 point every two rounds. When recovering from damage via natural healing, you recover only 1/2 hit point per character level per day of rest (round down, with 1 hp/day as the minimum). This is an extraordinary quality." compset="Feat" summary="Your near-death experience has given you undead-like qualities." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fRvnCourag" name="Courage" description="You are particularly fearless in the face of danger.\n\n{b}Benefit{/b}: You get a +4 bonus to all Fear saves." compset="Feat" summary="You get a +4 bonus to all Fear saves." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fRvnDMWalk" name="Dead Man Walking" description="After a brush with the horrors of the night, you accept that you are living on borrowed time.\n\n{b}Prerequisite{/b}: You must have survived an encounter that turned against you (failed a Horror save or been reduced to -1 hit points or lower).\n\n{b}Benefit{/b}: Upon making a successful Fear or Horror save, you receive a +2 bonus to all saving throws and skill checks for the duration of the encounter due to the icy calm with which you face mortal danger. The recognition that everyone dies sometime can be a source of strength." compset="Feat" summary="You&apos;ve accepted your mortality, granting you strength in the face of death." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fRvnEthEmp" name="Ethereal Empathy" description="You have the psychic ability to sense the emotions imbued within ethereal resonance. (See &quot;Sinkholes of Evil&quot; in chapter 3 and &quot;Ghosts&quot; in chapter 5 for more on resonance.)\n\n{b}Prerequisite{/b}: Wis 13\n\n{b}Benefit{/b}: You can sense the emotional content of ethereal resonance within a 30-foot radius with a successful Wisdom check. DC is determined by the rank of the resonance.\n\n{b}Rank{/b}:  1   2   3    4   5\n{b}DC{/b}:     20 15 10   5   0\n\nSensing resonance is a partial action and can be retried each round. If you achieve an extraordinary success, you can see into the Near Ethereal for one round &#151; a visual flash of the resonating scene. However, you can see only resonance, not ethereal creatures, borne ethereal scenes may require Horror saves." compset="Feat" summary="You can sense the emotional content of ethereal resonance within a 30&apos; radius" uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Wisdom 13 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fRvnGhosts" name="Ghostsight" description="You can see creatures in the Near Ethereal. Since ghosts make up the majority of creatures in Ravenloft&apos;s Near Ethereal, folklore views this as the ability to see the dead. \n\n{b}Prerequisite{/b}: You must have had a brush with death (been reduced to &#151;1 hit points or lower, or slain and then brought back to life).\n\n{b}Benefit{/b}: You can see creatures that are ethereal as if they were normally visible. Unlike the see invisible spell, this capacity does not reveal illusions or allow you to see invisible or astral creatures. Your ability to see ethereal creatures is limited only by your own visual range. You are vulnerable to gaze attacks from ethereal creatures. You have no special ability to hear or physically affect ethereal creatures. This is a supernatural ability.\n\n{b}Special{/b}: You are strangely attuned to the Ethereal Plane. Ethereal creatures can see you unusually clearly and must succeed at a Spot check at DC 15 to realize that you are not actually in the Near Ethereal as well. These creatures may even be drawn to you out of curiosity, desperation, or malice." compset="Feat" summary="You can see creatures in the Near Ethereal." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="fRvnHaunte" name="Haunted" description="The spirit of a friend, ally, or loved one has returned from the grave to watch over you as a geist. \n\n{b}Prerequisite{/b}: For the obvious reason, someone close to you must have died.\n\n{b}Benefit{/b}: Your guardian spirit normally remains in the Near Ethereal. Those who can see ethereal creatures may spot the geist lurking near you, but it is otherwise invisible and intangible. The geist acts as a second pair of eyes and ears when it manifests, allowing you a second roll on Search, Spot, and Listen checks. The geist can also inform you of events that take place in your presence while you are asleep or unconscious, or it can simply offer companionship.\n\n{b}Special{/b}: The geist communicates through phantasms; it cannot affect physical objects. You can ask the geist to manifest whenever you are alone. The geist immediately vanishes if another intelligent, living creature enters the scene. You can summon the geist as often as you want, but each time it manifests, it inflicts 1 point of temporary Charisma damage as it unconsciously draws strength from your will to live." compset="Feat" summary="The spirit of a friend, ally, or loved one has returned from the grave to watch over you as a geist." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fRvnJaded" name="Jaded" description="Like an experienced investigator or a veteran of the Dead Man&apos;s Campaign, you have been hardened against the horrors of the world by cruel experience.\n\n{b}Benefit{/b}: You gain a +4 bonus to all Horror saves." compset="Feat" summary="You gain a +4 bonus to all Horror saves." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fRvnLunati" name="Lunatic" description="Your mind and body are tied to the cycles of the moon, making you more energetic and excitable as the moon waxes. This effect may be the result of subtle madness or a diluted supernatural heritage, such as Vistani blood.\n\n{b}Prerequisite{/b}: Chaotic alignment.\n\n{b}Benefit{/b}: You have a +1 bonus to all attack rolls, Fortitude and Reflex saves, and Charisma-modified skill checks whenever the moon is gibbous (more than half full). This bonus rises to +2 during the three-night period of the full moon. During the three-night period of the new moon, you suffer a -2 penalty to these rolls instead. The modifiers are reversed for Will saves: +2 during the new moon, -1 during the gibbous moon, and -2 during the full moon. This is an extraordinary quality." compset="Feat" summary="Your mind and body are tied to the cycles of the moon." uniqueness="useronce">
+    <fieldval field="hName1" value="gibbous moon"/>
+    <fieldval field="hName2" value="full moon"/>
+    <usesource source="RavCamSet"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <bootstrap thing="xRvnLunHlp"></bootstrap>
+    <eval phase="PostAttr" priority="9000"><![CDATA[if (field[hIsOn1].value <> 0) then
+ foreach pick in hero from BaseWep
+  eachpick.field[wAttBonus].value += 1 
+ nexteach
+ hero.child[vFort].field[Bonus].value += 1
+ hero.child[vRef].field[Bonus].value += 1
+ hero.child[vWill].field[Bonus].value -= 1
+ foreach pick in hero from BaseSkill
+  if (eachpick.islinkage[skillattr] <> 0) then
+   if (eachpick.linkage[skillattr].tagis[thingid.aCHA] <> 0) then
+    eachpick.field[Bonus].value += 1
+   endif
+  endif
+ nexteach
+elseif (field[hIsOn2].value <> 0) then
+ foreach pick in hero from BaseWep
+  eachpick.field[wAttBonus].value += 2 
+ nexteach
+ hero.child[vFort].field[Bonus].value += 2
+ hero.child[vRef].field[Bonus].value += 2
+ hero.child[vWill].field[Bonus].value -= 2
+ foreach pick in hero from BaseSkill
+  if (eachpick.islinkage[skillattr] <> 0) then
+   if (eachpick.linkage[skillattr].tagis[thingid.aCHA] <> 0) then
+    eachpick.field[Bonus].value += 2
+   endif
+  endif
+ nexteach
+endif]]></eval>
+    <exprreq message="Chaotic alignment required."><![CDATA[hero.tagis[Alignment.Chaotic] <> 0]]></exprreq>
+    </thing>
+  <thing id="xRvnLunHlp" name="Lunatic Helper" compset="Special">
+    <fieldval field="hName1" value="new moon"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostAttr" priority="9000"><![CDATA[if (field[hIsOn1].value <> 0) then
+ foreach pick in hero from BaseWep
+  eachpick.field[wAttBonus].value -= 2 
+ nexteach
+ hero.child[vFort].field[Bonus].value -= 2
+ hero.child[vRef].field[Bonus].value -= 2
+ hero.child[vWill].field[Bonus].value += 2
+ foreach pick in hero from BaseSkill
+  if (eachpick.islinkage[skillattr] <> 0) then
+   if (eachpick.linkage[skillattr].tagis[thingid.aCHA] <> 0) then
+    eachpick.field[Bonus].value -= 2
+   endif
+  endif
+ nexteach
+endif]]></eval>
+    </thing>
+  <thing id="fRvnOpnMnd" name="Open Mind" description="An adaptable mind keeps your sanity resilient.\n\n{b}Benefit{/b}: You enjoy a +4 bonus to all Madness saves." compset="Feat" summary="You enjoy a +4 bonus to all Madness saves." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fRvnRedhea" name="Redhead" description="According to the folklore of some domains, people bom with red hair have been marked by the fey.\n\n{b}Prerequisite{/b}: Wis 11\n\n{b}Benefit{/b}: Choose one 1st-level or two 0-level druid spells. The spell (or orisons) must be chosen when the feat is taken and cannot be changed later. You can cast this spell (or each orison) once a day, as a druid equal to your character level. Like a druid, you must select a time of day when you regain the spell, but you do not need to spend time preparing it. This is a spell-like ability.\n\n{b}Special{/b}: You may take this feat only at the beginning of the game. You don&apos;t need to take this feat to have red hair, but you do need to be born a redhead to take this feat." compset="Feat" summary="Choose one 1st-level or two 0-level druid spells to cast 1/day." uniqueness="useronce">
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Druid &amp; (sLevel.0 | sLevel.1)"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Helper"/>
+    <bootstrap thing="fRvnRHHelp">
+      <containerreq phase="First" priority="10000"><![CDATA[User.Helper <> 0]]></containerreq>
+      </bootstrap>
+    <eval phase="Final" priority="20000">doneif (field[fChosen].ischosen = 0)
+
+field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    <eval phase="First" priority="9500" index="2"><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+if (field[fChosen].chosen.tagis[sLevel.0] <> 0) then
+ perform hero.assign[User.Helper]
+endif]]></eval>
+    <exprreq message="Wisdom 11 required."><![CDATA[child[aWIS].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fRvnRHHelp" name="Redhead Helper" compset="Feat" summary="Choose additional 0-level druid spell to cast 1/day." uniqueness="useronce">
+    <fieldval field="ftCandExpr" value="component.BaseSpell &amp; sClass.Druid &amp; sLevel.0"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="Final" priority="20000">doneif (field[fChosen].ischosen = 0)
+
+field[CustDesc].text = field[fChosen].chosen.field[descript].text</eval>
+    </thing>
+  <thing id="fRvnReinca" name="Reincarnated" description="You have vague, dreamlike memories of a former life. You even possess skills you&apos;ve never knowingly learned.\n\n{b}Benefit{/b}: Choose a nonrestricted skill you do not have as a class skill. That skill is always considered a class skill for you. Your spirit was reborn because it is emotionally linked to a creature that has lingered in this world. If you ever encounter your &quot;soul mate,&quot; it will instinctually recognize you, and you gain a +2 bonus to all Charisma-based skill checks when interacting with it.\n\n{b}Special{/b}: You may take this feat only at the beginning of the game." compset="Feat" summary="You enjoy a +4 bonus to all Madness saves." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fShowWhat" tag="Skills"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <eval phase="First" priority="1000">doneif (field[fChosen].ischosen = 0)
+
+perform field[fChosen].chosen.forward[ClassSkill.?]</eval>
+    </thing>
+  <thing id="fRvnVoofWr" name="Voice of Wrath" description="The unseen forces of vengeance heed your commands.\n\n{b}Benefit{/b}: You gain a +4 bonus to all curse checks." compset="Feat" summary="You gain a +4 bonus to all curse checks." uniqueness="useronce">
+    <usesource source="RavCamSet"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="wBayonet" name="Bayonet" description="A bayonet is a narrow, daggerlike blade that can be attached to the end of a musket. A bayonet attached to a musket is considered a Medium-size weapon. If used on its own, a bayonet makes for an unwieldy dagger, since it lacks a hilt. A bayonet is a simple melee weapon." compset="Weapon">
+    <fieldval field="gSizeCost" value="1"/>
+    <fieldval field="gWeight" value=".5"/>
+    <usesource source="RavCamSet"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wProfReq" tag="Simple"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wClass" tag="Light"/>
+    </thing>
+  <thing id="wStraRazor" name="Straight Razor" description="A small, finely honed blade with a folding handle." compset="Weapon">
+    <fieldval field="gSizeCost" value="2"/>
+    <fieldval field="gWeight" value=".5"/>
+    <usesource source="RavCamSet"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d4_4"/>
+    <tag group="wProfReq" tag="Simple"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wType" tag="S"/>
+    </thing>
+  <thing id="wBulletsFA" name="Bullets, Firearms" description="These large, round, lead bullets are sold in bags of ten. The bag has negligible weight." compset="Weapon" lotsize="10" stacking="merge" holdable="no">
+    <fieldval field="gWeight" value="0.2"/>
+    <fieldval field="gSizeCost" value="0.3"/>
+    <usesource source="RavCamSet"/>
+    <tag group="wCategory" tag="Ammunition" name="Ammunition" abbrev="Ammunition"/>
+    <tag group="EquipType" tag="Metal"/>
+    </thing>
+  <thing id="wRapParth" name="Rapier, Parthian" description="The curious Parthian (or &quot;parting shot&quot;) rapier is considered the bane of honorable duelists and is usually found as an aristocratic display piece. It is simply a rapier with a pistol built into the hilt. The Parthian rapier is poorly balanced compared to either a standard rapier or pistol and is an exotic weapon. It does boast an insidious advantage, however. If the wielder makes a successful attack with the rapier blade, by simply pulling the trigger she then can immediately fire the pistol at the same target as a free action. The target cannot use her Dexterity bonus to AC in this follow-up attack.\n\nYou can use the Weapon Finesse feat when attacking with the rapier blade. You suffer a -4 penalty to attack rolls made with the pistol if you do not have the Exotic Weapon Proficiency (firearms) feat." compset="Weapon">
+    <fieldval field="gSizeCost" value="300"/>
+    <fieldval field="gWeight" value="5"/>
+    <usesource source="RavCamSet"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="wType" tag="P"/>
+    <tag group="Helper" tag="Finesse"/>
+    <tag group="wCategory" tag="Double"/>
+    <tag group="EquipType" tag="Metal"/>
+    <bootstrap thing="wRapParPi"></bootstrap>
+    </thing>
+  <thing id="wRapParPi" name="Rapier, Parthian (Pistol)" compset="Weapon" holdable="no">
+    <usesource source="RavCamSet"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1d10_304"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wType" tag="B"/>
+    <tag group="wRangeInc" tag="50"/>
+    <tag group="IsWeapon" tag="wFirearms"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="NoSelect"/>
+    </thing>
+  <thing id="wBomb" name="Bomb" description="This round gunpowder bomb must be lit before it is thrown. Lighting the bomb is a standard action. The explosion deals 2d6 points of fire damage. Those caught within the blast radius can make a Reflex save (DC 20) to take half damage.\n\nAny character carrying a bomb who suffers fire damage must make a Reflex save (DC 13). If the character fails this save, the bomb&apos;s fuse has accidentally been lit; unless put out, it explodes one round later.\n\nA miss requires a roll for deviation as for regular grenadelike weapons, but rather than dealing splash damage to all creatures within 5 feet, the weapon deals the same damage to all creatures within the blast radius of where it actually lands." compset="Weapon">
+    <fieldval field="gSizeCost" value="150"/>
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="wFixDamage" value="2d6 / 5&apos; radius"/>
+    <usesource source="RavCamSet"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wProfReq" tag="Simple"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wRangeInc" tag="10"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="Helper" tag="FixSizeDmg"/>
+    </thing>
+  <thing id="wSmkBomb" name="Smokebomb" description="This cylindrical bomb must be lit before it is thrown. Lighting it is a standard action. One round after it is lit, this nondamaging explosive emits a cloud of smoke in a 20-foot radius that persists in still conditions for 1d3+6 rounds and in windy conditions for 1d3+1 rounds. Visibility within the smoke is limited to 2 feet. Everything within the cloud has 90% concealment.\n\nAny character carrying a bomb who suffers fire damage must make a Reflex save (DC 13). If the character fails this save, the bomb&apos;s fuse has accidentally been lit; unless put out, it goes off one round later.\n\nA miss requires a roll for deviation as for regular grenadelike weapons." compset="Weapon">
+    <fieldval field="gSizeCost" value="70"/>
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="wFixDamage" value="Smoke"/>
+    <usesource source="RavCamSet"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wProfReq" tag="Simple"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wRangeInc" tag="10"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="Helper" tag="FixSizeDmg"/>
+    </thing>
+  <thing id="gBookBlank" name="Book, Blank" description="These books are smaller and less durably bound than a wizard&apos;s sturdy spellbook. A typical book measures 4 by 6 inches and has one hundred pages of parchment. Books of this quality are often used for personal journals or published works." compset="Gear">
+    <fieldval field="gCost" value="3"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Books"/>
+    </thing>
+  <thing id="gBookPrint" name="Book, Printed" description="The emergence of the printing press has allowed literature to flourish in advanced domains. Although print runs are usually low &#151; rarely more than one hundred copies &#151; authors can publish their works for eager audiences. A library in Ravenloft might include manuals written to teach complex skills or martial techniques, epic tales presented as adventurers&apos; memoirs, angst-ridden romance novels, or even the infamous {i}Van Richten&apos;s Guides{/i}. At Cultural Levels lower than 9, books must be scribed by hand and thus tend to be restricted to vital topics: legal tomes, historical records, or religious texts." compset="Gear">
+    <fieldval field="gCost" value="10"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Books"/>
+    </thing>
+  <thing id="gHerbs" name="Herbs" description="Any relatively common herb, including garlic bulbs, tea leaves, and sprigs of belladonna. Some herbs may be difficult to obtain outside specific conditions of climate and terrain." compset="Gear">
+    <fieldval field="gCost" value=".2"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="FoodDrink"/>
+    </thing>
+  <thing id="gAutofine" name="Automaton, fine" description="The first automatons were created by the gnomes of Mayvin, who considered it a challenge to create the most complex simulation of life from delicate gears and springs. Automatons have since become a favored curiosity piece among the wealthy. Automatons are typically capable of only one or two simple movements, such as crawling forward or tapping a bell. The largest automatons may be capable of a complex task like drawing a (preset) picture or signature. Automatons are spring wound. \n\nSome adventurers have heard tales of automatons that can perform complex, analytical functions, like playing chess. If not a hoax, these automatons have been given a semblance of life by their creators through magic or obsessive desire and should be considered dexterous but fragile constructs." compset="Gear">
+    <fieldval field="gCost" value="500"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gAutodimin" name="Automaton, diminutive" description="The first automatons were created by the gnomes of Mayvin, who considered it a challenge to create the most complex simulation of life from delicate gears and springs. Automatons have since become a favored curiosity piece among the wealthy. Automatons are typically capable of only one or two simple movements, such as crawling forward or tapping a bell. The largest automatons may be capable of a complex task like drawing a (preset) picture or signature. Automatons are spring wound. \n\nSome adventurers have heard tales of automatons that can perform complex, analytical functions, like playing chess. If not a hoax, these automatons have been given a semblance of life by their creators through magic or obsessive desire and should be considered dexterous but fragile constructs." compset="Gear">
+    <fieldval field="gCost" value="1000"/>
+    <fieldval field="gWeight" value="5"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gAutotiny" name="Automaton, tiny" description="The first automatons were created by the gnomes of Mayvin, who considered it a challenge to create the most complex simulation of life from delicate gears and springs. Automatons have since become a favored curiosity piece among the wealthy. Automatons are typically capable of only one or two simple movements, such as crawling forward or tapping a bell. The largest automatons may be capable of a complex task like drawing a (preset) picture or signature. Automatons are spring wound. \n\nSome adventurers have heard tales of automatons that can perform complex, analytical functions, like playing chess. If not a hoax, these automatons have been given a semblance of life by their creators through magic or obsessive desire and should be considered dexterous but fragile constructs." compset="Gear">
+    <fieldval field="gCost" value="2000"/>
+    <fieldval field="gWeight" value="10"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gAutosmall" name="Automaton, small" description="The first automatons were created by the gnomes of Mayvin, who considered it a challenge to create the most complex simulation of life from delicate gears and springs. Automatons have since become a favored curiosity piece among the wealthy. Automatons are typically capable of only one or two simple movements, such as crawling forward or tapping a bell. The largest automatons may be capable of a complex task like drawing a (preset) picture or signature. Automatons are spring wound. \n\nSome adventurers have heard tales of automatons that can perform complex, analytical functions, like playing chess. If not a hoax, these automatons have been given a semblance of life by their creators through magic or obsessive desire and should be considered dexterous but fragile constructs." compset="Gear">
+    <fieldval field="gCost" value="4000"/>
+    <fieldval field="gWeight" value="10"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gClockGran" name="Grandfather Clock" description="The most common example of the clockmaker&apos;s craft, these mechanical devices are capable of keeping accurate track of the time of day. Masterwork clocks cost twice the listed price but can include additional features, such as dials that track the cycles of the sun or moon or tiny figures that emerge to chime the passing of the hour. All clocks must be wound at least once a day to keep accurate time.\n\nThe smaller and more delicate a clock, the more time-consuming and costly it is to construct. (The cottage-sized clockworks within clock towers break this pattern, of course.)" compset="Gear">
+    <fieldval field="gCost" value="400"/>
+    <fieldval field="gWeight" value="80"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gClockGrMw" name="Grandfather Clock, Masterwork" description="The most common example of the clockmaker&apos;s craft, these mechanical devices are capable of keeping accurate track of the time of day. Masterwork clocks cost twice the listed price but can include additional features, such as dials that track the cycles of the sun or moon or tiny figures that emerge to chime the passing of the hour. All clocks must be wound at least once a day to keep accurate time.\n\nThe smaller and more delicate a clock, the more time-consuming and costly it is to construct. (The cottage-sized clockworks within clock towers break this pattern, of course.)" compset="Gear">
+    <fieldval field="gCost" value="800"/>
+    <fieldval field="gWeight" value="80"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gClockMant" name="Mantle Clock" description="The most common example of the clockmaker&apos;s craft, these mechanical devices are capable of keeping accurate track of the time of day. Masterwork clocks cost twice the listed price but can include additional features, such as dials that track the cycles of the sun or moon or tiny figures that emerge to chime the passing of the hour. All clocks must be wound at least once a day to keep accurate time.\n\nThe smaller and more delicate a clock, the more time-consuming and costly it is to construct. (The cottage-sized clockworks within clock towers break this pattern, of course.)" compset="Gear">
+    <fieldval field="gCost" value="500"/>
+    <fieldval field="gWeight" value="5"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gClockMaMw" name="Mantle Clock, Masterwork" description="The most common example of the clockmaker&apos;s craft, these mechanical devices are capable of keeping accurate track of the time of day. Masterwork clocks cost twice the listed price but can include additional features, such as dials that track the cycles of the sun or moon or tiny figures that emerge to chime the passing of the hour. All clocks must be wound at least once a day to keep accurate time.\n\nThe smaller and more delicate a clock, the more time-consuming and costly it is to construct. (The cottage-sized clockworks within clock towers break this pattern, of course.)" compset="Gear">
+    <fieldval field="gCost" value="1000"/>
+    <fieldval field="gWeight" value="5"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gPockWatch" name="Pocket Watch" description="The most common example of the clockmaker&apos;s craft, these mechanical devices are capable of keeping accurate track of the time of day. Masterwork clocks cost twice the listed price but can include additional features, such as dials that track the cycles of the sun or moon or tiny figures that emerge to chime the passing of the hour. All clocks must be wound at least once a day to keep accurate time.\n\nThe smaller and more delicate a clock, the more time-consuming and costly it is to construct. (The cottage-sized clockworks within clock towers break this pattern, of course.)" compset="Gear">
+    <fieldval field="gCost" value="1000"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gPockWaMwk" name="Pocket Watch, Masterwork" description="The most common example of the clockmaker&apos;s craft, these mechanical devices are capable of keeping accurate track of the time of day. Masterwork clocks cost twice the listed price but can include additional features, such as dials that track the cycles of the sun or moon or tiny figures that emerge to chime the passing of the hour. All clocks must be wound at least once a day to keep accurate time.\n\nThe smaller and more delicate a clock, the more time-consuming and costly it is to construct. (The cottage-sized clockworks within clock towers break this pattern, of course.)" compset="Gear">
+    <fieldval field="gCost" value="2000"/>
+    <usesource source="RavCamSet"/>
+    <tag group="gType" tag="Mech" name="Mechanical"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    </thing>
+  <thing id="gGunpowKeg" name="Gunpowder, Keg" description="While gunpowder burns (with an ounce consuming itself in one round and illuminating as much as a sunrod) or even explodes in the right conditions, it is chiefly used to propel a bullet out of the barrel of a musket or a rifle or is formed into a bomb. An ounce of gunpowder is needed to propel a bullet. Gunpowder is sold in small kegs (15-pound capacity and 20 pounds total weight) and in water-resistant powder horns (2-pound capacity and total weight). If gunpowder becomes wet, it is rendered useless.\n\nIf a character fails a Reflex save against a fire-based attack, any gunpowder she is carrying ignites, inflicting 1 point of damage per ounce carried to the carrier and anything within a 5-foot blast radius. Everyone (but the carrier) caught within the blast radius can make a Reflex save (DC 20) to take half damage.\n\n{b}Editor&apos;s note{/b}: You may use the in-play tab to keep track of ounces of gunpowder used. This will also effect the weight of the keg." compset="Gear">
+    <fieldval field="gCost" value="250"/>
+    <fieldval field="gWeight" value="20"/>
+    <fieldval field="hTotal" value="240"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="gType" tag="SpecSubs"/>
+    <eval phase="First" priority="11000">var wgt as number
+wgt = field[hUsed].value * .0625
+
+field[gWeight].value -= wgt</eval>
+    </thing>
+  <thing id="gGunpowHrn" name="Gunpowder, Horn" description="While gunpowder burns (with an ounce consuming itself in one round and illuminating as much as a sunrod) or even explodes in the right conditions, it is chiefly used to propel a bullet out of the barrel of a musket or a rifle or is formed into a bomb. An ounce of gunpowder is needed to propel a bullet. Gunpowder is sold in small kegs (15-pound capacity and 20 pounds total weight) and in water-resistant powder horns (2-pound capacity and total weight). If gunpowder becomes wet, it is rendered useless.\n\nIf a character fails a Reflex save against a fire-based attack, any gunpowder she is carrying ignites, inflicting 1 point of damage per ounce carried to the carrier and anything within a 5-foot blast radius. Everyone (but the carrier) caught within the blast radius can make a Reflex save (DC 20) to take half damage.\n\n{b}Editor&apos;s note{/b}: You may use the in-play tab to keep track of ounces of gunpowder used. This will also effect the weight of the keg." compset="Gear">
+    <fieldval field="gCost" value="35"/>
+    <fieldval field="gWeight" value="2"/>
+    <fieldval field="hTotal" value="32"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="gType" tag="SpecSubs"/>
+    <eval phase="First" priority="11000">var wgt as number
+wgt = field[hUsed].value * .0625
+
+field[gWeight].value -= wgt</eval>
+    </thing>
+  <thing id="mSilvered" name="Silvered" description="Any metal weapon can be silvered for five times its listed cost. Apply this modifier before adding masterwork costs, if applicable." compset="Material">
+    <fieldval field="eMatName" value="Silvered"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="MatRqMetal" name="Requires Metal" abbrev="Requires Metal"/>
+    <tag group="Helper" tag="MatWepOK" name="MatWepOK" abbrev="MatWepOK"/>
+    <eval phase="PreLevel" priority="7500">var cost as number
+
+cost = container.parent.field[gSizeCost].value*5
+
+container.child[gCustMagic].field[gCustCost].value = cost</eval>
+    </thing>
+  <thing id="tmRvnDrGol" name="Dread Golem" description="{i}Nathanael was stupefied, &#151; he had seen only too distinctly that in Olimpia&apos;s pallid waxed face there were no eyes, merely black holes in their stead; she was an inanimate puppet. \n                    &#151; Ernst  T. W. Hoffman, &quot;The Sand-Man&quot;{/i}\n\nPride is perhaps the most deadly of sins, and it is of pride that the artificial monstrosities known as constructs are born. When mortal man takes it upon himself to create life, he tampers with forces that would best be left undisturbed. Unfortunately, some refuse to recognize the wisdom of remaining within the natural order, and the result is a twisted mockery of life.\n\nIn most lands, the animation of a construct requires the use of great magics and expensive materials. Ravenloft does not hold such restrictions. Anyone with the mad desire to bring life to the inanimate can potentially do so, and the results are always tragic.\n\n{b}The Creation{/b}\nA construct created not through magic but through the dark desires of its creator is known as a golem of obsession, or a dread golem. Dread golems are created when an individual is obsessed with giving life to the inanimate. The possible reasons for such an obsession are numerous. The creator may see the creation of life as a noble scientific experiment, an artistic project, or the opportunity to restore life to a lost loved one. The reasons are ultimately immaterial; what matters is the obsession itself. That obsession is the seed that ultimately gives the dread golem &quot;life.&quot; The assembly of the golem&apos;s body, whether it be the sculpting of a statue or the sewing together of corpses, serves to imprint the construct with the creator&apos;s desires. The mechanism of animation, whether it be a fervent prayer or a channeled bolt of lightning, serves to focus the creator&apos;s anticipation to a crescendo. It is the emotion ofthis moment, when the creator is watching to discover whether his life&apos;s ambition has resulted in feverishly desired success or desperately feared failure, that truly serves to animate the construct. From the dark desires of his creator, the dread golem is born.\n\n{b}The Dread Golem{/b}\n&quot;Dread Golem&quot; is a template that can be added to any construct, hereafter referred to as the &quot;base construct.&quot; The template must be added at the moment of creation, under the circumstances described above. An existing construct cannot later become a dread golem, at least as far as is known." compset="Template" uniqueness="unique">
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="tmDEX" value="4"/>
+    <fieldval field="tmCHA" value="4"/>
+    <fieldval field="tmAC" value="4"/>
+    <usesource source="RavCamSet"/>
+    <tag group="TemplHelp" tag="Inherited"/>
+    <tag group="AlgnReq" tag="ChaotEvil"/>
+    <bootstrap thing="xRvnGTTB"></bootstrap>
+    <bootstrap thing="wSlam">
+      <containerreq phase="First" priority="550">User.Slam = 0</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnDCZeit"></bootstrap>
+    <bootstrap thing="xRvnDCSP"></bootstrap>
+    <eval phase="First" priority="11000" index="3"><![CDATA[~ if there's a new slam attack, assign the damage
+
+doneif (hero.tagis[User.Slam] <> 0)
+
+if (herofield[tSize].value = -4) then
+ hero.childfound[wSlam].field[wFixDamage].text = "1"
+elseif (herofield[tSize].value = -3) then
+ perform hero.childfound[wSlam].assign[wMain.1d2_2]
+elseif (herofield[tSize].value = -2) then
+ perform hero.childfound[wSlam].assign[wMain.1d3_3]
+elseif (herofield[tSize].value = -1) then
+ perform hero.childfound[wSlam].assign[wMain.1d4_4]
+elseif (herofield[tSize].value = 0) then
+ perform hero.childfound[wSlam].assign[wMain.1d6_5]
+elseif (herofield[tSize].value = 1) then
+ perform hero.childfound[wSlam].assign[wMain.1d8_6]
+elseif (herofield[tSize].value = 2) then
+ perform hero.childfound[wSlam].assign[wMain.2d6_104]
+elseif (herofield[tSize].value = 3) then
+ perform hero.childfound[wSlam].assign[wMain.2d8_204]
+elseif (herofield[tSize].value = 4) then
+ hero.childfound[wSlam].field[wFixDamage].text = "4d6"
+endif]]></eval>
+    <eval phase="First" priority="500"><![CDATA[~If base creature already has slam attack, do not add new one
+
+foreach pick in hero from BaseWep
+ if (eachpick.tagis[thingid.wSlam] <> 0) then
+  perform hero.assign[User.Slam]
+ endif
+nexteach]]></eval>
+    <eval phase="First" priority="5005" index="2"><![CDATA[~ give intelligence to those who have none
+
+if (hero.child[aINT].tagis[Helper.NoScore] <> 0) then
+ perform hero.child[aINT].delete[Helper.NoScore]
+ hero.child[aINT].field[aStartMod].value -= 1
+endif
+
+~ make sure Wisdom is at least three
+ hero.child[aWIS].field[aFinalVal].value = maximum(hero.child[aWIS].field[aFinalVal].value,3)]]></eval>
+    <exprreq message="Construct required."><![CDATA[tagis[Race.typConstru] <> 0]]></exprreq>
+    </thing>
+  <thing id="xRvnGTTB" name="Telepathic Bond" description="The golem has a constant telepathic bond with its creator. The golem is constantly aware of all of its creator&apos;s thoughts, hopes, fears, dreams, and desires. It can see through its creator&apos;s eyes and always knows its creator&apos;s location. It can also &quot;speak&quot; telepathically to its creator. This ability has unlimited range and cannot be blocked by any means magical or otherwise.\n\nThe golem&apos;s deep bond with its creator invariably leads to hatred and contempt. The golem acutely senses any anger or disappointment the creator feels toward the golem and knows its creator&apos;s darkest and most humiliating secrets. No creator can maintain the loyalty of the golem in the face of this intrusive intimacy.\n\nThis is a one-way power only. The creator has no such bond with her creation." compset="Special" summary="The golem has a constant telepathic bond with its creator.">
+    <fieldval field="xSource" value="Dread Construct"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xRvnDCZeit" name="Zeitgebers" description="Almost all dread golems suffer from one or more zeitgebers, which are involuntary responses triggered by certain sights, sounds, or experiences. Like the golem&apos;s salient powers, the zeitgebers often mock the creator&apos;s goals by rendering the golem unable to act as desired in given situations.\n\nThe potential triggers and effects of zeitgebers are limitless. The sight of fire might cause a particular golem to cower in fear or stare transfixed at the flames. A song or style of music might cause another golem to dance clumsily or sing croakingly. Another golem might start howling uncontrollably when the full moon rises. The effect of zeitgebers in game terms are up to the DM, but they should serve as a tool for clever hunters to use against the beasts." compset="Special" summary="You suffer from  involuntary responses triggered by certain sights, sounds, or experiences.">
+    <fieldval field="xSource" value="Dread Construct"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xRvnDCSP" name="Salient Powers" description="In addition to the above modifications, dread golems frequently have salient powers. These powers result from the materials used in the golem&apos;s construction or are a twisted mockery of the creator&apos;s goals and fears. Roll 1d4-1 to randomly determine how many salient powers the golem possesses, or choose an appropriate number.\n\n{i}Constrict (Ex){/i}: The golem is able to crush or strangle its enemies. The golem gains the constrict ability.\n\n{i}Contagious Touch (Sp){/i}: The golem can cast a contagion spell at will. The golem always inflicts the same disease with this power.\n\n{i}Energy Drain (Su){/i}: Any living creature hit by the golem&apos;s slam attack suffers one negative level.\n\n{i}Frightful Presence (Su){/i}: The golem has the Frightful Presence ability (Monster Manual), with defaut range and duration. Common ways for golems to trigger this power are by moaning, gibbering, or even tearing at their own flesh.\n\n{i}Heightened Scent (Ex): This power is most frequently possessed by flesh golems that were constructed with the sensory organs of an animal. The golem gains the Scent feat.\n\n{i}Improved Grab (Ex){/i}: The golem gains the improved grab ability. It must hit with its slam attack to use this ability.\n\n{i}Jump (Ex){/i}: The golem is capable of truly astounding leaps. It is treated as if always under the effect of a jump spell.\n\n{i}Laugh of Enfeeblement (Su){/i}: At will, the golem can unleash a booming, derisive laugh that affects all living creatures within 30 feet as if they had been hit by a ray of enfeeblement cast by a 10th-level sorcerer. Creatures that cannot hear the laugh are unaffected.\n\n{i}Rage (Ex){/i}: Once per day the golem can enter a rage as if it were a 20th-level barbarian. It does not have a Constitution score, so it does not gain extra hit points, but all other bonuses and penalties apply.\n\n{i}Regeneration (Ex){/i}: The dread golem gains Regeneration 5. Two relatively common varieties of damage must be selected that deal normal damage to the golem. Dread flesh golems, for example, are frequently unable to regenerate fire or acid damage. The dread golem cannot regrow lost body parts, but it can reattach severed body parts instantly by holding them against the stump.\n\n{i}Spider Climb (Ex){/i}: The golem can cling to surfaces as though under the effects of the spider climb spell.\n\n{i}Stench of Decay (Su){/i}: The golem constantly exudes a foul stench in a 20-foot radius that is identical in effect to the stinking cloud spell.\n\n{i}Trample (Ex){/i}: The golem gains the trample ability.\n\n{b}Editor&apos;s Note:{/b} Use the charges field to select how many Salient powers the creature gains, then choose those powers in the Feats tab." compset="Special" summary="Dread golems frequently have salient powers.">
+    <fieldval field="xSource" value="Dread Construct"/>
+    <fieldval field="hTotal" value="13"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 1]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 2]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 3]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 4]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 5]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 6]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 7]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 8]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 9]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 10]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 11]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 12]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fRvnDCSaPo">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:hUsed >= 13]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="fRvnDCSaPo" name="Salient Power" compset="Feat">
+    <fieldval field="ftCandExpr" value="thingid.xRvnConstr | thingid.xRvnContTo | thingid.xRvnEneDra | thingid.xRvnFriPre | thingid.xRvnHeiSce | thingid.xRvnImpGra | thingid.xRvnJump | thingid.xRvnLauEnf | thingid.xRvnRage | thingid.xRvnRegene | thingid.xRvnSpiCli | thingid.xRvnSteDec | thingid.xRvnTrampl"/>
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="fCategory" tag="General"/>
+    <bootstrap thing="xRvnContTo">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 2</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnEneDra">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 3</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnFriPre">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 4</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnConstr">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 1</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnHeiSce">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 5</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnImpGra">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 6</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnJump">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 7</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnLauEnf">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 8</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnRage">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 9</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnRegene">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 10</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnSpiCli">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 11</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnSteDec">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 12</containerreq>
+      </bootstrap>
+    <bootstrap thing="xRvnTrampl">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 13</containerreq>
+      </bootstrap>
+    <eval phase="First" priority="9500">doneif (field[fChosen].ischosen = 0)
+
+~set hTotal field for bootstrapping purposes
+field[hTotal].value = field[fChosen].chosen.field[Value].value</eval>
+    </thing>
+  <thing id="xRvnConstr" name="Constrict" description="The golem is able to crush or strangle its enemies. The golem gains the constrict ability. \n\n{b}Editor&apos;s Note{/b}: No damage is listed in the book. It&apos;s likely it would change from golem to golem. A good rule of thumb is to use the same damage as provided by the creature&apos;s primary natural attack." compset="Special" summary="The golem gains the constrict ability.">
+    <fieldval field="Value" value="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnContTo" name="Contagious Touch" description="The golem can cast a {i}contagion{/i} spell at will. The golem always inflicts the same disease with this power." compset="Special" summary="The golem can cast a {i}contagion{/i} spell at will.">
+    <fieldval field="Value" value="2"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnEneDra" name="Energy Drain" description="Any living creature hit by the golem&apos;s slam attack suffers one negative level." compset="Special">
+    <fieldval field="Value" value="3"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnFriPre" name="Frightful Presence" description="The golem has the Frightful Presence special attack (Monster Manual) with default range and duration. Common ways for golems to trigger this power are by moaning, gibbering, or even tearing at their own flesh.\n\n{i}This special quality makes a creature&#146;s very presence unsettling to foes. It takes effect automatically when the creature performs some sort of dramatic action (such as charging, attacking, or snarling). Opponents within range who witness the action may become frightened or shaken. Actions required to trigger the ability are given in the creature&#146;s descriptive text. The range is usually 30 feet, and the duration is usually 5d6 rounds. This ability affects only opponents with fewer Hit Dice or levels than the creature has. An affected opponent can resist the effects with a successful Will save (DC 10 + &#189; frightful creature&#146;s racial HD + frightful creature&#146;s Cha modifier; the exact DC is given in the creature&#146;s descriptive text). An opponent that succeeds on the saving throw is immune to that same creature&#146;s frightful presence for 24 hours.{/i}" compset="Special" summary="The golem has the Frightful Presence ability.">
+    <fieldval field="Value" value="4"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnHeiSce" name="Heightened Scent" description="This power is most frequently possessed by flesh golems that were constructed with the sensory organs of an animal. The golem gains the Scent ability." compset="Special" summary="The golem gains the scent ability.">
+    <fieldval field="Value" value="5"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xScent2"></bootstrap>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnImpGra" name="Improved Grab" description="The golem gains the improved grab ability. It must hit with its slam attack to use this ability." compset="Special" summary="The golem gains the improved grab ability.">
+    <fieldval field="Value" value="6"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xImpGrab"></bootstrap>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnJump" name="Jump" description="The golem is capable of truly astounding leaps. It is treated as if always under the effect of a {i}jump{/i} spell." compset="Special" summary="The golem is capable of truly astounding leaps.">
+    <fieldval field="Value" value="7"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text
+
+#skillbonus[kJump] += 10]]></eval>
+    </thing>
+  <thing id="xRvnLauEnf" name="Laugh of Enfeeblement" description="At will, the golem can unleash a booming, derisive laugh that affects all living creatures within 30 feet as if they had been hit by a ray of enfeeblement cast by a 10th-level sorcerer. Creatures that cannot hear the laugh are unaffected." compset="Special" summary="The golem can unleash a laugh that effects all within 30&apos; as {i}ray of enfeeblement{/i}.">
+    <fieldval field="Value" value="8"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnRage" name="Rage" description="Once per day the golem can enter a rage as if it were a 20th-level barbarian. It does not have a Constitution score, so it does not gain extra hit points, but all other bonuses and penalties apply." compset="Special" summary="The golem can go into a rage like a barbarian once per day.">
+    <fieldval field="Value" value="9"/>
+    <fieldval field="hName1" value="Enraged"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    <eval phase="PostLevel" priority="21000" index="2"><![CDATA[~ If we're enraged, apply the stat modifiers for that
+
+ if (field[hIsOn1].value <> 0) then
+  hero.child[aSTR].field[Bonus].value += 8
+  hero.child[aCON].field[Bonus].value += 8
+  #applybonus[BonMorale, hero.child[vWill], 4]
+  hero.child[ArmorClass].field[Penalty].value -= 2
+ endif]]></eval>
+    </thing>
+  <thing id="xRvnRegene" name="Regeneration" description="The dread golem gains Regeneration 5. Two relatively common varieties of damage must be selected that deal normal damage to the golem. Dread flesh golems, for example, are frequently unable to regenerate fire or acid damage. The dread golem cannot regrow lost body parts, but it can reattach severed body parts instantly by holding them against the stump." compset="Special" summary="The dread golem regenerates 5 hp/rnd.">
+    <fieldval field="Value" value="10"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnSpiCli" name="Spider Climb" description="The golem can cling to surfaces as though under the effects of the {i}spider climb{/i} spell." compset="Special">
+    <fieldval field="Value" value="11"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnSteDec" name="Stench of Decay" description="The golem constantly exudes a foul stench in a 20-foot radius that is identical in effect to the {i}stinking cloud{/i} spell." compset="Special">
+    <fieldval field="Value" value="12"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="xRvnTrampl" name="Trample" description="The golem gains the trample ability.\n\n{i}As a full-round action, a creature with this special attack can move up to twice its speed and literally run over any opponents at least one size category smaller than itself. The creature merely has to move over the opponents in its path; any creature whose space is completely covered by the trampling creature&#146;s space is subject to the trample attack. If a target&#146;s space is larger than 5 feet, it is only considered trampled if the trampling creature moves over all the squares it occupies. If the trampling creature moves over only some of a target&#146;s space, the target can make an attack of opportunity against the trampling creature at a -4 penalty. A trampling creature that accidentally ends its movement in an illegal space returns to the last legal position it occupied, or the closest legal position, if there&#146;s a legal position that&#146;s closer.\n\nA trample attack deals bludgeoning damage (the creature&#146;s slam damage + 1&#189; times its Str modifier). The creature&#146;s descriptive text gives the exact amount.\n\nTrampled opponents can attempt attacks of opportunity, but these take a -4 penalty. If they do not make attacks of opportunity, trampled opponents can attempt Reflex saves to take half damage.\n\nThe save DC against a creature&#146;s trample attack is 10 + &#189; creature&#146;s HD + creature&#146;s Str modifier (the exact DC is given in the creature&#146;s descriptive text). A trampling creature can only deal trampling damage to each target once per round, no matter how many times its movement takes it over a target creature.{/i}" compset="Special" summary="The golem gains the trample ability.">
+    <fieldval field="Value" value="13"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final" priority="22000"><![CDATA[field[livename].text = "Salient Power: " & field[name].text]]></eval>
+    </thing>
+  <thing id="kMLAnimals" name="Monster Lore: Animals" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLConstru" name="Monster Lore: Constructs" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLDragons" name="Monster Lore: Dragons" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLElement" name="Monster Lore: Elementals" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLFey" name="Monster Lore: Fey" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLGiants" name="Monster Lore: Giants" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLHumanoi" name="Monster Lore: Humanoids" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLMagBeas" name="Monster Lore: Magical Beasts" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLMonHuma" name="Monster Lore: Monstrous Humanoids" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLOozes" name="Monster Lore: Oozes" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLOutside" name="Monster Lore: Outsiders" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLPlants" name="Monster Lore: Plants" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLUndead" name="Monster Lore: Undead" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="kMLVermin" name="Monster Lore: Vermin" description="Lore skills mix academic study with a broad overview of legend and superstition. Characters can attempt to use lore skills untrained (an Intelligence check, which the DM should roll) by relying on their knowledge of common folklore. However, folklore is often misleading. If a character trained in lore fails the skill check, she realizes that she simply does not know the needed information. If an untrained character fails the check, the DM should provide a skewed (or even dangerously unreliable) version of the desired information." compset="Skill" uniqueness="unique">
+    <usesource source="RavCamSet"/>
+    <tag group="Helper" tag="SkCatKnow"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="User" tag="MonLore" name="Monster Lore"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  </document>

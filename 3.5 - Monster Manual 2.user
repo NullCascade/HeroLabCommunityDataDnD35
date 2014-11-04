@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>c2-15-10</info_history>
+    </fileinfo>
+  <thing id="rMycoGuard" name="Myconid (Guard)" description="These myconids are sixteen to twenty years old. They are charged with the defense of the circle.\n\n{b}Combat{/b}\nGuards are fairly aggressive in combat, at least by myconid standards. Their preferred attack is their pacification spores, though they can use their slam attacks if forced into melee.\n\n{b}Spores (Ex){/b}: Guards have access to distress, reproduction, rapport, and pacification spores (save DC 14 where applicable)." compset="Race">
+    <fieldval field="rSTR" value="4"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="4"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="4"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAttack" value="3"/>
+    <fieldval field="rFort" value="4"/>
+    <fieldval field="rRef" value="1"/>
+    <fieldval field="rWill" value="1"/>
+    <fieldval field="rAC" value="1"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="4d8 (4 levels of Plant)"/>
+    <fieldval field="rHitDice" value="4"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <fieldval field="rCR" value="4"/>
+    <usesource source="MonManual2"/>
+    <tag group="Race" tag="Myconid"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="typPlant"/>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="xSporePaci"></bootstrap>
+    <bootstrap thing="xSporeRapp"></bootstrap>
+    <bootstrap thing="xSporeRepr"></bootstrap>
+    <bootstrap thing="xSporeDist"></bootstrap>
+    <bootstrap thing="typPlant"></bootstrap>
+    </thing>
+  <thing id="xSporeDist" name="Spores - Distress" description="As a standard action, a myconid can release a cloud of spores. These spores come in several different varieties, as described below. As it enters each new stage of life (increasing its Hit Dice by 1), a myconid gains a new variety of spore but does not lose access to the previous varieties. Each type of spore can be used a number of times per day equal to the myconid&#146;s Hit Dice. A 3-HD myconid, for example, has the first three spores (distress, reproduction, and rapport), and it can use each variety three times per day. Spores can be released either in a 120-foot spread or as a 40-foot ray against a single target, as noted in the individual spore descriptions.\n\n{i}Distress{/i}: These spores alert all other myconids within the area that danger is near. They are released in a 120-foot spread." compset="Special" summary="Standard, all myconids within 120 ft radius spread are alerted to danger.">
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xSporeRepr" name="Spores - Reproduction" description="As a standard action, a myconid can release a cloud of spores. These spores come in several different varieties, as described below. As it enters each new stage of life (increasing its Hit Dice by 1), a myconid gains a new variety of spore but does not lose access to the previous varieties. Each type of spore can be used a number of times per day equal to the myconid&#146;s Hit Dice. A 3-HD myconid, for example, has the first three spores (distress, reproduction, and rapport), and it can use each variety three times per day. Spores can be released either in a 120-foot spread or as a 40-foot ray against a single target, as noted in the individual spore descriptions.\n\n{i}Reproduction{/i}: These spores eventually germinate into new infant myconids. They are released as a 120-foot spread and have no detrimental effects on nonmyconids." compset="Special" summary="Standard, spores spread within 120 ft rad eventually become infant myconids.">
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xSporeRapp" name="Spores - Rapport" description="As a standard action, a myconid can release a cloud of spores. These spores come in several different varieties, as described below. As it enters each new stage of life (increasing its Hit Dice by 1), a myconid gains a new variety of spore but does not lose access to the previous varieties. Each type of spore can be used a number of times per day equal to the myconid&#146;s Hit Dice. A 3-HD myconid, for example, has the first three spores (distress, reproduction, and rapport), and it can use each variety three times per day. Spores can be released either in a 120-foot spread or as a 40-foot ray against a single target, as noted in the individual spore descriptions.\n\n{i}Rapport{/i}: Myconids do not speak, but these spores enable them to establish telepathic communication with each other and with outsiders. A successful Fortitude saving throw (DC varies; see individual descriptions) negates the effect, but it is harmless. Rapport lasts for 30 to 60 minutes with outsiders, but for 8 hours with other myconids. Rapport spores can be released as either a 120-foot spread or a 40-foot ray. Regardless of the release area, the communication range is 120 feet once rapport is established." compset="Special" summary="Stand, spores in 120 ft rad spread or 40 ft ray allow comm (DCXX Fort neg).">
+    <comment>xSumm (Done)</comment>
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt"><![CDATA[      var DC as number
+      DC = 10 + herofield[tHitDice].value/2 + hero.child[aCON].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[hTotal].value = herofield[tHitDice].value
+
+      field[xSumm].text = "" & field[hTotal].value & "/day, stand, spores in 120 ft rad sprd/40 ft ray allow comm(DC" & DC & " Fort neg)."]]></eval>
+    </thing>
+  <thing id="xSporePaci" name="Spores - Pacification" description="As a standard action, a myconid can release a cloud of spores. These spores come in several different varieties, as described below. As it enters each new stage of life (increasing its Hit Dice by 1), a myconid gains a new variety of spore but does not lose access to the previous varieties. Each type of spore can be used a number of times per day equal to the myconid&#146;s Hit Dice. A 3-HD myconid, for example, has the first three spores (distress, reproduction, and rapport), and it can use each variety three times per day. Spores can be released either in a 120-foot spread or as a 40-foot ray against a single target, as noted in the individual spore descriptions.\n\n{i}Pacification{/i}: These spores are released as a 40-foot ray. The target must make a Fortitude saving throw (DC varies; see individual descriptions) or become passive for 1 minute. Being passive is similar to being dazed, except that the target can take partial actions that don&#146;t involve attacking. This is a mind-affecting compulsion effect." compset="Special" summary="Stand, spores in 40 ft ray daze foe, can&apos;t attack for 1 min (DCXX Fort neg).">
+    <comment>xSumm (Done)</comment>
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt"><![CDATA[      var DC as number
+      DC = 10 + herofield[tHitDice].value/2 + hero.child[aCON].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[hTotal].value = herofield[tHitDice].value
+
+      field[xSumm].text = "" & field[hTotal].value & "/day, stand, spores in 40 ft ray daze foe, can't att for 1 min (DC" & DC & " Fort neg)."]]></eval>
+    </thing>
+  <thing id="xSporeHall" name="Spores - Hallucination" description="As a standard action, a myconid can release a cloud of spores. These spores come in several different varieties, as described below. As it enters each new stage of life (increasing its Hit Dice by 1), a myconid gains a new variety of spore but does not lose access to the previous varieties. Each type of spore can be used a number of times per day equal to the myconid&#146;s Hit Dice. A 3-HD myconid, for example, has the first three spores (distress, reproduction, and rapport), and it can use each variety three times per day. Spores can be released either in a 120-foot spread or as a 40-foot ray against a single target, as noted in the individual spore descriptions.\n\n{i}Hallucination{/i}: These spores are released as a 40-foot ray. The target must make a Fortitude saving throw (DC varies; see individual descriptions) or suffer powerful hallucinations that duplicate the effects of a {i}confusion{/i} spell for 1 hour." compset="Special" summary="X/day, stand, spores in 40 ft ray act as {i}confusion{/i} for 1 hr (DCXX Fort neg).">
+    <comment>xSumm (Done)</comment>
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="UserPostAt"><![CDATA[      var DC as number
+      DC = 10 + herofield[tHitDice].value/2 + hero.child[aCON].field[aModBonus].value 
+      DC = round(DC, 0, -1)
+
+      field[hTotal].value = herofield[tHitDice].value
+
+      field[xSumm].text = "" & field[hTotal].value & "/day, stand, spores in 40 ft ray act as {i}confusion{/i} for 1 hr (DC" & DC & " Fort neg)."]]></eval>
+    </thing>
+  <thing id="xSporeAnim" name="Spores - Animation" description="As a standard action, a myconid can release a cloud of spores. These spores come in several different varieties, as described below. As it enters each new stage of life (increasing its Hit Dice by 1), a myconid gains a new variety of spore but does not lose access to the previous varieties. Each type of spore can be used a number of times per day equal to the myconid&#146;s Hit Dice. A 3-HD myconid, for example, has the first three spores (distress, reproduction, and rapport), and it can use each variety three times per day. Spores can be released either in a 120-foot spread or as a 40-foot ray against a single target, as noted in the individual spore descriptions.\n\n{i}Animation{/i}: Only the myconid sovereign has access to these spores. When released over a dead body, animation spores begin a process that covers the corpse with purple fungus. After 1d4 days, the corpse reanimates as a servant. A servant has all the characteristics of a zombie of the same size, except that it retains its previous creature type and it cannot be turned or otherwise affected as an undead. Over the course of 1d6 weeks, a myconid-animated corpse slowly decays. At the end of that period it simply disintegrates into dust." compset="Special" summary="Stand, 1d4 days later corpse animates as zombie, decays over 1d6 weeks.">
+    <usesource source="MonManual2"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="rMycoCirLe" name="Myconid (Circle Leader)" description="These myconids are twenty to twenty-four years old. As the name suggests, they lead and administer their circles.\n\n{b}Combat{/b}\nCircle leaders join battle only if doing so seems necessary to keep their underlings from being slaughtered. In combat, they use their hallucination spores at the first opportunity. Like other myconids, they prefer to avoid melee combat altogether but can use their slams if they must.\n\n{b}Spores (Ex){/b}: Circle leaders have access to distress, reproduction, rapport, pacification, and hallucination spores (save DC 15 where applicable)." compset="Race">
+    <fieldval field="rSTR" value="6"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="6"/>
+    <fieldval field="rWIS" value="6"/>
+    <fieldval field="rCHA" value="4"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAttack" value="3"/>
+    <fieldval field="rFort" value="4"/>
+    <fieldval field="rRef" value="1"/>
+    <fieldval field="rWill" value="1"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="5d8 (5 levels of Plant)"/>
+    <fieldval field="rHitDice" value="5"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <fieldval field="rCR" value="6"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <usesource source="MonManual2"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="Myconid"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="Race" tag="typPlant"/>
+    <bootstrap thing="xSporePaci"></bootstrap>
+    <bootstrap thing="xSporeRapp"></bootstrap>
+    <bootstrap thing="xSporeRepr"></bootstrap>
+    <bootstrap thing="xSporeDist"></bootstrap>
+    <bootstrap thing="xSporeHall"></bootstrap>
+    <bootstrap thing="typPlant"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    </thing>
+  <thing id="rMycoSover" name="Myconid (Sovereign)" description="A myconid sovereign is usually at least twenty-four years old. It rules over a tribe, advised by the oldest of the circle leaders. Sovereigns in neighboring areas try to ensure regular communication between their tribes, and they occasionally meet to discuss issues that affect multiple tribes.\n\n{b}Combat{/b}\nSovereigns use the same tactics as circle leaders, except that they also usually have a few myconid-animated zombies, or servants, to order into combat. If they join combat at all, sovereigns tend to advance on the enemy behind a rank of servants or circle leaders or both.\n\n{b}Spores (Ex){/b}: A myconid sovereign has access to distress, reproduction, rapport, pacification, hallucination, and animation spores (save DC 15 where applicable).\n\n{b}Potion Making (Su){/b}: Though it is not a spellcaster, a myconid sovereign can create various potions that mimic cleric and druid spells." compset="Race">
+    <fieldval field="rSTR" value="8"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="6"/>
+    <fieldval field="rWIS" value="6"/>
+    <fieldval field="rCHA" value="6"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="5"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="6d8 (6 levels of Plant)"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <fieldval field="rCR" value="7"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rReach" value="10"/>
+    <usesource source="MonManual2"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="Myconid"/>
+    <tag group="RaceSize" tag="Large1"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="Race" tag="typPlant"/>
+    <bootstrap thing="xSporeRapp"></bootstrap>
+    <bootstrap thing="xSporeRepr"></bootstrap>
+    <bootstrap thing="xSporeDist"></bootstrap>
+    <bootstrap thing="xSporeHall"></bootstrap>
+    <bootstrap thing="typPlant"></bootstrap>
+    <bootstrap thing="xSporeAnim"></bootstrap>
+    <bootstrap thing="xPotMaking"></bootstrap>
+    <bootstrap thing="fBrewPot"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="xSporePaci"></bootstrap>
+    </thing>
+  <thing id="xPotMaking" name="Potion Making" description="Though it is not a spellcaster, a myconid sovereign can create various potions that mimic cleric and druid spells. It can duplicate the following effects, each once per day (but only for the purpose of brewing potions): {i}bull&#146;s strength, cure light wounds, cure moderate wounds, cure serious wounds, delay poison, endurance, endure elements, greater magic fang, invisibility to animals, lesser restoration, magic fang, negative energy protection, neutralize poison, protection from elements, remove blindness/deafness, remove disease, remove paralysis, resist elements{/i}. Caster level 6th; save DC 12 + spell level." compset="Special">
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="rMycoElWor" name="Myconid (Elder Worker)" description="These myconids are twelve to sixteen years old. They serve as supervisors for other workers and as shock troops in combat.\n\n{b}Combat{/b}\nElder workers usually spray intruders with rapport spores rather than hiding, as more junior myconids do. They are quite willing to communicate rather than take aggressive action. If forced to fight, they try to eliminate the most formidable-looking foes first. If more capable myconids join the battle, elder workers use much the same tactics that average workers do.\n\n{b}Spores (Ex){/b}: Elder workers have access to distress, reproduction, and rapport spores (save DC 12 where applicable)." compset="Race">
+    <fieldval field="rSTR" value="2"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="4"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAttack" value="2"/>
+    <fieldval field="rFort" value="3"/>
+    <fieldval field="rRef" value="1"/>
+    <fieldval field="rWill" value="1"/>
+    <fieldval field="rAC" value="1"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="3d8 (3 levels of Plant)"/>
+    <fieldval field="rHitDice" value="3"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <fieldval field="rCR" value="2"/>
+    <usesource source="MonManual2"/>
+    <tag group="Race" tag="Myconid"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="typPlant"/>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="xSporeRapp"></bootstrap>
+    <bootstrap thing="xSporeRepr"></bootstrap>
+    <bootstrap thing="xSporeDist"></bootstrap>
+    <bootstrap thing="typPlant"></bootstrap>
+    </thing>
+  <thing id="rMycoAvgWo" name="Myconid (Average Worker)" description="These myconids are eight to twelve years old. They are the backbone of the community, and they can perform a wide variety of tasks.\n\n{b}Combat{/b}\nAverage workers are fairly proficient fighters. If alerted to danger, they usually try to hide and then either attack from ambush or wait until more capable myconids arrive on the scene. If such reinforcements are available, the average workers use the aid another action to assist their superiors in combat.\n\n{b}Spores (Ex){/b}: Average workers have access to both distress and reproduction spores." compset="Race">
+    <fieldval field="rDEX" value="4"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rAttack" value="1"/>
+    <fieldval field="rFort" value="3"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="2d8 (2 levels of Plant)"/>
+    <fieldval field="rHitDice" value="2"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <fieldval field="rCR" value="1"/>
+    <usesource source="MonManual2"/>
+    <tag group="Race" tag="Myconid"/>
+    <tag group="RaceSize" tag="Small11"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="typPlant" name="Type - Plant"/>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="xSporeRepr"></bootstrap>
+    <bootstrap thing="xSporeDist"></bootstrap>
+    <bootstrap thing="typPlant"></bootstrap>
+    </thing>
+  <thing id="rMycoJunWo" name="Myconid (Junior Worker)" description="These youngsters are four to eight years old. They assist their elders with daily chores and serve as a circle&#146;s first line of defense.\n\n{b}Combat{/b}\nJunior workers are ineffective fighters. They release their spores at the first sign of danger and hide or retreat if threatened. If forced to fight, they tend to rush a single opponent as a group. Because a junior worker has a reach of 0 feet, it must enter an opponent&#146;s space to make melee attacks.\n\n{b}Spores (Ex){/b}: Junior workers have access only to distress spores." compset="Race">
+    <fieldval field="rDEX" value="4"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rInfAutoLn" value="None"/>
+    <fieldval field="rInfHit" value="1d8 (1 levels of Plant)"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <fieldval field="rCR" value="1/2"/>
+    <fieldval field="rSTR" value="-2"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rReach" value="0"/>
+    <fieldval field="rSpace" value="2.5"/>
+    <usesource source="MonManual2"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="Myconid"/>
+    <tag group="RaceSize" tag="Tiny12"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="Race" tag="typPlant"/>
+    <bootstrap thing="wSlam">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d3_3"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="xSporeDist"></bootstrap>
+    <bootstrap thing="typPlant"></bootstrap>
+    </thing>
+  <thing id="tmHGolemCl" name="Half-Golem. Clay" compset="Template" uniqueness="unique">
+    <fieldval field="tmDEX" value="-2"/>
+    <fieldval field="tmCON" value="4"/>
+    <fieldval field="tmINT" value="-6"/>
+    <fieldval field="tmCHA" value="-6"/>
+    <fieldval field="tmSTR" value="8"/>
+    <fieldval field="tmFort" value="2"/>
+    <fieldval field="tmAC" value="7"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <usesource source="MonManual2" parent="p35" name="Monster Manual 2"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <bootstrap thing="xClGoBerse"></bootstrap>
+    <bootstrap thing="xDamRdSil"></bootstrap>
+    <bootstrap thing="xClGoHaste"></bootstrap>
+    <bootstrap thing="xImmPieSla"></bootstrap>
+    <bootstrap thing="xClGoWound"></bootstrap>
+    <bootstrap thing="xClGoImMag"></bootstrap>
+    <bootstrap thing="xNoRunning"></bootstrap>
+    <eval phase="First">#applydr[xDamRdSil, 10]</eval>
+    </thing>
+  <thing id="xImmPieSla" name="Immunity to Piercing and Slashing" description="Slashing and piercing weapons, whether normal or magical, deal no damage to a clay half-golem." compset="Special" summary="You take no damage from piercing or slashing weapons." uniqueness="unique">
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Immune"/>
+    </thing>
+  <thing id="xClGoHaste" name="Haste" description="After it has engaged in at least 1 round of combat on a given day, a clay half-golem can use {i}haste{/i} upon itself once during that day as a free action. The effect lasts 3 rounds and is otherwise the same as the spell." compset="Special" summary="Free, 1/day after 1 round of combat cast {i}haste{/i} on self for 3 rounds." uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Haste"/>
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[      if (field[hIsOn1].value <> 0) then
+      ~ Add a +30 or our speed enhancement bonus, whichever is lower
+      if (hero.child[Speed].field[tSpeed].value >= 30) then
+       hero.child[Speed].field[BonEnhance].value = maximum(hero.child[Speed].field[BonEnhance].value, 30)
+      elseif (hero.child[Speed].field[tSpeed].value < 30) then
+       var bonus as number
+       bonus = hero.child[Speed].field[tSpeed].value
+        hero.child[Speed].field[BonEnhance].value = maximum(hero.child[Speed].field[BonEnhance].value, bonus)
+     endif
+
+      ~ Add to our attack bonus
+      hero.child[Attack].field[Bonus].value += 1
+      
+      ~ Add to our armor class
+      hero.child[ArmorClass].field[tACDodge].value += 1
+
+      ~ Add to our Ref saves
+      container.child[vRef].field[Bonus].value = container.child[vRef].field[Bonus].value + 1
+      endif]]></eval>
+    </thing>
+  <thing id="xClGoWound" name="Wound" description="The damage a clay half-golem deals doesn&#146;t heal naturally. Only a spell of 6th level or higher with the healing descriptor (such as {i}heal{/i}) can repair it." compset="Special" summary="Damage dealt requires high level healing magic to repair." uniqueness="unique">
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xClGoBerse" name="Berserk" description="A clay half-golem that takes damage in combat flies into a berserk rage the following round, attacking wildly until either it or its opponent is dead. It gains +4 Strength, +4 Constitution, and &#150;2 AC. A clay half-golem cannot end its berserk state voluntarily. If the clay half-golem is a barbarian, the bonuses and the penalty are cumulative with the barbarian rage class feature." compset="Special" summary="Free, after damaged +4 Str/Con, -2 AC until foes are dead, stacks with rage." uniqueness="unique">
+    <fieldval field="hName1" value="Berserk"/>
+    <usesource source="MonManual2"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      if (field[hIsOn1].value <> 0) then
+        hero.child[aSTR].field[Bonus].value += 4
+        hero.child[aCON].field[Bonus].value += 4
+        hero.child[ArmorClass].field[Penalty].value -= 2
+        endif]]></eval>
+    </thing>
+  <thing id="xClGoImMag" name="Immunity to Magic" description="A clay golem is immune to any spell or spell-like ability that allows spell resistance. In addition, certain spells and effects function differently against the creature, as noted below.\n\nA {i}move earth{/i} spell drives the golem back 120 feet and deals 3d12 points of damage to it.\n\nA {i}disintegrate{/i} spell slows the golem (as the slow spell) for 1d6 rounds and deals 1d12 points of damage.\n\nAn {i}earthquake{/i} spell cast directly at a clay golem stops it from moving on its next turn and deals 5d10 points of damage. The golem gets no saving throw against any of these effects.\n\nAny magical attack against a clay golem that deals acid damage heals 1 point of damage for every 3 points of damage it would otherwise deal. If the amount of healing would cause the golem to exceed its full normal hit points, it gains any excess as temporary hit points. For example, a clay golem hit by the breath weapon of a black dragon heals 7 points of damage if the attack would have dealt 22 points of damage. A clay golem golem gets no saving throw against magical attacks that deal acid damage." compset="Special" summary="Immune spells allowing SR, except {i}move earth{/i}, {i}disintigrate{/i}, or {i}earthquake{/i}." uniqueness="unique">
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Immune"/>
+    </thing>
+  <thing id="xNoRunning" name="No Running" description="Half Golems cannot run, although their speed is otherwise unchanged." compset="Special" uniqueness="unique">
+    <usesource source="MonManual2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  </document>

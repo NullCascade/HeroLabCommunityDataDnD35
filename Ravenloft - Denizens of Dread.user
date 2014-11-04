@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>1-29-11 Lawful_G
+Created</info_history>
+    </fileinfo>
+  <thing id="xGriDetCor" name="Detect Corruption" description="A grim continuously detects the presence of evil undead and outsiders within a 60-foot radius." compset="Special" summary="Continuously detect evil undead/outsiders in 60 ft radius.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Sense"/>
+    </thing>
+  <thing id="xGriEthBei" name="Ethereal Being" description="During daylight hours a grim fades from existence, becoming ethereal. The grim re-materializes the following sunset (in the form of a cat, dog, or owl, as it so chooses) with any damage suffered the night before completely healed." compset="Special" summary="Become ethereal in daylight, rematerialize at night fully healed.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="rGrimCat" name="Grim, Greater (Cat form)" compset="Race">
+    <comment>Hom much CR is added by the celestial template? (Done)
+
+Needs new source for Ravenloft (Done)
+
+Need to mod Frightful presence to be not specific to dragons. (Done)</comment>
+    <fieldval field="rSTR" value="4"/>
+    <fieldval field="rDEX" value="12"/>
+    <fieldval field="rCON" value="8"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="6"/>
+    <fieldval field="rAttack" value="8"/>
+    <fieldval field="rFort" value="6"/>
+    <fieldval field="rRef" value="6"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rCR" value="8"/>
+    <fieldval field="rInfAutoLn" value="Celestial, Common"/>
+    <fieldval field="rInfHit" value="8d10 (8 Levels of Magical Beast)"/>
+    <fieldval field="rHitDice" value="8"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rSpeed" value="60"/>
+    <fieldval field="rHPStart" value="44"/>
+    <usesource source="DenizDread" parent="pRaven" name="Denizens of Dread"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typMagBeas"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="Alignment" tag="Good"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="fMultiAtt"></bootstrap>
+    <bootstrap thing="xFrightPre">
+      <assignval field="xSumm" value="Standard, howl/screech to frighten/shake foes in 30 ft for 4d6 rds (Will neg)."/>
+      </bootstrap>
+    <bootstrap thing="xGriEthBei"></bootstrap>
+    <bootstrap thing="xGriDetCor"></bootstrap>
+    <bootstrap thing="rHAMagicCi"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Sense Motive and Spot."/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="lCelestial"></bootstrap>
+    <bootstrap thing="typMagBeas"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xDamRdMag"></bootstrap>
+    <bootstrap thing="xTurning"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d6_5"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10000" index="2">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 12
+      #applysr[damage]
+
+~ Set up our Turning Ability
+  hero.child[xTurning].field[Value].value += field[rHitDice].value + 1</eval>
+    <eval phase="First" priority="5000" index="3">~ Set up our damage reduction
+      #applydr[xDamRdMag, 15]
+
+      var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 11
+      hero.child[kSenseMot].field[kInnate].arrayvalue[index] += 11
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 11
+
+      #skillbonus[kSenseMot] += 4
+      #skillbonus[kSpot] += 4</eval>
+    <eval phase="Render">hero.childfound[rHAMagicCi].field[CustDesc].text = &quot;This ability continuously duplicates the effects of the spell of the same name. The grim cannot suppress this ability.&quot;
+
+hero.childfound[xTurning].field[livename].text = &quot;Turn Undead and Evil Outsider&quot;
+
+hero.childfound[xTurning].field[CustDesc].text = hero.childfound[xTurning].field[CustDesc].text &amp; &quot;{br}{br}The Grim can also use this ability against evil outsiders.&quot;
+
+hero.childfound[xFrightPre].field[CustDesc].text = &quot;At first detection of evil within its territory, the grim lets out a ghostly howl (or screech) that can strike fear into the hearts of evil beings. An evil creature within 30 feet of a howling grim must make a successful DC 17 Will save or become panicked for 4d6 rounds. A creature with 5 or more Hit Dice is instead shaken for 4d6 rounds. An evil opponent who succeeds at the saving throw is immune to the grim&#146;s frightful presence for 24 hours. A grim can howl at will as a standard action.&quot;</eval>
+    </thing>
+  <thing id="rGrimOwl" name="Grim, Greater (Owl form)" compset="Race">
+    <fieldval field="rSTR" value="4"/>
+    <fieldval field="rDEX" value="12"/>
+    <fieldval field="rCON" value="8"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="6"/>
+    <fieldval field="rAttack" value="8"/>
+    <fieldval field="rFort" value="6"/>
+    <fieldval field="rRef" value="6"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rCR" value="8"/>
+    <fieldval field="rInfAutoLn" value="Celestial, Common"/>
+    <fieldval field="rInfHit" value="8d10 (8 Levels of Magical Beast)"/>
+    <fieldval field="rHitDice" value="8"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rSpeed" value="10"/>
+    <fieldval field="rHPStart" value="44"/>
+    <usesource source="DenizDread" parent="pRaven" name="Denizens of Dread"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typMagBeas"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="Alignment" tag="Good"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="fMultiAtt"></bootstrap>
+    <bootstrap thing="xFrightPre">
+      <assignval field="xSumm" value="Standard, howl/screech to frighten/shake foes in 30 ft for 4d6 rds (Will neg)."/>
+      </bootstrap>
+    <bootstrap thing="xGriEthBei"></bootstrap>
+    <bootstrap thing="xGriDetCor"></bootstrap>
+    <bootstrap thing="rHAMagicCi"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Sense Motive and Spot."/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="lCelestial"></bootstrap>
+    <bootstrap thing="typMagBeas"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xDamRdMag"></bootstrap>
+    <bootstrap thing="xTurning"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d6_5"/>
+      </bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Maneuver" tag="Average"/>
+      <autotag group="Value" tag="90"/>
+      </bootstrap>
+    <eval phase="First" priority="5000" index="3">~ Set up our damage reduction
+      #applydr[xDamRdMag, 15]
+
+      var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 11
+      hero.child[kSenseMot].field[kInnate].arrayvalue[index] += 11
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 11
+
+      #skillbonus[kSenseMot] += 4
+      #skillbonus[kSpot] += 4</eval>
+    <eval phase="Render">hero.childfound[rHAMagicCi].field[CustDesc].text = &quot;This ability continuously duplicates the effects of the spell of the same name. The grim cannot suppress this ability.&quot;
+
+hero.childfound[xTurning].field[livename].text = &quot;Turn Undead and Evil Outsider&quot;
+
+hero.childfound[xTurning].field[CustDesc].text = hero.childfound[xTurning].field[CustDesc].text &amp; &quot;{br}{br}The Grim can also use this ability against evil outsiders.&quot;
+
+hero.childfound[xFrightPre].field[CustDesc].text = &quot;At first detection of evil within its territory, the grim lets out a ghostly howl (or screech) that can strike fear into the hearts of evil beings. An evil creature within 30 feet of a howling grim must make a successful DC 17 Will save or become panicked for 4d6 rounds. A creature with 5 or more Hit Dice is instead shaken for 4d6 rounds. An evil opponent who succeeds at the saving throw is immune to the grim&#146;s frightful presence for 24 hours. A grim can howl at will as a standard action.&quot;</eval>
+    <eval phase="PostLevel" priority="10000" index="2">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 12
+      #applysr[damage]
+
+~ Set up our Turning Ability
+  hero.child[xTurning].field[Value].value += field[rHitDice].value + 1</eval>
+    </thing>
+  <thing id="rGrimDog" name="Grim, Greater (Dog form)" compset="Race">
+    <fieldval field="rSTR" value="4"/>
+    <fieldval field="rDEX" value="12"/>
+    <fieldval field="rCON" value="8"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="6"/>
+    <fieldval field="rAttack" value="8"/>
+    <fieldval field="rFort" value="6"/>
+    <fieldval field="rRef" value="6"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rCR" value="8"/>
+    <fieldval field="rInfAutoLn" value="Celestial, Common"/>
+    <fieldval field="rInfHit" value="8d10 (8 Levels of Magical Beast)"/>
+    <fieldval field="rHitDice" value="8"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rSpeed" value="60"/>
+    <fieldval field="rHPStart" value="44"/>
+    <usesource source="DenizDread" parent="pRaven" name="Denizens of Dread"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="Race" tag="stypExPlan"/>
+    <tag group="Race" tag="typMagBeas"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="Alignment" tag="NeutralLC"/>
+    <tag group="Alignment" tag="Good"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="fMultiAtt">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xFrightPre">
+      <assignval field="xSumm" value="Standard, howl/screech to frighten/shake foes in 30 ft for 4d6 rds (Will neg)."/>
+      </bootstrap>
+    <bootstrap thing="xGriEthBei"></bootstrap>
+    <bootstrap thing="xGriDetCor"></bootstrap>
+    <bootstrap thing="rHAMagicCi"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Sense Motive and Spot."/>
+      </bootstrap>
+    <bootstrap thing="lCelestial"></bootstrap>
+    <bootstrap thing="typMagBeas"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xDamRdMag"></bootstrap>
+    <bootstrap thing="xTurning"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="2d6_104"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <eval phase="First" priority="5000" index="3">~ Set up our damage reduction
+      #applydr[xDamRdMag, 15]
+
+      var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 11
+      hero.child[kSenseMot].field[kInnate].arrayvalue[index] += 11
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 11
+
+      #skillbonus[kSenseMot] += 4
+      #skillbonus[kSpot] += 4</eval>
+    <eval phase="Render">hero.childfound[rHAMagicCi].field[CustDesc].text = &quot;This ability continuously duplicates the effects of the spell of the same name. The grim cannot suppress this ability.&quot;
+
+hero.childfound[xTurning].field[livename].text = &quot;Turn Undead and Evil Outsider&quot;
+
+hero.childfound[xTurning].field[CustDesc].text = hero.childfound[xTurning].field[CustDesc].text &amp; &quot;{br}{br}The Grim can also use this ability against evil outsiders.&quot;
+
+hero.childfound[xFrightPre].field[CustDesc].text = &quot;At first detection of evil within its territory, the grim lets out a ghostly howl (or screech) that can strike fear into the hearts of evil beings. An evil creature within 30 feet of a howling grim must make a successful DC 17 Will save or become panicked for 4d6 rounds. A creature with 5 or more Hit Dice is instead shaken for 4d6 rounds. An evil opponent who succeeds at the saving throw is immune to the grim&#146;s frightful presence for 24 hours. A grim can howl at will as a standard action.&quot;</eval>
+    <eval phase="PostLevel" priority="10000" index="2">~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 12
+      #applysr[damage]
+
+~ Set up our Turning Ability
+  hero.child[xTurning].field[Value].value += field[rHitDice].value + 1</eval>
+    </thing>
+  </document>

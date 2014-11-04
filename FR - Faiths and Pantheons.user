@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>GLBIV on Hero Labs Forums.</info_author>
+    </fileinfo>
+  <thing id="cNightcloa" name="Nightcloak" description="The Mistress of the Night is the twisted and perverse goddess of hatred, jealousy and evil, and the creator of the Shadow Weave. \n\nNightcloaks are the apple of Shar&apos;s eye -- devoted to her vision, preserving her secrets, practicing her magic, as twisted and bitter as she is. They are beings of iron will and determination, although that determination is perverse. They weave webs of intrigue, mental domination, blackmail and control through the use of illusion, necromancy and enchantment. Yet they are not afraid to smash their toys if it suits Shar&apos;s purposes. They are cruel and intelligent, and do not fear slipping away to return and grind their foes to dust at a later time. Honor is of no consequence to them. They do as they please, as long as it furthers their -- and Shar&apos;s -- power.\n\nClerics most often become nightcloaks. Rangers are rare. Nightcloaks often have levels of wizard, sorcerer, bard or rogue in addition to the class that grants them divine spellcasting ability. \n\nNightcloaks dwell in communities large and small, often worshiping in secret. Many work to overthrow governments, organize secret cabals and create false cults to further their ends." compset="ClassLevel" maxlimit="10">
+    <comment>Improved Spell Focus pre-req</comment>
+    <usesource source="FaithPanth"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpNic"></bootstrap>
+    <link linkage="helper" thing="cHelpNic"/>
+    <pickreq thing="fIronWill"/>
+    <exprreq message="Requires Shadow Weave Magic"><![CDATA[#hasfeat[fShadWeave] <> 0]]></exprreq>
+    <exprreq message="Requires Spell Focus (Enchantment, Illusion or Necromancy)"><![CDATA[#hasfeat[fSpellFoc] <> 0]]></exprreq>
+    <exprreq message="Requires Pernicious Magic or Tenacious Magic"><![CDATA[#hasfeat[fPernicMag] + #hasfeat[fTenaMagic] <> 0]]></exprreq>
+    <exprreq message="Requires ability to cast 2nd level divine spells"><![CDATA[tagcount[Hero.Divine] >= 2+1]]></exprreq>
+    <exprreq message="Requires access to Darkness domain"><![CDATA[tagcount[Domain.Darkness] >= 1]]></exprreq>
+    <exprreq message="Requires  Base Attack Bonus +3"><![CDATA[child[Attack].field[tAtkBase].value >= 3]]></exprreq>
+    <exprreq message="Requires 2 ranks of Bluff"><![CDATA[#skillranks[kBluff] >= 2]]></exprreq>
+    <exprreq message="Requires 2 ranks Move Silently"><![CDATA[#skillranks[kMoveSil] >= 2]]></exprreq>
+    <exprreq message="Requires 2 ranks of Hide"><![CDATA[#skillranks[kHide] >=2]]></exprreq>
+    <prereq message="Perform 4 ranks required">
+      <validate><![CDATA[~ Loop through all perform skills
+
+foreach pick in hero where "Helper.SkCatPerf"
+~ If this skill has 4 or more ranks, we are valid
+  validif (each.field[kUserRanks].value >= 4)
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cNicEyeSha" name="Eyes of Shar" description="Nightcloaks have eyes that are totally black. They have 60-foot darkvision. They can also see through magical darkness to a range of 10 feet (in the same black-and-white sight that darkvision provides). They cannot be blinded by magical effects." compset="ClSpecial" summary="Eyes turn totally black, gain 60&apos; darkvision, can see 10&apos; into mag darkness.">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Sense"/>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <bootstrap thing="rDarkVis">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Nightcloa >= 2]]></containerreq>
+      </bootstrap>
+    <eval phase="Final" priority="10000">doneif (tagis[Helper.ShowSpec] = 0)
+
+hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="cNicShdTlk" name="Shadow Talk" description="Nightcloaks are able to communicate mystically through the shadows of the mind. Nightcloaks can whisper short messages to other worshipers of Shar within 500 feet. All Shar worshipers within range hear the message as a whisper in their mind. Observers can hear the words if they are close enough to physically hear the nightcloaks&apos;s actual whispers (a DC 15 Listen check if the listener is within 10 feet of the nightcloak, +1 DC per 5 feet beyond that). This is a language-dependent free action, and it can be used to communicate with undead worshipers of Shar and undead creatures in the service of worshipers of Shar." compset="ClSpecial" summary="Can send messages to worshipers of shar up to  500ft.">
+    <comment>Complete</comment>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    </thing>
+  <thing id="cNicTrLies" name="True Lies" description="Beginning at 5th level, a nightcloak can reach into a creature&#146;s mind and modify its memories as if using the 4th-level bard spell {i}modify memory{/i} (caster level equals nightcloak&#146;s character level; save DC 10 + 1/2 nightcloak&#146;s character level + nightcloak&#146;s Charisma modifier). This ability is usable once per day." compset="ClSpecial" summary="1/day; use {i}modfiy memory{/i} as a Spell-Like Ability">
+    <fieldval field="hTotal" value="1"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <eval phase="PostAttr" priority="15000"><![CDATA[doneif (tagis[Helper.ShowSpec] = 0)
+
+var DC as number
+DC = 10 +  hero.child[aCHA].field[aModBonus].value + #levelcount[Nightcloa]/2
+DC = round(DC,0,-1)
+
+field[livename].text = field[name].text & " (DC" & DC & ")"]]></eval>
+    </thing>
+  <thing id="cNicMOShar" name="Mind of Shar" description="Beginning at 7th level, the nightcloak can use the power of her mind to protect herself. \nShe adds her Intelligence bonus (if any) to all saving throws." compset="ClSpecial" summary="Adds their INT mod to their base saves if positive.">
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      var bonus as number
+      bonus = maximum(0,hero.child[aINT].field[aModBonus].value)
+      hero.child[vFort].field[Bonus].value += bonus
+      hero.child[vRef].field[Bonus].value += bonus
+      hero.child[vWill].field[Bonus].value += bonus]]></eval>
+    </thing>
+  <thing id="cNicMinSha" name="Minons of Shar" description="Once per week as a standard action, an 8th-level or higher nightcloak can summon one shadow per nightcloak level she possesses.\n\nThe summoned shadows do her bidding for a number of rounds equal to her nightcloak level. Any shadows they create by draining Strength are likewise under the control of the nightcloak, but they vanish along with the originals when the duration of the effect expires. The nightcloak can verbally communicate with the shadows as if she knew their language or use her shadow talk ability to communicate with them." compset="ClSpecial" summary="Summon shadows 1/wk.">
+    <fieldval field="hTotal" value="1"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[field[xSumm].text = "Summon up to " & #levelcount[Nightcloa] & " shadows 1/wk for " & #levelcount[Nightcloa] & " rounds."]]></eval>
+    </thing>
+  <thing id="cNicVoiEvi" name="Voice of Ineffable Evil" description="At 10th level, a nightcloak can command a creature as though using the dominate monster spell (caster level equals nightcloak&#146;s character level). \n\nThis ability is usable once per day and lasts for 24 hours unless ended earlier. Unlike most spelllike abilities, {i}voice of ineffable evil{/i} has a verbal component." compset="ClSpecial" summary="Use {i}dominate monster{/i} 1/day as a Spell-Like Ability.">
+    <fieldval field="hTotal" value="1"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[doneif (tagis[Helper.ShowSpec] = 0)
+
+field[livename].text = field[name].text & " (CL" & #levelcount[Nightcloa] & ")"]]></eval>
+    </thing>
+  <thing id="cNicDrkSpl" name="Darkness Spells" description="A nightcloak can prepare any Darkness domain spell as if it were on her divine spell list. The spell uses a spell slot of a level equal to its level in the Darkness domain list. For instance a cleric/nightcloak could prepare {i}darkbolt{/i} as a 5th-level cleric spell, and a ranger/nightcloak could prepare {i}blacklight{/i} as a 3rd-level ranger spell." compset="ClSpecial" summary="Cleric adds darkness domain spells to divine spell list">
+    <fieldval field="usrCandid1" value="component.BaseClHelp &amp; CasterSrc.Divine"/>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <tag group="ChooseSrc1" tag="Hero"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <eval phase="PostAttr" priority="15005"><![CDATA[doneif (field[usrChosen1].ischosen = 0)
+doneif (hero.tagcount[Domain.Darkness] = 0)
+
+field[usrChosen1].chosen.field[cSpellExpr].text &= " | sClass.Darkness"]]></eval>
+    </thing>
+  <thing id="cNicInsidM" name="Insideous Magic" description="At 3rd level, nightcloaks get the Insidious Magic feat as a bonus feat, reflecting their ability to use the Shadow Weave under Shar&apos;s close guidance." compset="ClSpecial" summary="Gains Insidious Magic as a bonus Feat.">
+    <comment>Complete</comment>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Sense"/>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <bootstrap thing="fInsidMagi">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Nightcloa >= 3]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cNicDskNig" name="Disk of Night" description="Beginning at 5th level, any chakram used by a nightcloak is treated as if it were a +2 returning chakram. If it remains out of the hand of the nightcloak for more than 1 round, a chakram reverts to its original abilities. If the weapon has additional abilities (such as frost ), these abilities still apply, and if the weapon has an enhancement bonus better than +2, the higher of the two bonuses is used." compset="ClSpecial" summary="Any chakram used by a nightcloak is treated as a +2 chakram of returning.">
+    <comment>Complete</comment>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cNicShCare" name="Shar&apos;s Caress" description="Once she reaches 8th level, a nightcloak can surround a held chakram, whip, or dagger with Shadow Weave magic, temporarily giving the weapon the unholy property. This ability lasts for 1 round each time it is used, and can be invoked as a free action a number of times per day equal to the nightcloak&apos;s Charisma bonus (minimum one). A nightcloak must decide to use this ability before the attack is made, and if the attack misses that use of Shar&apos;s Caress is wasted." compset="ClSpecial" summary="Held  Chakrams, Whips &amp; daggers become {i}unholy{/i} for 1 round.">
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ClExLose"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpNic"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostAttr" priority="12000">field[hTotal].value = maximum(1,hero.child[aCHA].field[aModBonus].value)</eval>
+    </thing>
+  <thing id="cHelpNic" name="Nightcloak" compset="ClassHelp" uniqueness="unique">
+    <comment>Complete</comment>
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="cAbbr" value="Nic"/>
+    <arrayval field="cSpecial" index="1" value="Bonus feat"/>
+    <arrayval field="cSpecial" index="2" value="Ignore spell failure 15%"/>
+    <arrayval field="cSpecial" index="3" value="Channel spell 3/day"/>
+    <arrayval field="cSpecial" index="4" value="Ignore spell failure 20%"/>
+    <arrayval field="cSpecial" index="5" value="Channel spell 4/day"/>
+    <arrayval field="cSpecial" index="6" value="Ignore spell failure 25%"/>
+    <arrayval field="cSpecial" index="7" value="Channel spell 5/day"/>
+    <arrayval field="cSpecial" index="8" value="Ignore spell failure 30%"/>
+    <arrayval field="cSpecial" index="9" value="Multiple channel spell"/>
+    <arrayval field="cSpell" index="0" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpell" index="1" value="&#151;"/>
+    <arrayval field="cSpell" index="2" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpell" index="3" value="&#151;"/>
+    <arrayval field="cSpell" index="4" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpell" index="5" value="&#151;"/>
+    <arrayval field="cSpell" index="6" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpell" index="7" value="&#151;"/>
+    <arrayval field="cSpell" index="8" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpell" index="9" value="&#151;"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="3"/>
+    <arrayval field="cMagLevTot" index="3" value="4"/>
+    <arrayval field="cMagLevTot" index="4" value="5"/>
+    <arrayval field="cMagLevTot" index="5" value="6"/>
+    <arrayval field="cMagLevTot" index="6" value="7"/>
+    <arrayval field="cMagLevTot" index="7" value="8"/>
+    <arrayval field="cMagLevTot" index="8" value="9"/>
+    <arrayval field="cMagLevTot" index="9" value="10"/>
+    <arrayval field="cSpecial" index="0" value="Ignore spell failure 10%"/>
+    <usesource source="FaithPanth" parent="pFR" name="Faiths and Pantheons 3.0"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kHeal"/>
+    <tag group="ClassSkill" tag="kKnowHist"/>
+    <tag group="ClassSkill" tag="kKnowRel"/>
+    <tag group="ClassSkill" tag="kKnowPlane"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="AlgnReq" tag="NeutEvil"/>
+    <tag group="cWill" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="ClassSkill" tag="Craft" name="All Craft Skills" abbrev="All Craft Skills"/>
+    <tag group="ClassSkill" tag="Profession" name="All Profession Skills" abbrev="All Profession Skills"/>
+    <tag group="ClassSkill" tag="kConcent" name="Concentration" abbrev="Concentration"/>
+    <tag group="ClassSkill" tag="kKnowArcan" name="Knowledge: Arcana" abbrev="Knowledge: Arcana"/>
+    <tag group="ClassSkill" tag="kSpellcr" name="Spellcraft" abbrev="Spellcraft"/>
+    <tag group="Classes" tag="Nightcloa" name="Nightcloak" abbrev="Nightcloak"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <bootstrap thing="cNicDrkSpl"></bootstrap>
+    <bootstrap thing="cNicEyeSha"></bootstrap>
+    <bootstrap thing="cNicInsidM"></bootstrap>
+    <bootstrap thing="cNicShdTlk"></bootstrap>
+    <bootstrap thing="cNicDskNig"></bootstrap>
+    <bootstrap thing="cNicTrLies"></bootstrap>
+    <bootstrap thing="cNicMOShar"></bootstrap>
+    <bootstrap thing="cNicShCare"></bootstrap>
+    <bootstrap thing="cNicMinSha"></bootstrap>
+    <bootstrap thing="cNicVoiEvi"></bootstrap>
+    </thing>
+  </document>

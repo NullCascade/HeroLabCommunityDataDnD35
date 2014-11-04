@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="cAniComp" name="Animal Companion" description="You are accompanied by an Animal Companion." compset="Companion" replaces="cAnimComp" uniqueness="unique">
+    <fieldval field="CompType" value="Animal Companion"/>
+    <bootstrap thing="cAnimLink"></bootstrap>
+    <bootstrap thing="cAnimShare"></bootstrap>
+    <eval phase="PreAttr" priority="10000"><![CDATA[
+      ~ Mount gets a natural strength bonus and int score bonus
+      var attrbonus as number
+      var acbonus as number
+      if (field[CompLevel].value <= 2) then
+        attrbonus = 0
+        acbonus = 0
+      elseif (field[CompLevel].value <= 5) then
+        attrbonus = 1
+        acbonus = 2
+      elseif (field[CompLevel].value <= 8) then
+        attrbonus = 2
+        acbonus = 4
+      elseif (field[CompLevel].value <= 11) then
+        attrbonus = 3
+        acbonus = 6
+      elseif (field[CompLevel].value <= 14) then
+        attrbonus = 4
+        acbonus = 8
+      elseif (field[CompLevel].value <= 17) then
+        attrbonus = 5
+        acbonus = 10
+      else
+        attrbonus = 6
+        acbonus = 12
+        endif
+      minion.child[aSTR].field[aNormMod].value += attrbonus
+      minion.child[aDEX].field[aNormMod].value += attrbonus
+      minion.child[mNatural].field[mAC].value += acbonus]]></eval>
+    <minion id="AnimComp">
+      <tag group="Hero" tag="NoAdvance"/>
+      <bootstrap thing="xGolEleCom">
+      <containerreq phase="First" priority="95">User.GolEleComp</containerreq>
+      </bootstrap>
+      <bootstrap thing="xFamComp">
+      <containerreq phase="First" priority="950">User.AHFamComp</containerreq>
+      </bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 3 & User.WildCohort = 0]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 3]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 6]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 6]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 9]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 9]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 12]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 12]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 15]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 15]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 18]]></bootstrap>
+      <bootstrap thing="cBonusHD" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 18]]></bootstrap>
+      <bootstrap thing="cAnimEvas" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 3]]></bootstrap>
+      <bootstrap thing="cAnimDevo" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 6]]></bootstrap>
+      <bootstrap thing="cAnimMulti" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 9 & User.WildCohort = 0]]></bootstrap>
+      <bootstrap thing="cAnimImpEv" phase="First" priority="500"><![CDATA[
+        fieldval:CompLevel >= 15]]></bootstrap>
+      </minion>
+    </thing>
+</document>

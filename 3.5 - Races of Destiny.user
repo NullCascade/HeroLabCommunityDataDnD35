@@ -1,0 +1,2100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="rRoDIllmn" name="Illumian" description="Illumians are contemplative humanoids, driven and ambitious, taught from an early age to master every field of study.\n\n{b}Personality{/b}: Illumians tend to be somewhat cautious, choosing to study a situation and develop a plan before acting.\n\nThey&#146;re also proud of their heritage as illumians, extolling the virtues of illumians in general and their cabal in particular for anyone who&#146;ll listen.\n\n{b}Physical Description{/b}: Illumians look like the humans who first learned the Ritual of Words Made Flesh&#151;paleskinned and somewhat taller than average. More than half of all illumians are bald, while the rest have blond or red hair. Facial hair is almost unheard of.\n\nOf course, their most significant features are the luminous sigils that float above their heads, endlessly circling. These sigils are described in detail below.\n\nIllumians&#151;even poor ones&#151;favor the most expensive dress they can afford, with fine embroidery, long robes and capes, and multiple layers. Their bulky dress makes illumians look bigger and more muscular than they actually are. Illumians have a great distaste for dirt and take pains to keep their clothes clean, even in a wilderness or dungeon setting.\n\nElaborate facial makeup is also common among illumians, particularly older ones who have already mated for their cabal. While some humans wear makeup to make themselves appear more attractive, illumians wear it for the opposite reason: to keep others at a distance. The more garish and outlandish an individual&#146;s makeup, the more likely it is that she wishes to be left alone.\n\n{b}Relations{/b}: Illumians regard humans as a brother race, but remain somewhat distant&#151;after all, the illumians left pure humanity behind when they undertook the Ritual of the Word Made Flesh. Elves are admired for their long life spans, love of learning, and facility with magic, while dwarves are regarded as consummate craftsfolk but with little else to offer. Illumians confronted with gnomes and halflings sometimes let a bit of paternalism seep through their efforts to be polite, subconsciously treating the small folk like children.\n\nWhenever they can, illumians seek common ground with species that demonstrate a love of learning, such as dragons and outsiders. Conversely, illumians have regarded the githyanki as implacable enemies ever since the githyanki discovered and sacked the illumians&#146; High Library on the Astral Plane. Except for those of the Gravewhisper cabals (described below), illumians abhor undead.\n\n{b}Adventurers{/b}: Illumians travel to learn more about the surrounding world on behalf of their cabals, occasionally undertaking dangerous missions on behalf of their cabal leaders. A few illumians have been cast out of their cabals, but it&#146;s far more likely that an adventuring illumian left voluntarily, hoping to gain enough knowledge and power to attract other illumians and thereby found a new cabal. Illumians spend a number of their adolescent or young adult years wandering the world, dreaming of being the master at the center of a powerful illumian cabal." compset="Race">
+    <fieldval field="rInfFavor" value="Any"/>
+    <fieldval field="rInfAutoLn" value="Common, Illumian"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rWeightMnF" value="85"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="rHeightMxF" value="73"/>
+    <fieldval field="rHeightMxM" value="78"/>
+    <fieldval field="rWeightMxF" value="245"/>
+    <fieldval field="rWeightMxM" value="280"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="WeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="WeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC1Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC1Size" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC2Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="10" name="d10" abbrev="d10"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="ClassSkill" tag="kSpeakLang"/>
+    <tag group="Race" tag="stypHuman"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Race" tag="Illumian"/>
+    <bootstrap thing="xIllLumSig"></bootstrap>
+    <bootstrap thing="xIllShBons"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lIllumian"></bootstrap>
+    <bootstrap thing="xIllFinUtt"></bootstrap>
+    <bootstrap thing="xIllGlpRes"></bootstrap>
+    <bootstrap thing="xIll1stSig"></bootstrap>
+    <bootstrap thing="xIll2ndSig"></bootstrap>
+    <bootstrap thing="xPSAesh"></bootstrap>
+    <bootstrap thing="xPSHoon"></bootstrap>
+    <bootstrap thing="xPSKrau"></bootstrap>
+    <bootstrap thing="xPSNaen"></bootstrap>
+    <bootstrap thing="xPSUur"></bootstrap>
+    <bootstrap thing="xPSVaul"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypHuman"></bootstrap>
+    </thing>
+  <thing id="lIllumian" name="Illumian" description="Language of the Illumian Race" compset="Language" summary="Illumian Language">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    </thing>
+  <thing id="xIllLumSig" name="Luminous Sigils" description="The sigils that orbit an illumian&apos;s head glow softly, providing illumination equal to that of a candle." compset="Special" summary="Illumian Sigils give off light as a candle.">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="rRaceIllmn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xIllGlpRes" name="Glyphic Resonance" description="Illumians have a -4 racial penalty on saving throws against Symbol effects if their character level is less than the caster level of the spell, otherwise they&apos;re immune to such effects." compset="Special" summary="Illumian sigils resonate with Symbol spells.">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecType" tag="Weakness"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Immune"/>
+    <tag group="SpecSource" tag="rRaceIllmn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xIllFinUtt" name="Final Utterance" description="When an Illumian dies, her body releases the stored Illumian language within it. For 1 round per hit die of the illumian, anyone within earshot hears ululating Illumian syllables - usually gibberish, but occasionallly a prophetic phrase or a final curse on the Illumian enemies." compset="Special" summary="When Illumians die, their body releases words.">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="rRaceIllmn"/>
+    </thing>
+  <thing id="xIllShBons" name="+2 racial bonus to saves vs Shadow Spells" description="+2 racial bonus to saves against spells with the Shadow descriptor." compset="Special" summary="+2 racial bonus to Shadow Spells">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    </thing>
+  <thing id="xIll1stSig" name="Illumian 1st Power Sigil" description="Illumian First Sigil" compset="Special" summary="Illumian First Sigil">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <bootstrap thing="fIllPowSig"></bootstrap>
+    <eval phase="UserPostLv">perform hero.childfound[xIll1stSig].delete[Helper.ShowSpec]</eval>
+    <exprreq message="Illumian Race needed."><![CDATA[tagis[Race.Illumian] <> 0]]></exprreq>
+    </thing>
+  <thing id="xPSAesh" name="Power Sigil Aesh" description="+1 bonus on Strength Checks and Strength based Skill Checks." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="tIllPS" name="Illumian Power Sigils"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Aesh"/>
+    <bootstrap thing="xPSAeshkra"></bootstrap>
+    <bootstrap thing="xPSAeshoon"></bootstrap>
+    <bootstrap thing="xPSAeshuur"></bootstrap>
+    <bootstrap thing="xPSNaenaes"></bootstrap>
+    <bootstrap thing="xPSVaulaes"></bootstrap>
+    <eval phase="UserPostLv" priority="501">if (hero.tagis[User.Aesh] = 0) then
+  perform delete[Helper.ShowSpec]
+  perform assign[Helper.SpcDisable]
+  done
+else
+  perform assign[Helper.ShowSpec]
+  hero.child[kClimb].field[Bonus].value +=1
+  hero.child[kSwim].field[Bonus].value +=1
+  hero.child[kJump].field[Bonus].value +=1
+endif</eval>
+    </thing>
+  <thing id="fIllPowSig" name="Illumian Power Sigils Feat" description="{b}Prerequisites{/b}: Illumian Race\nYou can choose a sigil on first level, and a second one on second level." compset="Feat" summary="Illumian Power Sigils">
+    <fieldval field="ftCandExpr" value="User.tIllPS"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <eval phase="First" priority="500"><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+       var Choice1 as string
+       var C1Len as number
+       var C1thing as string
+       var result as number       
+
+       Choice1 = field[fChosen].chosen.field[name].text
+       C1thing = field[fChosen].chosen.idstring
+       C1Len = length(C1thing) - 3
+
+       C1thing = "User." & right(C1thing,C1Len)
+
+~Notify C1thing
+       perform hero.assignstr[C1thing]
+
+~if (field[fChosen].chosen.tagis[special.xPSAesh])]]></eval>
+    </thing>
+  <thing id="xPSKrau" name="Power Sigil Krau" description="+1 bonus to Caster level for all spell and spell-like abilities (up to a maximum of character level)." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="User" tag="tIllPS" name="Illumian Power Sigils"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Krau"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <bootstrap thing="xPSAeshkra"></bootstrap>
+    <bootstrap thing="xPSHoonkra"></bootstrap>
+    <bootstrap thing="xPSNaenkra"></bootstrap>
+    <bootstrap thing="xPSUurkrau"></bootstrap>
+    <bootstrap thing="xPSVaulkra"></bootstrap>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Krau] = 0) then
+  perform delete[Helper.ShowSpec]
+  perform assign[Helper.SpcDisable]
+  done
+else
+  perform assign[Helper.ShowSpec]
+
+~ We add +1 bonus Caster Level to all caster classes
+
+  foreach pick in hero from BaseClHelp where "CasterSrc.Arcane|CasterSrc.Divine"
+    if (each.field[cCasterLev].value >= 1) then
+      each.field[cCasterLev].value +=1
+      each.field[cCasterLev].value = minimum(herofield[tHitDice].value, each.field[cCasterLev].value)
+    endif
+  nexteach
+endif]]></eval>
+    </thing>
+  <thing id="rRoDHlfOgr" name="Half-Ogre" description="The same wild frontiers that produce half-orcs from unions between tribes of human and orc barbarians also produce half-ogres. Ogres and humans fight in times of war and trade in times of peace. In peaceful times, ogres value humans&#146; intelligence and adaptability, while humans value ogres&#146; strength and toughness. Half-ogres inherit a blend of the physical characteristics of their parents. They may be found in either parent&#146;s community (where their status varies according to local sentiment).\n\n{b}Personality{/b}: Half-ogres are generally low in intelligence but quick to anger. Where a half-orc understands alternatives to action, half-ogres do not. Successful half-ogres are those with enough self-control to live in a civilized land. Half-ogres love simple pleasures such as feasting, drinking, boasting, wrestling, drumming, and wild dancing. While some claim to be able to sing, few other races would agree. A half-ogre is likely to assume that refined enjoyments such as poetry, courtly dancing, and philosophy are just tools for making fun of him.\n\n{b}Physical Description{/b}: Half-ogres are taller than humans or half-orcs, but not as tall as ogres. Adults are typically closer to the height and weight of an ogre than of a human. Their skin color ranges from dull yellow to dull brown. Their thick hides sport patches of dark, warty bumps, and their heads are topped by a mop of dark hair.\n\n{b}Relations{/b}: Because they are the offspring of giants, half-ogres have a rough time getting along with dwarves and gnomes. Of course, ogres are rarely on good terms with elves, humans, or halfl ings either. On the other hand, they understand the prejudice that half-orcs experience and relate well to them.\n\nA half-ogre seeks a way to gain acceptance from those who hate or fear his ogre cousins. Most exploit their innate toughness so that others have no choice but to accept them, whether out of admiration or fear. A few demonstrate piety and good-heartedness as publicly as they can (whether or not such displays are genuine).\n\n{b}Adventurers{/b}: Half-ogres living among humans are drawn almost invariably toward violent careers in which they can put their strength to good use. Frequently shunned from polite company, half-ogres fi nd acceptance and friendship among adventurers, many of whom are fellow wanderers and outsiders." compset="Race">
+    <fieldval field="rSTR" value="6"/>
+    <fieldval field="rDEX" value="-2"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rInfFavor" value="Barbarian"/>
+    <fieldval field="rInfAutoLn" value="Common, Giant"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rSkillMult" value="7"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <tag group="RaceSize" tag="Large1" name="Large" abbrev="Large"/>
+    <tag group="Language" tag="lAbyssal"/>
+    <tag group="Language" tag="lDraconic"/>
+    <tag group="Language" tag="lGnoll"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Race" tag="HalfOgre"/>
+    <tag group="Race" tag="typGiant"/>
+    <bootstrap thing="rDarkVis">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="typeGiant"></bootstrap>
+    <bootstrap thing="lGiant"></bootstrap>
+    </thing>
+  <thing id="rRoDMngrfk" name="Mongrelfolk" description="Those people who have heard of mongrelfolk know them as brutish, ugly creatures who bear the worst features of all their parent races. \n\nAnd that is exactly how the mongrelfolk like it.\n\nIn actuality, mongrelfolk can pass for members of their parent races&#151;any of them. In fact, when someone meets a mongrelfolk, he always assumes the new acquaintance is a member of one of the other major humanoid races&#151;just not his own. Dwarves see mongrelfolk as unusually tall and broadshouldered elves, while elves might consider them to be surprisingly tall and slender dwarves. Orcs view them as oddly short and ugly humans, while humans might see them as tall and strangely comely orcs. To each race, a mongrelfolk looks like a member of another race, because they have features common to several species. Mongrelfolk use this inability to pin down their ancestry to their advantage. After all, it is difficult to describe the culprit of a crime if a witness cannot even identify her race with certainty.\n\nThose few mongrelfolk who are born with clearly nonhuman features serve as a distraction from the rest of the race. They grow up knowing that they will be spat upon by the other races, but secretly honored by their own kin. These visibly misshapen mongrelfolk make sure that people in the area know who they are and where they are, thus reinforcing the stereotype about their race in general. In such a situation, ordinary-appearing mongrelfolk are often able to move about more freely, because no one associates the slightly tall dwarf or slightly stocky elf with the hideously deformed creature hiding in the woods nearby.\n\n{b}Personality{/b}: Mongrelfolk grow up knowing that they do not belong to one particular race, but are kin to all of them. They are perhaps the most open-minded of the humanoid races in terms of dealing with each other&#151;mongrelfolk see nothing wrong with having orc friends, any more than they have problems allying with dwarves or elves or gnomes. They treat every race as equals and as distant cousins and hope to be treated the same way in return. To facilitate this goal, mongrelfolk learn how to imitate the other races. They practice archery and woodcraft to be more like elves, stonework to be more like dwarves, and cooking to be more similar to halflings. The race&#146;s real talents lie in the area of stealth. Mongrelfolk are naturally sneaky, expert at vanishing into a crowd. They hone these skills, working to become quieter and quicker and less obtrusive, and their familiarity with different races makes this task even easier.\n\n{b}Physical Description{/b}: Mongrelfolk range in height from a little under 5 feet to almost 6 feet tall, and they weigh between 125 and 230 pounds. Their skin ranges from pale to dark, perhaps with gray or pink undertones, and their hair ranges from fine to coarse and black to white-blond. They usually have large green or brown eyes, which can be dark or pale or (as is often the case) indeterminate enough to look dark in shadow but pale in bright light. Their ears are slightly upswept and come to mild points at the upper tips, and they usually have heavy brows and jaws. Mongrelfolk favor simple, functional clothing and rarely wear jewelry.\n\n{b}Relations{/b}: Mongrelfolk get along extremely well with the other humanoid races, for two reasons. First, the mongrelfolk themselves appreciate each race&#146;s unique traits and culture, and they enjoy meeting and mingling with people. Second, other races never realize mongrelfolk are among them, taking each mongrelfolk instead for a member of another race. This allows the mongrelfolk to move freely through the world, avoiding any racial bias and giving none in return. Mongrelfolk are perhaps closer to half-elves than to any other race, because half-elves can also be mistaken for a member of one of their two parent races. Mongrelfolk feel a degree of pity toward half-orcs and half-ogres, who are clearly not human and are persecuted for their differences." compset="Race">
+    <fieldval field="rCON" value="4"/>
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rCHA" value="-2"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="Race" tag="stypHuman"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <bootstrap thing="xMFSkilBon"></bootstrap>
+    <bootstrap thing="xMFEmuRac"></bootstrap>
+    <bootstrap thing="xImmSleep"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypHuman"></bootstrap>
+    <bootstrap thing="xMFSouImit"></bootstrap>
+    <bootstrap thing="xMFSavThrB"></bootstrap>
+    </thing>
+  <thing id="xMFEmuRac" name="Emulate Race" description="Mongrelfolk can automatically use magic items that works only for users of a certain race. If non humanoid, they have a +4 racial bonus on Use Magic Device check." compset="Special">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="rRoDMngrfk"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xMFSouImit" name="Sound Imitation" description="A Mongrelfolk can mimic any sound or voice she has heard. Listeners must succeed on a DC 16 Will save to detect the ruse." compset="Special">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="rRoDMngrfk"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xMFSavThrB" name="Mongrelfolk Saving Throw Bonus" description="+1 racial bonus to saving throw against Enchantment spells and effects.\n+1 racial bonus to saving throw against illusion spells and effects.\n+1 racial bonus to saving throw against poison." compset="Special">
+    <tag group="SpecSource" tag="rRoDMngrfk"/>
+    </thing>
+  <thing id="xMFSkilBon" name="Mongrelfolk racial skill bonus" description="+4 racial bonus to Hide/Sleight of Hand checks.\n+1 racial bonus to Appraise, Climb, Jump, Listen, Move Silently, Search and spot checks." compset="Special" summary="Multiple racial skill bonuses">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecSource" tag="rRoDMngrfk"/>
+    <eval phase="UserPreAt" priority="5000">#skillbonus[kAppraise] += 1
+      #skillbonus[kClimb] += 1
+      #skillbonus[kJump] += 1
+      #skillbonus[kMoveSil] += 1
+      #skillbonus[kSearch] += 1
+      #skillbonus[kSpot] += 1
+      #skillbonus[kListen] += 1
+      #skillbonus[kHide] += 4
+      #skillbonus[kSleight] += 4</eval>
+    </thing>
+  <thing id="rRoDSeaKin" name="Sea Kin" description="Humans have always held an affinity for the sea. Long ago, it is said, some returned to its watery embrace and live beneath the waves to this day. Others believe the sea kin came into being through the intermingling of seallike fey or magical hybridization, since they display traits found in mammals that live in watery environments.\n\nSea kin live in shoals and coral reefs adjacent to the shore, although rumors persist of colonies that have taken to the open sea. Sea kin towns are wondrous to behold, existing in harmony with the rise and ebb of the tide as it fl ows through their homes. As might be expected, sea kin have a deep, almost mystical understanding of the ocean, and they do whatever they can to protect it from harm.\n\n{b}Personality{/b}: Sea kin are relatively shy beings who prefer their own kind. However, they live close to (or within) human, elf, and other societies and have learned to integrate themselves as much as they can. Some act as mediators between humans and various aquatic species.\n\nThe social shyness of the race is countered by its intense curiosity. New people and experiences intrigue sea kin. Quiet and observant, sea kin prefer to watch events from afar before coming closer to investigate. The same applies to their relationships with others, and it may take considerable time for another being to gain the trust of a sea kin.\n\nOn the whole, sea kin are positive and upbeat, and they live life with gusto. They are relatively unsophisticated and often confused by the social complexities of the landbound races. Sea kin delight in natural beauty but are also drawn to the creations of other races, particularly treasuring itemsthat are both practical and aesthetically appealing. For this reason, sea kin are not interested in the acquisition of gold or riches for the sake of wealth, but they yearn to possess items that they find beautiful.\n\n{b}Physical Description{/b}: To a casual observer, a sea kin looks like a regular human. On closer examination, however, the differences between the races become more apparent. The skin of sea kin is slightly shiny and slippery; it exudes a protective layer of oil that keeps them warm as well as helping them move through water. The hands and feet of sea kin are longer than those of a human and have tough webbing between their fingers and toes. Sea kin eyes are pitch black and have a secondary transparent eyelid that allows them to see unhindered underwater. Their hair is either pitch black or a metallic hue&#151;shining silver, glimmering gold, or tawny copper. The most disturbing aspect of sea kin is their mouths, which can open wider than a human&#146;s and are filled with small, needle-sharp fangs suited for tearing apart food rather than chewing it.\n\nSea kin wear clothing made from natural elements, particularly seaweed, although they love clothes made by humans and other land-dwelling races. Because they spend a large amount of time on land, sea kin carry weapons and equipment similar to that used by land-dwelling humanoids.\n\n{b}Relations{/b}: Sea kin get along with most aquatic races, and they maintain alliances with merfolk and locathah communities. They distrust tritons, who view other races with a slight xenophobic attitude anyway. Sahuagin prey on lone sea kin who stray too far from the safety of their shoals, and as a result the two races have been bitter enemies for as long as either race can remember.\n\nSea kin enjoy the company of humans; some communities of mixed sea kin and humans have lived in harmony for generations. However, in greedy, suspicious, or just plain evil human societies, sea kin are viewed as competitors for resources and as impediments to waterborne travel. Sea kin prefer leaving for safer waters when conflict seems likely, but the most tenacious of them might stay to fight what they consider to be intolerance or unrestrained cruelty.\n\nSea kin surround themselves with creatures of the sea such as packs of seals, sea lions, walruses, and similar creatures, just as humans do with canines and other domesticated animals that are kept as pets and companions rather than livestock. As might be expected, sea kin take a dim view of humans who hunt these creatures, although they can be made to understand the nece" compset="Race">
+    <fieldval field="rSkill" value="1"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rWeightMnF" value="85"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="rHeightMxF" value="73"/>
+    <fieldval field="rHeightMxM" value="78"/>
+    <fieldval field="rWeightMxF" value="245"/>
+    <fieldval field="rWeightMxM" value="280"/>
+    <fieldval field="rInfFavor" value="Druid"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AgeC1Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC1Size" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC2Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="10" name="d10" abbrev="d10"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="WeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="Race" tag="stypHuman"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="WeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="Language" tag="lAquan"/>
+    <tag group="Language" tag="lElven"/>
+    <tag group="Language" tag="lSahuagin"/>
+    <tag group="WepProf" tag="wNet"/>
+    <tag group="WepProf" tag="wTrident"/>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="xSKSkilBon"></bootstrap>
+    <bootstrap thing="xSKHoldBth"></bootstrap>
+    <bootstrap thing="xSwim">
+      <autotag group="Value" tag="30"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypHuman"></bootstrap>
+    </thing>
+  <thing id="xSKSkilBon" name="Sea Kin racial skill bonus" description="+2 racial bonus to Escape Artist checks." compset="Special" summary="+2 racial bonus to Escape Artist checks.">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="rRoDSeaKin"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPreAt" priority="5000">#skillbonus[kEscape] += 2</eval>
+    </thing>
+  <thing id="xSKHoldBth" name="Hold Breath" description="A sea kin can hold its breath for a number of rounds equal to 8 &#215; its Constitution score before it risks drowning." compset="Special" summary="Can hold breath for Con score x8 rounds before risks drowning.">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecSource" tag="rRoDSeaKin"/>
+    </thing>
+  <thing id="xSKWatDep" name="Water Dependancy" description="Sea Kin can survive out of the water for 1 Week.\nAfter that, Con check every day DC 10+1 per additional day or lose a point of Constitution." compset="Special">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Weakness" name="Weakness" abbrev="Weakness"/>
+    <tag group="SpecSource" tag="rRoDSeaKin"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="rSharakim" name="Sharakim" description="Humans assume that all orcs are the same&#151;ugly, brutish, violent, and determined to kill anyone who stands in their path. These suppositions rarely prove false. But even orcs display variation within the species, and one group in particular stands apart from all others.\n\nThe sharakim (the name means &#147;the tainted&#148; or &#147;those with taint&#148; in an old human dialect) were once human. At least, their forebears were. Legends claim that, long ago, all humans resided in the village of Desh. They lived peacefully until a hunter named Sharak killed a sacred stag, and all those who ate of the stag&#146;s flesh became ill. Many died, but others were transformed, twisted into hideous caricatures of humanity by the evil they had committed. The humans who escaped the curse scattered, leaving Desh to be lost forever. Those creatures who had once been human gathered together and fled as well, making their own way in the world but forever after hated by humans because they stood as a reminder of that sin. These became the sharakim.\n\nSharakim live in small villages and towns. They are comfortable in hills and mountains, especially places that feature long shadows and high cliffs on every side. They are eager for outside contact, and thus settle close to other races. They make frequent forays to nearby towns and encourage their neighbors to visit them, whereupon they take the part of lavish hosts. Sharakim spend their waking hours fighting the impression people assume based on their appearance; only in the privacy of their own homes do they relax and gather their thoughts.\n\n{b}Personality{/b}: Sharakim learn from early childhood that they were created from sin, and that others believe their existence is a curse upon the world. This knowledge makes them sullen when they are alone, and eager to please when they are with other races. Humans compare them to puppies, which hate to be alone and accept any treatment because it means attention. Sharakim despise other orcs, seeing them as examples of what they could have become, and they make every effort to distinguish themselves from those monsters. They bathe frequently and are fastidious about their clothing and manners. They learn to speak Common and strive to pronounce the words without an accent, which is diffi cult because of their tusks. Sharakim villages are models of tidiness and order, each house carefully placed in relation to its neighbors, and each one kept spotlessly clean. Sharakim strive to better themselves individually, constantly improving their knowledge and skills to make themselves worthy of social interaction.\n\n{b]Physical Description{/b}: Sharakim stand between 5 feet and 6 feet tall and weigh 140 to 275 pounds. Their skin ranges from light gray to coal black; their hair is thick but not coarse, and such a deep black it seems almost blue, though some sharakim sport silver or white streaks. They usually have either jet-black or slate-gray eyes, and more rarely eyes of dark blue or dark green. Small, curved horns protrude from both temples, and their lower canines are sharp tusks that jut up past their upper lips. Sharakim noses are usually short and snubbed, with wide nostrils.\n\nSharakim dress as well as their circumstances allow, to distinguish themselves from orcs. They prefer finely made shirts and pants, with soft leather boots and gloves. Many wear hats with broad brims, pulled low to cover their horns, while others prefer cloaks with deep hoods. Sharakim keep their thick fingernails trimmed, and their tusks and horns polished. They decorate their horns and tusks, carving them like ivory, capping them with precious metals, or even imbedding gems in them. Their hair is braided or pulled back and held by a fine metal clip. Sharakim hate to expose their feet and hands, because both are oversized and feature thick, talonlike nails.\n\n{b}Relations{/b}: Sharakim go out of their way to ingratiate themselves with other races. They greet anyone they meet openly and cheerfully, often in the stranger&#146;s native language. Gnomes have the easiest time adjusting to sharakim, being able to look past their appearance and admire their drive and education, and the two races often live near one another, visiting to trade information and goods. Halflings admire the determination of sharakim but still feel uncomfortable around them, and become shy in their presence. Elves and dwarves do not trust the sharakim, proclaiming that an orc in fancy clothes is still an orc. They cannot deny the race&#146;s intelligence and refinement, but they still suspect a sinister motive behind the civilized behavior. Humans find themselves torn in their reactions&#151;the sharakim look like orcs, but they act completely human. Human merchants happily do business with sharakim, but priests suspect darker intentions behind their eagerness, and fighters prefer not to trust them as comrades in battle." compset="Race">
+    <fieldval field="rSTR" value="2"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rInfFavor" value="Wizard"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="rDEX" value="-2"/>
+    <fieldval field="rINT" value="2"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="rAC" value="1"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="Language" tag="lDwarven" name="Dwarven" abbrev="Dwarven"/>
+    <tag group="Race" tag="stypHuman"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Language" tag="lElven"/>
+    <tag group="Language" tag="lGnome"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <bootstrap thing="rDarkVis2">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="xDazzled">
+      <autotag group="SpecSource" tag="rOrc"/>
+      </bootstrap>
+    <bootstrap thing="xSHSkilBon"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypHuman"></bootstrap>
+    </thing>
+  <thing id="xSHSkilBon" name="Sharakim Shadow Affinity" description="+2 racial bonus to Hide, Move Silently, Search and Spot checks in areas of darkness or shadowy illumination." compset="Special">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="rSharakim"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="xSHBonOrc" name="+1 to attack rolls vs Orcs and Goblinoids" description="+1 racial bonus to attacks against Orcs." compset="Special">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="rSharakim"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="rRoDSkulk" name="Skulk" description="Once member of an underprivileged caste of an ancient empire, the humans who would become skulks withdrew from the world through a magical ceremony that solidified their &quot;untouchable&quot; status. The ritual granted them natural camouflage, allowing skulks to blend in perfectly with their surroundings.\n\nSkulks gather in small bands within or near human communities. When night falls, they engage in raids that result in bloodshed as the skulks&#146; innate hatred for humans manifests itself in murderous rage. They use ambush, deception, and superior numbers to overwhelm their victims.\n\n{b}Personality{/b}: Skulks are angry, violent creatures who harbor jealous hatred for all beings more fortunate than them (which includes just about everyone). They have a powerful self-preservation instinct, often mistaken for cowardice, that keeps them to the shadows. They have little regard even for their own people, and skulk mothers have been known to abandon their own young if it meant protecting their own skin.\n\n{b}Physical Description{/b}: Skulks stand between 5 feet and 6 feet tall and weigh 120 to 180 pounds. They are completely hairless and wear little or no clothing. It is difficult to determine, at first glance, whether a skulk is male or female. Their skin is usually dull gray, but an individual can change its color on a whim, from a subdued brown to a lurid red or yellow. Skulks are capable of assuming any &#147;natural&#148; human flesh tone to better blend in. They have pupilless blue eyes, regardless of their skin coloration.\n\n{b}Relations{/b}: Skulks typically hate all humanoid races, but display particular viciousness toward their human forebears. Even those skulks who aren&#146;t evil don&#146;t usually trust other races, remaining on the outskirts of civilization rather than trying to integrate themselves.\n\n{b}Adventurers{/b}: Skulks who are brave enough to leave their people are rare, but can prove effective adventurers. Skulk adventurers, however, are outcasts from their coterie, forced into a life of danger by necessity rather than choice. In any case, skulk adventurers are most often rogues, fighters, or barbarians. Skulk bards who overcome the race&#146;s naturally insensitive personality can become exceptional spies." compset="Race">
+    <fieldval field="rInfFavor" value="Rogue"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="rHitDice" value="2"/>
+    <fieldval field="rInfHit" value="2d8 Hit Dice (4 levels of Humanoid)"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rSkillMult" value="7"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="rDEX" value="4"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rRef" value="3"/>
+    <fieldval field="rAttack" value="1"/>
+    <fieldval field="rSkill" value="2"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="Language" tag="lGnome" name="Gnome" abbrev="Gnome"/>
+    <tag group="Language" tag="lHalfling" name="Halfling" abbrev="Halfling"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Language" tag="lDwarven" name="Dwarven" abbrev="Dwarven"/>
+    <tag group="Language" tag="lElven" name="Elven" abbrev="Elven"/>
+    <tag group="Race" tag="stypHuman"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Language" tag="lOrc"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Helper" tag="RaceSize"/>
+      </bootstrap>
+    <bootstrap thing="xSklkPeerC"></bootstrap>
+    <bootstrap thing="xSklkInnND"></bootstrap>
+    <bootstrap thing="xSklkTrSt"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypHuman"></bootstrap>
+    <eval phase="PreLevel">~ Racial skill bonus
+      #skillbonus[kHide] += 15
+      #skillbonus[kMoveSil] += 8</eval>
+    </thing>
+  <thing id="xSklkInnND" name="Innate Nondetection" description="Casters of divination spells that have a skulk as a target must succeed at a DC20 caster level." compset="Special">
+    <tag group="SpecSource" tag="rRoDSkulk"/>
+    </thing>
+  <thing id="xSklkPeerC" name="Peerless Camouflage" description="Skulks can move at full speed and even run while hiding, taking no penalties on Hide Checks due to movement." compset="Special">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="rRoDSkulk"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xSklkTrSt" name="Trackless Path" description="The DC of any Survival check to follow the trail of a skulk is increased by 10." compset="Special">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="rRoDSkulk"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="cSkulkTP" name="Trackless Path" description="The DC of any Survival check to follow the trail of a skulk is increased by 10." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    </thing>
+  <thing id="cSkulkPC" name="Peerless Camouflage" description="Skulks can move at full speed and even run while hiding, taking no penalties on Hide Checks due to movement." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    </thing>
+  <thing id="cSkulkRSB" name="Skulk Racial Skill Bonuses" compset="ClSpecial">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="Helper" tag="DispOnly"/>
+    <eval phase="Final">var bonus2 as number
+var bonushide as number
+var bonusmove as number
+
+~bonus2 = hero.child[cSkulkMC].field[cTotalLev].value 
+bonushide = bonus2 * 5
+bonusmove = (bonus2-1)*3 + 4
+
+~ Racial skill bonus
+      #skillbonus[kHide] += bonushide
+      #skillbonus[kMoveSil] += bonusmove</eval>
+    </thing>
+  <thing id="cSkulkIN" name="Innate Nondetection" description="Casters of divination spells that have a skulk as a target must succeed at a DC20 caster level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    </thing>
+  <thing id="rRoUndrflk" name="Underfolk" description="The underfolk are descendants of bands of humans who chose&#151;or were forced&#151;to live in the caves and twisting passageways of the underground world. Over generations, these humans adapted to this strange world, filled with natural wonders and dangerous creatures. Some underfolk societies have not ventured to the surface in generations, and others have forgotten their true origins altogether. However, those who live close to the caves that give entry to the underground realms make occasional forays to the surface and even engage in limited trade with surfacedwelling humans.\n\nUnderfolk are a simple, clannish people dedicated to their homes and the safety of their race. Because of the multitude of evil and predatory races and creatures in the caves and tunnels they call home, underfolk have become quick, stealthy, and survival-oriented. Although rather primitive and rustic when it comes to technology, underfolk make up for this lack with a superior knowledge of how to survive beneath ground, although even they avoid the deepest depths of the subterranean realms.\n\n{b}Personality{/b}: Underfolk are insular and focused on their tribe&#146;s well-being. They can be mildly xenophobic and suspicious of strangers, although they become deeply loyal to those who are true to their word and prove their worth. While not as bound to their grudges as dwarves are, underfolk nevertheless take oaths very seriously and immediately sever ties with any being who lies or otherwise deceives them.\n\nUnderfolk maintain a deep spiritual connection with their home and have come to understand the subtle rhythms of its seasons. They delight in the natural beauty of underground caves, warrens, and grottos, and do their best to keep them from harm. Underfolk have a rich oral tradition and fill their speech with allegories, oaths, and hyperbolic statements. Unlike those of dwarves, who share a similar custom, underfolk stories are poetic and rather dreamlike in quality.\n\nSinging is a favorite pastime among underfolk, and every individual knows a litany of tunes.\n\n{b}Physical Description{/b}: Underfolk are both short and slight, with builds similar to elves. They typically stand between 5 and 5-1/2 feet tall, weighing 100 to 150 pounds. Their eyes and ears are proportionally larger than those of humans, having evolved to enable underfolk to see in pitch blackness and make out the quietest sounds. Underfolk have thick body hair to keep them warm in the chill of their tunnels, and they wear their typically black or silvery-white tresses long.\n\nUnderfolk depend for survival on their ability to blend into the surrounding terrain. Their skin has evolved special pigmentation that can mimic the various rocky hues found in the underground, allowing them to seemingly disappear into a nearby wall.\n\n{b}Relations{/b}: Underfolk prefer to keep to themselves, although of necessity tribes try to build goodwill with friendlier races that live nearby. Underfolk who live close to the surface have contact with humans, halfl ings, and the occasional elf society, and serve as guides for those who want to plumb the depths of the underground realms. However, they are shy and suspicious when dealing with surfacedwellers. Underfolk are decidedly neutral when dealing with dwarves, because this stout race views underfolk as primitive and barbaric. Those dwarves who overlook this prejudice find a kind people who simply want to be left alone. In turn, underfolk occasionally provide aid to dwarves when needed, especially when their mutual assistance is needed to fi ght against their common foes&#151;drow, orcs, and the like.\n\nUnderfolk are the target of drow, svirfneblin, and kuo-toa aggression, and they do their best to avoid contact with these races. However, as hunter-gatherers, underfolk commonly have to enter their enemies&#146; territory to fi nd enough food to survive. Also, due to their relative closeness to the surface, underfolk come into hostile contact with orcs, who have need of the same caves that the underfolk inhabit." compset="Race">
+    <fieldval field="rSkill" value="1"/>
+    <fieldval field="rInfFavor" value="Any"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rWeightMnF" value="85"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="rHeightMxF" value="73"/>
+    <fieldval field="rHeightMxM" value="78"/>
+    <fieldval field="rWeightMxF" value="245"/>
+    <fieldval field="rWeightMxM" value="280"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AgeC1Size" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC2Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="10" name="d10" abbrev="d10"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Extra"/>
+    <tag group="WeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="WeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="Race" tag="stypHuman"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Language" tag="Drow" name="Drow"/>
+    <tag group="Language" tag="lDwarven"/>
+    <tag group="Language" tag="lGnome"/>
+    <tag group="Language" tag="lGoblin"/>
+    <tag group="Language" tag="lOrc"/>
+    <tag group="WepProf" tag="wPickHeavy"/>
+    <tag group="WepProf" tag="wPickLight"/>
+    <tag group="AgeC1Dice" tag="1" name="1" abbrev="1"/>
+    <bootstrap thing="rDarkVis">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <bootstrap thing="xUndfkCam"></bootstrap>
+    <bootstrap thing="xLightSen"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypHuman"></bootstrap>
+    <eval phase="PreLevel">~ Racial skill bonus
+      #skillbonus[kListen] += 2</eval>
+    </thing>
+  <thing id="xUndfkCam" name="Camouflage" description="Racial bonus +4 hide (+10 in rocky terrain). This ability works even against Darkvision, but not True Seeing." compset="Special">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Defense" name="Defense" abbrev="Defense"/>
+    <eval phase="PreLevel">~ Racial skill bonus
+      #skillbonus[kHide] += 4</eval>
+    </thing>
+  <thing id="fBrghtSgls" name="Bright Sigil" description="As a standard action, you can increase the illumination of your illlumian sigils to the intensity of a daylight spell. This last as long as you concentrate and for 1 round thereafter" compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Illumian race needed."><![CDATA[tagis[Race.Illumian] <> 0]]></exprreq>
+    </thing>
+  <thing id="fChannRage" name="Channelled Rage" description="You may spend one of your daily uses of rage as an immediate action to add your Strength bonus on a Will saving throw." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Half-Orc race needed."><![CDATA[tagis[Race.HalfOrc] <> 0]]></exprreq>
+    </thing>
+  <thing id="fFlsDstny" name="Fearless Destiny" description="Once per day, any effect that would reduce you to -10 hit points or fewer instead reduces you to -9 hit points and leaves you in a stable condition. Effect that kills you outright (like disintegrate or death effects) work normally. " compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Human or Half-Human race needed."><![CDATA[tagis[Race.Human] <> 0]]></exprreq>
+    <exprreq message="Heroic Destiny Feat needed."><![CDATA[#hasfeat[fHeroDstn] <> 0]]></exprreq>
+    </thing>
+  <thing id="fHeroDstn" name="Heroic Destiny" description="Once per day, you may add 1d6 to one attack roll, ability check, skill check, saving throw, caster level check." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Human or half-human race needed."><![CDATA[tagis[Race.Human] <> 0]]></exprreq>
+    </thing>
+  <thing id="fInsdConn" name="Inside Connection" description="Choose a specific organization, like a militia, a particular church, a guild or one of the illumian cabals. You gain a +4 circumstance bonus on Bluff, Diplomacy, Gather information, Knowledge (local), and Sense Motive checks made in conjunction with that organization." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="fMncngDmn" name="Menacing Demeanor" description="You gain a +4 bonus on Intimidate checks." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Orc Blood or Orc Subtype."><![CDATA[(tagis[Race.HalfOrc]+tagis[Race.Orc]) <> 0]]></exprreq>
+    </thing>
+  <thing id="fPrtDstny" name="Protected Destiny" description="Once per day, if you roll a natural 1 on a saving throw, you may reroll the save." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Human or Half-Human race needed."><![CDATA[(tagis[Race.Human]+tagis[Race.HalfOrc]+tagis[Race.HalfElf]+tagis[Race.HalfOgre])<> 0]]></exprreq>
+    <exprreq message="Heroic Destiny Feat needed."><![CDATA[#hasfeat[fHeroDstn] <> 0]]></exprreq>
+    </thing>
+  <thing id="fRscBuyer" name="Resourceful Buyer" description="While looking for items to buy, the community you&apos;re in is treated as one size larger for the purpose of determining the limit on most expensive item available." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="fSmttrngs" name="Smatterings" description=" After 2d6 days of listening to a new language, you can ask and understand simple questions, explanation and instructions on verbal communications." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="fSocbPrsn" name="Sociable Personality" description="You may reroll any Diplomacy or Gather Information roll. You must take the result of the second roll, even if it is worse than the original roll." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Half-Elf race needed."><![CDATA[tagis[Race.HalfElf] <> 0]]></exprreq>
+    </thing>
+  <thing id="fSbtlSgl" name="Subtle Sigil" description="You can make your sigil disappear or reappear as a free action." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Illumian race needed."><![CDATA[tagis[Race.Illumian] <> 0]]></exprreq>
+    </thing>
+  <thing id="fCompInsgt" name="Complimentary Insight" description="Having 5 or more ranks in a skill gives you a +3 bonus on skill checks with each of its synergistic skills, as noted in the skill description." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <eval phase="PostAttr"><![CDATA[if (#skillranks[kAutohypno] >= 5) then
+ hero.child[kKnowPsi].field[Bonus].value += 1
+endif
+
+if (#skillranks[kBluff] >= 5) then
+ hero.child[kDiplomacy].field[Bonus].value += 1
+endif
+
+if (#skillranks[kBluff] >= 5) then
+ hero.child[kIntim].field[Bonus].value += 1
+endif
+
+if (#skillranks[kBluff] >= 5) then
+ hero.child[kSleight].field[Bonus].value += 1
+endif
+
+if (#skillranks[kConcent] >= 5) then
+ hero.child[kAutohypno].field[Bonus].value += 1
+endif
+
+if (#skillranks[kHandleAnm] >= 5) then
+ hero.child[kRide].field[Bonus].value += 1
+endif
+
+if (#skillranks[kJump] >= 5) then
+ hero.child[kTumble].field[Bonus].value += 1
+endif
+
+if (#skillranks[kKnowArcan] >= 5) then
+ hero.child[kSpellcr].field[Bonus].value += 1
+endif
+
+if (#skillranks[kKnowLocal] >= 5) then
+ hero.child[kGatherInf].field[Bonus].value += 1
+endif
+
+if (#skillranks[kKnowNat] >= 5) then
+ hero.child[kSurvival].field[Bonus].value += 1
+endif
+
+if (#skillranks[kKnowNoble] >= 5) then
+ hero.child[kDiplomacy].field[Bonus].value += 1
+endif
+
+if (#skillranks[kSearch] >= 5) then
+ hero.child[kSurvival].field[Bonus].value += 1
+endif
+
+if (#skillranks[kTumble] >= 5) then
+ hero.child[kJump].field[Bonus].value += 1
+endif
+
+if (#skillranks[kSenseMot] >= 5) then
+ hero.child[kDiplomacy].field[Bonus].value += 1
+endif
+
+if (#skillranks[kSurvival] >= 5) then
+ hero.child[kKnowNat].field[Bonus].value += 1
+endif
+
+if (#skillranks[kTumble] >= 5) then
+ hero.child[kBalance].field[Bonus].value += 1
+endif]]></eval>
+    <exprreq message="Half-Elf race needed."><![CDATA[tagis[Race.HalfElf] <> 0]]></exprreq>
+    </thing>
+  <thing id="fEnhPowSig" name="Enhanced Power Sigils" description="As a standard action, you can increase the illumination of your illlumian sigils to the intensity of a daylight spell. This last as long as you concentrate and for 1 round thereafter." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Illumian race needed."><![CDATA[tagis[Race.Illumian] <> 0]]></exprreq>
+    </thing>
+  <thing id="xIll2ndSig" name="Illumian 2nd Power Sigil" description="Illumian Second Sigil" compset="Special" summary="Illumian Second Sigil">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <bootstrap thing="fIllPowSig"></bootstrap>
+    <eval phase="UserPostLv">perform hero.childfound[xIll1stSig].delete[Helper.ShowSpec]</eval>
+    <exprreq message=""><![CDATA[tagis[Race.Illumian] <> 0]]></exprreq>
+    </thing>
+  <thing id="fHeroicDes" name="Heroic Destiny" description="Once per day, before you make an attack roll, ability check, skill check, saving throw or caster level check, you may roll 1d6 and add it as a bonus on the roll, check, or save." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Racial"/>
+    <exprreq message="Human or Half-Human race needed."><![CDATA[tagis[Race.Human] + tagis[Race.HalfElf] + tagis[Race.HalfOgre] <> 0]]></exprreq>
+    </thing>
+  <thing id="xPSHoon" name="Power Sigil Hoon" description="+1 bonus on Wisdom Checks, Constitution Checks and Wisdom and Constitution based Skill Checks." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="User" tag="tIllPS" name="Illumian Power Sigils"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Hoon"/>
+    <bootstrap thing="xPSAeshoon"></bootstrap>
+    <bootstrap thing="xPSHoonkra"></bootstrap>
+    <bootstrap thing="xPSHoonvau"></bootstrap>
+    <bootstrap thing="xPSNaenhoo"></bootstrap>
+    <bootstrap thing="xPSUurhoon"></bootstrap>
+    <eval phase="UserPostLv" priority="501">if (hero.tagis[User.Hoon] = 0) then
+  perform delete[Helper.ShowSpec]
+  perform assign[Helper.SpcDisable]
+  done
+else
+  perform assign[Helper.ShowSpec]
+  hero.child[kListen].field[Bonus].value +=1
+  hero.child[kHeal].field[Bonus].value +=1
+  hero.child[kSpot].field[Bonus].value +=1
+  hero.child[kSenseMot].field[Bonus].value +=1
+  hero.child[kSurvival].field[Bonus].value +=1
+  hero.child[kConcent].field[Bonus].value +=1
+  hero.child[kProfCook].field[Bonus].value +=1
+  hero.child[kProfGamb].field[Bonus].value +=1
+  hero.child[kProfGambl].field[Bonus].value +=1
+  hero.child[kProfHunt].field[Bonus].value +=1
+  hero.child[kProfMiner].field[Bonus].value +=1
+  hero.child[kProfOther].field[Bonus].value +=1
+  hero.child[kProfSiege].field[Bonus].value +=1
+  hero.child[kProfSail].field[Bonus].value +=1
+endif</eval>
+    </thing>
+  <thing id="xPSNaen" name="Power Sigil Naen" description="+1 bonus on Intelligence Checks and Intelligence based Skill Checks." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="User" tag="tIllPS" name="Illumian Power Sigils"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Naen"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <bootstrap thing="xPSNaenaes"></bootstrap>
+    <bootstrap thing="xPSNaenhoo"></bootstrap>
+    <bootstrap thing="xPSNaenkra"></bootstrap>
+    <bootstrap thing="xPSUurnaen"></bootstrap>
+    <bootstrap thing="xPSVaulnae"></bootstrap>
+    <eval phase="PostLevel" priority="10001">if (hero.tagis[User.Naen] = 0) then
+  perform delete[Helper.ShowSpec]
+  perform assign[Helper.SpcDisable]
+  done
+else
+  perform assign[Helper.ShowSpec]
+  hero.child[kDecScript].field[Bonus].value +=1
+  hero.child[kDisable].field[Bonus].value +=1
+  hero.child[kForgery].field[Bonus].value +=1
+  hero.child[kSearch].field[Bonus].value +=1
+  hero.child[kSpellcr].field[Bonus].value +=1
+  hero.child[kAppraise].field[Bonus].value +=1
+  hero.child[kCrafAlch].field[Bonus].value +=1
+  hero.child[kCrafArmor].field[Bonus].value +=1
+  hero.child[kCrafBlack].field[Bonus].value +=1
+  hero.child[kCraftBow].field[Bonus].value +=1
+  hero.child[kCrafCarp].field[Bonus].value +=1
+  hero.child[kCrafJewel].field[Bonus].value +=1
+  hero.child[kCrafMusIn].field[Bonus].value +=1
+  hero.child[kCrafOther].field[Bonus].value +=1
+  hero.child[kCrafPoiso].field[Bonus].value +=1
+  hero.child[kCrafPott].field[Bonus].value +=1
+  hero.child[kCraftTax].field[Bonus].value +=1
+  hero.child[kCrafTinke].field[Bonus].value +=1
+  hero.child[kCrafTrap].field[Bonus].value +=1
+  hero.child[kCrafWeap].field[Bonus].value +=1
+  hero.child[kCrafWeav].field[Bonus].value +=1
+  hero.child[kKnowArcan].field[Bonus].value +=1
+  hero.child[kKnowArcEn].field[Bonus].value +=1
+  hero.child[kKnowGeog].field[Bonus].value +=1
+  hero.child[kKnowHist].field[Bonus].value +=1
+  hero.child[kKnowLocal].field[Bonus].value +=1
+  hero.child[kKnowNat].field[Bonus].value +=1
+  hero.child[kKnowOther].field[Bonus].value +=1
+  hero.child[kKnowPsi].field[Bonus].value +=1
+  hero.child[kKnowRel].field[Bonus].value +=1
+  hero.child[kKnowPlane].field[Bonus].value +=1
+  hero.child[kKnowDun].field[Bonus].value +=1
+  hero.child[kKnowNoble].field[Bonus].value +=1
+endif</eval>
+    </thing>
+  <thing id="xPSUur" name="Power Sigil Uur" description="+1 bonus on Dexterity Checks and Dexterity based Skill Checks." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="User" tag="tIllPS" name="Illumian Power Sigils"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Uur"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <bootstrap thing="xPSAeshuur"></bootstrap>
+    <bootstrap thing="xPSUurhoon"></bootstrap>
+    <bootstrap thing="xPSUurkrau"></bootstrap>
+    <bootstrap thing="xPSUurnaen"></bootstrap>
+    <bootstrap thing="xPSVauluur"></bootstrap>
+    <eval phase="PostLevel" priority="10001">if (hero.tagis[User.Uur] = 0) then
+  perform delete[Helper.ShowSpec]
+  perform assign[Helper.SpcDisable]
+  done
+else
+  perform assign[Helper.ShowSpec]
+  hero.child[kTumble].field[Bonus].value +=1
+  hero.child[kEscape].field[Bonus].value +=1
+  hero.child[kRide].field[Bonus].value +=1
+  hero.child[kBalance].field[Bonus].value +=1
+  hero.child[kHide].field[Bonus].value +=1
+  hero.child[kMoveSil].field[Bonus].value +=1
+  hero.child[kSleight].field[Bonus].value +=1
+  hero.child[kOpenLock].field[Bonus].value +=1
+endif</eval>
+    </thing>
+  <thing id="xPSVaul" name="Power Sigil Vaul" description="+1 bonus on Charisma Checks and Charisma based Skill Checks." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="User" tag="tIllPS" name="Illumian Power Sigils"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Vaul"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <bootstrap thing="xPSHoonvau"></bootstrap>
+    <bootstrap thing="xPSVaulaes"></bootstrap>
+    <bootstrap thing="xPSVaulkra"></bootstrap>
+    <bootstrap thing="xPSVaulnae"></bootstrap>
+    <bootstrap thing="xPSVauluur"></bootstrap>
+    <eval phase="PostLevel" priority="10001">if (hero.tagis[User.Vaul] = 0) then
+  perform delete[Helper.ShowSpec]
+  perform assign[Helper.SpcDisable]
+  done
+else
+  perform assign[Helper.ShowSpec]
+  hero.child[kHandleAnm].field[Bonus].value +=1
+  hero.child[kDisguise].field[Bonus].value +=1
+  hero.child[kDiplomacy].field[Bonus].value +=1
+  hero.child[kIntim].field[Bonus].value +=1
+  hero.child[kGatherInf].field[Bonus].value +=1
+  hero.child[kBluff].field[Bonus].value +=1
+  hero.child[kUseMagic].field[Bonus].value +=1
+  hero.child[kUsePsion].field[Bonus].value +=1
+  hero.child[kPerfAct].field[Bonus].value +=1
+  hero.child[kPerfCom].field[Bonus].value +=1
+  hero.child[kPerfDance].field[Bonus].value +=1
+  hero.child[kPerfKey].field[Bonus].value +=1
+  hero.child[kPerfOrat].field[Bonus].value +=1
+  hero.child[kPerfOther].field[Bonus].value +=1
+  hero.child[kPerfPerc].field[Bonus].value +=1
+  hero.child[kPerfSing].field[Bonus].value +=1
+  hero.child[kPerfSing].field[Bonus].value +=1
+  hero.child[kPerfStrng].field[Bonus].value +=1
+  hero.child[kPerfWind].field[Bonus].value +=1
+endif</eval>
+    </thing>
+  <thing id="fAbleLrnr" name="Able Learner" description="Prerequisite: Human or doppelganger.\nBenefit: All skill ranks cost 1 skill point for you to purchase, even if the skill is cross-class for you. The maximum number of ranks you can purchase in a cross-class skill remains the same.\nThis feat does not affect the skill point cost to learn a language or to gain literacy (for a barbarian or other illiterate character).\nSpecial: This feat may only be taken at 1st level.\nNormal: Cross-class skills cost 2 skill points per rank." compset="Feat" summary="You have a great aptitude for learning">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="Upbringing"/>
+    <eval phase="PreLevel" priority="5100"><![CDATA[var diff as number
+
+if (tagis[Helper.FtDisable] <> 0) then
+done
+endif
+
+~ Look through skills, set our # ranks = # points spent.
+
+foreach pick in hero from BaseSkill where "!thingid.kSpeakLang"
+diff = each.field[kUserPts].value - each.field[kUserRanks].value
+
+if (diff > 0) then
+~each.field[kModValue].value += diff
+each.field[kUserRanks].value = each.field[kUserPts].value
+endif
+nexteach]]></eval>
+    <exprreq message="Race Human needed"><![CDATA[hero.tagis[Race.Human] <> 0]]></exprreq>
+    </thing>
+  <thing id="cHelpChm" name="Chameleon" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cAbbr" value="Chm"/>
+    <arrayval field="cCastTot" index="0" value="4"/>
+    <arrayval field="cCastTot" index="0" column="1" value="2"/>
+    <arrayval field="cCastTot" index="1" value="4"/>
+    <arrayval field="cCastTot" index="1" column="1" value="3"/>
+    <arrayval field="cCastTot" index="1" column="2" value="1"/>
+    <arrayval field="cCastTot" index="2" value="4"/>
+    <arrayval field="cCastTot" index="2" column="1" value="3"/>
+    <arrayval field="cCastTot" index="2" column="2" value="2"/>
+    <arrayval field="cCastTot" index="3" value="4"/>
+    <arrayval field="cCastTot" index="3" column="1" value="4"/>
+    <arrayval field="cCastTot" index="3" column="2" value="3"/>
+    <arrayval field="cCastTot" index="3" column="3" value="1"/>
+    <arrayval field="cCastTot" index="4" value="4"/>
+    <arrayval field="cCastTot" index="4" column="1" value="4"/>
+    <arrayval field="cCastTot" index="4" column="2" value="3"/>
+    <arrayval field="cCastTot" index="4" column="3" value="2"/>
+    <arrayval field="cCastTot" index="5" value="4"/>
+    <arrayval field="cCastTot" index="5" column="1" value="4"/>
+    <arrayval field="cCastTot" index="5" column="2" value="4"/>
+    <arrayval field="cCastTot" index="5" column="3" value="3"/>
+    <arrayval field="cCastTot" index="5" column="4" value="1"/>
+    <arrayval field="cCastTot" index="6" value="4"/>
+    <arrayval field="cCastTot" index="6" column="1" value="4"/>
+    <arrayval field="cCastTot" index="6" column="2" value="4"/>
+    <arrayval field="cCastTot" index="6" column="3" value="4"/>
+    <arrayval field="cCastTot" index="6" column="4" value="2"/>
+    <arrayval field="cCastTot" index="7" value="4"/>
+    <arrayval field="cCastTot" index="7" column="1" value="4"/>
+    <arrayval field="cCastTot" index="7" column="2" value="4"/>
+    <arrayval field="cCastTot" index="7" column="3" value="4"/>
+    <arrayval field="cCastTot" index="7" column="4" value="3"/>
+    <arrayval field="cCastTot" index="7" column="5" value="1"/>
+    <arrayval field="cCastTot" index="8" value="4"/>
+    <arrayval field="cCastTot" index="8" column="1" value="4"/>
+    <arrayval field="cCastTot" index="8" column="2" value="4"/>
+    <arrayval field="cCastTot" index="8" column="3" value="4"/>
+    <arrayval field="cCastTot" index="8" column="4" value="4"/>
+    <arrayval field="cCastTot" index="8" column="5" value="2"/>
+    <arrayval field="cCastTot" index="9" value="4"/>
+    <arrayval field="cCastTot" index="9" column="1" value="4"/>
+    <arrayval field="cCastTot" index="9" column="2" value="4"/>
+    <arrayval field="cCastTot" index="9" column="3" value="4"/>
+    <arrayval field="cCastTot" index="9" column="4" value="4"/>
+    <arrayval field="cCastTot" index="9" column="5" value="3"/>
+    <arrayval field="cCastTot" index="9" column="6" value="1"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="CasterType" tag="MemBook"/>
+    <tag group="CasterSrc" tag="Arcane"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="Chamln" name="Chameleon"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="ClassSkill" tag="kUseMagic"/>
+    <tag group="AlgnForbid" tag="Good"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="fArmHeavy"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="cChmAbBoon"></bootstrap>
+    <bootstrap thing="cChmAptFoc"></bootstrap>
+    <bootstrap thing="cChmBonFt"></bootstrap>
+    <bootstrap thing="cChmDblApt"></bootstrap>
+    <bootstrap thing="cChmmmc"></bootstrap>
+    <bootstrap thing="cChmRapRef"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <link linkage="spellattr" thing="aINT"/>
+    </thing>
+  <thing id="cChamln" name="Chameleon" compset="ClassLevel" maxlimit="10">
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpChm"></bootstrap>
+    <link linkage="helper" thing="cHelpChm"/>
+    <exprreq message="Race Human or Doppleganger or Changeling needed."><![CDATA[(tagis[Race.Human] + tagis[wGroup.rDoppel] + tagis[wGroup.rChangelin]) <> 0]]></exprreq>
+    <exprreq message="Bluff 8 ranks needed."><![CDATA[#skillranks[kBluff] >= 8]]></exprreq>
+    <exprreq message="Disguise 8 ranks needed."><![CDATA[#skillranks[kDisguise] >= 8]]></exprreq>
+    <exprreq message="Sense Motive 4 ranks needed."><![CDATA[#skillranks[kSenseMot] >= 4]]></exprreq>
+    <exprreq message="Spellcraft 4 ranks needed."><![CDATA[#skillranks[kSpellcr] >= 4]]></exprreq>
+    <exprreq message="Able Learner Feat needed."><![CDATA[#hasfeat[fAbleLrnr] <> 0]]></exprreq>
+    </thing>
+  <thing id="cHelpLrD" name="Loredelver" description="Loredelvers are illumian spellcaster who find and explore ruins, disable the magical protections that guard them, and sift through the ancient secrets found within." compset="ClassHelp" summary="Loredelver" uniqueness="unique">
+    <fieldval field="cAbbr" value="LrD"/>
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cSkills" value="6"/>
+    <fieldval field="shortname" value="Loredelver"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cMagLevTot" index="3" value="3"/>
+    <arrayval field="cMagLevTot" index="4" value="4"/>
+    <arrayval field="cMagLevTot" index="5" value="5"/>
+    <arrayval field="cMagLevTot" index="6" value="6"/>
+    <arrayval field="cMagLevTot" index="7" value="7"/>
+    <arrayval field="cMagLevTot" index="8" value="8"/>
+    <arrayval field="cMagLevTot" index="9" value="9"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClassSkill" tag="kKnowHist"/>
+    <tag group="ClassSkill" tag="kDecScript" name="Decipher Script" abbrev="Decipher Script"/>
+    <tag group="ClassSkill" tag="kDisable" name="Disable Device" abbrev="Disable Device"/>
+    <tag group="ClassSkill" tag="kJump" name="Jump" abbrev="Jump"/>
+    <tag group="ClassSkill" tag="kOpenLock" name="Open Lock" abbrev="Open Lock"/>
+    <tag group="ClassSkill" tag="kSearch" name="Search" abbrev="Search"/>
+    <tag group="ClassSkill" tag="kSpeakLang" name="Speak Language" abbrev="Speak Language"/>
+    <tag group="ClassSkill" tag="kSpellcr" name="Spellcraft" abbrev="Spellcraft"/>
+    <tag group="Classes" tag="Loredlvr" name="Loredelver" abbrev="Arcane Trickster"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="cFort" tag="Poor" name="Poor" abbrev="Poor"/>
+    <tag group="ClassSkill" tag="kKnowDun"/>
+    <tag group="cRef" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="cWill" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="ClassSkill" tag="Profession" name="All Profession Skills" abbrev="All Profession Skills"/>
+    <tag group="ClassSkill" tag="kBalance" name="Balance" abbrev="Balance"/>
+    <tag group="ClassSkill" tag="kClimb" name="Climb" abbrev="Climb"/>
+    <tag group="ClassSkill" tag="kConcent" name="Concentration" abbrev="Concentration"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kKnowArcEn"/>
+    <bootstrap thing="cLrdArcSgt"></bootstrap>
+    <bootstrap thing="cLrdDetMag"></bootstrap>
+    <bootstrap thing="cLrdEvasn"></bootstrap>
+    <bootstrap thing="cLrdFrlss"></bootstrap>
+    <bootstrap thing="cLrdGrArcS"></bootstrap>
+    <bootstrap thing="cLrdImpEva"></bootstrap>
+    <bootstrap thing="cLrdKnow"></bootstrap>
+    <bootstrap thing="cLrdSpC2"></bootstrap>
+    <bootstrap thing="cLrdSpC3"></bootstrap>
+    <bootstrap thing="cLrdSpC1"></bootstrap>
+    </thing>
+  <thing id="cLoredlvr" name="Loredelver" compset="ClassLevel" summary="Loredelver" maxlimit="10">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpLrD"></bootstrap>
+    <link linkage="helper" thing="cHelpLrD"/>
+    <exprreq message="Able to cast 3rd level arcane spell."><![CDATA[tagcount[Hero.Arcane] >= 3 + 1]]></exprreq>
+    <exprreq message="Illumian race only."><![CDATA[tagis[Race.Illumian] <> 0]]></exprreq>
+    <exprreq message="Decipher Script 10 ranks needed."><![CDATA[#skillranks[kDecScript] >= 10]]></exprreq>
+    <exprreq message="Disable Device 5 ranks needed."><![CDATA[#skillranks[kDisable] >= 5]]></exprreq>
+    <exprreq message="Knowledge (Arcana) 10 ranks needed."><![CDATA[#skillranks[kKnowArcan] >= 10]]></exprreq>
+    <exprreq message="Knowledge (Dungeoneering) 5 ranks needed."><![CDATA[#skillranks[kKnowDun] >= 5]]></exprreq>
+    <exprreq message="Trapfinding needed"><![CDATA[hero.childlives[xTrapfind] <> 0]]></exprreq>
+    <prereq message="At least a 3rd level divination spell needed.">
+      <validate><![CDATA[~ Loop through all classes looking for arcane casting
+var result as number
+result = 0
+
+foreach pick in hero from BaseSpell where "sSchool.Divination"
+   if (each.field[sLevel].value >= 3) then
+     result += 1
+   endif
+nexteach
+
+validif (result >= 1)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cLrdKnow" name="Loredelver Knowledge" description="You may make a special Bardic Knowledge check with a bonus of your int modifier + your bard level (+2 if you have 5+ ranks in Knowledge: History) to see whether you know some relevant information about local notable people, legendary items, or noteworthy places." compset="ClSpecial" summary="Make a special Bardic Knowledge check to find out information.">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final" priority="10000"><![CDATA[var bardlvl as number
+
+foreach pick in hero from BaseClHelp where "Classes.Bard"
+    bardlvl += each.field[cTotalLev].value
+nexteach
+
+      ~our value is the bonus we get.  It is our bard level + loredelver level + INT mod
+      field[Value].value += field[xTotalLev].value + hero.child[aINT].field[aModBonus].value + bardlvl
+
+      ~+2 if we have at least 5 ranks of knowledge: history
+      if (#skillranks[kKnowHist] >= 5) then
+        field[Value].value +=2
+        endif
+
+      ~copy our name to your livename if needed
+      if (empty(field[livename].text) <> 0) then
+        field[livename].text = field[name].text
+        endif
+
+      ~append the value
+      field[livename].text &= " (+" & field[Value].value & ")"
+
+~delete the ridundant Bard entry if present
+if (hero.childlives[xLore] <> 0) then
+      perform hero.childfound[xLore].delete[Helper.ShowSpec]
+endif]]></eval>
+    </thing>
+  <thing id="cLrDMagIns" name="Magical Insight" description="Loredelvers get a +5 insight bonus on Spellcraft checks made to determine the schools of magic or magical auras." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cLrdDetMag" name="Detect Magic" description="Loredelver may use {i}Detect Magic{/i} at will." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cLrdEvasn" name="Evasion" description="When wearing light or no armor, if you pass your Reflex save against an attack that deals half damage on a save, you take no damage." compset="ClSpecial" summary="Take no damage on a successful Reflex save.">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="SpecType" tag="Defense" name="Defense" abbrev="Defense"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="cLrdSpC1" name="Spontaneous Casting (Knock)" description="You can spontaneously cast the {i}Knock{/i} spell sacrificing a prepared 2nd-level (or higher) spell or spell slot." compset="ClSpecial" summary="Spontaneous casting (Knock)">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cLrdFrlss" name="Fearless" description="Loredelvers are immune to fear, magical or otherwise" compset="ClSpecial" summary="Immunity to fear">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cLrdArcSgt" name="Arcane Sight" description="Loredelvers may use {i}Arcane Sight{/i} at will." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cLrdSpC2" name="Spontaneous Casting (Arcane Eye)" description="You can spontaneously cast the {i}Arcane Eye{/i} spell sacrificing a prepared 4th-level (or higher) spell or spell slot." compset="ClSpecial" summary="Spontaneous casting (Arcane Eye)">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cLrdImpEva" name="Improved Evasion" description="Take only half damage on a failed Reflex save." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="SpecType" tag="Defense" name="Defense" abbrev="Defense"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="cLrdGrArcS" name="Greater Arcane Sight" description="Loredelvers may use {i}Greater Arcane Sight{/i} at will." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cLrdSpC3" name="Spontaneous Casting (Greater Dispel Magic)" description="You can spontaneously cast the {i}Greater Dispel Magic{/i} spell sacrificing a prepared 6th-level (or higher) spell or spell slot." compset="ClSpecial" summary="Spontaneous casting (Greater Dispel Magic)">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpLrD"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHelpMBr" name="Menacing Brute" description="Menacing brutes combine resourcefulness and determination with a ready wit and the willingness to do jobs that others find distasteful - and do them well." compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="10"/>
+    <fieldval field="cAbbr" value="MBr"/>
+    <fieldval field="shortname" value="Menacing Brute"/>
+    <fieldval field="cSkills" value="4"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="MncngBrut" name="Menacing Brute"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kKnowLocal"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="AlgnForbid" tag="Good"/>
+    <tag group="cWill" tag="Poor"/>
+    <bootstrap thing="cMBMakEx"></bootstrap>
+    <bootstrap thing="cMBDemStr"></bootstrap>
+    <bootstrap thing="cMBRecSrch"></bootstrap>
+    <bootstrap thing="cMBRuthCut"></bootstrap>
+    <bootstrap thing="cMBSnkAtk"></bootstrap>
+    </thing>
+  <thing id="cMncngBrut" name="Menacing Brute" compset="ClassLevel" maxlimit="5">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpMBr"></bootstrap>
+    <link linkage="helper" thing="cHelpMBr"/>
+    <exprreq message="Race: Half Orc needed."><![CDATA[tagis[Race.HalfOrc] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus +5 needed."><![CDATA[child[Attack].field[tAtkBase].value >= 5]]></exprreq>
+    <exprreq message="Intimidate 5 ranks needed."><![CDATA[#skillranks[kIntim] >= 5]]></exprreq>
+    <exprreq message="Knowledge (local) 2 ranks needed."><![CDATA[#skillranks[kKnowLocal] >= 2]]></exprreq>
+    <exprreq message="Iron Will needed."><![CDATA[#hasfeat[fIronWill] <> 0]]></exprreq>
+    </thing>
+  <thing id="cMBDemStr" name="Menacing Brute Demoralizing Stare" description="Menacing brutes add a bonus equal to their class level to all intimidate checks. Targets who are demoralized are also shaken for 1 round/class level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpMBr"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostLv"><![CDATA[~ Get the Menacing Brute level and add it to our
+      ~ Intimidate skill
+var level as number
+level = hero.child[cHelpMBr].field[cTotalLev].value
+
+hero.child[kIntim].field[BonInsight].value = maximum (hero.child[kIntim].field[BonInsight].value, level)
+
+field[xSumm].text = "+" & level & " bonus to Intimidate check. Demoralized target are also shaken for " & level & "rounds."]]></eval>
+    </thing>
+  <thing id="cMBRecSrch" name="Resourceful Search" description="Once per day may attempt a Search check to find nonmagical, nor masterwork,  item of the player choice, for a maximum of 200gp value, without paying for it. The value, DC and time are written below.\n\nGP Value   Search DC   Search Time   Minimum City size\n&lt;20             10                   1d4x10 min      Hamlet\n21-50         15                   2d4x10 min      Small town\n51-100       20                   1d4 hours         Small City\n101-200     25                   2d4 hours         Metropolis" compset="ClSpecial" summary="Once per day, attempt Search check to fetch free item.">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpMBr"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cMBRuthCut" name="Ruthless Cut" description="You gain a +4 bonus to confirm a threat on critical hit." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpMBr"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cMBMakEx" name="Making an Example" description="Any time you drop an opponent, all foes within 30 ft must succeed on a Will save (DC 15 + CHA modifier) or cower until the start of their next turn.\nIf the blow that dropped the creature was a critical hit, add +4 to the save DC.\nThis is a mind-affecting fear effect." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpMBr"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cMBSnkAtk" name="Sneak Attack +1d6" description="+1d6 to your Sneak Attack damage." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMBr"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <bootstrap thing="xSneakAtt"></bootstrap>
+    <eval phase="PostLevel" priority="10000">~ Add the right amount our sneak attack damage.
+      hero.child[xSneakAtt].field[Value].value = hero.child[xSneakAtt].field[Value].value + 1</eval>
+    </thing>
+  <thing id="cHelpOuC" name="Outcast Champion" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="10"/>
+    <fieldval field="cAbbr" value="OuC"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="OutcChmp" name="Outcast Champion"/>
+    <tag group="cAttack" tag="Poor"/>
+    <bootstrap thing="cOuCAurCnf"></bootstrap>
+    <bootstrap thing="cOuCAvStrk"></bootstrap>
+    <bootstrap thing="cOuCDsFry1"></bootstrap>
+    <bootstrap thing="cOuCDsFry2"></bootstrap>
+    <bootstrap thing="cOuCTmwrk"></bootstrap>
+    </thing>
+  <thing id="cOutcChmp" name="Outcast Champion" compset="ClassLevel" maxlimit="5">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpOuC"></bootstrap>
+    <link linkage="helper" thing="cHelpOuC"/>
+    <exprreq message="Race Half-Elf, Half-Orc, Half-Ogre needed."><![CDATA[(tagis[Race.HalfElf] + tagis[Race.HalfOrc] + tagis[Race.HalfOgre]) <> 0]]></exprreq>
+    <prereq message="Diplomacy 8 ranks or Intimidate 8 Ranks">
+      <validate><![CDATA[var true as number
+
+true = 1
+
+if (hero.child[kIntim].field[kUserRanks].value < 8) then 
+   if (hero.child[kDiplomacy].field[kUserRanks].value < 8) then
+     true = 0
+   endif
+endif
+
+validif (true <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cChmAptFoc" name="Chameleon Aptitude Focus" description="Once per day (twice at lvl 5+) you can choose from one of five areas upon which to focus you ever-shifting talents.\n\n{i}Combat Focus:{/i}\nYou gain proficiency with all martial weapons and a +2 competence bonus to attack rolls, weapon damage rolls and fortitude saves (at 5th level the bonus is +4)\n\n{i}Stealth Focus:{/i}\nYou gain Trapfinding, uncanny dodge and a +2 competence bonus on Disable device, Hide, Move Silently, Open Lock, Search Checks and Reflex Saves (at 5th level, +4)\n\n{i}Wild Focus:{/i}\nYou gain Wild Empathy as a druid of your class level, Woodland stride, a +2 competence bonus on Climb, Handle Animal, Jump, Knowledge (nature), Survival Checks, and Fortitude Saves (at 5th level, +4).\n\n{i}Arcane Focus:{/i}\nYou gain the ability to prepare and cast a certain number of spells per day, using a spellbook as a wizard does. Your spell caster level is twice your class level. Spell characteristic is Intelligence.\nYou also gain a +2 competence bonus on Knowledge(Arcana) checks and a +2 bonus on Will saves (+4 at 5th lvl)\n{i}Divine Focus:{/i}\nYou gain the ability to prepare and cast a certain number of spells per day, just like a cleric does. Your spell caster level is twice your class level. Spell characteristic is Wisdom.\nYou also gain a +2 competence bonus on Knowledge(Religion) checks and a +2 bonus on Fortitude and Will saves (+4 at 5th lvl)" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpChm"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <eval phase="UserPostLv" priority="1000"><![CDATA[~ Get the Chameleon level 
+var level as number
+var times as number
+var bonus as number
+level = hero.child[cHelpChm].field[cTotalLev].value
+
+if (level >= 10) then
+times = 3
+bonus = 4
+elseif (level >= 5) then
+times = 2
+bonus = 4
+else
+times = 1
+bonus = 2
+endif
+
+field[xSumm].text = "Aptitude focus " & times & " times per day. Bonus to checks and save is +" & bonus & "."]]></eval>
+    </thing>
+  <thing id="cChmBonFt" name="Chameleon Bonus Feat" description="You gain a bonus feat of your choice. You must meet the prerequisites for this feat, and you can change your choice at the start of each day." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpChm"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    </thing>
+  <thing id="cChmmmc" name="Chameleon Mimic" description="Once per day (twice at lvl 6, thrice at lvl 9) you can mimic a class feature of other characters as for the list below:\n\n{i}Evasion:{/i}\nAs the rogue skill, can activate at the same time as a successful Reflex save, and lasts for 1 minute.\n\n{i}Rage:{/i}\nAs the barbarian skill, duration is your 1 + (newly improved) Constitution bonus  / rounds.\n\n{i}Smite:{/i}\nAs the paladin ability, but you can smite any enemy, your extra damage is equal to your class level.\n\n{i}Sneak Attack:{/i}\nAs the rogue ability, your extra damage is 1d6 for every three class level. Your rogue level is equal to your class level to defeat improved uncanny dodge.\n\n{i}Turn/Rebuke Undead:{/i}\nAs the cleric ability, your cleric level is equal to your class level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpChm"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <eval phase="UserPostLv" priority="1000"><![CDATA[~ Get the Chameleon level 
+var level as number
+var times as number
+level = hero.child[cHelpChm].field[cTotalLev].value
+
+if (level >= 9) then
+times = 3
+elseif (level >= 5) then
+times = 2
+else
+times = 1
+endif
+
+field[xSumm].text = "Mimic ability " & times & " times per day."]]></eval>
+    </thing>
+  <thing id="cChmAbBoon" name="Chameleon Ability Boon" description="When choosing an aptitude focus, you also gain a +2 competence bonus (+4 at 7th lvl, +6 at 10th lvl) to an abilty score of your choice." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpChm"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <eval phase="UserPostLv" priority="1000"><![CDATA[~ Get the Chameleon level 
+var level as number
+var bonus as number
+level = hero.child[cHelpChm].field[cTotalLev].value
+
+if (level >= 10) then
+bonus = 6
+elseif (level >= 7) then
+bonus = 4
+else
+bonus = 2
+endif
+
+field[xSumm].text = "+" & bonus & " to an ability score of your choice when choosing an aptitude focus."]]></eval>
+    </thing>
+  <thing id="cChmDblApt" name="Chameleon Double Aptitude" description="You can adopt two aptitude focuses at a time." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpChm"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    </thing>
+  <thing id="cChmRapRef" name="Chameleon Rapid Refocus" description="You gain the power to change your aptitude focus in only 10 minutes." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpChm"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    </thing>
+  <thing id="cOuCAurCnf" name="Outcast Champion Aura of Confidence" description="Your presence emboldens allies within 30 ft who can see you with a morale bonus on their Will saves equal to your class level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpOuC"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostLv"><![CDATA[~ Get the Outcast Champion level 
+
+var level as number
+level = hero.child[cHelpOuC].field[cTotalLev].value
+
+field[xSumm].text = "+" & level & " morale bonus to your and your allies Will Save within 30 feet."]]></eval>
+    </thing>
+  <thing id="cOuCAvStrk" name="Outcast Champion Avenging Strike" description="You can attempt an avenging strike on an anemy who has dealt damage to an ally of yours within the last hour. The avenging strike must be dealt with a melee attack and has  a bonus to attack roll equal to your Charisma modifier, and deals 1d6 damage extra per outcast champion level. \nYou may use it a number of times per day equal to your charisma bonus." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpOuC"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPostAt" priority="1000"><![CDATA[~ Get the Outcast Champion level and CHA modifier
+
+var level as number
+var mod as number
+var times as number
+level = hero.child[cHelpOuC].field[cTotalLev].value
+mod = hero.child[aCHA].field[aModBonus].value
+
+if (mod <= 0) then
+times = 1
+else
+times = mod
+endif
+
+field[xSumm].text = "Avenging Strike +" & mod & " to hit and +" & level & "d6 damage " & times & "/times per day."
+hero.child[cOuCAvStrk].field[hTotal].value = times]]></eval>
+    </thing>
+  <thing id="cOuCDsFry1" name="Outcast Champion Desperate Fury" description="Once per day, when you&apos;re reduce to fewer then one half your full normal hit points or when you&apos;re fatigued or exhausted, you can enter a state of desperate fury. While in this state, you gain a +2  morale bonus to Strength, Dexterity and Constitution. This state lasts for 3 rounds + 1 round per point of your (newly improved) Con bonus.\n\nAt 5th lvl, you become able to share the effect of your desperate fury with allies within 30 ft who can see you." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpOuC"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostLv" priority="1001"><![CDATA[~ Get the Outcast Champion level and CHA modifier
+
+var level as number
+level = hero.child[cHelpOuC].field[cTotalLev].value
+
+if (level >=5) then
+          perform delete[Helper.ShowSpec]
+endif]]></eval>
+    </thing>
+  <thing id="cOuCDsFry2" name="Outcast Champion Desperate Fury (Share with Allies)" description="Once per day, when you&apos;re reduce to fewer then one half your full normal hit points or when you&apos;re fatigued or exhausted, you can enter a state of desperate fury. While in this state, you gain a +2  morale bonus to Strength, Dexterity and Constitution. This state lasts for 3 rounds + 1 round per point of your (newly improved) Con bonus.\n\nAt 5th lvl, you become able to share the effect of your desperate fury with allies within 30 ft who can see you." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpOuC"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="cOuCTmwrk" name="Outcast Champion Teamwork" description="You are skilled at creating a strong bond of teamwork beetwen yourself and your allies. Whenever you or any ally within 30 ft uses the aid another action, the bonus provided on AC, attack rolls, or skill checks improves by 2 (from +2 to +4)." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpOuC"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="xPSAeshkra" name="Power Sigil Aeshkrau" description="Strength modifier used for Bonus Spells" compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Aeshkra"/>
+    <eval phase="PostAttr" priority="501"><![CDATA[if (hero.tagis[User.Aesh] <> 0) then
+  if (hero.tagis[User.Krau] <> 0) then
+    perform assign[Helper.ShowSpec]
+
+    ~ We check all caster classes for their bonus modifier and exchange with strength mod if higher
+    var strvalue as number
+    var strmod as number
+
+    strvalue = hero.child[aSTR].field[aValue].value
+    strmod = hero.child[aSTR].field[aBonus].value
+
+    foreach pick in hero from BaseClHelp where "CasterSrc.Arcane|CasterSrc.Divine"
+      if (each.field[cSplAttVal].value <= strvalue) then
+        each.field[cSplAttVal].value = strvalue
+      endif
+      if (each.field[cSplAttBon].value <= strmod) then
+        each.field[cSplAttBon].value = strmod
+      endif
+    nexteach
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSAeshoon" name="Power Sigil Aeshoon" description="Twice per day, the illumian can spend a turn/rebuke undead attempt as a swift action to gain a bonus to weapon damage rolls equal to her Wisdom Bonus. This bonus lasts one turn and is valid only to weapons for which she has selected the Weapon Focus Feat." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Aeshoon"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Aesh] <> 0) then
+  if (hero.tagis[User.Hoon] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSAeshuur" name="Power Sigil Aeshuur" description="When an illumian deals damage to a target with a sneak attack or a critical hit, she gains a +2 dodge bonus to her AC against that target until the beginning of her next turn." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Aeshuur"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Aesh] <> 0) then
+  if (hero.tagis[User.Uur] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSHoonkra" name="Power Sigil Hoonkrau" description="Twice per day, the illumian can spend a turn undead attempt as a swift action to add 1d8 points to the damage healed by any cure spell she casts until the end of her next turn, or a rebuke attempt add 1d8 to the damage dealt by any inflict spell she casts until the end of her next turn." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Hoonkra"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Hoon] <> 0) then
+  if (hero.tagis[User.Krau] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSHoonvau" name="Power Sigil Hoonvaul" description="Twice per day, the illumian can expend a spell slot (but not a slot holding a prepared spell) as a swift action to gain a bonus equal to the spell&apos;s level to turning checks, turning damage rolls and on attack and damage rolls when making a smite attack. This effect lasts till the illumian&apos;s next turn." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Hoonvau"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Hoon] <> 0) then
+  if (hero.tagis[User.Vaul] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSNaenaes" name="Power Sigil Naenaesh" description="During the time when the illumian prepares spells, she can choose to leave up to two spell slots unfilled to gain the ability to cast any other prepared spell (or spells) of the same level as if it had been prepared with the {i}Still Spell{/i} feat. This effect lasts until the next time the illumian prepares spells. She cannot fill the vacant spell slot (or slots) until the next time she prepares spells." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Naenaes"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Aesh] <> 0) then
+  if (hero.tagis[User.Naen] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSNaenhoo" name="Power Sigil Naenhoon" description="Twice per day, the illumian can spend a turn undead attempt as a swift action to add a metamagic effect to a spell she is casting with no effect on the spell&apos;s casting time or effective level. She must have the metamagic feat whose effect she wants to apply. The illumian must expend a number of turn or rebuke undead attempts equal to the normal level adjustment of the metamagic feat." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Naenhoo"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Hoon] <> 0) then
+  if (hero.tagis[User.Naen] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSNaenkra" name="Power Sigil Naenkrau" description="During the time when the illumian prepares spells, she can choose to leave up to two spell slots unfilled to add +1 to the save DC of all her other spells of that level (including spells from other classes). This effect lasts until the next time the illumian prepares spells. She cannot fill the vacant spell slot (or slots) until the next time she prepares spells." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Naenkra"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Krau] <> 0) then
+  if (hero.tagis[User.Naen] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSUurhoon" name="Power Sigil Uurhoon" description="Twice per day, the illumian can expend a spell slot (but not a slot holding a prepared spell) as a swift action to gain an insight bonus equal to her wisdom bonus on Reflex sves and her Dexterity bonus on caster level checks to overcome spell resistance. This effect lasts for 1 minute per level of the spell slot expended." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Uurhoon"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Hoon] <> 0) then
+  if (hero.tagis[User.Uur] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSUurkrau" name="Power Sigil Uurkrau" description="Dexterity modifier used for Bonus Spells" compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Uurkrau"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Uur] <> 0) then
+  if (hero.tagis[User.Krau] <> 0) then
+    perform assign[Helper.ShowSpec]
+
+    ~ We check all caster classes for their bonus modifier and exchange with dexterity mod if higher
+    var dexvalue as number
+    var dexmod as number
+
+    dexvalue = hero.child[aDEX].field[aValue].value
+    dexmod = hero.child[aDEX].field[aBonus].value
+
+    foreach pick in hero from BaseClHelp where "CasterSrc.Arcane|CasterSrc.Divine"
+      if (each.field[cSplAttVal].value <= dexvalue) then
+        each.field[cSplAttVal].value = dexvalue
+      endif
+      if (each.field[cSplAttBon].value <= dexmod) then
+        each.field[cSplAttBon].value = dexmod
+      endif
+    nexteach
+
+
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSUurnaen" name="Power Sigil Uurnaen" description="During the time when the illumian prepares spells, she can choose to leave a 1st or 2nd level spell slot unfilled to add an insight bonus equal to the spell slot level on attack rolls when making an unarmed strike or a sneak attack. This effect lasts until the next time the illumian prepares spells. She cannot fill the vacant spell slot (or slots) until the next time she prepares spells." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Uurnaen"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Uur] <> 0) then
+  if (hero.tagis[User.Naen] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSVaulaes" name="Power Sigil Vaulaesh" description="Twice per day, the illumian can expend a spell slot (but not a slot holding a prepared spell) as a swift action to gain an insight bonus equal to the spell&apos;s level to AC and on weapon damage rolls. This effect lasts till the illumian&apos;s next turn, and the damage bonus applies only to weapon on which she has selected the Weapon Focus feat." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Vaulaes"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Aesh] <> 0) then
+  if (hero.tagis[User.Vaul] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSVaulkra" name="Power Sigil Vaulkrau" description="Twice per day, the illumian can expend a spell slot (but not a slot holding a prepared spell) as an immediate action to gain an insight bonus equal to the spell&apos;s level on the next saving throw she makes before the start of her next turn." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Vaulkra"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Krau] <> 0) then
+  if (hero.tagis[User.Vaul] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSVaulnae" name="Power Sigil Vaulnaen" description="Twice per day, the illumian can expend a spell slot (but not a slot holding a prepared spell) to spontaneously cast any of her prepared spells of the same spell level." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Vaulnae"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Naen] <> 0) then
+  if (hero.tagis[User.Vaul] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="xPSVauluur" name="Power Sigil Vauluur" description="Twice per day, the illumian can expend a spell slot (but not a slot holding a prepared spell) as a swift action to add 1d6 per spell level to her unarmed strike damage rolls and her sneak attack damage rolls. This effect lasts until the bginning of her next turn." compset="Special" uniqueness="unique">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="rRoDIllmn"/>
+    <tag group="User" tag="Vauluur"/>
+    <eval phase="UserPostLv" priority="501"><![CDATA[if (hero.tagis[User.Uur] <> 0) then
+  if (hero.tagis[User.Vaul] <> 0) then
+    perform assign[Helper.ShowSpec]
+  else
+    perform delete[Helper.ShowSpec]
+    perform assign[Helper.SpcDisable]
+    done
+  endif
+endif]]></eval>
+    </thing>
+  <thing id="cHelpScE" name="Scar Enforcer" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cAbbr" value="ScE"/>
+    <fieldval field="cSkills" value="6"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="3" value="2"/>
+    <arrayval field="cMagLevTot" index="5" value="3"/>
+    <arrayval field="cMagLevTot" index="7" value="4"/>
+    <arrayval field="cMagLevTot" index="9" value="5"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="ScarEnfrc" name="Scar Enforcer"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kDisable"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kKnowLocal"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kOpenLock"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kTumble"/>
+    <tag group="cAttack" tag="Medium"/>
+    <bootstrap thing="cScEFavEnH"></bootstrap>
+    <bootstrap thing="cScEDisgS"></bootstrap>
+    <bootstrap thing="cScEForgoH"></bootstrap>
+    <bootstrap thing="cScEHPlSgt"></bootstrap>
+    <bootstrap thing="cScESmEnem"></bootstrap>
+    <bootstrap thing="cScESmEne2"></bootstrap>
+    <bootstrap thing="cScESmEne3"></bootstrap>
+    <bootstrap thing="cScESnAtk1"></bootstrap>
+    <bootstrap thing="cScESnAtk2"></bootstrap>
+    <bootstrap thing="cScESnAtk3"></bootstrap>
+    <bootstrap thing="cScEFavEnE"></bootstrap>
+    </thing>
+  <thing id="cScarEnfrc" name="Scar Enforcer" compset="ClassLevel" maxlimit="10">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpScE"></bootstrap>
+    <link linkage="helper" thing="cHelpScE"/>
+    <exprreq message="Base attack bonus +3 needed."><![CDATA[child[Attack].field[tAtkBase].value >= 3]]></exprreq>
+    <exprreq message="Bluff 8 ranks needed."><![CDATA[#skillranks[kBluff] >= 8]]></exprreq>
+    <exprreq message="Hide 4 ranks needed."><![CDATA[#skillranks[kHide] >= 4]]></exprreq>
+    <exprreq message="Move Silently 4 ranks needed."><![CDATA[#skillranks[kMoveSil] >= 4]]></exprreq>
+    <exprreq message="Race Half-Elf needed."><![CDATA[tagis[Race.HalfElf] <> 0]]></exprreq>
+    </thing>
+  <thing id="cScEFavEnE" name="Scar Enforcer Favored Enemy Elves" description="You gain a +2 bonus on rolls against Elves, as the favored enemy ranger class feature." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostLv"><![CDATA[
+      ~ Calculate our name
+      var bonus as number
+   bonus = (field[xTotalLev].value+2)/2
+   bonus = round(bonus, 0, -1)*2
+   field[livename].text = "Favored Enemy: Elves +" & bonus]]></eval>
+    </thing>
+  <thing id="cScEFavEnH" name="Scar Enforcer Favored Enemy Humans" description="You gain a +2 bonus on rolls against Humans,, as the favored enemy ranger class feature." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostLv"><![CDATA[
+      ~ Calculate our name
+      var bonus as number
+   bonus = (field[xTotalLev].value+2)/2
+   bonus = round(bonus, 0, -1)*2
+   field[livename].text = "Favored Enemy: Humans +" & bonus]]></eval>
+    </thing>
+  <thing id="cScESmEnem" name="Smite Enemy 1/day" description="Once per day (twice at 5th, thrice at 8th) you can smite an elf or human as the paladin class ability." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostAt" priority="1000"><![CDATA[~ Get the Scar Enforcer level and CHA modifier
+
+var level as number
+var mod as number
+var times as number
+level = hero.child[cHelpScE].field[cTotalLev].value
+mod = hero.child[aCHA].field[aModBonus].value
+
+if (mod <= 0) then
+times = 1
+else
+times = mod
+endif
+
+field[xSumm].text = "Smite Enemy +" & mod & " to hit and +" & level & "d6 damage " & times & "/times per day."
+hero.child[cScESmEnem].field[hTotal].value = times]]></eval>
+    </thing>
+  <thing id="cScESnAtk1" name="Sneak Attack" description="+1d6 to your Sneak Attack damage." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="ClSpecWhen" tag="3" name="3" abbrev="3"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Add the right amount our sneak attack damage.
+var level as number
+var dice as number
+level = hero.child[cHelpScE].field[cTotalLev].value
+dice = int(level / 3)
+
+hero.child[xSneakAtt].field[Value].value += dice
+
+field[xSumm].text = "Sneak Attack +" & dice & "d6."]]></eval>
+    </thing>
+  <thing id="cScESnAtk2" name="Sneak Attack" description="+2d6 to your Sneak Attack damage." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cScESnAtk3" name="Sneak Attack" description="+3d6 to your Sneak Attack damage." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cScESmEne2" name="Smite Enemy 2/day" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cScESmEne3" name="Smite Enemy 3/day" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cScEDisgS" name="Disguise Self 3/day (only elf or human)" description="Scar Enforcer may {i}Disguise Self{/i} 3/day, but only to assume the form of an elf or a human." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cScEHPlSgt" name="Hide in Plain Sight" description="You can hide in natural terrain even while being observed." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    </thing>
+  <thing id="cScEForgoH" name="Forgo Heritage" description="You leave behind your racial heritage. You are not considered an elf or human anymore for beneficial or harmful effects (you still count as an half-elf for qualifying for this class)." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpScE"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    </thing>
+  <thing id="cHelpSSt" name="Shadow Sentinel" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="10"/>
+    <fieldval field="cAbbr" value="SSt"/>
+    <fieldval field="cSkills" value="2"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="ShdwSntnl" name="Shadow Sentinel"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kRide"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="cRef" tag="Good"/>
+    <bootstrap thing="cSStShdDrn"></bootstrap>
+    <bootstrap thing="cSStShPts"></bootstrap>
+    <bootstrap thing="cSstShdwbn"></bootstrap>
+    <bootstrap thing="cSstShdshp"></bootstrap>
+    <bootstrap thing="cSStUB1"></bootstrap>
+    <bootstrap thing="cSStUB2"></bootstrap>
+    <bootstrap thing="cSStUB3"></bootstrap>
+    <bootstrap thing="cSStUB4"></bootstrap>
+    <bootstrap thing="cSStUB5"></bootstrap>
+    </thing>
+  <thing id="cShdwSntnl" name="Shadow Sentinel" compset="ClassLevel" maxlimit="10">
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpSSt"></bootstrap>
+    <link linkage="helper" thing="cHelpSSt"/>
+    <exprreq message="Race Illumian needed."><![CDATA[tagis[Race.Illumian] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +5 needed."><![CDATA[child[Attack].field[tAtkBase].value >= 5]]></exprreq>
+    <exprreq message="Weapon Focus (any slashing weapon) needed."><![CDATA[#hasfeat[fWepFoc] <> 0]]></exprreq>
+    </thing>
+  <thing id="cSStShPts" name="Shadow points" description="You gain a reservoir of shadow essence that you can draw upon to power your class features. This reserve increases in size as you advance in level. It takes 8 hours of rest to restore your shadow points." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv"><![CDATA[var level as number
+var points as number
+
+level = hero.child[cHelpSSt].field[cTotalLev].value
+points = (2 * level) - 1
+
+field[xSumm].text = "Shadow Points total: " & points & "."
+hero.child[cSStShPts].field[hTotal].value = points]]></eval>
+    </thing>
+  <thing id="cSstShdwbn" name="Shadowbane" description="You can spend 1 shadow point to grant you {i}Umbral Blade{/i} the equivalent of the bane ability against evil outsiders and creatures native of the plane of shadow. This effect lasts for 1 round/class level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    </thing>
+  <thing id="cSstShdshp" name="Shadowsharp" description="You can spend 1 shadow point to double the threat range of your {i}Umbral Blade{/i} as the keen ability . This effect lasts for 1 minute/class level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    </thing>
+  <thing id="cSStShdDrn" name="Shadow Drain" description="You can spend 1 or more shadow point (up to one half your class level) when striking a living creature with your {i}Umbral Blade{/i} to permanently drain from the target 1 point of Strength per number of shadow points spent." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    </thing>
+  <thing id="mSStUmblBl" name="Umbral Blade" compset="Material">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="Helper" tag="MastCstInc"/>
+    <tag group="Helper" tag="MatWepOK"/>
+    <tag group="Helper" tag="MatRqMetal"/>
+    <tag group="Helper" tag="MatForceMs"/>
+    <eval phase="UserPostLv" priority="10005">var bonus as number
+var enhbonus as number
+
+bonus = int(hero.child[cHelpSSt].field[cTotalLev].value)/2
+enhbonus = maximum(1,bonus)
+parent.field[wAttBonus].value = enhbonus
+parent.field[wDamBonus].value = enhbonus</eval>
+    <evalrule phase="Final" priority="10004" message="No Magical Bonus or Masterwork admitted." summary="Umbral Blade cannot get further enchantments."><![CDATA[@valid = 1
+var bonus as number
+bonus = parent.field[wBonus].value
+if (bonus <> 0) then
+  @valid = 0
+endif]]></evalrule>
+    </thing>
+  <thing id="cSStUB1" name="Umbral Blade" description="Enhancement bonus for Umbral Blade is +1" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <eval phase="UserPostLv" priority="10007"><![CDATA[var bonus as number
+bonus = int(hero.child[cHelpSSt].field[cTotalLev].value)/2
+field[xSumm].text = "Umbral Blade weapons gain a +" & bonus & " enhancement bonus."]]></eval>
+    </thing>
+  <thing id="cSStUB2" name="Umbral Blade +2" description="Enhancement bonus for Umbral Blade is +2" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cSStUB3" name="Umbral Blade +3" description="Enhancement bonus for Umbral Blade is +3" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cSStUB4" name="Umbral Blade +4" description="Enhancement bonus for Umbral Blade is +4" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cSStUB5" name="Umbral Blade +5" description="Enhancement bonus for Umbral Blade is +5" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpSSt"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cHelpUrS" name="Urban Soul" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cAbbr" value="UrS"/>
+    <fieldval field="cSkills" value="6"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="UrbanSoul" name="Urban Soul"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kKnowArcEn"/>
+    <tag group="ClassSkill" tag="kKnowLocal"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpeakLang"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kTumble"/>
+    <tag group="cRef" tag="Good"/>
+    <bootstrap thing="cUrSCityR2"></bootstrap>
+    <bootstrap thing="cUrSCityR3"></bootstrap>
+    <bootstrap thing="cUrSCtbdS1"></bootstrap>
+    <bootstrap thing="cUrSCtbdS2"></bootstrap>
+    <bootstrap thing="cUrSCtbdS3"></bootstrap>
+    <bootstrap thing="cUrSCitywk"></bootstrap>
+    <bootstrap thing="cUrSHearCt"></bootstrap>
+    <bootstrap thing="cUrSMldC"></bootstrap>
+    <bootstrap thing="cUrSMobV"></bootstrap>
+    <bootstrap thing="cUrSSeeCty"></bootstrap>
+    <bootstrap thing="cUrSRskMst"></bootstrap>
+    <bootstrap thing="cUrSUrbS"></bootstrap>
+    <bootstrap thing="cUrSCityR1"></bootstrap>
+    </thing>
+  <thing id="cUrbanSoul" name="Urban Soul" compset="ClassLevel" maxlimit="10">
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpUrS"></bootstrap>
+    <link linkage="helper" thing="cHelpUrS"/>
+    <exprreq message="Race Human needed."><![CDATA[tagis[Race.Human] <> 0]]></exprreq>
+    <exprreq message="Knowledge (Local) 10 ranks needed."><![CDATA[#skillranks[kKnowLocal] >= 10]]></exprreq>
+    <exprreq message="Knowledge (Architecture and Engineering) 5 ranks needed."><![CDATA[#skillranks[kKnowArcEn] >= 5]]></exprreq>
+    <exprreq message="Gather Information 5 ranks needed."><![CDATA[#skillranks[kGatherInf] >= 5]]></exprreq>
+    </thing>
+  <thing id="cUrSCityR1" name="City Ramparts 1/day" description="Once per day (twice at 5th, thrice at 9th) you get a +4 Con Bonus, +2 bonus on Will Saves, and DR 5/adamantine. This effect lasts for 1 round per point of (adjusted) Constitution modifier.\n\nIf you are in a city the duration increases as noted below:\nSmall city - 3+Con mod\nLarge city - 5+Con mod\nMetropolis- 10+Con mod" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostAt" priority="1000"><![CDATA[var level as number
+var times as number
+level = hero.child[cHelpUrS].field[cTotalLev].value
+level -=1
+times = int(level/4) + 1
+field[xSumm].text = "City Ramparts " & times & "/times per day."
+hero.child[cUrSCityR1].field[hTotal].value = times]]></eval>
+    </thing>
+  <thing id="cUrSCityR2" name="City Ramparts 2/day" description="Once per day (twice at 5th, thrice at 9th) you get a +4 Con Bonus, +2 bonus on Will Saves, and DR 5/adamantine. This effect lasts for 1 round per point of (adjusted) Constitution modifier.\n\nIf you are in a city the duration increases as noted below:\nSmall city - 3+Con mod\nLarge city - 5+Con mod\nMetropolis- 10+Con mod" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cUrSCityR3" name="City Ramparts 3/day" description="Once per day (twice at 5th, thrice at 9th) you get a +4 Con Bonus, +2 bonus on Will Saves, and DR 5/adamantine. This effect lasts for 1 round per point of (adjusted) Constitution modifier.\n\nIf you are in a city the duration increases as noted below:\nSmall city - 3+Con mod\nLarge city - 5+Con mod\nMetropolis- 10+Con mod" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cUrSUrbS" name="Urban Sustenance" description="While within the city, you don&apos;t need to eat, drink or sleep, and heal 2*faster.\nHowever, you cannot heal naturally at all outside a city, and take 1 point of both Strength and Constitution damage every 24 hours outside a city boundary if you cannot pass a DC 20 (+1 cumulative per day passed) Fortitude Bonus." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="cUrSCtbdS1" name="Citybred Senses" description="You gain a +2 insight bonus (+4 at 6th lvl, +6 at 10th lvl) on Listen, Search, Spot checks made within a city." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <eval phase="UserPostAt" priority="1000"><![CDATA[~ Get the Urban Soul level and CHA modifier
+
+var level as number
+var bonus as number
+level = hero.child[cHelpUrS].field[cTotalLev].value
+level -=2
+bonus = (int(level/4))*2+2
+
+field[xSumm].text = "Citybred Senses,  +" & bonus & " on Listen, Search, Spot checks made within a city."]]></eval>
+    </thing>
+  <thing id="cUrSCtbdS2" name="Citybred Senses" description="You gain a +2 insight bonus (+4 at 6th lvl, +6 at 10th lvl) on Listen Search, Spot checks made within a city." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cUrSCtbdS3" name="Citybred Senses" description="You gain a +2 insight bonus (+4 at 6th lvl, +6 at 10th lvl) on Listen Search, Spot checks made within a city." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cUrSMldC" name="Meld into City" description="You can {i}Meld into Stone{/i} at will in urban structures. Caster lvl is your class level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="cUrSSeeCty" name="See the  City" description="You can {i}Clairvoyance{/i} at will in any place in the city you&apos;re in. Caster lvl is your class level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="cUrSRskMst" name="Urban Skill Mastery" description="You can take 10 on Balance, Climb, Jump, Move Silently and Tumble while in a city, even when under stress." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="cUrSHearCt" name="Hear the  City" description="You can {i}Clairvoyance{/i} at will in any place in the city you&apos;re in. Caster lvl is your class level." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="cUrSMobV" name="Mob Violence" description="You become able to channel the anger of the populace into fury you unleash on your enemies.\nYou can activate this ability as a free action for a number of rounds per day equal to your class level, split up as you like.\n\nYour attacks deal extra damage as noted below:\nSmall city - 1d6 points of damage\nLarge city - 2d6 points of damage\nMetropolis- 3d6 points of damage" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="cUrSCitywk" name="Citywalk" description="You can magically travel between cities at will. This ability function much like {i}transport via plants{/i}, except you must begin the journey within a city, and you end the journey on the outskirts of a specified city on the same plane.\n\nTo activate this ability you must concentrate for a specific period of time, based on the size of the city of destination:\n\nSmall city - 1 hour\nLarge city - 10 minutes\nMetropolis- 1 minute" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="cvUrSCityB" name="City-Bonded" compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvLevel" value="10"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="ClVaryName" tag="Prepend"/>
+    <tag group="SpcReplace" tag="cUrSCitywk"/>
+    <bootstrap thing="cUrSCityB"></bootstrap>
+    <bootstrap thing="cUrSIntTel"></bootstrap>
+    <bootstrap thing="cUrSUrbRen"></bootstrap>
+    <link linkage="varies" thing="cHelpUrS"/>
+    </thing>
+  <thing id="cUrSCityB" name="City Bond" description="As long as you remain within the boundaries of your chosen city, you do not age. This and the other abilities of the substitution level work only if the population of your chosen city is greater than 5,000 inhabitants.\nFor the purpose of your Urban Soul ability, your city is always considered a metropolis, regardless of its size." compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="cUrSIntTel" name="Intracity Teleport" description="You can {i}Greater Teleport{/i} between two points of your chosen city at will, as the spell, except that this ability requires a full round action" compset="ClSpecial">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="SpecType" tag="Movement"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="cUrSUrbRen" name="Urban Renewal" description="You gain access to the following spell-like abilities: {i}Dinitegrate (objects only){/i}, {i}Stone Shape{/i}, {i}Wall of Stone{/i}. You can use these abilities a total of five times per day, split up as you choose. Your Caster level is equal to your urban soul class level." compset="ClSpecial">
+    <fieldval field="hTotal" value="5"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="SpecSource" tag="cHelpUrS"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    </thing>
+  <thing id="fCitySlckr" name="City Slicker" description="Disguise, Forgery, Gather Information and Knowledge (local) are always class skills for you." compset="Feat">
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="PreLevel" priority="1000">perform hero.child[kDisguise].assign[Helper.ClassSkill]
+perform hero.child[kForgery].assign[Helper.ClassSkill]
+perform hero.child[kGatherInf].assign[Helper.ClassSkill]
+perform hero.child[kKnowLocal].assign[Helper.ClassSkill]</eval>
+    <prereq message="Can only be taken at lvl 1.">
+      <validate><![CDATA[~ We're invalid by default 
+@valid = 0 
+
+~ If we're level 1, we're valid 
+if (hero.child[Totals].field[tLevel].value <= 1) then 
+@valid = 1 
+endif 
+
+~ If the pick has already been added to the hero, we're valid 
+if (@ispick <> 0) then 
+@valid = 1 
+endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fDivBckg" name="Diverse Background" description="Choose a class. This class is a favored class for you." compset="Feat">
+    <fieldval field="ftCandExpr" value="thingid.cBard|thingid.cBarbarian|thingid.cCleric|thingid.cDruid|thingid.cFighter|thingid.cMonk|thingid.cPaladin|thingid.cRanger|thingid.cRogue|thingid.cSorcerer|thingid.cWizard"/>
+    <usesource source="RoDestiny" parent="p35" name="Races of Destiny"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="PreLevel" priority="1000"><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+
+       var Choice1 as string
+       var C1Len as number
+       var C1thing as string
+       var C1class as string
+
+       var result as number       
+
+       Choice1 = field[fChosen].chosen.field[name].text
+       C1thing = field[fChosen].chosen.idstring
+       C1Len = length(C1thing)-1 
+
+       C1thing = "thingid.c" & right(C1thing,C1Len)
+       C1class = "Favclass." & right(C1thing,C1Len)
+
+foreach pick in hero from BaseClass where C1thing
+       perform hero.assignstr[C1class]
+~       perform eachpick.assign[Helper.FavorClass]
+nexteach]]></eval>
+    <exprreq message="Half-Human needed."><![CDATA[(tagis[Race.Human]+tagis[Race.HalfOrc]+tagis[Race.HalfElf]+tagis[Race.HalfOgre])<> 0]]></exprreq>
+    <prereq message="Can only be taken at lvl 1.">
+      <validate><![CDATA[~ We're invalid by default 
+@valid = 0 
+
+~ If we're level 1, we're valid 
+if (hero.child[Totals].field[tLevel].value <= 1) then 
+@valid = 1 
+endif 
+
+~ If the pick has already been added to the hero, we're valid 
+if (@ispick <> 0) then 
+@valid = 1 
+endif]]></validate>
+      </prereq>
+    </thing>
+  </document>

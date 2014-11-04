@@ -1,0 +1,2895 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history><![CDATA[05-01-12 Sendric
+Changed timing on xFly2 to avoid errors
+
+08-03-11 Lawful_G
+Added a replacement for rogues Sneak attack class ability so when replaced does not add to the special.
+Weapon Specialization & other feats moved here from CSco - Feats file, modded to work with the Martial Rogue variant.
+Added Shot on the Run, with correct BAB pre-req
+
+07-16-11 Lawful_G
+Added a integrated Trapfinding special for all class abilities and races to make use of so that multiple classes adding won't produce duplicates on the specials tab.
+Copy and replaced Rogue Trapfinding class special to use the integrated version.
+
+06-18-11 Lawful_G
+Added the Armor Class (natural) and Awakened Undead conditions. Also modded the Zombie Template to work with the undead awakening.
+
+03-24-11 Lawful_G
+Added new method of bardic music abilities (lillend needed to add to them, so needed no class ability version.
+
+02-13-11 Lawful_G
+Added Integrated Wild Empathy special for all class abilities and races to make use of.
+
+02-05-11 Lawful_G
+Added a Integrated Poison Use special for all class abilities and races to make use of.
+
+01-26-11 Lawful_G
+Added the Damage Reduction, Epic special
+
+01-08-11 Lawful_G
+Added new Lay on Hands mechanic (required for Guardinal Subtype)
+
+12-31-10 Lawful_G
+Added Craft (Blacksmithing) for salamander
+Added Improved Natural Attack replacement that works with new natural weapons.
+
+11-06-10 Lawful_G
+Added replacement Dragon Disciple Breath Weapon class ability which applies User.BreathWeap tag. Same for Half Dragon Template Dragon Breath ability.
+Added replacement for Burrowing and Flying ability that seperates out the timings (for purpose of applying modifiers)
+Created Integrated Lore ability to which all classes/feats add.
+Deleted Stunning Fist replacement, had been fixed.
+
+c6-9-10]]></info_history>
+    </fileinfo>
+  <thing id="mShlLtStl2" name="Shield, Light Steel" description="A light shield&apos;s weight lets you carry other items in that hand, although you cannot use weapons with it. You can Shield Bash with a light shield." compset="Armor" replaces="mShlLtStl">
+    <fieldval field="gWeight" value="6"/>
+    <fieldval field="gSizeCost" value="9"/>
+    <tag group="mAC" tag="1" name="1" abbrev="1"/>
+    <tag group="mArcFail" tag="5" name="5" abbrev="5"/>
+    <tag group="mArmorChk" tag="1" name="1" abbrev="1"/>
+    <tag group="mClass" tag="Shield" name="Shield" abbrev="Shield"/>
+    <tag group="mMaxDex" tag="1000" name="1000" abbrev="1000"/>
+    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
+    <tag group="ShldClass" tag="Light" name="Light Shield" abbrev="Light"/>
+    <tag group="User" tag="ShldBash"/>
+    <tag group="Helper" tag="NoPrereq"/>
+    <bootstrap thing="wShiBash">
+      <containerreq phase="First" priority="475"><![CDATA[fieldval:gIsEquip <> 0 | User.ShldBash]]></containerreq>
+      <autotag group="wMain" tag="1d3_3"/>
+      <autotag group="wClass" tag="Light"/>
+      </bootstrap>
+    <eval phase="First" priority="450" index="2">if (container.ishero = 0) then
+ if (container.parent.field[gIsEquip].value = 0) then
+  perform container.delete[User.ShldBash]
+ endif 
+ if (container.parent.tagis[thingid.iMagArmor] = 0) then 
+  perform container.delete[User.ShldBash]
+ endif
+endif</eval>
+    <exprreq message="Light Shield proficiency required."><![CDATA[#hasfeat[fArmLgShld] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    </thing>
+  <thing id="mShlLtWoo2" name="Shield, Light Wooden" description="A light shield&apos;s weight lets you carry other items in that hand, although you cannot use weapons with it. You can Shield Bash with a light shield." compset="Armor" replaces="mShlLtWood">
+    <fieldval field="gWeight" value="5"/>
+    <fieldval field="gSizeCost" value="3"/>
+    <tag group="mAC" tag="1" name="1" abbrev="1"/>
+    <tag group="mArcFail" tag="5" name="5" abbrev="5"/>
+    <tag group="mArmorChk" tag="1" name="1" abbrev="1"/>
+    <tag group="mClass" tag="Shield" name="Shield" abbrev="Shield"/>
+    <tag group="mMaxDex" tag="1000" name="1000" abbrev="1000"/>
+    <tag group="EquipType" tag="Wood" name="Wood" abbrev="Wood"/>
+    <tag group="ShldClass" tag="Light" name="Light Shield" abbrev="Light"/>
+    <tag group="Helper" tag="NoPrereq"/>
+    <tag group="User" tag="ShldBash"/>
+    <bootstrap thing="wShiBash">
+      <containerreq phase="First" priority="475"><![CDATA[fieldval:gIsEquip <> 0 | User.ShldBash]]></containerreq>
+      <autotag group="wClass" tag="Light"/>
+      <autotag group="wMain" tag="1d3_3"/>
+      <autotag group="wType" tag="B"/>
+      </bootstrap>
+    <eval phase="First" priority="450" index="2">if (container.ishero = 0) then
+ if (container.parent.field[gIsEquip].value = 0) then
+  perform container.delete[User.ShldBash]
+ endif 
+ if (container.parent.tagis[thingid.iMagArmor] = 0) then 
+  perform container.delete[User.ShldBash]
+ endif
+endif</eval>
+    <exprreq message="Light Shield proficiency required."><![CDATA[#hasfeat[fArmLgShld] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    </thing>
+  <thing id="fHealKit2" name="Healer&apos;s kit" description="It is the perfect tool for healing and provides a +2 circumstance bonus on Heal checks. A healer&apos;s kit is exhausted after ten uses." compset="Gear" replaces="fHealKit" stacking="merge">
+    <comment>Why is this here? Is it only for the text or was it left out of HL?</comment>
+    <fieldval field="gCost" value="50"/>
+    <fieldval field="hTotal" value="10"/>
+    <fieldval field="gWeight" value="1"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="GearNoSize" name="GearNoSize" abbrev="GearNoSize"/>
+    <tag group="gType" tag="Tools" name="Tools and Skill Kits" abbrev="Tools"/>
+    </thing>
+  <thing id="wBlowgun" name="Blowgun (DMG)" description="This weapon is used to propel small needles a long distance. It is silent, and its needles most often are used to poison foes." compset="Weapon">
+    <fieldval field="gSizeCost" value="1"/>
+    <fieldval field="gWeight" value="2"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wMain" tag="1_1"/>
+    <tag group="wProfReq" tag="Simple"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wRangeInc" tag="10"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="Helper" tag="NoDblStr"/>
+    <tag group="Helper" tag="Always2H"/>
+    <tag group="Helper" tag="BucklerOK"/>
+    </thing>
+  <thing id="wNeedleM" name="Needles, Blowgun (DMG)" description="These 2-inch-long iron needles are sold in small wooden cases of 20. A full case is so light that its weight is negligible. The tips of the needles are often coated with poison such as greenblood oil, bloodroot, blue whinnis, shadow essence, or deathblade." compset="Weapon">
+    <fieldval field="gSizeCost" value="1"/>
+    <tag group="Helper" tag="MagicAmmo" name="MagicAmmo" abbrev="MagicAmmo"/>
+    <tag group="Helper" tag="MagicOnly" name="MagicOnly" abbrev="MagicOnly"/>
+    <tag group="wCategory" tag="Ammunition" name="Ammunition" abbrev="Ammunition"/>
+    <tag group="wClass" tag="Light" name="Light" abbrev="Light"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    <tag group="wCritMult" tag="2" name="2" abbrev="2"/>
+    <tag group="wMain" tag="1_1"/>
+    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
+    </thing>
+  <thing id="wNeedle" name="Needles, Blowgun (DMG)" description="These 2-inch-long iron needles are sold in small wooden cases of 20. A full case is so light that its weight is negligible. The tips of the needles are often coated with poison such as greenblood oil, bloodroot, blue whinnis, shadow essence, or deathblade." compset="Weapon">
+    <fieldval field="gSizeCost" value="1"/>
+    <tag group="wCategory" tag="Ammunition" name="Ammunition" abbrev="Ammunition"/>
+    <tag group="wClass" tag="Light" name="Light" abbrev="Light"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    <tag group="wCritMult" tag="2" name="2" abbrev="2"/>
+    <tag group="wMain" tag="1_1"/>
+    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
+    <tag group="Helper" tag="NormalOnly"/>
+    </thing>
+  <thing id="xDarkVis2" name="Darkvision" description="You can see in the dark (black and white vision only)." compset="Special" uniqueness="unique">
+    <comment><![CDATA[This special smart darkvision doesn't automatically set itself to 60, because that is hella stupid.]]></comment>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="Final" priority="10100"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the range of our darkvision.
+      field[livename].text = field[name].text & " (" & field[Value].value & " feet)"
+
+~ If we have racial darkvision greater than or equal to our value, hide ourselves.
+     if (hero.childfound[rDarkVis].field[Value].value >= field[Value].value) then
+         perform delete[Helper.ShowSpec]
+     endif
+
+~ If we have racial darkvision less than our value, hide racial darkvision.
+     if (hero.childfound[rDarkVis].field[Value].value < field[Value].value) then
+         perform hero.childfound[rDarkVis].delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="cPalSmiteA" name="Smite Evil (1/day)" description="Adds your Charisma bonus to your attack roll and your paladin level to your damage roll when used." compset="ClSpecial" summary="+Charisma Bonus to hit, +Paladin Level to damage when used." replaces="cPalSmite1">
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="Helper" tag="ClExLose" name="ClExLose" abbrev="ClExLose"/>
+    <tag group="SpecSource" tag="cHelpPal" name="Paladin" abbrev="Paladin"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="User" tag="SmiteEvil" name="Smite Evil"/>
+    <tag group="User" tag="Smite"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xSmiteEvil"></bootstrap>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+      field[livename].text = "Smite Evil ("
+      var total as number
+      if (level < 5) then
+        total = 1
+      elseif (level < 10) then
+        total = 2
+      elseif (level < 15) then
+        total = 3
+      elseif (level < 20) then
+        total = 4
+      else
+        total = 5
+        endif
+   field[livename].text = field[livename].text & total & "/day)"
+
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+   hero.child[xSmiteEvil].field[hTotal].value += total
+   hero.child[xSmiteEvil].field[Value].value += level]]></eval>
+    <eval phase="First" index="2">perform hero.assign[User.Smite]
+        perform hero.assign[User.SmiteEvil]</eval>
+    </thing>
+  <thing id="cPfChvSmi2" name="Smite Evil (1/day)" description="Adds your Charisma bonus to your attack roll and your chevalier level to your damage roll when used." compset="ClSpecial" summary="+Charisma Bonus to hit, +Chevalier Level to damage when used." replaces="cPfChvSmit">
+    <usesource source="PathAdvent" name="Pathfinder Adventure Paths"/>
+    <tag group="ClSpecWhen" tag="3" name="3" abbrev="3"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="User" tag="Smite"/>
+    <tag group="User" tag="SmiteEvil"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xSmiteEvil"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[   if (field[xTotalLev].value >= 3) then
+        perform hero.assign[User.Smite]
+        perform hero.assign[User.SmiteEvil]
+        hero.child[xSmiteEvil].field[hTotal].value += 1
+        hero.child[xSmiteEvil].field[Value].value += 3
+   endif]]></eval>
+    </thing>
+  <thing id="cdDestSmi2" name="Smite of Destruction" description="You gain the smite power, the supernatural ability to make a single melee attack with a +4 bonus on attack rolls and a bonus on damage rolls equal to your cleric level (if you hit). You must declare the smite before making the attack. This ability is usable once per day." compset="Special" replaces="cdDestSmit">
+    <fieldval field="xSource" value="Destruction Domain"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="SpecSource" tag="ClericDom" name="Cleric Domain" abbrev="Cleric Domain"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="PickSmite"/>
+    <eval phase="First" index="2">perform hero.assign[User.Smite]</eval>
+    <eval phase="Final" priority="10500"><![CDATA[
+      field[xSumm].text = "" & field[hTotal].value & "/day, smite any foe for +4 to hit and +" & hero.childfound[cHelpClr].field[cTotalLev].value & " dam."]]></eval>
+    </thing>
+  <thing id="xCelSmite2" name="Smite Evil" description="Adds your HD to your damage roll (maximum +20) when used against an evil foe." compset="Special" summary="+HD to melee damage on one attack when used." replaces="xCelSmite">
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="User" tag="Smite"/>
+    <tag group="User" tag="SmiteEvil"/>
+    <tag group="SpecSource" tag="Celestial"/>
+    <bootstrap thing="xSmiteEvil"></bootstrap>
+    <eval phase="First">perform hero.assign[User.Smite]
+        perform hero.assign[User.SmiteEvil]
+
+        hero.child[xSmiteEvil].field[hTotal].value += 1</eval>
+    <eval phase="Final" priority="9900" index="2">var dam as number
+    dam = minimum(herofield[tHitDice].value, 20)
+
+    hero.child[xSmiteEvil].field[Value].value = maximum(hero.child[xSmiteEvil].field[Value].value, dam)</eval>
+    </thing>
+  <thing id="xFieSmite2" name="Smite Good" description="Adds your HD to your damage roll (maximum +20) when used against a good foe." compset="Special" summary="+HD to melee damage on one attack when used." replaces="xFieSmite">
+    <tag group="SpecSource" tag="Fiendish" name="Fiendish" abbrev="Fiendish"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="User" tag="SmiteGood" name="Smite Good"/>
+    <tag group="User" tag="Smite"/>
+    <bootstrap thing="xSmiteGood"></bootstrap>
+    <eval phase="Final" priority="9900" index="2">var dam as number
+    dam = minimum(herofield[tHitDice].value, 20)
+
+    hero.child[xSmiteGood].field[Value].value = maximum(hero.child[xSmiteGood].field[Value].value, dam)</eval>
+    <eval phase="First">perform hero.assign[User.Smite]
+        perform hero.assign[User.SmiteGood]
+
+        hero.child[xSmiteGood].field[hTotal].value += 1</eval>
+    </thing>
+  <thing id="cBlkSmiteA" name="Smite Good (1/day)" description="Adds your Charisma bonus to your attack roll and your blackguard level to your damage roll when used." compset="ClSpecial" summary="+Charisma Bonus to hit, +Blackguard Level to damage when used." replaces="cBlkSmite1">
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="SpecSource" tag="cHelpBlk" name="Blackguard" abbrev="Blackguard"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="User" tag="Smite"/>
+    <tag group="User" tag="SmiteGood"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xSmiteGood"></bootstrap>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not normally shown, we might have got extra levels of Smite from
+      ~ our paladin levels, so we need to check that.
+      var result as number
+      if (tagis[Helper.ShowSpec] = 0) then
+
+        ~ Check to see if something else has changed our total... if not,
+        ~ then get out. Otherwise we have levels in Paladin that give us
+        ~ bonus uses of this.
+        if (field[hTotal].value = 0) then
+      	  done
+      	  endif
+      	result = assign[Helper.ShowSpec]
+        result = assign[Helper.ShowCharge]
+      	endif
+
+      ~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+      field[livename].text = "Smite Good ("
+      var total as number
+      if (level < 2) then
+        total = 0
+      elseif (level < 5) then
+        total = 1
+      elseif (level < 10) then
+        total = 2
+      else
+        total = 3
+        endif
+   field[livename].text = field[livename].text & total & "/day)"
+
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+   if (field[xTotalLev].value >= 2) then
+        perform hero.assign[User.Smite]
+        perform hero.assign[User.SmiteGood]
+   endif
+
+   hero.child[xSmiteGood].field[hTotal].value += total
+   hero.child[xSmiteGood].field[Value].value += level]]></eval>
+    </thing>
+  <thing id="cBlkPalSmA" name="Smite Good (1/day) [Fallen Paladin]" description="Adds your Charisma bonus to your attack roll and your blackguard level to your damage roll when used." compset="ClSpecial" summary="+Charisma Bonus to hit, +Blackguard Level to damage when used." replaces="cBlkPalSm1">
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpBlk" name="Blackguard" abbrev="Blackguard"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="User" tag="Smite"/>
+    <tag group="User" tag="SmiteGood"/>
+    <bootstrap thing="xSmiteGood"></bootstrap>
+    <eval phase="PostAttr" priority="5000"><![CDATA[
+      ~ First, delete any 'show' tag we have already.
+      var result as number
+      result = delete[Helper.ShowSpec]
+
+      ~ Now check our paladin level - if it's too low, just get out. Otherwise
+      ~ assign our show tag.
+      if (hero.childfound[cHelpPal].field[cTotalLev].value < tagvalue[ClSpecWhen.?]) then
+      	done
+      	endif
+      result = assign[Helper.ShowSpec]
+
+      ~ Add to our total BEFORE the regular Smite Good
+      var level as number
+      level = hero.childfound[cHelpPal].field[cTotalLev].value
+      var total as number
+      if (level < 5) then
+        total = 1
+      elseif (level < 10) then
+        total = 2
+      else
+        total = 3
+        endif
+
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+   hero.child[xSmiteGood].field[hTotal].value += total
+   hero.child[xSmiteGood].field[Value].value += level
+
+   perform hero.assign[User.Smite]
+   perform hero.assign[User.SmiteGood]]]></eval>
+    </thing>
+  <thing id="xEnemyAber" name="Aberration" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyAber" name="Aberration"/>
+    </thing>
+  <thing id="xEnemyAnim" name="Animal" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyAnim" name="Animal"/>
+    </thing>
+  <thing id="xEnemyCons" name="Construct" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyCons" name="Construct"/>
+    </thing>
+  <thing id="xEnemyDrag" name="Dragon" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyDrag" name="Dragon"/>
+    </thing>
+  <thing id="xEnemyElem" name="Elemental" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyElem" name="Elemental"/>
+    </thing>
+  <thing id="xEnemyFey" name="Fey" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyFey" name="Fey"/>
+    </thing>
+  <thing id="xEnemyGian" name="Giant" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyGian" name="Giant"/>
+    </thing>
+  <thing id="xEnemyHuAq" name="Humanoid (aquatic)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuAq" name="Humanoid (aquatic)"/>
+    </thing>
+  <thing id="xEnemyHuDw" name="Humanoid (dwarf)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuDw" name="Humanoid (dwarf)"/>
+    </thing>
+  <thing id="xEnemyHuEl" name="Humanoid (elf)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuEl" name="Humanoid (elf)"/>
+    </thing>
+  <thing id="xEnemyHuGo" name="Humanoid (goblinoid)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuGo" name="Humanoid (goblinoid)"/>
+    </thing>
+  <thing id="xEnemyHuGn" name="Humanoid (gnome)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuGn" name="Humanoid (gnome)"/>
+    </thing>
+  <thing id="xEnemyHuGl" name="Humanoid (gnoll)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuGl" name="Humanoid (gnoll)"/>
+    </thing>
+  <thing id="xEnemyHuHa" name="Humanoid (halfling)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuHa" name="Humanoid (halfling)"/>
+    </thing>
+  <thing id="xEnemyHuHu" name="Humanoid (human)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuHu" name="Humanoid (human)"/>
+    </thing>
+  <thing id="xEnemyHuOr" name="Humanoid (orc)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuOr" name="Humanoid (orc)"/>
+    </thing>
+  <thing id="xEnemyHuRe" name="Humanoid (reptilian)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyHuRe" name="Humanoid (reptilian)"/>
+    </thing>
+  <thing id="xEnemyMaBe" name="Magical Beast" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyMaBe" name="Magical Beast"/>
+    </thing>
+  <thing id="xEnemyMoHu" name="Monstrous Humanoid" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyMoHu" name="Monstrous Humanoid"/>
+    </thing>
+  <thing id="xEnemyOoze" name="Ooze" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOoze" name="Ooze"/>
+    </thing>
+  <thing id="xEnemyOuAi" name="Outsider (air)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuAi" name="Outsider (air)"/>
+    </thing>
+  <thing id="xEnemyOuCh" name="Outsider (chaotic)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuCh" name="Outsider (chaotic)"/>
+    </thing>
+  <thing id="xEnemyOuEa" name="Outsider (earth)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuEa" name="Outsider (earth)"/>
+    </thing>
+  <thing id="xEnemyOuEv" name="Outsider (evil)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuEv" name="Outsider (evil)"/>
+    </thing>
+  <thing id="xEnemyOuFi" name="Outsider (fire)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuFi" name="Outsider (fire)"/>
+    </thing>
+  <thing id="xEnemyOuGo" name="Outsider (good)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuGo" name="Outsider (good)"/>
+    </thing>
+  <thing id="xEnemyOuLa" name="Outsider (lawful)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuLa" name="Outsider (lawful)"/>
+    </thing>
+  <thing id="xEnemyOuNa" name="Outsider (native)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuNa" name="Outsider (native)"/>
+    </thing>
+  <thing id="xEnemyOuWa" name="Outsider (water)" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyOuWa" name="Outsider (water)"/>
+    </thing>
+  <thing id="xEnemyPlan" name="Plant" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyPlan" name="Plant"/>
+    </thing>
+  <thing id="xEnemyUnde" name="Undead" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyUnde" name="Undead"/>
+    </thing>
+  <thing id="xEnemyVerm" name="Vermin" description="Invisible favored enemy pick." compset="Special">
+    <tag group="User" tag="PickEnemy" name="Favored Enemy Type"/>
+    <tag group="User" tag="EnemyVerm" name="Vermin"/>
+    </thing>
+  <thing id="cDDiBrth12" name="Breath Weapon (2d8)" description="Your breath weapon differs depending on your heritage." compset="ClSpecial" replaces="cDDiBrth1">
+    <fieldval field="hTotal" value="1"/>
+    <tag group="ClSpecWhen" tag="3" name="3" abbrev="3"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpDDi" name="Dragon Disciple" abbrev="Dragon Disciple"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      ~ Apply a User Tag to let us know we have a breath weapon.
+      perform hero.assign[User.BreathWeap]
+
+      ~ Set our name appropriately
+      var dice as number
+      if (field[xTotalLev].value < 7) then
+        dice = 2
+      elseif (field[xTotalLev].value < 10) then
+        dice = 4
+      else
+        dice = 6
+        endif
+      field[livename].text = "Breath Weapon (" & dice & "d8)"]]></eval>
+    </thing>
+  <thing id="xHlDBreat2" name="Dragon Breath" description="Once per day you can use a breath weapon that causes 6d8 damage. The breath weapon varies based on your race of dragon:{br}{br}Black: 60-foot line of acid{br}Blue: 60-foot line of lightning{br}Green: 30-foot cone of corrosive (acid) gas{br}Red: 30-foot cone of fire{br}White: 30-foot cone of cold{br}Brass: 60-foot line of fire{br}Bronze: 60-foot line of lightning{br}Copper: 60-foot line of acid{br}Gold: 30-foot cone of fire{br}Silver: 30-foot cone of cold" compset="Special" summary="Breath weapon causes 6d8 damage once per day." replaces="xHlDBreath" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecSource" tag="HalfDragon" name="Half-Dragon" abbrev="Half-Dragon"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="First" priority="150">~ Apply a User Tag to let us know we have a breath weapon.
+perform hero.assign[User.BreathWeap]</eval>
+    </thing>
+  <thing id="xFly2" name="Flying" description="You can fly!" compset="Special" replaces="xFly" uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Movement" name="Movement" abbrev="Movement"/>
+    <eval phase="Final" priority="15100"><![CDATA[
+      ~ Use our value field as the speed at which we can fly
+      field[livename].text = field[name].text & " (" & field[Value].value & " feet, "
+
+      ~ Check for maneuverability tags
+      var maneuver as string
+      if (tagis[Maneuver.Perfect] <> 0) then
+        maneuver = "Perfect"
+      elseif (tagis[Maneuver.Good] <> 0) then
+        maneuver = "Good"
+      elseif (tagis[Maneuver.Average] <> 0) then
+        maneuver = "Average"
+      elseif (tagis[Maneuver.Poor] <> 0) then
+        maneuver = "Poor"
+      elseif (tagis[Maneuver.Clumsy] <> 0) then
+        maneuver = "Clumsy"
+      else
+        maneuver = "Average"
+        endif
+      field[livename].text = field[livename].text & maneuver & ")"]]></eval>
+    <eval phase="PreAttr" index="2">call CalcValue</eval>
+    </thing>
+  <thing id="xBurrow2" name="Burrowing" description="A creature with a burrow speed can tunnel through dirt, but not through rock unless the descriptive text says otherwise. Creatures cannot charge or run while burrowing. Most burrowing creatures do not leave behind tunnels other creatures can use (either because the material they tunnel through fills in behind them or because they do not actually dislocate any material when burrowing); see the individual creature descriptions for details." compset="Special" summary="You have a Burrow speed." replaces="xBurrow" uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Movement" name="Movement" abbrev="Movement"/>
+    <eval phase="Final" priority="15000"><![CDATA[      ~ Use our value field as the speed at which we can swim
+      field[livename].text = field[name].text & " (" & field[Value].value & " feet)"]]></eval>
+    <eval phase="First" index="2">call CalcValue</eval>
+    </thing>
+  <thing id="cBrdKnow2" name="Bardic Knowledge" description="You may make a special Bardic Knowledge check with a bonus of your Int modifier + your bard level (+2 if you have 5+ ranks in Knowledge: History) to see whether you know some relevant information about local notable people, legendary items, or noteworthy places." compset="ClSpecial" summary="Make a special Bardic Knowledge check to find out information." replaces="cBrdKnow">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="User" tag="Lore"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xLore"></bootstrap>
+    <eval phase="PostLevel" priority="10000">~our value is the bonus we get.  It is our bard level
+      hero.child[xLore].field[Value].value += field[xTotalLev].value</eval>
+    </thing>
+  <thing id="cCClLore2" name="Lore" description="You may make a special Lore check with a bonus of your int modifier + your cleric level (+2 if you have 5+ ranks in Knowledge: History) to see whether you know some relevant information about local notable people, legendary items, or noteworthy places." compset="ClSpecial" summary="Make a special Lore check to find out information." replaces="cCClLore">
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="SpecSource" tag="cHelpClr" name="Cleric" abbrev="Cleric"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="User" tag="Lore"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xLore"></bootstrap>
+    <eval phase="PostLevel" priority="10000">~our value is the bonus we get.  It is our bard level
+      hero.child[xLore].field[Value].value += field[xTotalLev].value</eval>
+    </thing>
+  <thing id="cLorLore2" name="Lore" description="You can make a Lore check to know legends or information, just as a Bard can with Bardic Knowledge." compset="ClSpecial" summary="Make a Lore check as if you had Bardic Knowledge." replaces="cLorLore">
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="SpecSource" tag="cHelpLor" name="Loremaster" abbrev="Loremaster"/>
+    <tag group="User" tag="Lore"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xLore"></bootstrap>
+    <eval phase="PostLevel" priority="10000">~our value is the bonus we get.  It is our level
+      hero.child[xLore].field[Value].value += field[xTotalLev].value</eval>
+    </thing>
+  <thing id="xLore" name="Lore" description="You may make a special Lore check with a bonus of your int modifier + your relevant level (+2 if you have 5+ ranks in Knowledge: History) to see whether you know some relevant information about local notable people, legendary items, or noteworthy places." compset="Special" summary="Make a special Lore check to find out information." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="Final" priority="15000"><![CDATA[~ All other things should have already added to our Value based on their levels. We now add our Int mod and synergy bonus for Knowledge (History).
+
+      field[Value].value += hero.child[aINT].field[aModBonus].value
+
+      if (#skillranks[kKnowHist] >= 5) then
+        field[Value].value +=2
+      endif
+
+~ If we have Bardic Knowledge we are called that and change appropriately, otherwise our name and desc default to Lore
+   if (hero.childfound[cBrdKnow].tagis[Helper.ShowSpec] <> 0) then 
+     field[livename].text = "Bardic Knowledge"
+     field[CustDesc].text = "You may make a special Bardic Knowledge check with a bonus of your int modifier + your bard level (+2 if you have 5+ ranks in Knowledge: History) to see whether you know some relevant information about local notable people, legendary items, or noteworthy places."
+     field[xSumm].text = "Make a special Bardic Knowledge check to find out information."
+   endif
+
+      ~copy our name to your livename if needed
+      if (empty(field[livename].text) <> 0) then
+        field[livename].text = field[name].text
+        endif
+      
+      ~ Append the value
+      field[livename].text &= " (+" & field[Value].value & ")"]]></eval>
+    <eval phase="First" index="2">~ Add tag for pre reqs.
+      perform hero.assign[User.Lore]</eval>
+    </thing>
+  <thing id="cSagKnow2" name="Bardic Sage&apos;s Improved Bardic Knowledge" description="Add +2 to all Bardic Knowledge checks." compset="ClSpecial" replaces="cSagKnow">
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      hero.child[xLore].field[Value].value += 2]]></eval>
+    </thing>
+  <thing id="kCrafBlack" name="Craft: Blacksmithing" description="You are skilled at the creation of all sorts of metal items that are not weapons or armor, from nails to ornate metal gates." compset="Skill" uniqueness="unique">
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="Helper" tag="SkCatCraft" name="Craft Skill" abbrev="Craft Skill"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="fImpNatAt2" name="Improved Natural Attack" description="{b}Prerequisite{/b}: Natural weapon, base attack bonus +4.\n\n{b}Benefit{/b}: Choose one of the creature&#146;s natural attack forms. The damage for this natural weapon increases by one step, as if the creature&#146;s size had increased by one category: 1d2, 1d3, 1d4, 1d6, 1d8, 2d6, 3d6, 4d6, 6d6, 8d6, 12d6. \n\nA weapon or attack that deals 1d10 points of damage increases as follows: 1d10, 2d8, 3d8, 4d8, 6d8, 8d8, 12d8. \n\n{b}Special{/b}: This feat may be taken multiple times, but each time it applies to a different natural attack." compset="Feat" summary="The damage of a natural attack increases by one step." replaces="fImpNatAtt">
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="fSelFrom" tag="Hero" name="Picks on Hero" abbrev="Picks on Hero"/>
+    <tag group="fShowWhat" tag="WeaponsNat" name="Natural Weapons" abbrev="Natural Weapons"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      ~ Upgrade damage of this weapon
+      perform focus.assign[Helper.DamageUp]
+
+      ~ Assign the weapon a tag saying that it has this feat
+      perform focus.assign[HasFeat.fImpNatAtt]]]></eval>
+    <evalrule phase="Final" priority="10000" message="May not be taken twice for same weapon." summary="May not be taken twice for same weapon."><![CDATA[
+      @valid = 1
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      ~ If our target has had this feat taken more than once, we have problems!
+      if (focus.tagcount[HasFeat.fImpNatAtt] > 1) then
+        @valid = 0
+        endif]]></evalrule>
+    <exprreq message="Base attack bonus +4 required." iserror="no"><![CDATA[child[Attack].field[tAtkBase].value >= 4]]></exprreq>
+    <prereq message="Natural Weapon required." iserror="no">
+      <validate><![CDATA[
+        var result as number
+
+        foreach pick in hero from BaseWep
+          if (each.tagis[component.BaseNatWep] <> 0) then
+            result += 1
+          endif
+
+          validif (result <> 0)
+          doneif (result <> 0)
+        nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cPalLayHn2" name="Lay on Hands" description="You can heal Paladin Level * Charisma Bonus HP per day. You can also use a melee touch attack to damage undead creatures." compset="ClSpecial" summary="You can heal Paladin Level * Charisma Bonus HP per day." replaces="cPalLayHnd">
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="Helper" tag="ClExLose" name="ClExLose" abbrev="ClExLose"/>
+    <tag group="SpecSource" tag="cHelpPal" name="Paladin" abbrev="Paladin"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xLayOnHand">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.Paladin >= 2]]></containerreq>
+      </bootstrap>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      hero.child[xLayOnHand].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="xLayOnHand" name="Lay On Hands" description="You can heal a certain number of HP per day. You can also use this positive energy with a melee touch attack to damage undead creatures." compset="Special" summary="Heal wounds or damage undead with a touch." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    <eval phase="Render"><![CDATA[   field[livename].text = field[name].text & " (" & field[hTotal].value & " Hp/day)"]]></eval>
+    <eval phase="Final" priority="15000" index="2">field[hTotal].value = hero.child[aCHA].field[aModBonus].value * field[Value].value</eval>
+    </thing>
+  <thing id="cBlkLayHn2" name="Lay on Hands [Fallen Paladin]" description="You can heal yourself or your Fiendish Servant for Blackguard Level * Charisma Bonus HP per day." compset="ClSpecial" summary="You can heal Blackguard Level * Charisma Bonus HP per day." replaces="cBlkPalLay">
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="ClSpecWhen" tag="3" name="3" abbrev="3"/>
+    <tag group="SpecSource" tag="cHelpBlk" name="Blackguard" abbrev="Blackguard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xLayOnHand"></bootstrap>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ First, delete any 'show' tag we have already.
+      var result as number
+      result = delete[Helper.ShowSpec]
+
+      ~ Now check our paladin level - if it's too low, just get out. Otherwise
+      ~ assign our show tag.
+      if (hero.childfound[cHelpPal].field[cTotalLev].value < tagvalue[ClSpecWhen.?]) then
+      	done
+      	endif
+      result = assign[Helper.ShowSpec]
+      result = assign[Helper.ShowCharge]
+
+      hero.child[xLayOnHand].field[hTotal].value += hero.child[aCHA].field[aModBonus].value * field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="xDamRdEpic" name="Damage Reduction, Epic" description="You have Damage Reduction against all except Epic attacks." compset="Special" uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="DR" name="Damage Reduction" abbrev="Damage Reduction"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the amount of damage we can resist
+      field[livename].text = "Damage Reduction (" & field[Value].value & "/epic)"]]></eval>
+    </thing>
+  <thing id="cAsnPoiso2" name="Poison Use" description="You never accidentally poison yourself when applying poison to a blade." compset="ClSpecial" summary="You don&apos;t accidentally poison yourself with blades." replaces="cAsnPoison">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpAsn" name="Assassin" abbrev="Assassin"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xPoisonUse"></bootstrap>
+    </thing>
+  <thing id="cBlkPoiso2" name="Poison Use" description="You never accidentally poison yourself when applying poison to a blade." compset="ClSpecial" summary="You don&apos;t accidentally poison yourself with blades." replaces="cBlkPoison">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpBlk" name="Blackguard" abbrev="Blackguard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xPoisonUse"></bootstrap>
+    </thing>
+  <thing id="xPoisonUse" name="Poison Use" description="You never accidentally poison yourself when handling poisons." compset="Special" summary="Never at risk of poisoning self when handling poisons." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cDrdWildEm" name="Wild Empathy" description="Roll 1d20 + druid level + Charisma modifier like a Diplomacy check to try and improve the attitude of an animal." compset="ClSpecial" summary="Improve the atttitude of an animal, as if using Diplomacy." replaces="cDrdWildE">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="Helper" tag="ClExLose" name="ClExLose" abbrev="ClExLose"/>
+    <tag group="SpecSource" tag="cHelpDrd" name="Druid" abbrev="Druid"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xWildEmpat"></bootstrap>
+    <eval phase="PostLevel" priority="10000">hero.child[xWildEmpat].field[Value].value += field[xTotalLev].value</eval>
+    </thing>
+  <thing id="cRgrWildE2" name="Wild Empathy" description="Roll 1d20 + ranger level + Charisma modifier like a Diplomacy check to try and improve the attitude of an animal." compset="ClSpecial" summary="Improve the atttitude of an animal, as if using Diplomacy." replaces="cRgrWildE">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpRgr" name="Ranger" abbrev="Ranger"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xWildEmpat"></bootstrap>
+    <eval phase="PostLevel" priority="10000">hero.child[xWildEmpat].field[Value].value += field[xTotalLev].value</eval>
+    </thing>
+  <thing id="xWildEmpat" name="Wild Empathy" description="A person can use body language, vocalizations, and demeanor to improve the attitude of an animal. This ability functions just like a Diplomacy check made to improve the attitude of a person. The user rolls 1d20 and add your wild empathy bonus (generally relevant class levels + Charisma modifier) to determine the wild empathy check result. The typical domestic animal has a starting attitude of indifferent, while wild animals are usually unfriendly.\n\nTo use wild empathy, the person and the animal must be able to study each other, which means that they must be within 30 feet of one another under normal conditions. Generally, influencing an animal in this way takes 1 minute but, as with influencing people, it might take more or less time.\n\nA person can also use this ability to influence a magical beast with an Intelligence score of 1 or 2 (such as a basilisk or a girallon), but they take a &#150;4 penalty on the check." compset="Special" summary="Improve the atttitude of an animal, as if using Diplomacy." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Render"><![CDATA[    ~ We show ourselves if our value is not 0
+    if (field[Value].value <> 0) then
+      perform assign[Helper.ShowSpec]
+
+      ~ We gain a synergy bonus at 5 ranks of Handle Animal
+      if (#skillranks[kHandleAnm] >= 5) then
+        field[Value].value += 2
+      endif
+
+      ~ We gain CHA bon
+      field[Value].value += hero.child[aCHA].field[aModBonus].value
+
+    endif
+
+    field[livename].text = field[name].text &  " +" & field[Value].value & ""]]></eval>
+    </thing>
+  <thing id="xDamRdEvCI" name="Damage Reduction, Evil or Cold Iron" description="You have Damage Reduction against all except Evil or Cold Iron attacks." compset="Special" uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="DR" name="Damage Reduction" abbrev="Damage Reduction"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the amount of damage we can resist
+      field[livename].text = "Damage Reduction (" & field[Value].value & "/cold iron or good)"]]></eval>
+    </thing>
+  <thing id="cBrdMInCo2" name="Bardic Music: Inspire Courage +1" description="Requires 3 ranks in Perform. Grants the specified Morale bonus to saving throws against charm and fear as well as to weapon attack and damage rolls." compset="ClSpecial" summary="Morale bonus on some saving throws, attack and damage rolls." replaces="cBrdMInsC">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMInsC"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 3) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+        endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMInsC].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="cBrdMInCm2" name="Bardic Music: Inspire Competence" description="Requires 6 ranks in Perform. One ally within 30 feet gets a +2 competence bonus on checks for one skill." compset="ClSpecial" summary="+2 competence bonus for one ally on a skill check." replaces="cBrdMInsCm">
+    <tag group="ClSpecWhen" tag="3" name="3" abbrev="3"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMInsCm"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 6) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+        endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMInsCm].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="cBrdMCoun2" name="Bardic Music: Countersong" description="Requires 3 ranks in Perform. Creatures may use your Perform check instead of their save against sonic or language-dependent magical attacks." compset="ClSpecial" summary="Counter magical effects that depend on sound." replaces="cBrdMCount">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMCount"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 3) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+        endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMCount].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="cBrdMFas2" name="Bardic Music: Fascinate" description="Requires 3 ranks in Perform. Affects one creature, plus one per 3 levels beyond first. If the creature fails a Will save it pays attention to you, with a -4 penalty to other skill checks like Listen and Spot." compset="ClSpecial" summary="One or more creatures becomes fascinated with you." replaces="cBrdMFas">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMFas"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 3) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+        endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMFas].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="cBrdMSugg2" name="Bardic Music: Suggestion" description="Requires 9 ranks in Perform. You can make a Suggestion to a creature you have fascinated, as the spell This doesn&apos;t count against your limit of daily performances." compset="ClSpecial" summary="Make a Suggestion to one Fascinated creature." replaces="cBrdMSugg">
+    <tag group="ClSpecWhen" tag="6" name="6" abbrev="6"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMSugg"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 9) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+      endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMSugg].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="xBrdMSugg" name="Bardic Music: Suggestion" description="Requires 9 ranks in Perform. You can make a Suggestion to a creature you have fascinated, as the spell This doesn&apos;t count against your limit of daily performances." compset="Special" summary="Make a Suggestion to one Fascinated creature." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 6 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 6)
+     doneif (herofield[tMaxPerf].value < 9)
+     perform assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMSugg2].assign[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="xBrdMInsCm" name="Bardic Music: Inspire Competence" description="Requires 6 ranks in Perform. One ally within 30 feet gets a +2 competence bonus on checks for one skill." compset="Special" summary="+2 competence bonus for one ally on a skill check." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 3 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 3)
+     doneif (herofield[tMaxPerf].value < 6)
+     perform assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInCm2].assign[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="xBrdMInsC" name="Bardic Music: Inspire Courage +1" description="Requires 3 ranks in Perform. Grants the specified Morale bonus to saving throws against charm and fear as well as to weapon attack and damage rolls." compset="Special" summary="Morale bonus on some saving throws, attack and damage rolls." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 1 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 1)
+     doneif (herofield[tMaxPerf].value < 3)
+     perform assign[Helper.ShowSpec]
+
+     ~ Set our bonus name.
+      var level as number
+      level = field[Value].value
+      if (level >= 20) then
+        field[livename].text = "Bardic Music: Inspire Courage +4"
+     perform hero.childfound[cBrdMInsC4].assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInsC3].assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInsC2].assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInCo2].assign[Helper.ShowSpec]
+      elseif (level >= 14) then
+        field[livename].text = "Bardic Music: Inspire Courage +3"
+     perform hero.childfound[cBrdMInsC3].assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInsC2].assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInCo2].assign[Helper.ShowSpec]
+      elseif (level >= 8) then
+        field[livename].text = "Bardic Music: Inspire Courage +2"
+     perform hero.childfound[cBrdMInsC2].assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInCo2].assign[Helper.ShowSpec]
+        endif]]></eval>
+    </thing>
+  <thing id="xBrdMFas" name="Bardic Music: Fascinate" description="Requires 3 ranks in Perform. Affects one creature, plus one per 3 levels beyond first. If the creature fails a Will save it pays attention to you, with a -4 penalty to other skill checks like Listen and Spot." compset="Special" summary="One or more creatures becomes fascinated with you." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 1 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 1)
+     doneif (herofield[tMaxPerf].value < 3)
+     perform assign[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="xBrdMCount" name="Bardic Music: Countersong" description="Requires 3 ranks in Perform. Creatures may use your Perform check instead of their save against sonic or language-dependent magical attacks." compset="Special" summary="Counter magical effects that depend on sound." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 1 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 1)
+     doneif (herofield[tMaxPerf].value < 3)
+     perform assign[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="cBrdMInsG2" name="Bardic Music: Inspire Greatness" description="Requires 12 ranks in Perform. One ally within 30 feet (+1 per 3 levels beyond 9th) gets 2 bonus hit dice (d10s), a commensurate number of temporary hit points (plus constitution modifier), +2 to attack rolls and +1 to fortitude saves." compset="ClSpecial" summary="Grants allies 2 bonus hit dice, +2 to attacks and +1 to fort saves." replaces="cBrdMInsGr">
+    <tag group="ClSpecWhen" tag="9" name="9" abbrev="9"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMInsGr"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 12) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+      endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMInsGr].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="cBrdMInsH2" name="Bardic Music: Inspire Heroics" description="Requires 18 ranks in Perform. One ally within 30 feet (plus one per 3 levels beyond 15th) gets a +4 morale bonus to saving throws and a +4 dodge bonus to AC." compset="ClSpecial" summary="+4 to saving throws and +4 to AC for one ally." replaces="cBrdMInsHe">
+    <tag group="ClSpecWhen" tag="15" name="15" abbrev="15"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMInsHe"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 18) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+      endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMInsHe].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="cBrdMMasS2" name="Bardic Music: Mass Suggestion" description="Requires 21 ranks in Perform. As Suggestion, and you can make the suggestion simultaneously to any number of creatures you have fascinated." compset="ClSpecial" summary="Suggest to any number of creatures you have already fascinated." replaces="cBrdMMassS">
+    <tag group="ClSpecWhen" tag="18" name="18" abbrev="18"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMMassS"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 21) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+      endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMMassS].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="cBrdMFree2" name="Bardic Music: Song of Freedom" description="Requires 15 ranks in Perform. You can create a Break Enchantment effect on a single target within 30 feet." compset="ClSpecial" summary="Break Enchantment on a single target within 30 feet." replaces="cBrdMFree">
+    <tag group="ClSpecWhen" tag="12" name="12" abbrev="12"/>
+    <tag group="SpecSource" tag="cHelpBrd" name="Bard" abbrev="Bard"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xBrdMFree"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we don't have enough ranks in Perform, we're not available
+      if (herofield[tMaxPerf].value < 15) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        done
+      endif
+      
+      ~ Add to our special thing.
+      hero.child[xBrdMFree].field[Value].value += field[xTotalLev].value]]></eval>
+    </thing>
+  <thing id="xBrdMFree" name="Bardic Music: Song of Freedom" description="Requires 15 ranks in Perform. You can create a Break Enchantment effect on a single target within 30 feet." compset="Special" summary="Break Enchantment on a single target within 30 feet." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 12 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 12)
+     doneif (herofield[tMaxPerf].value < 15)
+     perform assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMFree2].assign[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="xBrdMMassS" name="Bardic Music: Mass Suggestion" description="Requires 21 ranks in Perform. As Suggestion, and you can make the suggestion simultaneously to any number of creatures you have fascinated." compset="Special" summary="Suggest to any number of creatures you have already fascinated." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 18 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 18)
+     doneif (herofield[tMaxPerf].value < 21)
+     perform assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMMasS2].assign[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="xBrdMInsHe" name="Bardic Music: Inspire Heroics" description="Requires 18 ranks in Perform. One ally within 30 feet (plus one per 3 levels beyond 15th) gets a +4 morale bonus to saving throws and a +4 dodge bonus to AC." compset="Special" summary="+4 to saving throws and +4 to AC for one ally." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 15 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 15)
+     doneif (herofield[tMaxPerf].value < 18)
+     perform assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInsH2].assign[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="xBrdMInsGr" name="Bardic Music: Inspire Greatness" description="Requires 12 ranks in Perform. One ally within 30 feet (+1 per 3 levels beyond 9th) gets 2 bonus hit dice (d10s), a commensurate number of temporary hit points (plus constitution modifier), +2 to attack rolls and +1 to fortitude saves." compset="Special" summary="Grants allies 2 bonus hit dice, +2 to attacks and +1 to fort saves." uniqueness="unique">
+    <eval phase="PostLevel" priority="10100"><![CDATA[     ~ Do we have at least 9 levels applied to our value field? If so apply the tag to show ourselves.
+     doneif (field[Value].value < 9)
+     doneif (herofield[tMaxPerf].value < 12)
+     perform assign[Helper.ShowSpec]
+     perform hero.childfound[cBrdMInsG2].assign[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="hBrdMusic2" name="Bardic Music" description="Use one charge every time you attempt to use Bardic Music." compset="Special" replaces="hBrdMusic" uniqueness="unique">
+    <eval phase="PostLevel" priority="10000"><![CDATA[     ~ Add one to our charges for every bard level we have.
+     field[hTotal].value += hero.childfound[cHelpBrd].field[cTotalLev].value
+
+     doneif (field[hTotal].value < 1)
+     perform assign[Helper.ShowCharge]]]></eval>
+    </thing>
+  <thing id="pACNatural" name="Armor Class (Natural)" description="Select this adjustment to adjust your natural armor class." compset="InPlay">
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our armor class
+      hero.child[ArmorClass].field[tACNatural].value += field[pAdjust].value]]></eval>
+    </thing>
+  <thing id="pcnAwakeUn" name="Awakened Undead" description="A mindless undead gains an Intelligence score of 1d6+4, subject to the limitation that an undead cannot be more intelligent than is typical of a living creature of the same kind. A dog skeleton simply has Intelligence 2 (no roll needed), while an orc skeleton makes the die roll but can&apos;t have more than Intelligence 8. (See MM 290 for information on skills and feats the creature gains.)\n\nUndead regain the armor and weapon proficiencies they had in life (assume the undead were formerly warriors unless the DM specifies otherwise) and will don armor and take up weapons while obeying your commands. A zombie fighter can wear any armor and wield any simple or martial weapon, and a warhorse zombie can wear any armor.\n\nUndead also regain any extraordinary racial abilities they had in life, such as poison or scent.\n\nAwakened undead gain a +2 profane bonus on their Will saving throws to resist {i}control undead{/i}. Awakened undead also gain +2 turn resistance (or retain their own turn resistance, if any, and if it is better than +2)." compset="InPlay">
+    <tag group="Helper" tag="AdjCond" name="AdjCond" abbrev="AdjCond"/>
+    <tag group="User" tag="AwakenUnd" name="Awakened Undead"/>
+    <eval phase="First" priority="50"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      perform hero.assign[User.AwakenUnd]]]></eval>
+    </thing>
+  <thing id="tmZombie2" name="Zombie Template" description="Zombies are corpses reanimated through dark and sinister magic. These mindless automatons shamble about, doing their creator&#146;s bidding without fear or hesitation.\n\nZombies are not pleasant to look upon. Drawn from their graves, half decayed and partially consumed by worms, they wear the tattered remains of their burial clothes. A rank odor of death hangs heavy in the air around them.\n\nBecause of their utter lack of intelligence, the instructions given to a newly created zombie must be very simple, such as &#147;Kill anyone who enters this room.&#148;" compset="Template" replaces="tmZombie" uniqueness="unique">
+    <fieldval field="tmInfHD" value="Drop class levels, all become d12s"/>
+    <fieldval field="tmReplHD" value="12"/>
+    <fieldval field="tmSTR" value="2"/>
+    <fieldval field="tmDEX" value="-2"/>
+    <usesource source="MonManual1"/>
+    <tag group="TemplHelp" tag="NoClasses" name="NoClasses" abbrev="NoClasses"/>
+    <tag group="AlgnReq" tag="NeutEvil" name="Neutral Evil" abbrev="Neutral Evil"/>
+    <tag group="SpecSource" tag="Zombie" name="Zombie" abbrev="Zombie"/>
+    <tag group="TemplHelp" tag="Acquired" name="Acquired" abbrev="Acquired"/>
+    <tag group="TemplHelp" tag="AddHitDice" name="AddHitDice" abbrev="AddHitDice"/>
+    <tag group="TemplHelp" tag="Inherited" name="Inherited" abbrev="Inherited"/>
+    <bootstrap thing="xDamRdS">
+      <autotag group="SpecSource" tag="Zombie"/>
+      </bootstrap>
+    <bootstrap thing="fToughness"></bootstrap>
+    <bootstrap thing="xZomSingle"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="Zombie"/>
+      </bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
+    <bootstrap thing="xImmCold"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <eval phase="First"><![CDATA[
+      ~Damage reduction 5/slashing
+      #applydr[xDamRdS, 5]
+
+      ~ Go through all type specials and assign a tag to disable them. Also set the hTotal field to <> 0 so that bootstrap conditions will fail. 
+      foreach pick in hero from BaseSpec where "thingid.typ? & !thingid.typUndead"
+       perform each.assign[Helper.SpcDisable]
+       each.field[hTotal].value = 1
+      nexteach
+
+      ~ Finally, delete all Race.typWhatever tags and add back one for the Undead type.
+      perform hero.delete[Race.typ?]
+      perform hero.assign[Race.typUndead]
+
+      ~ If we are awakened, stop.
+      doneif (hero.tagis[User.AwakenUnd] <> 0)
+
+      ~ We aren't allowed any skills or feats
+      perform hero.assign[Hero.NoSkills]
+      perform hero.assign[Hero.NoFeats]
+
+      ~ Many races and classes bootstrap feats, so go through them disabling them all - except Toughness and any weapon proficiencies!
+      foreach pick in hero from BaseFeat where "!thingid.fToughness|!thingid.fWepMart|!thingid.fMartial|!thingid.fSimple"
+        perform eachpick.assign[Helper.FtDisable]
+      nexteach
+
+      ~ Disable all special abilities apart from the ones that we bootstrap
+      foreach pick in hero from BaseSpec where "!component.BaseFeat & !thingid.xZomSingle & !thingid.rDarkVis & !thingid.xDamRdS"
+        perform eachpick.assign[Helper.FtDisable]
+        nexteach
+
+      ~ Go over all weapons, deleting stuff like weapon focus and improved natural attack from them - these tags are often just bootstrapped directly onto the weapon
+      foreach pick in hero from BaseWep
+        perform eachpick.delete[Broadcast.?]
+      nexteach]]></eval>
+    <eval phase="PreLevel" priority="10000" index="2"><![CDATA[      var result as number
+
+      ~ bonus to natural armor based on size
+      var bonus as number
+      if (hero.tagis[Size.Small] <> 0) then
+        bonus = 1
+      elseif (hero.tagis[Size.Medium] <> 0) then
+        bonus = 2
+      elseif (hero.tagis[Size.Large] <> 0) then
+        bonus = 3
+      elseif (hero.tagis[Size.Huge] <> 0) then
+        bonus = 4
+      elseif (hero.tagis[Size.Gargantuan] <> 0) then
+        bonus = 7
+      elseif (hero.tagis[Size.Colossal] <> 0) then
+        bonus = 11
+        endif
+      hero.child[mNatural].field[Bonus].value += bonus
+
+      ~ We don't have a CON scores
+      perform hero.child[aCON].assign[Helper.NoScore]
+
+      ~ Force our Wisdom to 10 and our Charisma to 1
+      hero.child[aWIS].field[aNormForce].value = 10
+      hero.child[aCHA].field[aNormForce].value = 1
+
+      ~ Double our number of HD
+      var hd as number
+      var i as number
+      var initial as number
+      initial = hero.tagcount[Hero.HitDice]
+      hd = maximum(1, initial) * 2
+      for i = initial to hd - 1
+        result = hero.assign[Hero.HitDice]
+      next
+
+      ~ Get the number of HD and use it to calculate our base attack bonus and saves
+      hero.child[Attack].field[tAtkBase].value = round(hd / 2, 0, -1)
+      hero.child[vFort].field[vBase].value = round(hd / 3, 0, -1)
+      hero.child[vRef].field[vBase].value = round(hd / 3, 0, -1)
+      hero.child[vWill].field[vBase].value = round(hd / 2, 0, -1) + 2
+
+      ~ Use the number of HD to calculate CR
+      var cr as number
+      if (hd <= 1) then
+        cr = -2
+      elseif (hd <= 2) then
+        cr = 0
+      elseif (hd <= 4) then
+        cr = 1
+      elseif (hd <= 6) then
+        cr = 2
+      elseif (hd <= 10) then
+        cr = 3
+      elseif (hd <= 14) then
+        cr = 4
+      elseif (hd <= 16) then
+        cr = 5
+      else
+        cr = 6
+        endif
+      herofield[tCR].value = cr
+
+      ~ If we are awakened, stop. Otherwise remove our Intelligence.
+      doneif (hero.tagis[User.AwakenUnd] <> 0)
+      perform hero.child[aINT].assign[Helper.NoScore]]]></eval>
+    <eval phase="Final" priority="9000" index="3">~ Delete all maneuverability tags from flight
+      perform hero.childfound[xFly2].delete[Maneuver.?]
+      perform hero.childfound[xFly2].assign[Maneuver.Clumsy]</eval>
+    </thing>
+  <thing id="ppACShield" name="Armor Class (Shield)" description="Select this adjustment to adjust your shield bonus to armor class." compset="InPlay">
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our armor class
+      hero.child[ArmorClass].field[tACShield].value += field[pAdjust].value]]></eval>
+    </thing>
+  <thing id="pACArmor" name="Armor Class (Armor)" description="Select this adjustment to adjust your armor bonus to armor class." compset="InPlay">
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our armor class
+      hero.child[ArmorClass].field[tACArmor].value += field[pAdjust].value]]></eval>
+    </thing>
+  <thing id="pACDodge" name="Armor Class (Dodge)" description="Select this adjustment to adjust your dodge bonus to armor class." compset="InPlay">
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our armor class
+      hero.child[ArmorClass].field[tACDodge].value += field[pAdjust].value]]></eval>
+    </thing>
+  <thing id="pACDeflect" name="Armor Class (Deflection)" description="Select this adjustment to adjust your deflection bonus to armor class." compset="InPlay">
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add to our armor class
+      hero.child[ArmorClass].field[tACDeflect].value += field[pAdjust].value]]></eval>
+    </thing>
+  <thing id="cRogTrapf2" name="Trapfinding" description="You can find and disarm traps with a DC &gt; 20." compset="ClSpecial" replaces="cRogTrapfn">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpRog" name="Rogue" abbrev="Rogue"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xTrapfind"></bootstrap>
+    </thing>
+  <thing id="xTrapfind" name="Trapfinding" description="You can find and disarm traps with a DC &gt; 20." compset="Special" summary="You can find and disarm traps with a DC &gt; 20." uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="cRogSnea1" name="Sneak Attack +1d6" description="+1d6 to your Sneak Attack damage." compset="ClSpecial" replaces="cRogSneak1">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpRog" name="Rogue" abbrev="Rogue"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <bootstrap thing="xSneakAtt"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      doneif (tagis[Helper.SpcDisable] <> 0)
+      doneif (tagis[Helper.SpcReplace] <> 0)
+
+      ~ Add our level + 1 / 2 to our sneak attack damage.
+      var sneak as number
+      sneak = (field[xTotalLev].value + 1) / 2
+      sneak = round(sneak, 0, -1)
+      hero.child[xSneakAtt].field[Value].value = hero.child[xSneakAtt].field[Value].value + sneak
+      field[livename].text = "Sneak Attack +" & sneak & "d6"
+      field[CustDesc].text = "+" & sneak & "d6 to your Sneak Attack damage."]]></eval>
+    </thing>
+  <thing id="fWepSpec2" name="Weapon Specialization" description="{b}Prerequisites{/b}: Proficiency with selected weapon, Weapon Focus with selected weapon, fighter level 4th.\n\nChoose one type of weapon for which you have already selected the Weapon Focus feat. You can also choose unarmed strike or grapple as your weapon for purposes of this feat. You deal extra damage when using this weapon.\n\n{b}Benefit{/b}: You gain a +2 bonus on all damage rolls you make using the selected weapon.\n\n{b}Special{/b}: You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.\n\nA fighter may select Weapon Specialization as one of his fighter bonus feats." compset="Feat" summary="You gain a +2 bonus on all damage rolls you make using the selected weapon." replaces="fWepSpec">
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="fShowWhat" tag="Weapons" name="All Weapons" abbrev="All Weapons"/>
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      ~ If we haven't chosen anything, get out now
+      if (field[fChosen].ischosen = 0) then
+        done
+        endif
+
+      ~ Assign the appropriate tag to all weapons that meet the criteria
+      var result as number
+      var id as string
+      id = field[fChosen].chosen.idstring
+      foreach pick in hero where "IsWeapon." & id
+        result = eachpick.assign[Broadcast.WepSpec]
+        nexteach
+
+      ~ Set our 'short name'
+      if (field[fChosen].ischosen <> 0) then
+        field[fShortName].text = "Spec: " & field[fChosen].chosen.field[name].text
+        
+        ~ Forward the weapon specialization tag for the weapon to the hero
+        result = field[fChosen].chosen.forward[WepSpec.?]
+        endif]]></eval>
+    <exprreq message="Weapon Focus required." iserror="no"><![CDATA[tagis[WepFocus.?] <> 0]]></exprreq>
+    <prereq message="Fighter level 4th required.">
+      <validate><![CDATA[  var result as number
+  result += #levelcount[Fighter]
+
+  if (#levelcount[Warblade] > 2) then
+   result += #levelcount[Warblade] - 2
+  endif
+
+  if (#hasfeat[fDareWarr] <> 0) then
+    result += #levelcount[Swashbuck]
+  endif
+
+  if (#hasfeat[fMartStalk] <> 0) then
+    result += #levelcount[Ninja]
+  endif
+
+  if (hero.tagis[ClassVary.cvRogMart] <> 0) then
+    result += #levelcount[Rogue]
+  endif
+
+  validif (result >= 4)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fGrtWepFo2" name="Greater Weapon Focus" description="{b}Prerequisites{/b}: Proficiency with selected weapon, Weapon Focus with selected weapon, fighter level 8th.\n\nChoose one type of weapon for which you have already selected Weapon Focus. You can also choose unarmed strike or grapple as your weapon for purposes of this feat.\n\n{b}Benefit{/b}: You gain a +1 bonus on all attack rolls you make using the selected weapon. This bonus stacks with other bonuses on attack rolls, including the one from Weapon Focus (see below).\n\n{b}Special{/b}: You can gain Greater Weapon Focus multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.\n\nA fighter must have Greater Weapon Focus with a given weapon to gain the Greater Weapon Specialization feat for that weapon.\n\nA fighter may select Greater Weapon Focus as one of his fighter bonus feats." compset="Feat" summary="You gain a +1 bonus on all attack rolls you make using the selected weapon. This bonus stacks with other bonuses on attack rolls, including the one from Weapon Focus (see below)." replaces="fGrtWepFoc">
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="fShowWhat" tag="Weapons" name="All Weapons" abbrev="All Weapons"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      ~ If we haven't chosen anything, get out now
+      if (field[fChosen].ischosen = 0) then
+        done
+        endif
+
+      ~ Assign the appropriate tag to all weapons that meet the criteria
+      var result as number
+      var id as string
+      id = field[fChosen].chosen.idstring
+      foreach pick in hero where "IsWeapon." & id
+        result = eachpick.assign[Broadcast.WepGrFoc]
+        nexteach
+
+      ~ Set our 'short name'
+      if (field[fChosen].ischosen <> 0) then
+        field[fShortName].text = "Greater Focus: " & field[fChosen].chosen.field[name].text
+        
+        ~ Forward the greater weapon focus tag for the weapon to the hero
+        result = field[fChosen].chosen.forward[WepGrFoc.?]
+        endif]]></eval>
+    <exprreq message="Weapon Focus required." iserror="no"><![CDATA[tagis[WepFocus.?] <> 0]]></exprreq>
+    <prereq message="Fighter level 8th required.">
+      <validate><![CDATA[  var result as number
+  result += #levelcount[Fighter]
+
+  if (#levelcount[Warblade] > 2) then
+   result += #levelcount[Warblade] - 2
+  endif
+
+  if (#hasfeat[fDareWarr] <> 0) then
+    result += #levelcount[Swashbuck]
+  endif
+
+  if (#hasfeat[fMartStalk] <> 0) then
+    result += #levelcount[Ninja]
+  endif
+
+  if (hero.tagis[ClassVary.cvRogMart] <> 0) then
+    result += #levelcount[Rogue]
+  endif
+
+  validif (result >= 8)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fGrtWepSp2" name="Greater Weapon Specialization" description="{b}Prerequisites{/b}: Proficiency with selected weapon, Greater Weapon Focus with selected weapon, Weapon Focus with selected weapon, Weapon Specialization with selected weapon, fighter level 12th.\n\nChoose one type of weapon for which you have already selected Weapon Specialization. You can also choose unarmed strike or grapple as your weapon for purposes of this feat.\n\n{b}Benefit{/b}: You gain a +2 bonus on all damage rolls you make using the selected weapon. This bonus stacks with other bonuses on damage rolls, including the one from Weapon Specialization (see below).\n\n{b}Special{/b}: You can gain Greater Weapon Specialization multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.\n\nA fighter may select Greater Weapon Specialization as one of his fighter bonus feats." compset="Feat" summary="You gain a +2 bonus on all damage rolls you make using the selected weapon. This bonus stacks with other bonuses on damage rolls, including the one from Weapon Specialization (see below)." replaces="fGrtWepSpc">
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="fShowWhat" tag="Weapons" name="All Weapons" abbrev="All Weapons"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+      ~ If we haven't chosen anything, get out now
+      if (field[fChosen].ischosen = 0) then
+        done
+        endif
+
+      ~ Assign the appropriate tag to all weapons that meet the criteria
+      var result as number
+      var id as string
+      id = field[fChosen].chosen.idstring
+      foreach pick in hero where "IsWeapon." & id
+        result = eachpick.assign[Broadcast.WepGrSpec]
+        nexteach
+
+      ~ Set our 'short name'
+      if (field[fChosen].ischosen <> 0) then
+        field[fShortName].text = "Spec: " & field[fChosen].chosen.field[name].text
+        
+        ~ Forward the greater weapon specialization tag for the weapon to the hero
+        result = field[fChosen].chosen.forward[WepGrSpec.?]
+        endif]]></eval>
+    <prereq message="Fighter level 12th required.">
+      <validate><![CDATA[  var result as number
+  result += #levelcount[Fighter]
+
+  if (#levelcount[Warblade] > 2) then
+   result += #levelcount[Warblade] - 2
+  endif
+
+  if (#hasfeat[fDareWarr] <> 0) then
+    result += #levelcount[Swashbuck]
+  endif
+
+  if (#hasfeat[fMartStalk] <> 0) then
+    result += #levelcount[Ninja]
+  endif
+
+  if (hero.tagis[ClassVary.cvRogMart] <> 0) then
+    result += #levelcount[Rogue]
+  endif
+
+  validif (result >= 12)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fShotRun2" name="Shot On The Run" description="{b}Prerequisites{/b}: Dex 13, Dodge, Mobility, Point Blank Shot, base attack bonus +4.{br}{br}{b}Benefit{/b}: When using the attack action with a ranged weapon, you can move both before and after the attack, provided that your total distance moved is not greater than your speed.{br}{br}{b}Special{/b}: A fighter may select Shot on the Run as one of his fighter bonus feats." compset="Feat" summary="When attacking with a ranged weapon, you can move - attack - move." replaces="fShotRun" uniqueness="useronce">
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <exprreq message="Dexterity 13 required." iserror="no"><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Dodge required." iserror="no"><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
+    <exprreq message="Mobility required." iserror="no"><![CDATA[#hasfeat[fMobility] <> 0]]></exprreq>
+    <exprreq message="Point Blank Shot required." iserror="no"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +4 required." iserror="no"><![CDATA[child[Attack].field[tAtkBase].value >= 4]]></exprreq>
+    </thing>
+  <thing id="mmEmpower2" name="Empower Spell" description="All variable, numeric effects of an empowered spell are increased by one-half.{br}Saving throws and opposed rolls are not affected, nor are spells without random variables. An empowered spell uses up a spell slot two levels higher than the spell&apos;s actual level." compset="Metamagic" summary="All variable numeric effects increased by 50%." replaces="mmEmpower" uniqueness="unique">
+    <fieldval field="mmLevel" value="2"/>
+    <fieldval field="mmAbbr" value="Empow"/>
+    <tag group="User" tag="EasyMM"/>
+    <prereq message="Empower Spell feat required.">
+      <validate>@valid = hero.pickexists[fEmpSpell] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="mmMaximiz2" name="Maximize Spell" description="All variable, numeric effects of a spell modified by this feat are maximized. Saving throws and opposed rolls are not affected, nor are spells without random variables. A maximized spell uses up a spell slot three levels higher than the spell&apos;s actual level.{br}An empowered, maximized spell gains the separate benefits of each feat: the maximum result plus one-half the normally rolled result." compset="Metamagic" summary="All variable, numeric effects are maximized." replaces="mmMaximize" uniqueness="unique">
+    <fieldval field="mmLevel" value="3"/>
+    <fieldval field="mmAbbr" value="Maxim"/>
+    <tag group="User" tag="EasyMM"/>
+    <prereq message="Maximize Spell feat required.">
+      <validate>@valid = hero.pickexists[fMaxSpell] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="mmQuicken2" name="Quicken Spell" description="Casting a quickened spell is a free action. You can perform another action, even casting another spell, in the same round as you cast a quickened spell. You may cast only one quickened spell per round. A spell whose casting time is more than 1 full round action cannot be quickened. A quickened spell uses up a spell slot four levels higher than the spell&apos;s actual level. Casting a quickened spell doesn&apos;t provoke an attack of opportunity.{br}{br}{b}Special{/b}: This feat can&apos;t be applied to any spell cast spontaneously (including sorcerer spells, bard spells, and cleric or druid spells cast spontaneously), since applying a metamagic feat to a spontaneously cast spell automatically increases the casting time to a full-round action." compset="Metamagic" summary="Spell casts as a free action." replaces="mmQuicken" uniqueness="unique">
+    <fieldval field="mmLevel" value="4"/>
+    <fieldval field="mmAbbr" value="Quick"/>
+    <tag group="User" tag="EasyMM"/>
+    <prereq message="Can&apos;t be applied to Spontaneous spells (e.g. Bard, Sorcerer spells).">
+      <validate><![CDATA[
+        @valid = 1
+        if (parent.islinkage[table] <> 0) then
+          if (parent.linkage[table].tagis[CasterType.Spont?] <> 0) then
+            @valid = 0
+            endif
+          endif]]></validate>
+      </prereq>
+    <prereq message="Quicken Spell feat required.">
+      <validate>@valid = hero.pickexists[fQuickSpl] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="mmWiden2" name="Widen Spell" description="You can alter a burst, emanation, line, or spread shaped spell to increase its area. Any numeric measurements of the spell&apos;s area increase by 100%.A widened spell uses up a spell slot three levels higher than the spell&apos;s actual level.{br}Spells that do not have an area of one of these four sorts are not affected by this feat." compset="Metamagic" summary="Spell area increases by 100%." replaces="mmWiden" uniqueness="unique">
+    <fieldval field="mmLevel" value="3"/>
+    <fieldval field="mmAbbr" value="Wide"/>
+    <tag group="User" tag="EasyMM"/>
+    <prereq message="Widen Spell feat required.">
+      <validate>@valid = hero.pickexists[fWidenSpl] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="pSize2" name="Size Category" description="Select this adjustment to change your size category (for example, if you are the subject of an Enlarge Person spell)." compset="InPlay" replaces="pSize">
+    <eval phase="First" priority="20000"><![CDATA[
+    ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+    ~ Add to size - must come after race and template size set
+      herofield[tSize].value += field[pAdjust].value
+
+    ~ Adjust equipment size
+      
+      foreach pick in hero from MyGear
+        eachpick.field[gSizeMod].value += field[pAdjust].value
+      nexteach
+
+    ~ Adjust STR and DEX scores
+
+      var bonus as number
+
+      bonus = field[pAdjust].value*2
+
+      hero.child[aSTR].field[Bonus].value += bonus
+      hero.child[aDEX].field[Penalty].value -= bonus]]></eval>
+    <eval phase="UserPostLv" priority="11000" index="2"><![CDATA[~ If we're not enabled, get out now.
+doneif (field[pIsOn].value = 0)
+
+foreach pick in hero from BaseNatWep where "!SpecSource.HalfDragon"
+  eachpick.field[wDamage].value += field[pAdjust].value
+nexteach]]></eval>
+    </thing>
+  <thing id="cMnkUnar2" name="Improved Unarmed Damage" description="The Monk does lethal damage with his unarmed strikes, which also do more damage than normal for his size. (Smaller or larger monks will do less or more damage than displayed here.)" compset="ClSpecial" summary="The Monk does lethal damage with his unarmed strikes." replaces="cMnkUnarm">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpMnk" name="Monk" abbrev="Monk"/>
+    <eval phase="PostLevel" priority="5000"><![CDATA[
+      ~ Calculate our total level - our monk level plus any 'extra levels'
+      ~ assigned to us
+      var level as number
+      level = field[xTotalLev].value
+
+      ~ Get our unarmed strike pick, delete the damage tag from it, and assign
+      ~ a new damage tag.
+      var dice as string
+      perform hero.child[wUnarmed].delete[wMain.?]
+      if (level < 4) then
+        perform hero.child[wUnarmed].assign[wMain.1d6_5]
+        dice = "1d6"
+      elseif (level < 8) then
+        perform hero.child[wUnarmed].assign[wMain.1d8_6]
+        dice = "1d8"
+      elseif (level < 12) then
+        perform hero.child[wUnarmed].assign[wMain.1d10_304]
+        dice = "1d10"
+      elseif (level < 16) then
+        perform hero.child[wUnarmed].assign[wMain.2d6_104]
+        dice = "2d6"
+      elseif (level < 20) then
+        if (herofield[tSize].value >= 1) then
+         perform hero.child[wUnarmed].assign[wMain.2d8_305]
+        else
+         perform hero.child[wUnarmed].assign[wMain.2d8_204]
+        endif
+        dice = "2d8"
+      else
+        perform hero.child[wUnarmed].assign[wMain.2d10_205]
+        dice = "2d10"
+        endif
+      field[livename].text = field[name].text & " (" & dice & ")"]]></eval>
+    </thing>
+  <thing id="fStunFist2" name="Stunning Fist" description="{b}Prerequisites{/b}: Dex 13, Wis 13, Improved Unarmed Strike, base attack bonus +8.{br}{br}{b}Benefit{/b}: You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). Stunning Fist forces a foe damaged by your unarmed attack to make a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier), in addition to dealing damage normally. A defender who fails this saving throw is stunned for 1 round (until just before your next action). A stunned character can&apos;t act, loses any Dexterity bonus to AC, and takes a -2 penalty to AC. You may attempt a stunning attack once per day for every four levels you have attained (but see Special), and no more than once per round. Constructs, oozes, plants, undead, incorporeal creatures, and creatures immune to critical hits cannot be stunned.{br}{br}{b}Special{/b}: A monk may select Stunning Fist as a bonus feat at 1st level, even if she does not meet the prerequisites. A monk who selects this feat may attempt a stunning attack a number of times per day equal to her monk level, plus one more time per day for every four levels she has in classes other than monk.{br}A fighter may select Stunning Fist as one of his fighter bonus feats." compset="Feat" summary="You can stun an opponent with an unarmed attack." replaces="fStunFist" uniqueness="useronce">
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="BonusFor" tag="Monk1" name="Monk Level 1" abbrev="Monk Level 1"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="User" tag="PickFocus"/>
+    <eval phase="PostAttr" priority="5000"><![CDATA[
+      var DC as number
+      DC = 10 + round(#totallevelcount[]/2,0,1) + hero.child[aWIS].field[aModBonus].value
+
+      if (#hasfeat[fAbilFocus] <> 0) then
+       if (hero.childfound[fAbilFocus].field[fChosen].chosen.tagis[thingid.fStunFist2] <> 0) then
+        DC += 2
+       endif
+      endif
+
+      var levels as number
+      levels = #totallevelcount[] - #levelcount[Monk]
+
+      var uses as number
+      uses = #levelcount[Monk] + round(levels/4,0,1)
+
+      field[hTotal].value = uses
+
+      field[livename].text = "Stunning Fist (DC " & DC & ") (" & uses & "/day)"]]></eval>
+    <exprreq message="Wisdom 13 required." iserror="no"><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Improved Unarmed Strike required." iserror="no"><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <exprreq message="Base attack bonus +8 required." iserror="no"><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
+    <exprreq message="Dexterity 13 required." iserror="no"><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="cMnkFlurrB" name="Flurry of Blows" description="When unarmored, the monk may make a Flurry of Blows attack with his unarmed attacks and/or special monk weapons as a full round action." compset="ClSpecial" summary="Make Flurry of Blows attack as a full action." replaces="cMnkFlurr">
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpMnk" name="Monk" abbrev="Monk"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <bootstrap thing="wFlurry">
+      <containerreq phase="First" priority="450">User.NoFlurry = 0</containerreq>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[doneif (hero.tagis[User.NoFlurry] <> 0)
+
+      ~ If we're wearing armor or shield, we're disabled.
+      if (hero.tagis[Hero.EquipArmor] + hero.tagis[Hero.EquipShld] > 0) then
+        var result as number
+        result = assign[Helper.SpcDisable]
+        endif
+
+      ~ Get the bonus based on our level
+      var bonus as number
+      var level as number
+      level = field[xTotalLev].value
+      if (level < 5) then
+        bonus = -2
+      elseif (level < 9) then
+        bonus = -1
+      else
+        bonus = 0
+        endif
+
+      ~ Get the number of extra attacks we can make
+      var extra as number
+      if (level < 11) then
+        extra = 1
+      else
+        extra = 2
+        endif
+
+      ~ Build up our name
+      field[livename].text = field[name].text & " ("
+      if (bonus < 0) then
+        field[livename].text = field[livename].text & bonus & ", "
+        endif
+      field[livename].text = field[livename].text & extra & " extra attack"
+      if (extra > 1) then
+        field[livename].text = field[livename].text & "s"
+        endif
+      field[livename].text = field[livename].text & ")"
+
+      ~ Apply the bonus to our flurry of blows weapon
+      container.child[wFlurry].field[wAttack].value = container.child[wFlurry].field[wAttack].value + bonus
+      var i as number
+      var result as number
+      for i = 1 to extra
+        result = hero.child[wFlurry].assign[Helper.ExtraHigh]
+        next]]></eval>
+    </thing>
+  <thing id="rXeph2" name="Xeph" description="Medium humanoid\n\nDarkvision 60&apos;\n+1 to save vs. Spells, Psionics, and Spell-Like Abilities\nBurst: 3/day, duration 3r; add 10&apos; to speed\nImproves to 20&apos; at 5th level, and 30&apos; at 9th level" compset="Race" replaces="rXeph">
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rInfFavor" value="Soulknife"/>
+    <fieldval field="rInfAutoLn" value="Common, Xeph"/>
+    <fieldval field="rAgeMin" value="18"/>
+    <fieldval field="rHeightMnF" value="54"/>
+    <fieldval field="rWeightMnF" value="79"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnM" value="104"/>
+    <fieldval field="rHeightMxF" value="72"/>
+    <fieldval field="rHeightMxM" value="76"/>
+    <fieldval field="rWeightMxF" value="235"/>
+    <fieldval field="rWeightMxM" value="260"/>
+    <fieldval field="rSTR" value="-2"/>
+    <usesource source="SRDPsionic" name="d20 SRD Psionics Support"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="Race" tag="Xeph"/>
+    <bootstrap thing="rXeBurst">
+      <autotag group="SpecSource" tag="rXeph"/>
+      </bootstrap>
+    <bootstrap thing="rXeResist">
+      <autotag group="SpecSource" tag="rXeph"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lXeph"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="rXeph"/>
+      </bootstrap>
+    <eval phase="PreLevel"><![CDATA[~Set our Burst Bonus (the text in the specials list)
+
+~get our level
+var level as number
+level = hero.tagcount[Classes.?]
+var SpeedBonus as number
+~SpeedBonus = 10 at 1st, 20 at 5th, and 30 at 9th
+if (level<5) then
+SpeedBonus = 10
+elseif (level<9) then
+SpeedBonus = 20
+else
+SpeedBonus = 30
+endif
+      hero.child[rXeBurst].field[Value].value = SpeedBonus]]></eval>
+    <eval phase="PreLevel" priority="10000" index="2">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="rMaenad2" name="Maenad" description="Medium Humanoid\n\nEnergy Ray (Sonic) 1/day\nOutburst: 1/day, duration 4r; +2 STR, -2 WIS, -2 INT" compset="Race" replaces="rMaenad">
+    <fieldval field="rInfFavor" value="Wilder"/>
+    <fieldval field="rInfAutoLn" value="Common, Maenad"/>
+    <fieldval field="rAgeMin" value="40"/>
+    <fieldval field="rHeightMnF" value="65"/>
+    <fieldval field="rWeightMnF" value="124"/>
+    <fieldval field="rHeightMnM" value="66"/>
+    <fieldval field="rWeightMnM" value="154"/>
+    <fieldval field="rHeightMxF" value="83"/>
+    <fieldval field="rHeightMxM" value="84"/>
+    <fieldval field="rWeightMxF" value="280"/>
+    <fieldval field="rWeightMxM" value="310"/>
+    <fieldval field="rBonusPP" value="2"/>
+    <usesource source="SRDPsionic" name="d20 SRD Psionics Support"/>
+    <tag group="Language" tag="lAquan" name="Aquan" abbrev="Aquan"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lDwarven" name="Dwarven" abbrev="Dwarven"/>
+    <tag group="Language" tag="lElven" name="Elven" abbrev="Elven"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Race" tag="Maenad"/>
+    <bootstrap thing="rOutburst">
+      <autotag group="SpecSource" tag="rMaenad"/>
+      </bootstrap>
+    <bootstrap thing="lMaenad"></bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="rDrEnRayS">
+      <autotag group="SpecSource" tag="rMaenad"/>
+      </bootstrap>
+    </thing>
+  <thing id="rHuman2" name="Human" compset="Race" replaces="rHuman">
+    <fieldval field="rSkill" value="1"/>
+    <fieldval field="rInfFavor" value="Any"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rWeightMnF" value="85"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="rHeightMxF" value="73"/>
+    <fieldval field="rHeightMxM" value="78"/>
+    <fieldval field="rWeightMxF" value="245"/>
+    <fieldval field="rWeightMxM" value="280"/>
+    <fieldval field="rFeat" value="1"/>
+    <tag group="AgeC1Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC1Size" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC2Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="10" name="d10" abbrev="d10"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="Human" name="Human" abbrev="Human"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="WeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="Race" tag="stypHuman" name="Subtype - Human"/>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypHuman"></bootstrap>
+    </thing>
+  <thing id="rGnome2" name="Gnome" description="Low-light vision (see twice as far as humans in low light conditions).{br}+2 to saving throws vs. Illusions.{br}Enemies affected by Illusion spells cast by gnomes save at +1 DC.{br}+2 to Listen checks.{br}+2 to Craft (Alchemy) checks.{br}+1 to attack bonus vs. kobolds and goblinoids.{br}+4 dodge AC bonus when fighting giants.{br}Gnomes have the innate ability to cast Speak With Animals (burrowing mammal only, 1 minute duration) once per day. Gnomes with a Charisma greater than 10 may cast Dancing Lights, Ghost Sound and Prestidigitation once per day (caster level 1, save DC 10 + charisma modifier + spell level)." compset="Race" replaces="rGnome">
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rInfFavor" value="Bard"/>
+    <fieldval field="rInfAutoLn" value="Common, Gnome"/>
+    <fieldval field="rAgeMin" value="40"/>
+    <fieldval field="rHeightMnF" value="34"/>
+    <fieldval field="rWeightMnF" value="35"/>
+    <fieldval field="rHeightMnM" value="36"/>
+    <fieldval field="rWeightMnM" value="40"/>
+    <fieldval field="rHeightMxF" value="42"/>
+    <fieldval field="rHeightMxM" value="44"/>
+    <fieldval field="rWeightMxF" value="43"/>
+    <fieldval field="rWeightMxM" value="48"/>
+    <fieldval field="rSTR" value="-2"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="1" name="1" abbrev="1"/>
+    <tag group="WeightSize" tag="0" name="0" abbrev="0"/>
+    <tag group="AgeC1Dice" tag="4" name="4" abbrev="4"/>
+    <tag group="AgeC1Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC2Dice" tag="6" name="6" abbrev="6"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="9" name="9" abbrev="9"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lDwarven" name="Dwarven" abbrev="Dwarven"/>
+    <tag group="Language" tag="lElven" name="Elven" abbrev="Elven"/>
+    <tag group="Language" tag="lGiant" name="Giant" abbrev="Giant"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Race" tag="Gnome" name="Gnome" abbrev="Gnome"/>
+    <tag group="Race" tag="stypGnome"/>
+    <bootstrap thing="rGnIllus">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnAttacks">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rVsGiants">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnSpeak">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnDance">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnGhost">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnPrest">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="lGnome"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <autotag group="SpecSource" tag="rGnome"/>
+      <assignval field="xSumm" value="+2 to Craft (Alchemy) and Listen"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnSaves">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="stypGnome"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <eval phase="PreLevel" priority="10000">~ +2 to Listen, Craft (Alchemy) checks
+      #skillbonus[kListen] += 2
+      #skillbonus[kCrafAlch] += 2</eval>
+    </thing>
+  <thing id="rDromite2" name="Dromite" description="Small Monstrous Humanoid\n\nScent\n+2 Spot Checks\nSpecify an energy type (Fire, Cold, Electricity, Sonic) - this type applies to your Energy Ray and Energy Resitance abilities.\nEnergy Ray (Specify) 1/day as a manifester of half the character&apos;s level\n(Specify) Resistance 5" compset="Race" replaces="rDromite">
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rBonusPP" value="1"/>
+    <fieldval field="rInfFavor" value="Wilder"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="rAC" value="3"/>
+    <fieldval field="rAgeMin" value="13"/>
+    <fieldval field="rHeightMnF" value="34"/>
+    <fieldval field="rWeightMnF" value="32"/>
+    <fieldval field="rHeightMnM" value="34"/>
+    <fieldval field="rWeightMnM" value="32"/>
+    <fieldval field="rHeightMxF" value="40"/>
+    <fieldval field="rHeightMxM" value="40"/>
+    <fieldval field="rWeightMxF" value="40"/>
+    <fieldval field="rWeightMxM" value="40"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="rSTR" value="-2"/>
+    <usesource source="SRDPsionic" name="d20 SRD Psionics Support"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Language" tag="lCommon" name="Common" abbrev="Common"/>
+    <tag group="Language" tag="lDwarven" name="Dwarven" abbrev="Dwarven"/>
+    <tag group="Language" tag="lGnome" name="Gnome" abbrev="Gnome"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Race" tag="typMonHuma"/>
+    <tag group="Language" tag="lTerran" name="Terran" abbrev="Terran"/>
+    <tag group="Race" tag="Dromite" name="Dromite"/>
+    <bootstrap thing="xDamRs">
+      <autotag group="SpecSource" tag="rDromite"/>
+      </bootstrap>
+    <bootstrap thing="rDrEnRay">
+      <autotag group="SpecSource" tag="rDromite"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <autotag group="SpecSource" tag="rDromite"/>
+      <assignval field="xSumm" value="+2 to Spot"/>
+      </bootstrap>
+    <bootstrap thing="fBlindFgt">
+      <autotag group="SpecSource" tag="rDromite"/>
+      </bootstrap>
+    <bootstrap thing="xScent">
+      <autotag group="SpecSource" tag="rDromite"/>
+      </bootstrap>
+    <bootstrap thing="typMonsHum">
+      <autotag group="SpecSource" tag="rDromite"/>
+      </bootstrap>
+    <eval phase="PreLevel">~Set our resistances
+      hero.child[xDamRs].field[Value].value = maximum(hero.child[xDamRs].field[Value].value, 5)
+
+~ +2 to Spot checks
+      container.childfound[kSpot].field[Bonus].value = container.childfound[kSpot].field[Bonus].value + 2</eval>
+    </thing>
+  <thing id="rDwarf2" name="Dwarf" description="Speed is never reduced by armor or encumbrance.{br}Darkvision (black and white vision at up to 60 feet in the dark).{br}Stonecunning (+2 to Search to notice unusual stonework - being within 10 feet allows you to test as if searching).{br}Treat Dwarven Waraxes and Urgroshes as Martial Weapons.{br}Stability: +4 on ability checks to resist being bull rushed or tripped when standing firmly on the ground.{br}+2 to saves vs poison.{br}+2 to saves against spells / spell-like effects.{br}+1 to attack bonus vs. orcs and goblinoids.{br}+4 dodge AC bonus when fighting giants.{br}+2 to Appraise checks for stone or metal items.{br}+2 to Craft checks for stone or metal." compset="Race" replaces="rDwarf">
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rInfFavor" value="Fighter"/>
+    <fieldval field="rInfAutoLn" value="Common, Dwarven"/>
+    <fieldval field="rAgeMin" value="40"/>
+    <fieldval field="rHeightMnF" value="43"/>
+    <fieldval field="rWeightMnF" value="100"/>
+    <fieldval field="rHeightMnM" value="45"/>
+    <fieldval field="rWeightMnM" value="130"/>
+    <fieldval field="rHeightMxF" value="51"/>
+    <fieldval field="rHeightMxM" value="53"/>
+    <fieldval field="rWeightMxF" value="215"/>
+    <fieldval field="rWeightMxM" value="226"/>
+    <fieldval field="rCON" value="2"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="WeightSize" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC1Dice" tag="3" name="3" abbrev="3"/>
+    <tag group="AgeC1Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC2Dice" tag="5" name="5" abbrev="5"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="7" name="7" abbrev="7"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="Language" tag="lGiant" name="Giant" abbrev="Giant"/>
+    <tag group="Language" tag="lGnome" name="Gnome" abbrev="Gnome"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <tag group="Language" tag="lTerran" name="Terran" abbrev="Terran"/>
+    <tag group="Language" tag="lUndercomm" name="Undercommon" abbrev="Undercommon"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Race" tag="Dwarf" name="Dwarf" abbrev="Dwarf"/>
+    <tag group="Race" tag="stypDwarf"/>
+    <bootstrap thing="rStonecunn">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      </bootstrap>
+    <bootstrap thing="rDwWeps">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      </bootstrap>
+    <bootstrap thing="rStability">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      </bootstrap>
+    <bootstrap thing="rDwSaves">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      </bootstrap>
+    <bootstrap thing="rDwAttacks">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      </bootstrap>
+    <bootstrap thing="rVsGiants">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      </bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      <assignval field="livename" value="+2 to Appraise and Craft on Stone/Metal items"/>
+      </bootstrap>
+    <bootstrap thing="lDwarven"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      </bootstrap>
+    <bootstrap thing="rSturdy">
+      <autotag group="SpecSource" tag="rDwarf"/>
+      </bootstrap>
+    <bootstrap thing="stypDwarf"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <eval phase="PreLevel" priority="10000">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="rElan2" name="Elan" description="Medium Abberation\n\nPowers:\nResistance: Spend 1PP to add +4 to saves until your next action\nResilience: For each PP spent, reduce damage you are about to take by 2\nRepletion: Spend 1PP to go 24h without food or water" compset="Race" replaces="rElan">
+    <fieldval field="rInfFavor" value="Psion"/>
+    <fieldval field="rInfAutoLn" value="Common"/>
+    <fieldval field="rAgeMin" value="20"/>
+    <fieldval field="rHeightMnF" value="57"/>
+    <fieldval field="rWeightMnF" value="89"/>
+    <fieldval field="rHeightMnM" value="62"/>
+    <fieldval field="rWeightMnM" value="124"/>
+    <fieldval field="rHeightMxF" value="75"/>
+    <fieldval field="rHeightMxM" value="80"/>
+    <fieldval field="rWeightMxF" value="245"/>
+    <fieldval field="rWeightMxM" value="280"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rBonusPP" value="2"/>
+    <usesource source="SRDPsionic" name="d20 SRD Psionics Support"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="Race" tag="typAberrat" name="Type - Aberration"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="Elan" name="Elan"/>
+    <bootstrap thing="rElanResis">
+      <autotag group="SpecSource" tag="rElan"/>
+      </bootstrap>
+    <bootstrap thing="rElanReple">
+      <autotag group="SpecSource" tag="rElan"/>
+      </bootstrap>
+    <bootstrap thing="typAberr">
+      <autotag group="SpecSource" tag="rElan"/>
+      </bootstrap>
+    <bootstrap thing="rElanResil">
+      <autotag group="SpecSource" tag="rElan"/>
+      </bootstrap>
+    </thing>
+  <thing id="rElf2" name="Elf" description="Immune to magic Sleep effects, and +2 save bonus against Enchantments.{br}Low-light vision (see twice as far as humans in low light conditions).{br}+2 to Listen, Search and Spot checks. Passing within 5 feet of a concealed door allows an Elf to make a Search check to notice it." compset="Race" replaces="rElf">
+    <fieldval field="rCON" value="-2"/>
+    <fieldval field="rInfFavor" value="Wizard"/>
+    <fieldval field="rInfAutoLn" value="Common, Elven"/>
+    <fieldval field="rAgeMin" value="110"/>
+    <fieldval field="rHeightMnF" value="51"/>
+    <fieldval field="rWeightMnF" value="80"/>
+    <fieldval field="rHeightMnM" value="51"/>
+    <fieldval field="rWeightMnM" value="85"/>
+    <fieldval field="rHeightMxF" value="65"/>
+    <fieldval field="rHeightMxM" value="65"/>
+    <fieldval field="rWeightMxF" value="152"/>
+    <fieldval field="rWeightMxM" value="157"/>
+    <fieldval field="rDEX" value="2"/>
+    <tag group="Race" tag="Elf" name="Elf" abbrev="Elf"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="1" name="1" abbrev="1"/>
+    <tag group="WeightSize" tag="6" name="d6" abbrev="d6"/>
+    <tag group="WepProf" tag="wCompLong" name="Longbow, Composite" abbrev="Longbow, Composite"/>
+    <tag group="WepProf" tag="wCompShort" name="Shortbow, Composite" abbrev="Shortbow, Composite"/>
+    <tag group="WepProf" tag="wLongbow" name="Longbow" abbrev="Longbow"/>
+    <tag group="WepProf" tag="wLongsword" name="Longsword" abbrev="Longsword"/>
+    <tag group="WepProf" tag="wRapier" name="Rapier" abbrev="Rapier"/>
+    <tag group="WepProf" tag="wShortbow" name="Shortbow" abbrev="Shortbow"/>
+    <tag group="AgeC1Dice" tag="4" name="4" abbrev="4"/>
+    <tag group="AgeC1Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC2Dice" tag="6" name="6" abbrev="6"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="10" name="10" abbrev="10"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="6" name="d6" abbrev="d6"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lGnoll" name="Gnoll" abbrev="Gnoll"/>
+    <tag group="Language" tag="lGnome" name="Gnome" abbrev="Gnome"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Language" tag="lSylvan" name="Sylvan" abbrev="Sylvan"/>
+    <tag group="Race" tag="stypElf"/>
+    <bootstrap thing="xImmSleep">
+      <autotag group="SpecSource" tag="rElf"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="rElf"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <autotag group="SpecSource" tag="rElf"/>
+      <assignval field="xSumm" value="+2 to Listen, Search, and Spot. If within 5&apos; of secret door, free Search check."/>
+      </bootstrap>
+    <bootstrap thing="lElven"></bootstrap>
+    <bootstrap thing="fWepElf">
+      <autotag group="SpecSource" tag="rElf"/>
+      </bootstrap>
+    <bootstrap thing="rElfImmune">
+      <autotag group="SpecSource" tag="rElf"/>
+      </bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypElf"></bootstrap>
+    <eval phase="PreLevel" priority="10000">~ +2 to Listen, Search, Spot checks
+      #skillbonus[kListen] += 2
+      #skillbonus[kSearch] += 2
+      #skillbonus[kSpot] += 2</eval>
+    </thing>
+  <thing id="rHalfOrc2" name="Half-Orc" description="Darkvision (black and white vision at up to 60 feet in the dark).{br}Orc Blood: For all effects related to race, a half-orc is considered an orc." compset="Race" replaces="rHalfOrc">
+    <fieldval field="rINT" value="-2"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rInfFavor" value="Barbarian"/>
+    <fieldval field="rInfAutoLn" value="Common, Orc"/>
+    <fieldval field="rAgeMin" value="14"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rWeightMnF" value="110"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnM" value="150"/>
+    <fieldval field="rHeightMxF" value="78"/>
+    <fieldval field="rHeightMxM" value="82"/>
+    <fieldval field="rWeightMxF" value="398"/>
+    <fieldval field="rWeightMxM" value="438"/>
+    <fieldval field="rSTR" value="2"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="WeightSize" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC1Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC1Size" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC2Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="12" name="d12" abbrev="d12"/>
+    <tag group="Language" tag="lAbyssal" name="Abyssal" abbrev="Abyssal"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lGiant" name="Giant" abbrev="Giant"/>
+    <tag group="Language" tag="lGnoll" name="Gnoll" abbrev="Gnoll"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Race" tag="HalfOrc" name="HalfOrc" abbrev="HalfOrc"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="Race" tag="Orc" name="Orc" abbrev="Orc"/>
+    <tag group="Race" tag="stypOrc"/>
+    <bootstrap thing="rDarkVis2">
+      <autotag group="SpecSource" tag="rHalfOrc"/>
+      </bootstrap>
+    <bootstrap thing="lOrc"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypOrc"></bootstrap>
+    <eval phase="PreLevel" priority="10000">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="rHalfElf2" name="Half-Elf" description="Immune to magic Sleep effects, and +2 save bonus against Enchantments.{br}Low-light vision (see twice as far as humans in low light conditions).{br}+1 to Listen, Search and Spot checks.{br}+2 bonus to Diplomacy and Gather Information checks.{br}Elven Blood: For all effects related to race, a half-elf is considered an elf." compset="Race" replaces="rHalfElf">
+    <fieldval field="rInfAutoLn" value="Common, Elven"/>
+    <fieldval field="rAgeMin" value="20"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rWeightMnF" value="80"/>
+    <fieldval field="rHeightMnM" value="55"/>
+    <fieldval field="rWeightMnM" value="100"/>
+    <fieldval field="rHeightMxF" value="69"/>
+    <fieldval field="rHeightMxM" value="71"/>
+    <fieldval field="rWeightMxF" value="208"/>
+    <fieldval field="rWeightMxM" value="228"/>
+    <fieldval field="rInfFavor" value="Any"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="WeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC1Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC1Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC2Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="3" name="3" abbrev="3"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="8" name="d8" abbrev="d8"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="Elf" name="Elf" abbrev="Elf"/>
+    <tag group="Race" tag="HalfElf" name="HalfElf" abbrev="HalfElf"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="Race" tag="stypElf"/>
+    <tag group="Race" tag="stypHuman"/>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+1 to Listen, Search, and Spot, +2 to Diplomacy and Gather Information"/>
+      </bootstrap>
+    <bootstrap thing="rElfImmune">
+      <autotag group="SpecSource" tag="rHalfElf"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="rHalfElf"/>
+      </bootstrap>
+    <bootstrap thing="lElven"></bootstrap>
+    <bootstrap thing="stypElf"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <eval phase="PreLevel" priority="2500">~ +1 to Listen, Search, Spot checks
+      #skillbonus[kListen] += 1
+      #skillbonus[kSearch] += 1
+      #skillbonus[kSpot] += 1
+
+      ~ +2 to Diplomacy and Gather Information checks
+      #skillbonus[kGatherInf] += 2
+      #skillbonus[kDiplomacy] += 2</eval>
+    </thing>
+  <thing id="rHalfGian2" name="Half-Giant" description="Medium Giant\n\nLow-Light Vision\nFire Acclimated (+2 save vs. Fire)\nPowerful Build (many size-based calculations, including weapons used without penalty, are based on one size larger than normal)\nManifest Stomp 1/day" compset="Race" replaces="rHalfGiant">
+    <comment>Where is this from? How do the powerful build thing for use with goliaths?</comment>
+    <fieldval field="rDEX" value="-2"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rBonusPP" value="2"/>
+    <fieldval field="rInfFavor" value="Psychic Warrior"/>
+    <fieldval field="rAgeMin" value="30"/>
+    <fieldval field="rHeightMnF" value="75"/>
+    <fieldval field="rWeightMnF" value="184"/>
+    <fieldval field="rHeightMnM" value="78"/>
+    <fieldval field="rWeightMnM" value="224"/>
+    <fieldval field="rHeightMxF" value="77"/>
+    <fieldval field="rHeightMxM" value="100"/>
+    <fieldval field="rWeightMxF" value="468"/>
+    <fieldval field="rWeightMxM" value="508"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <fieldval field="rSTR" value="2"/>
+    <usesource source="SRDPsionic" name="d20 SRD Psionics Support"/>
+    <tag group="RaceType" tag="Extra" name="Nonstandard Race" abbrev="Nonstandard Race"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lGiant" name="Giant" abbrev="Giant"/>
+    <tag group="Language" tag="lGnoll" name="Gnoll" abbrev="Gnoll"/>
+    <tag group="Language" tag="lIgnan" name="Ignan" abbrev="Ignan"/>
+    <tag group="Race" tag="typGiant"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="Race" tag="HalfGiant"/>
+    <bootstrap thing="typGiant">
+      <autotag group="SpecSource" tag="rHalfGiant"/>
+      </bootstrap>
+    <bootstrap thing="xHGStomp">
+      <autotag group="SpecSource" tag="rHalfGiant"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="rHalfGiant"/>
+      </bootstrap>
+    <bootstrap thing="xFireAccl">
+      <autotag group="SpecSource" tag="rHalfGiant"/>
+      </bootstrap>
+    <bootstrap thing="xPowBuild">
+      <autotag group="SpecSource" tag="rHalfGiant"/>
+      </bootstrap>
+    </thing>
+  <thing id="rHalfling2" name="Halfling" description="+2 to Climb, Jump and Move Silently checks.{br}+2 morale bonus to saving throws vs. Fear.{br}+1 bonus to attack rolls with thrown weapons and slings.{br}+2 bonus to Listen checks." compset="Race" replaces="rHalfling">
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rInfFavor" value="Rogue"/>
+    <fieldval field="rInfAutoLn" value="Common, Halfling"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rRef" value="1"/>
+    <fieldval field="rWill" value="1"/>
+    <fieldval field="rAgeMin" value="20"/>
+    <fieldval field="rHeightMnF" value="30"/>
+    <fieldval field="rWeightMnF" value="25"/>
+    <fieldval field="rHeightMnM" value="32"/>
+    <fieldval field="rWeightMnM" value="30"/>
+    <fieldval field="rHeightMxF" value="38"/>
+    <fieldval field="rHeightMxM" value="40"/>
+    <fieldval field="rWeightMxF" value="33"/>
+    <fieldval field="rWeightMxM" value="38"/>
+    <fieldval field="rSTR" value="-2"/>
+    <tag group="AgeC1Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC1Size" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC2Dice" tag="3" name="3" abbrev="3"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="4" name="4" abbrev="4"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="Language" tag="lDwarven" name="Dwarven" abbrev="Dwarven"/>
+    <tag group="Language" tag="lElven" name="Elven" abbrev="Elven"/>
+    <tag group="Language" tag="lGnome" name="Gnome" abbrev="Gnome"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <tag group="Race" tag="Halfling" name="Halfling" abbrev="Halfling"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="1" name="1" abbrev="1"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <tag group="WeightSize" tag="0" name="0" abbrev="0"/>
+    <tag group="Race" tag="stypHalfli"/>
+    <bootstrap thing="lHalfling"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+2 to Climb, Jump, Listen and Move Silently"/>
+      </bootstrap>
+    <bootstrap thing="rHlSaves">
+      <autotag group="SpecSource" tag="rHalfling"/>
+      </bootstrap>
+    <bootstrap thing="rHlAttacks">
+      <autotag group="SpecSource" tag="rHalfling"/>
+      </bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypHalfli"></bootstrap>
+    <eval phase="PreLevel" priority="10000">~ +2 to Listen, Climb, Jump, Move Silently
+      #skillbonus[kListen] += 2
+      #skillbonus[kClimb] += 2
+      #skillbonus[kJump] += 2
+      #skillbonus[kMoveSil] += 2</eval>
+    </thing>
+  <thing id="rmFiDiRat2" name="Fiendish Dire Rat" compset="Race" replaces="rmFiDiRat">
+    <comment>replace smite good?</comment>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rINT" value="-9"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="-6"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rFeat" value="-1"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rHPStart" value="4"/>
+    <fieldval field="rInfHit" value="1d8"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="1"/>
+    <fieldval field="rCR" value="0.333333333"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="rDEX" value="7"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="ClassSkill" tag="kSwim" name="Swim" abbrev="Swim"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="Subtype" tag="DireAnimal" name="DireAnimal" abbrev="DireAnimal"/>
+    <tag group="Type" tag="Animal" name="Animal" abbrev="Animal"/>
+    <tag group="Alignment" tag="Evil" name="Evil" abbrev="E"/>
+    <tag group="Alignment" tag="Lawful" name="Lawful" abbrev="L"/>
+    <tag group="Race" tag="typMagBeas"/>
+    <tag group="ClassSkill" tag="kClimb" name="Climb" abbrev="Climb"/>
+    <bootstrap thing="fWepFin">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xDisease">
+      <assignval field="livename" value="Filth Fever"/>
+      <assignval field="xSumm" value="Bite, incubation 1d3 days, 1d3 Dex &amp; 1d3 Con dam."/>
+      </bootstrap>
+    <bootstrap thing="xScent"></bootstrap>
+    <bootstrap thing="xFieSmite"></bootstrap>
+    <bootstrap thing="xDamRsCold">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsFire">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Value" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="xClimb">
+      <autotag group="Value" tag="20"/>
+      </bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+8 to Swim"/>
+      </bootstrap>
+    <eval phase="PreLevel" priority="10000" index="2">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 1
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 1
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 1
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 1
+      #skillbonus[kSwim] += 8
+
+      ~ Change the attributes on Climb and Swim
+      perform hero.child[kClimb].assign[SkillOver.aDEX]
+      perform hero.child[kSwim].assign[SkillOver.aDEX]</eval>
+    </thing>
+  <thing id="rmFiRaven2" name="Fiendish Raven" compset="Race" replaces="rmFiRaven">
+    <fieldval field="rDEX" value="5"/>
+    <fieldval field="rINT" value="-8"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rSpeed" value="10"/>
+    <fieldval field="rFeat" value="-1"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rHPStart" value="1"/>
+    <fieldval field="rInfHit" value="1d8"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rCR" value="0.166666667"/>
+    <fieldval field="rSpace" value="2"/>
+    <fieldval field="rReach" value="0"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="rSTR" value="-9"/>
+    <tag group="Subtype" tag="Extraplan" name="Extraplan" abbrev="Extraplan"/>
+    <tag group="Type" tag="MagicalBst" name="MagicalBst" abbrev="MagicalBst"/>
+    <tag group="Alignment" tag="NeutralGE" name="Neutral" abbrev="N"/>
+    <tag group="Alignment" tag="NeutralLC" name="Neutral" abbrev="N"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="RaceSize" tag="Tiny12" name="Tiny" abbrev="Tiny"/>
+    <tag group="Race" tag="typMagBeas"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <bootstrap thing="fWepFin">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xFieSmite"></bootstrap>
+    <bootstrap thing="xDamRsCold">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsFire">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Value" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d2_2"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Average"/>
+      <autotag group="Value" tag="40"/>
+      </bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <eval phase="PreLevel" priority="10000" index="2">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 1
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 3</eval>
+    </thing>
+  <thing id="rmClBadge2" name="Celestial Badger" compset="Race" replaces="rmClBadger">
+    <fieldval field="rDEX" value="7"/>
+    <fieldval field="rCON" value="5"/>
+    <fieldval field="rINT" value="-7"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rFeat" value="-1"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rHPStart" value="4"/>
+    <fieldval field="rInfHit" value="1d8"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="1"/>
+    <fieldval field="rCR" value="0.5"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rSTR" value="-2"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="Subtype" tag="Extraplan" name="Extraplan" abbrev="Extraplan"/>
+    <tag group="Type" tag="MagicalBst" name="MagicalBst" abbrev="MagicalBst"/>
+    <tag group="Alignment" tag="Chaotic" name="Chaotic" abbrev="C"/>
+    <tag group="Alignment" tag="Good" name="Good" abbrev="G"/>
+    <tag group="ClassSkill" tag="kBalance" name="Balance" abbrev="Balance"/>
+    <tag group="ClassSkill" tag="kEscape" name="Escape Artist" abbrev="Escape Artist"/>
+    <tag group="Race" tag="typMagBeas" name="Type - Magical Beast"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <bootstrap thing="fTrack">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="fWepFin">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xBadgrRage"></bootstrap>
+    <bootstrap thing="xScent"></bootstrap>
+    <bootstrap thing="xCelSmite"></bootstrap>
+    <bootstrap thing="xDamRsAcid">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsCold">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsElec">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Value" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d2_2"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d3_3"/>
+      </bootstrap>
+    <bootstrap thing="xBurrow">
+      <autotag group="Value" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Escape Artist"/>
+      </bootstrap>
+    <bootstrap thing="fAgile"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 2
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 2
+      #skillbonus[kEscape] += 4</eval>
+    <eval phase="PreLevel" priority="10000" index="2">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="rmClDog2" name="Celestial Dog" compset="Race" replaces="rmClDog">
+    <fieldval field="rDEX" value="7"/>
+    <fieldval field="rCON" value="5"/>
+    <fieldval field="rINT" value="-7"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rFeat" value="-1"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rHPStart" value="4"/>
+    <fieldval field="rInfHit" value="1d8"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="1"/>
+    <fieldval field="rCR" value="0.333333333"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rSTR" value="3"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="Subtype" tag="Extraplan" name="Extraplan" abbrev="Extraplan"/>
+    <tag group="Type" tag="MagicalBst" name="MagicalBst" abbrev="MagicalBst"/>
+    <tag group="Alignment" tag="Good" name="Good" abbrev="G"/>
+    <tag group="Alignment" tag="Lawful" name="Lawful" abbrev="L"/>
+    <tag group="ClassSkill" tag="kJump" name="Jump" abbrev="Jump"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Race" tag="typMagBeas"/>
+    <tag group="ClassSkill" tag="kSurvival" name="Survival" abbrev="Survival"/>
+    <bootstrap thing="xScent"></bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <assignval field="livename" value="+4 to Survival when tracking by Scent"/>
+      </bootstrap>
+    <bootstrap thing="xCelSmite"></bootstrap>
+    <bootstrap thing="xDamRsAcid">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsCold">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsElec">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Value" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Jump"/>
+      </bootstrap>
+    <bootstrap thing="fTrack">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 2
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 2
+      #skillbonus[kJump] += 4</eval>
+    <eval phase="PreLevel" priority="10000" index="2">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="rmClMonke2" name="Celestial Monkey" compset="Race" replaces="rmClMonkey">
+    <fieldval field="rDEX" value="5"/>
+    <fieldval field="rINT" value="-7"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="-5"/>
+    <fieldval field="rFeat" value="-1"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rHPStart" value="4"/>
+    <fieldval field="rInfHit" value="1d8"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rCR" value="0.166666667"/>
+    <fieldval field="rSpace" value="2"/>
+    <fieldval field="rReach" value="0"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rSTR" value="-7"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="RaceSize" tag="Tiny12" name="Tiny" abbrev="Tiny"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="Subtype" tag="Extraplan" name="Extraplan" abbrev="Extraplan"/>
+    <tag group="Type" tag="MagicalBst" name="MagicalBst" abbrev="MagicalBst"/>
+    <tag group="Alignment" tag="Chaotic" name="Chaotic" abbrev="C"/>
+    <tag group="Alignment" tag="Good" name="Good" abbrev="G"/>
+    <tag group="ClassSkill" tag="kBalance" name="Balance" abbrev="Balance"/>
+    <tag group="ClassSkill" tag="kClimb" name="Climb" abbrev="Climb"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="ClassSkill" tag="kEscape" name="Escape Artist" abbrev="Escape Artist"/>
+    <bootstrap thing="fWepFin">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xCelSmite"></bootstrap>
+    <bootstrap thing="xDamRsAcid">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsCold">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsElec">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Value" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d3_3"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="xClimb">
+      <autotag group="Value" tag="30"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+8 to Balance"/>
+      </bootstrap>
+    <bootstrap thing="fAgile"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 2
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 2
+      #skillbonus[kBalance] += 8
+
+      ~ Change the attribute on Climb
+      perform hero.child[kClimb].assign[SkillOver.aDEX]</eval>
+    <eval phase="PreLevel" priority="10000" index="2">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="rmClOwl2" name="Celestial Owl" compset="Race" replaces="rmClOwl">
+    <fieldval field="rDEX" value="7"/>
+    <fieldval field="rINT" value="-7"/>
+    <fieldval field="rWIS" value="4"/>
+    <fieldval field="rCHA" value="-6"/>
+    <fieldval field="rSpeed" value="10"/>
+    <fieldval field="rFeat" value="-1"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rHPStart" value="4"/>
+    <fieldval field="rInfHit" value="1d8"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rCR" value="0.25"/>
+    <fieldval field="rSpace" value="2"/>
+    <fieldval field="rReach" value="0"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rSTR" value="-6"/>
+    <tag group="Subtype" tag="Extraplan" name="Extraplan" abbrev="Extraplan"/>
+    <tag group="Type" tag="MagicalBst" name="MagicalBst" abbrev="MagicalBst"/>
+    <tag group="Alignment" tag="Good" name="Good" abbrev="G"/>
+    <tag group="Alignment" tag="Lawful" name="Lawful" abbrev="L"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="RaceSize" tag="Tiny12" name="Tiny" abbrev="Tiny"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <bootstrap thing="fWepFin">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <assignval field="livename" value="+8 to Spot in Low Illumination"/>
+      </bootstrap>
+    <bootstrap thing="xCelSmite"></bootstrap>
+    <bootstrap thing="xDamRsAcid">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsCold">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsElec">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Value" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Average"/>
+      <autotag group="Value" tag="40"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+8 to Listen, +14 to Move Silently"/>
+      </bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 2
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 2
+      #skillbonus[kListen] += 8
+      #skillbonus[kMoveSil] += 14</eval>
+    <eval phase="PreLevel" priority="10000" index="2">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="rmClPorp2" name="Celestial Porpoise" compset="Race" replaces="rmClPorp">
+    <fieldval field="rDEX" value="7"/>
+    <fieldval field="rCON" value="3"/>
+    <fieldval field="rINT" value="-7"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rSpeed" value="0"/>
+    <fieldval field="rFeat" value="-1"/>
+    <fieldval field="rHitDice" value="2"/>
+    <fieldval field="rHPStart" value="9"/>
+    <fieldval field="rInfHit" value="2d8"/>
+    <fieldval field="rAttack" value="1"/>
+    <fieldval field="rFort" value="3"/>
+    <fieldval field="rRef" value="3"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rCR" value="0.5"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rSTR" value="1"/>
+    <tag group="Subtype" tag="Extraplan" name="Extraplan" abbrev="Extraplan"/>
+    <tag group="Type" tag="MagicalBst" name="MagicalBst" abbrev="MagicalBst"/>
+    <tag group="Alignment" tag="Good" name="Good" abbrev="G"/>
+    <tag group="Alignment" tag="NeutralLC" name="Neutral" abbrev="N"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="ClassSkill" tag="kSwim" name="Swim" abbrev="Swim"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <bootstrap thing="xCelSmite"></bootstrap>
+    <bootstrap thing="xDamRsAcid">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsCold">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xDamRsElec">
+      <autotag group="Value" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Value" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="xPorpHold"></bootstrap>
+    <bootstrap thing="xPorpSonar"></bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="rBlindSi">
+      <autotag group="Value" tag="120"/>
+      </bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="wSlam">
+      <autotag group="wMain" tag="2d4_6"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="xSwim">
+      <autotag group="Value" tag="80"/>
+      </bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Listen and Spot"/>
+      </bootstrap>
+    <bootstrap thing="fWepFin"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 3
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 2
+      #skillbonus[kListen] += 4
+      #skillbonus[kSpot] += 4</eval>
+    <eval phase="PreLevel" priority="10000" index="2">~ We have 60 foot Darkvision
+      hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)</eval>
+    </thing>
+  <thing id="xPickBlack" name="Black" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragBlack" name="Black Dragon"/>
+    </thing>
+  <thing id="xPickBlue" name="Blue" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragBlue" name="Blue Dragon"/>
+    </thing>
+  <thing id="xPickCopp" name="Copper" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragCopper" name="Copper Dragon"/>
+    </thing>
+  <thing id="xPickBron" name="Bronze" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragBronze" name="Bronze Dragon"/>
+    </thing>
+  <thing id="xPickGree" name="Green" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragGreen" name="Green Dragon"/>
+    </thing>
+  <thing id="xPickGold" name="Gold" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragGold" name="Gold Dragon"/>
+    </thing>
+  <thing id="xPickSilv" name="Silver" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragSilver" name="Silver Dragon"/>
+    </thing>
+  <thing id="xPickRed" name="Red" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragRed" name="Red Dragon"/>
+    </thing>
+  <thing id="xPickWhit" name="White" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragWhite" name="White Dragon"/>
+    </thing>
+  <thing id="xPickBras" name="Brass" compset="Special">
+    <tag group="User" tag="PickDrag" name="Dragon Type"/>
+    <tag group="User" tag="DragBrass" name="Brass Dragon"/>
+    </thing>
+  <thing id="xPickAcid" name="Acid" compset="Special">
+    <tag group="User" tag="PickElem" name="Element"/>
+    <tag group="User" tag="ElemAcid" name="Acid"/>
+    </thing>
+  <thing id="xPickCold" name="Cold" compset="Special">
+    <tag group="User" tag="PickElem" name="Element"/>
+    <tag group="User" tag="ElemCold" name="Cold"/>
+    </thing>
+  <thing id="xPickFire" name="Fire" compset="Special">
+    <tag group="User" tag="PickElem" name="Element"/>
+    <tag group="User" tag="ElemFire" name="Fire"/>
+    </thing>
+  <thing id="xPickElec" name="Electricity" compset="Special">
+    <tag group="User" tag="PickElem" name="Element"/>
+    <tag group="User" tag="ElemElec" name="Electricity"/>
+    </thing>
+  <thing id="xPickSoni" name="Sonic" compset="Special">
+    <tag group="User" tag="PickElem" name="Element"/>
+    <tag group="User" tag="ElemSoni" name="Sonic"/>
+    </thing>
+  <thing id="wShiBash" name="Shield Bash" compset="Weapon">
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wType" tag="B"/>
+    <tag group="Helper" tag="Shadow"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <eval phase="Final" priority="9000"><![CDATA[~OK to use in offhand
+if (field[wIs2nd].value <> 0) then
+ perform hero.assign[Hero.ShldOffOK]
+endif
+
+~Remove Shield AC bonus if using Shield Bash unless you have Improved Shield Bash
+
+doneif (#hasfeat[fImpShBash] <> 0)
+
+var ac as number
+if (container.tagis[User.ShldBash] <> 0) then
+ ac = container.parent.field[mAC].value
+else
+ ac = root.field[mAC].value
+endif
+
+if (field[gIsEquip].value + field[wIs2nd].value <> 0) then
+ hero.child[ArmorClass].field[tACShield].value -= ac
+endif]]></eval>
+    </thing>
+  <thing id="fImpGrap2" name="Improved Grapple" description="{b}Prerequisites{/b}: Dex 13, Improved Unarmed Strike.{br}{br}{b}Benefit{/b}: You do not provoke an attack of opportunity when you make a touch attack to start a grapple. You also gain a +4 bonus on all grapple checks, regardless of whether you started the grapple.{br}{br}{b}Normal{/b}: Without this feat, you provoke an attack of opportunity when you make a touch attack to start a grapple.{br}{br}{b}Special{/b}: A fighter may select Improved Grapple as one of his fighter bonus feats.{br}A monk may select Improved Grapple as a bonus feat at 1st level, even if she does not meet the prerequisites." compset="Feat" summary="You grapple at +4, with no attacks of opportunity allowed." replaces="fImpGrapp" uniqueness="useronce">
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="BonusFor" tag="Monk1" name="Monk Level 1" abbrev="Monk Level 1"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <eval phase="First" priority="105000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      hero.child[Attack].field[tGrapple].value += 4]]></eval>
+    <exprreq message="Improved Unarmed Strike required." iserror="no"><![CDATA[#hasfeat[fImpUnarm] + #hasfeat[fOwlbeaBer] <> 0]]></exprreq>
+    <prereq message="Dexterity 13 required.">
+      <validate><![CDATA[validif (child[aDEX].field[aFinalVal].value >= 13)
+validif (#hasfeat[fOwlbeaBer] <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fImpTrip2" name="Improved Trip" description="{b}Prerequisites{/b}: Int 13, Combat Expertise.{br}{br}{b}Benefit{/b}: You do not provoke an attack of opportunity when you attempt to trip an opponent while you are unarmed. You also gain a +4 bonus on your Strength check to trip your opponent.{br}If you trip an opponent in melee combat, you immediately get a melee attack against that opponent as if you hadn&apos;t used your attack for the trip attempt.{br}{br}{b}Normal{/b}: Without this feat, you provoke an attack of opportunity when you attempt to trip an opponent while you are unarmed.{br}{br}{b}Special{/b}: At 6th level, a monk may select Improved Trip as a bonus feat, even if she does not have the prerequisites.{br}A fighter may select Improved Trip as one of his fighter bonus feats." compset="Feat" summary="You Trip at +4 and don&apos;t cause an attack of opportunity." replaces="fImpTrip" uniqueness="useronce">
+    <tag group="BonusFor" tag="Fighter" name="Fighter" abbrev="Fighter"/>
+    <tag group="BonusFor" tag="Monk6" name="Monk Level 6" abbrev="Monk Level 6"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <exprreq message="Combat Expertise required." iserror="no"><![CDATA[#hasfeat[fComExpert] + #hasfeat[fWolfBerse] <> 0]]></exprreq>
+    <prereq message="Intelligence 13 required.">
+      <validate><![CDATA[validif (child[aINT].field[aFinalVal].value >= 13)
+validif (#hasfeat[fWolfBerse] <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="mShlHvStl2" name="Shield, Heavy Steel" description="You can&apos;t carry anything in your hand while using a Heavy Shield. You can Shield Bash with a heavy shield." compset="Armor" replaces="mShlHvStl">
+    <fieldval field="gWeight" value="15"/>
+    <fieldval field="gSizeCost" value="20"/>
+    <tag group="mAC" tag="2" name="2" abbrev="2"/>
+    <tag group="mArcFail" tag="15" name="15" abbrev="15"/>
+    <tag group="mArmorChk" tag="2" name="2" abbrev="2"/>
+    <tag group="mClass" tag="Shield" name="Shield" abbrev="Shield"/>
+    <tag group="mMaxDex" tag="1000" name="1000" abbrev="1000"/>
+    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
+    <tag group="ShldClass" tag="Heavy" name="Heavy Shield" abbrev="Heavy"/>
+    <tag group="User" tag="ShldBash"/>
+    <bootstrap thing="wShiBash">
+      <containerreq phase="First" priority="475"><![CDATA[fieldval:gIsEquip <> 0 | User.ShldBash]]></containerreq>
+      <autotag group="wClass" tag="OneHanded"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      </bootstrap>
+    <eval phase="First" priority="450" index="2">if (container.ishero = 0) then
+ if (container.parent.field[gIsEquip].value = 0) then
+  perform container.delete[User.ShldBash]
+ endif
+ if (container.parent.tagis[thingid.iMagArmor] = 0) then 
+  perform container.delete[User.ShldBash]
+ endif
+endif</eval>
+    </thing>
+  <thing id="mShlHvWoo2" name="Shield, Heavy Wooden" description="You can&apos;t carry anything in your hand while using a Heavy Shield. You can Shield Bash with a heavy shield." compset="Armor" replaces="mShlHvWood">
+    <fieldval field="gWeight" value="10"/>
+    <fieldval field="gSizeCost" value="7"/>
+    <tag group="mAC" tag="2" name="2" abbrev="2"/>
+    <tag group="mArcFail" tag="15" name="15" abbrev="15"/>
+    <tag group="mArmorChk" tag="2" name="2" abbrev="2"/>
+    <tag group="mClass" tag="Shield" name="Shield" abbrev="Shield"/>
+    <tag group="mMaxDex" tag="1000" name="1000" abbrev="1000"/>
+    <tag group="EquipType" tag="Wood" name="Wood" abbrev="Wood"/>
+    <tag group="ShldClass" tag="Heavy" name="Heavy Shield" abbrev="Heavy"/>
+    <tag group="User" tag="ShldBash"/>
+    <bootstrap thing="wShiBash">
+      <containerreq phase="First" priority="475"><![CDATA[fieldval:gIsEquip <> 0 | User.ShldBash]]></containerreq>
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="wClass" tag="OneHanded"/>
+      </bootstrap>
+    <eval phase="First" priority="450" index="2">if (container.ishero = 0) then
+ if (container.parent.field[gIsEquip].value = 0) then
+  perform container.delete[User.ShldBash]
+ endif 
+ if (container.parent.tagis[thingid.iMagArmor] = 0) then 
+  perform container.delete[User.ShldBash]
+ endif
+endif</eval>
+    </thing>
+  <thing id="ipBashing" name="Bashing" description="A shield with this special ability is designed to perform a shield bash. A bashing shield deals damage as if it were a weapon of two size categories larger (a Medium light shield thus deals 1d6 points of damage and a Medium heavy shield deals 1d8 points of damage). The shield acts as a +1 weapon when used to bash. (Only light and heavy shields can have this ability.){br}{br}Moderate transmutation; CL 8th; Craft Magic Arms and Armor, bull&apos;s strength; Price +1 bonus." compset="ItemPower" summary="Shield Bashes as if 2 sizes larger." replaces="iBashing" uniqueness="unique">
+    <fieldval field="iPrice" value="1"/>
+    <tag group="PowerType" tag="Armor" name="Armor" abbrev="Armor"/>
+    <tag group="PowerReq" tag="Shield" name="Shield" abbrev="Shield"/>
+    <eval phase="PostLevel" priority="9000"><![CDATA[if (container.parent.field[gIsEquip].value <> 0) then
+ perform container.childfound[wShiBash].assign[Helper.DamageUp]
+ perform container.childfound[wShiBash].assign[Helper.DamageUp]
+endif]]></eval>
+    </thing>
+  <thing id="cMysticTh2" name="Mystic Theurge" description="When combined, the arcane and the divine are potent indeed." compset="ClassLevel" maxlimit="10" replaces="cMysticThe">
+    <tag group="ClassType" tag="Prestige" name="Prestige Class" abbrev="Prestige Class"/>
+    <bootstrap thing="cHelpMyT"></bootstrap>
+    <link linkage="helper" thing="cHelpMyT"/>
+    <exprreq message="Knowledge (Religion) 6 ranks required."><![CDATA[#skillranks[kKnowRel] >= 6]]></exprreq>
+    <exprreq message="Ability to cast 2nd-level Divine spells required."><![CDATA[tagcount[Hero.Divine] >= 2 + 1]]></exprreq>
+    <exprreq message="Knowledge (Arcana) 6 ranks required."><![CDATA[#skillranks[kKnowArcan] >= 6]]></exprreq>
+    <prereq message="Ability to cast 2nd-level Arcane spells required.">
+      <validate><![CDATA[validif (tagcount[Hero.Arcane] >= 2 + 1)
+validif (hero.childfound[cWrlWalGlo].tagis[Helper.ShowSpec] <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="pNPCJourn" name="NPC Journal" description="Use the adjustment to add a journal to your NPC (which allows you to add money and XP)." compset="InPlay">
+    <tag group="Helper" tag="NoIncr"/>
+    <eval phase="First" priority="1000"><![CDATA[~ If not activated get out now!
+doneif (field[pIsOn].value <> 1)
+
+~ Show the Journal tab so we can add XP and GP
+perform hero.delete[Hero.NoAdvance]]]></eval>
+    </thing>
+  <thing id="xDamRdPiSl" name="Damage Reduction, Piercing or Slashing" description="You have Damage Reduction against all except piercing or slashing attacks." compset="Special" uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="DR" name="Damage Reduction" abbrev="Damage Reduction"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      call CalcValue
+
+      ~ Use our value field as the amount of damage we can resist
+      field[livename].text = "Damage Reduction (" & field[Value].value & "/piercing or slashing)"]]></eval>
+    </thing>
+  </document>

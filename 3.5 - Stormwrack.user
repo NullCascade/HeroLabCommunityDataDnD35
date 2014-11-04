@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>02-23-12 Sendric
+- Fixed sourcing problems.
+
+2-25-11 Sendric
+- Removed (Swrack) from item names.
+
+c4-11-10</info_history>
+    </fileinfo>
+  <thing id="mChitinSW" name="Chitin" description="Chitin armor is constructed from the shells of giant vermin or similar creatures. For aquatic races, monstrous crabs are the most popular source for chitin armor. The chitin is treated for flexibility and often cut and reshaped in long strips bound together by tightly woven cord where necessary." compset="Armor">
+    <fieldval field="gSizeCost" value="75"/>
+    <fieldval field="gWeight" value="20"/>
+    <usesource source="Stormwrack" parent="p35" name="Stormwrack"/>
+    <tag group="mArcFail" tag="30"/>
+    <tag group="mClass" tag="Medium"/>
+    <tag group="mCategory" tag="Slows"/>
+    <tag group="mAC" tag="4"/>
+    <tag group="mMaxDex" tag="4"/>
+    <tag group="mArmorChk" tag="3"/>
+    </thing>
+  <thing id="mCordSW" name="Cord" description="Made from hemp fibers or similarly tough seaweed woven and knotted into a thick, tough covering, cord armor is common in places where metalworking and leather working are not practiced." compset="Armor">
+    <fieldval field="gSizeCost" value="15"/>
+    <fieldval field="gWeight" value="15"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="mArcFail" tag="15"/>
+    <tag group="mClass" tag="Light"/>
+    <tag group="mAC" tag="2"/>
+    <tag group="mMaxDex" tag="5"/>
+    <tag group="mArmorChk" tag="1"/>
+    </thing>
+  <thing id="mCoralSW" name="Living Coral" description="Coral armor is heavy and difficult to craft (see page 15 of the Arms and Equipment Guide). An expensive alternative is growing a casing of living coral over the wearer. The user wears a medallion crafted from a piece of living reef, from which coral grows to envelop the body. The living coral is tough but not as stony and inflexible as that of an established reef, allowing relatively free movement. It dies at sundown and regrows again at sunup; this process takes about 2 hours. Dark conditions also cause the coral to die, while extended light keeps it alive.\n\nFor an additional 500 gp, the following special ability can be grafted onto the coral.\n\n{i}Stinging Polyps{/i}: The coral polyps&#146; natural ability to sting prey is enhanced. Once per day, if you get a hold while grappling, the opponent must make a DC 14 Fortitude save or be paralyzed for 1d4 rounds." compset="Armor">
+    <fieldval field="gSizeCost" value="16000"/>
+    <fieldval field="gWeight" value="30"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="mArcFail" tag="20"/>
+    <tag group="mClass" tag="Medium"/>
+    <tag group="mAC" tag="6"/>
+    <tag group="mArmorChk" tag="4"/>
+    <tag group="mMaxDex" tag="3"/>
+    <tag group="mCategory" tag="Slows"/>
+    </thing>
+  <thing id="mCoralPolS" name="Living Coral, Polyp" description="Coral armor is heavy and difficult to craft (see page 15 of the Arms and Equipment Guide). An expensive alternative is growing a casing of living coral over the wearer. The user wears a medallion crafted from a piece of living reef, from which coral grows to envelop the body. The living coral is tough but not as stony and inflexible as that of an established reef, allowing relatively free movement. It dies at sundown and regrows again at sunup; this process takes about 2 hours. Dark conditions also cause the coral to die, while extended light keeps it alive.\n\nFor an additional 500 gp, the following special ability can be grafted onto the coral.\n\n{i}Stinging Polyps{/i}: The coral polyps&#146; natural ability to sting prey is enhanced. Once per day, if you get a hold while grappling, the opponent must make a DC 14 Fortitude save or be paralyzed for 1d4 rounds." compset="Armor">
+    <fieldval field="gSizeCost" value="16500"/>
+    <fieldval field="gWeight" value="30"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="mArcFail" tag="20"/>
+    <tag group="mClass" tag="Medium"/>
+    <tag group="mAC" tag="6"/>
+    <tag group="mArmorChk" tag="4"/>
+    <tag group="mMaxDex" tag="3"/>
+    <tag group="mCategory" tag="Slows"/>
+    </thing>
+  <thing id="mSharkskin" name="Sharkskin" description="Similar to leather armor in appearance, sharkskin is treated so that the sharp tooth like scales covering the skin remain attached to the outside of the armor. Additionally, shark teeth are embedded along the forearms, shoulders, and legs, which count as armor spikes. Sharkskin armor provides a +6 circumstance bonus on Escape Artist checks made when the wearer is bound with rope or similar easily cut bindings." compset="Armor">
+    <fieldval field="gSizeCost" value="85"/>
+    <fieldval field="gWeight" value="15"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="mArcFail" tag="10"/>
+    <tag group="mClass" tag="Light"/>
+    <tag group="mAC" tag="3"/>
+    <tag group="mArmorChk" tag="1"/>
+    <tag group="mMaxDex" tag="6"/>
+    </thing>
+  <thing id="mShellSW" name="Shell" description="This armor is created from specially treated tortoise or monstrous crab shells. The armor making process softens the shells, making them far more pliable and likely to bend instead of shatter when struck. Shell armor includes a breastplate, shoulder guards, and even gauntlets created from smaller and smaller shells. The main difference between shell and chitin armor is the degree of coverage; shell armor usually leaves the legs bare." compset="Armor">
+    <fieldval field="gSizeCost" value="25"/>
+    <fieldval field="gWeight" value="20"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="mArcFail" tag="20"/>
+    <tag group="mClass" tag="Medium"/>
+    <tag group="mAC" tag="3"/>
+    <tag group="mArmorChk" tag="2"/>
+    <tag group="mMaxDex" tag="3"/>
+    <tag group="mCategory" tag="Gauntlets"/>
+    <tag group="mCategory" tag="Slows"/>
+    </thing>
+  <thing id="fAquaShot" name="Aquatic Shot" description="You have developed the technique of firing a ranged weapon into or through the water with better accuracy than normal, striking at just the right angle to allow it to slice through the obstruction with precision.\n\n{b}Prerequisite{/b}: Point Blank Shot.\n\n{b}Benefit{/b}: You can employ ranged weapons underwater at a reduced range increment. You do not take the normal penalty for making a ranged attack through water.\n\n{i}Thrown Weapons{/i}: You can use thrown piercing weapons underwater with a &#150;2 penalty for every 5 feet of water passed through, in addition to any range increment penalties.\n\n{i}Missile Weapons{/i}: You can use bows and crossbows underwater with a &#150;2 penalty for every 10 feet of water passed through, in addition to any range increment penalties.\n\n{i}Aquatic Longbow{/i}: You can fire an aquatic longbow (see page 107) underwater with a range increment of 30 feet\n\nIn addition, water does not provide any cover against your ranged attacks if you are out of the water and firing at a target in the water. If your weapon&#146;s range increment is different underwater than it is above the water, count the water surface as the beginning of a new range increment, and use your underwater range increment after the point at which your weapon strikes the water.\n\n{b}Normal{/b}: Thrown weapons are not useable underwater. Ranged attacks through water normally receive a penalty of &#150;2 for every 5 feet of water they pass through. An aquatic longbow has a range increment of 10 feet underwater. A target in water has improved cover or total cover against attacks from out of the water.\n\n{b}Special{/b}: A fighter may select Aquatic Shot as one of his fighter bonus feats." compset="Feat" summary="Water does not give foe cover, can fire bow/crossbow underwater at -2 per 10 ft." uniqueness="useronce">
+    <comment>Too long?</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Point Blank Shot required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    </thing>
+  <thing id="fBlackWatI" name="Blackwater Invocation" description="You can call upon negative energy to infuse normal water around you, transforming it into the dark, cold water found at the bottom of deepest ocean trenches. This feat is favored by the clerics of wicked sea gods and the masters of the deep pelagic abysses.\n\n{b}Prerequisite{/b}: Ability to channel negative energy.\n\n{b}Benefit{/b}: By expending a daily rebuke undead attempt, you can infuse the water around you for a 30-foot radius with negative energy. The water darkens and becomes bitterly cold for 10 minutes.\n\nThose entering the water who are not protected from cold must make a DC 15 Fortitude save or take 1d6 nonlethal damage. This damage is the same kind of damage dealt by cold weather and is only taken once (as it would have to last a full hour to deal damage again). However, those leaving the area and then returning to it must make another saving throw or take further damage, since their warmed bodies are chilled once again. Those wearing warm clothing or otherwise protected from the cold (whether by any amount of resistance to cold or the {i}endure elements{/i} spell) take no damage from this effect.\n\nAdditionally, those within the area of affected water gain concealment.\n\nThose with the ability to channel negative energy are immune to the cold effects of this feat but are still subject to its concealment miss chance." compset="Feat" summary="Water in 30 ft rad centered on you conceals, 1d6 nonlethal (DC15 Fort neg)." uniqueness="useronce">
+    <comment>Too long? (Done)
+
+Pre req for neg energy only. (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="fCategory" tag="Divine"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <prereq message="Negative Energy Channeling required.">
+      <validate><![CDATA[~ If our hero has the Turn Undead tag, go through each Class Helper and determine if it has a cClrNeutGE field value of 1, if so then we are valid. We are also valid if we have the Blackguard's Command Undead ability showing.
+
+   doneif (hero.tagis[Hero.TurnUndead] = 0)
+   validif (hero.childfound[cBlkCommUn].tagis[Helper.ShowSpec] <> 0)
+
+     var result as number
+foreach pick in hero from BaseClHelp
+   if (each.field[cClrNeutGE].value = 1) then
+     result += 1
+   elseif (each.field[cClrTurn].value = 1) then
+     result += 1
+   endif
+nexteach
+
+   validif (result <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fBreathLin" name="Breathing Link" description="You can allow a person adjacent to you to breathe water.\n\n{b}Prerequisites{/b}: Aquatic elf or water genasi, base Will save +2.\n\n{b}Benefit{/b}: As a free action on your turn, you can select one creature within 5 feet of you and give that creature the ability to breathe water as easily as you do. This supernatural ability renews automatically for that creature until you direct the ability to another creature or withdraw your power from it (a free action). The creature&#146;s ability to breathe water ends immediately if you are separated by more than 5 feet or if you die, at which point the creature begins to drown if it is still underwater. This ability does not hamper the creature&#146;s ability to breathe air, nor does it change the creature&#146;s ability (or inability) to swim.\n\n{b}Special{/b}: You can select this feat more than once. Each time you take this feat, you can affect an additional creature with this ability. All such creatures need to remain within 5 feet of you (not each other). If one creature exceeds the range of this power, its subsequent distress has no effect on the other creatures you are helping." compset="Feat" summary="May allow one or more creatures to breath water, must remain adj to you.">
+    <comment>Too long?
+
+Special counting hasfeats (Done)
+
+Also pre req... need races.. where is Water Genasi?</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="fCategory" tag="General"/>
+    <bootstrap thing="xBreathLin"></bootstrap>
+    <exprreq message="Aquatic elf or Water genasi race required."><![CDATA[tagis[Race.ElfAquatic] <> 0]]></exprreq>
+    <exprreq message="Base Will save +2 required."><![CDATA[child[vWill].field[vBase].value >= 2]]></exprreq>
+    </thing>
+  <thing id="fClevWreSW" name="Clever Wrestling" description="You have a better than normal chance to escape or wriggle free from a big creature&#146;s grapple or pin.\n\n{b}Prerequisites{/b}: Small or Medium size, Improved Unarmed Strike.\n\n{b}Benefit{/b}: When your opponent is Large or larger, you gain a circumstance bonus on your grapple check to escape a grapple or pin. The size of the bonus depends on your opponent&#146;s size.\n\n{b}Opponent Size &#151; Bonus{/b}\nLarge &#151; +2\nHuge &#151; +4\nGargantuan &#151; +6\nColossal &#151; +8" compset="Feat" summary="Gain a circ bonus on grapple ck to escape from big creatures." replaces="fCleverWre" uniqueness="useronce">
+    <usesource source="CompWarrio"/>
+    <usesource source="Draconom"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Improved Unarmed Strike required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <exprreq message="Small or Medium size required."><![CDATA[hero.tagis[Size.Small] + hero.tagis[Size.Medium] <> 0]]></exprreq>
+    </thing>
+  <thing id="fCurlWaveS" name="Curling Wave Strike" description="Mimicking the forceful power of the wave, you can trip multiple foes as part of the same strike.\n\n{b}Prerequisites{/b}: Dex 13, Improved Trip.\n\n{b}Benefit{/b}: If you trip an opponent in melee combat, you can immediately make another trip attempt against another foe within reach at the same total attack bonus as the first trip attack. This replaces the free attack you would normally get against the tripped opponent (from the Improved Trip feat). If you successfully trip a second opponent, you do not get a free attack against that opponent. You can use this feat only once per round.\n\n{b}Normal{/b}: A character with Improved Trip who trips an opponent in melee gets a free attack against that opponent.\n\n{b}Special{/b}: A fighter may select Curling Wave Strike as one of his fighter bonus feats." compset="Feat" summary="On a successful trip, make trip vs 2nd foe in reach, no extra attack for dam." uniqueness="useronce">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Improved Trip required."><![CDATA[#hasfeat[fImpTrip] <> 0]]></exprreq>
+    </thing>
+  <thing id="fExpSwim" name="Expert Swimmer" description="You swim like a fish. You can stay underwater far longer than others of your race, and you are at home in the water.\n\n{b}Prerequisite{/b}: Swim 4 ranks, Endurance.\n\n{b}Benefit{/b}: You can hold your breath for 3 rounds per point of Constitution. You gain a +4 bonus on Constitution checks made to continue holding your breath. On a successful Swim check, you swim your land speed (as a full-round action) or half your land speed (as a move action).\n\nYour natural swim speed increases by 10 feet, if you have a swim speed.\n\n{b}Normal{/b}: You can hold your breath for a number of rounds equal to twice your Constitution before you are at risk of drowning. On a successful Swim check, you swim half your land speed as a full-round action, or one-quarter your land speed as a move action." compset="Feat" summary="Hold breath for 3 rds per Con point &amp; +4 on such checks, 2x dist on swim check." uniqueness="useronce">
+    <comment>Eval script for Swim speed (Done)
+
+xSumm (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostAt"><![CDATA[  if (hero.childfound[xSwim].field[Value].value <> 0) then
+     hero.childfound[xSwim].field[Value].value += 10
+  endif
+
+var duration as number
+duration = hero.child[aCON].field[aFinalVal].value * 3
+
+field[xSumm].text = "Hold breath for " & duration & " rds & +4 on checks after that, 2x dist on swim checks."]]></eval>
+    <exprreq message="Endurance required."><![CDATA[#hasfeat[fEndure] <> 0]]></exprreq>
+    <exprreq message="Swim 4 ranks required."><![CDATA[#skillranks[kSwim] >= 4]]></exprreq>
+    </thing>
+  <thing id="fFishLeap" name="Flying Fish Leap" description="You can hurl yourself out of the water with ease.\n\n{b}Prerequisites{/b}: Jump 8 ranks, Swim 4 ranks.\n\n{b}Benefit{/b}: When leaping out of the water with a high jump, you ignore the penalty on the Jump check.\n\nIn addition, you can fling yourself over the surface of the water when you make a high jump, leaping laterally just as far as you leap vertically. Use the result of your high jump check to determine the distance traveled with a long jump.\n\n{b}Normal{/b}: Jump checks incur a &#150;10 penalty when making a high jump out of water." compset="Feat" summary="No pen on high jumps out of water, use high jump result also for long jump dist." uniqueness="useronce">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Swim 4 ranks required."><![CDATA[#skillranks[kSwim] >= 4]]></exprreq>
+    <exprreq message="Jump 8 ranks required."><![CDATA[#skillranks[kJump] >= 8]]></exprreq>
+    </thing>
+  <thing id="fGreatCapt" name="Great Captain" description="You are a master pilot and battle leader; your crew anticipates your every command and leaps to do your bidding.\n\n{b}Prerequisites{/b}: Profession (sailor) 7 ranks, Knowledge (geography) 7 ranks, Leadership\n\n{b}Benefit{/b}: If you are in command of a vessel, you can use the aid another action to assist all other persons on board who are performing the same action in the current round&#151;for example, making an attack, making Profession (siege engineer) checks, making Profession (sailor) checks, and so forth. Commanding the vessel in combat is a move action for you.\n\n{b}Normal{/b}: You can only use the aid another action to assist one character at a time. Commanding a vessel in combat requires a standard action." compset="Feat" summary="Can aid another to everyone on ship, command vessel as move action." uniqueness="useronce">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Knowledge (geography) 7 ranks required."><![CDATA[#skillranks[kKnowGeog] >= 7]]></exprreq>
+    <exprreq message="Profession (sailor) 7 ranks required."><![CDATA[#skillranks[kProfSail] >= 7]]></exprreq>
+    <exprreq message="Leadership required."><![CDATA[#hasfeat[fLeader] <> 0]]></exprreq>
+    </thing>
+  <thing id="fLandwalk" name="Landwalker" description="You can survive out of the water for a longer period of time than most of your kind.\n\n{b}Prerequisite{/b}: Aquatic elf.\n\n{b}Benefit{/b}: You can survive out of the water for 3 hours per point of Constitution. After this point you must make a Fortitude saving throw each hour (DC 15, + 1 for each previous check) or you begin to suffocate.\n\n{b}Normal{/b}: Aquatic elves can survive out of water for 1 hour per point of Constitution; after this point they begin to suffocate." compset="Feat" summary="Survive out of water for X hrs without making checks to avoid suffocation." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+xSumm (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostAt"><![CDATA[var duration as number
+duration = hero.child[aCON].field[aFinalVal].value * 3
+
+field[xSumm].text = "Survive out of water for " & duration & " hrs without making checks to avoid suffocation."]]></eval>
+    <exprreq message="Aquatic elf race required."><![CDATA[tagis[Race.ElfAquatic] <> 0]]></exprreq>
+    </thing>
+  <thing id="fOldSalt" name="Old Salt" description="You are an old hand at shipboard life, having mastered the myriad skills that are required of the experienced sailor. Additionally, you have an eye for the weather.\n\n{b}Prerequisites{/b}: Profession (sailor) 5 ranks.\n\n{b}Benefit{/b}: You gain a +1 bonus on Balance, Profession (sailor), and Use Rope checks.\n\nAdditionally, you can use a Profession (sailor) check to predict the weather (as described in the Survival skill on page 83 of the Player&#146;s Handbook).\n\n{b}Normal{/b}: Survival is normally used to predict the weather." compset="Feat" summary="May make profession (sailor) checks to predict the weather." uniqueness="useronce">
+    <comment>Eval for skill bon (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPreLv" priority="10000">~ +2 to Listen, Search, Spot checks
+      #skillbonus[kBalance] += 1
+      #skillbonus[kProfSail] += 1
+      #skillbonus[kUseRope] += 1</eval>
+    <exprreq message="Profession (sailor) 5 ranks required."><![CDATA[#skillranks[kProfSail] >= 5]]></exprreq>
+    </thing>
+  <thing id="fRapidSwim" name="Rapid Swimming" description="You are one with the water.\n\n{b}Prerequisite{/b}: Natural swim speed, base Fortitude save +2.\n\n{b}Benefit{/b}: Your swim speed increases by 20 feet." compset="Feat" uniqueness="useronce">
+    <comment>Eval for swim speed, also Pre req (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostAt">hero.childfound[xSwim].field[Value].value += 20</eval>
+    <exprreq message="Base Fortitude save +2 required."><![CDATA[child[vFort].field[vBase].value >= 2]]></exprreq>
+    <exprreq message="Natural Swim speed required."><![CDATA[hero.childfound[xSwim].field[Value].value > 0]]></exprreq>
+    </thing>
+  <thing id="fSahuaFlip" name="Sahuagin Flip" description="You can safely attack and withdraw underwater.\n\n{b}Prerequisites{/b}: Swim speed, Dex 13, Dodge.\n\n{b}Benefit{/b}: After making a single melee attack, you can use the withdraw action (moving up to twice your swim speed) as a move action. You can only use this feat while swimming.\n\n{b}Normal{/b}: Withdrawing from combat is a full-round action (see page 143 of the Player&#146;s Handbook).\n\n{b}Special{/b}: A fighter may select Sahuagin Flip as one of his fighter bonus feats." compset="Feat" summary="Can make an attack and then withdraw 2x swim speed as move action." uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <exprreq message="Swim speed required."><![CDATA[hero.childfound[xSwim].field[Value].value > 0]]></exprreq>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Dodge required."><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
+    </thing>
+  <thing id="fSailorBal" name="Sailor&apos;s Balance" description="You are experienced with the rolling decks of the ship and maintain strong footing, even in a terrible storm.\n\n{b}Prerequisites{/b}: Profession (sailor) 4 ranks.\n\n{b}Benefit{/b}: You gain a +5 competence bonus on Balance checks made while on the deck or in the rigging of a ship.\n\nYou can move across a slippery deck (see page 20) at your normal speed.\n\n{b}Normal{/b}: Without this feat, each square of movement across a slippery deck costs 2 squares of movement." compset="Feat" summary="+5 comp bon to Balance when on a ship, move over slippery deck at full speed." uniqueness="useronce">
+    <comment>Button? (Done)
+
+Test?</comment>
+    <fieldval field="hName1" value="Aboard Ship"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First"><![CDATA[if (field[hIsOn1].value <> 0) then
+  #competencebonus[hero.child[kBalance], 5]
+endif]]></eval>
+    <exprreq message="Profession (sailor) 4 ranks required."><![CDATA[#skillranks[kProfSail] >= 4]]></exprreq>
+    </thing>
+  <thing id="fSancWater" name="Sanctify Water" description="You can call upon positive energy to momentarily transform normal water around you into holy water. This feat is often learned by the clerics and paladins of sea gods, as well as aquatic clerics of all stripes.\n\n{b}Prerequisites{/b}: Cha 13, ability to channel positive energy.\n\n{b}Benefit{/b}: By expending a daily turn undead attempt, you can infuse the water around you with positive energy, which has the same effect as holy water. All creatures in a 20-foot radius around you immediately take damage as though they&#146;d been struck directly by a flask of holy water. The water retains positive energy for a number of rounds equal to 1 + your Charisma modifier, and deals damage each round.\n\nCreatures unaffected by holy water are similarly unaffected by this ability." compset="Feat" summary="Water in 20 ft rad centered on you becomes holy water for X rds." uniqueness="useronce">
+    <comment>Pre req for channel pos and CHA (Done)
+
+xsumm (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Divine"/>
+    <eval phase="UserPostAt"><![CDATA[var duration as number
+duration = hero.child[aCHA].field[aFinalVal].value
+
+field[xSumm].text = "Water in 20 ft rad centered on you becomes holy water for " & duration & " rds."]]></eval>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    <prereq message="Positive Energy Channeling required.">
+      <validate><![CDATA[~ If our hero does not have the Turn Undead tag we are not valid, else go check Class Helpers for Mystic & Cleric and determine if it has a cClrNeutGE field value of 0, if so then we are valid. We are also valid if we have 4 levels of Paladin and the Class Special is showing.
+
+   doneif (hero.tagis[Hero.TurnUndead] = 0)
+
+   validif (hero.childfound[cHelpClr].field[cClrNeutGE].value = 0)
+   validif (hero.childfound[cHelpMys].field[cClrTurn].value = 2)
+   validif (hero.childfound[cPalTurnUn].tagis[Helper.ShowSpec] <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fScourSea" name="Scourge of the Seas" description="You have a sinister reputation as a pirate and can intimidate enemy captains by your mere presence.\n\n{b}Prerequisite{/b}: Cha 15, Intimidate 5 ranks.\n\n{b}Benefit{/b}: You can make an Intimidate check to daunt the captain of another ship who can see you or your distinctive colors (see the rules on page 25 for sighting another ship). This is opposed by the target character&#146;s modified level check (see Intimidate on page 76 of the Player&#146;s Handbook). If you succeed on the Intimidate check, the target is frightened for as long as it remains able to see you and for 1d6&#215;10 minutes afterward. A frightened character takes a &#150;2 penalty on attack rolls, saving throws, skill checks, and ability checks, and tries to flee from you as best it can. If escape is impossible (for example, due to ship damage or the loss of sails), that character will strike the ship&#146;s colors and surrender.\n\nEven if you fail the check, the target might become shaken unless you fail by 5 or more. This effect lasts as long as the daunting effect." compset="Feat" summary="Make intimidate chk vs another captain to frighten or shake him." uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Charisma 15 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Intimidate 5 ranks required."><![CDATA[#skillranks[kIntim] >= 5]]></exprreq>
+    </thing>
+  <thing id="fSeaLegs" name="Sea Legs" description="You are accustomed to the rolling motion on board a ship and can use this motion to your advantage.\n\n{b}Benefit{/b}: As long as you are on board a ship, you get a +2 bonus on Balance and Tumble checks, and a +1 bonus on initiative checks." compset="Feat" summary="Aboard ship gain +2 bon to Balance and Tumble, +1 to initiative." uniqueness="useronce">
+    <comment>Button (Done)
+
+Test?</comment>
+    <fieldval field="hName1" value="Aboard Ship"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First"><![CDATA[if (field[hIsOn1].value <> 0) then
+      #skillbonus[kBalance] += 2
+      #skillbonus[kTumble] += 2
+      hero.child[Initiative].field[Bonus].value += 1
+endif]]></eval>
+    </thing>
+  <thing id="fShipMage" name="Ship&apos;s Mage" description="You form a potent supernatural bond with a ship. Your spells have a more potent effect when cast aboard this ship. Those spellcasters who possess this feat are greatly favored as ship crew.\n\n{b}Prerequisites{/b}: Profession (sailor) 2 ranks, Spellcraft 4 ranks.\n\n{b}Benefit{/b}: Add +1 to the caster level of all spells cast while you are aboard a ship that is familiar to you. In addition, spells you cast while aboard a ship that is familiar to you deal no damage to that ship.\n\nIt takes one week of living and working aboard a ship to become familiar with it. You can only be familiar with one ship at a time; the familiarity with a particular ship fades should you become familiar with another ship.\n\nAdditionally, should you remain away from the ship you are familiar with for more than a month, that familiarity fades as well." compset="Feat" summary="Attune to one ship over a week, +1 CL on that ship &amp; your spells do not dam it." uniqueness="useronce">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Profession (sailor) 2 ranks required."><![CDATA[#skillranks[kProfSail] >= 2]]></exprreq>
+    <exprreq message="Spellcraft 4 ranks required."><![CDATA[#skillranks[kSpellcr] >= 4]]></exprreq>
+    </thing>
+  <thing id="fSteamMag" name="Steam Magic" description="You are skilled at casting fiery spells into the water, causing terrible gouts of scalding steam.\n\n{b}Prerequisites{/b}: Spellcraft 4 ranks.\n\n{b}Benefit{/b}: You need not make a Spellcraft check to successfully cast spells or use spell-like abilities with the fire descriptor targeted on water (see page 93 of the Dungeon Master&#146;s Guide).\n\n{b}Normal{/b}: Casting a fire spell or using a spell-like ability targeted on water successfully normally requires a Spellcraft check (DC 20 + spell level)." compset="Feat" summary="No spellcraft checks necessary to use fire spells in water." uniqueness="useronce">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Spellcraft 4 ranks required."><![CDATA[#skillranks[kSpellcr] >= 4]]></exprreq>
+    </thing>
+  <thing id="fStormMag" name="Storm Magic" description="You gain a boost in spellcasting power during storms.\n\n{b}Benefit{/b}: All spells you cast while you are affected by a storm (either natural or magical) are at +1 caster level." compset="Feat" summary="+1 CL while you are affected by a storm." replaces="fStormMagi" uniqueness="useronce">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="fSunkSong" name="Sunken Song" description="You can project your voice underwater.\n\n{b}Prerequisites{/b}: Bardic music class feature, Perform (sing) 4 ranks.\n\n{b}Benefit{/b}: By tremendous effort of will and sheer musical ability, you can use Perform (sing) underwater even though you cannot breathe water. This is more like a forceful humming than singing, and words are not intelligible, but you are able to produce bardic music effects. The maximum distance of such effects (where applicable) is unchanged. This feat does not help with Perform checks involving oratory or wind instruments.\n\n{b}Normal{/b}: You cannot use any air-dependent Perform skills underwater if you are not able to breathe water." compset="Feat" summary="You can use Perform (sing) underwater to manifest bardic music effects." uniqueness="useronce">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Bardic Music required."><![CDATA[picklives[hBrdMusic] <> 0]]></exprreq>
+    <exprreq message="Perform (sing) 4 ranks required."><![CDATA[#skillranks[kPerfSing] >= 4]]></exprreq>
+    </thing>
+  <thing id="fSwimbyAtt" name="Swim-by Attack" description="You can attack in the middle of a fast pass by your opponent.\n\n{b}Prerequisite{/b}: Swim speed.\n\n{b}Benefit{/b}: When swimming, you can take a move action and another standard action (such as an attack) at any point during the move. You cannot take a second move action during a round when you make a swim-by attack.\n\n{b}Normal{/b}: Without this feat, you take a standard action either before or after your move, but not in the middle of your move." compset="Feat" summary="You can take a standard action during your move action while swimming." uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <exprreq message="Swim speed required."><![CDATA[hero.childfound[xSwim].field[Value].value > 0]]></exprreq>
+    </thing>
+  <thing id="fToothBlow" name="Toothed Blow" description="You are able to hammer your foes more effectively underwater.\n\n{b}Prerequisites{/b}: Str 13, Improved Unarmed Strike.\n\n{b}Benefit{/b}: When making unarmed strikes, your attacks count as piercing weapons as well as bludgeoning weapons. This allows you to avoid the penalties for using bludgeoning weapons underwater when making unarmed strikes (see Table 3&#150;22: Combat Adjustments Underwater on page 92 of the Dungeon Master&#146;s Guide).\n\n{b}Normal{/b}: Without a {i}freedom of movement{/i} effect, you take a &#150;2 penalty on attacks with bludgeoning weapons and deal only half normal damage." compset="Feat" summary="Unarmed strikes count as piercing weapons, avoiding penalties underwater." uniqueness="useronce">
+    <comment>pre req (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Strength 13 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Improved Unarmed Strike required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fWatAdapt" name="Water Adaptation" description="You favor your aquatic elf parent and have developed the ability to breathe and move about in water easily.\n\n{b}Prerequisite{/b}: Aquatic half-elf.\n\n{b}Benefit{/b}: You can breathe water as well as air. Your swim speed improves to 20 feet.\n\n{b}Normal{/b}: Aquatic half-elves without this feat cannot breathe water and have a swim speed of 15 feet." compset="Feat" summary="You can breath water as well as air, swim speed increases to 20 ft." uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="UserPostAt">hero.childfound[xSwim].field[Value].value += 5</eval>
+    <exprreq message="Aquatic half-elf race required."><![CDATA[tagis[Race.ElfAquatic] + tagis[Race.HalfElf] >= 2]]></exprreq>
+    </thing>
+  <thing id="fWindSing" name="Windsinger" description="You can use song or a wind instrument to compel the winds to obey you. The bard who possesses this feat is highly favored aboard a sailing vessel; indeed, a bard who demonstrates the ability to control the wind to some degree is usually given an officer&#146;s position aboard ship.\n\n{b}Prerequisites{/b}: Bardic music class feature, Perform (sing or wind instruments) 5 ranks.\n\n{b}Benefit{/b}: By expending a daily bardic music use, you can lull the winds around a single ship into well-tamed gusts. They continue to blow into the sails of the ship as normal for their speed, but their effects on the crew are one stage in intensity less (see Table 1&#150;2 on page 23). Thus, a strong wind affected by this ability continues to propel the ship along as normal for a strong wind, but it only affects the crew as though it were a moderate wind.\n\nYou can also alter the direction of the wind by one compass point (from north to north-west or north-east, from south-west to west or south, etc.).\n\nThese effects last as long as the bard continues to perform his bardic music, plus 10 rounds after the music has ended." compset="Feat" summary="Use 1 music, crew are less affected by wind, can change direction it blows." uniqueness="useronce">
+    <comment>Pre req (Done)</comment>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Bardic Music required."><![CDATA[picklives[hBrdMusic] <> 0]]></exprreq>
+    <prereq message="Perform (sing or wind instruments) 5 ranks required.">
+      <validate><![CDATA[validif (#skillranks[kPerfSing] >= 5)
+validif (#skillranks[kPerfWind] >= 5)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="xBreathLin" name="Breathing Link" description="You can allow a person adjacent to you to breathe water.\n\n{b}Prerequisites{/b}: Aquatic elf or water genasi, base Will save +2.\n\n{b}Benefit{/b}: As a free action on your turn, you can select one creature within 5 feet of you and give that creature the ability to breathe water as easily as you do. This supernatural ability renews automatically for that creature until you direct the ability to another creature or withdraw your power from it (a free action). The creature&#146;s ability to breathe water ends immediately if you are separated by more than 5 feet or if you die, at which point the creature begins to drown if it is still underwater. This ability does not hamper the creature&#146;s ability to breathe air, nor does it change the creature&#146;s ability (or inability) to swim.\n\n{b}Special{/b}: You can select this feat more than once. Each time you take this feat, you can affect an additional creature with this ability. All such creatures need to remain within 5 feet of you (not each other). If one creature exceeds the range of this power, its subsequent distress has no effect on the other creatures you are helping." compset="Special" summary="X/day, swift, +Y sacred/profane bon to AC or att, can switch bon each rd for 1 min." uniqueness="unique">
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecSource" tag="Feat" name="Feat" abbrev="Feat"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="SpecType" tag="Defense" name="Defense" abbrev="Defense"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[    var target as number
+    target = hero.tagcount[HasFeat.fBreathLin]
+
+  if (target = 1) then
+    field[xSumm].text = "May allow " & target & " creature to breath water, must remain adj to you."
+  elseif (target >= 2) then
+    field[xSumm].text = "May allow " & target & " creatures to breath water, must remain adj to you."
+  endif]]></eval>
+    </thing>
+  <thing id="rGills" name="Gills" description="Aquatic elves can survive out of the water for 1 hour per point of Constitution (after that, refer to the suffocation rules). " compset="Special" summary="May remain out of water for 1 hour per point of CON." replaces="rAqElGills">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fWepElfAqE" name="Elven Weapon Proficiencies" description="{b}Benefit{/b}: You are proficient with the longspear, net and trident.\n\n{b}Normal{/b}: When using a weapon with which you are not proficient, you are at -4 to attack rolls." compset="Feat" summary="You are proficient with the longspear net and trident." uniqueness="unique">
+    <fieldval field="fShortName" value="Elven Weapons"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    </thing>
+  <thing id="rHalfElfAq" name="Half-Elf, Aquatic (SWrk)" description="Coastal communities found near aquatic elf settlements occasionally have one or more half-elves. Despite the greenish or blue coloration inherited from their aquatic elf parents, the human blood runs strong, and these half-elves aren&#146;t able to breathe water. Aquatic half-elves can also sometimes be found among the raft folk, humans who live intimately with the sea around them and might come into contact with the aquatic elves.\n\nSuch children might long for the sights of their aquatic heritage, perhaps even taking up the study of magic in order to one day experience those things and visit their elf parent&#146;s home. They prefer to live near the ocean when they can, so that they might hear the roar of the waves.\n\n{i}Source{/i}: Stormwrack" compset="Race">
+    <fieldval field="rInfFavor" value="Any"/>
+    <fieldval field="rInfAutoLn" value="Common, Elven"/>
+    <fieldval field="rAgeMin" value="20"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rWeightMnF" value="80"/>
+    <fieldval field="rHeightMnM" value="55"/>
+    <fieldval field="rWeightMnM" value="100"/>
+    <fieldval field="rHeightMxF" value="69"/>
+    <fieldval field="rHeightMxM" value="71"/>
+    <fieldval field="rWeightMxF" value="208"/>
+    <fieldval field="rWeightMxM" value="228"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="WeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="AgeC1Dice" tag="1" name="1" abbrev="1"/>
+    <tag group="AgeC1Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC2Dice" tag="2" name="2" abbrev="2"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="3" name="3" abbrev="3"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="8" name="d8" abbrev="d8"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="Elf" name="Elf" abbrev="Elf"/>
+    <tag group="Race" tag="HalfElf" name="HalfElf" abbrev="HalfElf"/>
+    <tag group="Race" tag="ElfAquatic"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="Race" tag="typHumanoi"/>
+    <bootstrap thing="xSwim">
+      <autotag group="Value" tag="15"/>
+      </bootstrap>
+    <bootstrap thing="rSeaLongin">
+      <autotag group="SpecSource" tag="rHalfElf"/>
+      </bootstrap>
+    <bootstrap thing="lElven"></bootstrap>
+    <bootstrap thing="xImmSleep">
+      <autotag group="SpecSource" tag="rHalfElf"/>
+      </bootstrap>
+    <bootstrap thing="rElfImmune">
+      <autotag group="SpecSource" tag="rHalfElf"/>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="rHalfElf"/>
+      </bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypElf"></bootstrap>
+    <bootstrap thing="stypHuman"></bootstrap>
+    <eval phase="PreLevel" priority="2500">~ +1 to Listen, Search, Spot checks
+      #skillbonus[kListen] += 1
+      #skillbonus[kSearch] += 1
+      #skillbonus[kSpot] += 1</eval>
+    </thing>
+  <thing id="rSeaLongin" name="Sea Longing" description="An aquatic half-elf who remains out of sight of the sea for more than a week longs for the sea, taking a &#150;1 penalty on Wisdom-based checks until he returns to the shore." compset="Special" summary="If remain out of sight of the sea for 1 week, -1 pen on Wisdom based checks.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Weakness"/>
+    </thing>
+  <thing id="rGnomeWave" name="Gnome, Wavecrest" description="Unlike their cousins, wavecrest gnomes are naturally drawn to the sea. Dwelling on small islands and beside hidden lagoons, wavecrest gnomes consider the sea their natural heritage. Though they love ships, as a people they rarely craft anything larger than a barge. Wavecrest gnomes would rather sign aboard one of the mighty, majestic ships of the larger folk.\n\nWavecrest gnome settlements are made up of roundtopped buildings half buried in the sand of a secluded coast or shore. When threatened, these gnomes are skilled fighters with gaff hooks and thin-bladed daggers, but they prefer to go about their lives peaceably. Rare is the wavecrest gnome settlement that needs regular patrols, for the sea birds that live among them have learned that the gnomes reward with tasty treats those birds who warn them of approaching strangers.\n\n{i}Source{/i}: Stormwrack" compset="Race">
+    <fieldval field="rSTR" value="-2"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rInfFavor" value="Bard"/>
+    <fieldval field="rInfAutoLn" value="Common, Gnome"/>
+    <fieldval field="rAgeMin" value="40"/>
+    <fieldval field="rHeightMnF" value="34"/>
+    <fieldval field="rWeightMnF" value="35"/>
+    <fieldval field="rHeightMnM" value="36"/>
+    <fieldval field="rWeightMnM" value="40"/>
+    <fieldval field="rHeightMxF" value="42"/>
+    <fieldval field="rHeightMxM" value="44"/>
+    <fieldval field="rWeightMxF" value="43"/>
+    <fieldval field="rWeightMxM" value="48"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="Normal" name="Normal" abbrev="Normal"/>
+    <tag group="WeightDice" tag="1" name="1" abbrev="1"/>
+    <tag group="WeightSize" tag="0" name="0" abbrev="0"/>
+    <tag group="AgeC1Dice" tag="4" name="4" abbrev="4"/>
+    <tag group="AgeC1Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC2Dice" tag="6" name="6" abbrev="6"/>
+    <tag group="AgeC2Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="AgeC3Dice" tag="9" name="9" abbrev="9"/>
+    <tag group="AgeC3Size" tag="6" name="d6" abbrev="d6"/>
+    <tag group="HeightDice" tag="2" name="2" abbrev="2"/>
+    <tag group="HeightSize" tag="4" name="d4" abbrev="d4"/>
+    <tag group="Language" tag="lDraconic" name="Draconic" abbrev="Draconic"/>
+    <tag group="Language" tag="lDwarven" name="Dwarven" abbrev="Dwarven"/>
+    <tag group="Language" tag="lElven" name="Elven" abbrev="Elven"/>
+    <tag group="Language" tag="lGiant" name="Giant" abbrev="Giant"/>
+    <tag group="Language" tag="lGoblin" name="Goblin" abbrev="Goblin"/>
+    <tag group="Language" tag="lOrc" name="Orc" abbrev="Orc"/>
+    <tag group="Race" tag="Gnome" name="Gnome" abbrev="Gnome"/>
+    <bootstrap thing="rLowLight">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnSaves">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnIllus">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rAtGnomeWa">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rVsGiants">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnWaSpeak">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnDance">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnGhost">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="rGnPrest">
+      <autotag group="SpecSource" tag="rGnome"/>
+      </bootstrap>
+    <bootstrap thing="lGnome"></bootstrap>
+    <bootstrap thing="typHumanoi"></bootstrap>
+    <bootstrap thing="stypGnome"></bootstrap>
+    <eval phase="PreLevel" priority="10000">~ +2 to Listen, Craft (Alchemy) checks
+      #skillbonus[kListen] += 2
+      #skillbonus[kCrafAlch] += 2</eval>
+    </thing>
+  <thing id="rAtGnomeWa" name="+1 to attack rolls vs locathah and sahuagin." description="+1 racial bonus to attacks against locathah and sahuagin." compset="Special">
+    <usesource source="SrcStormWr"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="rGnWaSpeak" name="Speak with sea birds (1/day)" description="Speak with Animals (sea birds only, lasts 1 minute) once per day." compset="Special" summary="Speak with Animals (sea birds only, lasts 1 minute) 1/day.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="SrcStormWr"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="ShowCharge" abbrev="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="cHelpScC" name="Scarlet Corsair" compset="ClassHelp" uniqueness="unique">
+    <comment>(DONE)</comment>
+    <fieldval field="cAbbr" value="ScC"/>
+    <fieldval field="cSkills" value="4"/>
+    <fieldval field="cHDSides" value="8"/>
+    <arrayval field="cSpecial" index="0" value="Improved Feint"/>
+    <arrayval field="cSpecial" index="1" value="Sneak attack +1d6"/>
+    <arrayval field="cSpecial" index="2" value="Corsair&#146;s feint (once per 2d4 rounds)"/>
+    <arrayval field="cSpecial" index="3" value="Sailor&#146;s step +2"/>
+    <arrayval field="cSpecial" index="4" value="Scourge of the seas"/>
+    <arrayval field="cSpecial" index="5" value="Sneak attack +2d6"/>
+    <arrayval field="cSpecial" index="6" value="Corsair&#146;s feint (once per 1d4 rounds)"/>
+    <arrayval field="cSpecial" index="7" value="Sailor&#146;s step +4"/>
+    <arrayval field="cSpecial" index="8" value="Frightening lunge"/>
+    <arrayval field="cSpecial" index="9" value="Sneak attack +3d6"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kDecScript"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kKnowGeog"/>
+    <tag group="ClassSkill" tag="kKnowLocal"/>
+    <tag group="ClassSkill" tag="kProfSail"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="ClassSkill" tag="kTumble"/>
+    <tag group="ClassSkill" tag="kUseRope"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="ScCorsair" name="Scarlet Corsair"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Perform"/>
+    <tag group="ClassSkill" tag="kAppraise"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="AlgnForbid" tag="Lawful"/>
+    <tag group="cRef" tag="Good"/>
+    <bootstrap thing="cScCFriLun"></bootstrap>
+    <bootstrap thing="cScCImpFei"></bootstrap>
+    <bootstrap thing="cScCSnAtt1"></bootstrap>
+    <bootstrap thing="cScCSnAtt2"></bootstrap>
+    <bootstrap thing="cScCSnAtt3"></bootstrap>
+    <bootstrap thing="cScCSaiSte"></bootstrap>
+    <bootstrap thing="cScCSaiSt2"></bootstrap>
+    <bootstrap thing="cScCScoSea"></bootstrap>
+    <bootstrap thing="cScCCorFei"></bootstrap>
+    </thing>
+  <thing id="cScCorsair" name="Scarlet Corsair" description="{b}Special{/b}: Must have established a reputation as a fearsome pirate.\n\n&#147;{i}The seas run red this night, and terror has a face. You are looking upon that face. Pretty, isn&#146;t it?{/i}&#148;\n&#151;Adia Ironheart of the Red Wake, a scarlet corsair\n\nMany pirates sail the seas, but few reach the infamy of the scarlet corsair, so called from the trail of blood left in her wake. Where most other pirates are content to use intimidation to cow their opponents into submission, allowing them to plunder as they please, the scarlet corsair revels in combat and slaughter.\n\nThis isn&#146;t to say that all scarlet corsairs are violent killers, though most certainly are&#151;a few scarlet corsairs refuse to take on a target unless that target is capable of putting up a good fight. Whether patriotic privateer or self-serving buccaneer, the scarlet corsair relies on the reputation of her quick blade and terrible fighting skills to drive her prey before her.\n\nBECOMING A SCARLET CORSAIR\nA life of piracy is the first and foremost necessity in becoming a scarlet corsair. Because this isn&#146;t an organization but rather a folk status gained through the pirate&#146;s victims retelling the stories of her attacks upon their vessels, word of mouth is essential. Most pirates seek some level of infamy: Those who acquire it for a combination of ferocious fighting and the ability to instill fear in all who face them are well on their way to becoming scarlet corsairs.\n\nFighters and rogues make good scarlet corsairs, since the combination of those classes provides both the flair and fighting prowess necessary to boost a simple pirate to the status of the scarlet corsair. Rangers too have adopted this prestige class, using intimidation and skilled swordsmanship to defeat their enemies. And a few assassins have taken to the seas in pursuit of their vocation of killing people for profit and have become scarlet corsairs." compset="ClassLevel" maxlimit="10">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpScC"></bootstrap>
+    <link linkage="helper" thing="cHelpScC"/>
+    <exprreq message="Base attack bonus +5 required."><![CDATA[child[Attack].field[tAtkBase].value >= 5]]></exprreq>
+    <exprreq message="Bluff 8 ranks required."><![CDATA[#skillranks[kBluff] >= 8]]></exprreq>
+    <exprreq message="Intimidate 8 ranks required."><![CDATA[#skillranks[kIntim] >= 8]]></exprreq>
+    <exprreq message="Profession (sailor) 4 ranks required."><![CDATA[#skillranks[kProfSail] >= 4]]></exprreq>
+    <exprreq message="Sneak attack +1d6 required."><![CDATA[childfound[xSneakAtt].field[Value].value >= 1]]></exprreq>
+    </thing>
+  <thing id="cScCImpFei" name="Improved Feint" description="Upon joining this prestige class you gain Improved Feint as a bonus feat, even if you do not have the normal prerequisites for that feat. You can feint in combat as a move action to render your foes flat-footed and thus make sneak attacks against them." compset="ClSpecial" summary="Gain Improved Feint as a bonus feat.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="fImpFeint">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cScCSnAtt1" name="Sneak Attack +1d6" description="At 2nd level, you gain the ability to deal an extra 1d6 points of damage when you catch your foe off guard. This is exactly like the rogue ability of the same name (see Player&#146;s Handbook page 50). The extra damage dealt increases to 2d6 at 6th level and to 3d6 at 10th level. If you get a sneak attack bonus from another source (such as rogue levels), the bonuses on damage stack." compset="ClSpecial" summary="+1d6 to your Sneak Attack damage.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xSneakAtt"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[var level as number
+level = field[xTotalLev].value
+
+var sneak as number
+if (level >= 10) then
+  sneak = 3
+elseif (level >= 6) then
+  sneak = 2
+elseif (level >= 2) then
+  sneak = 1
+else
+  sneak = 0
+endif
+
+   hero.child[xSneakAtt].field[Value].value += sneak]]></eval>
+    </thing>
+  <thing id="cScCSnAtt2" name="Sneak Attack +2d6" description="Sneak Attack damage increases." compset="ClSpecial" summary="Sneak Attack damage increases.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cScCSnAtt3" name="Sneak Attack +3d6" description="Sneak Attack damage increases." compset="ClSpecial" summary="Sneak Attack damage increases.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cScCCorFei" name="Corsair&apos;s Feint" description="As a scarlet corsair, you are a master of dirty fighting and trickery. You can make a feint as a free action rather than as a move action (see the Improved Feint feat, page 95 of the Player&#146;s Handbook). But once you&#146;ve surprised your enemies with such a feint, it takes time before you&#146;re able to fool them again. At 3rd level, you must wait 2d4 rounds before using corsair&#146;s feint again. Waiting requires no specific actions on your part; you can fight normally during this time. Beginning at 7th level your reflexes improve and the time between corsair&#146;s feints drops to only 1d4 rounds." compset="ClSpecial" summary="Feint as a free action, must recharge for Xd4 rds.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="SpecType" tag="Attack"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[var level as number
+level = field[xTotalLev].value
+
+var bonus as number
+if (level >= 7) then
+  bonus = 1
+else 
+  bonus = 2
+endif
+
+field[livename].text = "Corsair's Feint (" & bonus & "d4 rds)"
+field[xSumm].text = "Feint as a free action, must recharge for " & bonus & "d4 rds."]]></eval>
+    </thing>
+  <thing id="cScCSaiSte" name="Sailor&apos;s Step +2" description="At 4th level, you have learned to use the chaos of a ship at sea to your benefit, taking advantage of the swaying ship and swinging rigging to remain out of reach of your opponents. While aboard a ship and wearing nothing more than light armor you gain a +2 dodge bonus to your Armor Class. If you are caught flat-footed or otherwise denied your Dexterity bonus, you also lose this bonus.\n\nAt 8th level, the dodge bonus from the sailor&#146;s step class feature increases to +4." compset="ClSpecial" summary="If on ship in light/no armor gain +X dodge bon to AC.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="SpecType" tag="Defense"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[var level as number
+level = field[xTotalLev].value
+
+var bonus as number
+if (level >= 8) then
+  bonus = 4
+else 
+  bonus = 2
+endif
+
+field[livename].text = "Sailor's Step +" & bonus & ""
+field[xSumm].text = "If on ship in light/no armor gain +" & bonus & " dodge bon to AC."]]></eval>
+    </thing>
+  <thing id="cScCScoSea" name="Scourge of the Seas" description="Starting at 5th level, you can instill fear into your enemies. When you use Intimidate to demoralize foes, the attempt affects all enemies within 30 feet who can see and hear you, and the effect lasts for a number of rounds equal to your Charisma modifier (minimum 1 round). This is a mind-affecting ability, and multiple uses of this ability don&#146;t stack." compset="ClSpecial" summary="Demoralize all foes in 30 ft for X rds.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="5" name="5" abbrev="5"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="SpecType" tag="Attack"/>
+    <eval phase="UserPostAt" priority="10000"><![CDATA[var duration as number
+duration = maximum(hero.child[aCHA].field[aModBonus].value, 1)
+
+   field[xSumm].text = "Demoralize affects all foes in 30 ft for " & duration & " rds."]]></eval>
+    </thing>
+  <thing id="cScCFriLun" name="Frightening Lunge" description="Your ability to run your enemies through is unnerving to those who cross swords with you. Beginning at 9th level, on a successful sneak attack, you can sacrifice 2d6 points of damage to render your foe shaken. A shaken character takes a &#150;2 penalty to all attack rolls, saves, skill checks, and ability checks." compset="ClSpecial" summary="Sneak att -2d6, struck foe becomes shaken.">
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="cScCSaiSt2" name="Sailor&apos;s Step +4" description="Your Sailor&apos;s Step dodge bonus increases." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpScC"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="wCrsAquati" name="Crossbow, Aquatic" description="This special version of a light crossbow is strung especially tautly with thicker wire and reinforced so as not to snap under the increased tension. The aquatic crossbow is not subject to the normal &#150;2 penalty on ranged attack rolls for every five feet of distance (see Ranged Attacks Underwater, page 93 of the Dungeon Master&#146;s Guide), and uses its normal range increment of 40 feet both in and out of the water. Aquatic crossbows are favored by aventi, merfolk, and tritons." compset="Weapon">
+    <fieldval field="gWeight" value="4"/>
+    <fieldval field="gSizeCost" value="250"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="wClass" tag="OneHanded" name="One-Handed" abbrev="One-Handed"/>
+    <tag group="wCritMin" tag="19" name="19" abbrev="19"/>
+    <tag group="wCritMult" tag="2" name="2" abbrev="2"/>
+    <tag group="wMain" tag="1d8_6" name="1d8" abbrev="1d8"/>
+    <tag group="wMaxStrBon" tag="0" name="0" abbrev="0"/>
+    <tag group="wMaxStrPen" tag="0" name="0" abbrev="0"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wRangeInc" tag="40"/>
+    <tag group="wType" tag="P" name="Piercing" abbrev="P"/>
+    <tag group="w1HandPen" tag="2" name="2" abbrev="2"/>
+    <tag group="EquipType" tag="Wood" name="Wood" abbrev="Wood"/>
+    <tag group="Helper" tag="BucklerOK" name="BucklerOK" abbrev="BucklerOK"/>
+    <tag group="IsWeapon" tag="wCrsLight"/>
+    <tag group="wCategory" tag="RangeProj" name="Projectile Weapon" abbrev="Projectile"/>
+    </thing>
+  <thing id="wCutlassSW" name="Cutlass" description="A light slashing weapon especially favored by pirates and other nautical raiders, the cutlass is a heavy blade about 2 feet long with a curved edge. It is easy to wield in close quarters and can deal vicious gashes to an opponent. Its heavy basket hilt gives the wielder a +2 circumstance bonus on any checks to resist being disarmed." compset="Weapon">
+    <fieldval field="gSizeCost" value="15"/>
+    <fieldval field="gWeight" value="3"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="S"/>
+    <tag group="wClass" tag="Light"/>
+    </thing>
+  <thing id="wHarpoonSW" name="Harpoon" description="The harpoon is a broad-bladed spear forged with barbs. The shaft of the harpoon has a trailing rope attached, to control harpooned opponents. Though designed for hunting whales and other large sea creatures, the harpoon can be used on dry land.\n\nIf it deals damage, the harpoon lodges in an opponent who fails a Reflex saving throw (DC 10 + the damage dealt). A harpooned creature moves at only half speed and cannot charge or run. If you control the trailing rope by succeeding on an opposed Strength check while holding it, the harpooned creature can move only within the limits that the rope allows (the trailing rope is 30 feet long). If the harpooned creature attempts to cast a spell, it must succeed on a DC 15 Concentration check or lose the spell.\n\nThe harpooned creature can pull the harpoon from its wound if it has two free hands and takes a full-round action to do so, but it deals damage to itself equal to the initial damage the harpoon dealt. A character who succeeds on a DC 15 Heal check can remove a harpoon without further damage." compset="Weapon">
+    <fieldval field="gWeight" value="10"/>
+    <fieldval field="gSizeCost" value="15"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="wClass" tag="OneHanded" name="One-Handed" abbrev="One-Handed"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    <tag group="wCritMult" tag="2" name="2" abbrev="2"/>
+    <tag group="wMain" tag="1d10_304" name="1d10" abbrev="1d10"/>
+    <tag group="wProfReq" tag="Exotic" name="Exotic" abbrev="Exotic"/>
+    <tag group="wRangeInc" tag="30" name="30" abbrev="30"/>
+    <tag group="wType" tag="P" name="Piercing" abbrev="P"/>
+    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
+    <tag group="wCategory" tag="RangeProj" name="Projectile Weapon" abbrev="Projectile"/>
+    <tag group="wCategory" tag="RangeThrow" name="Thrown Weapon" abbrev="Thrown"/>
+    </thing>
+  <thing id="wLongbowAq" name="Longbow, Aquatic" description="Made by the aquatic elves, the aquatic longbow functions as a normal ranged weapon out of the water, with a 60-foot range increment. Underwater, it has a range increment of 10 feet, but it does not take the normal penalty for a ranged attack through water. If you have the Aquatic Shot feat, the aquatic longbow&#146;s range increment improves to 30 feet underwater. Aquatic longbows are favored by aquatic elves." compset="Weapon">
+    <fieldval field="gWeight" value="3"/>
+    <fieldval field="gSizeCost" value="400"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d8_6"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wRangeInc" tag="60"/>
+    <tag group="wType" tag="P" name="Piercing" abbrev="P"/>
+    <tag group="wCategory" tag="RangeProj" name="Projectile Weapon" abbrev="Projectile"/>
+    <tag group="wClass" tag="OneHanded" name="One-Handed" abbrev="One-Handed"/>
+    <tag group="EquipType" tag="Wood"/>
+    <tag group="Helper" tag="NoDblStr"/>
+    <tag group="Helper" tag="Always2H"/>
+    <tag group="Helper" tag="BracArcBow"/>
+    <tag group="Helper" tag="BucklerOK"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    </thing>
+  <thing id="wSkipBlad" name="Skipping Blade" description="This is a double-bladed throwing weapon, about the size of a shuriken but heavier. A skipping blade can&#146;t be used as a melee weapon.\n\nThe blade is carefully shaped to allow skipping across water or another liquid surface. The weapon&#146;s range increment is increased to 15 feet if there is an intervening body of water between the attacker and the opponent.\n\nAlthough they are thrown weapons, skipping blades are treated as ammunition for the purposes of drawing them, crafting masterwork or otherwise special versions of them, and what happens to them after they are thrown." compset="Weapon" lotsize="3">
+    <fieldval field="gWeight" value=".16667"/>
+    <fieldval field="gSizeCost" value=".33"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d3_3"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wRangeInc" tag="10"/>
+    <tag group="wCategory" tag="RangeProj" name="Projectile Weapon" abbrev="Projectile"/>
+    <tag group="wClass" tag="OneHanded" name="One-Handed" abbrev="One-Handed"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wType" tag="S"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="Helper" tag="NormalOnly"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    </thing>
+  <thing id="wSkipBladM" name="Skipping Blade" description="This is a double-bladed throwing weapon, about the size of a shuriken but heavier. A skipping blade can&#146;t be used as a melee weapon.\n\nThe blade is carefully shaped to allow skipping across water or another liquid surface. The weapon&#146;s range increment is increased to 15 feet if there is an intervening body of water between the attacker and the opponent.\n\nAlthough they are thrown weapons, skipping blades are treated as ammunition for the purposes of drawing them, crafting masterwork or otherwise special versions of them, and what happens to them after they are thrown." compset="Weapon">
+    <fieldval field="gWeight" value=".16667"/>
+    <fieldval field="gSizeCost" value=".33"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d3_3"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wRangeInc" tag="10"/>
+    <tag group="wCategory" tag="RangeProj" name="Projectile Weapon" abbrev="Projectile"/>
+    <tag group="wClass" tag="OneHanded" name="One-Handed" abbrev="One-Handed"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wType" tag="S"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="Helper" tag="MagicOnly"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    </thing>
+  <thing id="wWhipSting" name="Whip, Stingray" description="The barbed tail of a stingray can be converted into a flexible weapon, something akin to a riding crop. A stingray whip deals no damage to any creature with a +2 or higher armor bonus or a natural armor bonus +4 or higher.\n\nYou can use the Weapon Finesse feat to apply your Dexterity modifier instead of your Strength modifier to attack rolls with a stingray whip sized for you, even though it isn&#146;t a light weapon for you.\n\nThe stingray tail no longer contains poison glands, but a residue of its venom remains. A creature that takes damage from the stingray whip must make a DC 12 Fortitude save or take a &#150;1 penalty on attack rolls, damage rolls, and skill checks from painful welts.\n\nTreat a stingray whip as leather for purposes of sunder attempts." compset="Weapon">
+    <fieldval field="gWeight" value="3"/>
+    <fieldval field="gSizeCost" value="15"/>
+    <usesource source="SrcStormWr" parent="p35" name="Stormwrack"/>
+    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
+    <tag group="wCritMult" tag="3"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic" name="Exotic" abbrev="Exotic"/>
+    <tag group="wType" tag="S" name="Slashing" abbrev="S"/>
+    <tag group="Helper" tag="Finesse" name="Finesse" abbrev="Finesse"/>
+    <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
+    <tag group="wClass" tag="OneHanded" name="One-Handed" abbrev="One-Handed"/>
+    </thing>
+  </document>

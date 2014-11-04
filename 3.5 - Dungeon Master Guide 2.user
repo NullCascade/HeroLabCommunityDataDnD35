@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>TobyFox2002 5/15/2014</info_author>
+    </fileinfo>
+  <thing id="xFiGArcan" name="Arcane" description="The guild subsidizes the creation of magic items, reducing your raw material costs by 5%." compset="Special" summary="Your guild subsidizes the creation of magic items red cost of mats by 5%." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    <eval phase="First" priority="50">#skillbonus[kClimb] += 20</eval>
+    </thing>
+  <thing id="xFiGCrim" name="Criminal" description="The guild opens up new options for black marketeering.  Once every character level, you can purchase any product or service for 75% of its actual price in any city in which your guild maintains a guildhouse." compset="Special" summary="1/Level; purchase product or serv for 75% of price where you have guild house." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    </thing>
+  <thing id="xFiGGovt" name="Government" description="You gain a +1 bonus on Diplomacy and Intimidate checks when dealing with members of any guild, including your own." compset="Special" summary="+1 bon on Diplo &amp; Intim chks when dealing with guild memb. Incl own." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    </thing>
+  <thing id="xFiGMercan" name="Mercantile" description="You can charge a little bit more for the goods and services you sell, since membership in the guild implies quality.  Once per character level, you can sell a good or service for 100% markup over its regular price in any city where the organization maintains a guildhouse." compset="Special" summary="1/Level; can sell goods or serv for dbl the market price." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    </thing>
+  <thing id="xFiGMercen" name="Mercenary" description="Members of the same mercenary guild tend to use combat tactics that mesh well with each other.  Whenever you are adjacent to another member, each of you gains a +1 competence bonus to Armor Class." compset="Special" summary="+1 Comp bon to AC to each memb., when adjacent other guild members" uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    </thing>
+  <thing id="xFiGNatur" name="Naturalist" description="A naturalist guild uses a complex and constantly evolving set of trailglyphs and blazes to keep its members informed of dangers, shelter, good hunting, and other hazards or hidden benefits in the wilderness.  You gain a +2 competence bonus on any Survival check made to keep from getting lost or to avoid a natural hazard, such as quicksand.  In addition, you can choose a particular type of creature from the following list: animal, fey, giant, monstrous humanoid, plant, or vermin.  You gain a +5 competence bonus on any Knowledge (nature) check you make concerning your chosen creature type." compset="Special" summary="+2 Comp bon Survival.  +5 Know (Nature) chk vs qualifying creature type." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    </thing>
+  <thing id="xFiGPerf" name="Performer" description="While in a city that has a guildhouse, you can substitute a Perform or Profession check for a Diplomacy or Gather Information check by offering your service for free.  In addition, you gain twice the normal income when using the Perform or Profession skill to earn money." compset="Special" summary="While in cty with gldhouse, sub Perf or Prof chk to Gath.  Dbl income from perf or Prof." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    </thing>
+  <thing id="xFiGPsion" name="Psionic" description="The guild subsidizes the creation of psionic items, reducing your raw material costs by 5%." compset="Special" summary="Your guild subsidizes the creation of magic items red cost of mats by 5%." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    </thing>
+  <thing id="xFiGRelig" name="Religious" description="Your faith is bolstered by active membership in the guild.  Once per character level, you can deem a particularly insidious mind-affecting ability possessed by an enemy to be a test of faith, thereby gaining a one-time +5 bonus on your Will saving throw." compset="Special" summary="1/Level +5 Will Save to any mind-effecting save." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    </thing>
+  <thing id="xFiGSchol" name="Scholastic" description="Once per character level, you can take 20 on any Knowledge skill in which you have at least 1 rank. Using this ability takes 1 hour, and you can do so only while you are in your guildhouse, since you must research the desired information in the guild&apos;s holdings from other guild members to accomplish the task." compset="Special" summary="1/Level while in guildhouse take 20 on any knowledge skill you have 1 rnk in." uniqueness="useronce">
+    <usesource source="DMG2"/>
+    <tag group="User" tag="FavInGld" name="Favored In Guild" abbrev="FiG"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fGldmaster" name="Guildmaster" description="You are one of the leaders of your guild.\n\n{b}Prerequisite:{/b} Favored in Guild (DMG2) , Leadership (PH) , at least one guildmaster-associated feat (see the table below), at least one of your guild-associated skills must be a class skill for you and must be at maximum rank, your followers and cohorts must also qualify to join the guild.\n\n{b}Benefit:{/b} You gain a +2 competence bonus on each of your guild-associated skills.\n\nIn addition, because of your enhanced status, you no longer need to pay guild dues.  If your guild is a standard or expansive one, you can expect special treatment&#151;specifically, free lodging, free food, an office, and a simple workshop, laboratory, or other space that contains any basic tools of your guild&apos;s trade&#151;at any guildhouse.\n\nFurthermore, as a guildmaster, you have some degree of authority over other guild members.  Once per day, you can exchange the primary cohort you gained from your Leadership feat for a different cohort from your guild.  Otherwise, the standard rules for choosing a cohort apply.  The DM determines the actual pool of cohorts available to you, but the new cohort is usually from the list of associated classes provided in the description of each guild type (see Guild Types, page 223).\n\n{b}Special:{/b} Guildmasters are expected to spend at least 8 consecutive hours per week dealing with administrative matters and interacting with other guild members. A guildmaster who fails to meet this requirement loses the benefits of this feat for the following week.\n\nYou must keep at least one of your guild-associated class skills at maximum rank as you attain new levels. A guildmaster who fails to meet this requirement loses the benefits of this feat until he gains the necessary ranks.\n\nAs a nonstandard award for completing a particularly dangerous and lengthy mission of great importance to a PC&apos;s guild, the DM can award this feat as a bonus feat to anyone who qualifies for it.\n\n{align left}\n{b}Guildmaster-Associated Feats\nGuild                   Associated Feats{/b}\nArcane              Any item creation feat\nCriminal            Agile, Deceitful, Deft Hands, Nimble Fingers, Stealthy\nGovernment     Negotiator, Persuasive, Skill Focus (any guild-associated skill)\nMercantile        Deceitful, Diligent, Skill Focus (any guild-associated skill)\nMercenary       Combat Expertise, Dodge, Endurance, Mounted Combat\nNaturalist         Alertness, Animal Affinity, Endurance, Great Fortitude, Natural Spell, Run,\n                           Self-Sufficient\nPerformer        Acrobatic, Agile, Athletic, Enduance, Great Fortitude,\n                            Skill Focus (Perform or Profession)\nPsionic              Any psionic item creation feat\nReligious          Extra Turning, Improved Turning, Skill Focus (Knowledge [religion]),\n                            Weapon Focus (with deity&apos;s favored weapon)\nScholastic       Skill Focus (Knowledge [any])" compset="Feat" summary="You gain a +2 comp bon on each of your guild-associated skills." uniqueness="useronce">
+    <fieldval field="fShortName" value="Fav in Gld"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DMG2" parent="p35" name="Dungeon Masters Guide II"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <exprreq message="Favored in Guild required."><![CDATA[#hasfeat[fFaviGuild] <> 0]]></exprreq>
+    <exprreq message="Leadership required."><![CDATA[#hasfeat[fLeader] <> 0]]></exprreq>
+    </thing>
+  <thing id="fBusSavvy" name="Business Savvy" description="You are particularly gifted when it comes to setting up and maintaining profitable businesses.\n\n{b}Prerequisite:{/b} Negotiator (PH)\n\n{b}Benefit:{/b} You gain a +2 bonus on all profit checks. In addition, you get a +1 luck bonus on all attack rolls, saving throws, and checks when resolving any business-related events." compset="Feat" summary="+2 bon to profit chks.  +1 Lck bon to atk, svs and chks related to business." uniqueness="useronce">
+    <fieldval field="fShortName" value="Fav in Gld"/>
+    <usesource source="DMG2" parent="p35" name="Dungeon Masters Guide II"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Negotiator required."><![CDATA[#hasfeat[fNegot] <> 0]]></exprreq>
+    </thing>
+  <thing id="fFaviGuild" name="Favored in Guild" description="You are an active and valued member of your guild.\n\n{b}Prerequisite:{/b} Membership in a guild\n\n{b}Required for:{/b} Guildmaster (DMG2)\n\n{b}Benefit:{/b} Select one of your guild&apos;s associated skills.  As long as you remain a member of that guild, you gain a +2 competence bonus on all checks made with that skill.\n\nAs a fringe benefit, you also gain an ability relating to your guild&apos;s type, as described below.\n\n{i}Arcane:{/i} The guild subsidizes the creation of magic items, reducing your raw material costs by 5%.\n\n{i}Criminal:{/i} The guild opens up new options for black marketeering. Once every character level, you can purchase any product or service for 75% of its actual price in any city in which your guild maintains a guildhouse.\n\n{i}Government:{/i} You gain a +1 bonus on Diplomacy and Intimidate checks when dealing with members of any guild, including your own.\n\n{i}Mercantile:{/i} You can charge a little bit more for the goods and services you sell, since membership in the guild implies quality. Once per character level, you can sell a good or service for 100% markup over its regular price in any city where the organization maintains a guildhouse.\n\n{i}Mercenary:{/i} Members of the same mercenary guild tend to use combat tactics that mesh well with each other. Whenever you are adjacent to another member, each of you gains a +1 competence bonus to Armor Class.\n\n{i}Naturalist:{/i} A naturalist guild uses a complex and constantly evolving set of trailglyphs and blazes to keep its members informed of dangers, shelter, good hunting, and other hazards or hidden benefits in the wilderness. You gain a +2 competence bonus on any Survival check made to keep from getting lost or to avoid a natural hazard, such as quicksand. In addition, you can choose a particular type of creature from the following list: animal, fey, giant, monstrous humanoid, plant, or vermin. You gain a +5 competence bonus on any Knowledge (nature) check you make concerning your chosen creature type.\n\n{i}Performer:{/i} While in a city that has a guildhouse, you can substitute a Perform or Profession check for a Diplomacy or Gather Information check by offering your service for free. In addition, you gain twice the normal income when using the Perform or Profession skill to earn money.\n\n{i}Psionic:{/i} The guild subsidizes the creation of psionic items, reducing your raw material costs by 5%.\n\n{i}Religious:{/i} Your faith is bolstered by active membership in the guild. Once per character level, you can deem a particularly insidious mind-affecting ability possessed by an enemy to be a test of faith, thereby gaining a one-time +5 bonus on your Will saving throw.\n\n{i}Scholastic:{/i} Once per character level, you can take 20 on any Knowledge skill in which you have at least 1 rank. Using this ability takes 1 hour, and you can do so only while you are in your guildhouse, since you must research the desired information in the guild&apos;s holdings from other guild members to accomplish the task.\n\n{b}Normal:{/b} To receive general benefits from your guild, you must pay your monthly dues. You do not gain any guild fringe benefits." compset="Feat" summary="You are an active and valued member of your guild." uniqueness="useronce">
+    <fieldval field="fShortName" value="Fav in Gld"/>
+    <fieldval field="ftCandExpr" value="User.FavInGld"/>
+    <usesource source="DMG2" parent="p35" name="Dungeon Masters Guide II"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="First" priority="1001"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[fChosen].ischosen = 0)
+
+field[CustDesc].text = field[fChosen].chosen.field[descript].text
+field[xSumm].text = field[fChosen].chosen.field[summary].text
+~ field[livename].text = "Favored in Guild - " & field[fChosen].chosen.field[name].text]]></eval>
+    </thing>
+  </document>

@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>4-08-11
+Added the Swarm weapon
+
+4-02-11
+Incorporeal touch weapon had incorrectly always been marked with a Helper.NatSecondary tag, removed. User will have to apply tag to weapon if want to be secondary.
+
+3-29-11
+Added Tongue weapon for Mohrg
+Spit weapon had incorrectly always been marked with a Helper.NatSecondary tag, removed. User will have to apply tag to weapon if want to be secondary.
+
+3-24-11 Lawful_G
+Tail weapon had incorrectly always been marked with a Helper.NatSecondary tag, removed. User will have to apply tag to weapon if want to be secondary.
+
+3-18-11 Lawful_G
+Touch weapon had incorrectly always been marked with a Helper.NatSecondary tag, removed. User will have to apply tag to weapon if want to be secondary.
+
+3-15-11 Lawful_G
+Wing weapon had incorrectly always been marked with a Helper.NatSecondary tag, removed. User will have to apply tag to weapon if want to be secondary.
+
+02-13-11 Lawful_G
+Talon weapon had incorrectly always been marked with a Helper.NatSecondary tag, removed. User will have to apply tag to weapon if want to be secondary.
+Added Eval Script to Pincer and Talon (only ones seen outside of dragon so far who do this, used for Glabrezu and Megaraptor respectively) for setting the damage directly for monsters that have unusual (2d8) damage at huge size. Detects a user tag called DragonDam.
+
+02-05-11 Lawful_G
+Added Talon natural weapon for Vrock, also created eval script to recognize if the NatSecond tag has been applied and impose penalties if so. Shared with all natural weapons. same for rename with x? script
+
+02-04-11 Lawful_G
+Added Pincer weapon for Glabrezu
+
+Early-mid January 2011- Lawful_G
+Created</info_history>
+    <info_todo><![CDATA[12-30-10 Lawful_G
+Make Eval script to mod names of natural weapons (so can have User tags on them to signify fire/ability drain/whatever) Do via look at current wMain tag and fill in the Fixed Damage Field
+Go find wRay original and delete it to replace.
+Go find Sivak's tail and replace
+Replace any and all "rename" natural weapons, that is all bootstrapped nautural weapons that have been used as proxy for others (Esp the Dragons)]]></info_todo>
+    </fileinfo>
+  <thing id="wWing" name="Wing" compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2">~ We have to impose secondary natural weapon penalties if secondary tag is applied
+      doneif (tagis[Helper.NatSecond] = 0)
+      field[wDamBonus].value -= round(hero.child[aSTR].field[aModBonus].value/2, 0, 1)</eval>
+    <eval phase="Render" index="3"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wTail" name="Tail" compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2">~ We have to impose secondary natural weapon penalties if secondary tag is applied
+      doneif (tagis[Helper.NatSecond] = 0)
+      field[wDamBonus].value -= round(hero.child[aSTR].field[aModBonus].value/2, 0, 1)</eval>
+    <eval phase="Render" index="3"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wTchIncor" name="Incorporeal Touch" description="Incorporeal touch attacks ignore armor, natural armor and shield bonuses except from force effects." compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wTch" name="Touch" description="Touch attacks ignore armor, natural armor and shield bonuses." compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wRay2" name="Ray" description="Ray attacks are ranged touch attacks that ignore armor, natural armor and shield bonuses. They have a maximum range of 1 increment but never take range penalties." compset="Weapon">
+    <comment>Where is original wRay? Maybe in spellwarp sniper?
+
+Authors Should:
+Bootstrap with a wRangeInc.20/40/ 60/Etc...</comment>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wUserTag3" name="User Tags" description="Currently a Holder for the wRangeInc.140 tag. Do not delete!" compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="Helper" tag="NatSecond"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="wRangeInc" tag="140"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    </thing>
+  <thing id="wSpit" name="Spit" description="Spit attacks are ranged touch attacks that ignore armor, natural armor and shield bonuses. They have a maximum range of 1 increment but never take range penalties." compset="Weapon">
+    <comment>Authors Should:
+Bootstrap with a wRangeInc.20/40/ 60/Etc...</comment>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wPincer" name="Pincer" compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatSecond"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wType" tag="B"/>
+    <tag group="wType" tag="P"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="FixSizeDmg"/>
+    <eval phase="PostLevel" priority="10100"><![CDATA[      doneif (tagis[User.DragonDam] = 0)
+
+~ We have to take into account Improved natural attack feat and size.
+      var dam as number
+      dam = herofield[tSize].value + tagcount[Helper.DamageUp]
+
+      if (dam >= 5) then
+           field[wDamage].value = 308
+           perform assign[wMain.4d8_307]
+      elseif (dam = 4) then
+           field[wDamage].value = 307
+           perform assign[wMain.4d8_307]
+      elseif (dam = 3) then
+           field[wDamage].value = 106
+           perform assign[wMain.4d6_106]
+      elseif (dam = 2) then
+           field[wDamage].value = 305
+           perform assign[wMain.2d8_305]
+      elseif (dam = 1) then
+           field[wDamage].value = 104
+           perform assign[wMain.2d6_104]
+      elseif (dam = 0) then
+           field[wDamage].value = 6
+           perform assign[wMain.1d8_6]
+      elseif (dam = -1) then
+           field[wDamage].value = 5
+           perform assign[wMain.1d6_5]
+      elseif (dam = -2) then
+           field[wDamage].value = 4
+           perform assign[wMain.1d4_4]
+      elseif (dam = -3) then
+           field[wDamage].value = 3
+           perform assign[wMain.1d3_3]
+      elseif (dam <= -4) then
+           field[wDamage].value = 2
+           perform assign[wMain.1d2_2]
+      endif]]></eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[~ We have to impose secondary natural weapon penalties if no primary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+
+doneif (tagis[Helper.NatPrimary] = 1)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="3">~ We have to impose secondary natural weapon penalties if no primary tag is applied
+      doneif (tagis[Helper.NatPrimary] = 1)
+      field[wDamBonus].value -= round(hero.child[aSTR].field[aModBonus].value/2, 0, 1)</eval>
+    <eval phase="Render" index="4"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wTalon" name="Talon" compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2">~ We have to impose secondary natural weapon penalties if secondary tag is applied
+      doneif (tagis[Helper.NatSecond] = 0)
+      field[wDamBonus].value -= round(hero.child[aSTR].field[aModBonus].value/2, 0, 1)</eval>
+    <eval phase="Render" index="3"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    <eval phase="PostLevel" priority="10100" index="4"><![CDATA[      doneif (tagis[User.DragonDam] = 0)
+
+~ We have to take into account Improved natural attack feat and size.
+      var dam as number
+      dam = herofield[tSize].value + tagcount[Helper.DamageUp]
+
+      if (dam >= 5) then
+           field[wDamage].value = 308
+           perform assign[wMain.4d8_307]
+      elseif (dam = 4) then
+           field[wDamage].value = 307
+           perform assign[wMain.4d8_307]
+      elseif (dam = 3) then
+           field[wDamage].value = 106
+           perform assign[wMain.4d6_106]
+      elseif (dam = 2) then
+           field[wDamage].value = 305
+           perform assign[wMain.2d8_305]
+      elseif (dam = 1) then
+           field[wDamage].value = 104
+           perform assign[wMain.2d6_104]
+      elseif (dam = 0) then
+           field[wDamage].value = 6
+           perform assign[wMain.1d8_6]
+      elseif (dam = -1) then
+           field[wDamage].value = 5
+           perform assign[wMain.1d6_5]
+      elseif (dam = -2) then
+           field[wDamage].value = 4
+           perform assign[wMain.1d4_4]
+      elseif (dam = -3) then
+           field[wDamage].value = 3
+           perform assign[wMain.1d3_3]
+      elseif (dam <= -4) then
+           field[wDamage].value = 2
+           perform assign[wMain.1d2_2]
+      endif]]></eval>
+    </thing>
+  <thing id="wChain" name="Chain" compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2">~ We have to impose secondary natural weapon penalties if secondary tag is applied
+      doneif (tagis[Helper.NatSecond] = 0)
+      field[wDamBonus].value -= round(hero.child[aSTR].field[aModBonus].value/2, 0, 1)</eval>
+    <eval phase="Render" index="3"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wUserTag1" name="User Tags" description="Currently a Holder for the wRangeInc.300 tag. Do not delete!" compset="Weapon">
+    <comment>Where is original wRay? Maybe in spellwarp sniper?
+
+Authors Should:
+Bootstrap with a wRangeInc.20/40/ 60/Etc...</comment>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="Helper" tag="NatSecond"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <tag group="wRangeInc" tag="300"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wGiaRock" name="Giant&apos;s Rock" description="Many giant carry around small boulders to throw at their enemies." compset="Weapon">
+    <comment>Authors Should:
+Bootstrap with a wRangeInc.20/40/ 60/Etc...
+Bootstrap with a wMain tag</comment>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="Helper" tag="FixSizeDmg"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="wType" tag="B"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    </thing>
+  <thing id="wTestNatW2" name="A test natural weapon 2" description="Currently a Holder for the wRangeInc.180 tag. Do not delete!\n\nCan I make a weapon that will be selectable from the Choose natural weapons on the races? And also be Improved Natural Weapon featable?\n\nStart with copy bite, make sure have all same tags" compset="Weapon">
+    <comment>perform delete[component.BaseCharge]
+perform delete[component.Buyable]
+perform delete[component.Custom]
+perform delete[component.MyGear]
+perform delete[component.source]
+perform delete[component._gear_]
+perform delete[component._stackable]</comment>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="Helper" tag="NatSecond"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="wRangeInc" tag="180"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wUserTag2" name="User Tags" description="Currently a Holder for the wRangeInc.200 tag. Do not delete!" compset="Weapon">
+    <comment>Where is original wRay? Maybe in spellwarp sniper?
+
+Authors Should:
+Bootstrap with a wRangeInc.20/40/ 60/Etc...</comment>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="Helper" tag="NatSecond"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <tag group="wRangeInc" tag="200"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wSpikes" name="Spikes" description="Manticores can fire 6 spikes as a standard action." compset="Weapon">
+    <comment>Weapon appears to be reacting oddly to being secondary and multiattack... test all weapons?</comment>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="Helper" tag="Helper"/>
+    <eval phase="PostLevel" priority="10100" index="4"><![CDATA[      doneif (tagis[User.DragonDam] = 0)
+
+~ We have to take into account Improved natural attack feat and size.
+      var dam as number
+      dam = herofield[tSize].value + tagcount[Helper.DamageUp]
+
+      if (dam >= 5) then
+           field[wDamage].value = 308
+           perform assign[wMain.4d8_307]
+      elseif (dam = 4) then
+           field[wDamage].value = 307
+           perform assign[wMain.4d8_307]
+      elseif (dam = 3) then
+           field[wDamage].value = 106
+           perform assign[wMain.4d6_106]
+      elseif (dam = 2) then
+           field[wDamage].value = 305
+           perform assign[wMain.2d8_305]
+      elseif (dam = 1) then
+           field[wDamage].value = 104
+           perform assign[wMain.2d6_104]
+      elseif (dam = 0) then
+           field[wDamage].value = 6
+           perform assign[wMain.1d8_6]
+      elseif (dam = -1) then
+           field[wDamage].value = 5
+           perform assign[wMain.1d6_5]
+      elseif (dam = -2) then
+           field[wDamage].value = 4
+           perform assign[wMain.1d4_4]
+      elseif (dam = -3) then
+           field[wDamage].value = 3
+           perform assign[wMain.1d3_3]
+      elseif (dam <= -4) then
+           field[wDamage].value = 2
+           perform assign[wMain.1d2_2]
+      endif]]></eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2">~ We have to impose secondary natural weapon penalties if secondary tag is applied
+      doneif (tagis[Helper.NatSecond] = 0)
+      field[wDamBonus].value -= round(hero.child[aSTR].field[aModBonus].value/2, 0, 1)</eval>
+    <eval phase="Render" index="3"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wSnake" name="Snakes" compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2">~ We have to impose secondary natural weapon penalties if secondary tag is applied
+      doneif (tagis[Helper.NatSecond] = 0)
+      field[wDamBonus].value -= round(hero.child[aSTR].field[aModBonus].value/2, 0, 1)</eval>
+    <eval phase="Render" index="3"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wTongue" name="Tongue" description="The Mohrg&apos;s tongue is a melee touch attack." compset="Weapon">
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2">~ We have to impose secondary natural weapon penalties if secondary tag is applied
+      doneif (tagis[Helper.NatSecond] = 0)
+      field[wDamBonus].value -= round(hero.child[aSTR].field[aModBonus].value/2, 0, 1)</eval>
+    <eval phase="Render" index="3"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wStrand" name="Strand" description="Strand attacks are ranged touch attacks that ignore armor, natural armor and shield bonuses. They have a maximum range of 1 increment but never take range penalties." compset="Weapon">
+    <comment>Authors Should:
+Bootstrap with a wRangeInc.20/40/ 60/Etc...</comment>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ We have to impose secondary natural weapon penalties if secondary tag is applied, 0 with improved multiattack, -2 with multiattack, -5 normally...
+doneif (tagis[Helper.NatSecond] = 0)
+doneif (#hasfeat[fImpMultiA] <> 0)
+
+if (#hasfeat[fMultiAtt] <> 0) then
+   field[wAttBonus].value -= 2
+else
+   field[wAttBonus].value -= 5
+endif]]></eval>
+    <eval phase="Render" index="2"><![CDATA[doneif (tagis[Value.?] = 0)
+
+field[livename].text = field[name].text & " x" & tagvalue[Value.?] & ""]]></eval>
+    </thing>
+  <thing id="wSwarm" name="Swarm" description="Swarms deal automatic damage to any creature whose space they occupy at the end of their move, with no attack roll needed. Swarm attacks are not subject to a miss chance for concealment or cover.\n\nA swarm&#146;s attacks are nonmagical, unless stated otherwise. Damage reduction sufficient to reduce a swarm attack&#146;s damage to 0, being incorporeal, and other special abilities usually give a creature immunity or resistance to swarm damage. Some swarms also have acid, poison, blood drain, or other special attacks in addition to normal damage.\n\nSwarms do not threaten creatures in their square, and can not make attacks of opportunity with their swarm attack." compset="Weapon">
+    <comment>Authors Should:
+Bootstrap with a wMain tag</comment>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="component" tag="BaseNatWep"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="NatPrimary"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="wMaxStrBon" tag="0"/>
+    <tag group="wMaxStrPen" tag="0"/>
+    <tag group="Helper" tag="Helper"/>
+    </thing>
+  </document>

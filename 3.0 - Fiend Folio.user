@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="tmHalfFey" name="Half-Fey" description="{i}{b}&quot;Half-fey&quot;{/b}{/i} is an inherited template that can be added to any corporeal living creature (referred to hereafter as the base creature). The creature&#146;s type changes to {b}fey.{/b} It uses all the base creature&#146;s statistics and special abilities except as noted.\n\n{b}Speed:{/b} All half-fey have butterflylike wings unless the base creature has wings already.  A half-fey that did not already have wings gains a fly speed equal to twice the base creature&#146;s fastest mode of movement, with good maneuverability.\n\n{b}Special Attacks:{/b} A half-fey with Wisdom or Charisma of 8 or higher (after the ability score adjustments noted below) gains spell-like abilities, using its Hit Dice as its caster level.\n\nThe table below lists the abilities available. These abilities are cumulative; a half-fey with 3 HD can use the abilities on the 1&#150;2 HD row on the table as well as those on the 3&#150;4 HD row. When a half-fey gets a choice between two abilities (such as faerie fire or glitterdust at 1&#150;2 HD), it can choose anew between these abilities each day.\n\n{b}HD       Abilities{/b}\n1&#150;2      Charm person at will, hypnotism 1/day, faerie fire or glitterdust 1/day\n3&#150;4       Detect law 3/day, sleep or enthrall 1/day\n5&#150;6       Protection from law 3/day, Tasha&#146;a hideous laughter or suggestion 1/day\n7&#150;8       Confusion or emotion 1/day\n9&#150;10    Eyebite or lesser geas 1/day\n11&#150;12    Dominate person or hold monster 1/day\n13&#150;14   Mass invisibility 1/day\n15&#150;16   Geas/quest or mass suggestion 1/day\n17&#150;18   Insanity or mass charm 1/day\n19+       Otto&#146;s irresistible dance 1/day\n\nThe magical nature of fey allows them to crossbreed with virtually any other creature. The offspring of the resulting unions, half-fey, are enigmatic and freespirited beings.\n\nFey are deeply curious about other creatures, spending a great deal of time watching their behavior.\n\nSometimes they have dalliances with a nonfey, often forgetting that there are consequences for their actions.  The progeny from these moments of passion are either completely ignored by the fey parent or utterly embraced, with the parent teaching it secrets that only the fey can know.\n\nHalf-fey vary wildly in their appearance, and no two are exactly alike.  Half-fey can either be beautiful and comely, with exaggerated and chiseled features, or misshapen and troll-like.  Sometimes it is apparent from birth that a child is not normal, but other times it takes several years for odd features to emerge.\n\nRegardless of what form they take, half-fey are always charismatic and intriguing to gaze upon.  They always have at least one or more distinctive attribute, such as wings, jeweled or knotty skin, or hair made of flowers.\n\nHalf-fey never truly fit into any mortal society, being considered alien and strange beyond compare.  Because of their ability to charm and lay curses, some half-fey are persecuted by superstitious populations.  However, half-fey are usually accepted to some degree among fey, who look past superficial aspects such as appearance.\n\nGood half-fey are usually devoted, if capricious, defenders of the wilderness and do their best to keep it unspoiled.  Evil half-fey are malicious, petty, vindictive, and sadistic, delighting in the chaos and mayhem that they can cause.\n\n{b}Source{/b}: Fiend Folio" compset="Template" summary="The creature gains the half-fey template." uniqueness="unique">
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="tmCHA" value="4"/>
+    <fieldval field="tmWIS" value="2"/>
+    <fieldval field="tmCON" value="-2"/>
+    <fieldval field="tmTmSklPls" value="3"/>
+    <fieldval field="tmSkillPls" value="6"/>
+    <fieldval field="tmInfHD" value="d6"/>
+    <usesource source="FiendFolio" parent="p30" name="Fiend Folio"/>
+    <tag group="TemplHelp" tag="Inherited"/>
+    <bootstrap thing="typFey"></bootstrap>
+    <bootstrap thing="lCommonND"></bootstrap>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <bootstrap thing="xHFspecial"></bootstrap>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Good"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10000">~ Set our fly speed
+      var speed as number
+      speed = hero.child[Speed].field[tSpeed].value * 2
+      hero.child[xFly].field[Value].value = maximum(hero.child[xFly].field[Value].value, speed)</eval>
+    </thing>
+  <thing id="xHFspecial" name="Half Fey-Specials" description="A half-fey with Wisdom or Charisma of 8 or higher (after the ability score adjustments noted below) gains spell-like abilities, using its Hit Dice as its caster level.\n\nThe table below lists the abilities available. These abilities are cumulative; a half-fey with 3 HD can use the abilities on the 1&#150;2 HD row on the table as well as those on the 3&#150;4 HD row. When a half-fey gets a choice between two abilities (such as faerie fire or glitterdust at 1&#150;2 HD), it can choose anew between these abilities each day.\n\n{align left}\n{b}HD                                  Abilities{/b}\n1&#150;2 ............ Charm person at will, hypnotism 1/day, faerie fire or glitterdust 1/day\n3&#150;4 ............ Detect law 3/day, sleep or enthrall 1/day\n5&#150;6 ............ Protection from law 3/day, Tasha&#146;a hideous laughter or suggestion 1/day\n7&#150;8 ............ Confusion or emotion 1/day\n9&#150;10 .........  Eyebite or lesser geas 1/day\n11&#150;12 ....... Dominate person or hold monster 1/day\n13&#150;14 ....... Mass invisibility 1/day\n15&#150;16 ....... Geas/quest or mass suggestion 1/day\n17&#150;18 ....... Insanity or mass charm 1/day\n19+ ........... Otto&#146;s irresistible dance 1/day" compset="Special" summary="A half-fey may use a number of special abilities based on HD.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <bootstrap thing="xHFCharmPe">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 2]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFHypno">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 3]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFDetLaw">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 3]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFSleep">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 3]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFProtLaw">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 5]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFTashHid">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 5]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFConfus">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 7]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFEyebite">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 9]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFDomPers">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 11]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFMassInv">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 13]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFGeasQu">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 15]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFInsan">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 17]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xHFOttsosD">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Hero.HitDice >= 19]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="xHFCharmPe" name="Charm Person" description="A half-fey can use {i}charm person{/i} at will as the spell (caster level = HD).  Those affected must succeed a will save or be  {i}charmed{/i} for 24 hours.  The save DC is Charisma-based." compset="Special" summary="Use as a spell like ability, with a 24 hour duration (CL 4th).">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 11 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    </thing>
+  <thing id="xHFDetLaw" name="Detect Law" description="A half-fey can use {i}detect law{/i} 3/day (caster level = HD).\n\nYou can sense the presence of law {b}in a 60 ft cone shaped emanation{/b}.  The amount of information revealed depends on how long you study a particular area or subject.\n\n{i}1st Round{/i}: Presence or absence of law.\n{i}2nd Round{/i}: Number of lawful auras (creatures, objects, or spells) in the area and the power of the most potent law aura present.  If you are of chaotic alignment, and the strongest lawful aura&#146;s power is overwhelming (see below), and the HD or level of the aura&#146;s source is at least twice your character level, you are stunned for 1 round and the spell ends.\n{i}3rd Round{/i}: The power and location of each aura.  If an aura is outside your line of sight, then you discern its direction but not its exact location.\n\nDetect law\n{b}&#151;&#151;&#151;&#151;&#151;&#151;&#151;&#151; Aura Power &#151;&#151;&#151;&#151;&#151;&#151;&#151;&#151;\nCreature/Object Faint Moderate Strong Overwhelming{/b}\nLawful creature(1) (HD) 10 or lower 11&#150;25 26&#150;50 51 or higher\nUndead (HD) 2 or lower 3&#150;8 9&#150;20 21 or higher\nLawful outsider (HD) 1 or lower 2&#150;4 5&#150;10 11 or higher\nCleric of an Lawful deity(2) (class levels) 1 2&#150;4 5&#150;10 11 or higher\nLawful magic item or spell (caster level) 2nd or lower 3rd&#150;8th 9th&#150;20th 21st or higher\n\n1 Except for undead and outsiders, which have their own entries on the table.\n2 Some characters who are not clerics may radiate an aura of equivalent power.  The class description will indicate whether this applies.\n\n{i}Aura Power{/i}: A lawful aura&#146;s power depends on the type of lawful creature or object that you&#146;re detecting and its HD, caster level, or (in the case of a cleric) class level; see the accompanying table.  If an aura falls into more than one strength category, the spell indicates the stronger of the two.\n\nFor example, as indicated on the table, an lawful outsider with 12 HD has an overwhelming aura of law.  A good cleric who casts this spell and directs it at the location of such a creature for longer than 1 round loses the spell and is stunned for 1 round if his character level is 6th or lower.\n\n{i}Lingering Aura{/i}: A lawful aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item).   If {i}detect law{/i} is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura).  How long the aura lingers at this dim level depends on its original power:\n\n{b}Duration of\nOriginal Strength Lingering Aura{/b}\nFaint 1d6 rounds\nModerate 1d6 minutes\nStrong 1d6&#215;10 minutes\nOverwhelming 1d6 days\n\nAnimals, traps, poisons, and other potential perils are not law, and as such this spell does not detect them.\n\nEach round, you can turn to detect law in a new area.  The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it." compset="Special" summary="3/day, Detect Law">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="3"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    </thing>
+  <thing id="xHFProtLaw" name="Protection from Law" description="A half-fey can use {i}protection from law{/i} 3/day (caster level = HD).\n\nThis spell wards a creature from attacks by lawful creatures, from mental control, and from summoned creatures.  It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.\n\nFirst, the subject gains a +2 deflection bonus to AC and a +2 resistance bonus on saves.  Both these bonuses apply against attacks made or effects created by lawful creatures.\n\nSecond, the barrier blocks any attempt to possess the warded creature (by a {i}magic jar{/i} attack, for example) or to exercise mental control over the creature (including enchantment (charm) effects and enchantment (compulsion) effects that grant the caster ongoing control over the subject, such as {i}dominate person{/i}).  The protection does not prevent such effects from targeting the protected creature, but it suppresses the effect for the duration of the {i}protection from law{/i} effect.  If the {i}protection from law{/i} effect ends before the effect granting mental control does, the would be controller would then be able to mentally command the controlled creature.  Likewise, the barrier keeps out a possessing life force but does not expel one if it is in place before the spell is cast.  This second effect works regardless of alignment.\n\nThird, the spell prevents bodily contact by summoned creatures.  This causes the natural weapon attacks of such creatures to fail and the creatures to recoil if such attacks require touching the warded creature. Good summoned creatures are immune to this effect.  The protection against contact by summoned creatures ends if the warded creature makes an attack against or tries to force the barrier against the blocked creature.  Spell resistance can allow a creature to overcome this protection and touch the warded creature." compset="Special" summary="3/day, +2 to AC and saves, counter m-c, hedge out elementals and outsiders.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="3"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    </thing>
+  <thing id="xHFHypno" name="Hypnotism, Faerie Fire or Glitterdust" description="A half-fey may select to learn to use {i}Hypnotism{/i}, {i}Faerie Fire{/i}, or {i}Glitterdust{/i} 1/day, as the spell (caster level = HD).  You must choose one and this choice cannot be changed.  The save DC is Charisma-based." compset="Special" summary="1/day, Hypnotism, Faerie Fire or Glitterdust.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 12 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xHFTashHid" name="Tasha&apos;s Hideous Laughter or Suggestion" description="A half-fey can use {i}Tasha&apos;s Hideous Laughter{/i} or {i}Suggestion{/i} 1/day, as the spell (caster level = HD).  You must choose one and this choice cannot be changed.  The save DC is Charisma-based." compset="Special" summary="1/day, Tasha&apos;s Hideous Laughter or Suggestion.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 12 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xHFConfus" name="Confusion or Emotion" description="A half-fey may select to learn to use {i}confusion{/i} or {i}Emotion{/i} 1/day, as the spell (caster level = HD).  You must choose one and this choice cannot be changed.  The save DC is Charisma-based.\n\n{align left}\nConfusion\n\nThis spell causes the targets to become {i}confused,{/i} making them unable to independently determine what they will do.\n{vert 7}Roll on the following table at the beginning of each subject&apos;s turn each round to see what the subject does in that round.\n{vert 7}{b}d%{/b}{b}Behavior{/b}\n01-10Attack caster with melee or ranged weapons (or close with caster if attack is not possible).\n11-20Act normally.\n21-50Do nothing but babble incoherently.\n51-70Flee away from caster at top possible speed.\n71-100Attack nearest creature (for this purpose, a familiar counts as part of the subject&apos;s self).\n{vert 7}A {i}confused{/i} character who can&apos;t carry out the indicated action does nothing but babble incoherently. Attackers are not at any special advantage when attacking a {i}confused{/i} character. Any {i}confused{/i} character who is attacked automatically attacks its attackers on its next turn, as long as it is still {i}confused{/i} when its turn comes. Note that a {i}confused{/i} character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).\n\nEmotion\n\nThis spell arouses a single emotion of your choice in the subjects. You can choose any one of the following versions:\n\n{b}Despair:{/b} The enchanted creatures suffer a &#150;2 morale penalty to saving throws, attack rolls, ability checks, skill checks, and weapon damage rolls. Emotion (despair) dispels emotion (hope).\n\n{b}Fear:{/b} The enchanted creatures flee from you whenever they are in sight of you. Emotion (fear) dispels emotion (rage).\n\n{b}Friendship:{/b} The enchanted creatures react more positively toward others. Their attitude shifts to the next more favorable reaction (hostile to unfriendly, unfriendly to indifferent, indifferent to friendly, or friendly to helpful). Creatures involved in combat, however, continue to fight back normally. Emotion (friendship) dispels emotion (hate).\n\n{b}Hate:{/b} The enchanted creatures react more negatively toward others. Their attitude shifts to the next less favorable reaction (helpful to friendly, friendly to indifferent, indifferent to unfriendly, or unfriendly to hostile). Emotion (hate) dispels emotion (friendship).\n\n{b}Hope:{/b} The enchanted creatures gain a +2 morale bonus to saving throws, attack rolls, ability checks, skill checks, and weapon damage rolls. Emotion (hope) dispels emotion (despair).\n\n{b}Rage:{/b} The enchanted creatures gain a +2 morale bonus to Strength and Constitution scores, a +1 morale bonus on Will saves, and a &#150;1 penalty to AC. They are compelled to fight heedless of danger. Emotion (rage) does not stack with barbarian rage or with itself. Emotion (rage) dispels emotion (fear)." compset="Special" summary="1/day, Confusion or Emotion.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 14 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xHFEyebite" name="Eyebite or Lesser Geas" description="A half-fey may select to learn to use {i}Eyebite{/i} or {i}Lesser Geas{/i} 1/day, as the spell (caster level = HD).  You must choose one and this choice cannot be changed.  The save DC is Charisma-based." compset="Special" summary="1/day, Eyebite or Lesser Geas.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 16 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xHFDomPers" name="Dominate Person or Hold Monster" description="A half-fey may select to learn to use {i}Dominate Person{/i} or {i}Hold Monster{/i} 1/day, as the spell (caster level = HD).  You must choose one and this choice cannot be changed.  The save DC is Charisma-based." compset="Special" summary="1/day, Dominate Person or Hold Monster.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 15 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xHFMassInv" name="Mass Invisibility" description="A half-fey can use {i}Mass Invisibility{/i} at will as the spell (caster level = HD).  The save DC is Charisma-based." compset="Special" summary="1/day, Mass Invisibility  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    </thing>
+  <thing id="xHFGeasQu" name="Geas/Quest or Mass Suggestion" description="A half-fey may select to learn to use {i}Geas/Quest{/i} or {i}Mass Suggestion{/i} 1/day, as the spell (caster level = HD).  You must choose one and this choice cannot be changed.  The save DC is Charisma-based." compset="Special" summary="1/day, Geas/Quest or Mass Suggestion.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 16 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xHFInsan" name="Insanity or Mass Charm" description="A half-fey may select to learn to use {i}Insanity{/i} or {i}Mass Charm{/i} 1/day, as the spell (caster level = HD).  You must choose one and this choice cannot be changed.  The save DC is Charisma-based." compset="Special" summary="1/day, Insanity or Mass Charm.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 17 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xHFOttsosD" name="Otto&apos;s Irresistible Dance" description="A half-fey can use {i}Otto&apos;s Irresistible Dance{/i} at will as the spell (caster level = HD).  The save DC is Charisma-based." compset="Special" summary="1/day, Otto&apos;s Irresistible Dance.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 18 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  <thing id="xHFSleep" name="Sleep or Enthrall" description="A half-fey may select to learn to use {i}Sleep{/i} or {i}Enthrall{/i} 1/day, as the spell (caster level = HD).  You must choose one and this choice cannot be changed.  The save DC is Charisma-based." compset="Special" summary="1/day, Sleep or Enthrall.  CL = HD Choose one ONLY.">
+    <comment>Redo DC....</comment>
+    <fieldval field="xSource" value="Half-Fey"/>
+    <fieldval field="hTotal" value="1"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="20000">~ Get our base DC.
+      var DC as number
+      DC = 12 + hero.child[aCHA].field[aModBonus].value
+
+      field[Value].value += DC</eval>
+    <eval phase="Render" index="2"><![CDATA[     field[livename].text = field[name].text & " (DC" & field[Value].value & ")"]]></eval>
+    </thing>
+  </document>

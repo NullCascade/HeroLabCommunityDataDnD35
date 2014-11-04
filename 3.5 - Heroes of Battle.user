@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="cHelpCbM" name="Combat Medic" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="CbM"/>
+    <fieldval field="cSkills" value="2"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="3"/>
+    <arrayval field="cMagLevTot" index="3" value="4"/>
+    <arrayval field="cMagLevTot" index="4" value="5"/>
+    <usesource source="HeroBattle"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kHeal"/>
+    <tag group="ClassSkill" tag="kKnowHist"/>
+    <tag group="ClassSkill" tag="kKnowRel"/>
+    <tag group="ClassSkill" tag="kRide"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="AlgnForbid" tag="Evil"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="CombtMdc" name="Combat Medic"/>
+    <tag group="cAttack" tag="Medium"/>
+    <bootstrap thing="cCmbMMobil"></bootstrap>
+    <bootstrap thing="cCmbMDefC"></bootstrap>
+    <bootstrap thing="cCmbMFHea"></bootstrap>
+    <bootstrap thing="cHKckAid"></bootstrap>
+    <bootstrap thing="cHkckRefS"></bootstrap>
+    <bootstrap thing="cHKckSanc"></bootstrap>
+    <bootstrap thing="cCmbMSpHea"></bootstrap>
+    <bootstrap thing="cCmbMEvas"></bootstrap>
+    </thing>
+  <thing id="cCombtMdc" name="Combat Medic" compset="ClassLevel" maxlimit="5">
+    <usesource source="HeroBattle"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpCbM"></bootstrap>
+    <link linkage="helper" thing="cHelpCbM"/>
+    <exprreq message="Dodge feat needed."><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
+    <exprreq message="Concentration 4 ranks needed."><![CDATA[#skillranks[kConcent] >= 4]]></exprreq>
+    <exprreq message="Heal 8 ranks needed."><![CDATA[#skillranks[kHeal] >= 8]]></exprreq>
+    <exprreq message="Combat Casting feat needed."><![CDATA[#hasfeat[fComCast] <> 0]]></exprreq>
+    <prereq message="Must have Cure Light Wounds.">
+      <validate><![CDATA[var spellname as string
+var risultato as number
+foreach pick in hero from BaseSpell
+spellname=eachpick.field[name].text
+risultato=compare(spellname,"Cure Light Wounds")
+if (risultato = 0) then
+@valid = 1
+endif
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cHKckSanc" name="Healing kicker (Sanctuary)" description="You can imbue any conjuration (healing) spell with a Sanctuary spell (CD 15 + Class Level + Wisdom Modifier)" compset="ClSpecial">
+    <fieldval field="hTotal" value="(cTotalLvl + mWis)"/>
+    <usesource source="HeroBattle"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpCbM"/>
+    </thing>
+  <thing id="cHkckRefS" name="Healing kicker (Reflex Saves)" description="You can imbue any conjuration (healing) spell with a Reflex Save modifier equal to your class level" compset="ClSpecial">
+    <fieldval field="hTotal" value="(cTotalLvl + mWis)"/>
+    <usesource source="HeroBattle"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpCbM"/>
+    </thing>
+  <thing id="cHKckAid" name="Healing kicker (Aid)" description="You can imbue any conjuration (healing) spell with a Aid spell (8 hp + Class Level). The temporary HP last for 1 minute or until they are depleted." compset="ClSpecial">
+    <fieldval field="hTotal" value="(cTotalLvl + mWis)"/>
+    <usesource source="HeroBattle"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpCbM"/>
+    </thing>
+  <thing id="cCmbMDefC" name="Defensive Caster" description="You gain a compentence bonus equal to your class level on Concentration checks to cast defensively." compset="ClSpecial">
+    <usesource source="HeroBattle"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpCbM"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cCmbMFHea" name="Field Healer" description="You can make a Heal check to provide first aid as a move action." compset="ClSpecial">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpCbM"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="cCmbMSpHea" name="Spontaneous Heal" description="You can convert any prepared spell or spell slot of 6th level or higher in order to cast Heal, even if that spell is not normally on your class list." compset="ClSpecial">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpCbM"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Movement"/>
+    </thing>
+  <thing id="cCmbMMobil" name="Combat Medic Mobility" description="You gain Mobility as a bonus feat." compset="ClSpecial">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpCbM"/>
+    <tag group="SpecType" tag="Movement"/>
+    <bootstrap thing="fMobility">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cCmbMEvas" name="Evasion" description="If you make a Reflex save against an attack that would thus deal you half damage, you take no damage instead." compset="ClSpecial" summary="You take no damage from a successful reflex save.">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="SpecSource" tag="cHelpCbM"/>
+    <tag group="SpecType" tag="Defense" name="Defense" abbrev="Defense"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="cHelpDrC" name="Dread Commando" description="Dread commandos are the elite scouts and strike force of a well-trained mercenary band. They combine stealth with protection, quickly moving through the battlefield even while heavily armored, and they are deadly when they catch an opponent unawares. Dread commandos are called upon when a mission requires an excursion deep into enemy territory and conflict is inevitable." compset="ClassHelp" uniqueness="unique">
+    <comment>Armored Ease bug needs to be fixed. (Done)
+
+Test this maybe? (Done)
+
+3-09-10 fixed issues with Sudden Strike.</comment>
+    <fieldval field="cAbbr" value="DrC"/>
+    <fieldval field="cSkills" value="6"/>
+    <arrayval field="cSpecial" index="1" value="Armored ease 2"/>
+    <arrayval field="cSpecial" index="2" value="Sudden strike +2d6"/>
+    <arrayval field="cSpecial" index="3" value="Armored ease 4, stealthy movement"/>
+    <arrayval field="cSpecial" index="4" value="Sudden strike +3d6"/>
+    <arrayval field="cSpecial" index="0" value="Sudden strike +1d6, team initiative bonus"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kDisable"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kKnowGeog"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kOpenLock"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="ClassSkill" tag="kUseRope"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="DreadComm" name="Dread Commando"/>
+    <tag group="cAttack" tag="Good"/>
+    <bootstrap thing="cDrCInitB1"></bootstrap>
+    <bootstrap thing="cDrCArmEa1"></bootstrap>
+    <bootstrap thing="cDrCSteMov"></bootstrap>
+    <bootstrap thing="cDrCSudSt2"></bootstrap>
+    <bootstrap thing="cDrCSudSt3"></bootstrap>
+    <bootstrap thing="cDrCArmEa2"></bootstrap>
+    <bootstrap thing="cDrCSudSt1"></bootstrap>
+    <bootstrap thing="xArmEase1">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.DreadComm >=2]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="xArmEase2">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.DreadComm >=4]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cDreadComm" name="Dread Commando" description="Dread commandos are the elite scouts and strike force of a well-trained mercenary band. They combine stealth with protection, quickly moving through the battlefield even while heavily armored, and they are deadly when they catch an opponent unawares. Dread commandos are called upon when a mission requires an excursion deep into enemy territory and conflict is inevitable." compset="ClassLevel" maxlimit="5">
+    <fieldval field="cHitDice" value="8"/>
+    <usesource source="HeroBattle"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpDrC"></bootstrap>
+    <link linkage="helper" thing="cHelpDrC"/>
+    <exprreq message="Base attack bonus +5 required."><![CDATA[child[Attack].field[tAtkBase].value >= 5]]></exprreq>
+    <exprreq message="Hide 6 ranks required."><![CDATA[#skillranks[kHide] >= 6]]></exprreq>
+    <exprreq message="Move Silently 6 ranks required."><![CDATA[#skillranks[kMoveSil] >= 6]]></exprreq>
+    <exprreq message="Dodge required."><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
+    <exprreq message="Mobility required."><![CDATA[#hasfeat[fMobility] <> 0]]></exprreq>
+    </thing>
+  <thing id="cDrCSudSt1" name="Sudden Strike +1d6" description="If you can catch an opponent when she is unable to defend herself effectively from your attack, you can strike a vital spot for extra damage. Whenever your target is denied her Dexterity bonus to AC against your attack (whether the target actually has a Dexterity bonus to Armor Class or not), you deal an extra 1d6 points of damage with your attack. The extra damage increases to 2d6 at 3rd level and to 3d6 at 5th level.\n\nRanged attacks count as sudden strikes only if the target is within 30 feet; you can&#146;t strike with deadly accuracy from beyond this range.\n\nYou can only use sudden strike against living creatures with discernible anatomies&#151;undead, constructs, oozes, plants, and incorporeal creatures lack vital areas to attack. Any creature that is immune to extra damage from critical hits is not vulnerable to sudden strike damage. You must be able to see the target well enough to pick out a vital spot and must be able to reach such a spot. You cannot make a sudden strike while striking a creature with concealment or striking the limbs of a creature whose vitals are out of reach.\n\nYou can&#146;t use sudden strike to deliver nonlethal damage. Weapons capable of dealing only nonlethal damage don&#146;t deal extra damage when used as part of a sudden strike.\n\nThe extra damage from the sudden strike ability stacks with extra damage from a sneak attack whenever both would apply to the same target." compset="ClSpecial" summary="+1d6 damage to foes who are denied Dex bonus.">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpDrC"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xSudStrike"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ Get our level
+      var level as number
+      level = field[xTotalLev].value
+
+~ Calculate our number of Sudden Strike Dice 
+      var dice as number
+   if (level = 5) then
+      dice = 3
+    elseif (level >= 3) then
+      dice = 2
+    elseif (level >= 1) then
+      dice = 1
+   endif
+
+~ Set the special to display correctly
+   hero.child[xSudStrike].field[Value].value += dice]]></eval>
+    </thing>
+  <thing id="cDrCInitB1" name="Team Initiative Bonus +1" description="You are skilled at keeping a team organized and ready for danger. All allies within 30 feet who can see you (including yourself) gain a competence bonus on initiative checks equal to your class level." compset="ClSpecial" summary="Gain listed comp bonus on Initiative checks for self and all allies in 30 ft.">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpDrC"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[~ Get our level
+      var level as number
+      level = field[xTotalLev].value
+
+~ Add our level as a competence bonus to initiative
+   #competencebonus[hero.child[Initiative], level]
+
+~ Set our name
+   field[livename].text = "Team Initiative Bonus +" & level & ""]]></eval>
+    </thing>
+  <thing id="cDrCArmEa1" name="Armored Ease 2" description="You learn to adapt your movements to the restrictive nature of armor. Beginning at 2nd level, you reduce the armor check penalty of any armor with which you are proficient by 2 (to a minimum of 0). At 4th level, this reduction increases to 4 points (to a minimum of 0)." compset="ClSpecial" summary="Reduce armor check penalty by 2 for armors you are proficient in.">
+    <comment>Armor check penalty not adjusting correctly. Is a known bug, needs fixing (Done)</comment>
+    <usesource source="HeroBattle"/>
+    <tag group="SpecSource" tag="cHelpDrC"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cDrCSteMov" name="Stealthy Movement" description="You learn to remain quiet and hidden even while mobile. Beginning at 4th level, you take no penalty on Hide or Move Silently checks while moving at up to your normal speed, and you take only a &#150;10 penalty on Hide and Move Silently checks when running or charging (instead of the usual &#150;20)." compset="ClSpecial" summary="No penalty to Hide or Move Silently when moving speed, -10 when running.">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpDrC"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xSudStrike" name="Sudden Strike" description="If you can catch an opponent when she is unable to defend herself effectively from your attack, you can strike a vital spot for extra damage. Whenever your target is denied her Dexterity bonus to AC against your attack (whether the target actually has a Dexterity bonus to Armor Class or not), you deal an extra 1d6 points of damage with your attack. \n\nRanged attacks count as sudden strikes only if the target is within 30 feet; you can&#146;t strike with deadly accuracy from beyond this range.\n\nYou can only use sudden strike against living creatures with discernible anatomies&#151;undead, constructs, oozes, plants, and incorporeal creatures lack vital areas to attack. Any creature that is immune to extra damage from critical hits is not vulnerable to sudden strike damage. You must be able to see the target well enough to pick out a vital spot and must be able to reach such a spot. You cannot make a sudden strike while striking a creature with concealment or striking the limbs of a creature whose vitals are out of reach.\n\nYou can&#146;t use sudden strike to deliver nonlethal damage. Weapons capable of dealing only nonlethal damage don&#146;t deal extra damage when used as part of a sudden strike.\n\nThe extra damage from the sudden strike ability stacks with extra damage from a sneak attack whenever both would apply to the same target." compset="Special" summary="Deal extra damage when your target is denied Dex bonus." uniqueness="unique">
+    <fieldval field="xSource" value="Class"/>
+    <usesource source="HeroBattle"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostLevel" priority="20000"><![CDATA[
+      call CalcValue
+
+      ~ Set our name properly
+      field[livename].text = field[name].text & " +" & field[Value].value & "d6"
+
+      field[xSumm].text = "+" & field[Value].value & "d6 damage to foes who are denied Dex bonus."]]></eval>
+    </thing>
+  <thing id="cDrCArmEa2" name="Armored Ease 4" description="You learn to adapt your movements to the restrictive nature of armor. Beginning at 2nd level, you reduce the armor check penalty of any armor with which you are proficient by 2 (to a minimum of 0). At 4th level, this reduction increases to 4 points (to a minimum of 0)." compset="ClSpecial" summary="Reduce armor check penalty by 4 for armors you are proficient in.">
+    <comment>Armor check penalty not adjusting correctly. Is a known bug, needs fixing (Done)</comment>
+    <usesource source="HeroBattle"/>
+    <tag group="SpecSource" tag="cHelpDrC"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cDrCSudSt2" name="Sudden Strike +2d6" description="Sudden Strike damage increases to 2d6." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpDrC"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cDrCSudSt3" name="Sudden Strike +3d6" description="Sudden Strike damage increases to 3d6." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpDrC"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="xArmEase1" name="Armored Ease 1" description="Holder\n\n~ Go through all armors, if we are proficient, add our bonus\n    foreach pick in hero from BaseArmor where &quot;Helper.Proficient&quot;\n     each.field[mArmorChk].value += 2\n    nexteach\n\nforeach pick in hero from BaseArmor where &quot;mClass.Light|mClass.Medium|mClass.Heavy&quot;\n each.field[mArmorChk].value += 2\nnexteach" compset="Special">
+    <comment><![CDATA[foreach pick in hero from BaseArmor where "mClass.Heavy"
+ each.field[mArmorChk].value += 1
+ perform each.delete[mClass.Heavy]
+ perform each.assign[mClass.Medium]
+nexteach]]></comment>
+    <eval phase="PreLevel" priority="2500"><![CDATA[
+~ Go through all armors, if we are proficient, add our bonus
+  foreach pick in hero from BaseArmor where "mClass.Light|mClass.Medium|mClass.Heavy"
+    each.field[mArmorChk].value += 2
+  nexteach]]></eval>
+    <eval phase="UserPostLv" priority="10000" index="2"><![CDATA[
+~ Earlier we subtracted from all armors ACP, now go through all armors checking for proficiency, if not then cancel previous bonus... this only adjusts the display on the armor because it is too late
+  foreach pick in hero from BaseArmor where "mClass.Light|mClass.Medium|mClass.Heavy & !Helper.Proficient"
+    each.field[mArmorChk].value -= 2
+  nexteach
+
+~ Check to see if our current armor is proficient. If not, then add penalty to Armor check skills to counteract previous bonus
+   var result as number
+  foreach pick in hero from BaseArmor where "Helper.CurrArmor & !Helper.Proficient"
+    result += 1
+  nexteach
+
+  if (result <> 0) then
+foreach pick in hero from BaseSkill where "Helper.ArmorChk1"
+  each.field[Penalty].value -= 2
+nexteach
+
+foreach pick in hero from BaseSkill where "Helper.ArmorChk2"
+  each.field[Penalty].value -= 4
+nexteach
+  endif]]></eval>
+    </thing>
+  <thing id="xArmEase2" name="Armored Ease 2" description="Holder" compset="Special">
+    <eval phase="PreLevel" priority="2500"><![CDATA[
+~ Go through all armors, if we are proficient, add our bonus
+  foreach pick in hero from BaseArmor where "mClass.Light|mClass.Medium|mClass.Heavy"
+    each.field[mArmorChk].value += 2
+  nexteach]]></eval>
+    <eval phase="UserPostLv" priority="10000" index="2"><![CDATA[
+~ Earlier we subtracted from all armors ACP, now go through all armors checking for proficiency, if not then cancel previous bonus... this only adjusts the display on the armor because it is too late
+  foreach pick in hero from BaseArmor where "mClass.Light|mClass.Medium|mClass.Heavy & !Helper.Proficient"
+    each.field[mArmorChk].value -= 2
+  nexteach
+
+~ Check to see if our current armor is proficient. If not, then add penalty to Armor check skills to counteract previous bonus
+   var result as number
+  foreach pick in hero from BaseArmor where "Helper.CurrArmor & !Helper.Proficient"
+    result += 1
+  nexteach
+
+  if (result <> 0) then
+foreach pick in hero from BaseSkill where "Helper.ArmorChk1"
+  each.field[Penalty].value -= 2
+nexteach
+
+foreach pick in hero from BaseSkill where "Helper.ArmorChk2"
+  each.field[Penalty].value -= 4
+nexteach
+  endif]]></eval>
+    </thing>
+  <thing id="fCoordShot" name="Coordinated Shot" description="You are extraordinarily talented at making ranged attacks past your allies.\n\n{b}Prerequisite{/b}: Point Blank Shot, Precise Shot. \n\n{b}Benefit{/b}: When making a ranged attack against a foe who has cover due to the position of your ally or allies, your ranged attacks ignore the Armor Class bonus granted to the target because of that cover. Cover from other sources is unaffected.\n\n{b}Special{/b}: A fighter can select Coordinated Shot as one of his fighter bonus feats (see page 38 of the Player&#146;s Handbook)." compset="Feat" summary="Ranged attacks ignore cover granted by your allies." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Point Blank Shot required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <exprreq message="Precise Shot required."><![CDATA[#hasfeat[fPrecShot] <> 0]]></exprreq>
+    </thing>
+  <thing id="fBalliProf" name="Ballista Proficiency" description="You have trained in ballista operation.\n\n{b}Benefit{/b}: You do not take the normal &#150;4 nonproficiency penalty when making an attack roll with a ballista (see page 65).\n\n{b}Special{/b}: A fighter can select Ballista Proficiency as one of his fighter bonus feats (see page 38 of the Player&#146;s Handbook)." compset="Feat" summary="You are proficient in attacking with ballista.">
+    <usesource source="HeroBattle" parent="p35" name="Heroes of Battle"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="fBlockArro" name="Block Arrow" description="You can block incoming arrows with your shield.\n\n{b}Prerequisites{/b}: Dex 13, Shield Proficiency.\n\n{b}Benefit{/b}: You must be using a shield to use this feat. Once per round when you would normally be hit with a ranged weapon, you can deflect it so that you take no damage from it. You must be aware of the attack and not flat-footed. Unusually massive ranged weapons, such as boulders hurled by giants, siege weapon attacks, and ranged attacks generated by spell effects (such as Melf&#146;s acid arrow) can&#146;t be deflected.\n\n{b}Special{/b}: A fighter can select Block Arrow as one of his fighter bonus feats (see page 38 of the Player&#146;s Handbook)." compset="Feat" summary="Once per rd when would be hit by ranged weapon, you negate it." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Shield proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fCourRally" name="Courageous Rally" description="You can rally demoralized foes with your bardic music.\n\n{b}Prerequisites{/b}: Bardic music (inspire courage) class feature.\n\n{b}Benefit{/b}: When you use bardic music to inspire courage, you can make a free rally check (see page 73) as part of the same action used to activate your bardic music. You add a morale bonus on this rally check equal to the morale bonus granted by your inspire courage class feature." compset="Feat" summary="When use Inspire Courage, make free rally check with morale bon from music." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Bardic Music (inspire courage) required."><![CDATA[hero.childfound[cBrdMInsC].tagis[Helper.ShowSpec] - hero.childfound[cBrdMInsC].tagis[Helper.SpcDisable] <> 0]]></exprreq>
+    </thing>
+  <thing id="fExAurCour" name="Expanded Aura of Courage" description="Your aura of courage protects more allies than normal.\n\n{b}Prerequisite{/b}: Aura of courage class feature.\n\n{b}Benefit{/b}: Your aura of courage now affects allies within 60 feet of you.\n\n{b}Normal{/b}: Without this feat, your aura of courage only works on allies within 10 feet." compset="Feat" summary="Aura of Courage affects allies within 60 ft." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="User" tag="AuraCour" name="Aura of Courage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Aura of Courage required."><![CDATA[hero.childfound[cPalAuraCr].tagis[Helper.ShowSpec] + hero.childfound[cPfChvAura].tagis[Helper.ShowSpec] + hero.tagis[User.AuraCour] <> 0]]></exprreq>
+    </thing>
+  <thing id="fSiegeEngi" name="Expert Siege Engineer" description="You are particularly skilled at operating siege weapons, such as catapults and battering rams.\n\n{b}Prerequisite{/b}: Profession (siege engineer) 8 ranks.\n\n{b}Benefit{/b}: You gain a +2 competence bonus on attack rolls and damage rolls made when using a siege engine. (Chapter 4 has rules for operating siege engines.)\n\n{b}Special{/b}: A fighter can select Expert Siege Engineer as one of his fighter bonus feats (see page 38 of the Player&#146;s Handbook)." compset="Feat" summary="+2 competence bon on attack and damage rolls with siege engines." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="fCategory" tag="General" name="General" abbrev="General"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Profession (siege engineer) 8 ranks required."><![CDATA[#skillranks[kProfSiege] >= 8]]></exprreq>
+    </thing>
+  <thing id="kProfSiege" name="Profession: Siege Engineer" description="You can operate siege engines, and direct crews of sappers." compset="Skill" uniqueness="unique">
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="Helper" tag="SkCatProf" name="Profession Skill" abbrev="Profession Skill"/>
+    <tag group="Helper" tag="TrainOnly" name="TrainOnly" abbrev="TrainOnly"/>
+    <link linkage="skillattr" thing="aWIS"/>
+    </thing>
+  <thing id="fExtraFoll" name="Extra Followers" description="Your charismatic magnetism attracts even more followers to your banner.\n\n{b}Prerequisites{/b}: Cha 13, Leadership.\n\n{b}Benefit{/b}: You can lead twice as many followers as indicated for your Leadership score (see page 106 of the Dungeon Master&#146;s Guide). For example, a character with this feat and a Leadership score of 15 can lead forty 1st-level followers, four 2nd-level followers, and two 3rd-level followers." compset="Feat" summary="Leadership grants twice as many followers as normal." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="fCategory" tag="Leadership"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Leadership required."><![CDATA[#hasfeat[fLeader] <> 0]]></exprreq>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fGuerScout" name="Guerrilla Scout" description="You know how to use your senses to greater effect.\n\n{b}Benefit{/b}: You gain a +1 bonus on initiative checks. Listen and Spot ranks cost 1 skill point, even if these skills are cross-class for you. The maximum number of ranks you can purchase in a cross-class skill remains the same.\n\n{b}Normal{/b}: If Listen and Spot are cross-class skills for you, each rank you purchase in those skills without having this feat costs 2 skill points." compset="Feat" summary="+1 to Init, Listen and Spot cost 1 pt per rank, even when cross class." uniqueness="useronce">
+    <comment>Eval script, look through, find out how many ranks put in as cross class, add equal number.... (Done)
+
+Also Init bon. (Done)</comment>
+    <usesource source="HeroBattle"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="PreLevel" priority="5100"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+~ Look through skills for Spot and Listen, set out number of ranks ~ equal to our number of points spent.
+
+foreach pick in hero from BaseSkill where "thingid.kListen|thingid.kSpot"
+ each.field[kUserRanks].value = each.field[kUserPts].value
+nexteach
+
+      hero.child[Initiative].field[Bonus].value += 1]]></eval>
+    </thing>
+  <thing id="fGuerWarr" name="Guerrilla Warrior" description="You know how to move stealthily, even when armored.\n\n{b}Benefit{/b}: When you are wearing light or medium armor, reduce the armor check penalty of the armor by 1 (minimum 0).\n\nHide and Move Silently ranks cost 1 skill point, even if these skills are cross-class for you. The maximum number of ranks you can purchase in a cross-class skill remains the same.\n\n{b}Normal{/b}: If Hide and Move Silently are cross-class skills for you, each rank you purchase in those skills without having this feat costs 2 skill points." compset="Feat" summary="-1 to ACP, Move Silently and Hide cost 1 pt per rank, even when cross class." uniqueness="useronce">
+    <comment>Eval script, look through, find out how many ranks put in as cross class, add equal number.... (Done)
+
+Also ACP reduce (Done)</comment>
+    <usesource source="HeroBattle"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="PreLevel" priority="5100"><![CDATA[
+      ~ If we're disabled, do nothing
+      if (tagis[Helper.FtDisable] <> 0) then
+        done
+        endif
+
+~ Look through skills for Hide and Move Silently, set out number of ~ ranks equal to our number of points spent.
+
+foreach pick in hero from BaseSkill where "thingid.kHide|thingid.kMoveSil"
+ each.field[kUserRanks].value = each.field[kUserPts].value
+nexteach
+
+~ Look through armors for Light or Medium, reduce ACP by 1
+foreach pick in hero from BaseArmor where "mClass.Light|mClass.Medium"
+ each.field[mArmorChk].value += 1
+nexteach]]></eval>
+    </thing>
+  <thing id="fImpCohort" name="Improved Cohort" description="You attract a more powerful cohort than you normally would.\n\n{b}Prerequisites{/b}: Cha 15, Leadership.\n\n{b}Benefit{/b}: The maximum level of the cohort you gain from the Leadership feat (see page 106 of the Dungeon Master&#146;s Guide) is one lower than your character level.\n\n{b}Normal{/b}: Without this feat, a cohort&#146;s maximum level is two levels below the associated PC&#146;s level." compset="Feat" summary="Cohorts maximum level increases to 1 less than your own." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Leadership"/>
+    <exprreq message="Leadership required."><![CDATA[#hasfeat[fLeader] <> 0]]></exprreq>
+    <exprreq message="Charisma 15 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fInspLeadr" name="Inspirational Leadership" description="Your cohort and followers are exceptionally faithful to your cause.\n\n{b}Prerequisites{/b}: Cha 17, Leadership.\n\n{b}Benefit{/b}: As long as their morale is already no worse than normal (see Morale Conditions, page 73), the cohort and followers you gain from the Leadership feat always begin combat in a heartened condition. (A heartened character gains a +1 morale bonus on Will saves against fear effects, including morale checks.) If your cohort or followers are already shaken or worse at the start of a battle, the benefit of this feat does not apply.\n\nYou also gain a +5 bonus on rally checks made to rally the cohort and/or followers you have gained from the Leadership feat." compset="Feat" summary="Cohort and followers start combat heartened, +5 on rally checks for them." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Leadership"/>
+    <exprreq message="Leadership required."><![CDATA[#hasfeat[fLeader] <> 0]]></exprreq>
+    <exprreq message="Charisma 17 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 17]]></exprreq>
+    </thing>
+  <thing id="fMountMobi" name="Mounted Mobility" description="You are skilled at dodging past opponents while mounted.\n\n{b}Prerequisite{/b}: Mounted Combat, Ride 4 ranks.\n\n{b}Benefit{/b}: If you are mounted, you and your mount get a +4 dodge bonus to Armor Class against attacks of opportunity provoked when your mount moves out of a threatened square.\n\nA condition that makes you or your mount lose your Dexterity bonus to Armor Class (if any) also makes you lose dodge bonuses. Dodge bonuses stack with each other, unlike most types of bonuses.\n\n{b}Special{/b}: A fighter can select Mounted Mobility as one of his fighter bonus feats (see page 38 of the Player&#146;s Handbook)." compset="Feat" summary="+4 to AC for self and mount vs AoO provoked by movement." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Ride 4 ranks required."><![CDATA[#skillranks[kRide] >= 4]]></exprreq>
+    <exprreq message="Mounted Combat required."><![CDATA[#hasfeat[fMountCom] <> 0]]></exprreq>
+    </thing>
+  <thing id="fNatLeader" name="Natural Leader" description="You have a natural commanding presence.\n\n{b}Prerequisites{/b}: Cha 13.\n\n{b}Benefit{/b}: You gain a +4 bonus on rally checks (see page 73)." compset="Feat" summary="+4 bonus to Rally checks." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Charisma 13 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fPlunShot" name="Plunging Shot" description="You can use the force of gravity to make your ranged attacks deal extra damage if your target is below you.\n\n{b}Prerequisites{/b}: Dex 13, Point Blank Shot.\n\n{b}Benefit{/b}: If your target is at least 30 feet lower than you, you deal an extra 1d6 points of damage with a thrown weapon or a projectile weapon." compset="Feat" summary="If foe is 30 ft or more below, +1d6 damage for ranged weapon attacks." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Point Blank Shot required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <exprreq message="Dexterity 13 required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    </thing>
+  <thing id="fPractCoho" name="Practiced Cohort" description="Your cohort works well as part of your team.\n\n{b}Prerequisite{/b}: Cha 15, Leadership.\n\n{b}Benefit{/b}: Your cohort gained from the Leadership feat gains any teamwork benefit (see Teamwork Benefits, page 115) for which you qualify, even if he or she doesn&#146;t meet the team member prerequisite for the benefit.\n\nIn addition, your cohort doesn&#146;t count against the normal limit of eight members on a team, and his or her presence on the team doesn&#146;t affect any other character&#146;s ability to qualify for the teamwork benefit.\n\n{b}Normal{/b}: If you do not have this feat, every member of a team must meet the team member prerequisite in order for anyone on the team to enjoy the teamwork benefit. Also, the maximum number of members in a team is eight." compset="Feat" summary="Cohort gains any teamwork benefits you have, does not count for team limit." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Leadership"/>
+    <exprreq message="Leadership required."><![CDATA[#hasfeat[fLeader] <> 0]]></exprreq>
+    <exprreq message="Charisma 15 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 15]]></exprreq>
+    </thing>
+  <thing id="fReadyShot" name="Ready Shot" description="You can make devastating attacks with ranged weapons against charging opponents.\n\n{b}Prerequisite{/b}: Point Blank Shot.\n\n{b}Benefit{/b}: You can ready an action to fire a ranged weapon at a foe who charges you. You must wait until the target is within 15 feet before you attack. If you score a hit with this readied attack, your attack deals an extra 3d6 points of damage. Creatures immune to extra damage from critical hits are immune to this effect." compset="Feat" summary="Ready action, fire at charging foe when 15 ft away for +3d6 damage." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Point Blank Shot required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    </thing>
+  <thing id="fShlWall" name="Shield Wall" description="You are skilled in using shields when in formation with other shield-bearers.\n\n{b}Prerequisite{/b}: Shield Proficiency.\n\n{b}Benefit{/b}: When you and an adjacent ally are each using a shield, your shield bonus to Armor Class increases by 2.\n\n{b}Special{/b}: A fighter can select Shield Wall as one of his fighter bonus feats (see page 38 of the Player&#146;s Handbook)." compset="Feat" summary="When you and adj ally both use a shield, +2 to shield&apos;s AC bonus." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Shield proficiency required."><![CDATA[#hasfeat[fArmShield] + hero.tagis[Hero.ProfShield] <> 0]]></exprreq>
+    </thing>
+  <thing id="fVetKnow" name="Veteran Knowledge" description="You are capable of seeing potential battlefield advantages where others cannot.\n\n{b}Prerequisite{/b}: Base attack bonus +2, Knowledge (history) 1 rank.\n\n{b}Benefit{/b}: You gain a +5 bonus on Knowledge checks made to gain a strategic advantage (see Strategic Advantages, page 70).\n\n{b}Special{/b}: A fighter can select Veteran Knowledge as one of his fighter bonus feats (see page 38 of the Player&#146;s Handbook)." compset="Feat" summary="+5 bonus to Knowledge checks to gain strategic advantage." uniqueness="useronce">
+    <usesource source="HeroBattle"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Knowledge (history) 1 rank required."><![CDATA[#skillranks[kKnowHist] >= 1]]></exprreq>
+    <exprreq message="Base attack bonus +2 required."><![CDATA[child[Attack].field[tAtkBase].value >= 2]]></exprreq>
+    </thing>
+  <thing id="cHelpWWe" name="War Weaver" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cAbbr" value="WWe"/>
+    <fieldval field="cSkills" value="2"/>
+    <arrayval field="cSpell" index="1" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpell" index="2" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpell" index="3" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpell" index="4" value="+1 level of existing arcane spellcasting class"/>
+    <arrayval field="cSpecial" index="0" value="Eldritch tapestry"/>
+    <arrayval field="cSpecial" index="1" value="Quiescent weaving 1"/>
+    <arrayval field="cSpecial" index="2" value="Quiescent weaving 2"/>
+    <arrayval field="cSpecial" index="3" value="Quiescent weaving 3"/>
+    <arrayval field="cSpecial" index="4" value="Enlarged tapestry, quiescent weaving 4"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cMagLevTot" index="3" value="3"/>
+    <arrayval field="cMagLevTot" index="4" value="4"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="WarWeaver" name="War Weaver"/>
+    <tag group="cAttack" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="cFort" tag="Poor"/>
+    <bootstrap thing="cWWeEldTap"></bootstrap>
+    <bootstrap thing="cWWeEnlTap"></bootstrap>
+    <bootstrap thing="cWWeQuiWea"></bootstrap>
+    </thing>
+  <thing id="cWarWeaver" name="War Weaver" description="&#147;{i}On my count, climb out of the trench and charge toward that hill. Don&#146;t worry about the fire raining from the sky&#151;I&#146;ve got you covered.{/i}&#148;\n&#151;Arvena, war weaver \n\nBy weaving together strands of pure arcane power, the war weaver becomes a force to be reckoned with on the battlefield. A war weaver can establish an eldritch tapestry among her comrades and quickly aid them with her magic.\n\n{b}BECOMING A WAR WEAVER{/b}\nEntering this prestige class is a relatively straight forward matter. The class is open to any 5th-level wizard who has made the appropriate feat and skill point choices. It&#146;s a little harder for sorcerers and bards to get into the class. Sorcerers don&#146;t have as many feats as wizards, and bards don&#146;t get access to 3rd-level spells until 7th level." compset="ClassLevel" maxlimit="5">
+    <fieldval field="cHitDice" value="4"/>
+    <usesource source="HeroBattle"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpWWe"></bootstrap>
+    <link linkage="helper" thing="cHelpWWe"/>
+    <exprreq message="Ability to cast 3rd level arcane spells required." onlyonce="yes"><![CDATA[tagcount[Hero.Arcane] >= 3 + 1]]></exprreq>
+    <exprreq message="Knowledge (arcana) 6 ranks required." onlyonce="yes"><![CDATA[#skillranks[kKnowArcan] >= 6]]></exprreq>
+    <exprreq message="Craft (weaving) 6 ranks required." onlyonce="yes"><![CDATA[#skillranks[kCrafWeav] >= 6]]></exprreq>
+    <exprreq message="Enlarge Spell required." onlyonce="yes"><![CDATA[#hasfeat[fEnlSpell] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWWeEldTap" name="Eldritch Tapestry" description="Upon entering the class, you gain an understanding of the rudiments of the war weaver&#146;s craft. You can thread together unseen strands of life force to connect willing allies in a magically resonant network known as an eldritch tapestry. Doing so takes 10 minutes and requires a DC 15 Craft (weaving) check. (Most war weavers take 10 on the check.) When you weave an eldritch tapestry, you can connect a number of allies equal to your bonus in your arcane spellcasting ability score (Intelligence for wizards, Charisma for sorcerers and bards). Creatures must be within line of sight to have their life force woven into an eldritch tapestry, and they must be living creatures. An eldritch tapestry lasts for 24 hours or until you weave a new one. You&#146;re always connected to your own eldritch tapestry, and you don&#146;t count against the limit of allies that can be connected.\n\nOnce you have woven an eldritch tapestry, you can send your spells across the life-force strands to your allies. Although you cast but a single spell, you can have it affect every creature in your eldritch tapestry as if the group were a single creature. The maximum level of spell you can cast into an eldritch tapestry is equal to your class level. For example, a 5th-level wizard/2nd-level war weaver with an Intelligence of 16 could cast a 2nd-level spell such as bull&#146;s strength and have it affect herself and the three allies connected to her eldritch tapestry. Each of the four characters would gain a +4 enhancement bonus to Strength&#151;at the cost of a single spell, not four separate castings.\n\nOnly spells with the &#147;harmless&#148; designation in their saving throw entry or ones requiring willing targets can be cast into an eldritch tapestry. In addition, spells with a range of personal cannot be cast through an eldritch tapestry. If a spell has a costly material component or an XP cost, you must expend one casting&#146;s worth of the material component or pay the XP cost for each creature targeted by the spell (including yourself). For example, sharing a stoneskin spell with four allies requires the expenditure of diamond dust worth a total of 1,250 gp.\n\nAn eldritch tapestry doesn&#146;t change the range of a spell. To cast bull&#146;s strength, for example, you must touch all your allies. You can touch as many willing targets as you can reach as part of the casting, but all targets must be touched in the same round you finish casting the spell. You can exclude specific creatures connected to an eldritch tapestry from a spell if you like.\n\nIf the spell requires decision-making on your part, you must make the same decision for everyone the spell is meant to affect. For instance, if you cast protection from energy through the eldritch tapestry, you must choose the same energy type for everyone affected by the spell.\n\nAn eldritch tapestry doesn&#146;t allow your spells to affect illegal targets. You can&#146;t affect objects with spells cast into your eldritch tapestry, even if those objects are held by your allies (for instance, you can&#146;t use eldritch tapestry to deliver a greater magic weapon spell)." compset="ClSpecial" summary="10 min to weave a life force tapestry that affects x allies, y level spells can be cast through it.">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpWWe"/>
+    <eval phase="UserPostAt"><![CDATA[  var level as number
+    level = field[xTotalLev].value
+
+  var allies as number
+    allies = hero.child[aINT].field[aModBonus].value
+
+   field[xSumm].text = "10 min, weave life tapestry affecting " & allies & " allies, cast up to level " & level & " spells through."]]></eval>
+    </thing>
+  <thing id="cWWeQuiWea" name="Quiescent Weaving" description="Beginning at 2nd level, you can weave a single spell into your eldritch tapestry for later use. For each level you gain beyond 2nd, you can store one additional spell as a quiescent weaving in your eldritch tapestry. The maximum level of spell that you can weave into your eldritch tapestry with this ability is equal to your class level.\n\nQuiescent weaving enables you to prepare beneficial spells you know your allies will need in a crisis. You can release the quiescent spells right away at the beginning of a fight, then commence with more offensive spellcasting.\n\nTo make a quiescent weave, you must designate the eldritch tapestry as the target for the spell as you cast it (regardless of what the spell&#146;s normal target is). The spell is now woven into the eldritch tapestry in a dormant state; it doesn&#146;t use up its duration or affect targets in any way.\n\nAs a move action, you can release all the spells in your quiescent weaving. They immediately and instantaneously take effect in the order they were cast. The same restrictions apply to a quiescent weaving that apply to any other spell woven into an eldritch tapestry (they must be &#147;harmless,&#148; cannot have a range of personal, and require separate expenditures of material components or XP for each target). The quiescent spells affect only legal targets at the time you release them. For example, if you have bull&#146;s strength and protection from energy in your eldritch tapestry as quiescent weavings, you still have to touch your allies during the move action to target them with the spells." compset="ClSpecial">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpWWe"/>
+    <eval phase="UserPostLv"><![CDATA[  var allies as number
+    allies = field[xTotalLev].value - 1
+
+  var level as number
+    level = field[xTotalLev].value
+
+  if (level = 5) then
+  field[xSumm].text = "Store four spells in eldritch tapestry to be released in order as move action."
+  field[livename].text = "Quiescent Weaving " & allies & ""
+  elseif (level = 4) then
+  field[xSumm].text = "Store three spells in eldritch tapestry to be released in order as move action."
+  field[livename].text = "Quiescent Weaving " & allies & ""
+  elseif (level = 3) then
+  field[xSumm].text = "Store two spells in eldritch tapestry to be released in order as move action."
+  field[livename].text = "Quiescent Weaving " & allies & ""
+  elseif (level = 2) then
+  field[xSumm].text = "Store one spell in eldritch tapestry to be released as move action."
+  field[livename].text = "Quiescent Weaving " & allies & ""
+  elseif (level = 1) then
+  field[xSumm].text = "Store spells in eldritch tapestry to be released as move action."
+  endif]]></eval>
+    </thing>
+  <thing id="cWWeEnlTap" name="Enlarged Tapestry" description="At 5th level, you can stretch your magic across your eldritch tapestry beyond normal distances. Spells you cast through an eldritch tapestry have their range category increased: touch spells become close range, close-range spells become medium range, and medium-range spells become long range. Long-range spells and spells with fixed ranges are unaffected." compset="ClSpecial" summary="Tapestry&apos;s touch spells become close, close to medium, medium to long.">
+    <usesource source="HeroBattle"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpWWe"/>
+    </thing>
+  <thing id="kCrafWeav" name="Craft: Weaving" description="This allows one to create cloth or wicker by weaving together seperate strands." compset="Skill" uniqueness="unique">
+    <tag group="Helper" tag="SkCatCraft"/>
+    <tag group="Helper" tag="ExtraSkill"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  </document>

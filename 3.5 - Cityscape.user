@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>02-24-11 Sendric
+- Removed (CScape) from feat names.
+
+c6-14-10</info_history>
+    </fileinfo>
+  <thing id="fCityMagic" name="City Magic" description="You can use the city itself to shape and enhance your spellcasting.\n\n{b}Prerequisite{/b}: Caster level 3rd.\n\n{b}Benefit{/b}: You can modify any damaging spell you cast to incorporate the urban environment. When casting an offensive spell with an energy subtype&#151;acid, cold, electricity, fire, or sonic&#151;you can invest the spell with a portion of the city&#146;s spirit. In most cases, this investment is gritty and spectacular, drawing dirt, gravel, nails, and other nearby detritus into the spell effect. In other cases, the investiture is much more subtle, often merely changing the look of the spell. Only half the damage from a spell with the appropriate subtype is considered energy damage, and is thus subject to resistances or immunities. The remainder comes from the city itself, and is not subject to spell or energy resistances or immunities. This investiture only occurs for spells cast within urban environments, defined as any area above the size of a small town (DMG 137).\n\nFor example, a wizard uses City Magic to cast a {i}fireball{/i} at a creature with resistance to fire 15. The damage roll is 20, half of it fire damage and half &#147;city.&#148; Thus, the target takes 10 points of &#147;city&#148; damage instead of 5 points of fire damage. This feat is useless to spellcasters who cast their spells in a nonurban environment as defined above.\n\nA spell modified using the City Magic feat uses a spell slot of the spell&#146;s normal level.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Half of the energy dam of spell cast in city ignores resist/immune. +0 Level." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <prereq message="Caster level 3rd required.">
+      <validate><![CDATA[foreach pick in hero from BaseClHelp where "CasterSrc.?"
+  validif (each.field[cCasterLev].value >= 3)
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fDeceptSpl" name="Deceptive Spell" description="You can cast spells that seem to come from somewhere other than where they should.\n\n{b}Benefit{/b}: A deceptive spell appears to come from any direction you choose. For instance, a {i}magic missile{/i} might shoot from a nearby doorway, rather than from your own finger, or a {i}lightning bolt{/i} might emerge from the floor rather than from you. You cannot use this feat to gain a bonus to hit, to circumvent cover, to flank, or in any other way to gain a numeric or mechanical advantage on any attack rolls. Its purpose is to disguise the source of the spell, preventing anyone who did not actively observe you casting it from recognizing you as its caster. You cannot apply Deceptive Spell to any spell with a range of touch or a target of you. A deceptive spell uses up a slot one level higher than the spell&#146;s actual level.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Spell seems to originate from a source other than you. +1 Level." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="fEffDefend" name="Efficient Defender" description="You have learned to use new techniques and modifications to your armor to increase its protective ability.\n\n{b}Prerequisite{/b}: Heavy armor proficiency.\n\n{b}Benefit{/b}: When you wear light or medium armor, you gain 1 more point of armor bonus to your AC than that armor normally provides. For example, a suit of studded leather would have a +4 armor bonus rather than 3. However, because you must adjust and customize the armor to more effectively cover weak spots, it is also slightly more encumbering, increasing its armor check penalty by 1. You are not required to make use of this feat. You decide when donning the armor whether you wish to don it normally, or with this feat in effect.\n\n{b}Special{/b}: A fighter can select this feat as one of his bonus feats.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="When don light/medium armor can customize for +1 AC but +1 check penalty." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Armor Proficiency (Heavy) required."><![CDATA[#hasfeat[fArmHeavy] + hero.tagis[Hero.ProfHeavy] <> 0]]></exprreq>
+    </thing>
+  <thing id="fExtraCont" name="Extra Contacts" description="You make connections and alliances easily.\n\n{b}Prerequisite{/b}: Cha 11.\n\n{b}Benefit{/b}: Your maximum number of contacts increases by four.\n\n{b}Normal{/b}: Without this feat, a character is normally limited to a number of contacts equal to his Charisma modifier (minimum 1).\n\n{b}Special{/b}: You can take the Extra Contacts feat multiple times. Its effects stack. Each time you take the feat, you add another four to your maximum number of contacts.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="+4 to maximum number of contacts.">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Charisma 11 required."><![CDATA[child[aCHA].field[aFinalVal].value >= 11]]></exprreq>
+    </thing>
+  <thing id="fFavored" name="Favored" description="You are an active and valued member of your guild, church, or other organization.\n\n{b}Prerequisites{/b}: Membership in a guild, church, or other organization. If selecting this feat for a church, you must also be a true member, not merely a congregant (as described on page 105).\n\n{b}Benefit{/b}: Select one of your organization&#146;s associated skills. As long as you remain a member of that organization, you gain a +2 competence bonus on checks made with that skill. Additionally, you gain one special benefit depending on your specific guild, church, or organization. These are described as &#147;favored benefits&#148; in the guild, organization, and church entries, beginning on page 84.\n\n{b}Special{/b}: You can take this feat more than once. Its effects do not stack. Each time you take this feat, you apply it to a different organization of which you are a member.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Gain a &quot;favored benefit&quot; based on guild, church, or organization.">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fHelpFavor"></bootstrap>
+    </thing>
+  <thing id="fInvisiSpl" name="Invisible Spell" description="You can make your spell effects invisible.\n\n{b}Prerequisite{/b}: Any metamagic feat.\n\n{b}Benefit{/b}: You can modify any spell you cast so that it carries no visual manifestation. All other aspects of the spell, including range, area, targets, and damage remain the same. Note that this feat has no bearing on any components required to cast the enhanced spell, so the spell&#146;s source might still be apparent, depending on the situation, despite its effects being unseen. For example, a {i}fireball{/i} cast by someone with this feat could be made invisible in the moment of its detonation, but everyone in the area would still feel the full effect (including the heat), and any flammable materials ignited by the explosion would still burn visibly with nonmagical fire. Those with {i}detect magic{/i}, {i}see invisibility{/i}, or {i}true seeing{/i} spells or effects active at the time of the casting will see whatever visual manifestations typically accompany the spell.\n\nA spell modified using the Invisible Spell feat uses a spell slot of the spell&#146;s normal level.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Spell effect is invisible, but still felt and heard normally. +0 Level." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="Metamagic"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Any metamagic feat required."><![CDATA[tagcount[fCategory.Metamagic] - tagcount[HasFeat.fInvisiSpl] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPrimConta" name="Primary Contact" description="Your rapport with one of your contacts is stronger than your relationship with the rest.\n\n{b}Prerequisite{/b}: Favored.\n\n{b}Benefit{/b}: When you gain this feat, select one of your existing contacts to be named your primary contact. Choose one skill associated with the organization to which your contact belongs. You gain 1 bonus rank in that skill (even if doing so would put you above your normal maximum ranks for that skill). In addition, you can double the frequency with which you can call upon your primary contact for no-charge favors. For example, if your primary contact normally provides its no-charge favor once per month, you can now call upon that favor twice per month.\n\n{b}Special{/b}: This feat cannot be taken more than once. If the primary contact associated with this feat dies or is otherwise removed from the campaign, the DM can, at his discretion, either replace that contact with a new contact from the same organization or allow you to name one of your other contacts as your primary contact. In either event, you do not gain the bonus skill rank a second time, but neither do you lose it just because your contact has left the campaign.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Double the freq you can ask your primary contact for no-charge favors." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="fHelpPriCo"></bootstrap>
+    <exprreq message="Favored required."><![CDATA[#hasfeat[fFavored] <> 0]]></exprreq>
+    </thing>
+  <thing id="fRoofJump" name="Roof-Jumper" description="You can make use of the features of the city as handholds and footholds, defying the pull of gravity.\n\n{b}Prerequisites{/b}: Balance 7 ranks, Jump 7 ranks, Dodge, Mobility, Roofwalker.\n\n{b}Benefit{/b}: The Roof-Jumper feat enables the use of the following tactical maneuvers. You cannot benefit from more than one maneuver in the same round.\n\n{i}Death from Above{/i}: You do substantial damage if you deliberately leap down to attack a foe beneath you. You must drop at least 20 feet. You must roll to hit; this qualifies as a charge attack, with all relevant bonuses and penalties. If you hit, you deal damage as normal, plus an extra 1d6 points for every 10 feet of distance beyond the first 10 feet; thus, a drop of 30 feet causes an extra 2d6 points of damage.\n\nYou still take whatever damage you would normally take from the fall, but you can reduce the falling damage with a successful Jump check or Tumble check. You cannot use any ability to slow your fall (such as the monk&#146;s slow fall ability, or the {i}feather fall{/i} spell) while attacking in this manner.\n\n{i}Urban Acrobatics{/i}: You can make use of windowsills, awnings, lampposts, and similar features of the city when leaping or falling from buildings. If you deliberately jump downward within arm&#146;s reach of a wall or similar vertical surface, you can move yourself sideways along the wall, traveling up to 5 feet horizontally for every 10 feet you fall. If you accidentally fall, you can move 5 feet horizontally for every 20 feet you fall. You can move up to your full movement horizontally in this fashion (so long as the wall is wide enough), even if that distance, plus your falling distance, exceeds your normal movement rate.\n\n{b}Normal{/b}: Falling characters can move in no direction but down.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Gain various tactical options when jumping down from high places." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="Tactical"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Jump 7 ranks required."><![CDATA[#skillranks[kJump] >= 7]]></exprreq>
+    <exprreq message="Dodge required."><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
+    <exprreq message="Mobility required."><![CDATA[#hasfeat[fMobility] <> 0]]></exprreq>
+    <exprreq message="Roofwalker required."><![CDATA[#hasfeat[fRoofwalk] <> 0]]></exprreq>
+    <exprreq message="Balance 7 ranks required."><![CDATA[#skillranks[kBalance] >= 7]]></exprreq>
+    </thing>
+  <thing id="fSculptSpe" name="Sculpt Spell" description="You can alter the area of your spells.\n\n{b}Prerequisite{/b}: Any metamagic feat.\n\n{b}Benefit{/b}: You can modify an area spell by changing the area&#146;s shape to either a cylinder (10-foot radius, 30 feet high), a 40-foot cone, four 10-foot cubes, a ball (20-foot radius spread), or a 120-foot line. A sculpted spell works normally in all respects except for its shape. For example, a {i}lightning bolt{/i} whose area is changed to a ball deals the same amount of damage, but affects a 20-foot-radius spread.\n\nA sculpted spell uses a spell slot one level higher than the spell&#146;s actual level.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Spell area modified to various shapes. +1 Level." replaces="fSculptSpl" uniqueness="useronce">
+    <usesource source="CScape"/>
+    <usesource source="CompArcane"/>
+    <tag group="fCategory" tag="Metamagic" name="Metamagic" abbrev="Metamagic"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="FeatUnique" name="FeatUnique" abbrev="FeatUnique"/>
+    <exprreq message="Any metamagic feat required."><![CDATA[tagcount[fCategory.Metamagic] - tagcount[HasFeat.fSculptSpe] <> 0]]></exprreq>
+    </thing>
+  <thing id="fStrngStom" name="Strong Stomach" description="You have greater resilience to illness and foul odors than most people.\n\n{b}Prerequisites{/b}: Con 13, Endurance.\n\n{b}Benefit{/b}: You reduce the effects of sickening and nausea by one step. You cannot become nauseated. If you are exposed to an effect or condition that would normally make you nauseated, you become sickened instead. If an effect or condition would normally sicken you, that effect is negated.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Reduce sicken/nausea effects by 1 step, only sickened if normally nauseated." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="Helper" tag="FeatUnique" name="FeatUnique" abbrev="FeatUnique"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Constitution 13 required."><![CDATA[child[aCON].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Endurance required."><![CDATA[#hasfeat[fEndure] <> 0]]></exprreq>
+    </thing>
+  <thing id="fSwfTumble" name="Swift Tumbler" description="You can flip, twist, and roll with great speed. You might have learned this ability by traversing the city&#146;s rooftops and alleys, or simply by moving through the throng day after day.\n\n{b}Prerequisite{/b}: Tumble 7 ranks.\n\n{b}Benefit{/b}: When tumbling, you move at a speed equal to half your base speed +10 feet.\n\n{b}Normal{/b}: Without this feat, characters move at half speed when tumbling.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Tumbling speed increases to 1/2 base +10 ft." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="Helper" tag="FeatUnique" name="FeatUnique" abbrev="FeatUnique"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <exprreq message="Tumble 7 ranks required."><![CDATA[#skillranks[kTumble] >= 7]]></exprreq>
+    </thing>
+  <thing id="fUrbanTrac" name="Urban Tracking" description="You can track down the location of missing persons or wanted individuals within communities.\n\n{b}Benefit{/b}: To find an individual&#146;s trail, or to follow a trail for 1 hour, requires a Gather Information check. You must make another Gather Information check every hour you search, as well as each time the trail becomes more difficult to follow, such as when it takes you to a different part of town. The DC of the check, and the number of checks required to track down your quarry, depends on on the community size and the prevailing conditions. If you fail a check, you can retry after 1 hour of questioning; the DM should roll the number of checks required secretly, so that the player doesn&#146;t know exactly how much time the task will require. You can cut the time between Gather Information checks in half (from 1 hour to 30 minutes), but you take a &#150;5 penalty on the check. Obviously, this feat will not allow you to locate someone who has gone beyond the boundaries of the community, but it could inform you that they&#146;ve done so.\n\n{b}Community Size* &#150;&#150; DC &#150;&#150; Checks Required{/b}\nThorp, hamlet, or village &#150;&#150; 5 &#150;&#150; 1d3\nSmall town or large town &#150;&#150; 10 &#150;&#150; 1d4+1\nSmall city or large city &#150;&#150; 15 &#150;&#150; 1d6+1\nMetropolis &#150;&#150; 20 &#150;&#150; 1d8+2\n* See DMG 137.\n\n{b}Conditions &#150;&#150; DC Modifier{/b}\nEvery three creatures in group being sought &#150;&#150; -2\nEvery 24 hours group has been missing/sought &#150;&#150; +1\nTracked group &#147;lies low&#148; &#150;&#150; +2\nTracked group matches community&#146;s primary racial demographic* &#150;&#150; +2\nTracked group does not match community&#146;s primary racial demographic* &#150;&#150; -2\n* See DMG 139.\n\n{b}Normal{/b}: Characters without this feat can use Gather Information to find out about specific individuals, but each check takes 1d4+1 hours and doesn&#146;t allow for effective trailing.\n\n{b}Special{/b}: A character with 5 ranks in Knowledge (local) gains a +2 bonus on the Gather Information check to use this feat.\n\n({i}Note{/i}: This feat first appeared in Unearthed Arcana. This update supersedes the original.)\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Gain ability to follow an individual&apos;s trail through a city using Gather Information." replaces="fUAUrTrack" uniqueness="useronce">
+    <usesource source="CScape"/>
+    <usesource source="Arcana"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="Helper" tag="FeatUnique" name="FeatUnique" abbrev="FeatUnique"/>
+    </thing>
+  <thing id="mmCityMagi" name="City Magic" description="You can use the city itself to shape and enhance your spellcasting.\n\n{b}Prerequisite{/b}: Caster level 3rd.\n\n{b}Benefit{/b}: You can modify any damaging spell you cast to incorporate the urban environment. When casting an offensive spell with an energy subtype&#151;acid, cold, electricity, fire, or sonic&#151;you can invest the spell with a portion of the city&#146;s spirit. In most cases, this investment is gritty and spectacular, drawing dirt, gravel, nails, and other nearby detritus into the spell effect. In other cases, the investiture is much more subtle, often merely changing the look of the spell. Only half the damage from a spell with the appropriate subtype is considered energy damage, and is thus subject to resistances or immunities. The remainder comes from the city itself, and is not subject to spell or energy resistances or immunities. This investiture only occurs for spells cast within urban environments, defined as any area above the size of a small town (DMG 137).\n\nFor example, a wizard uses City Magic to cast a {i}fireball{/i} at a creature with resistance to fire 15. The damage roll is 20, half of it fire damage and half &#147;city.&#148; Thus, the target takes 10 points of &#147;city&#148; damage instead of 5 points of fire damage. This feat is useless to spellcasters who cast their spells in a nonurban environment as defined above.\n\nA spell modified using the City Magic feat uses a spell slot of the spell&#146;s normal level." compset="Metamagic" summary="Half of the energy dam of spell cast in city ignores resist/immune. +0 Level." uniqueness="unique">
+    <fieldval field="mmAbbr" value="City"/>
+    <usesource source="CScape" name="Cityscape"/>
+    <prereq message="City Magic required.">
+      <validate>@valid = hero.pickexists[fCityMagic] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="mmDecepSpl" name="Deceptive Spell" description="You can cast spells that seem to come from somewhere other than where they should.\n\n{b}Benefit{/b}: A deceptive spell appears to come from any direction you choose. For instance, a {i}magic missile{/i} might shoot from a nearby doorway, rather than from your own finger, or a {i}lightning bolt{/i} might emerge from the floor rather than from you. You cannot use this feat to gain a bonus to hit, to circumvent cover, to flank, or in any other way to gain a numeric or mechanical advantage on any attack rolls. Its purpose is to disguise the source of the spell, preventing anyone who did not actively observe you casting it from recognizing you as its caster. You cannot apply Deceptive Spell to any spell with a range of touch or a target of you. \n\nA deceptive spell uses up a slot one level higher than the spell&#146;s actual level." compset="Metamagic" summary="Spell seems to originate from a source other than you. +1 Level." uniqueness="unique">
+    <fieldval field="mmAbbr" value="Deceptive"/>
+    <fieldval field="mmLevel" value="1"/>
+    <usesource source="CScape" name="Cityscape"/>
+    <prereq message="Deceptive Spell required.">
+      <validate>@valid = hero.pickexists[fDeceptSpl] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="fHelpFavor" name="Favored Helper" description="Choose one of your organization&#146;s associated skills to gain a +2 competence bonus." compset="Feat">
+    <comment>Test? (Done)</comment>
+    <usesource source="CScape"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="fCategory" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="fShowWhat" tag="Skills"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      ~ Add 2 to our chosen skill
+      #competencebonus[focus, 2]
+
+      ~ Set our 'short name'
+      field[fShortName].text = "Favored: " & focus.field[name].text]]></eval>
+    </thing>
+  <thing id="mmInvisSpl" name="Invisible Spell" description="You can make your spell effects invisible.\n\n{b}Prerequisite{/b}: Any metamagic feat.\n\n{b}Benefit{/b}: You can modify any spell you cast so that it carries no visual manifestation. All other aspects of the spell, including range, area, targets, and damage remain the same. Note that this feat has no bearing on any components required to cast the enhanced spell, so the spell&#146;s source might still be apparent, depending on the situation, despite its effects being unseen. For example, a {i}fireball{/i} cast by someone with this feat could be made invisible in the moment of its detonation, but everyone in the area would still feel the full effect (including the heat), and any flammable materials ignited by the explosion would still burn visibly with nonmagical fire. Those with {i}detect magic{/i}, {i}see invisibility{/i}, or {i}true seeing{/i} spells or effects active at the time of the casting will see whatever visual manifestations typically accompany the spell.\n\nA spell modified using the Invisible Spell feat uses a spell slot of the spell&#146;s normal level." compset="Metamagic" summary="Half of the energy dam of spell cast in city ignores resist/immune. +0 Level." uniqueness="unique">
+    <fieldval field="mmAbbr" value="Invisible"/>
+    <usesource source="CScape" parent="p35" name="Cityscape"/>
+    <prereq message="Invisible Spell required.">
+      <validate>@valid = hero.pickexists[fInvisiSpl] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="fHelpPriCo" name="Primary Contact Helper" description="Choose one skill associated with the organization to which your contact belongs to gain a bonus rank (even exceeding the normal maximum skill rank)." compset="Feat" uniqueness="useronce">
+    <comment>Test? (Done)</comment>
+    <usesource source="CScape"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="fCategory" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="fShowWhat" tag="Skills"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <eval phase="PreLevel" priority="10001"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      ~ Add 2 to our chosen skill
+      focus.field[kUserRanks].value += 1
+    
+      ~ Set our 'short name'
+      field[fShortName].text = "Primary Contact: " & focus.field[name].text]]></eval>
+    <eval phase="UserFinal" index="2"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      call fTargetFoc
+      doneif (state.isfocus = 0)
+
+      var maxskill as number
+      maxskill = herofield[tHitDice].value + 3
+
+      if (focus.field[kUserRanks].value = maxskill + 1) then
+          perform focus.delete[Helper.SklErRanks]
+      endif]]></eval>
+    </thing>
+  <thing id="fRoofwalk" name="Roofwalker" description="You are adept at moving and fighting on rooftops and ledges.\n\n{b}Prerequisites{/b}: Balance 5 ranks, Jump 5 ranks, Dodge, Mobility.\n\n{b}Benefit{/b}: The Roofwalker feat enables the use of three tactical maneuvers.\n\n{i}Fleet of Feet{/i}: You can walk across a precarious surface more quickly than normal. You can move at your full speed without taking a &#150;5 penalty on your Balance check.\n\n{i}Graceful Drop{/i}: If you intentionally jump from a height, you take less damage than you would if you fell. If you succeed on a Jump check when jumping down (PH 77), you take falling damage as if you had dropped 20 fewer feet than you actually did.\n\n{i}Master of the Roof{/i}: You know how to use the slopes to your advantage. You gain a +1 dodge bonus to AC against any opponent who is at a different elevation from you.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Gain various tactical options when perched upon roofs." uniqueness="useronce">
+    <usesource source="CScape"/>
+    <tag group="fCategory" tag="Tactical"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Jump 5 ranks required."><![CDATA[#skillranks[kJump] >= 5]]></exprreq>
+    <exprreq message="Dodge required."><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
+    <exprreq message="Mobility required."><![CDATA[#hasfeat[fMobility] <> 0]]></exprreq>
+    <exprreq message="Balance 5 ranks required."><![CDATA[#skillranks[kBalance] >= 5]]></exprreq>
+    </thing>
+  <thing id="mmSculpted" name="Sculpt Spell" description="You can alter the area of your spells.\n\n{b}Prerequisite{/b}: Any metamagic feat.\n\n{b}Benefit{/b}: You can modify an area spell by changing the area&#146;s shape to either a cylinder (10-foot radius, 30 feet high), a 40-foot cone, four 10-foot cubes, a ball (20-foot radius spread), or a 120-foot line. A sculpted spell works normally in all respects except for its shape. For example, a {i}lightning bolt{/i} whose area is changed to a ball deals the same amount of damage, but affects a 20-foot-radius spread.\n\nA sculpted spell uses a spell slot one level higher than the spell&#146;s actual level." compset="Metamagic" uniqueness="unique">
+    <fieldval field="mmLevel" value="1"/>
+    <fieldval field="mmAbbr" value="Sculpted"/>
+    <usesource source="CScape"/>
+    <usesource source="CompArcane"/>
+    <prereq message="Sculpt Spell required.">
+      <validate>@valid = hero.pickexists[fSculptSpe] + parent.tagis[Helper.OnScroll]</validate>
+      </prereq>
+    </thing>
+  <thing id="fSpecDispe" name="Special Dispensation" description="You have been given leave to carry even banned armor, weapons, and equipment in a given area.\n\n{b}Prerequisite{/b}: Favored.\n\n{b}Benefit{/b}: Due in part to your standing within your organization, you have received special dispensation from the authorities to wear or carry whatever equipment you deem necessary, regardless of local armor and weapons laws. This feat is often represented in the game, either by an object of some kind&#151;typically an official government seal&#151;or even a mark, such as a tattoo.\n\n{b}Special{/b}: This feat can be taken multiple times. Each time you take the feat, its effects apply to a new culture, geographic region, kingdom, or nation (whichever is appropriate).\n\n{i}Note{/i}: In the EBERRON setting, you can substitute the Favored in House feat for Favored as the prerequisite for this feat. If you do, you gain the benefits of this feat while within any of the Five Nations.\n\n{b}Source{/b}: Cityscape" compset="Feat" summary="Can carry banned equipment regardless of local laws.">
+    <usesource source="CScape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="fShowWhat" tag="Freeform"/>
+    <exprreq message="Favored required."><![CDATA[#hasfeat[fFavored] <> 0]]></exprreq>
+    </thing>
+  </document>

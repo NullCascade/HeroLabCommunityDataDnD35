@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="rAoDRotHou" name="Rot Hound" description="Rot Hounds are the least of the creatures in the Army of Deacay, generally small ranging from three to four feet in length and wieghing about 75lbs, they are about the size and of a large dog with two long whippy tentacles protruding from just behind the shoulder.  These creatures, completely hairless are covered in a slick, glistening lubricating fluid that allows for lightning fast movement and insulates their body from making sounds.  They are extremely fast, and very deadly, their most potent weapon is their ability to convert other living creatures into more of their own kind, by lashing out with their stingers which are on the end of their whip like tentacles, these stingers inject a concentrated form of the fluid that covers their body.\n\nWhile not particullarly intelligent these smaller minons of the Army of Decay are capable of lying in wait for long periods of time and have enough natural cunning to set up ambushes and perform simplistic tactics.  In addition, they are easily commanded by higher ranking creatures in the Army of Decay and will follow orders when intimidated.  They do not need to understand the reason behind the orders they are are given and often times they do not.\n\nTheir favored tactic is to have pack leaders hold back and send lesser hounds out to sting as many creatures as possible as many times as possible, then the leaders slip in and seperate any who might provide sport and take them to their lair." compset="Race" summary="Monstrous creature of (un)living rot.  Bent on destroying all lving things.">
+    <fieldval field="rSTR" value="8"/>
+    <fieldval field="rDEX" value="8"/>
+    <fieldval field="rINT" value="1"/>
+    <fieldval field="rWIS" value="2"/>
+    <fieldval field="rSpeed" value="50"/>
+    <fieldval field="rCR" value="6"/>
+    <fieldval field="rInfFavor" value="Rogue"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rInfHit" value="6d12 Hit Dice (6 levels of Undead)"/>
+    <fieldval field="rSkillPlus" value="4"/>
+    <fieldval field="rHeightMnM" value="24"/>
+    <fieldval field="rHeightMnF" value="24"/>
+    <fieldval field="rWeightMnF" value="65"/>
+    <fieldval field="rWeightMnM" value="65"/>
+    <fieldval field="rHitDice" value="6"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rCompLevel" value="7"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rFeat" value="-2"/>
+    <fieldval field="rHPStart" value="42"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rWill" value="5"/>
+    <usesource source="TobyStuff"/>
+    <tag group="AlgnImpFam" tag="ChaotNeut"/>
+    <tag group="AlgnImpFam" tag="NeutEvil"/>
+    <tag group="AlgnImpFam" tag="NeutNeut"/>
+    <tag group="Race" tag="stypChaos"/>
+    <tag group="Race" tag="stypEvil"/>
+    <tag group="Race" tag="typAberrat"/>
+    <tag group="Race" tag="typUndead"/>
+    <tag group="RaceSize" tag="Small11"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="6"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="8"/>
+    <tag group="Helper" tag="Quadruped"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kTumble"/>
+    <tag group="AlgnReq" tag="Evil"/>
+    <tag group="AlgnForbid" tag="Good"/>
+    <tag group="CompIs" tag="cArcFamil"/>
+    <tag group="CompIs" tag="cFiendSer"/>
+    <tag group="CompIs" tag="cAnimComp"/>
+    <tag group="AlgnImpFam" tag="ChaotEvil"/>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      </bootstrap>
+    <bootstrap thing="wSting">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d3_3"/>
+      </bootstrap>
+    <bootstrap thing="xConstrict"></bootstrap>
+    <bootstrap thing="xImpGrab"></bootstrap>
+    <bootstrap thing="xTremorsen"></bootstrap>
+    <bootstrap thing="xRepetSR"></bootstrap>
+    <bootstrap thing="xDegRot"></bootstrap>
+    <bootstrap thing="xNecrTouch"></bootstrap>
+    <bootstrap thing="fImpInit"></bootstrap>
+    <bootstrap thing="fComRef"></bootstrap>
+    <bootstrap thing="fGreatFort"></bootstrap>
+    <bootstrap thing="fImpNatAtt"></bootstrap>
+    <bootstrap thing="fMultiAtt"></bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="Helper" tag="ShowCharge"/>
+      <assignval field="hTotal" value="5"/>
+      </bootstrap>
+    <bootstrap thing="xAoDtraits"></bootstrap>
+    <bootstrap thing="wTentacle">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="wMain" tag="1d4_4"/>
+      </bootstrap>
+    <bootstrap thing="stypChaoti"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="typAberr"></bootstrap>
+    <eval phase="First" priority="5000" index="2">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 8
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 8
+      hero.child[kSearch].field[kInnate].arrayvalue[index] += 5
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 9
+      hero.child[kTumble].field[kInnate].arrayvalue[index] += 6</eval>
+    <eval phase="PreLevel" priority="50"><![CDATA[      ~ We don't have CON scores
+      var result as number
+      result = hero.child[aCON].assign[Helper.NoScore]
+~ Our Death Throes uses Charisma instead of Constitution
+      perform hero.childfound[xDeathThro].assign[User.OverCHA]]]></eval>
+    <eval phase="PostLevel" priority="9000" index="3"><![CDATA[~ Set up our spell resistance
+      var damage as number
+      damage = herofield[tHitDice].value + 10
+      damage = minimum(damage, 35)
+      #applysr[damage]
+
+~ Get HD of Character 
+      var HD as number
+      HD = #totallevelcount[]
+~   Set value for attack bonus....
+      var good_at as number
+      var medium_at as number
+      var poor_at as number
+
+~   Set value for base saves....
+      var good_sv as number
+      var medium_sv as number
+      var poor_sv as number
+
+
+      good_sv = round(HD / 2, 0, -1) + 2
+      medium_sv = round(HD * 0.75, 0, -1)
+~ Yes, (HD * 0.34) works very well.  Don't ask why.
+      poor_sv = round(HD * 0.34, 0, -1)
+
+~ Good = HD [as fighter], medium = 3/4 HD [as cleric], Poor = 1/2 HD [as wizard]
+      good_at = HD
+      medium_at = round(HD * 0.75, 0, -1)
+      poor_at = round(HD / 2, 0, -1)
+
+~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = poor_at
+
+~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = good_sv]]></eval>
+    </thing>
+  <thing id="xDegRot" name="Degenerative Rot" description="{b}Degenerative Rot (Su):{/b} Disease--Sting, Fortitude DC 10 + HD/2 + CHA mod, incubation period 2 1/2 hours, damage 1d2 Con and 1d2 Dex. The save DC is Charisma-based.  This affliction can affect any creature that does not have immunity to diseases.  An afflicted creature that is stung by a Rot Hound will rapidly sicken.  Repeated Stings will shorten incubation time by half and increase the save DC by 1 each time.\n\n{align left}Table:\n\n+--------------------------------------------------------------------------------------------------------------------------------------------+\nTime         Effect\n30min       Black &amp; Blue wound, sensitive to touch; looks like a bruise Heal DC 16 identifies.\n1hr           Numbness of wound (large area), Nausea.\n90min       Feverish, sensitive to light, sweating a slimy fluid.\n2hr           Flaccid, Rubbery, extremely yielding (bones gone), Skin covered in a slimy fluid.\n2 1/2hr      Full degeneration into Living rot, conversion to undead, loss of personality, loss of align.\n+--------------------------------------------------------------------------------------------------------------------------------------------+\n{align center}\nAn afflicted creature that is stung by a Rot Hound will slowly sicken and eventually die becoming a Rot Hound themselves; the average incubation time is as follows: 30min: Area of wound turns black and blue, as a bad bruise.  1-hour the limb goes numb and nausea soon follows.  90min: Fever, sensitivity to light, sweating a slimy fluid, at this point conversion is inevitable.  2-Hours: Flaccid and rubbery skin, and within half-an-hour they have degenerated into a creature that resembles the Rot Hound.  At which point conversion to undead occurs and the person becomes a Rot Hound themselves.  The target gets three Fortitude saves, at the 30min, 1hr and 90min mark, -2 after each.  After which the process is irreversible.  At any time prior to the 90min or third stage mark a cure disease can cure the target.  After which point only a Miracle, Wish or Limited Wish can cure the target." compset="Special" summary="Degenerative rot slowly consumes the target from the inside.">
+    <usesource source="TobyStuff"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="User" tag="PickFocus"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostAttr"><![CDATA[~ DC of Degenerative rot HD + 10 + CHA
+      var DC as number
+      DC = herofield[tHitDice].value + 10 + hero.child[aCHA].field[aModBonus].value + 2
+
+      field[livename].text = "Degenerative Rot: (F" & DC & ")"]]></eval>
+    </thing>
+  <thing id="xNecrTouch" name="Necrotic Touch" description="Any Living Rot that has a modicum of intelligence may make a melee touch attack to deal 1d4 {i}vile{/i} (negative energy) damage.  And has a 25% chance of infecting the target with {i}Degenerative Rot{/i} or {i}Replicative Rot{/i} depending on type of Rot creature.\n\nNecrotic Touch is subject to Spell Resistance and is considered both EVIL and Chaotic for the purposes of overcoming damage reduction.\n\n{i}Vile damage{/i} cannot be healed by any means whatsoever except while inside a holy or concecrated location.  {i}Vile Damage{/i} is described in greater detail in the {i}Book of Vile Darkness{/i}." compset="Special" summary="Deals 1d4 + 1d4/2 HD {i}vile{/i} (negative energy) damage to target.">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xRepetSR" name="Repetitive Spell Resistance" description="While Living Rots are not generally intelligent they do have the capacity to adapt very quickly allowing them to improve their resistance to spells, spell like abilities and even extrodinary abilities as they are being used on them.  Each type a spell of a particular school or subschool is used on them, they gain a stacking +2 SR to that particular spell school, if an ability has no SR they gain a +2 on the save.  If it has neither, then the ability works as normal three times before they become immune.  This bonus to their saves and SR is cumulative upto three times for a total of +6.  After the third time they become effectively immune to that ability for the rest of the encounter.\n\nA Living Rot shares its immunity with any other Living Rot it is linked to, this means if one Living Rot summoned three others.  They will share in the immunities and resistances." compset="Special" summary="Any Living rot&apos;s resistances increase as similar spells are used.">
+    <fieldval field="hTotal" value="5"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="SpecType" tag="Immune"/>
+    <tag group="SpecType" tag="Resist"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="rAoDRotLee" name="Flying Rot Leech" description="{i}This wormlike creature is the size of the human forearm.  Its mouth is a round, suckerlike orifice.  It flies through the air with grace and agility seeking out fliers attaching to them and reducing their ability to remain aloft.{/i}\n\nFlying Rot Leeches are little more than a minor annoyance in small numbers, but in swarms they can bring down even large dragons.  This is especially true in cloudy or foggy conditions where they may lurk in cloud banks waiting for unsuspecting foes.\n\n{b}Combat{/b}\nFlying rot leeches can be found almost anywhere that the Army of Decay ventures, they are the primary anti-flier of the Army of Decay and are a serious risk to anyone trying to gain the aerial advantage.\nThe Flying rot leeches like to hide in clouds or fog and attach themselves to fliers, without warning.  In such cases they can be on and attached before the flier can react.\nIn larger swarms, (6-12 leeches) or entire hosts (12-24).  The leeches drain the blood from a flier reducing their ability to fly.  The swarms make these already nimble creatures difficult to avoid.  Once a leech has attached itself it is almost impossible to dislodge without landing.\n\n{b}Feats: (/b}Weapon Finesse (bite)\n{b}Environment: {/b}Any\n{b}Organization: {/b}Solitary, Pair, Colony (2-5), Swarm (6-12), Host (12-24)\n{b}Challenge Rating: {/b}1/3\n{b}Treasure: {/b}None\n{b}Alignment: {/b}Always Evil\n{b}Advancement: {/b}2-3 HD (Small), Colony, Swarm or Host (add mob template)\n{b}Level Adjsutment: {/b} --" compset="Race" summary="Monstrous creature of (un)living rot.  Bent on destroying all lving things.">
+    <fieldval field="rSpeed" value="50"/>
+    <fieldval field="rCR" value="1/2"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rInfHit" value="1d12 Hit Dice (1 levels of Undead)"/>
+    <fieldval field="rSkillPlus" value="4"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rFort" value="2"/>
+    <fieldval field="rRef" value="1"/>
+    <fieldval field="rWill" value="-1"/>
+    <fieldval field="rSpace" value="1/4"/>
+    <fieldval field="rReach" value="2"/>
+    <fieldval field="rNumHands" value="0"/>
+    <fieldval field="rSTR" value="-4"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rCHA" value="2"/>
+    <usesource source="TobyStuff"/>
+    <tag group="Race" tag="stypChaos"/>
+    <tag group="Race" tag="stypEvil"/>
+    <tag group="Race" tag="typUndead"/>
+    <tag group="RaceSize" tag="Small11"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="AlgnReq" tag="Evil"/>
+    <tag group="AlgnForbid" tag="Good"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="CompIs" tag="cArcFamil"/>
+    <tag group="CompIs" tag="cAnimComp"/>
+    <tag group="AlgnImpFam" tag="ChaotEvil"/>
+    <tag group="AlgnImpFam" tag="ChaotNeut"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="AlgnImpFam" tag="NeutEvil"/>
+    <tag group="AlgnImpFam" tag="NeutNeut"/>
+    <bootstrap thing="xRepRot"></bootstrap>
+    <bootstrap thing="xNecrTouch"></bootstrap>
+    <bootstrap thing="fImpInit"></bootstrap>
+    <bootstrap thing="fComRef"></bootstrap>
+    <bootstrap thing="fImpNatAtt"></bootstrap>
+    <bootstrap thing="stypChaoti"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="typAberr"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d3_3"/>
+      <autotag group="Value" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="xImpGrab"></bootstrap>
+    <bootstrap thing="fWepFin">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xRotAttch"></bootstrap>
+    <bootstrap thing="xRotBloDra"></bootstrap>
+    <bootstrap thing="xAoDtraits"></bootstrap>
+    <bootstrap thing="xRepetSR"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xMonAdv">
+      <autotag group="User" tag="AdvUndead"/>
+      </bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Maneuver" tag="Perfect"/>
+      <autotag group="Value" tag="50"/>
+      </bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+~      hero.childfound[kEQAero].field[kInnate].arrayvalue[index] += 4
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 4
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 4
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 4</eval>
+    <eval phase="PostLevel" priority="9000" index="2"><![CDATA[      ~ We don't have CON scores
+      var result as number
+      result = hero.child[aCON].assign[Helper.NoScore]
+
+~ Our Death Throes uses Charisma instead of Constitution
+      perform hero.childfound[xDeathThro].assign[User.OverCHA]
+
+      ~ Set up our spell resistance
+      var damage as number
+      damage = herofield[tHitDice].value + 10
+      damage = minimum(damage, 35)
+      #applysr[damage]]]></eval>
+    </thing>
+  <thing id="xRotAttch" name="Attach" description="If a Rot Leech hits with its bite attack, it uses its suckerlike mouth to latch onto the opponent&#146;s body. It deals no additional damage when it is attached, but it drains blood and infects the target with Replicative Rot (DM Note: Replicative Rot may be substituted for another more appropriate disease). An attached leech loses its Dexterity bonus to AC.\n\nAn attached leech can be struck with a weapon or grappled itself. To remove an attached leech through grappling, the opponent must achieve a pin against the creature.  If the creature the rot is attached to is flying it takes a -2 to its check to remove it for each rot attached to it." compset="Special" summary="The rot attaches itself to a target creature and begins to draw blood/convert.">
+    <usesource source="TobyStuff"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xRotBloDra" name="Blood Drain" description="A Rot Leech that is attached to its opponent deals 1 point of Constitution damage per round until it deals a total of 6 points, at which point it detaches from its target and swims off to digest its meal.  Flyiers or Swimmers who take more than 3 points Constitution damage in this way become fatigued, if they take 6 or more they become exhausted, (includes damage dealt from multiple Leeches).  A creature cannot be brought below 1 Con in this manner, any creature who reaches 1 Con becomes exhausted regardless of how much damage they have taken.\n\nCreatures that do not have blood (any liquid) or who are incorporeal are immune to the Constitution drain." compset="Special" summary="The rot attaches itself to a target creature and begins to draw blood/convert.">
+    <usesource source="TobyStuff"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Attack"/>
+    </thing>
+  <thing id="xRepRot" name="Replicative Rot" description="{b}Replicative Rot (Su):{/b} Disease--Bite, Fortitude DC 10 + HD + CHA, incubation period 6 hours, damage 1 STR and 1d2 Dex. The save DC is Charisma-based.  This affliction can affect any creature that does not have immunity to magical diseases.  An afflicted creature that is bitten by a Rot Leech with slowly have his internal converted into writhing wriggling Leech creatures.  Such creatures are designed to keep the host alive until incubation has completed at which point they pour out of the still living body until it is an empty husk.  The DC while a Leech is increased by 1 for every two Leeches attached.\n\n{align left}\nTable:\n+----------------------------------------------------------------------------------------------------------------+\n|  {b}Time{/b}     | {b}Effect{/b}\n|     2 hr          | Upset stomach, painful cramps\n|    4 hrs        | Increased Pain, Bloating, distended belly, muscle weakness\n|    5 hrs        | Complete Organ replacement, condition irriversable\n|     6hrs        | Leeches rush out of every orifice leaving an emply fleshbag behind.\n+----------------------------------------------------------------------------------------------------------------+\n\n{align center}\nAn afflicted creature that is bitten by a Rot Leech will be consumed over the course of 6-8 hours.  The process is not fatal until the final moments, though it is quite painful for the last hour.  During the first two hours the affected will suffer from mild cramps and upset stomach.  The pain worsens into the second hour and bloating is visible.  By the fifth hour the aflicted creature will no longer have his own organs, however the leeches will sustain the target until the end.  Near or at the 6th hour mark the body will crumple on itself and Leeches will emerge from the body.  The host remaining alive until nearly the last moment.  Once the host has reached the 5th hour the process becomes irriversable and nothing short of a Miracle, Wish or Limited Wish can save them." compset="Special" summary="Replicative rot slowly consumes the target from the inside.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <eval phase="PostAttr"><![CDATA[~ DC of Replicative Rot HD + 10 + CHA
+      var DC as number
+      DC = herofield[tHitDice].value + 10 + hero.child[aCHA].field[aModBonus].value + 2
+
+      field[livename].text = "Replicative Rot: (F" & DC & ")"]]></eval>
+    </thing>
+  <thing id="xAoDtraits" name="Army of Decay Traits" description="The {i}Army of Decay{/i} shares certain unique traits in common.  Some are the same across the board others are HD based.  All creatures belonging to the {i}Army of Decay,{/i} serve a single imperative.  To Consume; in order to follow that one directive they all share a linked connection to a greater intelligence, a hive mind so to speak.  Lesser Rot creatures, may be linked to a higher one in groupings called {b}&quot;Packs,&quot;{/b} these packs share Spell Resistance Counters and immunities.  Individual members of a {b}Pack{/b} may be destroyed without harm to the whole, but if its leader is destroyed, the rest will be severely weakened.  If two or more {b}Packs{/b} come together they will merge, the stronger Leader taking charge and the lesser reduced to a servent.  The immunities of the two {b}Packs{/b} are shared, (for example if {b}Pack{/b} A was immune to Fire and {b}Pack{/b} B was immune to Lightning then they both become immune to Fire and Lightning.)  Resistance and damage reduction is reset in the confusion of merging.\n\nAll members of the Army of Decay share the following.\n+ d12 HD\n+ Base Attack equal to HD (fighter)\n+ Good Will Saves\n+ Skill Points equal to (4 + Int modifier, minimum 1) per HD.\nTraits:\n+ As undead except as below:\n+++ Creatures with no Intelligence can still heal as normal if in a pack or swarm.\n+++ Creatures in a Pack have All-Around Vision, (Darkvision, Low-Light, Blind-Sense, Tremorsense) 30 feet in all directions of each individual member of the pack." compset="Special" summary="Characteristic traits common to all members of the army of decay.">
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <bootstrap thing="xSummon">
+      <autotag group="AbilType" tag="SpellLike"/>
+      <autotag group="Helper" tag="ShowCharge"/>
+      <assignval field="livename" value="Summon Rots"/>
+      <assignval field="xSumm" value="Summons additional living rots, takes 1d4 rounds to arrive."/>
+      <assignval field="hTotal" value="1"/>
+      <assignval field="CustDesc" value="A Living Rot may summon any other variety of Living Rot to its aid.  The stronger the Rot the higher level of creature it is able to Summon.  These summoned creature must be HD - 2 of the original creature.  Once a creature has been summoned it takes 1d4 rounds to arrive cannot use its own summoning abilities for 10 rounds.{BR}{BR}{align left}{b}Type of Rot                                   Number of Creatures{/b}{BR}Rot Hound .................................. Pack (1d4){BR}Rot Flier .................................... Murder (1d4){BR}Rot Archon ................................ Squad (1d3){BR}Rot Commander ...................... Pair (1d2){BR}Rot Behemoth .......................... Special (usually cannot be summoned)"/>
+      </bootstrap>
+    <bootstrap thing="xDeathThro"></bootstrap>
+    <bootstrap thing="xAllAroVis"></bootstrap>
+    </thing>
+  <thing id="tmRotInfec" name="Rot Infected" description="A Rot Infected Creature is a creature that has been infected with the malignant force of the Army of Decay.  A Rot Infected retains the form of the base creature for a short time during that time he acts as a Pack leader and is often used to infiltrate populated areas.  As time passes a Rot Infected loses its orginal form and degenerates into one of the other abominations in the Army of Decay.  Typically it takes 1d6 years before the creature is no longer able to pass as its former race.  Hot and Humid climates can accelerate this as Cold and Dry climates can slow it." compset="Template" summary="A Rot Infected is an aquired template that may be applied to any corporeal creature." uniqueness="unique">
+    <fieldval field="tmInfAutoL" value="As base creature, plus abyssal"/>
+    <fieldval field="tmAC" value="5"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="tmReplHD" value="d12"/>
+    <fieldval field="tmTmSklMul" value="2"/>
+    <usesource source="TobyStuff"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="Perform"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kForgery"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="TemplHelp" tag="AddHitDice"/>
+    <bootstrap thing="xDegRot"></bootstrap>
+    <bootstrap thing="xAoDtraits"></bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xNecrTouch"></bootstrap>
+    </thing>
+  <thing id="ioRoResist" name="Ring of Resistance, +1" description="This ring offers magic protection in the form of a +1 to +5 resistance bonus on all saving throws (Fortitude, Reflex, and Will).\n\nFaint abjuration; CL 5th; Craft Wondrous Item or Craft Ring, {i}resistance{/i}, creator&apos;s caster level must be at least three times the ring&apos;s bonus; Price 1,000 gp; Weight -- lb." compset="Wondrous">
+    <fieldval field="gCost" value="1000"/>
+    <fieldval field="gWeight" value="0.01"/>
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpRing"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        hero.child[vFort].field[vResist].value = maximum(hero.child[vFort].field[vResist].value, 1)
+        hero.child[vRef].field[vResist].value = maximum(hero.child[vRef].field[vResist].value, 1)
+        hero.child[vWill].field[vResist].value = maximum(hero.child[vWill].field[vResist].value, 1)
+        endif]]></eval>
+    </thing>
+  <thing id="ioRoResis2" name="Ring of Resistance, +2" description="This ring offers magic protection in the form of a +1 to +5 resistance bonus on all saving throws (Fortitude, Reflex, and Will).\n\nFaint abjuration; CL 5th; Craft Wondrous Item or Craft Ring, {i}resistance{/i}, creator&apos;s caster level must be at least three times the ring&apos;s bonus; Price 4,000 gp; Weight -- lb." compset="Wondrous">
+    <fieldval field="gWeight" value="0.01"/>
+    <fieldval field="gCost" value="4000"/>
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpRing"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        hero.child[vFort].field[vResist].value = maximum(hero.child[vFort].field[vResist].value, 2)
+        hero.child[vRef].field[vResist].value = maximum(hero.child[vRef].field[vResist].value, 2)
+        hero.child[vWill].field[vResist].value = maximum(hero.child[vWill].field[vResist].value, 2)
+        endif]]></eval>
+    </thing>
+  <thing id="ioRoResis3" name="Ring of Resistance, +3" description="This ring offers magic protection in the form of a +1 to +5 resistance bonus on all saving throws (Fortitude, Reflex, and Will).\n\nFaint abjuration; CL 5th; Craft Wondrous Item or Craft Ring, {i}resistance{i}, creator&apos;s caster level must be at least three times the ring&apos;s bonus; Price 9,000 gp; Weight -- lb." compset="Wondrous">
+    <fieldval field="gWeight" value="0.01"/>
+    <fieldval field="gCost" value="9000"/>
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpRing"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        hero.child[vFort].field[vResist].value = maximum(hero.child[vFort].field[vResist].value, 3)
+        hero.child[vRef].field[vResist].value = maximum(hero.child[vRef].field[vResist].value, 3)
+        hero.child[vWill].field[vResist].value = maximum(hero.child[vWill].field[vResist].value, 3)
+        endif]]></eval>
+    </thing>
+  <thing id="flHBBlind" name="Blind as a Bat" description="{b}Benefit:{/b} You gain a +2 bonus to listen, may take 10 on listen checks, even when hurried or threatened, and finally you gain the benefits of the feat Blindsight (20 foot radius) whether or not your qualify for it. Your blindsight ability, although small, allows you to ignore the penalty to movement from being blind.\n\n{b}Drawback:{/b} You have the blinded status permanently. Beyond the radius of your blindsight, all creatures gain full concealment against you and you automatically fail all spot checks.\n\n{b}Special:{/b} You must have been born blind or received a permanently blinding wound or magical effect to take this trait. If your vision is ever restored, you lose this trait.\n\n{b}Roleplaying Ideas:{/b} Take this trait if you want to play a character who, though crippled by conventional standards, is capable of surviving the rigors of adventure. Many characters with this trait will be fearful of wide open areas such as plains, ocean travel, or the sky, ranged combatants, and often seek to mitigate their disability with animal companions or familiars." compset="Flaw" summary="You have been permanently blinded, but have adapted to sense everything in your immediate area.">
+    <fieldval field="fShortName" value="Blind"/>
+    <tag group="SpecType" tag="Sense"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="First">#skillbonus[kSpot] += 2</eval>
+    </thing>
+  <thing id="cvMastArti" name="Master Artificer" description="This special varient of the Master Class Replaces the Master&apos;s Secondary Focus and many of the non-crafting bonus feats for exclusively craft based ones." compset="ClassVary" summary="A variant for the Master, who crafts magical items." uniqueness="unique">
+    <arrayval field="cvMagLevTo" index="0" value="1"/>
+    <arrayval field="cvMagLevTo" index="1" value="2"/>
+    <arrayval field="cvMagLevTo" index="2" value="3"/>
+    <arrayval field="cvMagLevTo" index="3" value="4"/>
+    <arrayval field="cvMagLevTo" index="4" value="5"/>
+    <arrayval field="cvMagLevTo" index="5" value="6"/>
+    <arrayval field="cvMagLevTo" index="6" value="7"/>
+    <arrayval field="cvMagLevTo" index="7" value="8"/>
+    <arrayval field="cvMagLevTo" index="8" value="9"/>
+    <arrayval field="cvMagLevTo" index="9" value="10"/>
+    <arrayval field="cvMagLevTo" index="10" value="11"/>
+    <arrayval field="cvMagLevTo" index="11" value="12"/>
+    <arrayval field="cvMagLevTo" index="12" value="13"/>
+    <arrayval field="cvMagLevTo" index="13" value="14"/>
+    <arrayval field="cvMagLevTo" index="14" value="15"/>
+    <arrayval field="cvMagLevTo" index="15" value="16"/>
+    <arrayval field="cvMagLevTo" index="16" value="17"/>
+    <arrayval field="cvMagLevTo" index="17" value="18"/>
+    <arrayval field="cvMagLevTo" index="18" value="19"/>
+    <arrayval field="cvMagLevTo" index="19" value="20"/>
+    <usesource source="WotL"/>
+    <tag group="fInclude" tag="fCraftStf"/>
+    <tag group="fInclude" tag="fCraftUniv"/>
+    <tag group="fInclude" tag="fCraftWond"/>
+    <tag group="fInclude" tag="fCrRuneCir"/>
+    <tag group="fInclude" tag="fCraftDorj"/>
+    <tag group="fInclude" tag="fCraftPsCr"/>
+    <tag group="fInclude" tag="fCraftPsAA"/>
+    <tag group="fInclude" tag="fCraftWand"/>
+    <tag group="fInclude" tag="fCreatDrac"/>
+    <tag group="CastArmor" tag="Light"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kProfMiner"/>
+    <tag group="ClassSkill" tag="kPsicraft"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kUseMagic"/>
+    <tag group="ClassSkill" tag="kUsePsion"/>
+    <tag group="CastArmor" tag="Medium"/>
+    <tag group="SpcReplace" tag="cMasPriKn"/>
+    <tag group="SpcReplace" tag="cMasPriPe"/>
+    <tag group="SpcReplace" tag="cMasPriPr"/>
+    <tag group="SpcReplace" tag="cMasSecFoc"/>
+    <tag group="SpcReplace" tag="cMasSecCr"/>
+    <tag group="SpcReplace" tag="cMasSecKn"/>
+    <tag group="SpcReplace" tag="cMasSecPe"/>
+    <tag group="SpcReplace" tag="cMasSecPr"/>
+    <tag group="ClVaryName" tag="Replace"/>
+    <tag group="fExclude" tag="fAcrobatic"/>
+    <tag group="fExclude" tag="fAgile"/>
+    <tag group="fExclude" tag="fAnimAff"/>
+    <tag group="fExclude" tag="fAthletic"/>
+    <tag group="fExclude" tag="fDeceit"/>
+    <tag group="fExclude" tag="fSelfSuff"/>
+    <tag group="fExclude" tag="fStealthy"/>
+    <tag group="fInclude" tag="fBrewPot"/>
+    <tag group="fInclude" tag="fCraftMgc"/>
+    <tag group="fInclude" tag="fCraftRod"/>
+    <link linkage="varies" thing="cHelpMas"/>
+    </thing>
+  <thing id="ipFrostShe" name="Oil Frost Sheath" description="{i}Oil of Frost Sheath{/i} is a potion to keep small, tiny and creatures with delicate wings comfortable in extremely cold temperatures.\n\n{b}Lore:{/b} This potion, first made by druids to help their fey friends when an ice age took their realm.\n{b}Description:{/b} {i}Oil of Frost Sheath{/i} covers a small area of the body, most commonly used on places where other methods of resisting the elements would be impractical, such as delicate wings.  This is particularly true with fey.  Fey often apply this oil to their wings to allow them to fly in extremely cold weather.\n{b}Effect:{/b} {i}An Oil of Frost Sheath{/b} produces pocket of warm air trapped by an ultra thin layer of ice.\n{b}Aura/Caster Level:{/b} Faint abjuration; CL 3rd.\n{b}Construction:{/b} Brew Potion, {i}Ray of Frost{/i}, {i}Mage Armor{/i}{i}endure elements{/i}, 500 gp, 40 XP, 1/2 day.\n{b}Alternate Ingreadiants{/b} Brew Potion, {i}2 Frost Lillies{/i}, {i}endure elements{/i}, 50gp, 40 XP, 1/2 day.\n{b}Weight:{/b} 1/4 lbs.\n{b}Price:[/b} 100 gp per vial, 1000 gp per case of 10" compset="OilPotion" summary="This oil acts similiarly to endure elements, but only effects a small area." stacking="merge">
+    <fieldval field="gCost" value="300"/>
+    <usesource source="TobyStuff"/>
+    <tag group="gType" tag="OilPotion" name="Oil / Potion" abbrev="Potion"/>
+    </thing>
+  <thing id="pLA" name="Level Adjustment" description="Use this to manually add or subtract a level adjustment from a character." compset="InPlay" summary="Add this to increase or decress the level adjustment of a character.">
+    <usesource source="TobyStuff" parent="UserParent" name="Toby&apos;s Custom Stuff"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Add our level adjustment reduction
+        herofield[tLevelAdj].value += field[pAdjust].value]]></eval>
+    </thing>
+  <thing id="irSupWizLe" name="Ring of Supreme Wizardry, lesser" description="This special ring functions as a ring of Wizardry I, II and II, and is useful only to arcane spellcasters. The wearer&apos;s arcane spells per day are doubled for one specific spell level. A ring of wizardry I doubles 1st-level spells, a ring of wizardry II doubles 2nd-level spells, a ring of wizardry III doubles 3rd-level spells, and a ring of wizardry IV doubles 4th-level spells.\n\nBonus spells from high ability scores or school specialization are not doubled.\n\nModerate (no school); CL 21th; Forge Ring, {i}wish{/i}; Price 110,000 gp." compset="Ring">
+    <fieldval field="gCost" value="110000"/>
+    <usesource source="TobyStuff"/>
+    <tag group="gType" tag="Ring" name="Ring" abbrev="Ring"/>
+    <eval phase="PostLevel" priority="5000"><![CDATA[      if (field[gIsEquip].value <> 0) then
+        var result as number
+        var result2 as number
+        var result3 as number
+        result = hero.assign[Hero.Wizardry1]
+        result2 = hero.assign[Hero.Wizardry2]
+        result3 = hero.assign[Hero.Wizardry3]
+        endif]]></eval>
+    </thing>
+  <thing id="pPFfeats" name="Pathfinder Feat Progression" compset="InPlay" summary="Use Pathfinder feat progression every 2 levels.">
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="NoIncr"/>
+    <bootstrap thing="xPFAdjCMD"></bootstrap>
+    <bootstrap thing="xPFAdjCMB"></bootstrap>
+    <eval phase="PostLevel"><![CDATA[      ~ If we're in output mode, don't do anything
+      doneif (state.isoutput <> 0)
+
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+~ Removing feats
+     if (herofield[tHitDice].value >= 42) then
+        herofield[tFeats].value -= 16
+     elseif (herofield[tHitDice].value >= 39) then
+        herofield[tFeats].value -= 15
+     elseif (herofield[tHitDice].value >= 36) then
+        herofield[tFeats].value -= 14
+     elseif (herofield[tHitDice].value >= 33) then
+        herofield[tFeats].value -= 13
+     elseif (herofield[tHitDice].value >= 30) then
+        herofield[tFeats].value -= 12
+     elseif (herofield[tHitDice].value >= 27) then
+        herofield[tFeats].value -= 11
+     elseif (herofield[tHitDice].value >= 24) then
+        herofield[tFeats].value -= 10
+     elseif (herofield[tHitDice].value >= 22) then
+        herofield[tFeats].value -= 9
+     elseif (herofield[tHitDice].value >= 21) then
+        herofield[tFeats].value -= 8
+     elseif (herofield[tHitDice].value >= 18) then
+        herofield[tFeats].value -= 7
+     elseif (herofield[tHitDice].value >= 15) then
+        herofield[tFeats].value -= 6
+     elseif (herofield[tHitDice].value >= 12) then
+        herofield[tFeats].value -= 5
+     elseif (herofield[tHitDice].value >= 9) then
+        herofield[tFeats].value -= 4
+     elseif (herofield[tHitDice].value >= 6) then
+        herofield[tFeats].value -= 3
+     elseif (herofield[tHitDice].value >= 3) then
+        herofield[tFeats].value -= 2
+     elseif (herofield[tHitDice].value >= 1) then
+        herofield[tFeats].value -= 1
+     endif
+
+~ Adding Feats
+     if (herofield[tHitDice].value >= 42) then
+        herofield[tFeats].value += 22
+     elseif (herofield[tHitDice].value >= 40) then
+        herofield[tFeats].value += 21
+     elseif (herofield[tHitDice].value >= 38) then
+        herofield[tFeats].value += 20
+     elseif (herofield[tHitDice].value >= 36) then
+        herofield[tFeats].value += 19
+     elseif (herofield[tHitDice].value >= 34) then
+        herofield[tFeats].value += 18
+     elseif (herofield[tHitDice].value >= 32) then
+        herofield[tFeats].value += 17
+     elseif (herofield[tHitDice].value >= 30) then
+        herofield[tFeats].value += 16
+     elseif (herofield[tHitDice].value >= 28) then
+        herofield[tFeats].value += 15
+     elseif (herofield[tHitDice].value >= 26) then
+        herofield[tFeats].value += 14
+     elseif (herofield[tHitDice].value >= 24) then
+        herofield[tFeats].value += 12
+     elseif (herofield[tHitDice].value >= 22) then
+        herofield[tFeats].value += 11
+     elseif (herofield[tHitDice].value >= 20) then
+        herofield[tFeats].value += 10
+     elseif (herofield[tHitDice].value >= 18) then
+        herofield[tFeats].value += 9
+     elseif (herofield[tHitDice].value >= 16) then
+        herofield[tFeats].value += 8
+     elseif (herofield[tHitDice].value >= 14) then
+        herofield[tFeats].value += 7
+     elseif (herofield[tHitDice].value >= 12) then
+        herofield[tFeats].value += 6
+     elseif (herofield[tHitDice].value >= 10) then
+        herofield[tFeats].value += 5
+     elseif (herofield[tHitDice].value >= 8) then
+        herofield[tFeats].value += 4
+     elseif (herofield[tHitDice].value >= 6) then
+        herofield[tFeats].value += 3
+     elseif (herofield[tHitDice].value >= 4) then
+        herofield[tFeats].value += 2
+     elseif (herofield[tHitDice].value >= 2) then
+        herofield[tFeats].value += 1
+     elseif (herofield[tHitDice].value >= 1) then
+        herofield[tFeats].value += 1
+     endif]]></eval>
+    </thing>
+  <thing id="ipOilBlend" name="Oil of Blending" description="{b}Duration: {/b} 2 hours/level\n{b}Spell Level:{/b} CL of Crafter\n{b}Materials: {/b}\n{b}Alchemy DC: {/b}25; (5 vials per succssful crafts)\n\nOil of Blending\nThis oil when applied to any creature will cause the creature to merge into any object it touches for more than a few moments.  The contact requires a small amount of surrender on the part of the the person the oil is applied to.  The Effect lasts for 2hours/CL of the maker of the oil or until the effect is dispelled by magic. (CL check required).  Normal rules for petrify/flesh to stone/ice/mud etc.\n\nStrong Transmutation; Alchemy DC 25, Poison Joke Oil, Alter Self; Alchemy Lab 1 Day (5 vials 1 dose ea.)" compset="OilPotion">
+    <fieldval field="gCost" value="1500"/>
+    <usesource source="TobyStuff"/>
+    <tag group="gType" tag="OilPotion" name="Oil / Potion" abbrev="Potion"/>
+    </thing>
+  <thing id="rAoDRotBeh" name="Rot Archon" description="{i}This creature stand roughly 12 feet tall and weighs nearly 5000lbs.  It resembs a writhing mass of squirming leech-like creatures.  And yet somehow they all seem to act as one.  Vaguely humanoid in shape the creature has the ability to break apart and reassemble at will allowing it to slip through the smallest of openings given enough time.{/i}\n\nA Rot Archon is more than 12 feet tall and weighs more than 5000 lbs." compset="Race">
+    <fieldval field="rSTR" value="14"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="16"/>
+    <fieldval field="rINT" value="12"/>
+    <fieldval field="rWIS" value="12"/>
+    <fieldval field="rCHA" value="10"/>
+    <fieldval field="rInfAutoLn" value="Abyssal, Celestial, Draconic"/>
+    <fieldval field="rHitDice" value="14"/>
+    <fieldval field="rHPStart" value="63"/>
+    <fieldval field="rInfHit" value="14d8 (14 levels of Outsider)"/>
+    <fieldval field="rAttack" value="14"/>
+    <fieldval field="rFort" value="9"/>
+    <fieldval field="rRef" value="9"/>
+    <fieldval field="rWill" value="9"/>
+    <fieldval field="rSkillPlus" value="8"/>
+    <fieldval field="rAC" value="18"/>
+    <fieldval field="rCR" value="14"/>
+    <fieldval field="rHeightMnM" value="144"/>
+    <fieldval field="rWeightMnF" value="5000"/>
+    <fieldval field="rHeightMnF" value="144"/>
+    <fieldval field="rWeightMnM" value="5000"/>
+    <fieldval field="rSpace" value="15"/>
+    <fieldval field="rReach" value="15"/>
+    <usesource source="TobyStuff"/>
+    <tag group="ClassSkill" tag="Knowledge" name="All Knowledge Skills" abbrev="All Knowledge Skills"/>
+    <tag group="ClassSkill" tag="kBluff" name="Bluff" abbrev="Bluff"/>
+    <tag group="ClassSkill" tag="kConcent" name="Concentration" abbrev="Concentration"/>
+    <tag group="ClassSkill" tag="kDiplomacy" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="ClassSkill" tag="kSearch" name="Search" abbrev="Search"/>
+    <tag group="ClassSkill" tag="kSenseMot" name="Sense Motive" abbrev="Sense Motive"/>
+    <tag group="ClassSkill" tag="kSpellcr" name="Spellcraft" abbrev="Spellcraft"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="ClassSkill" tag="kUseMagic" name="Use Magic Device" abbrev="Use Magic Device"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="stypChaos" name="Subtype - Chaotic" abbrev="Subtype - Chaotic"/>
+    <tag group="Alignment" tag="Chaotic" name="Chaotic" abbrev="C"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="8"/>
+    <tag group="Race" tag="stypEvil" name="Subtype - Evil" abbrev="Subtype - Evil"/>
+    <tag group="WeightDice" tag="4"/>
+    <tag group="WeightSize" tag="10"/>
+    <tag group="Race" tag="stypExPlan" name="Subtype - Extraplanar" abbrev="Subtype - Extraplanar"/>
+    <tag group="Race" tag="typOutside" name="Type - Outsider" abbrev="Type - Outsider"/>
+    <tag group="RaceSize" tag="Huge2"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="Alignment" tag="Evil" name="Evil" abbrev="E"/>
+    <bootstrap thing="kKnowArcan"></bootstrap>
+    <bootstrap thing="stypEvil"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="kKnowRel"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+8 to Listen and Spot"/>
+      </bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <bootstrap thing="xAoDtraits"></bootstrap>
+    <bootstrap thing="stypChaoti"></bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="lCelestial"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="2d8_305"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Value" tag="2"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      </bootstrap>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <bootstrap thing="xDamRdGood"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xTelepath2"></bootstrap>
+    <bootstrap thing="xAbsorbFle"></bootstrap>
+    <bootstrap thing="xNecrTouch"></bootstrap>
+    <bootstrap thing="xDegRot"></bootstrap>
+    <bootstrap thing="xConTruSee"></bootstrap>
+    <eval phase="First" priority="5000" index="2">~ Set up our damage reduction
+      #applydr[xDamRdGood, 10]
+
+      var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kBluff].field[kInnate].arrayvalue[index] += 17
+      hero.child[kConcent].field[kInnate].arrayvalue[index] += 17
+      hero.child[kDiplomacy].field[kInnate].arrayvalue[index] += 17
+      hero.child[kIntim].field[kInnate].arrayvalue[index] += 17
+      hero.child[kKnowArcan].field[kInnate].arrayvalue[index] += 17
+      hero.child[kKnowRel].field[kInnate].arrayvalue[index] += 17
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 17
+      hero.child[kSenseMot].field[kInnate].arrayvalue[index] += 17
+      hero.child[kSpellcr].field[kInnate].arrayvalue[index] += 17
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 17
+      hero.child[kUseMagic].field[kInnate].arrayvalue[index] += 17
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 17
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 17
+      hero.child[kSearch].field[kInnate].arrayvalue[index] += 17
+
+~ We have 100 foot Telepathy
+      hero.child[xTelepath2].field[Value].value = maximum(100, hero.child[xTelepath2].field[Value].value)
+
+      ~ +8 to Listen, Spot checks
+      #skillbonus[kSpot] += 8
+      #skillbonus[kListen] += 8
+
+      ~ Set our resistances
+~      #applyresist[xDamRsFire, 10]
+~      #applyresist[xDamRsCold, 10]
+~      #applyresist[xDamRsAcid, 10]</eval>
+    <eval phase="PostLevel" priority="9000" index="3"><![CDATA[~ We don't have CON scores
+      var result as number
+      result = hero.child[aCON].assign[Helper.NoScore]
+~ Our Death Throes uses Charisma instead of Constitution
+      perform hero.childfound[xDeathThro].assign[User.OverCHA]
+
+~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 8
+      #applysr[damage]
+
+~ Get HD of Character 
+      var HD as number
+      HD = #totallevelcount[]
+~   Set value for attack bonus....
+      var good_at as number
+      var medium_at as number
+      var poor_at as number
+
+~   Set value for base saves....
+      var good_sv as number
+      var medium_sv as number
+      var poor_sv as number
+
+
+      good_sv = round(HD / 2, 0, -1) + 2
+      medium_sv = round(HD * 0.75, 0, -1)
+~ Yes, (HD * 0.34) works very well.  Don't ask why.
+      poor_sv = round(HD * 0.34, 0, -1)
+
+~ Good = HD [as fighter], medium = 3/4 HD [as cleric], Poor = 1/2 HD [as wizard]
+      good_at = HD
+      medium_at = round(HD * 0.75, 0, -1)
+      poor_at = round(HD / 2, 0, -1)
+
+~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = poor_at
+
+~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = good_sv]]></eval>
+    <eval phase="Render"><![CDATA[hero.child[xSummon].field[CustDesc].text = "A Living Rot may summon any other variety of Living Rot to its aid.  The stronger the Rot the higher level of creature it is able to Summon.  These summoned creature must be HD - 2 of the original creature.  Once a creature has been summoned it takes 1d4 rounds to arrive cannot use its own summoning abilities for 10 rounds.{BR}{BR}{align left}Type of Rot                                   Number of Creatures{BR}Rot Hound .................................. Pack (1d4){BR}Rot Flier ...................................... Murder (1d4){BR}Rot Archon ................................ Squad (1d3){BR}Rot Commander ...................... Pair (1d2){BR}Rot Behemoth .......................... Special (usually cannot be summoned)"
+
+hero.child[xConTruSee].field[CustDesc].text = "Rot Archons continuously use true seeing, as the spell (caster level 14th)."]]></eval>
+    </thing>
+  <thing id="xAbsorbFle" name="Absorb Flesh" description="Any member of the Army of Decay who is of large size or larger may take a full round action to attempt to absorb any victim it currently has in a grapple.  This action takes three rounds, during this time any currently in the process of being absorbed may make no action except to break free of the grapple.  They may cast spells but only those without somatic components.  They take the normal penalties for casting while grappled and they themselves suffer from attacks of oppertunity.\n\nWhile absorbing the Living Rot is considered flat-footed to anyone except the one it is grappling.  It may make no other attacks with its grappeling appendages though it may attack with any other.\n\nEach turn the creature may make an grapple, escape artist, or opposed strength, check to break free all of which use the grapple roll as DC.  A creature may only make one such attempt per round unless they have additional actions available to do so.\n\nIf the one being absorbed fails all three attempts to break free the creature is fully absorbed into the rot creature and if the creature is not slain within 1d4+1 rounds, the victim is fully absorbed into the rot creature and is slain leaving no remains behind." compset="Special" summary="If Large or larger, can absorb anything 1 size catagory smaller.">
+    <usesource source="TobyStuff"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <prereq message="Must be Larger or Larger.">
+      <validate><![CDATA[ validif (hero.tagis[Size.Large] <> 0)
+ validif (hero.tagis[Size.Huge] <> 0)
+ validif (hero.tagis[Size.Gargantuan] <> 0)
+ validif (hero.tagis[Size.Colossal] <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="xAdvGood" name="Good" description="thingid.xAdvGood|thingid.xAdvAverag|thingid.xAdvPoor" compset="Special">
+    <usesource source="TobyStuff"/>
+    </thing>
+  <thing id="xAdvAverag" name="Average" compset="Special">
+    <usesource source="TobyStuff"/>
+    </thing>
+  <thing id="xAdvPoor" name="Poor" compset="Special"></thing>
+  <thing id="xPFAdjCMB" name="CMB" compset="Special" summary="Combat Manuever Bonus">
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[var STR as number
+var SIZE as number
+var BAB as number
+var CMB as number
+
+STR = hero.child[aSTR].field[aModBonus].value
+SIZE = herofield[tSize].value
+BAB = hero.child[Attack].field[tAtkBase].value
+
+CMB = STR + BAB + SIZE
+
+~ BAB + Strength + Size Modifier + other modifiers.
+field[livename].text = "CMB: (" & CMB & ") + modifiers"
+field[xSumm].text = "Base (" & CMB & ") = " & BAB & " (BAB) " & STR & " (STR) " & SIZE & " (Size)"]]></eval>
+    </thing>
+  <thing id="xPFAdjCMD" name="CMD" compset="Special" summary="Combat Manuever Defense">
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[var DEX as number
+var SIZE as number
+var BAB as number
+var ACDefl as number
+var ACDodg as number
+var CMD as number
+
+DEX = hero.child[aDEX].field[aModBonus].value
+SIZE = herofield[tSize].value
+BAB = hero.child[Attack].field[tAtkBase].value
+ACDefl = hero.child[ArmorClass].field[tACDeflect].value
+ACDodg = hero.child[ArmorClass].field[tACDodge].value
+
+CMD = 10 + DEX + BAB + SIZE + ACDefl + ACDodg
+
+~ 10 + BAB + DEX + Dodge + Deflection
+field[livename].text = "CMD: (" & CMD & ") + modifiers / ## FF"
+
+field[xSumm].text = "Base (" & CMD & ") = 10 + " & BAB & " (BAB) + " & DEX & " (DEX) + " & SIZE & " (Size) + " & ACDefl & " (Deflect) + " & ACDodg & " (DODGE)"]]></eval>
+    </thing>
+  <thing id="xMonAdv" name="Monster Advancement" description="Adds a Monster Advancement script to Race/Monster.  Must use additional Adjustment script to add the size component.\n\nthingid.xAberratio|thingid.xAnimal||thingid.xAnimalGW||thingid.Const||thingid.Dragon" compset="Special" summary="Allow for the Advancement of Monsters of the Given type.">
+    <comment>Add tag for type of creature when bootstrapping to creature.
+
+User.AdvAber - Aberration
+User.AdvAni - Animal
+User.AdvAniGW - Animal w/ Good Will
+User.AdvConst - Construct
+User.AdvDrag - Dragon
+User.AdvEleAF - Air/Fire
+User.AdvEleWE - Water/Earth
+User.AdvFey - Fey
+User.AdvGiant  - Giant
+User.AdvMagBea - Magical Beast
+User.AdvOoze  - Ooze
+User.AdvOutsid - Outsider
+User.AdvPlant - Plant
+User.AdvUndead - Undead
+User.AdvVermin  - Vermin
+
+Glitches beyond after ExtraHD passes 20.
+
+Does not Advance AC or size.</comment>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="PostLevel" priority="9000"><![CDATA[~ Get HD of Character 
+      var HD as number
+~      HD = herofield[tLevelAdj].value + tagcount[Classes.ExtraHD]
+      HD = #totallevelcount[]
+~   Set value for attack bonus....
+      var good_at as number
+      var medium_at as number
+      var poor_at as number
+
+~ Good = HD [as fighter], medium = 3/4 HD [as cleric], Poor = 1/2 HD [as wizard]
+      good_at = HD
+      medium_at = round(HD * 0.75, 0, -1) + 1
+      poor_at = round(HD / 2, 0, -1)
+
+~   Set value for base saves....
+      var good_sv as number
+      var medium_sv as number
+      var poor_sv as number
+
+      good_sv = round(HD / 2, 0, -1) + 2
+      medium_sv = round(HD * 0.75, 0, -1)
+      poor_sv = round(HD * 0.34, 0, -1)
+
+~ Set the target based on tags
+if (tagis[User.AdvAber] <> 0) then
+  field[livename].text = field[name].text & " Aberration"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = good_sv
+
+elseif (tagis[User.AdvAni] <> 0) then
+  field[livename].text = field[name].text & " Animal"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = good_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+
+elseif (tagis[User.AdvAniGW] <> 0) then
+  field[livename].text = field[name].text & " Animal w/ Good Will"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = good_sv
+      hero.child[vWill].field[vBase].value = good_sv
+
+elseif (tagis[User.AdvConst] <> 0) then
+  field[livename].text = field[name].text & " Construct"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+
+elseif (tagis[User.AdvDrag] <> 0) then
+  field[livename].text = field[name].text & " Dragon"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = good_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = good_sv
+      hero.child[vWill].field[vBase].value = good_sv
+
+elseif (tagis[User.AdvEleAF] <> 0) then
+  field[livename].text = field[name].text & " Elemental (Air/Fire)"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = good_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+
+elseif (tagis[User.AdvEleWE] <> 0) then
+  field[livename].text = field[name].text & " Elemental (Water/Earth"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+
+elseif (tagis[User.AdvFey] <> 0) then
+  field[livename].text = field[name].text & " Fey"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = poor_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = good_sv
+      hero.child[vWill].field[vBase].value = good_sv
+
+elseif (tagis[User.AdvGiant] <> 0) then
+  field[livename].text = field[name].text & " Giant"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+
+elseif (tagis[User.AdvMagBea] <> 0) then
+  field[livename].text = field[name].text & " Magical Beast"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = good_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = good_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+
+elseif (tagis[User.AdvOoze] <> 0) then
+  field[livename].text = field[name].text & " Ooze"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+elseif (tagis[User.AdvOutsid] <> 0) then
+  field[livename].text = field[name].text & " Outsider"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = good_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = good_sv
+      hero.child[vWill].field[vBase].value = good_sv
+
+elseif (tagis[User.AdvPlant] <> 0) then
+  field[livename].text = field[name].text & " Plant"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+
+elseif (tagis[User.AdvUndead] <> 0) then
+  field[livename].text = field[name].text & " Undead"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = poor_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = good_sv
+
+elseif (tagis[User.AdvVermin] <> 0) then
+  field[livename].text = field[name].text & " Vermin"
+      ~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = medium_at
+ 
+      ~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = good_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = poor_sv
+endif
+
+  field[livename].text = field[livename].text]]></eval>
+    </thing>
+  <thing id="xAnimal" name="Animal" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvAni"/>
+    </thing>
+  <thing id="xAnimalGW" name="Animal (Good Will)" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvAniGW"/>
+    </thing>
+  <thing id="xAberratio" name="Aberration" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvAber"/>
+    </thing>
+  <thing id="xConst" name="Construct" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvConst"/>
+    </thing>
+  <thing id="xDragon" name="Dragon" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvDrag"/>
+    </thing>
+  <thing id="xElemAF" name="Elemental (Air/Fire)" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvEleAF"/>
+    </thing>
+  <thing id="xElemWE" name="Elemental (Water/Earth)" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvEleWE"/>
+    </thing>
+  <thing id="xFey" name="Fey" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvFey"/>
+    </thing>
+  <thing id="xGiant" name="Giant" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvGiant"/>
+    </thing>
+  <thing id="xMagBeast" name="Magical Beast" compset="Special">
+    <usesource source="TobyStuff"/>
+    <tag group="User" tag="AdvMagBea"/>
+    </thing>
+  <thing id="xOoze" name="Ooze" compset="Special">
+    <tag group="User" tag="AdvOoze"/>
+    </thing>
+  <thing id="xOutsider" name="Outsider" compset="Special">
+    <tag group="User" tag="AdvOutsid"/>
+    </thing>
+  <thing id="xPlant" name="Plant" compset="Special">
+    <tag group="User" tag="AdvPlant"/>
+    </thing>
+  <thing id="xUndead" name="Undead" compset="Special">
+    <tag group="User" tag="AdvUndead"/>
+    </thing>
+  <thing id="xVermin" name="Vermin" compset="Special">
+    <tag group="User" tag="AdvVermin"/>
+    </thing>
+  <thing id="pPowerAtk" name="Power Attack" compset="InPlay">
+    <eval phase="First" priority="1000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+
+      ~ Subtract from our attack bonus
+      hero.child[Attack].field[Bonus].value -= field[pAdjust].value
+      ~ Add to our armor class
+      hero.child[ArmorClass].field[Bonus].value += field[pAdjust].value]]></eval>
+    </thing>
+  <thing id="pFlight" name="Flight" compset="InPlay">
+    <usesource source="TobyStuff"/>
+    <bootstrap thing="xFly2">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:pIsOn <> 0]]></containerreq>
+      <autotag group="Maneuver" tag="Good"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="1000">doneif (field[pIsOn].value = 0)
+
+hero.childfound[xFly2].field[Value].value = field[pAdjust].value</eval>
+    </thing>
+  <thing id="ioFRDmoOrb" name="Death Moon Orb [Major Artifact]" description="{b}Price (Item Level):{/b} -\n{b}Body Slot:{/b} -\n{b}Caster Level:{/b} 20th\n{b}Aura:{/b} Overwhelming; (DC 24) Conjuration, Enchantment and Necromancy\n{b}Activation:{/b} Standard Action\n{b}Weight:{/b} 2 lb\n\n{i}This orb is a gleaming black and violet sphere whose colors swim uneasily, like oil on water, and which appears to actually absorb the light around it. When it is nearby, an aura of gloom and sadness descends. If looked at long enough, the negative image of the moon&#146;s surface can be seen glimmering faintly on the orb.{/i}\n\nThe death moon orb constantly functions as a {i}crystal ball of telepathy and true seeing{/i}.  The possessor of the orb can invoke the following spell-like abilities:\n\n5/day - {i}charm person{/i} (DC 13)\n3/day - {i}create undead, greater{/i}, {i}dominate monster{/i} (DC 23)\n1/day - {i}finger of death{/i} (DC 20), {i}mass charm monster{/i} (DC 22)\n\nIf the bearer of the orb is already capable of casting spells, calculate the save DC as though it was cast by the bearer.\n\nAdditionally, the possessor may summon one tanar&#146;ri, yugoloth, or baatezu and compel it to perform one task. Only one such creature may be summoned at any one time. If the creature summoned is of 15 HD or less, the orb may not be used for summoning for another 1d10 days. If the creature is 15-30 HD, it may not be used again for summoning for 1d20 + 10 days; if it is of 30 HD or more, the orb may not be used for summoning for 1d10 + 2 months. Once the task is completed, the creature returns to its plane of origin.\n\n{i}Curse:{/i} The alignment of user of the orb eventually shifts to an evil alignment diametrically opposite to the alignment of the user. It also compels its user to greater and greater acts of evil, until the user is infamous as a monster of complete wickedness and cruelty. Such individuals invariably perish in some fashion unless, like Tam and Larloch, they continue on as undead creatures and don&#146;t care what anyone else thinks of them.\n\n{i}Lore:{/i} Centuries ago, the wizard Larloch, sorcerer-king of Netheril, created a powerful artifact with which he intended to control the minds of his court, reveal his enemies&#146; plans, and summon powerful beings from the Outer Planes. The artifact served him well, and he ruled for many years, eventually becoming a powerful lich. (Knowledge [arcana DC 30)\n\nLarloch even survived the collapse of his empire and lives to this day in the depths of Warlock&#146;s Keep. No less than 16 Red Wizards have braved the depths of the Keep, seeking Larloch&#146;s treasures and magic; so far, only Szass Tam has emerged unscathed. (Knowledge [arcana] DC 35)\n\nAt Warlock&#146;s Keep, Szass Tam sealed a mysterious bargain with the extremely powerful lich and returned with several important enchanted items, among them the Death Moon Orb. He used the powers of the orb to free the tanar&#146;ri lord Eltab, then to imprison him on Thakorsil&#146;s Seat. Today, Tam uses the Death Moon Orb to battle his enemies for control of Thay. (Knowledge [arcana] DC 40; reveals all the artifact&#146;s powers).\n\n{b}Suggested Methods of Destruction:{/b}\n-The orb must be devoured by a tarrasque.\n-The orb must be transported to Arborea or another Outer Plane of good and destroyed by one of the gods who dwell there.\n-The orb must be used to summon an Abyssal Prince, a Lord of the Nine or a Yugoloth Lord.\n\n{b}Source:{/b} Updated by LordofBones on Candlekeep forums  from the AD&amp;D book {i}Spellbound (Campaign Guide){/i}" compset="Wondrous">
+    <fieldval field="gCost" value="-"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="UnApproach"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioBrArmor9" name="Bracers of Armor, +9" description="These items appear to be wrist or arm guards. They surround the wearer with an invisible but tangible field of force, granting him an armor bonus of +9.\n\nCaster Level: 17th; Prerequisites: Craft Wondrous Item, Craft Epic Wondrous Item, {i}mage armor{/i}, creator&apos;s caster level must be at least two times that of the bonus placed in the bracers; Price 810,000 gp; Weight 1 lb." compset="Wondrous">
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gCost" value="810000"/>
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpWrist" name="Wrist" abbrev="Wrist"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're equipped, add an armor bonus
+      if (field[gIsEquip].value <> 0) then
+        hero.child[ArmorClass].field[tACArmor].value = maximum(hero.child[ArmorClass].field[tACArmor].value, 9)
+        endif]]></eval>
+    </thing>
+  <thing id="ioBArmor10" name="Bracers of Armor, +10" description="These items appear to be wrist or arm guards. They surround the wearer with an invisible but tangible field of force, granting him an armor bonus of +10.\n\nCaster Level: 20th; Prerequisites: Craft Wondrous Item, Craft Epic Wondrous Item, {i}mage armor{/i}, creator&apos;s caster level must be at least two times that of the bonus placed in the bracers; Price 1,000,000 gp; Weight 1 lb." compset="Wondrous">
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gCost" value="1000000"/>
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="EquipMag" name="EquipMag" abbrev="EquipMag"/>
+    <tag group="Hero" tag="EqpWrist" name="Wrist" abbrev="Wrist"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're equipped, add an armor bonus
+      if (field[gIsEquip].value <> 0) then
+        hero.child[ArmorClass].field[tACArmor].value = maximum(hero.child[ArmorClass].field[tACArmor].value, 10)
+        endif]]></eval>
+    </thing>
+  <thing id="xAoDAbsDec" name="Absorbing Decay" description="A Rot Commander can absorb other creatures of rot to gain 10 HP per HD of creature absorbed.  It can also absorb it (weakened) enemies and gain special abilities based on the abilities of what it has absorbed.\n\nSpellcaster: Used 1 spell at random each round as random as a free action this spell must either be a beneficial spell to itself, harmful spell to an enemy or have some sort of use to it in a given situation.  It will not, for example cast purify water on a wall of fire, or heal mass on its enemies.\nFighter: Gains the uses of any fighter feat the absorbed creature knew.\nRogue: Gains the ability to better blend into its surroundings at the cost of its brute strength (-15 to strength +10 Hide/Move Silently) And gains a sneak attack while attacking equal to that of the one it absorbed possessed." compset="Special" summary="Can absorb its foes gaining abilities and HP.">
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xAoDRepDR" name="Replicative Damage Reduction" description="Each successive attack after the first deals only half damage. This applies to weapon damage types and spell sub schools (acid, cold, fire, force, etc.) any damage that is not categorized or typed is counted as coming from the same type.\n\nThis effectively reduces the damage taken by each successive attack from a give type by half.  Therefore a maximized 10d6 fireball would do 60 damage the first time it&#146;s used, 30 for the second and 15 for the third.  For melee and ranged physical damage this will continue down to a minimum of 10 damage each attack.  For spells it will continue down the third attack after which spells of that sub school do no damage." compset="Special" summary="Members of the Army of Decay gain a repeating reduction of damage.">
+    <usesource source="TobyStuff"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xAoDComUnd" name="Command Undead" description="A Rot Commander may command up to its own HD + 10 in total undead split between any number of individual undead creatures.  Unintelligent undead gain no save.  While Intelligent undead gain a will save to resist.  Once a Rot exarch has control it can force the undead under its command to do anything including actions that are suicidal or self-destructive.  (Intelligent undead gain an extra save each round in such cases.)" compset="Special" summary="A Rot Exarch may command HD+10 of undead as spell."></thing>
+  <thing id="rAoDRotEx" name="Rot Commander" description="{i}This creature stand roughly 18 feet tall and weighs nearly 7500lbs.  It resembs a writhing mass of squirming leech-like creatures.  And yet somehow they all seem to act as one.  Vaguely humanoid in shape the creature has the ability to break apart and reassemble at will allowing it to slip through the smallest of openings given enough time.{/i}\n\nA Rot Archon is more than 18 feet tall and weighs more than 7500 lbs." compset="Race">
+    <fieldval field="rSTR" value="25"/>
+    <fieldval field="rDEX" value="5"/>
+    <fieldval field="rINT" value="15"/>
+    <fieldval field="rWIS" value="8"/>
+    <fieldval field="rInfAutoLn" value="Abyssal, Infernal"/>
+    <fieldval field="rHitDice" value="20"/>
+    <fieldval field="rHPStart" value="63"/>
+    <fieldval field="rInfHit" value="20d12 (12 levels of Undead)"/>
+    <fieldval field="rAttack" value="20"/>
+    <fieldval field="rFort" value="6"/>
+    <fieldval field="rRef" value="8"/>
+    <fieldval field="rWill" value="13"/>
+    <fieldval field="rSkillPlus" value="8"/>
+    <fieldval field="rAC" value="18"/>
+    <fieldval field="rCR" value="20"/>
+    <fieldval field="rHeightMnM" value="216"/>
+    <fieldval field="rWeightMnF" value="7500"/>
+    <fieldval field="rWeightMnM" value="7500"/>
+    <fieldval field="rSpace" value="15"/>
+    <fieldval field="rReach" value="15"/>
+    <fieldval field="rHeightMnF" value="216"/>
+    <fieldval field="rCHA" value="-2"/>
+    <usesource source="TobyStuff"/>
+    <tag group="ClassSkill" tag="kConcent" name="Concentration" abbrev="Concentration"/>
+    <tag group="ClassSkill" tag="kDiplomacy" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="ClassSkill" tag="kSearch" name="Search" abbrev="Search"/>
+    <tag group="ClassSkill" tag="kSenseMot" name="Sense Motive" abbrev="Sense Motive"/>
+    <tag group="ClassSkill" tag="kSpellcr" name="Spellcraft" abbrev="Spellcraft"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="ClassSkill" tag="kUseMagic" name="Use Magic Device" abbrev="Use Magic Device"/>
+    <tag group="Hero" tag="NoDefComm" name="NoDefComm" abbrev="NoDefComm"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="stypChaos" name="Subtype - Chaotic" abbrev="Subtype - Chaotic"/>
+    <tag group="Alignment" tag="Chaotic" name="Chaotic" abbrev="C"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="8"/>
+    <tag group="Race" tag="stypEvil" name="Subtype - Evil" abbrev="Subtype - Evil"/>
+    <tag group="WeightDice" tag="4"/>
+    <tag group="WeightSize" tag="10"/>
+    <tag group="Race" tag="stypExPlan" name="Subtype - Extraplanar" abbrev="Subtype - Extraplanar"/>
+    <tag group="Race" tag="typOutside" name="Type - Outsider" abbrev="Type - Outsider"/>
+    <tag group="RaceSize" tag="Huge2"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="ClassSkill" tag="kBluff" name="Bluff" abbrev="Bluff"/>
+    <tag group="Alignment" tag="Evil" name="Evil" abbrev="E"/>
+    <tag group="ClassSkill" tag="Knowledge" name="All Knowledge Skills" abbrev="All Knowledge Skills"/>
+    <tag group="Helper" tag="NotHum"/>
+    <bootstrap thing="kKnowRel"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+8 to Listen and Spot"/>
+      </bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <bootstrap thing="xAoDtraits"></bootstrap>
+    <bootstrap thing="stypChaoti"></bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="2d8_305"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Value" tag="2"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      </bootstrap>
+    <bootstrap thing="xDamRdGood"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xTelepath2"></bootstrap>
+    <bootstrap thing="xAbsorbFle"></bootstrap>
+    <bootstrap thing="xNecrTouch"></bootstrap>
+    <bootstrap thing="xDegRot"></bootstrap>
+    <bootstrap thing="xConTruSee"></bootstrap>
+    <bootstrap thing="kKnowArcan"></bootstrap>
+    <bootstrap thing="stypEvil"></bootstrap>
+    <bootstrap thing="xBurrow2">
+      <autotag group="Value" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="lInfernal"></bootstrap>
+    <bootstrap thing="stypExtraP"></bootstrap>
+    <bootstrap thing="xAoDRepDR"></bootstrap>
+    <bootstrap thing="xAoDAbsDec"></bootstrap>
+    <bootstrap thing="xAoDComUnd"></bootstrap>
+    <eval phase="Render"><![CDATA[hero.child[xSummon].field[CustDesc].text = "A Living Rot may summon any other variety of Living Rot to its aid.  The stronger the Rot the higher level of creature it is able to Summon.  These summoned creature must be HD - 2 of the original creature.  Once a creature has been summoned it takes 1d4 rounds to arrive cannot use its own summoning abilities for 10 rounds.{BR}{BR}{align left}Type of Rot                                   Number of Creatures{BR}Rot Hound .................................. Pack (1d4){BR}Rot Flier ...................................... Murder (1d4){BR}Rot Archon ................................ Squad (1d3){BR}Rot Commander ...................... Pair (1d2){BR}Rot Behemoth .......................... Special (usually cannot be summoned)"
+
+hero.child[xConTruSee].field[CustDesc].text = "Rot Commanders continuously use true seeing, as the spell (caster level 20th)."]]></eval>
+    <eval phase="First" priority="5000" index="2">~ Set up our damage reduction
+      #applydr[xDamRdGood, 10]
+
+      var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kBluff].field[kInnate].arrayvalue[index] += 17
+      hero.child[kConcent].field[kInnate].arrayvalue[index] += 17
+      hero.child[kDiplomacy].field[kInnate].arrayvalue[index] += 17
+      hero.child[kIntim].field[kInnate].arrayvalue[index] += 17
+      hero.child[kKnowArcan].field[kInnate].arrayvalue[index] += 17
+      hero.child[kKnowRel].field[kInnate].arrayvalue[index] += 17
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 17
+      hero.child[kSenseMot].field[kInnate].arrayvalue[index] += 17
+      hero.child[kSpellcr].field[kInnate].arrayvalue[index] += 17
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 17
+      hero.child[kUseMagic].field[kInnate].arrayvalue[index] += 17
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 17
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 17
+      hero.child[kSearch].field[kInnate].arrayvalue[index] += 17
+
+~ We have 100 foot Telepathy
+      hero.child[xTelepath2].field[Value].value = maximum(100, hero.child[xTelepath2].field[Value].value)
+
+      ~ +8 to Listen, Spot checks
+      #skillbonus[kSpot] += 8
+      #skillbonus[kListen] += 8
+
+      ~ Set our resistances
+~      #applyresist[xDamRsFire, 10]
+~      #applyresist[xDamRsCold, 10]
+~      #applyresist[xDamRsAcid, 10]</eval>
+    <eval phase="PostLevel" priority="9000" index="3"><![CDATA[~ We don't have CON scores
+      var result as number
+      result = hero.child[aCON].assign[Helper.NoScore]
+~ Our Death Throes uses Charisma instead of Constitution
+      perform hero.childfound[xDeathThro].assign[User.OverCHA]
+
+~ Set up our spell resistance
+      var damage as number
+      damage = hero.child[Totals].field[tHitDice].value + 8
+      #applysr[damage]
+
+~ Get HD of Character 
+      var HD as number
+      HD = #totallevelcount[]
+~   Set value for attack bonus....
+      var good_at as number
+      var medium_at as number
+      var poor_at as number
+
+~   Set value for base saves....
+      var good_sv as number
+      var medium_sv as number
+      var poor_sv as number
+
+
+      good_sv = round(HD / 2, 0, -1) + 2
+      medium_sv = round(HD * 0.75, 0, -1)
+~ Yes, (HD * 0.34) works very well.  Don't ask why.
+      poor_sv = round(HD * 0.34, 0, -1)
+
+~ Good = HD [as fighter], medium = 3/4 HD [as cleric], Poor = 1/2 HD [as wizard]
+      good_at = HD
+      medium_at = round(HD * 0.75, 0, -1)
+      poor_at = round(HD / 2, 0, -1)
+
+~ Base Attack Adjustments, per HD
+      hero.child[Attack].field[tAtkBase].value = poor_at
+
+~ Base Save Adjustments, Based on Creature Type and HD
+      hero.child[vFort].field[vBase].value = poor_sv
+      hero.child[vRef].field[vBase].value = poor_sv
+      hero.child[vWill].field[vBase].value = good_sv]]></eval>
+    </thing>
+  </document>

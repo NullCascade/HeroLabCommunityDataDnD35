@@ -1,0 +1,2791 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author><![CDATA[Wemic & Stinger By Lee "MadCartographer" Smith
+Some Polishing by Aaron "Lawful_G" Beal
+
+Dragon, Song, Hybsil, Phaerimm, Sharn  .... By Peter Robertson (TobyFox2002)
+
+12-30-10 Lawful_G
+Updated Poison, 
+Added Starting Base Hp
+
+11-25-10 Lawful_G
+Initial look over of the race, compare to the books.... 
+Added racial HD and BAB, 
+Adjusted class skills (-Jump + Search & Survival), 
+Added Bolthole magic, 
+Adjusted Favored Class (Bbn to Clr), 
+Removed Alignment restrictions. 
+Adjusted feats to reflect what is in the book (-Alertness, + Exotic Weapon Prof (Spiked Chain), Improved Init remains bonus feat, but added Power Attack on own judgement)
+Added Tremorsense 
+Set innate skills. (my best guess, not enough to go around to all skills)
+Added racial type
+Added Darkvision
+Deleted Bootstrapped skills with Values attached....
+
+11-15-10 Recieved File]]></info_author>
+    <info_history><![CDATA[02/3/2014
+Race: Added Aarakocra, Deep Dragon, Song Dragon, Genasi (all), Hybsil, Phaerimm, Sharn, Tanarukk, Black Unicorn.
+Templates: Beast of Xvim
+
+WEMIC:
+12-30-10 Lawful_G
+Added base racial Hp
+
+11-25-10 Lawful_G
+Added BAB, HD, and Class Skill Survival... 
+added racial Jump bonus. 
+Removed Common as Auto Language (box not checked so will get anyway), 
+Added correct source
+Added Race Type in Counts as races and bootstrapped special
+added Darkvision...
+Deleted Bootstrapped skills with Values attached....
+
+11-15-10 File Recieved
+
+12-30-10 Lawful_G
+Updated Poison, 
+Added Starting Base Hp
+
+
+STINGER:
+11-25-10 Lawful_G
+Initial look over of the race, compare to the books.... 
+Added racial HD and BAB, 
+Adjusted class skills (-Jump + Search & Survival), 
+Added Bolthole magic, 
+Adjusted Favored Class (Bbn to Clr), 
+Removed Alignment restrictions. 
+Adjusted feats to reflect what is in the book (-Alertness, + Exotic Weapon Prof (Spiked Chain), Improved Init remains bonus feat, but added Power Attack on own judgement)
+Added Tremorsense 
+Set innate skills. (my best guess, not enough to go around to all skills)
+Added racial type
+Added Darkvision
+Deleted Bootstrapped skills with Values attached....
+
+11-15-10 Recieved File]]></info_history>
+    <info_todo><![CDATA[Aarakocra ..................... Done.
+Aballin ............................. 
+Baelnorn ......................... 
+Beast of Malar ............... 
+Beast of Xvim ................ In Progress
+Black unicorn ................ Done.
+Demon, Yochlol .............. 
+Draegloth (half-fiend) ... 
+Dragon, Brown ............... 
+Dragon, Deep .................. Done.
+Dragon, Fang ................... 
+Dragon, Shadow ............. 
+Dragon, Song ................. Done.
+Earth Genasi ................... Done.
+Water Genasi .................. Done.
+Fire Genasi ...................... Done.
+Fey'ri (tiefling) ................. Hero Labs Incompatable (Races of Faerun)
+Nishruu ............................. 
+Tanarukk .......................... Done.
+Werebat ........................... 
+Werecat ........................... Lost Empires of Faerun]]></info_todo>
+    </fileinfo>
+  <thing id="rWemic" name="Wemic" description="Fierce hunters that roam the plains, wemics are masters of ambushes and strategy.\n\nWemics have the body of a lion with a humanoid torso extending from what would be the lion&#146;s neck. From head to rump, they are 10 to 12 feet long, while they are 6 to 7 feet tall when standing erect. Their entire bodies are covered in dusky golden fur, and the tail is tipped with a brush of black hair. Adult males have a mane of long black hair that covers the top and back of the head and extends down to the neck and shoulders. Their underbellies are white. A wemic&#146;s face is a mixture of human and leonine features, with a black or russet nose, gold eyes with catlike pupils, and high-set ears. All six limbs end in claws; the claws on the humanoid arms and leonine forelimbs are retractable. Wemics speak Sylvan and Common.\n\n{b}COMBAT{/b}\nWemics attack using their forepaws and a weapon, using the off hand to carry a shield (usually made of tough leather).\n\n{b}CHARACTERS{/b}\nWemic tribes often include an adept or a druid; the creatures have no other spellcasters. A wemic&#146;s favored class is barbarian.\n\n{b}WEMIC SOCIETY{/b}\nWemics live and hunt in groups called prides, which include 1&#150;4 males and 1&#150;12 females plus 1&#150;6 noncombatant cubs. A number of prides often band together into a tribe that is led by a chief, though this is more of a diplomatic alliance than a true union of the prides. Larger alliances of tribes are not unknown, but are usually formed only in the face of a great external threat.\n\nWemics sometimes hire out their services as trackers or guides to adventurers or others who travel through their territory, demanding tools or magic items (particularly weapons) as payment. They may also charge travelers a toll for safe passage through their lands.\n\n{b}IN THE REALMS{/b}\nPrides and tribes of wemics are found in a number of areas throughout Faer&#251;n, including the Stonelands (between Anauroch and the Storm Horn Mountains), Pelleor&#146;s Prairie (between the Hill of Lost Souls and the Marsh of Chelimber), and the Shining Plains west of Turmish. They are also prominent in the Shaar.\n\nThough at present they are nothing more than rumors, some tales tell of an offshoot race of wemics, lacking a mane in the male, that dwells in the Desertsmouth Mountains and the Thunder Peaks. These &#147;mountain wemics&#148; are supposedly related to the more common race just as mountain lions are related to common lions (i.e., distantly). The tales describe these creatures as smaller than their cousins. Their statistics differ from the usual wemic&#146;s as follows: Hit Dice: 3d8+3, (16 hp); Attacks: Club (+5 melee, 1d8+3), 2 claws (+0 melee, 1d6+1); Strength 16; Skills: Hide +1, Jump +10, Listen +7, Move Silently +5, Spot +7, Wilderness Lore +4. They live and hunt alone or in pairs, which perhaps accounts for their scarcity in the dangerous mountains they inhabit.\n\n{b}Source{/b}: Monsters of Faerun" compset="Race" summary="Wemic - A Lion Centaur">
+    <fieldval field="rInfFavor" value="Barbarian"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rSkillMult" value="7"/>
+    <fieldval field="rSTR" value="8"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rHeightMnF" value="67"/>
+    <fieldval field="rWeightMnF" value="165"/>
+    <fieldval field="rHeightMnM" value="78"/>
+    <fieldval field="rWeightMnM" value="285"/>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rInfAutoLn" value="Common, Sylvan"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rAgeMin" value="16"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rINT" value="1"/>
+    <fieldval field="rWIS" value="1"/>
+    <fieldval field="rCHA" value="-1"/>
+    <fieldval field="rAttack" value="5"/>
+    <fieldval field="rInfHit" value="5"/>
+    <fieldval field="rHitDice" value="5"/>
+    <fieldval field="rFeat" value="-2"/>
+    <fieldval field="rHPStart" value="23"/>
+    <usesource source="MonFae"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="RaceSize" tag="Large1" name="Large" abbrev="Large"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Race" tag="typMonHuma"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="Race" tag="Wemic" name="Wemic"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <bootstrap thing="typMonsHum"></bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <bootstrap thing="fPowerAtt"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="RaceSize"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <eval phase="First" priority="5000" index="2">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 5
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 4
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 3
+      hero.child[kSurvival].field[kInnate].arrayvalue[index] += 4
+
+~ +8 to Jump checks
+      #skillbonus[kJump] += 8</eval>
+    </thing>
+  <thing id="rDraSong" name="Dragon, Song" description="Song dragons are a rare and mysterious race of dragons that prefer life amoung humanity to the company of other dragons.  They can free take on the form of a human woman, and in this guise they live among humankind, revealing their true nature only in times of great personal peril or great crisis.\n\nIn their natural form, song dragons are slim and splendid dragons with iridescent silver-blue scales and the general shape of a copper dragon.  In human form, they appear to be attractive women of 20 to 30 years in age.  They retain full knowledge and awareness regardless of form, and most are consumate actors, so that humans are usually unaware of a song dragon&apos;s identity.\n\n{b}Combat: {/b}\nSong dragons strike quickly and mercilessly with their razor-sharp claws and tend to sing joyously as the fight (although they remain silent if the noise would endanger their allies or the success of their own attack).  In human form, song dragons prefer to use slashing, edged weapons.\n\n{b}In the Realms:{/b}\nFound throughout the Realms, song dragons serve or cooperate with good mages, Harpers (Harper Scouts), and groups and individuals with similar aims or opportunities to preserve, renew, and protect the land.  They are quite common in the Moonshae Isles, a fact that leads mages to speculate that they originated in that land.  They remain shrouded in mystery, however--so much that two accidental sightings of song dragons assuming their natural from once started a panicked rumor that evil wizard were transforming their foes into dragons.\n\n{b}Source{/b}: Monsters of Faerun" compset="Race" summary="Song Dragons are rare, beautiful dragons of faerun.">
+    <comment>Some inaccuracies, but the adjustment code is very complex and I  am almost certain I missed something.  But I cannot find it.
+
+Found it!  Song Dragon has unusual size catagories.</comment>
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rInfAutoLn" value="Common, Draconic"/>
+    <fieldval field="rHitDice" value=".001"/>
+    <fieldval field="rInfHit" value="Varies by age category"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="cMagicLev" value=".001"/>
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSearch" name="Search" abbrev="Search"/>
+    <tag group="ClassSkill" tag="kSenseMot" name="Sense Motive" abbrev="Sense Motive"/>
+    <tag group="ClassSkill" tag="kSpellcr" name="Spellcraft" abbrev="Spellcraft"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="ClassSkill" tag="kUseMagic" name="Use Magic Device" abbrev="Use Magic Device"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="TrueDragon" name="True Dragon" abbrev="True Dragon"/>
+    <tag group="Race" tag="stypEarth" name="Subtype - Earth" abbrev="Subtype - Earth"/>
+    <tag group="Race" tag="typDragon" name="Type - Dragon" abbrev="Type - Dragon"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="SpecSource" tag="Dragon" name="Dragon" abbrev="Dragon"/>
+    <tag group="SplLookup" tag="cHelpSor" name="Sorcerer" abbrev="Sorcerer"/>
+    <tag group="ClassSkill" tag="Knowledge" name="All Knowledge Skills" abbrev="All Knowledge Skills"/>
+    <tag group="ClassSkill" tag="kBluff" name="Bluff" abbrev="Bluff"/>
+    <tag group="ClassSkill" tag="kConcent" name="Concentration" abbrev="Concentration"/>
+    <tag group="ClassSkill" tag="kDiplomacy" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="ClassSkill" tag="kEscape" name="Escape Artist" abbrev="Escape Artist"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="sClass" tag="Healing"/>
+    <tag group="sClass" tag="Travel"/>
+    <tag group="sClass" tag="Trickery"/>
+    <bootstrap thing="xDraOvMove"></bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Value" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="xKeenSense"></bootstrap>
+    <bootstrap thing="stypEarth"></bootstrap>
+    <bootstrap thing="xSoundImit"></bootstrap>
+    <bootstrap thing="xImmElec"></bootstrap>
+    <bootstrap thing="typDragon"></bootstrap>
+    <bootstrap thing="xAgeCat"></bootstrap>
+    <bootstrap thing="xImmParaly"></bootstrap>
+    <bootstrap thing="xImmSleep"></bootstrap>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <bootstrap thing="xBreathWea"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="SpecSource" tag="Dragon"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="SpecSource" tag="Dragon"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wWing">
+      <autotag group="SpecSource" tag="Dragon"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wTail">
+      <autotag group="SpecSource" tag="Dragon"/>
+      </bootstrap>
+    <bootstrap thing="xDragCrush"></bootstrap>
+    <bootstrap thing="xTailSweep"></bootstrap>
+    <bootstrap thing="xNatSpells"></bootstrap>
+    <bootstrap thing="xAlterForm"></bootstrap>
+    <bootstrap thing="rPfWitTong"></bootstrap>
+    <bootstrap thing="xTruSee"></bootstrap>
+    <bootstrap thing="xDraSongAb"></bootstrap>
+    <bootstrap thing="xFrightPre"></bootstrap>
+    <bootstrap thing="xDamRdMag"></bootstrap>
+    <bootstrap thing="xSDFeathFa"></bootstrap>
+    <bootstrap thing="xSDBlink"></bootstrap>
+    <bootstrap thing="xSDTelepor"></bootstrap>
+    <bootstrap thing="xSDHeal"></bootstrap>
+    <bootstrap thing="xSDPolyany"></bootstrap>
+    <bootstrap thing="xSDPlaneSh"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <assignval field="Value" value="120" behavior="maximum"/>
+      </bootstrap>
+    <bootstrap thing="rBlindsen">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <eval phase="Render" index="6">~ Rename our Frightful Presence xSumm and give it our CustDesc
+      if (hero.child[xAgeCat].field[Value].value &lt; 5) then
+        perform hero.child[xFrightPre].delete[Helper.ShowSpec]
+      endif
+
+      var radius as number
+      radius = hero.child[xAgeCat].field[Value].value * 30
+
+      hero.child[xFrightPre].field[xSumm].text = &quot;&quot; &amp; radius &amp; &quot; ft radius, foes &lt;&quot; &amp; herofield[tHitDice].value &amp; &quot; HD are shaken, &lt;5 HD are frightened 4d6 rds (Will neg).&quot;
+
+      hero.child[xFrightPre].field[CustDesc].text = &quot;A young adult or older dragon can unsettle foes with its mere presence. The ability takes effect automatically whenever the dragon attacks, charges, or flies overhead. Creatures within a radius of 30 feet &#215; the dragon&#146;s age category are subject to the effect if they have fewer HD than the dragon. A potentially affected creature that succeeds on a Will save (DC 10 + 1/2 dragon&#146;s HD + dragon&#146;s Cha modifier) remains immune to that dragon&#146;s frightful presence for 24 hours. On a failure, creatures with 4 or less HD become panicked for 4d6 rounds and those with 5 or more HD become shaken for 4d6 rounds. Dragons ignore the frightful presence of other dragons.&quot;</eval>
+    <eval phase="PostLevel" index="3"><![CDATA[    ~ This is the same for all dragons, it shouldn't change.
+
+    ~ Rename our natural attacks if they are present and from dragon race (this is to avoid affecting any natural attacks gained from classes or feats) & also set up our natural attack damage based on size.
+    foreach pick in hero from BaseNatWep where "SpecSource.Dragon"
+      if (herofield[tSize].value >= 4) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.4d8_307]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.4d6_106]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.2d8_204]
+        endif
+
+        if (each.tagis[thingid.wTail] <> 0) then
+           perform each.assign[wMain.4d6_106]
+        endif
+
+
+      elseif (herofield[tSize].value = 3) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.4d6_106]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.2d8_204]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.2d6_104]
+        endif
+
+        if (each.tagis[thingid.wTail] <> 0) then
+           perform each.assign[wMain.2d8_204]
+        endif
+
+
+      elseif (herofield[tSize].value = 2) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.2d8_204]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.2d6_104]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.1d8_6]
+        endif
+
+        if (each.tagis[thingid.wTail] <> 0) then
+           perform each.assign[wMain.2d6_104]
+        endif
+
+
+      elseif (herofield[tSize].value = 1) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.2d6_104]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d8_6]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.1d6_5]
+        endif
+
+        if (each.tagis[thingid.wTail] <> 0) then
+           perform each.assign[wMain.1d8_6]
+        endif
+
+
+      elseif (herofield[tSize].value = 0) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d8_6]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d6_5]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.1d4_4]
+        endif
+
+
+      elseif (herofield[tSize].value = -1) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d6_5]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d4_4]
+        endif
+
+
+      elseif (herofield[tSize].value = -2) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d4_4]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d3_3]
+        endif
+
+
+      elseif (herofield[tSize].value = -3) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d3_3]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d2_2]
+        endif
+
+
+      elseif (herofield[tSize].value <= -4) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d2_2]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1_1]
+        endif
+
+
+      endif
+    nexteach]]></eval>
+    <eval phase="First" priority="150"><![CDATA[~ This is the eval for everything based on Age cat (except HD, still working on that), it will change with different dragon types...
+
+~ Apply a User Tag to let us know we have a breath weapon.
+perform hero.assign[User.BreathWeap]
+
+if (hero.child[xAgeCat].field[Value].value >= 12) then
+~ Set our name
+    field[livename].text = "Song Great Wyrm"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 25
+    field[rCON].value = 15
+    field[rINT].value = 16
+    field[rWIS].value = 17
+    field[rCHA].value = 18
+
+~ Set the HD
+    field[rHitDice].value = 38
+
+~ Set the Size
+    herofield[tSize].value = 3
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 46
+    field[rFort].value = 21
+    field[rRef].value = 21
+    field[rWill].value = 21
+    field[rAC].value = 37
+
+~ Set SR and DR
+    #applydr[xDamRdMag, 20]
+    #applysr[34]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 17
+    hero.child[xNatSpells].field[Value].value = 17
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 24
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 11) then
+~ Set our name
+    field[livename].text = "Song Wyrm"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 23
+    field[rCON].value = 13
+    field[rINT].value = 16
+    field[rWIS].value = 17
+    field[rCHA].value = 18
+
+~ Set the HD
+    field[rHitDice].value = 35
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 44
+    field[rFort].value = 19
+    field[rRef].value = 19
+    field[rWill].value = 19
+    field[rAC].value = 34
+
+~ Set SR and DR
+    #applydr[xDamRdMag, 20]
+    #applysr[32]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 15
+    hero.child[xNatSpells].field[Value].value = 15
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 22
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 10) then
+~ Set our name
+    field[livename].text = "Ancient Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 21
+    field[rCON].value = 13
+    field[rINT].value = 14
+    field[rWIS].value = 15
+    field[rCHA].value = 16
+
+~ Set the HD
+    field[rHitDice].value = 32
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 40
+    field[rFort].value = 18
+    field[rRef].value = 18
+    field[rWill].value = 18
+    field[rAC].value = 31
+
+~ Set SR and DR
+    #applydr[xDamRdMag, 15]
+    #applysr[31]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 13
+    hero.child[xNatSpells].field[Value].value = 13
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 21
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 9) then
+~ Set our name
+    field[livename].text = "Very Old Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 19
+    field[rCON].value = 11
+    field[rINT].value = 12
+    field[rWIS].value = 13
+    field[rCHA].value = 14
+
+~ Set the HD
+    field[rHitDice].value = 29
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 36
+    field[rFort].value = 16
+    field[rRef].value = 16
+    field[rWill].value = 16
+    field[rAC].value = 28
+
+~ Set SR and DR
+    #applydr[xDamRdMag, 15]
+    #applysr[29]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 11
+    hero.child[xNatSpells].field[Value].value = 11
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 19
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 8) then
+~ Set our name
+    field[livename].text = "Old Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 17
+    field[rCON].value = 11
+    field[rINT].value = 12
+    field[rWIS].value = 13
+    field[rCHA].value = 14
+
+~ Set the HD
+    field[rHitDice].value = 26
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 32
+    field[rFort].value = 15
+    field[rRef].value = 15
+    field[rWill].value = 15
+    field[rAC].value = 25
+
+~ Set SR and DR
+    #applydr[xDamRdMag, 10]
+    #applysr[28]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 9
+    hero.child[xNatSpells].field[Value].value = 9
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 18
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 7) then
+~ Set our name
+    field[livename].text = "Mature Adult Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 13
+    field[rCON].value = 9
+    field[rINT].value = 10
+    field[rWIS].value = 11
+    field[rCHA].value = 12
+
+~ Set the HD
+    field[rHitDice].value = 23
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 28
+    field[rFort].value = 13
+    field[rRef].value = 13
+    field[rWill].value = 13
+    field[rAC].value = 22
+
+~ Set SR and DR
+    #applydr[xDamRdMag, 10]
+    #applysr[25]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 7
+    hero.child[xNatSpells].field[Value].value = 7
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 16
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 6) then
+~ Set our name
+    field[livename].text = "Adult Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 9
+    field[rCON].value = 7
+    field[rINT].value = 10
+    field[rWIS].value = 11
+    field[rCHA].value = 12
+
+~ Set the HD
+    field[rHitDice].value = 20
+
+~ Set the Size
+    herofield[tSize].value = 1
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 21
+    field[rFort].value = 12
+    field[rRef].value = 12
+    field[rWill].value = 12
+    field[rAC].value = 20
+
+~ Set SR and DR
+    #applydr[xDamRdMag, 5]
+    #applysr[23]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 5
+    hero.child[xNatSpells].field[Value].value = 5
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 13
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 5) then
+~ Set our name
+    field[livename].text = "Young Adult Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 7
+    field[rCON].value = 7
+    field[rINT].value = 10
+    field[rWIS].value = 9
+    field[rCHA].value = 12
+
+~ Set the HD
+    field[rHitDice].value = 17
+
+~ Set the Size
+    herofield[tSize].value = 1
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 20
+    field[rFort].value = 10
+    field[rRef].value = 10
+    field[rWill].value = 10
+    field[rAC].value = 16
+
+~ Set SR and DR
+    #applydr[xDamRdMag, 5]
+    #applysr[20]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 3
+    hero.child[xNatSpells].field[Value].value = 3
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 10
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 4) then
+~ Set our name
+    field[livename].text = "Juvenile Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 5
+    field[rCON].value = 5
+    field[rINT].value = 8
+    field[rWIS].value = 9
+    field[rCHA].value = 10
+
+~ Set the HD
+    field[rHitDice].value = 14
+
+~ Set the Size
+    herofield[tSize].value = 0
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 16
+    field[rFort].value = 9
+    field[rRef].value = 9
+    field[rWill].value = 9
+    field[rAC].value = 13
+
+~ Set SR and DR
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 1
+    hero.child[xNatSpells].field[Value].value = 1
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 8
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 3) then
+~ Set our name
+    field[livename].text = "Young Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 3
+    field[rCON].value = 5
+    field[rINT].value = 6
+    field[rWIS].value = 7
+    field[rCHA].value = 8
+
+~ Set the HD
+    field[rHitDice].value = 11
+
+~ Set the Size
+    herofield[tSize].value = 0
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 11
+    field[rFort].value = 7
+    field[rRef].value = 7
+    field[rWill].value = 7
+    field[rAC].value = 10
+
+~ Set SR and DR
+
+~ Set Natural Spellcasting
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 6
+    field[cLevelAdj].value = 5
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 2) then
+~ Set our name
+    field[livename].text = "Very Young Song Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 1
+    field[rCON].value = 3
+    field[rINT].value = 4
+    field[rWIS].value = 5
+    field[rCHA].value = 6
+
+~ Set the HD
+    field[rHitDice].value = 8
+
+~ Set the Size
+    herofield[tSize].value = -1
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 8
+    field[rFort].value = 6
+    field[rRef].value = 6
+    field[rWill].value = 6
+    field[rAC].value = 7
+
+~ Set SR and DR
+
+~ Set Natural Spellcasting
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 4
+    field[cLevelAdj].value = 4
+
+
+elseif (hero.child[xAgeCat].field[Value].value <= 1) then
+~ Set our name
+    field[livename].text = "Song Dragon Wyrmling"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = -1
+    field[rCON].value = 3
+    field[rINT].value = 4
+    field[rWIS].value = 5
+    field[rCHA].value = 6
+
+~ Set the HD
+    field[rHitDice].value = 5
+
+~ Set the Size
+    herofield[tSize].value = -2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 5
+    field[rFort].value = 4
+    field[rRef].value = 4
+    field[rWill].value = 4
+    field[rAC].value = 4
+
+~ Set SR and DR
+
+~ Set Natural Spellcasting
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 2
+    field[cLevelAdj].value = 3
+
+endif]]></eval>
+    <eval phase="UserPostAt" index="4">~ Set the name and range (based on size) and description of our breath weapon also DC
+      var range as number
+      if (herofield[tSize].value &lt;= -2) then
+          range = 15
+      elseif (herofield[tSize].value = -1) then
+          range = 20
+      elseif (herofield[tSize].value = 0) then
+          range = 30
+      elseif (herofield[tSize].value = 1) then
+          range = 40
+      elseif (herofield[tSize].value = 2) then
+          range = 50
+      elseif (herofield[tSize].value = 3) then
+          range = 60
+      elseif (herofield[tSize].value &gt;= 4) then
+          range = 70
+      endif
+
+      var dice as number
+      dice = hero.child[xAgeCat].field[Value].value * 2
+
+      hero.child[xBreathWea].field[livename].text = &quot;Breath Weapon, &quot; &amp; dice &amp; &quot;d6 electric in a &quot; &amp; range &amp; &quot; ft cone&quot;
+
+      hero.child[xBreathWea].field[CustDesc].text = &quot;A Song dragon has one breath weapon, a cone of electrically charged gas.{BR}{BR}Using a breath weapon is a standard action. Once a dragon breathes, it can&#146;t breathe again until 1d4 rounds later. If a dragon has more than one type of breath weapon, it still can breathe only once every 1d4 rounds. A blast from a breath weapon always starts at any intersection adjacent to the dragon and extends in a direction of the dragon&#146;s choice, with an area as noted on the table below. If the breath weapon deals damage, creatures caught in the area can attempt Reflex saves to take half damage; the DC depends on the dragon&#146;s age and variety, and is given in each individual entry. Saves against nondamaging breath weapons use the same DC; the kind of saving throw is noted in the variety descriptions. The save DC against a breath weapon is 10 + 1/2 dragon&#146;s HD + dragon&#146;s Con modifier. {BR}{BR}Breath weapons come in two basic shapes, line and cone, whose areas vary with the dragon&#146;s size.&quot;
+
+~ Also change our alternate form text
+      hero.child[xAlterForm].field[CustDesc].text = &quot;A song dragon can freely use an ability much like {i}polymorph self{/i} to assume human form.  They always appear as human females, and each song dragon has a unique human form that it assumes each time it changes shape.{BR}{BR}A {i}true seeing{/i} spell or ability reveals the creature&#146;s natural form. A creature using alternate form reverts to its natural form when killed, but separated body parts retain their shape. A creature cannot use alternate form to take the form of a creature with a template. Assuming an alternate form results in the following changes to the creature:{BR}&#151;The creature retains the type and subtype of its original form. It gains the size of its new form. If the new form has the aquatic subtype, the creature gains that subtype as well.{BR}&#151;The creature loses the natural weapons, natural armor, and movement modes of its original form, as well as any extraordinary special attacks of its original form not derived from class levels (such as the barbarian&#146;s rage class feature).{BR}&#151;The creature gains the natural weapons, natural armor, movement modes, and extraordinary special attacks of its new form.{BR}&#151;The creature retains the special qualities of its original form. It does not gain any special qualities of its new form.{BR}&#151;The creature retains the spell-like abilities and supernatural attacks of its old form (except for breath weapons and gaze attacks). It does not gain the spell-like abilities or supernatural attacks of its new form.{BR}&#151;The creature gains the physical ability scores (Str, Dex, Con) of its new form. It retains the mental ability scores (Int, Wis, Cha) of its original form. Apply any changed physical ability score modifiers in all appropriate areas with one exception: the creature retains the hit points of its original form despite any change to its Constitution.{BR}&#151;Except as described elsewhere, the creature retains all other game statistics of its original form, including (but not necessarily limited to) HD, hit points, skill ranks, feats, base attack bonus, and base save bonuses.{BR}&#151;The creature retains any spellcasting ability it had in its original form, although it must be able to speak intelligibly to cast spells with verbal components and it must have human like hands to cast spells with somatic components.{BR}&#151;The creature is effectively camouflaged as a creature of its new form, and it gains a +10 bonus on Disguise checks if it uses this ability to create a disguise.{BR}&#151;Any gear worn or carried by the creature that can&#146;t be worn or carried in its new form instead falls to the ground in its space. If the creature changes size, any gear it wears or carries that can be worn or carried in its new form changes size to match the new size. (Nonhumanoid-shaped creatures can&#146;t wear armor designed for humanoid-shaped creatures, and vice versa.) Gear returns to normal size if dropped.&quot;
+
+      hero.child[xAlterForm].field[xSumm].text = &quot;3/day, stand, assume form of Med or smaller animal/humanoid.&quot;
+
+      hero.child[xAlterForm].field[hTotal].value += 3
+
+~ If we are not at least Large we have no tail slap, so we are done
+    doneif (herofield[tSize].value &lt; 1)
+
+~ Tails are special, even though they are secondary they get *1.5 Str, so we adjust for that now by adding our str bon (already gets *.5)...
+    foreach pick in hero from BaseNatWep where &quot;SpecSource.Dragon &amp; thingid.wTail&quot;
+      each.field[wDamBonus].value += hero.child[aSTR].field[aModBonus].value
+    nexteach</eval>
+    <eval phase="First" priority="25000" index="2"><![CDATA[    ~ Dragon flight speeds are based on size. When they reach Medium and Gargantuan size cagegories their base speed goes up by 50 ft, but their maneuverability goes down one step (5 is perfect, 1 is clumsy). 
+
+    var speed as number
+    speed = 150
+
+    var maneuver as number
+    maneuver = 4
+
+  if (herofield[tSize].value >= 3) then
+    speed += 100
+    maneuver -= 2
+  elseif (herofield[tSize].value >= 0) then
+    speed += 50
+    maneuver -= 1
+  endif
+
+    ~ Set Fly Speed/Maneuverability
+    hero.child[xFly2].field[Value].value = maximum(speed, hero.child[xFly2].field[Value].value)
+
+  if (maneuver >= 5) then
+    perform hero.child[xFly2].assign[Maneuver.Perfect]
+  elseif (maneuver = 4) then
+    perform hero.child[xFly2].assign[Maneuver.Good]
+  elseif (maneuver = 3) then
+    perform hero.child[xFly2].assign[Maneuver.Average]
+  elseif (maneuver = 2) then
+    perform hero.child[xFly2].assign[Maneuver.Poor]
+  elseif (maneuver <= 1) then
+    perform hero.child[xFly2].assign[Maneuver.Clumsy]
+  endif]]></eval>
+    <eval phase="Final" priority="10000" index="5"><![CDATA[if (hero.child[xAgeCat].field[Value].value < 4) then
+    field[cKnowMax].arrayvalue[0] = 0
+    field[cCastMax].arrayvalue[0] = 0
+    field[cKnowMax].arrayvalue[1] = 0
+    field[cCastMax].arrayvalue[1] = 0
+endif]]></eval>
+    </thing>
+  <thing id="xDraSongAb" name="Song Dragon Abilites" description="1/hour--{i}light{/i}, {i}darkness{/i}; 2/day--{i}blink, feather fall, polymorph any object{/i}; 1/day--{i}heal, plane shift, teleport{/i}" compset="Special">
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    </thing>
+  <thing id="xArctShape" name="Archetypal Shape" description="No other creature can polymorph or shapechange themselves (or anyone else into a sharn&apos;s shape, or anything approximating it." compset="Special" summary="No one can assume the form of a Sharn through any means.">
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="xSharnFix" name="Fixed Shape" description="Sharns cannot polymorph themselve, shapechange themselves, or be changed in shape by others." compset="Special" summary="Sharns shape cannot be altered by anyone or anything.">
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    </thing>
+  <thing id="xPhaeFViso" name="Full Vision" description="Phaerims are naturally capable of detecting magic, and seeing invisible, astral, and incorporeal creatures and objects, all out to a range of 120 feet." compset="Special">
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="xSharnHex" name="Hex Portals" description="A sharn can maintain upto three minature portals--etheral windows--through which it can see, cast spells and even launch a melee attack.  Each portal is a translucent hexagonal window of purple light, 3 feet in diameter.  As a full round action, the sharn can form one to three portals anywhere within 20 feet of its body, each portal coalescing out of a swirl of purple motes.  Thereafter, each seperate hex portal can move indipendantly up to 20 feet per round as a free action before the sharn takes its regular action. (not during the partial action it gets for being hastened).  The hex portals do not block movement, line of sight, or missle fire.  A character can occupy the same speace as a portal with no adverse effect other than the proximity to touch and attacks.  A sharn can cause one or more portals to disappear on its action, as a free action, but will not be able to form a new portal until it uses a standard action to create a hex portals.\nIf a sharn moves farther than 100 feet from one of its portals, the portal disappears.\nA sharn can cast a spell through a portal by extending its hand through the portal.  It can deliver touch spells to creatures within 5 feet of a portal.  A sharn is not capable of moving fully through one of its portals, nor can anyone else move through a portal.\nSharns can launch melee attacks through portals without any penalty, but only one with a 5-foot reach, not the 10 foot like the rest of its body.  Note that portals threaten areas within 5 feet of them.  Hex portals can flank, or contribute to flanking, just like any other creature that threatens an area.\nOpponents cannot normally attack a sharn through a portal, or cast a spell through a portal, but they can ready an action to attack when a sharn sticks its hand through a portal to cast a spell or attack.  Assuming the sharn is not invisible when it sticks part of its body through the portal, it is assumed to have 9/10ths (nine-tenths) cover, and therefore gets a +10 AC and +4 bonus on Reflex saves.\nHex portals can be dispelled, but a dispelled hex portal could be reformed on the sharn&apos;s next action, beside the sharn.  Hex portals do not function or appear inside {i}antimagic fields{/i}.  As force effects, hex portals cannot, themselves, be turned invisible." compset="Special" summary="Upto three, spellcasting portals, movable in any direction 20ft from sharn.">
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    </thing>
+  <thing id="xSeeInvis" name="See invisibility (Su)" description="The creature is able to see invisible creatures and objects at will." compset="Special" summary="The creature is able to see invisibility.">
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="xHybsil" name="Spell-Like Abilities: Hybsil" description="1/day&#151;{i}Pass without trace{/i} (DC xx) As a 3rd level druid.\n1/day&#151;{i}dancing lights{/i} (DC 27), {i}mirror image{/i} (DC 27), {i}jump{/i} (DC 27) Cast as a 1st level sorcerer.  The save DCs are Charisma-based." compset="Special" summary="Use many different spell like abilities.">
+    <usesource source="pFR" parent="UserParent" name="Forgotten Realms Setting Books"/>
+    <usesource source="MonsFaerun" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="AbilType" tag="SpellLike" name="Spell-Like Ability" abbrev=" (Sp)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="xPhaeMagic" name="{i}Phaerimm Magic{/i}" description="Phaerimms cast their sorcerer spells as if they were spell-like abilities, requiring neither verbal, somatic, nor material components." compset="Special" summary="Phaerimms cast magic as sorcerers, as spell-like abiliites.">
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    </thing>
+  <thing id="xTruSee" name="True Seeing" description="A creature with true seeing (as the spell) can do so upto a range of 15 feet.  This ability is always active." compset="Special">
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="SpecType" tag="Sense" name="Sense" abbrev="Sense"/>
+    </thing>
+  <thing id="rPhaerimm" name="Phaerimm" description="Phaerimm are evil magicians who would gladly erase all other beings from existence. The fact that they have not yet done so is probably attributable to the fact that they would lack serviceable slaves to torture for sport if they did.\n\nPhaerimms resemble 10-to-12-foot-tall windsocks underneath an ovoid head.  The head disk contains a huge toothed maw and its surrounded by four clawed arms.  Beneath their top disk, their long, slnuous bodies taper down to a leathal stinger.  They are powerful magicians, gaining levels sorcerers over lives that span centuries.  Many elder phaerimms are 15th-to 20th level sorcerers; some have even pursued advanced magical study, much like that of human archmages.  Younger phaerims&apos; magical abilities are not so well developed.\n\nIf phaerimms were less evil, they would be more alien and difficult to understand, but their overwehelming drive toward inflicting pain makes them somewhat predictable.  They communicate with one another by varying the wind speed around their bodies.  They communicate with others using telepathy. They understand Common and several other languages.\n\n{b}Combat{/b}\nPhaerimms can be dangerous physical combatants, but they view purely physical combat as a sign of weakness.  Using their stinger or weapons to defend themselves is a sign that their magical abilities are not sufficient.  Consequently, phaerimms only make physical attacks as their last resort, even at low levels when they lack powerful magic.  Low-level phaerimms stoop to using masterwork swords, prefering falchions.\n\nAs spellcasters, phaerimms favor charm, command, and illusion effects over direct damage spells, but they are not shy about letting loose a {i}fireball{/i} if necessary.  Powerful elder phaerimms will often have charmed or otherwise enthralled beings fighting for them.  In fact, phaerimms sometimes pick fights simply to watch their enemies being forced to hack apart their own friends.  Phaerimms also enjoy summoning outsiders, but are generally too proud to use low level summoning spells to call up common animals or other minor creatures.\n\n{b}In the Realms{/b}\nMillennia ago, the phaerims plotted to destroy all life in Faerun.  They succeeded in toppling the mighty Netherese empire and devastating the area now know as the Anauroch Desert, but were foiled by the intervention of the elder sharns.  The sharns imprisoned most of the phaerimms in a magical field beneath the Anauroch.  Only a few phaerimms escaped this imprisonment.  Some of these escapees live in Myth Dranor, squandering their power on internal political squabbles.  Others have conquered the beholder city of Ooltul and are attempting to break through the sharns&apos; barrier to free their fellows.\n\n{b}Source{/b}: Monsters of Faerun" compset="Race" summary="Dangerous Faerunian spellcasting abominations.">
+    <comment>Fly is assigned as a Supernatural ability.</comment>
+    <fieldval field="rDEX" value="3"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rINT" value="8"/>
+    <fieldval field="rWIS" value="6"/>
+    <fieldval field="rCHA" value="7"/>
+    <fieldval field="rSpeed" value="10"/>
+    <fieldval field="rInfFavor" value="Sorcerer"/>
+    <fieldval field="rHitDice" value="5"/>
+    <fieldval field="rInfHit" value="5d8 Hit Dice (5 levels of Aberration)"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rRef" value="1"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="8"/>
+    <fieldval field="rCR" value="5"/>
+    <fieldval field="rNumHands" value="4"/>
+    <fieldval field="rSTR" value="2"/>
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="WepProf" tag="wFalchion" name="Falchion" abbrev="Falchion"/>
+    <tag group="AlgnForbid" tag="Good" name="Any Good" abbrev="Any Good"/>
+    <tag group="ClassSkill" tag="kConcent" name="Concentration" abbrev="Concentration"/>
+    <tag group="ClassSkill" tag="kIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="ClassSkill" tag="kKnowArcan" name="Knowledge: Arcana" abbrev="Knowledge: Arcana"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSearch" name="Search" abbrev="Search"/>
+    <tag group="ClassSkill" tag="kSenseMot" name="Sense Motive" abbrev="Sense Motive"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <bootstrap thing="xFly">
+      <autotag group="AbilType" tag="Super"/>
+      <assignval field="xSumm" value="Supernatural flight, as spell, free action. Vulnerable to Antimagic."/>
+      </bootstrap>
+    <bootstrap thing="xPhaeFViso"></bootstrap>
+    <bootstrap thing="xPoison">
+      <autotag group="AbilType" tag="Extra"/>
+      <assignval field="CustDesc" value="Stinger, Fortitude save (DC 15); initial effect paralysis for 2d4 rounds and being levitated a few feet off the ground, hanging helpless; secondary damage paralysis for 1d3 hours."/>
+      <assignval field="livename" value="Poison"/>
+      </bootstrap>
+    <bootstrap thing="xPhaeMagic"></bootstrap>
+    <bootstrap thing="xSplRs">
+      <autotag group="AbilType" tag="Extra"/>
+      <assignval field="xSumm" value="Spell Resistance - 15 + 1/3 sorcerer levels."/>
+      </bootstrap>
+    <bootstrap thing="fSpellPen"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="fSpellFoc"></bootstrap>
+    <bootstrap thing="xImmPoly"></bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Maneuver" tag="Average"/>
+      <autotag group="Value" tag="30"/>
+      </bootstrap>
+    <bootstrap thing="xImmPetri"></bootstrap>
+    <bootstrap thing="fMultiAtt2"></bootstrap>
+    <bootstrap thing="typAberr"></bootstrap>
+    <eval phase="Final" priority="5000"><![CDATA[~ Assign the Fly Speed to a Supernatural ability as a dread skelton uses bony wings without flesh coverings, how the hell would it fly then?
+      hero.child[xFly].field[CustDesc].text = "A phaerimm can fly as the spell, as a free action, at a speed of 30 feet. A phaerimm that is unable to fly (for example, because it is caught in an {i}antimagic field{/i}) falls."]]></eval>
+    <eval phase="First" priority="5000" index="2"><![CDATA[~ We're going to add spell resistance - we assume that the xSplRs pick has already been bootstrapped.
+
+~ Give us SR 15
+      #applysr[15]
+
+var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kConcent].field[kInnate].arrayvalue[index] += 8
+      hero.child[kIntim].field[kInnate].arrayvalue[index] += 5
+      hero.childfound[kKnowArcan].field[kInnate].arrayvalue[index] += 7
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 2
+      hero.child[kSearch].field[kInnate].arrayvalue[index] += 3
+      hero.child[kSenseMot].field[kInnate].arrayvalue[index] += 5
+      hero.child[kSpellcr].field[kInnate].arrayvalue[index] += 5
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 5]]></eval>
+    </thing>
+  <thing id="rSharn" name="Sharn" description="Sharns embody magical chaos.  They might rule the world, if they cared, and if they could put their minds to it, but their agenda seems more sophisticated than mere rulership.\n\nSharns have massive 3,000-pound coiling black and silver bodies lit by continual magical flares.  They stand between 12 and 15 feet tall.  A sharn&apos;s three heads and grinning jaws sprout from a single trunk.  No visible eyes, hair or ears mar the smooth black skin above its flairing nostrils.  To move on the ground, it drags its snake like lower body along behind it; sharns fly unless they have a good reason to crawl.  Two massive arm-trunks flare from the sides of its body and another srpouts from itsback.  Each arm-trunk supports three smaller arms equiped with clawed three-digit hands.  Each of the nine small hands has multiple eyes covering it; each of the eyes can see normally and by darkvision.\n\nSharns are a highly magical race.   Some scholars believe they are born of the essence of chaos itself, predating even the dragons.\n\n{b}Sharn Society{/b}\nSharns are not a numerous race.  Sharns society is a bedlam of political argument and social intrigue.  Power struggles, usually based on ideological conflicts, are a constant.  This inward-looking focus does not prevent sharns from becoming embroiled in the affairs of other species, even accross the planes.  Exactly what their agenda is in such cases is almost never obvious.\n\n{b}In the Realms{/b}\nThe sharns fought great wars against the Phaerimms, wars that helped shape Faerun, since the interestection of great sharn magics and great phaerimm magic tended to change the landscape upon which the battlefields were fought, turning mountains into hills and forests into grasslands.  Eventually the sharns compromised on the phaerimm question, imprisoning them under Anauroch until they could figure out what to do with them.   Most of the elder sharns have phased out of existance, leaving young sharns who do not possess the near-omnipotence of the older sharns, and seek to understand their purpose in the world.\n\nThe young sharns may now take a momentary interest in the activities of lesser mortals, but the race still spends the great majority of its time locked in internal debates and experiments.\n\n{b}Source{/b}: Monsters of Faerun" compset="Race" summary="Sharn are the embodiment of magic and chaos.">
+    <fieldval field="rSTR" value="8"/>
+    <fieldval field="rDEX" value="10"/>
+    <fieldval field="rCON" value="10"/>
+    <fieldval field="rINT" value="8"/>
+    <fieldval field="rWIS" value="8"/>
+    <fieldval field="rCHA" value="10"/>
+    <fieldval field="rSpeed" value="10"/>
+    <fieldval field="rFeat" value="2"/>
+    <fieldval field="rInfHit" value="4d8 Hit Dice (4 levels of Aberration)"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rRef" value="1"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rCR" value="6"/>
+    <fieldval field="rNumHands" value="3"/>
+    <fieldval field="rHitDice" value="4"/>
+    <usesource source="MonFae"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="ClassSkill" tag="kBluff" name="Bluff" abbrev="Bluff"/>
+    <tag group="ClassSkill" tag="kConcent" name="Concentration" abbrev="Concentration"/>
+    <tag group="ClassSkill" tag="kDiplomacy" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="ClassSkill" tag="kKnowArcan" name="Knowledge: Arcana" abbrev="Knowledge: Arcana"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSenseMot" name="Sense Motive" abbrev="Sense Motive"/>
+    <tag group="ClassSkill" tag="kSpellcr" name="Spellcraft" abbrev="Spellcraft"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <bootstrap thing="fMultiDex"></bootstrap>
+    <bootstrap thing="fBlindFgt"></bootstrap>
+    <bootstrap thing="fComRef"></bootstrap>
+    <bootstrap thing="fMultiWep"></bootstrap>
+    <bootstrap thing="xSharnHex"></bootstrap>
+    <bootstrap thing="cAnimEvas">
+      <assignval field="xSumm" value="Sharns have the evasion ability of a 1st-level monk, taking no damage on a successful Reflex save against an attack that normally deals half damage on a uccessful save."/>
+      </bootstrap>
+    <bootstrap thing="xSharnFix"></bootstrap>
+    <bootstrap thing="xArctShape"></bootstrap>
+    <bootstrap thing="fMultiAtt2"></bootstrap>
+    <bootstrap thing="xDamRd">
+      <autotag group="Value" tag="10"/>
+      <assignval field="xSumm" value="Damage Reduction 10/+3"/>
+      </bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xFastHeal">
+      <assignval field="livename" value="Regeneration 2"/>
+      <assignval field="xSumm" value="Non-Lawful aligned damage heals at 2hp per round."/>
+      <assignval field="CustDesc" value="Lawful weapons, spells, and outsiders inflict normal damage on sharns. Any other damage regenerates at the rate of 2 hit points per round as long as the sharn does not have any of its hex portals open."/>
+      </bootstrap>
+    <bootstrap thing="xImmMind"></bootstrap>
+    <bootstrap thing="xImmPoly"></bootstrap>
+    <bootstrap thing="xHaste"></bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Maneuver" tag="Perfect"/>
+      <autotag group="Value" tag="40"/>
+      <autotag group="AbilType" tag="Super"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="3"/>
+      <autotag group="wMain" tag="1d6_5"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="typAberr"></bootstrap>
+    <eval phase="UserPreAt" priority="10100">~ Add a +4 dodge bonus to our armor class from Sharns racial haste
+hero.child[ArmorClass].field[tACDodge].value = hero.child[ArmorClass].field[tACDodge].value + 4</eval>
+    <eval phase="First" priority="5000" index="2">hero.child[xFastHeal].field[Value].value = 2
+hero.child[xSplRs].field[Value].value = 20
+hero.child[xDamRd].field[Value].value = 10
+
+var index as number
+      index = field[cClsIndex].value
+
+      hero.childfound[kBluff].field[kInnate].arrayvalue[index] += 3
+      hero.child[kConcent].field[kInnate].arrayvalue[index] += 5
+      hero.child[kDiplomacy].field[kInnate].arrayvalue[index] += 3
+      hero.childfound[kKnowArcan].field[kInnate].arrayvalue[index] += 4
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 4
+      hero.child[kSearch].field[kInnate].arrayvalue[index] += 3
+      hero.child[kSenseMot].field[kInnate].arrayvalue[index] += 3
+      hero.child[kSpellcr].field[kInnate].arrayvalue[index] += 6
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 3</eval>
+    </thing>
+  <thing id="rHybsil" name="Hybsil" description="Hybsils are woodland nomads devoted to the dieties of nature, their families and crazy acts of bravery.\n\nThey look like 3-foot-tall centaurs with the bodies of antelopes instead of horses. Coloration of their antelope bodies varies greatly and is wide as their full antelope cousins.  They live in tribes of twenty to eighty individuals and hunt across wide ranges of territory, often quite distant from their camps in order not to lead enemies to their families.  Makes have large forking antlers that molt in the dead of winter and grow back in the spring.  FEmale hybsils have smaller straight or spiral antlers without branches, year round.\n\n{b}Combat{/b}\nBefore attacking, hybsils use their {i}mirror image{/i} ability so that their foes will face three or four leaping, arrow-firing hybsil for every hybsil who is actually present.  Unless they are deliberately attempting to prove their courage, hybsils avoid hand-to-hand combat, prevering to use their mobility to dart in and out of hiding, fire arrows, and retreat.\n\n{b}Hybsils as Characters{/b}\nHybsil characters most often gain levels as druids, rangers, sorcerers and rogues.  Hybsil clerics, which are rare, choose between the domains of Luck, Nature and Trickery.\n\n{b}Hybsil Society{/b}\nUnlike their playful cousins, the pixies, hybsils connot turn invisible, and therefore have more earnest attitudes towards questions of hornor, responsibility, and survival.  The three main virtues of the hybsil society are obligation, vengeance, and daring.  Obligations are weighed by the elders, who keep track of favors owed both within and outside the tribe.  The females who have longer memories than the more impetuous hybsil males, usually call for vengeance. Daring is the prerogative of the young hunters and warriors, both male and female, who count it honorable to dart among enemies, stab them once, and escape. Few hybsils seek the company of nonhybsils.  Some tribes maintain generally positive, though distant relationships with humans, gnomes, and other neighbors.  Other tribes have been betrayed or attacked so often that they count all strangers as foes until proven otherwise.\n\n{b}In the Realms{/b}\nThe Zhents of Zhentil Keep have a long history of paying a bounty of upto 1gp per point on a hybsil antler, as long as its magical efficacy can be assure by virtue of being attached to a hybsil scalp--molted antlers won&apos;t do for the Zhents&apos; alchemists.  Meanwhile, in the Silver Marches, a 14th-level hybsil druid who worships Larue and goes by the name Five Point has become the leader of the second largest druid circle in the northlands.  Five Point has three dire wolverines and an owl as animal companions.  He is notorious for putting a 13 gp bounty on Zhentish scalps.\n\n{b}Source{/b}: Monsters of Faerun" compset="Race" summary="Small, centauraform deer fey.">
+    <fieldval field="rSTR" value="-2"/>
+    <fieldval field="rCON" value="3"/>
+    <fieldval field="rINT" value="3"/>
+    <fieldval field="rSpeed" value="50"/>
+    <fieldval field="rFeat" value="1"/>
+    <fieldval field="rInfHit" value="1d6 Hit Dice (1 levels of Fey)"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rCR" value="1"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rDEX" value="7"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rSkill" value="1"/>
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSearch" name="Search" abbrev="Search"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="ClassSkill" tag="kSurvival" name="Survival" abbrev="Survival"/>
+    <tag group="CompIs" tag="cAnimComp" name="Animal Companion" abbrev="Animal Companion"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="RaceSize" tag="Small11" name="Small" abbrev="Small"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="ClassSkill" tag="kJump" name="Jump" abbrev="Jump"/>
+    <tag group="ClassSkill" tag="Craft" name="All Craft Skills" abbrev="All Craft Skills"/>
+    <tag group="ClassSkill" tag="kBluff" name="Bluff" abbrev="Bluff"/>
+    <tag group="ClassSkill" tag="kDisable" name="Disable Device" abbrev="Disable Device"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kUseRope"/>
+    <tag group="Language" tag="lCommonND"/>
+    <tag group="Race" tag="typFey"/>
+    <bootstrap thing="xImmPois">
+      <assignval field="xSumm" value="Hybsils are immune to poisons of all types."/>
+      </bootstrap>
+    <bootstrap thing="typFey"></bootstrap>
+    <bootstrap thing="xSeeInvis">
+      <assignval field="xSumm" value="Though hybsils cannot turn invisible, they are at least able to cope with their sprite relatives by seeing invisible beings and objects at will."/>
+      </bootstrap>
+    <bootstrap thing="xHybsil"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+2 Racial to Jump and +4 Wilderness Lore (Survival)."/>
+      </bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <assignval field="xSumm" value="+4 racial on Dis Device and Search Checks (outdoor only) +8 If rogues."/>
+      </bootstrap>
+    <bootstrap thing="fMobility">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <bootstrap thing="fDodge"></bootstrap>
+    <bootstrap thing="fWepFin"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      ~ Extra Skills are required because the Black Unicorn had Wildereness Lore and needed to be split into Both Know: Nat and Survival.
+      index = field[cClsIndex].value
+
+      hero.child[kBluff].field[kInnate].arrayvalue[index] += 4
+      hero.child[kDisable].field[kInnate].arrayvalue[index] += 4
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 4
+      hero.child[kJump].field[kInnate].arrayvalue[index] += 0
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 4
+      hero.child[kSearch].field[kInnate].arrayvalue[index] += 1 
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 4
+      hero.child[kUseRope].field[kInnate].arrayvalue[index] += 1
+      hero.child[kSurvival].field[kInnate].arrayvalue[index] += 1
+      
+~ Add a racial bonus to our Jump and Wilderness Lore
+      #skillbonus[kJump] += 2
+      #skillbonus[kSurvival] += 4</eval>
+    </thing>
+  <thing id="rAirGenasi" name="Genasi, Air" description="Air genasi see themselves as the rightful inheritors of their lineage&#151;the sky, the wind, and the very air that other creatures breathe.\n\nAir genasi look generally human, with one or two unusual traits that clearly manifest their elemental nature: light blue skin or hair, a constant breeze around them, a breathy voice with strange inflections, or flesh that is cool to the touch. They care little about their appearance, since tousled hair and ill-mended clothes simply show the natural way of things in their eyes. They vary quickly between calm reserve and great intensity.\n\n{b}Source{/b}: Monsters of Faerun, Races of Faerun" compset="Race">
+    <comment>Air Genasi statistics found in three seperate sources, Monsters of Faerun, Races of Faerun and Players Guide to Faerun.</comment>
+    <fieldval field="rDEX" value="3"/>
+    <fieldval field="rCON" value="1"/>
+    <fieldval field="rINT" value="4"/>
+    <fieldval field="rWIS" value="-3"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnF" value="85"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="cLevelAdj" value="+1"/>
+    <fieldval field="rCR" value=".5"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <usesource source="RoF"/>
+    <usesource source="MonFae"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Race" tag="AirGenasi" name="Air Genasi"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="WeightDice" tag="1"/>
+    <tag group="WeightSize" tag="6"/>
+    <tag group="Race" tag="Planetouch" name="Planetouched"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="Race" tag="stypAir"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="WepProf" tag="wRapier"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="6"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="8"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="8"/>
+    <bootstrap thing="xAirResist"></bootstrap>
+    <bootstrap thing="xMingWind"></bootstrap>
+    <bootstrap thing="fWepFin">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <eval phase="First" priority="5000">#skillbonus[kHide] += 4
+      #skillbonus[kMoveSil] += 4
+      #skillbonus[kTumble] += 4</eval>
+    </thing>
+  <thing id="xAirResist" name="Air Resistance" description="{b}Air Resistance (Ex):{/b} Air genasi gain a +1 racial bonus on all saving throws against air spells and effects.  This bonus increases by +1 for every five additional levels the genasi attains.  Air genasi do not breathe, so they are immune to most gas attacks, drowning, and suffocation." compset="Special" summary="+1 racial to air spells and effects; +1/5 levels after.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rAirGenasi"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xMingWind" name="{i}Mingle with Wind{/i}" description="Once per day, an air genasi can cast {i}levitate{/i} as a 5th-level sorcerer." compset="Special" summary="1/day {i}levitation{/i} as a 5th level Sorcerer.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rAirGenasi"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="rEarGenasi" name="Genasi, Earth" description="Most earth genasi embrace their elemental natures, reveling in their superiority, strength, and earth-born power.\n\nSome earth genasi seem dirty, rough, and rugged like a handful of stones, while others look as impeccably clean as polished gems.  An individual earth genasi might have earthlike skin, a metallic sheen to the skin or hair, blocky features, gritty flesh, a deep voice and slow speech, or black eyes like deep pits. They tend to be slow to act and ponderous in thought, though they are far from stupid.\n\n{b}Source{/b}: Monsters of Faerun, Races of Faerun" compset="Race">
+    <comment>Air Genasi statistics found in three seperate sources, Monsters of Faerun, Races of Faerun and Players Guide to Faerun.</comment>
+    <fieldval field="rWIS" value="-3"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnF" value="85"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="cLevelAdj" value="+1"/>
+    <fieldval field="rCR" value=".5"/>
+    <fieldval field="rSTR" value="3"/>
+    <fieldval field="rCON" value="4"/>
+    <fieldval field="rINT" value="1"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <usesource source="RoF"/>
+    <usesource source="MonFae"/>
+    <tag group="WeightSize" tag="6"/>
+    <tag group="Race" tag="Planetouch" name="Planetouched"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="10"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Race" tag="stypEarth"/>
+    <tag group="Race" tag="EarGenasi" name="Earth Genasi"/>
+    <tag group="WepProf" tag="wGreatclub"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="6"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="8"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="8"/>
+    <bootstrap thing="xMergStone"></bootstrap>
+    <bootstrap thing="xEarResist"></bootstrap>
+    <bootstrap thing="fToughness">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <eval phase="First" priority="5000">#skillbonus[kClimb] += 3
+      #skillbonus[kCrafBlack] += 4</eval>
+    </thing>
+  <thing id="xMergStone" name="{i}Merge with Stone{/i}" description="One per day, an earth genasi can cast {i}pass without trace{/i} as a 5th-level druid." compset="Special" summary="1/day, {i}Pass without trace{/i} as a 5th-level druid.">
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rEarGenasi"/>
+    </thing>
+  <thing id="xEarResist" name="Earth Resistance" description="Earth genasi gain a +1 racial bonus on all saving throws against earth spells and effects.  This bonus increases by +1 for every five additional levels the genasi attains.  Earth genasi do not breathe, so they are immune to most gas attacks, drowning, and suffocation." compset="Special" summary="+1 racial to earth spells and effects; +1/5 levels after.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="rEarGenasi"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="rWatGenasi" name="Genasi, Water" description="The endless lapping of wave after wave, the salty sea foam spraying into the air, the bottomless ocean depths with pitiless darkness and breath-stealing pressure&#151;these are the elements of a water genasi&#146;s heart.\n\nWater genasi always display one or more of the following traits: bluegreen skin or hair, blue-black eyes, thin scales covering their bodies, hair that waves and sways as if underwater, a muffled voice resembling the echoing songs of whales, or cold, clammy flesh. They breathe water as easily as air.\n\nTheir personalities vary widely, as they are often raised by members of aquatic races&#151;sahuagin, dolphins, whales, tritons, merfolk, or locathah. They tend to be strongly independent, and believe themselves to be utterly unique individuals.\n\n{b}Source{/b}: Monsters of Faerun, Races of Faerun" compset="Race">
+    <comment>Water Genasi statistics found in three seperate sources, Monsters of Faerun, Races of Faerun and Players Guide to Faerun.</comment>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="cLevelAdj" value="+1"/>
+    <fieldval field="rCR" value=".5"/>
+    <fieldval field="rAC" value="2"/>
+    <fieldval field="rDEX" value="1"/>
+    <fieldval field="rCON" value="2"/>
+    <fieldval field="rINT" value="1"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="rWeightMnF" value="85"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <usesource source="RoF"/>
+    <usesource source="MonFae"/>
+    <tag group="HeightSize" tag="8"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="4"/>
+    <tag group="Race" tag="Planetouch" name="Planetouched"/>
+    <tag group="Race" tag="stypWater"/>
+    <tag group="WepProf" tag="wTrident"/>
+    <tag group="Race" tag="WatGenasi"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="6"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="8"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="8"/>
+    <bootstrap thing="fWepFoc">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xWatResist"></bootstrap>
+    <bootstrap thing="xCallWave"></bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <eval phase="First" priority="5000">#skillbonus[kDiplomacy] += 3
+      #skillbonus[kProfSail] += 4</eval>
+    </thing>
+  <thing id="xCallWave" name="{i}Call to the Wave{/i}" description="Call to the Wave (Sp): Once per day, a water genasi can {i}create water{/i} as a 5th-level druid." compset="Special" summary="1/day, {i}create water{/i} as a 5th-level druid.">
+    <fieldval field="xSource" value="Water Genasi"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="xWatResist" name="Water Resistance" description="Water genasi gain a +1 bonus on all saving throws against water spells and effects.  This bonus increases by +1 for every five additional levels the genasi attains." compset="Special" summary="+1 racial to water spells and effects; +1/5 levels after.">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="rFirGenasi" name="Genasi, Fire" description="The heat of white flame burns in a fire genasi&apos;s heart.\n\nFire genasi are proud of their appearance, and generally strive for a look of simple elegance.  Specific traits that distinguish fire genasi from their human ancestors can include deep red or coal-black skin, red hair that moves on its own like waving flames, a voice that crackles like the sound of burning wood, warm or hot flesh, or fiery eyes that glow with flamelike intensity.\nFire genasi tend to be full of energy, high-strung, and quick to action.  They speak quickly and prefer action to discussion.\n\n{b}Source{/b}: Monsters of Faerun, Races of Faerun" compset="Race">
+    <fieldval field="rDEX" value="1"/>
+    <fieldval field="rINT" value="3"/>
+    <fieldval field="rCHA" value="-2"/>
+    <fieldval field="cLevelAdj" value="+1"/>
+    <fieldval field="rCR" value=".5"/>
+    <fieldval field="rHeightMnM" value="58"/>
+    <fieldval field="rHeightMnF" value="53"/>
+    <fieldval field="rWeightMnF" value="120"/>
+    <fieldval field="rWeightMnM" value="120"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <usesource source="MonFae"/>
+    <usesource source="RoF"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="Race" tag="FirGenasi" name="Fire Genasi"/>
+    <tag group="WeightDice" tag="2"/>
+    <tag group="WeightSize" tag="12"/>
+    <tag group="HeightDice" tag="2"/>
+    <tag group="HeightSize" tag="4"/>
+    <tag group="Race" tag="stypFire"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="6"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="8"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="8"/>
+    <tag group="Race" tag="Planetouch"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <bootstrap thing="xReachBlaz"></bootstrap>
+    <bootstrap thing="xFirResist"></bootstrap>
+    <bootstrap thing="fImpInit"></bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <eval phase="First" priority="5000">#skillbonus[kBluff] += 2
+      #skillbonus[kHide] += 2
+      #skillbonus[kIntim] += 2</eval>
+    </thing>
+  <thing id="xReachBlaz" name="{i}Reach the Blaze{/i}" description="Once per day a fire genasi can cause any nonmagical flame within a 10-foot radius to either diminish to coals or flare to the brightness of daylight and double its normal radius of illumination. This magical effect does not change the heat or fuel consumption of the fire. The ability lasts for 5 minutes." compset="Special" summary="1/day, cause nonmagical flames to flare or diminish.">
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="rFirGenasi"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xFirResist" name="Fire Resistance" description="Fire genasi gain a +1 bonus on all saving throws against fire spells and effects. This bonus increases by +1 for every five additional levels the genasi attains." compset="Special" summary="+1 racial to fire spells and effects; +1/5 levels after.">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="rFirGenasi"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="rAarakocra" name="Aarakocra" description="Sky hunters, birdmen, feather heads&#151;aarakocras have earned a variety of epithets, not all of them complimentary, from adventurers, mountaineers, and farmers.\n\nAarakocras are avian humanoids who stand about 5 feet tall and have a wingspan of 20 feet. Their bones are light, and they weigh only 90 pounds on average. They have three fingered hands midway along the edge of each wing, nearly as useful as human hands as long as the aarakocra is on the ground. Their wing muscles anchor in a bony chestplate that provides a small amount of natural armor. Their powerful legs end in sharp talons that can unlock and reveal another pair of functional hands.\n\nThe faces of aarakocras resemble a cross between those of parrots and eagles. They have gray-black beaks and black eyes set frontally in their heads, providing keen binocular vision. Their plumage varies in color from tribe to tribe, but the males are generally bright red, orange, or yellow, while the females tend more toward brown and gray.\n\nAarakocras speak Common and Auran.\n\n{b}COMBAT{/b}\nAarakocras avoid fighting on the ground, preferring to fight from the air. They swoop on their foes to attack with their talons, or throw javelins from afar.  Typically, an aarakocra warrior carries six javelins strapped to its chest in individual sheaths.\n\n{b}AARAKOCRA CHARACTERS{/b}\nAarakocra leaders are usually fighters, and fighter is their favored class. Aarakocra clerics have access to the Air, Healing, and Sun domains.\n\n{b}AARAKOCRA SOCIETY{/b}\nAarakocra tribes share a hunting territory of about 100 miles square, though the borders are fluid. Any game within a tribe&#146;s territory is considered potential prey, including domestic animals on human farms.\n\nA tribe shares a large, open-roofed communal nest made of woven vines. The eldest aarakocra serves as the tribe&#146;s leader and is assisted by the tribal shaman. The males of the tribe spend the day hunting, while the females craft tools and weapons.\n\nAarakocras are extremely claustrophobic and will not willingly enter a cave, building, or other enclosed area.\n\n{b}IN THE REALMS{/b}\nSages suggest that aarakocras are an immigrant race, originally native to the distant land of Maztica, far to the west. They have never been well established in Faer&#251;n, forming only four major colonies: in the Star Mounts within the High Forest, in the Storm Horns in Cormyr, in the Cloven Mountains on the Vilhon Reach, and in the Mistcliffs in Chult. Within the last decade, the rampages of Elaacrimalicros, an ancient green dragon, have destroyed the Star Mounts colony. Survivors of those aeries&#151; and aarakocras across Faer&#251;n&#151;have sworn revenge on the dragon, and adventurous aarakocras are seen with increasing frequency in the settled lands of Cormyr and the North.\n\n{b}Source{/b}: Monsters of Faerun, Races of Faerun" compset="Race">
+    <fieldval field="rHeightMnM" value="60"/>
+    <fieldval field="rWeightMnF" value="85"/>
+    <fieldval field="rHeightMnF" value="60"/>
+    <fieldval field="rWeightMnM" value="60"/>
+    <fieldval field="rSTR" value="-1"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rDEX" value="+5"/>
+    <fieldval field="rAC" value="1"/>
+    <fieldval field="cLevelAdj" value="2"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rHitDice" value="1"/>
+    <fieldval field="rWill" value="2"/>
+    <fieldval field="rRef" value="2"/>
+    <fieldval field="rWIS" value="+1"/>
+    <usesource source="RoF"/>
+    <usesource source="MonFae"/>
+    <tag group="Language" tag="lSylvan"/>
+    <tag group="Race" tag="typMonHuma"/>
+    <tag group="Helper" tag="NotHum"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="Language" tag="lDraconic"/>
+    <tag group="Language" tag="lElven"/>
+    <tag group="Race" tag="Aarakocra" name="Aarakocra"/>
+    <tag group="WepProf" tag="wJavelin"/>
+    <tag group="Language" tag="lOrc"/>
+    <bootstrap thing="xClaustrop"></bootstrap>
+    <bootstrap thing="xSummon">
+      <autotag group="AbilType" tag="Super"/>
+      <assignval field="xSumm" value="Requires 5+ Aarakocra including a Cleric performing dance for 3 rounds."/>
+      </bootstrap>
+    <bootstrap thing="wTalon">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Value" tag="2"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lAuran"></bootstrap>
+    <bootstrap thing="fFlybyAt">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xFly">
+      <autotag group="Maneuver" tag="Average"/>
+      <autotag group="Value" tag="90"/>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="Value" tag="1"/>
+      <autotag group="wMain" tag="1d3_3"/>
+      </bootstrap>
+    <bootstrap thing="typMonsHum"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      ~ Extra Skills are required because the Black Unicorn had Wildereness Lore and needed to be split into Both Know: Nat and Survival.
+      herofield[tSkTotals].arrayvalue[index] += 4
+      index = field[cClsIndex].value
+
+      hero.childfound[kKnowNat].field[kInnate].arrayvalue[index] += 4
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 4
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 4
+      hero.child[kSurvival].field[kInnate].arrayvalue[index] += 4</eval>
+    <eval phase="Render" priority="150" index="2"><![CDATA[~ Modify Racial Summoning
+perform hero.child[xSummon].delete[AbilType.SpellLike]
+perform hero.child[xSummon].delete[Helper.ShowCharge]
+hero.child[xSummon].field[livename].text = "Summon Large Air Elemental"
+hero.child[xSummon].field[CustDesc].text = "A group of five aarakocras that includes at least one cleric can cast summon monster VI to summon a Large air elemental. To perform the summoning, the aarakocras must perform an intricate aerial dance for 3 rounds."]]></eval>
+    </thing>
+  <thing id="xClaustrop" name="Claustrophobic" description="Aarakocras suffer a &#150;4 circumstance penalty on all attack rolls and skill checks when in an enclosed area." compset="Special" summary="-4 Circumstance penalty while indoors or enclosed to attack and skills.">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecType" tag="Weakness"/>
+    </thing>
+  <thing id="rTanarukk" name="Tanarukk" description="A tanarukk is a tiefling descended from the mingling of orcs and demons.\n\nTanarukks appear as short, stocky humanoids with stooped postures.\nCoarse hair grows atop their heads and in various patches about their bodies. Their razor-sharp teeth and tusks are prominent, as their lower jaws jut out from under smallish snouts. Their eyes are reddish in hue, and glow dimly in darkness. They have thick horn- or scalelike ridges along their low, sloped foreheads. In addition, many of the tanarukk tribes ritually scar their young during their rites of passage into adulthood. Tanarukk skin tones vary from gray-green to dun brown. They rarely wear armor, since their skin is naturally tough (but not scaled). They are heavier than their height would suggest, averaging about 4 1/2 feet tall and nearly 200 pounds.\n\nTanarukks speak a pidgin drawn from Abyssal and Orc.\n\n{b}Combat{/b}\nTanarukks fight fiercely, but make intelligent use of tactics and carefully follow the orders of their immediate superiors (out of fear rather than any respect for the chain of command).\n\n{b}Tanarukk Characters{/b}\nA tanarukk&#146;s favored class is barbarian; their leaders tend to be multiclass barbarian/sorcerers.\n\n{b}In the Realms{/b}\nWhile Hellgate Keep was ruled by demons (between 882 DR and 1369 DR), a breeding program between demons and orcs guaranteed a steady supply of soldiers for the keep&#146;s garrison. After centuries of breeding, tanarukks breed true among themselves or with orc mates, and these creatures are a new race native to the Realms.\n\n{b}Source{/b}: Monsters of Faerun, Races of Faerun" compset="Race">
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rSpeed" value="20"/>
+    <fieldval field="rSTR" value="+5"/>
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCON" value="1"/>
+    <fieldval field="rINT" value="1"/>
+    <fieldval field="rWIS" value="-2"/>
+    <fieldval field="rCHA" value="-4"/>
+    <fieldval field="rInfFavor" value="Barbarian"/>
+    <fieldval field="rSkillPlus" value="8"/>
+    <fieldval field="rInfHit" value="5"/>
+    <fieldval field="rWeightMnF" value="200"/>
+    <fieldval field="rWeightMnM" value="200"/>
+    <usesource source="RoF"/>
+    <usesource source="MonFae"/>
+    <tag group="Hero" tag="NoDefComm"/>
+    <tag group="Race" tag="Planetouch"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="WepProf" tag="wCoWaAxDbl"/>
+    <tag group="WepProf" tag="wAxeOrcDbl"/>
+    <tag group="WepProf" tag="wBattleaxe"/>
+    <tag group="WepProf" tag="wBite"/>
+    <tag group="Race" tag="stypNative"/>
+    <tag group="Race" tag="typOutside"/>
+    <tag group="RaceType" tag="NPC"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Race" tag="Tanarukk" name="Tanarukk"/>
+    <tag group="Race" tag="Orc"/>
+    <bootstrap thing="fWepFoc">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="xReachBlaz"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="xDamRsFire"></bootstrap>
+    <bootstrap thing="lAbyssal"></bootstrap>
+    <bootstrap thing="lOrc"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Value" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="xContrFlam"></bootstrap>
+    <bootstrap thing="fAlertness">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <bootstrap thing="typOutside"></bootstrap>
+    <eval phase="Final" priority="5000"><![CDATA[hero.child[xReachBlaz].field[livename].text = "Control Flame"
+hero.child[xReachBlaz].field[xSumm].text = "A Tanarukk may cause nonnagical fire to shrink or grow.  Lasts 5mins."
+
+hero.child[xReachBlaz].field[CustDesc].text = "Twice per day, a tanarukk can cause any nonmagical flame within a 10-foot radius to either diminish to coals or flare to the brightness of daylight and double its normal radius of illumination.  This magical effect does not change the heat or fuel consumption of the fire. The ability lasts for 5 minutes."]]></eval>
+    <eval phase="UserPreAt" priority="1000" index="2">#applyresist[xDamRsFire, 15]
+#applysr[14]
+
+#skillbonus[kHide] += 9
+#skillbonus[kIntim] += 6
+#skillbonus[kListen] += 9
+#skillbonus[kSearch] += 8
+#skillbonus[kSpot] += 9
+
+~ Add a +1 racial bonus to our all saves
+hero.child[vFort].field[Bonus].value += 4
+hero.child[vRef].field[Bonus].value += 4
+hero.child[vWill].field[Bonus].value += 4</eval>
+    </thing>
+  <thing id="rUnicBlack" name="Unicorn, Black" description="Black unicorns are evil creations, made from unicorns infused with the blood of demons and other hellspawn. They are hateful, demented creatures that live for violence and combat.\n\nBlack unicorns are coaldark creatures sporting silky black manes and burning red eyes. Their horns are long and spiraled, chased with silver.\n\nBlack unicorns are highly intelligent and can be taught Common. There are rumors that some evil wizards are trying to teach them to cast spells with only verbal components.\n\n{b}COMBAT{/b}\nBlack unicorns fight fiercely with their front hooves, horn, and sharp-edged teeth. They seem to delight in inflicting as much pain and suffering as possible.\n\n{b}IN THE REALMS{/b}\nThese foul creatures were created by the Red Wizards of Thay, who now keep many as pets. Black unicorns have become a mainstay of the Thayan military, serving in large numbers despite their unruliness as mounts. Several major units of black unicorns and evil-aligned female riders serve the zulkirs. The Sisters of Cyric, for example, is a prominent regiment made up of female clerics of Cyric mounted on black unicorns and sworn to serve the Zulkir Aznar Thrul.\n\nBlack unicorns will only allow themselves to be ridden by human or drow females of evil alignment.  They particularly enjoy serving blackguards (see {i}Chapter 2 of the DUNGEON MASTER&#146;s Guide{/i}).\n\n{b}Source{/b}: Monsters of Faerun" compset="Race">
+    <fieldval field="rSTR" value="10"/>
+    <fieldval field="rDEX" value="7"/>
+    <fieldval field="rCON" value="11"/>
+    <fieldval field="rWIS" value="11"/>
+    <fieldval field="rCHA" value="18"/>
+    <fieldval field="rSpeed" value="60"/>
+    <fieldval field="rInfAutoLn" value="Common, Sylvan"/>
+    <fieldval field="rHitDice" value="4"/>
+    <fieldval field="rHPStart" value="22"/>
+    <fieldval field="rInfHit" value="4d10 (4 levels of Magical Beast)"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="4"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rWill" value="1"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="5"/>
+    <fieldval field="rCR" value="3"/>
+    <fieldval field="rINT" value="4"/>
+    <usesource source="MonFae"/>
+    <tag group="Race" tag="typMagBeas" name="Type - Magical Beast" abbrev="Type - Magical Beast"/>
+    <tag group="RaceSize" tag="Large1" name="Large" abbrev="Large"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="Alignment" tag="Chaotic" name="Chaotic" abbrev="C"/>
+    <tag group="Alignment" tag="Evil" name="Evil" abbrev="E"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="CompIs" tag="cPalMount"/>
+    <tag group="AlgnImpFam" tag="ChaotEvil"/>
+    <tag group="AlgnImpFam" tag="LawEvil"/>
+    <tag group="AlgnImpFam" tag="NeutEvil"/>
+    <tag group="CompIs" tag="cFiendSer"/>
+    <tag group="AlgnReq" tag="ChaotEvil"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kKnowNat"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <bootstrap thing="typMagBeas"></bootstrap>
+    <bootstrap thing="xImmPois"></bootstrap>
+    <bootstrap thing="xImmCharm"></bootstrap>
+    <bootstrap thing="xImmCompul"></bootstrap>
+    <bootstrap thing="xScent2"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+4 to Move Silently"/>
+      </bootstrap>
+    <bootstrap thing="xWildEmpat"></bootstrap>
+    <bootstrap thing="xUniTelepo">
+      <autotag group="Value" tag="1"/>
+      <assignval field="CustDesc" value="TEst"/>
+      </bootstrap>
+    <bootstrap thing="xConSkiBon">
+      <assignval field="livename" value="+3 to Survival in Home Forest"/>
+      </bootstrap>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <bootstrap thing="wGore">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="wMain" tag="1d8_6"/>
+      <assignval field="BonEnhance" value="3"/>
+      </bootstrap>
+    <bootstrap thing="wHooves">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="fAlertness"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      ~ Extra Skills are required because the Black Unicorn had Wildereness Lore and needed to be split into Both Know: Nat and Survival.
+      herofield[tSkTotals].arrayvalue[index] += 3
+      index = field[cClsIndex].value
+
+      hero.child[kIntim].field[kInnate].arrayvalue[index] += 6
+      hero.childfound[kKnowNat].field[kInnate].arrayvalue[index] += 9
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 6
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 6
+      hero.child[kSpot].field[kInnate].arrayvalue[index] += 6
+      hero.child[kSurvival].field[kInnate].arrayvalue[index] += 7
+      #skillbonus[kMoveSil] += 4
+      #skillbonus[kSurvival] += 1
+
+      hero.child[xWildEmpat].field[Value].value += 6</eval>
+    </thing>
+  <thing id="tmBeasXvim" name="Beast of Xvim" description="{b}BEAST OF XVIM{/b}\nAs the power and influence of Iyachtu Xvim grow in the Realms, manifestations of the deity of tyranny and hatred have become all too common. A fierce and hateful deity, Xvim delights in \nmaking his presence known through carnivorous and evil-natured animals and monsters. When he sends a tiny fragment of his will into such a creature, it undergoes a transformation, gaining new powers from the deity&#146;s evil touch. The beast grows slightly in size, becoming a particularly impressive member of its species. Its eyes glow with an emerald green light, and any energy attacks the creature produces (lightning, fire, etc.)\nlikewise glow green. Beasts of Xvim are invariably evil-tempered and violent.\n\n{b}CREATING BEASTS OF XVIM{/b}\nBy taking a creature (called here the &#147;base creature&#148;) and modifying it as described here, you can create Xvim-touched versions of any creature. Xvim prefers to manifest in animals \nsuch as bats, black dogs, black cats, hawks, and vultures, or in monsters such as beholders, green or blue dragons, hell hounds, cockatrices, imps, dark nagas, and undead creatures.\n\n{b}Hit Dice:{/b} As base creature +1. \n{b}Speed:{/b} As base creature.\n{b}AC: As base creature.\n{b}Attacks:{/b} As base creature (modified as appropriate for the added Hit Die).\n{b}Damage:{/b} Increased by one die type.\n\n{b}Special Attacks:{/b} As base creature, but damage from special attacks increases in the same way as damage from physical attacks.  Beasts of Xvim also gain the following special attacks:\n\n{i}Frightful Presence (Ex):{/i} Activated when the beast of Xvim makes a loud sound (a roar, growl, or other sound appropriate to its form), this extraordinary ability forces creatures within 30 feet with fewer Hit Dice than the beast to make a Will save (DC 10 + 1/2 the beast&#146;s Hit Dice + its Charisma modifier) or become frightened (see Chapter 3 of the {i}DUNGEON MASTER&#146;s Guide{/i}). The effect lasts for 5d6 rounds. When the beast activates this power, its eyes glow bright emerald green.\n\n{i}Feed (Su):{/i} When a beast of Xvim slays a humanoid opponent, it can feed on the corpse, devouring both flesh and life force.  For every 8 HD or levels the beast consumes, it gains one Hit Die. The beast can delay this feeding for up to one day per Hit Die it has; after that time, the victim&#146;s life force is beyond its reach. Feeding destroys the victim&#146;s body and prevents any form of raising or resurrection that requires part of the corpse. A wish, miracle, or true resurrection spell can restore a devoured victim to life, but there is a 50% chance that even such powerful magic will fail.\n\n{i}Smite Good (Su):{/i} Once a day, the beast can make a normal attack to deal additional damage equal to its HD total (maximum of +20) against a good foe.\n\n{i}Special Qualities:{/i} All the special qualities of the base creature plus:\n&#149; Fear immunity\n&#149; Poison immunity\n&#149; {i}Damage Reduction (Su):{/i} Beasts of Xvim with 4&#150;7 Hit Dice gain damage reduction 5/+1; 8&#150;11 Hit Dice gives 5/+2; 12 or more Hit Dice gives 10/+3.\n&#149; Darkvision with a range of 60 feet.\n\nIf the creature already has one of these special qualities, use the values given here or the creature&#146;s values, whichever is better (the values do not stack).\n{b}Saves:{/b} As base creature (modified as appropriate for the added Hit Die).\n{b}Abilities:{/b} As base creature, but Intelligence is at least 3 and Charisma is increased by +4.\n{b}Skills:{/b} As base creature, adjusted for the additional Hit Die.\n{b}Feats:{/b} As base creature.\n{b}Climate/Terrain:{/b} As base creature\n{b}Organization:{/b} Solitary\n{b}Challenge Rating:{/b} As base creature +1\n{b}Treasure:{/b} None\n{b}Alignment:{/b} Always lawful evil\n{/b}Advancement:{/b}&#151;\n\n{b}IN THE REALMS{/b}\nAs the Chosen of Xvim, Fzoul Chembryl can turn any animal or monster into a beast of Xvim with a touch. High-level (at least 9th) clerics of Xvim are rumored to have the same ability.\nSince they serve the will of an evil and hateful deity, they can appear anywhere, often without warning.\n\nIn the Year of the Unstrung Harp (1371 DR), Carina Tchazzam, heir of the Tchazzam noble family in Waterdeep, was killed by her beloved pet cat, whose eyes reportedly glowed emerald green during the attack. The new heir, her younger brother Tarlon Tchazzam, has forbidden the presence of any cats within the family properties." compset="Template" uniqueness="unique">
+    <fieldval field="cLevelAdj" value="+1"/>
+    <fieldval field="tmCHA" value="+4"/>
+    <fieldval field="tmINT" value="+3"/>
+    <fieldval field="tmInfHD" value="1"/>
+    <usesource source="MonFae"/>
+    <tag group="TemplHelp" tag="AddHitDice"/>
+    <tag group="Hero" tag="Psionic"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <tag group="AlgnReq" tag="LawEvil"/>
+    <bootstrap thing="xFeed"></bootstrap>
+    <bootstrap thing="xSmiteGood">
+      <assignval field="xSumm" value="Once a day, the beast can make a normal attack to deal additional damage equal to its HD total (maximum of +20) against a good foe."/>
+      </bootstrap>
+    <bootstrap thing="rKenFearle"></bootstrap>
+    <bootstrap thing="xImmPois"></bootstrap>
+    <bootstrap thing="rDarkVis2"></bootstrap>
+    <bootstrap thing="xDamRdMag">
+      <autotag group="AbilType" tag="Super"/>
+      </bootstrap>
+    <bootstrap thing="xFrightPre">
+      <assignval field="xSumm" value=""/>
+      <assignval field="CustDesc" value="Activated when the beast of Xvim makes a loud sound (a roar, growl, or other sound appropriate to its form), this extraordinary ability forces creatures within 30 feet with fewer Hit Dice than the beast to make a Will save (DC 10 + 1/2 the beast&#146;s Hit Dice + its Charisma modifier) or become frightened (see Chapter 3 of the {i}DUNGEON MASTER&#146;s Guide{/i}). The effect lasts for 5d6 rounds. When the beast activates this power, its eyes glow bright emerald green."/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="12000" index="2">hero.child[rDarkVis2].field[Value].value = maximum(60, hero.child[rDarkVis2].field[Value].value)
+
+~ Increase damage dice for all Natural Weapons and Unarmed Strike
+foreach pick in hero from BaseNatWep
+ perform eachpick.assign[Helper.DamageUp]
+nexteach
+
+perform hero.child[wUnarmed].assign[Helper.DamageUp]</eval>
+    <eval phase="Final" priority="8000">~ Damage Reduction (Su): Beasts of Xvim with 4&#150;7 Hit Dice gain damage reduction 5/+1; 8&#150;11 Hit Dice gives 5/+2; 12 or more Hit Dice gives 10/+3.
+
+var damage as number
+var enhBon as number
+var DR as string
+DR = &quot;Damage Reduction &quot;
+~ Set up our damage reduction
+if (herofield[tHitDice].value &gt; 10) then
+   damage = 10
+elseif (herofield[tHitDice].value &gt; 6) then
+   damage = 5
+elseif (herofield[tHitDice].value &gt; 2) then
+   damage = 5
+else
+   damage = 0
+endif
+
+#applydr[xDamRdMag, damage]
+   hero.childfound[xDamRdMag].field[CustDesc].text = &quot;Damage Reduction (Su): Beasts of Xvim with 4&#150;7 Hit Dice gain damage reduction 5/+1; 8&#150;11 Hit Dice gives 5/+2; 12 or more Hit Dice gives 10/+3.&quot;
+
+   hero.childfound[xDamRdMag].field[xSumm].text = &quot;You have Damage Reduction against all except some Magic attacks.&quot;</eval>
+    </thing>
+  <thing id="xFeed" name="Feed" description="{i}Feed (Su):{/i} When a beast of Xvim slays a humanoid opponent, it can feed on the corpse, devouring both flesh and life force.  For every 8 HD or levels the beast consumes, it gains one Hit Die. The beast can delay this feeding for up to one day per Hit Die it has; after that time, the victim&#146;s life force is beyond its reach. Feeding destroys the victim&#146;s body and prevents any form of raising or resurrection that requires part of the corpse. A wish, miracle, or true resurrection spell can restore a devoured victim to life, but there is a 50% chance that even such powerful magic will fail." compset="Special" summary="Gains +1 HP per HD of dead foe consumed.  +1 HD for ea consumed.">
+    <usesource source="MonFae"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="User" tag="PickFocus"/>
+    </thing>
+  <thing id="xContrFlam" name="Control Flames" description="Twice per day, a tanarukk can cause any nonmagical flame within a 10-foot radius to either diminish to coals or flare to the brightness of daylight and double its normal radius of illumination.\nThis magical effect does not change the heat or fuel consumption of the fire. The ability lasts for 5 minutes." compset="Special" summary="Can ctrl flames 10 ft. radius; From soft as coals to bright as daylight.">
+    <fieldval field="hTotal" value="2"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xHaste" name="Haste" description="Sharns always act as if they were affected by the {i}haste spell{/i}." compset="Special">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="rDraDeep" name="Dragon, Deep" description="Deep dragons are little known on the surface world. They are the hunters of the Underdark, stalking their prey with cunning and patience.\n\nDeep dragons are an iridescent maroon when they hatch, darkening to deep, rich purple and almost black in the dragon&#146;s older centuries. Their natural forms are slender and serpentine, with sinuous necks and limbs and narrow wings. They are accomplished shapechangers, however, gaining the ability to assume different forms as they age&#151;first a legless winged snake form, then a humanoid form. In these shapes, they make their way through narrow tunnels or move about among the other races of the Underdark.\n\nDeep dragons are great explorers and sometimes venture to the surface world&#151;though usually only in pursuit of stolen treasure, revenge on their foes, or magic to steal. Otherwise, they are found in trapped, well-defended lairs in the Underdark.\n\nThe &#147;drakes of the depths&#148; can eat almost anything, but they seem to prefer &#147;seafood&#148;: clams, fish, kuo-toa, and aboleth.\n\n{b}Combat{/b}\nDeep dragons love to stalk their prey through the lightless caverns of the Underdark. They are wary in battle, but find combat nearly irresistible. They avoid obvious traps and ambushes, but delight in the hunt, pouncing on creatures without warning, and using their spells to bury opponents under rockfalls.\n\n{b}In the Realms{/b}\nDeep dragons are most often encountered in the upper and middle Underdark (to a depth of perhaps seven miles), particularly near drow cities. They often work with drow, serving as guardians in exchange for regular food (captives, slaves, and condemned criminals). They are fierce rivals and enemies of cloakers and mind flayers.\n\n\n\n{b}Source{/b}: Monsters of Faerun" compset="Race" summary="Deep Dragons are the Dragons of the Underdark.">
+    <fieldval field="rSpeed" value="40"/>
+    <fieldval field="rInfAutoLn" value="Common, Draconic"/>
+    <fieldval field="rHitDice" value=".001"/>
+    <fieldval field="rInfHit" value="Varies by age category"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="cMagicLev" value=".001"/>
+    <usesource source="MonFae" parent="pFR" name="Monsters of Faerun"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kSearch" name="Search" abbrev="Search"/>
+    <tag group="ClassSkill" tag="kSenseMot" name="Sense Motive" abbrev="Sense Motive"/>
+    <tag group="ClassSkill" tag="kSpellcr" name="Spellcraft" abbrev="Spellcraft"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="ClassSkill" tag="kUseMagic" name="Use Magic Device" abbrev="Use Magic Device"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="Language" tag="Any" name="Any" abbrev="Any"/>
+    <tag group="Race" tag="TrueDragon" name="True Dragon" abbrev="True Dragon"/>
+    <tag group="Race" tag="stypEarth" name="Subtype - Earth" abbrev="Subtype - Earth"/>
+    <tag group="Race" tag="typDragon" name="Type - Dragon" abbrev="Type - Dragon"/>
+    <tag group="RaceSize" tag="Medium0" name="Medium" abbrev="Medium"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="SpecSource" tag="Dragon" name="Dragon" abbrev="Dragon"/>
+    <tag group="SplLookup" tag="cHelpSor" name="Sorcerer" abbrev="Sorcerer"/>
+    <tag group="sClass" tag="Evil" name="Evil" abbrev="Evil"/>
+    <tag group="ClassSkill" tag="Knowledge" name="All Knowledge Skills" abbrev="All Knowledge Skills"/>
+    <tag group="ClassSkill" tag="kBluff" name="Bluff" abbrev="Bluff"/>
+    <tag group="ClassSkill" tag="kConcent" name="Concentration" abbrev="Concentration"/>
+    <tag group="ClassSkill" tag="kDiplomacy" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="ClassSkill" tag="kEscape" name="Escape Artist" abbrev="Escape Artist"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kScry"/>
+    <tag group="ClassSkill" tag="kSleight"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="sClass" tag="Earth"/>
+    <tag group="sClass" tag="Trickery"/>
+    <bootstrap thing="typDragon"></bootstrap>
+    <bootstrap thing="xAgeCat"></bootstrap>
+    <bootstrap thing="xImmParaly"></bootstrap>
+    <bootstrap thing="xImmSleep"></bootstrap>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <bootstrap thing="xBreathWea"></bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="SpecSource" tag="Dragon"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="SpecSource" tag="Dragon"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wWing">
+      <autotag group="SpecSource" tag="Dragon"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="wTail">
+      <autotag group="SpecSource" tag="Dragon"/>
+      </bootstrap>
+    <bootstrap thing="xDragCrush"></bootstrap>
+    <bootstrap thing="xTailSweep"></bootstrap>
+    <bootstrap thing="xNatSpells"></bootstrap>
+    <bootstrap thing="xAlterForm"></bootstrap>
+    <bootstrap thing="xTruSee"></bootstrap>
+    <bootstrap thing="xFrightPre"></bootstrap>
+    <bootstrap thing="xDamRsCold"></bootstrap>
+    <bootstrap thing="xDamRsFire"></bootstrap>
+    <bootstrap thing="xSwim"></bootstrap>
+    <bootstrap thing="xDamRdMag"></bootstrap>
+    <bootstrap thing="xSnakeForm"></bootstrap>
+    <bootstrap thing="xHumoiForm"></bootstrap>
+    <bootstrap thing="xEachForm"></bootstrap>
+    <bootstrap thing="xFreedMove"></bootstrap>
+    <bootstrap thing="xRocktoMud"></bootstrap>
+    <bootstrap thing="xDDPasswal"></bootstrap>
+    <bootstrap thing="xDDStoneSh"></bootstrap>
+    <bootstrap thing="xSplRs"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <assignval field="Value" value="120" behavior="maximum"/>
+      </bootstrap>
+    <bootstrap thing="rBlindsen">
+      <assignval field="Value" value="60"/>
+      </bootstrap>
+    <bootstrap thing="xDraOvMove"></bootstrap>
+    <bootstrap thing="xFly2">
+      <autotag group="Value" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="xKeenSense"></bootstrap>
+    <bootstrap thing="stypEarth"></bootstrap>
+    <bootstrap thing="xRacSkiBon">
+      <assignval field="xSumm" value="+8 Racial Skill Bonus to Swim, always take 10."/>
+      <assignval field="CustDesc" value="A deep dragon has a +8 racial bonus on any Swim check to perform some special action or avoid a hazard. It can always choose to take 10 on a Swim check, even if distracted or endangered. It can use the run action when swimming, provided it swims in a straight line."/>
+      </bootstrap>
+    <bootstrap thing="xSoundImit"></bootstrap>
+    <bootstrap thing="xImmElec"></bootstrap>
+    <eval phase="Final" priority="10000" index="5"><![CDATA[if (hero.child[xAgeCat].field[Value].value < 4) then
+    field[cKnowMax].arrayvalue[0] = 0
+    field[cCastMax].arrayvalue[0] = 0
+    field[cKnowMax].arrayvalue[1] = 0
+    field[cCastMax].arrayvalue[1] = 0
+endif]]></eval>
+    <eval phase="Render" index="6">~ Rename our Frightful Presence xSumm and give it our CustDesc
+      if (hero.child[xAgeCat].field[Value].value &lt; 5) then
+        perform hero.child[xFrightPre].delete[Helper.ShowSpec]
+      endif
+
+      var radius as number
+      radius = hero.child[xAgeCat].field[Value].value * 30
+
+      hero.child[xFrightPre].field[xSumm].text = &quot;&quot; &amp; radius &amp; &quot; ft radius, foes &lt;&quot; &amp; herofield[tHitDice].value &amp; &quot; HD are shaken, &lt;5 HD are frightened 4d6 rds (Will neg).&quot;
+
+      hero.child[xFrightPre].field[CustDesc].text = &quot;A young adult or older dragon can unsettle foes with its mere presence. The ability takes effect automatically whenever the dragon attacks, charges, or flies overhead. Creatures within a radius of 30 feet &#215; the dragon&#146;s age category are subject to the effect if they have fewer HD than the dragon. A potentially affected creature that succeeds on a Will save (DC 10 + 1/2 dragon&#146;s HD + dragon&#146;s Cha modifier) remains immune to that dragon&#146;s frightful presence for 24 hours. On a failure, creatures with 4 or less HD become panicked for 4d6 rounds and those with 5 or more HD become shaken for 4d6 rounds. Dragons ignore the frightful presence of other dragons.&quot;</eval>
+    <eval phase="PostLevel" index="3"><![CDATA[    ~ This is the same for all dragons, it shouldn't change.
+
+    ~ Rename our natural attacks if they are present and from dragon race (this is to avoid affecting any natural attacks gained from classes or feats) & also set up our natural attack damage based on size.
+    foreach pick in hero from BaseNatWep where "SpecSource.Dragon"
+      if (herofield[tSize].value >= 4) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.4d8_307]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.4d6_106]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.2d8_204]
+        endif
+
+        if (each.tagis[thingid.wTail] <> 0) then
+           perform each.assign[wMain.4d6_106]
+        endif
+
+
+      elseif (herofield[tSize].value = 3) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.4d6_106]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.2d8_204]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.2d6_104]
+        endif
+
+        if (each.tagis[thingid.wTail] <> 0) then
+           perform each.assign[wMain.2d8_204]
+        endif
+
+
+      elseif (herofield[tSize].value = 2) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.2d8_204]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.2d6_104]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.1d8_6]
+        endif
+
+        if (each.tagis[thingid.wTail] <> 0) then
+           perform each.assign[wMain.2d6_104]
+        endif
+
+
+      elseif (herofield[tSize].value = 1) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.2d6_104]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d8_6]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.1d6_5]
+        endif
+
+        if (each.tagis[thingid.wTail] <> 0) then
+           perform each.assign[wMain.1d8_6]
+        endif
+
+
+      elseif (herofield[tSize].value = 0) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d8_6]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d6_5]
+        endif
+
+        if (each.tagis[thingid.wWing] <> 0) then
+           perform each.assign[wMain.1d4_4]
+        endif
+
+
+      elseif (herofield[tSize].value = -1) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d6_5]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d4_4]
+        endif
+
+
+      elseif (herofield[tSize].value = -2) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d4_4]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d3_3]
+        endif
+
+
+      elseif (herofield[tSize].value = -3) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d3_3]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1d2_2]
+        endif
+
+
+      elseif (herofield[tSize].value <= -4) then
+        if (each.tagis[thingid.wBite] <> 0) then
+           perform each.assign[wMain.1d2_2]
+        endif
+
+        if (each.tagis[thingid.wClaw] <> 0) then
+           perform each.assign[wMain.1_1]
+        endif
+
+
+      endif
+    nexteach]]></eval>
+    <eval phase="First" priority="150"><![CDATA[~ This is the eval for everything based on Age cat (except HD, still working on that), it will change with different dragon types...
+
+~ Apply a User Tag to let us know we have a breath weapon.
+perform hero.assign[User.BreathWeap]
+
+if (hero.child[xAgeCat].field[Value].value >= 12) then
+~ Set our name
+    field[livename].text = "Deep Great Wyrm"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 25
+    field[rCON].value = 17
+    field[rINT].value = 14
+    field[rWIS].value = 13
+    field[rCHA].value = 12
+
+~ Set the HD
+    field[rHitDice].value = 39
+
+~ Set the Size
+    herofield[tSize].value = 3
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 47
+    field[rFort].value = 22
+    field[rRef].value = 22
+    field[rWill].value = 22
+    field[rAC].value = 38
+
+~ Set SR and DR
+    #applyresist[xDamRsFire, 10]
+    #applyresist[xDamRsCold, 10]
+    #applydr[xDamRdMag, 20]
+    #applysr[34]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 17
+    hero.child[xNatSpells].field[Value].value = 17
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 24
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 11) then
+~ Set our name
+    field[livename].text = "Deep Wyrm"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 23
+    field[rCON].value = 17
+    field[rINT].value = 14
+    field[rWIS].value = 13
+    field[rCHA].value = 12
+
+~ Set the HD
+    field[rHitDice].value = 36
+
+~ Set the Size
+    herofield[tSize].value = 3
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 43
+    field[rFort].value = 20
+    field[rRef].value = 20
+    field[rWill].value = 20
+    field[rAC].value = 35
+
+~ Set SR and DR
+    #applyresist[xDamRsFire, 10]
+    #applyresist[xDamRsCold, 10]
+    #applydr[xDamRdMag, 20]
+    #applysr[3]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 15
+    hero.child[xNatSpells].field[Value].value = 15
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 22
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 10) then
+~ Set our name
+    field[livename].text = "Ancient Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 21
+    field[rCON].value = 15
+    field[rINT].value = 12
+    field[rWIS].value = 11
+    field[rCHA].value = 10
+
+~ Set the HD
+    field[rHitDice].value = 33
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 41
+    field[rFort].value = 18
+    field[rRef].value = 18
+    field[rWill].value = 18
+    field[rAC].value = 32
+
+~ Set SR and DR
+    #applyresist[xDamRsFire, 10]
+    #applyresist[xDamRsCold, 10]
+    #applydr[xDamRdMag, 15]
+    #applysr[31]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 13
+    hero.child[xNatSpells].field[Value].value = 13
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 21
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 9) then
+~ Set our name
+    field[livename].text = "Very Old Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 19
+    field[rCON].value = 13
+    field[rINT].value = 12
+    field[rWIS].value = 11
+    field[rCHA].value = 10
+
+~ Set the HD
+    field[rHitDice].value = 30
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 37
+    field[rFort].value = 17
+    field[rRef].value = 17
+    field[rWill].value = 17
+    field[rAC].value = 29
+
+~ Set SR and DR
+    #applyresist[xDamRsFire, 10]
+    #applyresist[xDamRsCold, 10]
+    #applydr[xDamRdMag, 15]
+    #applysr[29]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 11
+    hero.child[xNatSpells].field[Value].value = 11
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 19
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 8) then
+~ Set our name
+    field[livename].text = "Old Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 17
+    field[rCON].value = 13
+    field[rINT].value = 10
+    field[rWIS].value = 9
+    field[rCHA].value = 8
+
+~ Set the HD
+    field[rHitDice].value = 27
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 33
+    field[rFort].value = 15
+    field[rRef].value = 15
+    field[rWill].value = 15
+    field[rAC].value = 26
+
+~ Set SR and DR
+    #applyresist[xDamRsFire, 10]
+    #applyresist[xDamRsCold, 10]
+    #applydr[xDamRdMag, 10]
+    #applysr[28]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 9
+    hero.child[xNatSpells].field[Value].value = 9
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 18
+
+~ We are Epic
+    perform hero.assign[Hero.Epic]
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 7) then
+~ Set our name
+    field[livename].text = "Mature Adult Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 15
+    field[rCON].value = 11
+    field[rINT].value = 10
+    field[rWIS].value = 9
+    field[rCHA].value = 8
+
+~ Set the HD
+    field[rHitDice].value = 24
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 29
+    field[rFort].value = 14
+    field[rRef].value = 14
+    field[rWill].value = 14
+    field[rAC].value = 23
+
+~ Set SR and DR
+    #applyresist[xDamRsFire, 10]
+    #applyresist[xDamRsCold, 10]
+    #applydr[xDamRdMag, 10]
+    #applysr[26]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 7
+    hero.child[xNatSpells].field[Value].value = 7
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 16
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 6) then
+~ Set our name
+    field[livename].text = "Adult Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 13
+    field[rCON].value = 9
+    field[rINT].value = 8
+    field[rWIS].value = 7
+    field[rCHA].value = 6
+
+~ Set the HD
+    field[rHitDice].value = 21
+
+~ Set the Size
+    herofield[tSize].value = 2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 26
+    field[rFort].value = 12
+    field[rRef].value = 12
+    field[rWill].value = 12
+    field[rAC].value = 20
+
+~ Set SR and DR
+    #applyresist[xDamRsFire, 10]
+    #applyresist[xDamRsCold, 10]
+    #applydr[xDamRdMag, 5]
+    #applysr[24]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 5
+    hero.child[xNatSpells].field[Value].value = 5
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 14
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 5) then
+~ Set our name
+    field[livename].text = "Young Adult Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 9
+    field[rCON].value = 7
+    field[rINT].value = 8
+    field[rWIS].value = 7
+    field[rCHA].value = 6
+
+~ Set the HD
+    field[rHitDice].value = 18
+
+~ Set the Size
+    herofield[tSize].value = 1
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 21
+    field[rFort].value = 11
+    field[rRef].value = 11
+    field[rWill].value = 11
+    field[rAC].value = 17
+
+~ Set SR and DR
+    #applyresist[xDamRsFire, 10]
+    #applyresist[xDamRsCold, 10]
+    #applydr[xDamRdMag, 5]
+    #applysr[21]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 3
+    hero.child[xNatSpells].field[Value].value = 3
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 11
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 4) then
+~ Set our name
+    field[livename].text = "Juvenile Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 7
+    field[rCON].value = 5
+    field[rINT].value = 6
+    field[rWIS].value = 5
+    field[rCHA].value = 4
+
+~ Set the HD
+    field[rHitDice].value = 15
+
+~ Set the Size
+    herofield[tSize].value = 0
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 18
+    field[rFort].value = 9
+    field[rRef].value = 9
+    field[rWill].value = 9
+    field[rAC].value = 13
+
+~ Set SR and DR
+  #applyresist[xDamRsFire, 10]
+  #applyresist[xDamRsCold, 10]
+
+~ Set Natural Spellcasting
+    field[cMagicLev].value = 1
+    hero.child[xNatSpells].field[Value].value = 1
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 8
+    field[cLevelAdj].value = 4
+
+elseif (hero.child[xAgeCat].field[Value].value >= 3) then
+~ Set our name
+    field[livename].text = "Young Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 5
+    field[rCON].value = 5
+    field[rINT].value = 6
+    field[rWIS].value = 5
+    field[rCHA].value = 4
+
+~ Set the HD
+    field[rHitDice].value = 12
+
+~ Set the Size
+    herofield[tSize].value = 0
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 14
+    field[rFort].value = 8
+    field[rRef].value = 8
+    field[rWill].value = 8
+    field[rAC].value = 11
+
+~ Set SR and DR
+  #applyresist[xDamRsFire, 10]
+  #applyresist[xDamRsCold, 10]
+
+~ Set Natural Spellcasting
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 6
+    field[cLevelAdj].value = 3
+
+
+elseif (hero.child[xAgeCat].field[Value].value >= 2) then
+~ Set our name
+    field[livename].text = "Very Young Deep Dragon"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 3
+    field[rCON].value = 3
+    field[rINT].value = 4
+    field[rWIS].value = 3
+    field[rCHA].value = 2
+
+~ Set the HD
+    field[rHitDice].value = 9
+
+~ Set the Size
+    herofield[tSize].value = -1
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 11
+    field[rFort].value = 6
+    field[rRef].value = 6
+    field[rWill].value = 6
+    field[rAC].value = 8
+
+~ Set SR and DR
+  #applyresist[xDamRsFire, 10]
+  #applyresist[xDamRsCold, 10]
+~ Set Natural Spellcasting
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 4
+    field[cLevelAdj].value = 3
+
+
+elseif (hero.child[xAgeCat].field[Value].value <= 1) then
+~ Set our name
+    field[livename].text = "Deep Dragon Wyrmling"
+
+~ Set the Attribute Bonuses
+    field[rSTR].value = 1
+    field[rCON].value = 3
+    field[rINT].value = 4
+    field[rWIS].value = 3
+    field[rCHA].value = 2
+
+~ Set the HD
+    field[rHitDice].value = 6
+
+~ Set the Size
+    herofield[tSize].value = -2
+
+~ Set BAB, Saves, Nat Armor
+    field[rAttack].value = 8
+    field[rFort].value = 5
+    field[rRef].value = 5
+    field[rWill].value = 5
+    field[rAC].value = 5
+
+~ Set SR and DR
+  #applyresist[xDamRsFire, 10]
+  #applyresist[xDamRsCold, 10]
+~ Set Natural Spellcasting
+
+~ Set CR and LA (if below certain age cat only)
+    field[rCR].value = 3
+    field[cLevelAdj].value = 3
+
+endif]]></eval>
+    <eval phase="UserPostAt" index="4">~ Racial Swim Skill
+#skillbonus[kSwim] += 8
+
+~ Set the name and range (based on size) and description of our breath weapon also DC
+      var range as number
+      if (herofield[tSize].value &lt;= -2) then
+          range = 15
+      elseif (herofield[tSize].value = -1) then
+          range = 20
+      elseif (herofield[tSize].value = 0) then
+          range = 30
+      elseif (herofield[tSize].value = 1) then
+          range = 40
+      elseif (herofield[tSize].value = 2) then
+          range = 50
+      elseif (herofield[tSize].value = 3) then
+          range = 60
+      elseif (herofield[tSize].value &gt;= 4) then
+          range = 70
+      endif
+
+      var dice as number
+      dice = hero.child[xAgeCat].field[Value].value * 2
+
+      hero.child[xBreathWea].field[livename].text = &quot;Breath Weapon, &quot; &amp; dice &amp; &quot;d8 flesh-corrosive gas in a &quot; &amp; range &amp; &quot; ft cone&quot;
+
+      hero.child[xBreathWea].field[CustDesc].text = &quot;All deep dragons are able to breathe a cone of acid once every 1d4 rounds. The damage and save DC vary by age, as indicated on the table. The length of the cone depends on the size of the dragon; see the Dragon Breath Weapons table, MM 69. This flesh-corrosive gas does not affect inorganic material, including most constructs.&quot;
+
+~ Also change our alternate form text
+      hero.child[xAlterForm].field[CustDesc].text = &quot;As a standard action, a deep dragon (except for a wyrmling) can assume one or more forms other than its normal draconic form.  The dragon can remain in an alternate form until it chooses to assume a new one or return to its natural form.{BR}It can assume a serpentine (legless) form three times per day at very young age and four times per day at juvenile age or older.  This form is the same size as the dragon, but it is able to move through narrow tunnels because it has no legs (treat the creature as one size category smaller for squeezing purposes).  The dragon&#146;s natural armor bonus worsens by &#150;6 in this form.  It moves at 30 feet, flies at 10 feet (poor), and swims at 30 feet.  It loses all claw attacks in this form but gains a constrict attack against grappled opponents, dealing damage depending on its size: 1d8 points of damage if Small, 2d6 if Medium, 2d8 if Large, 3d6 if Huge, 3d8 if Gargantuan, or 5d6 if Colossal.{BR}  A deep dragon can assume a humanoid form of Medium size or smaller three times per day at young age and four times per day at juvenile age or older.&quot;
+
+      hero.child[xAlterForm].field[xSumm].text = &quot;3/day, stand, assume form of Med or smaller serpent/humanoid.&quot;
+
+      hero.child[xAlterForm].field[hTotal].value += 3
+
+~ If we are not at least Large we have no tail slap, so we are done
+    doneif (herofield[tSize].value &lt; 1)
+
+~ Tails are special, even though they are secondary they get *1.5 Str, so we adjust for that now by adding our str bon (already gets *.5)...
+    foreach pick in hero from BaseNatWep where &quot;SpecSource.Dragon &amp; thingid.wTail&quot;
+      each.field[wDamBonus].value += hero.child[aSTR].field[aModBonus].value
+    nexteach</eval>
+    <eval phase="First" priority="25000" index="2"><![CDATA[    ~ Dragon flight speeds are based on size. When they reach Medium and Gargantuan size cagegories their base speed goes up by 50 ft, but their maneuverability goes down one step (5 is perfect, 1 is clumsy). 
+
+    var speed as number
+    speed = 150
+
+    var maneuver as number
+    maneuver = 4
+
+  if (herofield[tSize].value >= 3) then
+    speed += 100
+    maneuver -= 2
+  elseif (herofield[tSize].value >= 0) then
+    speed += 50
+    maneuver -= 1
+  endif
+
+    ~ Set Fly Speed/Maneuverability
+    hero.child[xFly2].field[Value].value = maximum(speed, hero.child[xFly2].field[Value].value)
+
+  if (maneuver >= 5) then
+    perform hero.child[xFly2].assign[Maneuver.Perfect]
+  elseif (maneuver = 4) then
+    perform hero.child[xFly2].assign[Maneuver.Good]
+  elseif (maneuver = 3) then
+    perform hero.child[xFly2].assign[Maneuver.Average]
+  elseif (maneuver = 2) then
+    perform hero.child[xFly2].assign[Maneuver.Poor]
+  elseif (maneuver <= 1) then
+    perform hero.child[xFly2].assign[Maneuver.Clumsy]
+  endif]]></eval>
+    </thing>
+  <thing id="xSnakeForm" name="Snake Form" description="A deep dragon can assume its serpentine (legless) form three times per day at very young age and four times per day at juvenile age. This form is the same size as the dragon, but able to move through smaller tunnels because it has no legs. The dragon&#146;s AC worsens by &#150;6 in this form. It moves at 30 feet, flies at 10 feet (poor), and swims at 30 feet. It loses all claw attacks in this form, but can constrict opponents, dealing damage depending on its size, as follows: Small 1d8, Medium-size 2d6, Large 2d8, Huge 3d6, Gargantuan 3d8, and Colossal 5d6.\nIf the dragon hits with this attack, it can make a free grapple check (without provoking an attack of opportunity).\nIf it wins this check, it grabs and constricts its victim, automatically dealing the above damage every round until the opponent dies or breaks free." compset="Special" summary="Can assume a serpenine form 3/day.">
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 1) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xHumoiForm" name="Humanoid Form" description="A deep dragon can polymorph self into a humanoid form three times per day at young age, four times at juvenile age. It can alter the size, shape, hue, and features of its bipedal form to resemble a human, elf (surface or drow), half-elf, half-orc, orc, hobgoblin, dwarf, duergar, or any similar creature of Medium-size. If the dragon wears armor to improve its AC in this form, the armor is destroyed when the dragon changes shape." compset="Special" summary="Can assume a humanoid form 3/day.">
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 2) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xEachForm" name="Each Form 4/day" description="Starting at Juvenile a Deep Dragon can assume each of its two forms four times a day." compset="Special" summary="Can assume each of its forms 4/day.">
+    <fieldval field="hTotal" value="4"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 3) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xFreedMove" name="Freedom of Movement" description="Starting at Adult a Deep Dragon can use {i}Freedom of Movement{/i} as a spell like ability at will" compset="Special" summary="At Will, freedom of movement.">
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 6) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xRocktoMud" name="Transmute Rock to Mud" description="Starting at Old a Deep Dragon can use {i}Transmute Rock to Mud{/i} as a spell-like ability 3/day." compset="Special" summary="3/day, Transmute Rock to Mud.">
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="MonFae"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 8) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xDDPasswal" name="Passwall" description="Starting at Ancient a Deep Dragon can use {i}Passwall{/i} as a spell-like ability 2/day." compset="Special" summary="2/day, Passwall.">
+    <fieldval field="hTotal" value="2"/>
+    <usesource source="MonFae"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 10) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xDDStoneSh" name="Stone Shape" description="Starting at Great Wyrm a Deep Dragon can use {i}Stone Shape{/i} as a spell-like ability 2/day." compset="Special" summary="2/day, Stone Shape.">
+    <fieldval field="hTotal" value="2"/>
+    <usesource source="MonFae"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 12) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xSDFeathFa" name="Feather Fall" description="A young song Dragon can use {i}Feather Fall{/i} as a spell-like ability." compset="Special" summary="2/day, Feather fall as the spell.">
+    <fieldval field="hTotal" value="2"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 3) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xSDBlink" name="Blink" description="A Juvenile song Dragon can use {i}Blink{/i} as a spell-like ability." compset="Special" summary="2/day, {i}Blink{/i} as the spell.">
+    <fieldval field="hTotal" value="2"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 4) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xSDTelepor" name="Teleport" description="An Adult song Dragon can use {i}Teleport{/i} as a spell-like ability." compset="Special" summary="1/day, {i}Teleport{/i} as the spell.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 6) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xSDHeal" name="Heal" description="An Old song Dragon can use {i}Heal{/i} as a spell-like ability." compset="Special" summary="1/day, {i}Heal{/i} as the spell.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 8) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xSDPolyany" name="Polymorph any object" description="An Ancient song Dragon can use {i}Polymorph any object{/i} as a spell-like ability." compset="Special" summary="2/day, {i}Polymorph any object{/i} as the spell.">
+    <fieldval field="hTotal" value="2"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 10) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="xSDPlaneSh" name="Planeshift" description="A Great Wyrm song Dragon can use {i}Plane Shift{/i} as a spell-like ability." compset="Special" summary="1/day, {i}Plane Shift{/i} as the spell.">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="MonFae"/>
+    <tag group="SpecType" tag="SpellLike" name="Spell-Like Ability" abbrev="Spell-Like Ability"/>
+    <tag group="Helper" tag="ShowCharge" name="Initial Damage" abbrev="Initial Damage"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <eval phase="UserPreAt"><![CDATA[     if (hero.child[xAgeCat].field[Value].value < 12) then
+        perform delete[Helper.ShowCharge]
+        perform delete[Helper.ShowSpec]
+     endif]]></eval>
+    </thing>
+  <thing id="rStinger" name="Stinger" description="Stingers mix esoteric religious mysticism with murderous tendencies and the stinger of a giant scorpion.\n\nStingers look like a bizarre variant of centaur. They&#146;re about the same size as centaurs, but they have the lower bodies of scorpions. Their human half is red-skinned, hairless, and almost inhumanly handsome. Their faces are preternaturally calm.\n\nStingers possess an extremely sophisticated culture, full of strange philosophies that filter deviant human notions through multifaceted insect eyes. Two of the stingers&#146; strange practices bear mentioning. The first is referred to on Faer&#251;n as &#147;stinger racing.&#148; Groups of two to twenty stingers sometimes tear out of their nests, stopping for nothing unless they are attacked and forced to defend themselves, running as far and fast as they can run . . . until they die. They just drop dead, one by one. And no one knows why.\n\nThe second oddity, the stingers&#146; peculiar method of divination, is only slightly better understood by surface dwellers. Stingers live under the surface of the earth. Using their tremorsense, and their sense of the terrain above, they map out mystical grids. Then they spread out and lie in wait, sometimes for days, until enough creatures have moved across the grid to connect its elements in a meaningful pattern. No one understands how stingers conceive of their grids or what information they are hoping to discover&#151;all that is known is that at certain times, stingers erupt onto the surface, armed for war and convinced by just-completed divinations that they are taking the proper step. On other occasions, stingers adopt entirely random attitudes toward strangers, even strangers they have met before, convinced by their divinations that this is the proper choice.\n\n{b}Combat{/b}\nStingers&#146; tremorsense, bolthole magic ability, and excellent initiative frequently enable them to get in the first strike in any combat encounter. They hope to weaken their enemies with their poison sting.\n\n{b}STINGER CHARACTERS{/b}\nFew stingers progress as characters. Individuals who are the exception to the rule usually gain levels as clerics (their favored class), sorcerers, fighters, and occasionally as rangers. Stinger clerics choose from the domains of Earth, Evil, Fire, and Travel.\n\n{b}STINGER SOCIETY{/b}\nBoth male and female stingers are combatants. The participants in &#147;stinger races&#148; are almost exclusively (90%) male. Hunting parties participating in the strange divination rituals are usually composed of an equal number of males and females.\n\n{b}IN THE REALMS{/b}\nThe stingers of the Realms are native to Maztica, a continent across the Trackless Sea that was recently invaded by the forces of Amn. The invasion was not entirely a success, not least because it brought Faer&#251;n to the attention of the stingers, or the tlincallis, as they refer to themselves. An entire stinger hive-city has used a three-year ritual to transport itself into the Underdark beneath the nation of Amn. The tlincallis have taken over the region formerly ruled by the dwarven kingdom of Xothaerin. The only resistance of note came from the elemental fire creatures (salamanders, efreet, and the like) that had populated the southern reaches of the ruined dwarven kingdom. The tlincallis fought off the fire beings and are now sending exploring parties through the rest of the Underdark, possibly in search of other areas ripe for stinger colonization.\n\n{b}Source{/b}: Monsters of Faerun" compset="Race" summary="Stinger - A Scorpion Centaur">
+    <comment>Monsters of Faerun - pg.  80.
+
+Needs to be bootstrapped to race with User Primary and Secondary damage, Target weapon, Primary and Secondary stats tags
+
+xSumm specified by creature tells which natural attacks are poisoned.</comment>
+    <fieldval field="rSTR" value="6"/>
+    <fieldval field="rDEX" value="4"/>
+    <fieldval field="rCON" value="4"/>
+    <fieldval field="rCHA" value="2"/>
+    <fieldval field="rFeat" value="-2"/>
+    <fieldval field="rInfFavor" value="Cleric"/>
+    <fieldval field="rInfAutoLn" value="Common, Sylvan"/>
+    <fieldval field="rHitDice" value="4"/>
+    <fieldval field="rHPStart" value="18"/>
+    <fieldval field="rInfHit" value="4"/>
+    <fieldval field="rAttack" value="4"/>
+    <fieldval field="rFort" value="1"/>
+    <fieldval field="rRef" value="4"/>
+    <fieldval field="rWill" value="4"/>
+    <fieldval field="rSkillPlus" value="2"/>
+    <fieldval field="rAC" value="4"/>
+    <fieldval field="rCR" value="4"/>
+    <fieldval field="rAgeMin" value="16"/>
+    <fieldval field="rSpace" value="10"/>
+    <fieldval field="rHeightMnF" value="67"/>
+    <fieldval field="rWeightMnF" value="165"/>
+    <fieldval field="rHeightMnM" value="78"/>
+    <fieldval field="rWeightMnM" value="285"/>
+    <fieldval field="rSkillMult" value="7"/>
+    <usesource source="MonFae"/>
+    <tag group="RaceType" tag="NPC" name="NPC Race" abbrev="NPC Race"/>
+    <tag group="SpecSource" tag="rCentaur" name="Centaur" abbrev="Centaur"/>
+    <tag group="ClassSkill" tag="kHide" name="Hide" abbrev="Hide"/>
+    <tag group="ClassSkill" tag="kListen" name="Listen" abbrev="Listen"/>
+    <tag group="ClassSkill" tag="kMoveSil" name="Move Silently" abbrev="Move Silently"/>
+    <tag group="ClassSkill" tag="kSearch" name="Search" abbrev="Search"/>
+    <tag group="ClassSkill" tag="kSpot" name="Spot" abbrev="Spot"/>
+    <tag group="ClassSkill" tag="kSurvival" name="Survival" abbrev="Survival"/>
+    <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
+    <tag group="Helper" tag="Quadruped" name="Quadruped" abbrev="Quadruped"/>
+    <tag group="Language" tag="lCommonND" name="Common" abbrev="Common"/>
+    <tag group="Language" tag="lSylvan" name="Sylvan" abbrev="Sylvan"/>
+    <tag group="Race" tag="typMonHuma" name="Type - Monstrous Humanoid" abbrev="Type - Monstrous Humanoid"/>
+    <tag group="RaceSize" tag="Large1" name="Large" abbrev="Large"/>
+    <bootstrap thing="fExoticWep">
+      <autotag group="Target" tag="wChainSpk"/>
+      </bootstrap>
+    <bootstrap thing="xStiBolHoM"></bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="RaceSize"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="fPowerAtt"></bootstrap>
+    <bootstrap thing="xTremorsen">
+      <autotag group="Value" tag="60"/>
+      </bootstrap>
+    <bootstrap thing="fImpInit"></bootstrap>
+    <bootstrap thing="xPoison">
+      <autotag group="User" tag="Sting"/>
+      <autotag group="User" tag="PriSTR"/>
+      <autotag group="User" tag="SecSTR"/>
+      <autotag group="User" tag="1d6_5"/>
+      <autotag group="User" tag="Sc1d6_5"/>
+      <assignval field="xSumm" value="Stinger- Injury; 1d6 Str/1d6 Str"/>
+      </bootstrap>
+    <bootstrap thing="typMonsHum"></bootstrap>
+    <bootstrap thing="wSting">
+      <autotag group="wMain" tag="1d6_5"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <eval phase="First" priority="5000">var index as number
+      index = field[cClsIndex].value
+
+      hero.child[kListen].field[kInnate].arrayvalue[index] += 5
+      hero.child[kHide].field[kInnate].arrayvalue[index] += 4
+      hero.child[kMoveSil].field[kInnate].arrayvalue[index] += 3
+      hero.child[kSurvival].field[kInnate].arrayvalue[index] += 2</eval>
+    </thing>
+  <thing id="xStiBolHoM" name="Bolthole Magic" description="A stinger can move 20 feet straight up or down, so long as it passes through at least a foot of earth during its movement. For every 5 feet (or fraction thereof) of earth the stinger moves through, it suffers 1d3 damage. If a stinger&apos;s planned movement would place it inside a solid object, it remains in place but suffers the damage as if it had moved through the intervening earth. Stingers use their {i}bolthole magic{/i} to move between previously prepared tunnels and the surface above, or sequences of tunnels, stacked one beneath the other. Use of this ability produces a flash of red light and a smell like that of burning insects." compset="Special" summary="Move, 20 ft up/down through earth, every 5 ft does 1d3 dam.">
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Movement" name="Movement" abbrev="Movement"/>
+    </thing>
+  <thing id="xPickDeep" name="Deep" description="Pls add song dragon to Draconic Heritage Feat script and list." compset="Special">
+    <comment><![CDATA[Deep         Charm            Spot
+
+      elseif (field[fChosen].chosen.tagis[User.DragDeep] <> 0) then
+         perform assign[User.DragDeep]
+         perform hero.child[kSpot].assign[Helper.ClassSkill]]]></comment>
+    <tag group="User" tag="PickDrag" name="Dragon Type" abbrev="Dragon Type"/>
+    <tag group="User" tag="DragDeep" name="Deep Dragon" abbrev="Deep Dragon"/>
+    </thing>
+  <thing id="xPickSong" name="Song" description="Pls add song dragon to Draconic Heritage Feat script and list." compset="Special">
+    <comment><![CDATA[Song         Electricity      Perform (Sing)
+
+      elseif (field[fChosen].chosen.tagis[User.DragSong] <> 0) then
+         perform assign[User.DragSong]
+         perform hero.child[kPerfSing].assign[Helper.ClassSkill]]]></comment>
+    <tag group="User" tag="PickDrag" name="Dragon Type" abbrev="Dragon Type"/>
+    <tag group="User" tag="DragSong" name="Song Dragon" abbrev="Song Dragon"/>
+    </thing>
+  <thing id="cDrSTDSong" name="Song Dragon Totem" description="Choosing the Song Dragon as your totem adds Perform (Sing), Bluff, and Spellcraft to your list of class skills, grants you an electricity breath weapon, and allows you to cast {i}ventriloquism{/i} as a spell like ability at will." compset="CustomSpec" summary="Add Bluff, Perform (Sing), and Spellcraft to skill list." uniqueness="unique">
+    <usesource source="PHB2" parent="p35" name="Player&apos;s Handbook 2"/>
+    <tag group="SpecSource" tag="cHelpDrS" name="Dragon Shaman" abbrev="Dragon Shaman"/>
+    <bootstrap thing="xImmElec">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.DraShaman >=9]]></containerreq>
+      </bootstrap>
+    <eval phase="UserPostAt" priority="10000" index="2"><![CDATA[   perform delete[Helper.ShowSpec]
+
+   var level as number
+   level = hero.childfound[cHelpDrS].field[cTotalLev].value
+
+~ Set the information for holder Breath Weapon
+   var area as number
+   if (level >= 20) then
+     area = 120
+   elseif (level >= 12) then
+     area = 60
+   else
+     area = 30
+   endif
+
+   var damage as number
+   damage = level / 2
+   damage = round(damage, 0, -1)
+   damage = maximum(damage, 2)
+
+   var DC as number
+   DC = 10 + level/2 + hero.childfound[aCON].field[aModBonus].value
+   DC = round(DC, 0, -1)
+
+    if (level >= 4) then
+   hero.childfound[xBreathWea].field[livename].text = "Breath Weapon, " & damage & "d6 electricity, " & area & " ft cone (DC " & DC & ")"
+   hero.childfound[xBreathWea].field[xSumm].text = "You have a breath weapon, usable every d4 rounds (Ref half)."
+   hero.childfound[xBreathWea].field[CustDesc].text = "At 4th level, you gain a breath weapon corresponding to your totem dragon. Regardless of the area one affects or the type of energy damage it deals, all breath weapons deal 2d6 points of damage, plus an extra 1d6 points of damage for every two additional class levels (3d6 at 6th level, 4d6 at 8th level, and so forth). A successful Reflex save halves the damage dealt; the save DC is equal to 10 + 1/2 your dragon shaman level + your Con modifier. Just like a true dragon, once you breathe you must wait 1d4 rounds before you can use your breath weapon again.{BR}{BR}Cone-shaped breath weapons extend out to 15 feet at 4th level, increasing to 30 feet at 12th level and to 60 feet at 20th level. Line-shaped breath weapons are 30 feet long at 4th level, increasing to 60 feet at 12th level and to 120 feet at 20th level."
+  endif
+
+~ Set the information for holder Draconic Adaptation, and apply tags
+  if (level >= 13) then
+    hero.childfound[cDrSDrAdap].field[livename].text = "Ventriloquism"
+    hero.childfound[cDrSDrAdap].field[xSumm].text = "At will, as a spell like ability (share with allies) (CL" & level & ")"
+
+  else
+    hero.childfound[cDrSDrAdap].field[livename].text = "Ventriloquism"
+    hero.childfound[cDrSDrAdap].field[xSumm].text = "At will, as a spell like ability (CL" & level & ")"
+  endif
+
+  hero.childfound[cDrSDrAdap].field[CustDesc].text = "You can use {i}ventriloquism{/i} as a spell like ability at will. {BR}{BR}At 13th level you can share this ability with any or all within 30 feet as a swift action."
+  perform hero.childfound[cDrSDrAdap].assign[AbilType.SpellLike]
+
+~ Set the information for holder Energy Immunity
+  hero.childfound[cDrSEneImm].field[livename].text = "Immunity to Electricity"
+  hero.childfound[cDrSEneImm].field[xSumm].text = "You are immune to electricity damage."]]></eval>
+    <eval phase="UserPreLv" priority="10000">~ Add our class skills
+   perform hero.child[cHelpDrS].assign[ClassSkill.kPerfSing]
+   perform hero.child[cHelpDrS].assign[ClassSkill.kBluff]
+   perform hero.child[cHelpDrS].assign[ClassSkill.kSpellcr]</eval>
+    <prereq message="Required Alignment: CG or CN">
+      <validate>validif (hero.tagis[Alignment.Good] + hero.tagis[Alignment.Chaotic] = 2)
+ validif (hero.tagis[Alignment.NeutralGE] + hero.tagis[Alignment.Chaotic] = 2)</validate>
+      </prereq>
+    </thing>
+  </document>

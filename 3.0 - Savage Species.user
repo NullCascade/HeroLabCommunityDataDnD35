@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="rmcPixie" name="SS -- Pixie" description="Pixies are pranksters and generay enjoy leading travelers astray, but some break out of this simple mentality and try to learn more about their world, seek great treasures, or avenge a particular insult to themselves, their people, or their homeland. With their natural ability to fly, sense thoughts, disrupt enemy magic, and become invisible, pixiesareformidablecreatures when angered. They are good choices for players who like to play mischievous characters and want some magic to carry out their plans.\n\nDespite their size, full-grown pixies can be very dangerous. Their magical powers and high number of skill points are responsible for their total ECL or 5, but their low Hit Dice are their greatestdrawback. The class is built around scalingthe spell-like abilities, and theirnatural invisibility isn&apos;t introduced until 4th level. At the highest level of the class are the most powerful spell-like abilities and spell resistance.\n\n{b}Source{/b}: Savage Species" compset="MonstClass" summary="Pixie from Savage Species" uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="Pix"/>
+    <fieldval field="rSkillPlus" value="6"/>
+    <fieldval field="rInfFavor" value="Pixie"/>
+    <fieldval field="rAgeMin" value="2"/>
+    <arrayval field="cmCHA" index="0" value="2"/>
+    <arrayval field="cmCHA" index="1" value="4"/>
+    <arrayval field="cmCHA" index="3" value="6"/>
+    <arrayval field="cmRef" index="0" value="2"/>
+    <arrayval field="cmWill" index="0" value="2"/>
+    <arrayval field="cmSTR" index="0" value="-4"/>
+    <arrayval field="cmDEX" index="0" value="4"/>
+    <arrayval field="cmDEX" index="2" value="6"/>
+    <arrayval field="cmDEX" index="4" value="8"/>
+    <arrayval field="cmINT" index="0" value="2"/>
+    <arrayval field="cmINT" index="1" value="4"/>
+    <arrayval field="cmINT" index="3" value="6"/>
+    <arrayval field="cmWIS" index="2" value="2"/>
+    <arrayval field="cmWIS" index="4" value="4"/>
+    <arrayval field="cmFeat" index="0" value="1"/>
+    <arrayval field="cmCR" index="0" value="1"/>
+    <arrayval field="cmCR" index="1" value="2"/>
+    <arrayval field="cmCR" index="2" value="3"/>
+    <arrayval field="cmCR" index="4" value="4"/>
+    <arrayval field="cmSpeed" index="0" value="20"/>
+    <arrayval field="cmHitDice" index="0" value="1"/>
+    <arrayval field="cmHitDice" index="1" value="1"/>
+    <arrayval field="cmHitDice" index="2" value="1"/>
+    <arrayval field="cmHitDice" index="3" value="1"/>
+    <arrayval field="cmHitDice" index="4" value="1"/>
+    <usesource source="SavSpec" parent="p30" name="Savage Species"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kHeal"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kRide"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="Language" tag="Any"/>
+    <tag group="RaceSize" tag="Small11"/>
+    <tag group="Race" tag="typFey"/>
+    <tag group="WepProf" tag="wCompLong"/>
+    <tag group="WepProf" tag="wShortswd"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="rLowLight"></bootstrap>
+    <bootstrap thing="xFly">
+      <containerreq phase="First" priority="10000">count:Classes.rmcPixie = 2</containerreq>
+      <autotag group="Maneuver" tag="Good"/>
+      <autotag group="Value" tag="20"/>
+      </bootstrap>
+    <bootstrap thing="xFly">
+      <containerreq phase="First" priority="10000">count:Classes.rmcPixie = 3</containerreq>
+      <autotag group="Value" tag="40"/>
+      <autotag group="Maneuver" tag="Good"/>
+      </bootstrap>
+    <bootstrap thing="xFly">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 4]]></containerreq>
+      <autotag group="Value" tag="60"/>
+      <autotag group="Maneuver" tag="Good"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lSylvan"></bootstrap>
+    <bootstrap thing="csSSLePiPo"></bootstrap>
+    <bootstrap thing="xSplRs">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 5]]></containerreq>
+      <autotag group="Value" tag="16"/>
+      </bootstrap>
+    <bootstrap thing="ksCrafPixA">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.rmcPixie >= 4]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="csSSPiMeLA">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 4]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="csSSPiSlAr">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 4]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="mNatural">
+      <containerreq phase="First" priority="100"><![CDATA[count:Classes.rmcPixie >= 3]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="fDodge">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 2]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="csSSPixPow">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 3]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="csSSGrPiPo">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 5]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="csSSNatInv">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 4]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="csSSCrSpAr">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.rmcPixie >= 4]]></containerreq>
+      </bootstrap>
+    <eval phase="PreLevel" priority="10000">~ +2 to Listen, Search, Spot checks
+#skillbonus[kListen] += 2
+#skillbonus[kSearch] += 2
+#skillbonus[kSpot] += 2</eval>
+    </thing>
+  <thing id="cmcPixie" name="SS -- Pixie" compset="ClassLevel" maxlimit="5">
+    <usesource source="SavSpec"/>
+    <tag group="ClassType" tag="Normal"/>
+    <containerreq phase="GlobalTest" priority="1">ClsMonster.rmcPixie</containerreq>
+    <link linkage="helper" thing="rmcPixie"/>
+    </thing>
+  <thing id="csSSLePiPo" name="Lesser Pixie Powers (1/day)" description="Dancing ights, detect chaos, detect good, detect evil, detect law, entangle and invisibility (self only). The caster level is equal to the Pixie class level +3 (save DC 10 + spell level + pixie&apos;s CHA modifier)." compset="ClSpecial" summary="Lesser Pixie Powers 1/day">
+    <usesource source="SavSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="User" tag="Lvl1"/>
+    <tag group="SpecSource" tag="rmcPixie"/>
+    </thing>
+  <thing id="csSSPixPow" name="Pixie Powers (1/day)" description="Detect thoughts and dispel magic." compset="ClSpecial" summary="Pixie Powers 1/day">
+    <usesource source="SavSpec"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="rmcPixie"/>
+    </thing>
+  <thing id="csSSGrPiPo" name="Greater Pixie Powers (1/day)" description="Confusion (by touch), permanent image (visual and auditory elements only) and polymorph self.  A pixie with a Charisma of at least 20 can also use Otto&apos;s Irresistibble Dance." compset="ClSpecial" summary="Greater Pixie  Powers 1/day">
+    <usesource source="SavSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="rmcPixie"/>
+    </thing>
+  <thing id="csSSNatInv" name="Natural Invisibility" description="A Pixie is naturally invisible and remains invisible even when it attacks. This ability is constant, but the pixie can supress or reume it as a free action." compset="ClSpecial" summary="Natural Invisibility">
+    <usesource source="SavSpec"/>
+    <tag group="SpecSource" tag="rmcPixie"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    </thing>
+  <thing id="csSSCrSpAr" name="Craft Special Arrows" description="A Pixie can craft pixie sleep arrows and pixie memory loss arrows as though meeting all of the prerequisites." compset="ClSpecial" summary="Craft Special Arrows">
+    <usesource source="SavSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="rmcPixie"/>
+    <eval phase="First" priority="10000">~ +2 to Listen, Search, Spot checks
+#skillbonus[ksCrafPixA] += 0</eval>
+    </thing>
+  <thing id="csSSPiMeLA" name="Pixie Memory Loss Arrows" description="An opponent struck by this arrow must succeed on a DC 15 Will save or lose all memory. The save DC is Charisma-based and includes a +2 racial bonus. The subject retains skills, languages, and class abilities but forgets everything else until he or she receives a heal spell or memory restoration with limited wish, wish, or miracle." compset="ClSpecial" summary="Pixie Memory Loss Arrows">
+    <usesource source="SavSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="rmcPixie"/>
+    </thing>
+  <thing id="csSSPiSlAr" name="Pixie Sleep Arrows" description="Any opponent struck by this arrow, regardless of Hit Dice, must succeed on a DC 15 Fortitude save or be affected as though by a sleep spell. The save DC is Charisma-based and includes a +2 racial bonus." compset="ClSpecial" summary="Pixie Sleep Arrows">
+    <usesource source="SavSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="rmcPixie"/>
+    </thing>
+  <thing id="ksCrafPixA" name="Craft: Pixie Arrows" description="You are skilled at the creation of all Pixie magical arrows.\n\n{b}Source{/b}: Savage Species" compset="Skill" summary="Craft Pixie Arrows" uniqueness="useronce">
+    <usesource source="SavSpec"/>
+    <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
+    <tag group="Helper" tag="SkCatCraft" name="Craft Skill" abbrev="Craft Skill"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  </document>

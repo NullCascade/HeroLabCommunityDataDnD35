@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>Added by Bodrin.
+
+bodrinbarlow@gmail.com</info_author>
+    <info_history><![CDATA[7-19-11 Lawful_G
+Adjusted to work with new "type replacement" mechanics. Also cleaned up some scripting language and consolidated some eval scripts that were at same Phase/Priority. Also corrected a few typos.
+
+Version 1.1
+
+Fly script now adds (Su) tag to fly speed.]]></info_history>
+    <info_todo>Calculate if base creature has a Fly speed and alter text to suit Supernatural ability.
+
+Adjust the Concentration checks to Charisma based skill as its Undead, possibly alter the Undead Monster Type to do this instead!</info_todo>
+    </fileinfo>
+  <thing id="xCommSkele" name="Command Skeletons" description="A dread skeleton can automatically command all normal skeletons within 30 feet as a free action. Normal skeletons never attack a dread skeleton unless compelled." compset="Special" summary="A dread skeleton can automatically command all normal skeletons within 30 feet as a free action." uniqueness="unique">
+    <comment>Dread Skeleton ability from the Advanced Bestiary by Matthew Sernett published by Green Ronin Publishing.
+
+Added by Bodrin 29/11/2010.</comment>
+    <usesource source="AdvBest"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="xUnnatAura" name="Unnatural Aura" description="Any creature of the animal type within 30 feet of a dread skeleton automatically becomes panicked and remains so until the distance between it and the dread skeleton is at least 30 feet." compset="Special" summary="Any creature of the animal type within 30 feet of a dread skeleton automatically becomes panicked." uniqueness="unique">
+    <comment>Dread Skeleton ability from the Advanced Bestiary by Matthew Sernett published by Green Ronin Publishing.
+
+Added by Bodrin 29/11/2010.</comment>
+    <usesource source="AdvBest" parent="p35" name="Advanced Bestiary"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    </thing>
+  <thing id="tmDreSkele" name="Dread Skeleton Template" description="Type changes to Undead, with the appropriate augmented subtype.\n\nAll HD become d12s.\nDo not recalculate attack bonuses, saves, or skill points.\nSize is unchanged.\n\nIf the base creature has a fly speed based on the possession of wings, the dread skeletons flight becomes a supernatural ability.\n\n+X natural armor based on size, claw attacks.\n\nRetains all the base creatures attacks using limbs that have bones, teeth or exoskeletons and it also retains the base creatures weapon and armor proficiencies. Attacks with boneless limbs such as tentacles are lost.\n\nThe Dread skeletons attacks retain the Primary or secondary status they had for the base creature.\n\n{b}Special Attacks.{/b}\nThe dread skeleton retains all the base creature&apos;s special attacks and gains those described here.\n\n{b}Command Skeletons (Su){/b}\nA dread skeleton can automatically command all normal skeletons within 30 feet as a free action. Normal skeletons never attack a dread skeleton unless compelled.\n\n{b}Unnatural Aura (Su).{/b}\nAny creature of the animal type within 30 feet of a dread skeleton automatically becomes panicked and remains so until the distance between it and the dread skeleton is at least 30 feet.\n\n{b}Special Qualities.{/b}\nImmunity to Cold (Ex)\nDamage reduction (Ex) 10/bludgeoning.\n\nSkeletons are the animated bones of the dead, mindless automatons that obey the orders of their evil masters. A skeleton is seldom garbed in anything more than the rotting remnants of any clothing or armor it was wearing when slain. A skeleton does only what it is ordered to do. It can draw no conclusions of its own and takes no initiative. Because of this limitation, its instructions must always be simple. A skeleton attacks until destroyed.\n\n{b}Source{/b}: Advanced Bestiary" compset="Template" uniqueness="unique">
+    <comment>Dread Skeleton Template from the Advanced Bestiary by Matthew Sernett published by Green Ronin Publishing.
+
+Added by Bodrin 29/11/2010.
+
+Calculate if base creature has a Fly speed and alter text to suit Supernatural ability.
+
+Adjust the Concentration checks to Charisma based skill as its Undead, possibly alter the Undead Monster Type to do this instead!</comment>
+    <fieldval field="tmDEX" value="2"/>
+    <fieldval field="tmINT" value="-4"/>
+    <fieldval field="cLevelAdj" value="3"/>
+    <fieldval field="tmReplHD" value="12"/>
+    <usesource source="AdvBest" parent="p35" name="Advanced Bestiary"/>
+    <tag group="TemplHelp" tag="NoClasses" name="NoClasses" abbrev="NoClasses"/>
+    <tag group="AlgnReq" tag="Evil"/>
+    <tag group="TemplHelp" tag="Acquired" name="Acquired" abbrev="Acquired"/>
+    <tag group="SpecSource" tag="Skeleton" name="Dread Skeleton" abbrev="Dread Skeleton"/>
+    <bootstrap thing="wClaw">
+      <autotag group="wMain" tag="1d4_4"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Helper" tag="RaceHands"/>
+      </bootstrap>
+    <bootstrap thing="xTurnRes"></bootstrap>
+    <bootstrap thing="fImpInit"></bootstrap>
+    <bootstrap thing="xDamRdB">
+      <autotag group="SpecSource" tag="Skeleton"/>
+      </bootstrap>
+    <bootstrap thing="xImmCold">
+      <autotag group="SpecSource" tag="Skeleton"/>
+      </bootstrap>
+    <bootstrap thing="stypAugmen"></bootstrap>
+    <bootstrap thing="xCommSkele"></bootstrap>
+    <bootstrap thing="xUnnatAura"></bootstrap>
+    <bootstrap thing="typUndead">
+      <autotag group="User" tag="OverNoUseT"/>
+      </bootstrap>
+    <eval phase="Final" priority="9000" index="2">~ Assign the Fly Speed to a Supernatural ability as a dread skelton uses bony wings without flesh coverings, how the hell would it fly then?
+      perform hero.childfound[xFly].assign[AbilType.Super]</eval>
+    <eval phase="PreLevel" priority="10000"><![CDATA[      ~ If our intelligence is less than 0, make it 0 minimum
+      var intel as number
+      perform hero.child[aINT].setfocus
+      intel = focus.field[aValue].value + focus.field[aStartMod].value
+
+      if (intel < 0) then
+        focus.field[aNormMod].value += 0 - intel
+      endif
+
+      ~ bonus to natural armor based on size
+      var bonus as number
+      if (hero.tagis[Size.Diminutive] <> 0) then
+        bonus = 0
+      elseif (hero.tagis[Size.Tiny] <> 0) then
+        bonus = 0
+      elseif (hero.tagis[Size.Small] <> 0) then
+        bonus = 1
+      elseif (hero.tagis[Size.Medium] <>0) then
+        bonus = 2
+      elseif  (hero.tagis[Size.Large] <> 0) then
+        bonus = 3
+      elseif (hero.tagis[Size.Huge] <> 0) then
+        bonus = 4
+      elseif (hero.tagis[Size.Gargantuan] <> 0) then
+        bonus = 6
+      elseif (hero.tagis[Size.Colossal] <> 0) then
+        bonus = 10
+      endif
+
+      hero.child[mNatural].field[Bonus].value += bonus
+               
+      ~ Set up our damage reduction
+      #applydr[xDamRdB, 10]
+
+      ~ +2 Turn Resistance
+      hero.child[xTurnRes].field[Value].value = maximum(hero.child[xTurnRes].field[Value].value, 2)]]></eval>
+    <eval phase="First" priority="50" index="3"><![CDATA[~ Go through all type specials and assign a tag to disable them. Also set the hTotal field to <> 0 so that bootstrap conditions will fail. 
+   foreach pick in hero from BaseSpec where "thingid.typ? & !thingid.typUndead"
+     perform each.assign[Helper.SpcDisable]
+     each.field[hTotal].value = 1
+
+~ Even though we are no longer that type, we do not recalculate BAB, saves, or anything else.
+     perform each.assign[User.OverUseTyp]
+   nexteach
+
+~ Finally, delete all Race.typWhatever tags and add back one for the Undead type.
+  perform hero.delete[Race.typ?]
+  perform hero.assign[Race.typUndead]]]></eval>
+    </thing>
+  </document>

@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>u7-29-09</info_history>
+    </fileinfo>
+  <thing id="ioBrForesi" name="Bracelet of Foresight" description="This deceptively simple-looking bracelet of beaten copper actually contains powerful magic. Once per day, the bracelet gives the wearer a sudden vision of the near future, warning of danger. It can be activated by silent thought, giving the wearer the benefits of a foresight spell for 10 minutes. While under the benefits of the spell, the wearer cannot be surprised or caught flat-footed. In addition, it provides a +2 insight bonus to AC and Reflex saves, although this insight bonus is lost whenever the wearer would lose a Dexterity bonus to AC.\n\nStrong divination; CL 17th; Craft Wondrous Item, {i}foresight{/i}; Price 19,530 stl; Weight 0.5 lb." compset="Wondrous">
+    <fieldval field="gCost" value="19530"/>
+    <fieldval field="gWeight" value=".5"/>
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Foresight"/>
+<usesource source="ToHS" parent="pDL" name="Towers of High Sorcery"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Hero" tag="EqpWrist"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      if (field[hIsOn1].value <> 0) then
+        #applybonus[BonInsight, hero.child[vRef], 2]
+        hero.child[ArmorClass].field[BonInsight].value += 2
+        endif]]></eval>
+    </thing>
+  <thing id="ioBrProtec" name="Bracelet of Protection" description="This silver bracelet, carved with intricate arcane runes, grants its wearer a +2 deflection bonus to AC. It also protects its wearer by surrounding her with an invisible field of magic. Any creature touching the bracelet-wearer with bare hands (such as a touch attack or unarmed strike) receives a jolt of electricity, dealing 1d4+7 points of damage.\n\nFaint abjuration and moderate evocation; CL 7th; Craft Wondrous Item, {i}mage armor{/i}, {i}spark shield{/i}; Price 64,000 stl; Weight 0.5 lb." compset="Wondrous">
+    <fieldval field="gCost" value="64000"/>
+    <fieldval field="gWeight" value=".5"/>
+<usesource source="ToHS"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="Hero" tag="EqpWrist"/>
+    <eval phase="UserPreLv" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        hero.child[ArmorClass].field[tACDeflect].value = maximum(hero.child[ArmorClass].field[tACDeflect].value, 2)
+        endif]]></eval>
+    </thing>
+  <thing id="ioBrMagRes" name="Bracelet of Magic Resistance" description="This magical bracelet, designed by Black Robe wizards, appears to be made of silver, about four inches in width, set with pieces of polished onyx. When worn, it protects its wearer against all forms of magical fear, including dragonfear and the supernatural fear of the Shoikan Grove. Its greatest benefit comes in its ability to completely block magic from affecting the wearer.\n\nWhen originally created, the bracelet has 25 charges. A spell cast upon the wearer is absorbed by the bracelet, draining 1 charge per level of the spell. When the last charge is drained, the stones on the bracelet crumble to dust. Any spell drained by the bracelet is ruined, even if there are not enough charges to absorb the final spell. For example, the bracelet has only 1 charge remaining when a sorcerer casts a {i}fireball{/i} spell upon the wearer. Although {i}fireball{/i} is a 3rd-level spell, the remaining charge in the bracelet is expended and it is enough to absorb the {i}fireball{/i}. (Note: when determining what spells the bracelet can absorb, the bracelet can absorb any spell in which the wearer is the target or any spell that normally allows for Spell Resistance.)\n\nThese bracelets are unholy items. They bestow one negative level on any lawful good creature attempting to wear it. The negative level remains as long as the bracelet is worn and disappears when the bracelet is no longer worn. This negative level does not result in actual level loss. The negative level cannot be overcome in any way (including {i}restoration spells) while the bracelet is worn.\n\nModerate necromancy and strong abjuration; CL 13th; Craft Wondrous Item, {i}heroism{/i}, {i}spell turning{/i}, creator must be evil; Price 73,125 stl; Weight 0.5 lb." compset="Wondrous">
+    <fieldval field="gCost" value="73125"/>
+    <fieldval field="gWeight" value=".5"/>
+    <fieldval field="hTotal" value="25"/>
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Hero" tag="EqpWrist"/>
+    </thing>
+  <thing id="ioChAnimBr" name="Charm of Animal Transformation (Bracelet)" description="These simple charms are often the first items crafted by apprentice wizards after they have passed their Test of High Sorcery. The charms are typically made into pieces of jewelry, such as an amulet, bracelet, or a ring. Although they can often take the forms of magical rings, and would normally be crafted by Forge Ring (a metamagic skill beyond the abilities of most apprentices), they are crafted as Wondrous Items because of their limited capabilities.\n\nWhen worn, this charm transforms its wearer into a specified animal form, just as if she had cast {i}shape of the beasts{/i} on herself. The animal form lasts up to 1 hour, or until the wearer takes off the charm (which only she can see when she&#146;s in animal form). The charm can be used once per day.\n\nWeak transmutation; CL 3rd; Craft Wondrous Item, {i}shape of the beasts{/i}; Price 1200 stl.; Weight 0.25 lb." compset="Wondrous">
+    <fieldval field="gCost" value="1200"/>
+    <fieldval field="gWeight" value=".25"/>
+    <fieldval field="hTotal" value="1"/>
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="Hero" tag="EqpWrist"/>
+    </thing>
+  <thing id="ioChAnimAm" name="Charm of Animal Transformation (Amulet)" description="These simple charms are often the first items crafted by apprentice wizards after they have passed their Test of High Sorcery. The charms are typically made into pieces of jewelry, such as an amulet, bracelet, or a ring. Although they can often take the forms of magical rings, and would normally be crafted by Forge Ring (a metamagic skill beyond the abilities of most apprentices), they are crafted as Wondrous Items because of their limited capabilities.\n\nWhen worn, this charm transforms its wearer into a specified animal form, just as if she had cast {i}shape of the beasts{/i} on herself. The animal form lasts up to 1 hour, or until the wearer takes off the charm (which only she can see when she&#146;s in animal form). The charm can be used once per day.\n\nWeak transmutation; CL 3rd; Craft Wondrous Item, {i}shape of the beasts{/i}; Price 1200 stl.; Weight 0.25 lb." compset="Wondrous">
+    <fieldval field="gCost" value="1200"/>
+    <fieldval field="gWeight" value=".25"/>
+    <fieldval field="hTotal" value="1"/>
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="Hero" tag="EqpNeck"/>
+    </thing>
+  <thing id="ioChAnimRi" name="Charm of Animal Transformation (Ring)" description="These simple charms are often the first items crafted by apprentice wizards after they have passed their Test of High Sorcery. The charms are typically made into pieces of jewelry, such as an amulet, bracelet, or a ring. Although they can often take the forms of magical rings, and would normally be crafted by Forge Ring (a metamagic skill beyond the abilities of most apprentices), they are crafted as Wondrous Items because of their limited capabilities.\n\nWhen worn, this charm transforms its wearer into a specified animal form, just as if she had cast {i}shape of the beasts{/i} on herself. The animal form lasts up to 1 hour, or until the wearer takes off the charm (which only she can see when she&#146;s in animal form). The charm can be used once per day.\n\nWeak transmutation; CL 3rd; Craft Wondrous Item, {i}shape of the beasts{/i}; Price 1200 stl.; Weight 0.25 lb." compset="Wondrous">
+    <fieldval field="gCost" value="1200"/>
+    <fieldval field="gWeight" value=".25"/>
+    <fieldval field="hTotal" value="1"/>
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="Hero" tag="EqpRing"/>
+    </thing>
+  <thing id="ioCloNight" name="Cloak of Night NEED TO FInish" description="Also known as {i}shadowcloaks{/i} or {i}cloaks of shadows{/i}, these cloaks are made of black silk, with a heavy cowl that completely obscures the wearer&#146;s face. \n\nWhile the {i}cloak of night{/i} is worn, it grants its wearer a +2 deflection bonus to AC. If the cowl is pulled up, the wearer gains darkvision of 60 feet and a +10 competence bonus to Hide checks as long as there are shadows present.\n\nOnce per day, the cloak wearer can disappear into the shadows, using them to traverse great distances (as per the spell {i}shadow walk{/i} cast by a 12th-level wizard). The cloak wearer can take up to one other Medium size creature (or two Small size creatures) with him by wrapping them within the folds of the cloak.\n\nModerate illusion; CL 11th; Craft Wondrous Item, {i}darkvision{/i}, {i}displacement{/i}, {i}shadow walk{/i}; Price 85,760 stl; Weight 2 lbs." compset="Wondrous">
+    <fieldval field="gCost" value="85760"/>
+    <fieldval field="gWeight" value="2"/>
+    <fieldval field="hTotal" value="1"/>
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <tag group="Hero" tag="EqpBack"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <bootstrap thing="rDarkVis"></bootstrap>
+    <bootstrap thing="xShadWalk"></bootstrap>
+    <bootstrap thing="xCloakNigh"></bootstrap>
+    <eval phase="UserPreAt" priority="10000" index="2"><![CDATA[
+      ~ If we're not shown, just get out now
+     if (field[gIsEquip].value <> 0) then
+
+      ~ Improve our darkvision if necessary
+      hero.child[rDarkVis].field[Value].value = maximum(hero.child[rDarkVis].field[Value].value, 60)
+       endif]]></eval>
+    <eval phase="UserPreLv" priority="5000"><![CDATA[
+      if (field[gIsEquip].value <> 0) then
+        hero.child[ArmorClass].field[tACDeflect].value = maximum(hero.child[ArmorClass].field[tACDeflect].value, 2)
+        endif]]></eval>
+    </thing>
+  <thing id="xCloakNigh" name="+10 Hide in Shadowy Illumination" description="+10 to Hide checks as long as there are shadows present" compset="Special">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  <thing id="xShadWalk" name="Shadow Walk 1/day" description="The wearer can cast shadow walk as a 12th level wizard, once per day" compset="Special">
+    <fieldval field="hTotal" value="1"/>
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="sSorArEyGr" name="Arcane Eye, Greater" description="This spell functions as {i}arcane eye{/i} (PH 200), creating an invisible magical sensor that enables you to view across great distance as if you were there. {i}Greater arcane eye{/i} grants both 60-foot darkvision and low-light vision, as well as enabling you to see ethereal and invisible creatures as if you had cast {i}true seeing{/i}.\n\n{i}Material Component{/i}: A bat figurine carved of crystal." compset="Spell">
+    <fieldval field="sRange" value="Unlimited"/>
+    <fieldval field="sDuration" value="1 minute/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="~[($s_VZ]V~[(#]"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sRange" tag="Unlimited" name="Unlimited" abbrev="~[($s_UnlimZ]Unl~[(#]"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Divination" name="Divination" abbrev="Div"/>
+    <tag group="sSubschool" tag="Scrying" name="Scrying" abbrev="Scrying"/>
+    <tag group="sCastTime" tag="Minute10" name="Minute10" abbrev="Minute10"/>
+    <tag group="sClass" tag="Sorcerer" name="Sorcerer" abbrev="Sorcerer"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="~[($s_MZ]M~[(#]"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="~[($s_SZ]S~[(#]"/>
+    </thing>
+  <thing id="sWizArEyGr" name="Arcane Eye, Greater" description="This spell functions as {i}arcane eye{/i} (PH 200), creating an invisible magical sensor that enables you to view across great distance as if you were there. {i}Greater arcane eye{/i} grants both 60-foot darkvision and low-light vision, as well as enabling you to see ethereal and invisible creatures as if you had cast {i}true seeing{/i}.\n\n{i}Material Component{/i}: A bat figurine carved of crystal." compset="Spell">
+    <fieldval field="sRange" value="Unlimited"/>
+    <fieldval field="sDuration" value="1 minute/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="~[($s_VZ]V~[(#]"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sRange" tag="Unlimited" name="Unlimited" abbrev="~[($s_UnlimZ]Unl~[(#]"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSchool" tag="Divination" name="Divination" abbrev="Div"/>
+    <tag group="sSubschool" tag="Scrying" name="Scrying" abbrev="Scrying"/>
+    <tag group="sCastTime" tag="Minute10" name="Minute10" abbrev="Minute10"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="~[($s_MZ]M~[(#]"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="~[($s_SZ]S~[(#]"/>
+    </thing>
+  <thing id="sSorArcSt" name="Arcane Staff" description="Spells you can normally cast may be placed into a prepared quarterstaff. You can store a number of spell levels equal to your caster level, but no spell can be higher than 4th level. For example, a 9th-level wizard could store two 4th-level spells and a 1st level spell; or one 4th-level spell, one 3rd-level spell, and one 2nd-level spell; or any other combination totaling nine levels. 0-level spells cannot be stored within an arcane staff.\n\nA spell stored within the quarterstaff can be cast just as any other spell. It does not count against your normal allotment of spells for a given day. You use up any applicable material components and expend any experience cost to cast the spell when you store it in the staff. You cannot have more than one prepared arcane staff at any given time.\n\n{i}Focus{/i}: The masterwork quarterstaff that stores the spells." compset="Spell">
+    <fieldval field="sDuration" value="Permanent until discharged (D)"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Object"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizArcSt" name="Arcane Staff" description="Spells you can normally cast may be placed into a prepared quarterstaff. You can store a number of spell levels equal to your caster level, but no spell can be higher than 4th level. For example, a 9th-level wizard could store two 4th-level spells and a 1st level spell; or one 4th-level spell, one 3rd-level spell, and one 2nd-level spell; or any other combination totaling nine levels. 0-level spells cannot be stored within an arcane staff.\n\nA spell stored within the quarterstaff can be cast just as any other spell. It does not count against your normal allotment of spells for a given day. You use up any applicable material components and expend any experience cost to cast the spell when you store it in the staff. You cannot have more than one prepared arcane staff at any given time.\n\n{i}Focus{/i}: The masterwork quarterstaff that stores the spells." compset="Spell">
+    <fieldval field="sDuration" value="Permanent until discharged (D)"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Object"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorArStGr" name="Arcane Staff, Greater" description="As {i}arcane staff{/i}, except that you can store up to your spellcasting level + ability modifier (Intelligence if a wizard, Charisma if a sorcerer) in total spell levels within the quarterstaff, and the spells you store can be up to 6th level." compset="Spell">
+    <fieldval field="sDuration" value="Permanent until discharged (D)"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Object"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizArStLe" name="Arcane Staff, Lesser" description="As {i}arcane staff{/i}, except that you can store only up to your ability modifier (Intelligence if a wizard, Charisma if a sorcerer) in total spell levels within the quarterstaff, and the spells can be only 1st or 2nd level." compset="Spell">
+    <fieldval field="sDuration" value="Permanent until discharged (D)"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Object"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizArStGr" name="Arcane Staff, Greater" description="As {i}arcane staff{/i}, except that you can store up to your spellcasting level + ability modifier (Intelligence if a wizard, Charisma if a sorcerer) in total spell levels within the quarterstaff, and the spells you store can be up to 6th level." compset="Spell">
+    <fieldval field="sDuration" value="Permanent until discharged (D)"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Object"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorArStLe" name="Arcane Staff, Lesser" description="As {i}arcane staff{/i}, except that you can store only up to your ability modifier (Intelligence if a wizard, Charisma if a sorcerer) in total spell levels within the quarterstaff, and the spells can be only 1st or 2nd level." compset="Spell">
+    <fieldval field="sDuration" value="Permanent until discharged (D)"/>
+    <fieldval field="sSave" value="Will negates (object)"/>
+    <fieldval field="sResist" value="Yes (object)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sDuration" tag="UntilTrig"/>
+    <tag group="sSave" tag="Object"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Object"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorAwMind" name="Awaken the Mind" description="With this spell, you imbue any creature of animal intelligence with increased intellect and personality, granting a +8 bonus to Intelligence and +4 bonus to Wisdom and Charisma. If the target creature already has a natural Intelligence of 3 or more, the spell fails.\n\nThough you have no special empathy or connection with a creature under the effects of awaken the mind, affected creatures are friendly toward you, and will serve you in specific tasks or endeavors if you communicate your desires to them. As well, a target creature can speak one language that you know.\n\nThe target creature&#146;s type becomes magical beast (if it isn&#146;t already), but creatures under the effects of the spell can&#146;t serve as animal companions, familiars, or special mounts. The effects of {i}awaken the mind{/i} can be made permanent by a 15th-level spellcaster casting {i}permanency{/i}, but require the expenditure of 3,000 XP.\n\n{i}Material Component{/i}: A small diamond worth at least 1,000 stl." compset="Spell">
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <fieldval field="sDuration" value="1 hour"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizAwMind" name="Awaken the Mind" description="With this spell, you imbue any creature of animal intelligence with increased intellect and personality, granting a +8 bonus to Intelligence and +4 bonus to Wisdom and Charisma. If the target creature already has a natural Intelligence of 3 or more, the spell fails.\n\nThough you have no special empathy or connection with a creature under the effects of awaken the mind, affected creatures are friendly toward you, and will serve you in specific tasks or endeavors if you communicate your desires to them. As well, a target creature can speak one language that you know.\n\nThe target creature&#146;s type becomes magical beast (if it isn&#146;t already), but creatures under the effects of the spell can&#146;t serve as animal companions, familiars, or special mounts. The effects of {i}awaken the mind{/i} can be made permanent by a 15th-level spellcaster casting {i}permanency{/i}, but require the expenditure of 3,000 XP.\n\n{i}Material Component{/i}: A small diamond worth at least 1,000 stl." compset="Spell">
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <fieldval field="sDuration" value="1 hour"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorClean" name="Cleaning" description="This simple cantrip removes grime, dirt, dust, cobwebs, and other filth from an area {b}(5-ft. cube){/b}, just as if it had been scrubbed by soap and water. It can be used only on solid surfaces (such as wood, cloth or stone), but has no effect on contaminated liquids or items that have been permanently stained." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sLevel" tag="0"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizClean" name="Cleaning" description="This simple cantrip removes grime, dirt, dust, cobwebs, and other filth from an area {b}(5-ft. cube){/b}, just as if it had been scrubbed by soap and water. It can be used only on solid surfaces (such as wood, cloth or stone), but has no effect on contaminated liquids or items that have been permanently stained." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sLevel" tag="0"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizConsen" name="Consensus" description="This spell is typically cast only by the highest ranking Wizards of High Sorcery, those who serve as Master of the Conclave or as the Masters of the Orders. Historically, the spell has been used most frequently to elect a new Master of the Conclave, the one wizard to whom (theoretically, at least) all other members of the Orders of High Sorcery answer.\n\nWhen you cast the spell, you choose whether to send a message to all members of one particular Order (the White Robes, Red Robes, or Black Robes), or to the members of all three Orders. This message cannot be more than 10 seconds long. It is telepathically carried to all non-renegade spellcasters who have passed the Test of High Sorcery. The message travels any distance, although it cannot reach those not on the Material Plane (including those in extra-dimensional spaces or in alternate realms of existence). The message can penetrate any magical barriers or mental protections (including such protections as {i}mind blank{/i}), but cannot be received by wizards rendered unconscious by way of injury. Wizards who are sleeping at the time of casting are awakened as the message is received.\n\nAs a free action, anyone who has received the message can telepathically return a one word reply (typically, &#147;yea,&#148; &#147;nay,&#148; or &#147;abstain.&#148;) The decision to return the message is voluntary, so a wizard may choose not to respond.\n\nWhen you cast this spell, your mind is not bombarded with every individual&#146;s response; instead they are filtered into a single answer, depending upon the majority vote." compset="Spell">
+    <fieldval field="sRange" value="Special; see text"/>
+    <fieldval field="sDuration" value="Special; see text"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sRange" tag="Special"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizCuMagi" name="Curse of the Magi" description="You cast a curse upon another spellcaster, rendering her unable to cast her spells without suffering for it. If the spellcaster you target fails her initial Will save to negate the effects, she needs to make additional Will saves in order to cast any spell. On a failed save, the spell fails and the target suffers 4 points of Constitution drain (though her Constitution cannot be taken below 1 in this way). Ability drain can be regained as normal (through {i}restoration{/i}, for example), but the effects of {i}curse the magi{/i} continue until the affected spellcaster has {i}remove curse{/i} cast upon her by a spellcaster of at least 15th level, or through the use of a {i}limited wish{/i}, {i}miracle{/i}, or {i}wish{/i} spell.\n\nThis spell does not affect the divine spellcasting classes, but may affect bards if bardic magic is considered arcane in your campaign.\n\n{i}Material Component{/i}: An iron mask with a closed mouth." compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Special"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorCuMagi" name="Curse of the Magi" description="You cast a curse upon another spellcaster, rendering her unable to cast her spells without suffering for it. If the spellcaster you target fails her initial Will save to negate the effects, she needs to make additional Will saves in order to cast any spell. On a failed save, the spell fails and the target suffers 4 points of Constitution drain (though her Constitution cannot be taken below 1 in this way). Ability drain can be regained as normal (through {i}restoration{/i}, for example), but the effects of {i}curse the magi{/i} continue until the affected spellcaster has {i}remove curse{/i} cast upon her by a spellcaster of at least 15th level, or through the use of a {i}limited wish{/i}, {i}miracle{/i}, or {i}wish{/i} spell.\n\nThis spell does not affect the divine spellcasting classes, but may affect bards if bardic magic is considered arcane in your campaign.\n\n{i}Material Component{/i}: An iron mask with a closed mouth." compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Special"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorDetFam" name="Detect Familiar" description="You can detect the presence of familiars and the magic animal companions of other spellcasting classes (such as a druid or ranger&#146;s animal companion, or a paladin&#146;s mount) {b}within a 60 ft, cone shaped emanation{/b}. The amount of information revealed depends on how long you study a particular area.\n\n{i}1st round{/i}: The presence or absence of a familiar or animal companion.\n{i}2nd round{/i}: The number of familiars or animal companions in the area and the power of the most potent aura.\n{i}3rd round{/i}: The strength and location of each aura. If you have line of sight to the familiars or animal companions, you can make Spellcraft checks to determine the aura of the individual to whom the creature is bonded (one check per aura, DC 10 + half the bonded spellcaster&#146;s level + the bonded spellcaster&#146;s Charisma modifier).\n\n{i}Aura power{/i}: The aura surrounding a familiar or animal companion is determined by the class level of the creature&#146;s bonded spellcaster (druid, paladin, ranger, sorcerer, or wizard). Treat a character who hasn&#146;t yet gained his class&#146;s spellcasting abilities as 1st level.\n\n{i}Level of      Aura Power\nSpellcaster{/i}\n1st&#150;5th     Faint\n6th&#150;11th   Moderate\n12th&#150;17th Strong\n18th+       Overwhelming\n\n{i}Lingering Aura{/i}: The aura of a familiar or animal companion lingers after the creature has left the area. If detect familiar is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:\n\n{i}Strength        Lingering Duration{/i}\nFaint             1d6 rounds\nModerate       1d6 minutes\nStrong           1d6&#215;10 minutes\nOverwhelming 1d6 days" compset="Spell">
+    <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
+    <fieldval field="sRange" value="60 ft"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Emanation"/>
+    <tag group="sRange" tag="Feet"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizDetFam" name="Detect Familiar" description="You can detect the presence of familiars and the magic animal companions of other spellcasting classes (such as a druid or ranger&#146;s animal companion, or a paladin&#146;s mount) {b}within a 60 ft, cone shaped emanation{/b}. The amount of information revealed depends on how long you study a particular area.\n\n{i}1st round{/i}: The presence or absence of a familiar or animal companion.\n{i}2nd round{/i}: The number of familiars or animal companions in the area and the power of the most potent aura.\n{i}3rd round{/i}: The strength and location of each aura. If you have line of sight to the familiars or animal companions, you can make Spellcraft checks to determine the aura of the individual to whom the creature is bonded (one check per aura, DC 10 + half the bonded spellcaster&#146;s level + the bonded spellcaster&#146;s Charisma modifier).\n\n{i}Aura power{/i}: The aura surrounding a familiar or animal companion is determined by the class level of the creature&#146;s bonded spellcaster (druid, paladin, ranger, sorcerer, or wizard). Treat a character who hasn&#146;t yet gained his class&#146;s spellcasting abilities as 1st level.\n\n{i}Level of      Aura Power\nSpellcaster{/i}\n1st&#150;5th     Faint\n6th&#150;11th   Moderate\n12th&#150;17th Strong\n18th+       Overwhelming\n\n{i}Lingering Aura{/i}: The aura of a familiar or animal companion lingers after the creature has left the area. If detect familiar is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:\n\n{i}Strength        Lingering Duration{/i}\nFaint             1d6 rounds\nModerate       1d6 minutes\nStrong           1d6&#215;10 minutes\nOverwhelming 1d6 days" compset="Spell">
+    <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
+    <fieldval field="sRange" value="60 ft"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Emanation"/>
+    <tag group="sRange" tag="Feet"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizDisarm" name="Disarm" description="A creature under the effect of this spell finds it difficult to hold a weapon. Any creature who fails its initial save must make an additional Will save (this time at a &#150;1 penalty for every 2 of your spellcaster levels) each time it attempts to grasp a weapon. On a failed save, the creature drops the weapon as if disarmed." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round + 1 round/level"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sSchool" tag="Enchant"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorDisarm" name="Disarm" description="A creature under the effect of this spell finds it difficult to hold a weapon. Any creature who fails its initial save must make an additional Will save (this time at a &#150;1 penalty for every 2 of your spellcaster levels) each time it attempts to grasp a weapon. On a failed save, the creature drops the weapon as if disarmed." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round + 1 round/level"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sSchool" tag="Enchant"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizDisMem" name="Displace Memory" description="You remove a memory from one creature&#146;s mind and place it into another, displacing 10 minutes of memory per caster level from the target&#146;s mind and placing that memory into the mind of another willing creature. You must have some knowledge of the memory to be displaced in order to cast this spell (either having witnessed the same event, or having been told of the event from the target creature whose memory you wish to displace). The memory you displace must be of a single event occurring in continuous time (so you could displace any number of consecutive encounters in an adventure up to the maximum time, but not arbitrarily displace just the first and last encounters, no matter how short). As well, you can only displace a memory that has been formed within a number of years equal to your caster level.\n\nFor example: A White Robe wizard needs to send secret intelligence to the Orders of an event he witnessed. By removing the memory of the event from his mind and placing it into the mind of his servant, she can carry the message unnoticed while his enemies focus on him.\n\nThis spell cannot be cast upon creatures with Intelligence less than 5. A spellcaster can cast this spell upon himself as either the source of the displaced memory or the target.\n\n{i}Material Component{/i}: Two pieces of clear quartz, placed on the foreheads of both creatures." compset="Spell">
+    <fieldval field="sDuration" value="1 day/level"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Minute1"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Enchant"/>
+    <tag group="sSubschool" tag="Compulsion"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Day"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorDisMem" name="Displace Memory" description="You remove a memory from one creature&#146;s mind and place it into another, displacing 10 minutes of memory per caster level from the target&#146;s mind and placing that memory into the mind of another willing creature. You must have some knowledge of the memory to be displaced in order to cast this spell (either having witnessed the same event, or having been told of the event from the target creature whose memory you wish to displace). The memory you displace must be of a single event occurring in continuous time (so you could displace any number of consecutive encounters in an adventure up to the maximum time, but not arbitrarily displace just the first and last encounters, no matter how short). As well, you can only displace a memory that has been formed within a number of years equal to your caster level.\n\nFor example: A White Robe wizard needs to send secret intelligence to the Orders of an event he witnessed. By removing the memory of the event from his mind and placing it into the mind of his servant, she can carry the message unnoticed while his enemies focus on him.\n\nThis spell cannot be cast upon creatures with Intelligence less than 5. A spellcaster can cast this spell upon himself as either the source of the displaced memory or the target.\n\n{i}Material Component{/i}: Two pieces of clear quartz, placed on the foreheads of both creatures." compset="Spell">
+    <fieldval field="sDuration" value="1 day/level"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Minute1"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Enchant"/>
+    <tag group="sSubschool" tag="Compulsion"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Day"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorFeLife" name="Feign Life" description="You are able to give the illusion of life to a corpse. Under the effects of {i}feign life{/i}, a dead body breathes, the heart beats, and blood circulates to give the flesh the glow of life. {i}Feign life{/i} has no effect on a body&#146;s chances of being raised or resurrected, though, and does nothing to slow down a body&#146;s natural decay.\n\nThis spell can also be cast upon any undead with physical bodies (and so cannot be cast upon incorporeal undead or skeletons, among others) to give them a semblance of life, but does not repair damage or defects in the undead&#146;s appearance or remove any undead penalties or weaknesses." compset="Spell">
+    <fieldval field="sDuration" value="1 day/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="Death"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Day"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizFeLife" name="Feign Life" description="You are able to give the illusion of life to a corpse. Under the effects of {i}feign life{/i}, a dead body breathes, the heart beats, and blood circulates to give the flesh the glow of life. {i}Feign life{/i} has no effect on a body&#146;s chances of being raised or resurrected, though, and does nothing to slow down a body&#146;s natural decay.\n\nThis spell can also be cast upon any undead with physical bodies (and so cannot be cast upon incorporeal undead or skeletons, among others) to give them a semblance of life, but does not repair damage or defects in the undead&#146;s appearance or remove any undead penalties or weaknesses." compset="Spell">
+    <fieldval field="sDuration" value="1 day/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="Death"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Day"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizGiGuis" name="Giant&apos;s Guise" description="This spell covers a target creature with an illusion that makes it appear as large as a giant. This illusion offers no modifiers to the target&#146;s AC or attack rolls, but grants a +8 circumstance bonus to Intimidate checks. Any creatures the target attacks or otherwise interacts with physically are allowed a Will save against the illusion&#146;s effects. If they fail their first save and the &#147;giant&#148; subsequently deals damage to them, they must succeed on a second Will save or be stricken with fear and become shaken. Shaken creatures become frightened on a second successful attack and failed save, then panicked if they are successfully attacked and fail to save a third time. Success on any subsequent save means that the victim has seen through the illusion, and is no longer subject to the fear effects (as well as being able to communicate knowledge of the illusion to other characters).\n\n{i}Material Component{/i}: A braid of giant or ogre hair." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Illusion"/>
+    <tag group="sSubschool" tag="Glamer"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizKissNi" name="Kiss of Night&apos;s Guardian" description="This spell is known only by the Master of the Tower of Palanthas, although the Master may choose to teach it to favored apprentices.\n\nBy placing a kiss upon the target creature&#146;s forehead, you imbue a mark recognizable by the undead guardians of Palanthas&#146;s Shoikan Grove (see Towers of High Sorcery, Chapter 4: The Towers). Evil creatures touched by this spell feel the kiss as a warm, pleasant feeling that suffuses their entire bodies. Neutral creatures feel a strange burning sensation. Good creatures feel a cold so fierce it burns.\n\nWhen the target enters the grove, the undead within see the kiss as a scar burning with unholy light, marking the target as being under the Master&#146;s protection. Undead within the grove will not attack the bearer of a {i}kiss of night&#146;s guardian{/i}. The spell&#146;s protection lasts only for one passage through Shoikan Grove (either the way out or the way in), and not all who enter are permitted by the Master of the Tower to leave.\n\n{i}Kiss of night&#146;s guardian{/i} grants the target a +5 profane bonus on all saving throws against fear while within the grove. It does not render the target immune to the grove&#146;s magical fear effects. Originally, similar spells of protection existed for each of the five magic groves, known only to the Master of each Tower, but by the Age of Despair, only {i}kiss of night&#146;s{/i} guardian and {i}touch of guiding light{/i} (for the Tower of Wayreth) remain. Knowledge of the other three spells &#151; {i}whisper of dawn&#146;s song{/i} (for the Tower of Daltigoth), {i}vision of dusk&#146;s eye{/i} (for the Tower of Istar), and {i}song of day&#146;s clarity{/i} (for the Tower of Losarcum) &#151; has been lost with the destruction of the three Towers." compset="Spell">
+    <fieldval field="sDuration" value="Special; see text"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorGiGuis" name="Giant&apos;s Guise" description="This spell covers a target creature with an illusion that makes it appear as large as a giant. This illusion offers no modifiers to the target&#146;s AC or attack rolls, but grants a +8 circumstance bonus to Intimidate checks. Any creatures the target attacks or otherwise interacts with physically are allowed a Will save against the illusion&#146;s effects. If they fail their first save and the &#147;giant&#148; subsequently deals damage to them, they must succeed on a second Will save or be stricken with fear and become shaken. Shaken creatures become frightened on a second successful attack and failed save, then panicked if they are successfully attacked and fail to save a third time. Success on any subsequent save means that the victim has seen through the illusion, and is no longer subject to the fear effects (as well as being able to communicate knowledge of the illusion to other characters).\n\n{i}Material Component{/i}: A braid of giant or ogre hair." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Illusion"/>
+    <tag group="sSubschool" tag="Glamer"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizLiTran" name="Life Transfer" description="This spell enables you to steal life from one living creature and transfer it into another&#146;s body. On a successful melee touch attack, you deal 1d4 points of damage per two caster levels (maximum 10d4) and gain the same number of temporary hit points. Within one round, you must touch another living creature, transferring all the temporary hit points as healing energy. This energy cures the target of all damage up to the number of temporary hit points transferred (though it will not bestow additional or temporary hit points should the number of temporary hit points transferred exceed the creature&#146;s current damage).\n\nIf you are unable to transfer the temporary hit points, or if you want to heal yourself, you heal only half the hit points you absorbed." compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous/1 round; see text"/>
+    <fieldval field="sSave" value="Fortitude negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorLiTran" name="Life Transfer" description="This spell enables you to steal life from one living creature and transfer it into another&#146;s body. On a successful melee touch attack, you deal 1d4 points of damage per two caster levels (maximum 10d4) and gain the same number of temporary hit points. Within one round, you must touch another living creature, transferring all the temporary hit points as healing energy. This energy cures the target of all damage up to the number of temporary hit points transferred (though it will not bestow additional or temporary hit points should the number of temporary hit points transferred exceed the creature&#146;s current damage).\n\nIf you are unable to transfer the temporary hit points, or if you want to heal yourself, you heal only half the hit points you absorbed." compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous/1 round; see text"/>
+    <fieldval field="sSave" value="Fortitude negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizMiSpin" name="Mindspin" description="You take the innermost fears and anxieties of a creature and cause them to come to life. If the target fails its save, it falls into a waking slumber and is thrust into a nightmarish world.\n\nThere are three stages to the dream in which the creature is trapped. The first level {b}requires 10 minutes of focused spellcasting to begin, and{/b} distorts the creature&#146;s sense of time, space, and reality, as it finds itself in any time or location you desire. The target creature believes this dream-reality completely. The target&#146;s perceptions of its friends and allies remains untouched. At the first stage, you can summon 1d4 dreamshadows and 1d2 dreamwraiths, which assume any form you desire as they interact with the victim. You can create any kind of backdrop or physical location that you want for the dream, however, creatures or characters within any stage of the dreamworld must be portrayed by one of your summoned dream creatures.\n\nThe second stage of the dream takes the distortion of the victim&#146;s sense of reality to the personal level, with allies made to seem as enemies and enemies as allies. You can summon 2d4 dreamshadows and 1d4 dreamwraiths during this stage of the nightmare, all stronger than normal (10% more hit points; +4 bonus to saving throws, skill checks, and ability checks; Spell Resistance 10). The target creature is allowed a second save to wake up from the mindspin, though at a &#150;4 penalty. It takes a further 20 minutes of focused spellcasting in order to force the victim into the second stage of the dream, and you must make Concentration checks against any disturbances or have the spell fail.\n\nIn the third level of the dream, you can summon 2d6 dreamshadows and 1d6 dreamwraiths, who have 50% more hit points, receive a +8 bonus to saving throws, skill checks, and ability checks, as well as gain a Spell Resistance of 15. It takes at least 1 hour of focused spellcasting to force the victim into the third level of the dream. The victim is allowed a final saving throw with a -8 penalty in order to resist being forced into the third level.\n\nIf at any point the victim succeeds at her saving throw to resist going deeper into the dream, she will wake up. She may also be roused at any time by outside forces, but each time she must make a Will save (with the same penalty, depending upon the level of the dream) in order to wake. If the victim is attacked while she is asleep, she is allowed a saving throw to waken.\n\nAny damage the victim takes within the dream is illusory damage. She cannot be killed. However, if she is brought to 0 hp or lower, she must make a Fortitude save or suffer a permanent loss of 4 Wisdom &#151; allowing another save to awaken.\n\n{i}Material Component{/i}: A polished crystal sphere (worth at least 500 stl) in a bag of purple velvet.\n\n{i}XP Cost{/i}: 500 XP" compset="Spell">
+    <fieldval field="sRange" value="Medium (100 ft. + 10 ft./level)"/>
+    <fieldval field="sDuration" value="Concentration (D)"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sSubschool" tag="Phantasm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sCastTime" tag="SeeText"/>
+    <tag group="sSchool" tag="Illusion"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorMiSpin" name="Mindspin" description="You take the innermost fears and anxieties of a creature and cause them to come to life. If the target fails its save, it falls into a waking slumber and is thrust into a nightmarish world.\n\nThere are three stages to the dream in which the creature is trapped. The first level {b}requires 10 minutes of focused spellcasting to begin, and{/b} distorts the creature&#146;s sense of time, space, and reality, as it finds itself in any time or location you desire. The target creature believes this dream-reality completely. The target&#146;s perceptions of its friends and allies remains untouched. At the first stage, you can summon 1d4 dreamshadows and 1d2 dreamwraiths, which assume any form you desire as they interact with the victim. You can create any kind of backdrop or physical location that you want for the dream, however, creatures or characters within any stage of the dreamworld must be portrayed by one of your summoned dream creatures.\n\nThe second stage of the dream takes the distortion of the victim&#146;s sense of reality to the personal level, with allies made to seem as enemies and enemies as allies. You can summon 2d4 dreamshadows and 1d4 dreamwraiths during this stage of the nightmare, all stronger than normal (10% more hit points; +4 bonus to saving throws, skill checks, and ability checks; Spell Resistance 10). The target creature is allowed a second save to wake up from the mindspin, though at a &#150;4 penalty. It takes a further 20 minutes of focused spellcasting in order to force the victim into the second stage of the dream, and you must make Concentration checks against any disturbances or have the spell fail.\n\nIn the third level of the dream, you can summon 2d6 dreamshadows and 1d6 dreamwraiths, who have 50% more hit points, receive a +8 bonus to saving throws, skill checks, and ability checks, as well as gain a Spell Resistance of 15. It takes at least 1 hour of focused spellcasting to force the victim into the third level of the dream. The victim is allowed a final saving throw with a -8 penalty in order to resist being forced into the third level.\n\nIf at any point the victim succeeds at her saving throw to resist going deeper into the dream, she will wake up. She may also be roused at any time by outside forces, but each time she must make a Will save (with the same penalty, depending upon the level of the dream) in order to wake. If the victim is attacked while she is asleep, she is allowed a saving throw to waken.\n\nAny damage the victim takes within the dream is illusory damage. She cannot be killed. However, if she is brought to 0 hp or lower, she must make a Fortitude save or suffer a permanent loss of 4 Wisdom &#151; allowing another save to awaken.\n\n{i}Material Component{/i}: A polished crystal sphere (worth at least 500 stl) in a bag of purple velvet.\n\n{i}XP Cost{/i}: 500 XP" compset="Spell">
+    <fieldval field="sRange" value="Medium (100 ft. + 10 ft./level)"/>
+    <fieldval field="sDuration" value="Concentration (D)"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sSubschool" tag="Phantasm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sCastTime" tag="SeeText"/>
+    <tag group="sSchool" tag="Illusion"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorMiSpGr" name="Mindspin, Greater" description="This spell functions as {i}mindspin{/i} except that multiple victims {b}(one creature/level, no two of which can be more than 30 feet apart){/b} can be affected, all of whom share the same dreamworld of your creation.\n\n{i}XP Cost{/i}: 1,000 XP per creature affected." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Concentration (D)"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sSubschool" tag="Phantasm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sCastTime" tag="SeeText"/>
+    <tag group="sSchool" tag="Illusion"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sRange" tag="Close"/>
+    </thing>
+  <thing id="sWizMiSpGr" name="Mindspin, Greater" description="This spell functions as {i}mindspin{/i} except that multiple victims {b}(one creature/level, no two of which can be more than 30 feet apart){/b} can be affected, all of whom share the same dreamworld of your creation.\n\n{i}XP Cost{/i}: 1,000 XP per creature affected." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Concentration (D)"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    <tag group="sSubschool" tag="Phantasm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sCastTime" tag="SeeText"/>
+    <tag group="sSchool" tag="Illusion"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sRange" tag="Close"/>
+    </thing>
+  <thing id="sWizWhFlam" name="Raistlin&apos;s Wheel of Flame" description="A circle of multihued flames springs to life, radiating outward in every direction {b}(a 60 ft. radius burst){/b}. The hungry flames consume everything within range. Targets within the {i}wheel of flame{/i} must make a successful Reflex save each round or take 1d6 points of fire damage, increasing by 1d6 each round (so 2d6 points of fire damage on the second round within the wheel, to a maximum of 15d6 points on the 15th round if the spell&#146;s duration permits). A successful Reflex save results in the target taking half damage. As well, each creature that takes damage must make a second Reflex save each round to avoid catching on fire.\n\nOnce cast, the {i}wheel of flame{/i} is stationary. The caster is unaffected by his own spell, allowing him to walk through the flames untouched.\n\n{i}Material Component{/i}: A fire opal set in a gold ring (worth at least 250 stl)." compset="Spell">
+    <fieldval field="sRange" value="Medium (100 ft. + 10 ft./level)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Reflex half; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sSubschool" tag="Fire"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sRange" tag="Feet"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="Radius"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorWhFlam" name="Raistlin&apos;s Wheel of Flame" description="A circle of multihued flames springs to life, radiating outward in every direction {b}(a 60 ft. radius burst){/b}. The hungry flames consume everything within range. Targets within the {i}wheel of flame{/i} must make a successful Reflex save each round or take 1d6 points of fire damage, increasing by 1d6 each round (so 2d6 points of fire damage on the second round within the wheel, to a maximum of 15d6 points on the 15th round if the spell&#146;s duration permits). A successful Reflex save results in the target taking half damage. As well, each creature that takes damage must make a second Reflex save each round to avoid catching on fire.\n\nOnce cast, the {i}wheel of flame{/i} is stationary. The caster is unaffected by his own spell, allowing him to walk through the flames untouched.\n\n{i}Material Component{/i}: A fire opal set in a gold ring (worth at least 250 stl)." compset="Spell">
+    <fieldval field="sRange" value="Medium (100 ft. + 10 ft./level)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Reflex half; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sSubschool" tag="Fire"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sRange" tag="Feet"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="Radius"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorRevDea" name="Reverse Death" description="This potent spell enables you to return one creature to life, although it comes at a great cost. \n\nYou can resurrect a dead being, as long as it has not been dead for longer than 1 minute per caster level. The body makes an involuntary Will save (with a &#150;1 penalty for each minute the target has been dead). If the saving throw fails, the target dies again (suffering the same effects detailed below). If the saving throw succeeds, you have dragged its spirit from the River of Souls, binding it within its body once again and returning it to life.\n\nThis spell does not heal the body of damage nor does it purify the body of poison or disease. Thus, if a target died because of reaching negative hit points or because of the effects of poison or disease, it will simply die once again, but this time its soul will become one of the restless dead (a ghost, see MM). If the victim died because of massive damage, the spell will work as normal (unless the massive damage brought the victim to lower the &#150;10 hit points).\n\n{i}Material Component{/i}: A black pearl.\n\n{i}XP Cost{/i}: 1,000 XP per minute the body has been dead." compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="Death"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizRevDea" name="Reverse Death" description="This potent spell enables you to return one creature to life, although it comes at a great cost. \n\nYou can resurrect a dead being, as long as it has not been dead for longer than 1 minute per caster level. The body makes an involuntary Will save (with a &#150;1 penalty for each minute the target has been dead). If the saving throw fails, the target dies again (suffering the same effects detailed below). If the saving throw succeeds, you have dragged its spirit from the River of Souls, binding it within its body once again and returning it to life.\n\nThis spell does not heal the body of damage nor does it purify the body of poison or disease. Thus, if a target died because of reaching negative hit points or because of the effects of poison or disease, it will simply die once again, but this time its soul will become one of the restless dead (a ghost, see MM). If the victim died because of massive damage, the spell will work as normal (unless the massive damage brought the victim to lower the &#150;10 hit points).\n\n{i}Material Component{/i}: A black pearl.\n\n{i}XP Cost{/i}: 1,000 XP per minute the body has been dead." compset="Spell">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="Death"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorSBeast" name="Shape of the Beasts" description="This spell enables you to temporarily give a humanoid creature an animal form. If the target is willing, the transformation does not require a saving throw. If the target is unwilling, she is allowed a Will save to resist the transformation.\n\nOnce transformed into animal form, the target gains the animal&#146;s Strength, Dexterity, and Constitution scores, but retains its own Intelligence, Wisdom, and Charisma. The target also gains all the characteristics of the normal animal, but loses all of her own abilities (such as spellcasting, low-light vision, etc.). The target&#146;s type and subtype adjust to the new form (see the MM for more information).\n\nUpon changing, the subject regains lost hit points as if she had rested for a night (though this healing does not restore temporary ability damage or provide any of the other benefits of resting; and changing back does not heal the subject further, except for the ability damage from loss of identity, which can be regained normally).\n\nIf the transformed individual is not the spellcaster, the target creature must have some token representative of her true self on her being (such as a scarf, a ring, or some similar small item), otherwise there is a possibility she may lose her identity and remain in animal form indefinitely (until killed).\n\nEach hour the target remains in animal form, she must make another Will save. If she fails the saving throw, she loses 1d4 points of Intelligence as her memories begin to slip away. Once she reaches an Intelligence of 3 or less, the Intelligence damage ceases and the target is permanently trapped in the animal&#146;s form.\n\nThe caster may end the spell at any time.\n\n{i}Material Component{/i}: A bit of fur, a feather, or a reptile scale." compset="Spell">
+    <fieldval field="sRange" value="Personal or touch"/>
+    <fieldval field="sDuration" value="1 hour/level (D); see below"/>
+    <fieldval field="sSave" value="Will negates; see below"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizSBeast" name="Shape of the Beasts" description="This spell enables you to temporarily give a humanoid creature an animal form. If the target is willing, the transformation does not require a saving throw. If the target is unwilling, she is allowed a Will save to resist the transformation.\n\nOnce transformed into animal form, the target gains the animal&#146;s Strength, Dexterity, and Constitution scores, but retains its own Intelligence, Wisdom, and Charisma. The target also gains all the characteristics of the normal animal, but loses all of her own abilities (such as spellcasting, low-light vision, etc.). The target&#146;s type and subtype adjust to the new form (see the MM for more information).\n\nUpon changing, the subject regains lost hit points as if she had rested for a night (though this healing does not restore temporary ability damage or provide any of the other benefits of resting; and changing back does not heal the subject further, except for the ability damage from loss of identity, which can be regained normally).\n\nIf the transformed individual is not the spellcaster, the target creature must have some token representative of her true self on her being (such as a scarf, a ring, or some similar small item), otherwise there is a possibility she may lose her identity and remain in animal form indefinitely (until killed).\n\nEach hour the target remains in animal form, she must make another Will save. If she fails the saving throw, she loses 1d4 points of Intelligence as her memories begin to slip away. Once she reaches an Intelligence of 3 or less, the Intelligence damage ceases and the target is permanently trapped in the animal&#146;s form.\n\nThe caster may end the spell at any time.\n\n{i}Material Component{/i}: A bit of fur, a feather, or a reptile scale." compset="Spell">
+    <fieldval field="sRange" value="Personal or touch"/>
+    <fieldval field="sDuration" value="1 hour/level (D); see below"/>
+    <fieldval field="sSave" value="Will negates; see below"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizSDayCl" name="Song of Day&apos;s Clarity" description="Similar to {i}kiss of night&#146;s guardian{/i}, this spell is known only by the Master of the Tower of Losarcum.\n\nWhen this spell is cast, you allow the target to find his way through the magical grove surrounding the Tower of Losarcum. This spell grants the target a +10 circumstance bonus to resist the emotional manipulation of Losarcum&#146;s Grove of &#147;passions.&#148; Once the target has traversed the grove, whether entering or leaving, the spell expires and the target is subject to the normal effects of the grove.\n\nSee {i}Kiss of Night&#146;s Guardian{/i} for information about spells relating to other guardian groves." compset="Spell">
+    <fieldval field="sDuration" value="Special; see text"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSchool" tag="Abjur"/>
+    </thing>
+  <thing id="sWizStGuar" name="Stone Guardian" description="When you cast this spell, you create a stone warrior that fights as you direct it. This stone guardian resembles a humanoid warrior, and is typically of the same race as the spellcaster. It uses the statistics of a Medium earth elemental (MM 97).\n\nAt the end of the spell, the stone guardian crumbles into dirt and disappears.\n\n{i}Material Component{/i}: A small clay figurine." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Minute1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Creation"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorStGuar" name="Stone Guardian" description="When you cast this spell, you create a stone warrior that fights as you direct it. This stone guardian resembles a humanoid warrior, and is typically of the same race as the spellcaster. It uses the statistics of a Medium earth elemental (MM 97).\n\nAt the end of the spell, the stone guardian crumbles into dirt and disappears.\n\n{i}Material Component{/i}: A small clay figurine." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Minute1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Creation"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorSupMag" name="Suppress Magic" description="This spell temporarily suppresses magic found in magical items. All magic items in the area of effect {b}(a 10-foot radius spread){/b} are allowed a Will save in order to negate the effects of the spell, but otherwise magical items lose all magical abilities (including attack bonuses, damage bonuses, AC bonuses, and the like). Magic items with charges cannot be activated, but do not lose any charges.\n\n{i}Material Component{/i}: A terracotta statuette." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Will negates"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizSupMag" name="Suppress Magic" description="This spell temporarily suppresses magic found in magical items. All magic items in the area of effect {b}(a 10-foot radius spread){/b} are allowed a Will save in order to negate the effects of the spell, but otherwise magical items lose all magical abilities (including attack bonuses, damage bonuses, AC bonuses, and the like). Magic items with charges cannot be activated, but do not lose any charges.\n\n{i}Material Component{/i}: A terracotta statuette." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Will negates"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizTiHeal" name="Timeheal" description="When this spell is cast upon a willing target, you cause the individual&#146;s body to move backward in time to a period when he was in better health. Time is of the essence when the spell is cast because the greater amount of time that has passed, the more difficult the spell.\n\nYou can {i}timeheal{/i} the body in time 1 minute for every level of experience as an arcane spellcaster. Thus a 9th-level wizard can take the body of his target back in time by 9 minutes. For every minute the body reverses, the victim makes an involuntary Fortitude save with a cumulative &#150;1 penalty (thus reverting a body back 9 minutes requires the target to make the Fortitude saving throw with a &#150;9 penalty). If the saving throw is failed, the body fails to revert. If the target possesses Spell Resistance, the wizard must also overcome the target&#146;s SR in order for the spell to take effect. This cannot be suppressed by the target. You can determine how many minutes backward you want the spell to effect (a 9th-level wizard can revert a body up to 9 minutes, no more).\n\nIf a target has been affected by a {i}timeheal{/i} spell (whether successful or not), she cannot be affected by another {i}timeheal{/i} spells until at least 24 hours have passed. {i}Timeheal{/i} will not bring back a spirit from death, thus it is ineffective upon a character who has died (reached &#150;10 hit points or less), been affected by death magic, or similar instant death effects.\n\n{i}Material Component{/i}: A small hourglass filled with powdered black pearls (worth at least 500 stl).\n\n{i}XP Cost{/i}: 100 XP per minute of time reverted." compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Special; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Minute1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="Special"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorTiHeal" name="Timeheal" description="When this spell is cast upon a willing target, you cause the individual&#146;s body to move backward in time to a period when he was in better health. Time is of the essence when the spell is cast because the greater amount of time that has passed, the more difficult the spell.\n\nYou can {i}timeheal{/i} the body in time 1 minute for every level of experience as an arcane spellcaster. Thus a 9th-level wizard can take the body of his target back in time by 9 minutes. For every minute the body reverses, the victim makes an involuntary Fortitude save with a cumulative &#150;1 penalty (thus reverting a body back 9 minutes requires the target to make the Fortitude saving throw with a &#150;9 penalty). If the saving throw is failed, the body fails to revert. If the target possesses Spell Resistance, the wizard must also overcome the target&#146;s SR in order for the spell to take effect. This cannot be suppressed by the target. You can determine how many minutes backward you want the spell to effect (a 9th-level wizard can revert a body up to 9 minutes, no more).\n\nIf a target has been affected by a {i}timeheal{/i} spell (whether successful or not), she cannot be affected by another {i}timeheal{/i} spells until at least 24 hours have passed. {i}Timeheal{/i} will not bring back a spirit from death, thus it is ineffective upon a character who has died (reached &#150;10 hit points or less), been affected by death magic, or similar instant death effects.\n\n{i}Material Component{/i}: A small hourglass filled with powdered black pearls (worth at least 500 stl).\n\n{i}XP Cost{/i}: 100 XP per minute of time reverted." compset="Spell">
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Special; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Minute1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="Special"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizTReave" name="Timereaver" description="Another spell known only to the Masters of the respective Towers of High Sorcery, {i}timereaver{/i} is one of the most potentially powerful and dangerous spells known on Ansalon. This spell creates a portal through time and space and allows up to 1 individual per 4 levels of the spellcaster to travel through the portal to another period of time.\n\nOriginally intended to allow wizards to research the past or the future, the spell allows individuals to travel backward or forward along the River of Time. The travelers can travel up to 20 years per level of the spellcaster backward in time, or 1 year per level of the spellcaster forward in time (as the future is much more difficult to navigate). The spell pierces the barriers between both time and space. It requires incredible concentration from the spellcaster in order to ensure that travelers end up at both the right time and in the right place (requiring a Spellcraft check at DC 10 + 1 for every decade traveled backward and a Spellcraft check at DC 15 + 1 for every year traveled forward). If the Spellcraft check is failed: 1) the travelers end up either in the right time but the wrong place &#151; 25 miles away per point the Spellcraft check is failed, in a random direction (50% chance), 2) in the right place but the wrong time &#151; up to 5 years per point the Spellcraft check is failed either before or after the targeted time (50% chance). Either failure may place the travelers in a precarious situation, particularly as the spell is a one-way trip (unless the travelers are provided with a means of returning, such as through the {i}device of time journeying{/i} or another such rare, powerful artifact).\n\nAt the beginning of time, the High God dictated that alterations to the River of Time were forbidden, thus those using the {i}timereaver{/i} spell cannot affect either the past or the future, no matter how hard they try (as a pebble dropped into a river cannot alter the river&#146;s path). However, if one of the Chaos Races (any race altered by the effects of the Graystone, such as kender, gully dwarves, dwarves, minotaurs, or sea elves) travels through time, the touch of Chaos within them allows for the possibility of time alteration &#151; a potentially disastrous consequence. This spell was primarily used by the Masters of the Towers to send individuals through time to research aspects of the past or the future, secure in the knowledge the travelers could do little to affect the River of Time. Such expeditions were rarely undertaken, however, as artifacts like the {i}device of time journeying{/i} (which originally allowed only a single individual to return through time) are exceedingly rare and difficult to produce.\n\n{i}Material Component{/i}: A magical circle, created by a mixture of rare ingredients worth at least 10,000 stl + 1000 stl per decade traveled backward in time or per year traveled forward in time.\n\n{i}Arcane Focus{/i}: A major artifact, which is temporarily inert for 1 hour per decade of time traversed backwards or 1 year of time traveled forward.\n\n{i}XP Cost{/i}: 1,000 XP + 500 XP/decade traveled backward in time or year traveled forward in time.\n\nNote: Prior to the Chaos War, traveling forward in the future reveals a world the gods never left, for Takhisis had not stolen the world. Following the Chaos War, traveling backward in time is impossible past the beginning of the Fifth Age (the moment Chaos was defeated and Takhisis stole the world) up until the gods return after the War of Souls, at which point movement forward and backward in time is unhindered." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Hour1"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorTReave" name="Timereaver" description="Another spell known only to the Masters of the respective Towers of High Sorcery, {i}timereaver{/i} is one of the most potentially powerful and dangerous spells known on Ansalon. This spell creates a portal through time and space and allows up to 1 individual per 4 levels of the spellcaster to travel through the portal to another period of time.\n\nOriginally intended to allow wizards to research the past or the future, the spell allows individuals to travel backward or forward along the River of Time. The travelers can travel up to 20 years per level of the spellcaster backward in time, or 1 year per level of the spellcaster forward in time (as the future is much more difficult to navigate). The spell pierces the barriers between both time and space. It requires incredible concentration from the spellcaster in order to ensure that travelers end up at both the right time and in the right place (requiring a Spellcraft check at DC 10 + 1 for every decade traveled backward and a Spellcraft check at DC 15 + 1 for every year traveled forward). If the Spellcraft check is failed: 1) the travelers end up either in the right time but the wrong place &#151; 25 miles away per point the Spellcraft check is failed, in a random direction (50% chance), 2) in the right place but the wrong time &#151; up to 5 years per point the Spellcraft check is failed either before or after the targeted time (50% chance). Either failure may place the travelers in a precarious situation, particularly as the spell is a one-way trip (unless the travelers are provided with a means of returning, such as through the {i}device of time journeying{/i} or another such rare, powerful artifact).\n\nAt the beginning of time, the High God dictated that alterations to the River of Time were forbidden, thus those using the {i}timereaver{/i} spell cannot affect either the past or the future, no matter how hard they try (as a pebble dropped into a river cannot alter the river&#146;s path). However, if one of the Chaos Races (any race altered by the effects of the Graystone, such as kender, gully dwarves, dwarves, minotaurs, or sea elves) travels through time, the touch of Chaos within them allows for the possibility of time alteration &#151; a potentially disastrous consequence. This spell was primarily used by the Masters of the Towers to send individuals through time to research aspects of the past or the future, secure in the knowledge the travelers could do little to affect the River of Time. Such expeditions were rarely undertaken, however, as artifacts like the {i}device of time journeying{/i} (which originally allowed only a single individual to return through time) are exceedingly rare and difficult to produce.\n\n{i}Material Component{/i}: A magical circle, created by a mixture of rare ingredients worth at least 10,000 stl + 1000 stl per decade traveled backward in time or per year traveled forward in time.\n\n{i}Arcane Focus{/i}: A major artifact, which is temporarily inert for 1 hour per decade of time traversed backwards or 1 year of time traveled forward.\n\n{i}XP Cost{/i}: 1,000 XP + 500 XP/decade traveled backward in time or year traveled forward in time.\n\nNote: Prior to the Chaos War, traveling forward in the future reveals a world the gods never left, for Takhisis had not stolen the world. Following the Chaos War, traveling backward in time is impossible past the beginning of the Fifth Age (the moment Chaos was defeated and Takhisis stole the world) up until the gods return after the War of Souls, at which point movement forward and backward in time is unhindered." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Hour1"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizToGuLi" name="Touch of Guiding Light" description="Similar to {i}kiss of night&#146;s guardian{/i}, this spell is known only by the Master of the Tower of Wayreth.\n\nWhen this spell is cast, you allow the target to find her way through the magical forest surrounding the Tower of Wayreth. This spell gives the target an instinctive sense of where the Tower is located, enabling her to find the Tower&#146;s location. This spell works despite the Tower&#146;s and the grove&#146;s natural defenses, although it does not grant the target any special ability to travel across the distance if the Tower moves. Once the target has traversed the Grove, whether entering or leaving, the spell expires and the target is subject to the normal effects of the Grove.\n\nSee {i}Kiss of Night&#146;s Guardian{/i} for information about spells relating to other guardian groves." compset="Spell">
+    <fieldval field="sDuration" value="Special; see text"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    </thing>
+  <thing id="sWizTrEsse" name="Transfer Essence" description="You are able to temporarily transfer the arcane energies of one wizard into another wizard, using them to strengthen the target wizard&#146;s arcane power. This spell is often used by groups of wizards working together to transfer their own power into a central wizard in order to bolster his strength. This spell can also be used against wizards by unscrupulous wizards who seek to increase their own strength, even temporarily.\n\nWhen this spell is cast, the target being drained of his essence is allowed a Will save to resist, otherwise he suffers a temporary level drain equal to 1 level for every 2 levels of the spellcaster (suffering all normal effects of such drain). This energy is then immediately transferred into another wizard, who gains a temporary level increase to his spellcasting levels when determining a spell&#146;s effects based on range, target(s), area, effect, duration, overcoming SR, calculating damage, and other similar variables. These temporary levels do not increase the wizard&#146;s saving throws, hit points/HD, or allow the wizard to cast spells normally beyond his capabilities.\n\nWhen the spell&#146;s duration expires, the levels are instantly returned to the original spellcasters.\n\n{i}Material Component{/i}: A translucent quartz prism on a silver chain." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Minute1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sSorTrEsse" name="Transfer Essence" description="You are able to temporarily transfer the arcane energies of one wizard into another wizard, using them to strengthen the target wizard&#146;s arcane power. This spell is often used by groups of wizards working together to transfer their own power into a central wizard in order to bolster his strength. This spell can also be used against wizards by unscrupulous wizards who seek to increase their own strength, even temporarily.\n\nWhen this spell is cast, the target being drained of his essence is allowed a Will save to resist, otherwise he suffers a temporary level drain equal to 1 level for every 2 levels of the spellcaster (suffering all normal effects of such drain). This energy is then immediately transferred into another wizard, who gains a temporary level increase to his spellcasting levels when determining a spell&#146;s effects based on range, target(s), area, effect, duration, overcoming SR, calculating damage, and other similar variables. These temporary levels do not increase the wizard&#146;s saving throws, hit points/HD, or allow the wizard to cast spells normally beyond his capabilities.\n\nWhen the spell&#146;s duration expires, the levels are instantly returned to the original spellcasters.\n\n{i}Material Component{/i}: A translucent quartz prism on a silver chain." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Minute1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    </thing>
+  <thing id="sWizTrMind" name="Travel the Paths of the Mind" description="You cast this spell upon one living creature, enabling yourself or others {b}(up to 1 creature/level, all of which must be within 25 ft.){/b} to travel into the target&#146;s memories. You can travel &#151; or send other travelers&#151; back into an individual&#146;s memories up to 5 years per level. If the target is unwilling, he is allowed a Will saving throw to resist the spell.\n\nTraveling into an individual&#146;s memories can be a dangerous thing. The travelers bear witness to the events as they occurred, based on the target&#146;s memory of how they occurred (which may be different from the actual events). To the travelers, events happen as if they were really there. The travelers can re-experience up to 1 hour per caster level worth of memories of the target creature. To the travelers, time progresses as normal, but to the target, only 1 minute passes per hour of the travelers experience.\n\nThe threat to the travelers can be very real. Any dangers they encounter can harm them. Spells cast, items used, and actions performed seem real to the travelers, although such actions have no effect on the actual event, outside of altering the target&#146;s memories of what happened.\n\nIf a traveler dies in the memories, she must make an immediate Fortitude saving throw. If she fails the saving throw, she dies and remains forever trapped within the target&#146;s mind, unable to return without the proper usage of a {i}miracle{/i} or {i}wish{/i}. The target will gradually forget the deceased individual ever existed. If the traveler succeeds on the saving throw, she emerges from the target&#146;s mind with 0 hit points, in critical but stable condition.\n\nThe travelers can emerge from the target&#146;s memories only when the spell expires or the spellcaster releases them from the memory (dispelling the spell). When the travelers return from the memory, they retain any wounds they may have suffered and have lost anything they may have lost (including spells cast or items used), just as if they had truly experienced the events.\n\nIf the target dies while the travelers are still within his memories, all travelers must immediately make a Fortitude saving throw (DC 15 + 1 per hour they have been within the dream). If they fail the saving throw, they die with the target. If they succeed, they emerge from the memories as normal.\n\nIt is theoretically possible for the travelers to draw a person or item out from the target&#146;s memories, although this is extremely difficult and dangerous. Anyone attempting to draw an item or person from the target&#146;s mind must make a Will save (DC 20 + 1 per hour within the memories). The target must also make the same Will saving throw (involuntary; this save cannot be suppressed by the desires of the target). If the traveler succeeds but the target fails the saving throw, the item or person emerges from the memories. If the traveler fails but the target succeeds, the item or person remains within the target&#146;s memories. If both fail, the traveler is immediately ejected from the memories without the item or person she was attempting to draw out. If both succeed on the saving throw, the traveler emerges from the memories without the item or person she was attempting to draw out. (It is very difficult to draw anything out of someone&#146;s memories into reality.)\n\nThe effect of removing something from a target&#146;s memories is long-lasting. The target has no memories of the person or item after it was removed from his memory. The nature of the item or person is also completely based upon how the target remembers them, which may be very different from the reality. A person drawn out is effectively a simulacrum (see {i}simulacrum{/i} in the Player&#146;s Handbook), based upon the target&#146;s memories. An item drawn out is only half as powerful as the original, if it was magical. [The exact nature of the item or person is determined by the Dungeon Master.]\n\n{i}Material Component{/i}: A silver mirror engraved with runes and inlaid with diamond dust.\n\n{i}XP Cost{/i}: 2,000 XP + 1,000 XP per traveler." compset="Spell">
+    <fieldval field="sDuration" value="Special (D); see text"/>
+    <fieldval field="sSave" value="Will negates"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorTrMind" name="Travel the Paths of the Mind" description="You cast this spell upon one living creature, enabling yourself or others {b}(up to 1 creature/level, all of which must be within 25 ft.){/b} to travel into the target&#146;s memories. You can travel &#151; or send other travelers&#151; back into an individual&#146;s memories up to 5 years per level. If the target is unwilling, he is allowed a Will saving throw to resist the spell.\n\nTraveling into an individual&#146;s memories can be a dangerous thing. The travelers bear witness to the events as they occurred, based on the target&#146;s memory of how they occurred (which may be different from the actual events). To the travelers, events happen as if they were really there. The travelers can re-experience up to 1 hour per caster level worth of memories of the target creature. To the travelers, time progresses as normal, but to the target, only 1 minute passes per hour of the travelers experience.\n\nThe threat to the travelers can be very real. Any dangers they encounter can harm them. Spells cast, items used, and actions performed seem real to the travelers, although such actions have no effect on the actual event, outside of altering the target&#146;s memories of what happened.\n\nIf a traveler dies in the memories, she must make an immediate Fortitude saving throw. If she fails the saving throw, she dies and remains forever trapped within the target&#146;s mind, unable to return without the proper usage of a {i}miracle{/i} or {i}wish{/i}. The target will gradually forget the deceased individual ever existed. If the traveler succeeds on the saving throw, she emerges from the target&#146;s mind with 0 hit points, in critical but stable condition.\n\nThe travelers can emerge from the target&#146;s memories only when the spell expires or the spellcaster releases them from the memory (dispelling the spell). When the travelers return from the memory, they retain any wounds they may have suffered and have lost anything they may have lost (including spells cast or items used), just as if they had truly experienced the events.\n\nIf the target dies while the travelers are still within his memories, all travelers must immediately make a Fortitude saving throw (DC 15 + 1 per hour they have been within the dream). If they fail the saving throw, they die with the target. If they succeed, they emerge from the memories as normal.\n\nIt is theoretically possible for the travelers to draw a person or item out from the target&#146;s memories, although this is extremely difficult and dangerous. Anyone attempting to draw an item or person from the target&#146;s mind must make a Will save (DC 20 + 1 per hour within the memories). The target must also make the same Will saving throw (involuntary; this save cannot be suppressed by the desires of the target). If the traveler succeeds but the target fails the saving throw, the item or person emerges from the memories. If the traveler fails but the target succeeds, the item or person remains within the target&#146;s memories. If both fail, the traveler is immediately ejected from the memories without the item or person she was attempting to draw out. If both succeed on the saving throw, the traveler emerges from the memories without the item or person she was attempting to draw out. (It is very difficult to draw anything out of someone&#146;s memories into reality.)\n\nThe effect of removing something from a target&#146;s memories is long-lasting. The target has no memories of the person or item after it was removed from his memory. The nature of the item or person is also completely based upon how the target remembers them, which may be very different from the reality. A person drawn out is effectively a simulacrum (see {i}simulacrum{/i} in the Player&#146;s Handbook), based upon the target&#146;s memories. An item drawn out is only half as powerful as the original, if it was magical. [The exact nature of the item or person is determined by the Dungeon Master.]\n\n{i}Material Component{/i}: A silver mirror engraved with runes and inlaid with diamond dust.\n\n{i}XP Cost{/i}: 2,000 XP + 1,000 XP per traveler." compset="Spell">
+    <fieldval field="sDuration" value="Special (D); see text"/>
+    <fieldval field="sSave" value="Will negates"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Minute10"/>
+    <tag group="sLevel" tag="9"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizTrTest" name="Truth Testing" description="You can concentrate upon one subject within range, enabling you to tell if the subject is deliberately and knowingly speaking a lie by discerning disturbances in its aura caused by lying. This spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions. You must maintain concentration upon the subject to continue discerning its aura.\n\n{i}Arcane Focus{/i}: A small mirror." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 round/level"/>
+    <fieldval field="sSave" value="Will negates"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sSorTrTest" name="Truth Testing" description="You can concentrate upon one subject within range, enabling you to tell if the subject is deliberately and knowingly speaking a lie by discerning disturbances in its aura caused by lying. This spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions. You must maintain concentration upon the subject to continue discerning its aura.\n\n{i}Arcane Focus{/i}: A small mirror." compset="Spell">
+    <fieldval field="sRange" value="Close (25 ft. + 5 ft./2 levels)"/>
+    <fieldval field="sDuration" value="Concentration, up to 1 round/level"/>
+    <fieldval field="sSave" value="Will negates"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="F"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Round"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWizViDuEy" name="Vision of Dusk&apos;s Eye" description="Similar to the spell {i}kiss of night&#146;s guardian{/i}, this spell is known only by the Master of the Tower of Istar.\n\nWhen this spell is cast, you allow the target to find her way through the magical grove surrounding the Tower of Istar. This spell grants a +10 circumstance bonus against the powerful suggestion of forgetfulness imbuing the magical grove surrounding the Tower. Once the target has traversed the grove, whether entering or leaving, the spell expires and the target is subject to the normal effects of the grove.\n\nSee {i}Kiss of Night&#146;s Guardian{/i} for information about spells relating to other guardian groves." compset="Spell">
+    <fieldval field="sDuration" value="Special; see text"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSchool" tag="Abjur"/>
+    </thing>
+  <thing id="sWizWhDaSo" name="Whisper of Dawn&apos;s Song" description="Similar to {i}kiss of night&#146;s guardian{/i}, this spell is known only by the Master of the Tower of Daltigoth.\n\nWhen this spell is cast, you allow the target to find her way through the magical grove surrounding the Tower of Daltigoth. This spell grants the target a +10 circumstance bonus to resist the powerful suggestion of sleep imbuing the magical grove of Daltigoth. This spell only protects the recipient for a one-way journey through the grove. Once the target has traversed the grove, whether entering or leaving, the spell expires and the target is subject to the normal effects of the grove.\n\nSee {i}Kiss of Night&#146;s Guardian{/i} for information about spells relating to other guardian groves." compset="Spell">
+    <fieldval field="sDuration" value="Special; see text"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Touch"/>
+    <usesource source="ToHS"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSubschool" tag="None"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sDuration" tag="Special"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSchool" tag="Abjur"/>
+    </thing>
+  <thing id="cHelpWiN" name="Winternorn" compset="ClassHelp" uniqueness="unique">
+    <comment>DONE!!!</comment>
+    <fieldval field="cAbbr" value="WiN"/>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="cHDSides" value="4"/>
+    <arrayval field="cSpecial" index="1" value="Wyrd 1/day"/>
+    <arrayval field="cSpecial" index="2" value="Cold summoning"/>
+    <arrayval field="cSpecial" index="3" value="Cold resistance 10"/>
+    <arrayval field="cSpecial" index="4" value="Wyrd 2/day"/>
+    <arrayval field="cSpecial" index="5" value="&#151;"/>
+    <arrayval field="cSpecial" index="6" value="Cold resistance 15"/>
+    <arrayval field="cSpecial" index="7" value="Wyrd 3/day"/>
+    <arrayval field="cSpecial" index="8" value="&#151;"/>
+    <arrayval field="cSpecial" index="9" value="Cold apotheosis, wyrd 4/day"/>
+    <arrayval field="cSpell" index="0" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="1" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="2" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="3" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="4" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="5" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="6" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="7" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="8" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="9" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="3"/>
+    <arrayval field="cMagLevTot" index="3" value="4"/>
+    <arrayval field="cMagLevTot" index="4" value="5"/>
+    <arrayval field="cMagLevTot" index="5" value="6"/>
+    <arrayval field="cMagLevTot" index="6" value="7"/>
+    <arrayval field="cMagLevTot" index="7" value="8"/>
+    <arrayval field="cMagLevTot" index="8" value="9"/>
+    <arrayval field="cMagLevTot" index="9" value="10"/>
+    <arrayval field="cSpecial" index="0" value="Cold resistance 5, ice magic"/>
+    <usesource source="ToHS"/>
+    <tag group="Classes" tag="Winternor" name="Winternorn"/>
+    <tag group="cAttack" tag="Poor"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <bootstrap thing="cWiNColRe2"></bootstrap>
+    <bootstrap thing="cWiNColRe3"></bootstrap>
+    <bootstrap thing="cWiNColSum"></bootstrap>
+    <bootstrap thing="cWiNIceMag"></bootstrap>
+    <bootstrap thing="cWiNWyrd1"></bootstrap>
+    <bootstrap thing="cWiNWyrd2"></bootstrap>
+    <bootstrap thing="cWiNWyrd3"></bootstrap>
+    <bootstrap thing="cWiNWyrd4"></bootstrap>
+    <bootstrap thing="cWiNColApo"></bootstrap>
+    <bootstrap thing="cWiNColRe1"></bootstrap>
+    </thing>
+  <thing id="cWinternor" name="Winternorn" description="{b}Special{/b}: Must have been taught the traditions and rituals of the winternorns by one who already knows them.\n\nAmong the Ice Folk of the southern reaches of Ansalon, the art of arcane magic is practiced by a small number of ice wizards known as winternorns. The harsh environment breeds mages who are not only attuned to the icy climate, but who are permitted to see into the fog-shrouded distance of the River of Time, catching brief glimpses of every man&#146;s fate.\n\nMost NPC winternorns are neutrally aligned, as they dispassionately follow the dictates of fate and understand the fickle natural whims of the frozen wastelands of the south. Good winternorns act as protectors and wardens. Evil winternorns are cold hearted and bitter individuals, who act only in the pursuit of darkness. Winternorns are not exclusively found among the Ice Folk. From time to time, mages from other regions have journeyed south to gain the knowledge and lore of the ice wizards.\n\nSo long as the three moons shine above Krynn, winternorns will be almost entirely drawn from the ranks of the wizard class. During the early Age of Mortals, sorcerers with an affinity for cryomancy and divination will often bear the mantle of the winternorn. Their numbers will be fewer following the return of the gods. A party of adventurers traveling in Icereach may seek a winternorn&#146;s help against the White Dragon sisters, while heroes in Southern Ergoth may stumble upon an evil winternorn&#146;s plan to ally with Gellidus and spread her icy realm even further.\n\nThe dark elf renegade Feal-Thas is an example of a former Black Robe wizard who practiced the traditions of the winternorns." compset="ClassLevel" maxlimit="10">
+    <usesource source="ToHS"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpWiN"></bootstrap>
+    <link linkage="helper" thing="cHelpWiN"/>
+    <exprreq message="Sense Motive 4 ranks required."><![CDATA[#skillranks[kSenseMot] >= 4]]></exprreq>
+    <exprreq message="Spell Focus (divination) required."><![CDATA[child[ssDivin].tagis[Broadcast.SpellFocus] <> 0]]></exprreq>
+    <exprreq message="Ability to cast 3rd-level Arcane spells required."><![CDATA[tagcount[Hero.Arcane] >= 3 + 1]]></exprreq>
+    <exprreq message="Knowledge (arcana) 6 ranks required."><![CDATA[#skillranks[kKnowArcan] >= 6]]></exprreq>
+    </thing>
+  <thing id="cWiNColRe1" name="Cold Resistance 5" description="At 1st level, a winternorn gains cold resistance 5. This increases to cold resistance 10 at 4th level, and cold resistance 15 at 7th level." compset="ClSpecial">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="xDamRsCold"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[   if (field[xTotalLev].value >= 7) then
+        #applyresist[xDamRsCold, 15]
+   elseif (field[xTotalLev].value >= 4) then
+        #applyresist[xDamRsCold, 10]
+   elseif (field[xTotalLev].value >= 1) then
+        #applyresist[xDamRsCold, 5]
+   endif]]></eval>
+    </thing>
+  <thing id="cWiNColRe2" name="Cold Resistance 10" description="Your cold resistance increases." compset="ClSpecial">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWiNColRe3" name="Cold Resistance 15" description="Your cold resistance increases." compset="ClSpecial">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWiNIceMag" name="Ice Magic" description="A winternorn may change the energy designator of any spell she casts to cold, so that spells that normally deal damage of another energy type (such as fire or electricity) deal cold damage instead. The spell&#146;s descriptor changes to the new energy type. For example, a lightning bolt composed of cold energy is an evocation [cold] spell." compset="ClSpecial" summary="May change damaging spells element to cold, also changing descriptor.">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cWiNWyrd1" name="Wyrd" description="A winternorn becomes aware of eddies and currents in the River of Time created by the lives of mortals. This grants her brief and intense moments of insight. Once per day, starting at 2nd level, the winternorn gains a +10 insight bonus on any Initiative, Knowledge, or Sense Motive check. Her use of the ability increases to twice per day at 5th level, three times per day at 8th level, and four times per day at 10th level." compset="ClSpecial" summary="X/day, +10 insight bonus to any Initiative, Knowledge, or Sense Motive check.">
+    <comment>xSumm and Charge (Done)
+
+Test? (Done)</comment>
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[
+      ~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+
+      var total as number
+      if (level >= 10) then
+        total = 4
+      elseif (level >= 8) then
+        total = 3
+      elseif (level >= 5) then
+        total = 2
+      else
+        total = 1
+      endif
+
+      field[hTotal].value += total
+      field[xSumm].text = "" & total & "/day, +10 insight bonus to any Initiative, Knowledge, or Sense Motive check."]]></eval>
+    </thing>
+  <thing id="cWiNWyrd2" name="Wyrd 2/day" description="You gain another daily use of Wyrd." compset="ClSpecial">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWiNWyrd3" name="Wyrd 3/day" description="You gain another daily use of Wyrd." compset="ClSpecial">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWiNWyrd4" name="Wyrd 4/day" description="You gain another daily use of Wyrd." compset="ClSpecial">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWiNColSum" name="Cold Summoning" description="A winternorn is capable of calling forth creatures of ice and frost to do her bidding. Beginning at 3rd level, a winternorn who casts any summon monster spell may summon a cold element creature rather than a celestial or fiendish creature (see sidebar)." compset="ClSpecial" summary="Summon spells may bring a cold creature instead of celestial/fiendish.">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cWiNColApo" name="Cold Apotheosis" description="At 10th level, the winternorn&#146;s affinity with cold is complete, and she gains the cold subtype (providing immunity to cold and vulnerability to fire)." compset="ClSpecial" summary="Winternorn gains the cold subtype (immune to cold &amp; vulnerable to fire).">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpWiN"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cHelpWHS" name="Wizard of High Sorcery" description="Wizards of High Sorcery draw their strength from the three Gods of Magic, Solinari, Luintari, and Nuitari." compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cAbbr" value="WHS"/>
+    <fieldval field="cSkills" value="2"/>
+    <fieldval field="cSpecName" value="Order Secrets"/>
+    <fieldval field="cSpec2ndNm" value="Arcane Focus"/>
+    <fieldval field="cHDSides" value="4"/>
+    <fieldval field="shortname" value="WHS"/>
+    <arrayval field="cSpecial" index="2" value="1st Order Secret"/>
+    <arrayval field="cSpecial" index="3" value="Arcane research +2"/>
+    <arrayval field="cSpecial" index="4" value="2nd Order Secret"/>
+    <arrayval field="cSpecial" index="5" value="Arcane research +3"/>
+    <arrayval field="cSpecial" index="6" value="3rd Order Secret"/>
+    <arrayval field="cSpecial" index="7" value="Arcane research +4"/>
+    <arrayval field="cSpecial" index="8" value="4th Order Secret"/>
+    <arrayval field="cSpecial" index="9" value="5th Order Secret, Arcane research +5"/>
+    <arrayval field="cSpecial" index="0" value="Arcane Focus, item of power, moon magic, tower resources"/>
+    <arrayval field="cSpell" index="0" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="1" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="2" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="3" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="4" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="5" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="6" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="7" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="8" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cSpell" index="9" value="+1 level of arcane spellcasting class"/>
+    <arrayval field="cCustTot" index="2" value="1"/>
+    <arrayval field="cCustTot" index="4" value="2"/>
+    <arrayval field="cCustTot" index="6" value="3"/>
+    <arrayval field="cCustTot" index="8" value="4"/>
+    <arrayval field="cCustTot" index="9" value="5"/>
+    <arrayval field="cCustScTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="3"/>
+    <arrayval field="cMagLevTot" index="3" value="4"/>
+    <arrayval field="cMagLevTot" index="4" value="5"/>
+    <arrayval field="cMagLevTot" index="5" value="6"/>
+    <arrayval field="cMagLevTot" index="6" value="7"/>
+    <arrayval field="cMagLevTot" index="7" value="8"/>
+    <arrayval field="cMagLevTot" index="8" value="9"/>
+    <arrayval field="cMagLevTot" index="9" value="10"/>
+    <arrayval field="cSpecial" index="1" value="Arcane research +1"/>
+<usesource source="ToHS"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="WizHigh" name="Wizard of High Sorcery"/>
+    <tag group="cAttack" tag="Poor"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDecScript"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kSpeakLang"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="Helper" tag="OptCustSec"/>
+    <tag group="ClassPanel" tag="ExNeeded"/>
+    <tag group="cRef" tag="Poor"/>
+    <bootstrap thing="cWHSSecre4"></bootstrap>
+    <bootstrap thing="cWHSSecre5"></bootstrap>
+    <bootstrap thing="cWHSArcRe3"></bootstrap>
+    <bootstrap thing="cWHSArcRe4"></bootstrap>
+    <bootstrap thing="cWHSArcRe5"></bootstrap>
+    <bootstrap thing="cWHSMoonM"></bootstrap>
+    <bootstrap thing="cWHSTowerR"></bootstrap>
+    <bootstrap thing="cWHSPwrI"></bootstrap>
+    <bootstrap thing="cWHSArcRe1"></bootstrap>
+    <bootstrap thing="cWHSArcRe2"></bootstrap>
+    <bootstrap thing="cWHSSecre1"></bootstrap>
+    <bootstrap thing="cWHSArcFoc"></bootstrap>
+    <bootstrap thing="cWHSSecre3"></bootstrap>
+    <bootstrap thing="cWHSSecre2"></bootstrap>
+    </thing>
+  <thing id="cWizHigh" name="Wizard of High Sorcery" description="{b}Special{/b}: Must have taken and passed the Test of High Sorcery.\n\nWizards draw their strength from the Gods of Magic &#151; Solinari, Lunitari, and Nuitari &#151; who trained the first Wizards of High Sorcery in their arcane laws. This First Conclave trained other spellcasters, starting a process of seeking out worthy students and handing down the principles and codes that would eventually bring order to the arcane energies that threatened constantly to disrupt the world. Since that time, the laws of magic have been upheld by all three orders of the Wizards of High Sorcery.\n\nWhen a wizard successfully completes the Test of High Sorcery, those conducting the Test determine which color robes he will wear and which god of magic focuses his power. After the Test, the character is no longer simply a wizard and, so long as the other requirements are met, may begin taking levels in the Wizard of High Sorcery prestige class.\n\n{b}Wizards of the Black Robes{/b}: Though Black Robe wizards embrace the cause of evil, they don&#146;t seek to advance that cause by randomly hurling fireballs at the peasantry (at least not frequently), for such activities would abuse and jeopardize their primary loyalty to magic itself. Black Robe wizards may be cruel, but they are also selfish and cunning, and tend to avoid open acts of violence if more subtle ways can be found.\n\n{b}Wizards of the Red Robes{/b}: Red Robe wizards tread the path of neutrality, working to balance good and evil in addition to their ultimate loyalty to magic. While forces of good and evil may battle for control of Krynn, the forces of neutrality understand that it is the balanced dynamic of that battle that truly defines the world.\n\n{b}Wizards of the White Robes{/b}: Aside from their vow to uphold the primacy of magic, the cause of good is the White Robe wizards&#146; central concern. Acts that violate the precepts of good can lead to a wizard&#146;s ruin, and White Robes who stray from the path soon fi nd themselves cut off from Solinari&#146;s blessing. Though sometimes finding themselves allied with clerics of the pantheon of good or the Knights of Solamnia, the ever-present fear of persecution by a suspicious populace means that even White Robes must often operate alone." compset="ClassLevel" maxlimit="10">
+    <fieldval field="cHitDice" value="4"/>
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="Prestige"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpWHS"></bootstrap>
+    <link linkage="helper" thing="cHelpWHS"/>
+    <exprreq message="Base Will save +4 required."><![CDATA[child[vWill].field[vBase].value >= 4]]></exprreq>
+    <exprreq message="Ability to cast 3rd-level Arcane spells required."><![CDATA[tagcount[Hero.Arcane] >= 2 + 1]]></exprreq>
+    <exprreq message="Spellcraft 7 ranks required."><![CDATA[childfound[kSpellcr].field[kUserRanks].value >= 7]]></exprreq>
+    <exprreq message="Scribe Scroll required."><![CDATA[#hasfeat[fScribeS] <> 0]]></exprreq>
+    <exprreq message="One other Metamagic or Item Creation feat required."><![CDATA[tagcount[fCategory.Metamagic] + tagcount[fCategory.ItemCreate] >= 2]]></exprreq>
+    <prereq message="Spell Focus (any) required." onlyonce="yes">
+      <validate><![CDATA[
+        foreach pick in hero from SplSchool
+          if (eachpick.tagis[Broadcast.SpellFocus] <> 0) then
+            @valid = 1
+            done
+            endif
+          nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cWHSMagDef" name="Magic of Defense" description="Once per day for every two class levels attained, a wizard who knows this secret may Empower or Extend any Abjuration spell she casts. The spell functions as though she had applied the appropriate metamagic feat, but does not use a higher-level spell slot." compset="CustomSpec" summary="Empower/Extend Abjuration spell for free." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Defense (" & field[hTotal].value & "/day)"]]></eval>
+    <exprreq message="Must be White Robe."><![CDATA[hero.tagis[Alignment.Good] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagRad" name="Magic of Radiance" description="Once per day for every two class levels attained, a White Robe wizard who knows this secret can imbue any spell that deals hit point damage with radiant energy. Half of the damage dealt by such a spell comes from this radiant energy, and is therefore not subject to being reduced by {i}protection from energy{/i} or similar magic. The remainder of the damage dealt is as normal for the spell. Against undead, a spell modified in this way deals half again as much damage as normal (double the radiant energy damage). As a side effect, radiant spells give off as much illumination as a {i}light{/i} spell of equivalent caster level, and this light lingers in the area for one round after the end of the spell&#146;s duration (or one round for an instantaneous spell)." compset="CustomSpec" summary="Half dam dealt by spell is positive energy, Undead take +50% dam." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Radiance (" & field[hTotal].value & "/day)"]]></eval>
+    <exprreq message="Must be White Robe."><![CDATA[hero.tagis[Alignment.Good] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagRes" name="Magic of Resistance" description="This secret allows a White Robe wizard to more easily counter or dispel the magic cast by others. The wizard gains the benefit of the Improved Counterspell feat (if she does not already possess it) and gains a competence bonus on dispel checks equal to +1 per two class levels." compset="CustomSpec" summary="Gain +X comp bon to counterspell checks." uniqueness="unique">
+    <comment>xSumm (Done)</comment>
+<usesource source="ToHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <bootstrap thing="fImpCount"></bootstrap>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[xSumm].text = "Gain +" & charges & " comp bon to counterspell checks."]]></eval>
+    <exprreq message="Must be White Robe."><![CDATA[hero.tagis[Alignment.Good] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagSus" name="Magic of Sustenance" description="This secret allows a White Robe wizard to cast spells even under difficult circumstances. The wizard gains a competence bonus equal to +1 per two class levels on all Concentration checks made to cast or direct spells (but does not gain a Concentration check bonus while casting defensively)." compset="CustomSpec" summary="+X comp bon on Concentration chk to cast/direct spells (not defensively)." uniqueness="unique">
+    <comment>xSumm (done)</comment>
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[xSumm].text = "+" & charges & " comp bon on Concentration chk to cast/direct spells (not defensively)."]]></eval>
+    <exprreq message="Must be White Robe."><![CDATA[hero.tagis[Alignment.Good] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagTru" name="Magic of Truth" description="Once per day for every two class levels attained, a wizard who knows this secret may Enlarge or Extend any Divination spell she casts. The spell functions as though she had applied the appropriate metamagic feat, but does not use a higher-level spell slot." compset="CustomSpec" summary="Enlarge/Extend Divination spell for free." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Truth (" & field[hTotal].value & "/day)"]]></eval>
+    <exprreq message="Must be White Robe."><![CDATA[hero.tagis[Alignment.Good] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagCha" name="Magic of Change" description="Once per day for every two class levels attained, a wizard who knows this secret may Enlarge or Extend any transmutation spell he casts. The spell functions as though he had applied the appropriate metamagic feat, but does not use a higher-level spell slot." compset="CustomSpec" summary="Enlarge/Extend Transmutation spell for free." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Change (" & field[hTotal].value & "/day)"]]></eval>
+    <exprreq message="Must be Red Robe."><![CDATA[hero.tagis[Alignment.NeutralGE] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagDec" name="Magic of Deception" description="Once per day for every two class levels attained, a wizard who knows this secret may Enlarge or Extend any illusion spell he casts. The spell functions as though he had applied the appropriate metamagic feat, but does not use a higher-level spell slot." compset="CustomSpec" summary="Enlarge/Extend Illusion spell for free." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Deception (" & field[hTotal].value & "/day)"]]></eval>
+    <exprreq message="Must be Red Robe."><![CDATA[hero.tagis[Alignment.NeutralGE] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMaPure" name="Magic of Purity" description="Once per day for every two class levels attained, a Red Robe wizard who knows this secret can imbue any spell that deals hit point damage with pure arcane energy. Half of the damage dealt by such a spell comes from this arcane energy, and is therefore not subject to being reduced by {i}protection from energy{/i} or similar magic. The remainder of the damage is dealt as normal for the spell." compset="CustomSpec" summary="Half dam dealt by spell is pure arcane energy." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Purity (" & field[hTotal].value & "/day)"]]></eval>
+    <exprreq message="Must be Red Robe."><![CDATA[hero.tagis[Alignment.NeutralGE] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagInd" name="Magic of Independance" description="A Red Robe wizard who knows this secret casts spells that are harder to dispel. When another spellcaster makes a dispel check against one of the wizard&#146;s spells (including using dispel magic to counterspell a spell the wizard is casting), the DC is 15 + the wizard&#146;s caster level." compset="CustomSpec" summary="Your spells are harder to dispel/counter (DC15 + CL)." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <exprreq message="Must be Red Robe."><![CDATA[hero.tagis[Alignment.NeutralGE] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagMys" name="Magic of Mystery" description="A Red Robe wizard who knows this secret casts spells that are harder to detect and identify. When another spellcaster attempts to use a divination spell (such as {i}detect magic{/i}), or a spell-like ability or magic item that might detect the magical aura of one of the wizard&#146;s spells, the other caster must make a level check (DC 11 + the wizard&#146;s caster level) to successfully detect the spell. Similarly, a spellcaster attempting to use a divination (such as {i}see invisibility{/i}) to reveal the effects of one of the wizard&#146;s spells must make a level check to reveal the spell&#146;s effects. Any given caster can check only once for each divination spell or effect used, no matter how many of the wizard&#146;s spell effects may be operating in an area.\n\nIn addition, when another spellcaster attempts to identify the spell a Red Robe wizard is casting (for instance, to counterspell it), the DC of the required Spellcraft check is increased by +1 for every 2 class levels the Red Robe wizard has attained." compset="CustomSpec" summary="Foe must make CL for Div to detect your spl, spellcraft DC+X to ID your spl." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[xSumm].text = "Foe must make CL for Div to detect your spl, spellcraft DC+" & charges & " to ID your spl."]]></eval>
+    <exprreq message="Must be Red Robe."><![CDATA[hero.tagis[Alignment.NeutralGE] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagBet" name="Magic of Betrayal" description="Once per day for every two class levels attained, a Black Robe wizard who knows this secret may Empower or Extend any necromancy spell she casts. The spell functions as though she had applied the appropriate metamagic feat, but does not use a higher level spell slot. When she does so, a backlash of negative energy deals 2d6 points of damage to a single living ally within 30 feet, chosen by the wizard (who may not choose an undead ally, who would benefit from the negative energy). The ally is allowed a Will save (DC 10 + one-half caster level + Intelligence modifier) for half damage." compset="CustomSpec" summary="Empower/Extend Necro spl for free &amp; 2d6 neg energy dam to ally in 30 ft." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Betrayal (" & field[hTotal].value & "/day)"]]></eval>
+    <exprreq message="Must be Black Robe."><![CDATA[hero.tagis[Alignment.Evil] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagDrk" name="Magic of Darkness" description="Once per day for every two class levels attained, a Black Robe wizard who knows this secret can imbue a damaging spell with negative energy. Half of the damage dealt by such a spell is negative energy damage, and is therefore not subject to being reduced by protection from energy or similar magic (although {i}death ward{/i} negates it). The remainder of the damage is dealt as normal for the spell. Undead are healed by negative energy, so damage dealt to undead creatures simply averages out to nothing for a spell modified in this way. (Assume that the healing takes place first, granting the undead creature temporary hit points above its maximum if necessary, with equivalent damage then dealt to leave the creature back where it started.)" compset="CustomSpec" summary="Half dam dealt by spell is negative energy, Undead take no damage." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Darkness (" & field[hTotal].value & "/day)"]]></eval>
+    <exprreq message="Must be Black Robe."><![CDATA[hero.tagis[Alignment.Evil] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMaPain" name="Magic of Pain" description="Once per day for every two class levels attained, the Black Robe wizard who knows this secret may cast any spell that deals hit point damage to inflict pain beyond the spell&#146;s normal effects. Any creature damaged by such a spell must make a successful Fortitude save (DC 10 + spell level + Constitution modifier) or suffer a &#150;2 penalty on attack rolls, skill checks, and ability checks for one round due to the lingering pain the spell inflicts. As a price for this wracking pain, the Black Robe herself takes 1d6 points of damage when the spell is cast." compset="CustomSpec" summary="Hurt foe has -2 to att/skill/ability chk (DC XX+spl lvl Fort neg), d6 dam to you." uniqueness="unique">
+    <comment>xSumm (Done)</comment>
+<usesource source="ToHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <eval phase="UserPostLv" priority="10000"><![CDATA[      ~ Calculate our bonus
+      var charges as number
+      charges = round(hero.child[cHelpWHS].field[cTotalLev].value/2, 0, -1)
+
+      field[hTotal].value += charges
+      field[livename].text = "Magic of Pain (" & field[hTotal].value & "/day)"]]></eval>
+    <eval phase="UserPostAt" priority="10000" index="2"><![CDATA[      var DC as number
+      DC = 10 + hero.child[aCON].field[aModBonus].value
+      field[xSumm].text = "Hurt foe has -2 to att/skill/ability chk (DC" & DC & "+spl lvl, Fort neg), d6 dam to you."]]></eval>
+    <exprreq message="Must be Black Robe."><![CDATA[hero.tagis[Alignment.Evil] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMaFear" name="Magic of Fear" description="A Black Robe wizard who knows this secret can make her spells more intimidating. As a full-round action, the wizard can cast any spell that deals damage and has a normal casting time of 1 standard action. Then, as a free action, she can immediately attempt to demoralize one opponent within 30 feet by making an Intimidate check against the opponent&#146;s modified character level (see the Intimidate skill, page 76 of the Player&#146;s Handbook). The wizard receives a circumstance bonus on the Intimidate check equal to the level of the spell she casts." compset="CustomSpec" summary="Full rd, cast damage spell, then free intimidate chk with +spl lvl circ bon." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <exprreq message="Must be Black Robe."><![CDATA[hero.tagis[Alignment.Evil] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSMagHun" name="Magic of Hunger" description="A Black Robe wizard who knows this secret may draw even further upon her own resources to increase the scope of her magic. Each day, she may prepare one extra spell of any level she can cast at the cost of 1 point of Constitution damage per spell level. This ability damage heals normally but cannot be magically restored." compset="CustomSpec" summary="Prepare 1 extra spell of any level, take Con dam equal to spl lvl." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <exprreq message="Must be Black Robe."><![CDATA[hero.tagis[Alignment.Evil] <> 0]]></exprreq>
+    </thing>
+  <thing id="cArcFocus1" name="Arcane Focus: First Specialization" description="Choose this option if the wizard is specializing for the first time, and then go to the wizard panel and choose a school appropriate to your order as your specialty.\n\nUpon passing the Test of High Sorcery, a wizard taking his first level of Wizard of High Sorcery has the option of narrowing his focus in accordance with the traditions of his order.\n\nIf he was not already a specialist he may now specialize in either Abjuration or Divination if donning the White Robes, Illusion or Transmutation if Red Robes, or Enchantment or Necromancy if Black Robes. From this point on they follow all the usual rules for specialized wizards and can no longer learn spells from his prohibited schools, but he retains knowledge of and can continue to use spells known prior (including the use of items activated by spell completion or spell trigger)." compset="CustomSpec" summary="Specialize after 1st level, keep previously known spells." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="Secondary"/>
+    <eval phase="UserPostLv" priority="10000">perform delete[Helper.ShowSpec]</eval>
+    </thing>
+  <thing id="cArcFocus2" name="Enhanced Specialization: Forbid Abjuration" description="Choose this option if the wizard wants enhanced specialization and chooses to lose access to Abjuration.\n\nUpon passing the Test of High Sorcery, a wizard taking his first level of Wizard of High Sorcery has the option of narrowing his focus in accordance with the traditions of his order.\n\nIf he was already a specialist he may now further specialize in his chosen school at the cost of giving up an additional school of magic. This school must be chosen from among the schools favored by the other Orders, either Enchantment, Necromancy (Black Robes), Illusion, Transmutation (Red Robes) or Abjuration (White Robes). \n\nThe wizard can no longer learn spells from the prohibited school, but he retains knowledge of and can continue to use spells of that school  known prior to taking his first Wizard of High Sorcery level. This includes allowing the use of items activated by spell completion or spell trigger that require those spells to be on the wizards spell list.\n\nA wizard with this enhanced specialization gains a +1 bonus to caster level when casting spells from his specialist school and on saves against spells cast against him from that school, in addition to the normal benefits for specializing." compset="CustomSpec" summary="Enhance specialization, but keep access to previously known spells." uniqueness="unique">
+    <comment>Make a special to boostrap to each of these, hide these and show only the bootstrap. (Done)
+
+Assigning the WizForbid Tag is not actually removing spells from being selected. (Done)
+
+Add must specialize in favored school to all. (Done)</comment>
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <bootstrap thing="xEnhanceSp"></bootstrap>
+    <eval phase="UserPreLv" priority="10000">~ Add one to our secondary special abilities (forbidden schools)
+      hero.childfound[cHelpWiz].field[cGiveSp2nd].value += 1</eval>
+    <eval phase="UserPostLv" priority="10000" index="2">perform delete[Helper.ShowSpec]</eval>
+    <evalrule phase="Validation" priority="10000" message="Must choose Abjuration as a Forbidden School."><![CDATA[  validif (hero.childfound[wfAbjur].tagis[Helper.ShowSpec] <> 0)]]></evalrule>
+    <exprreq message="Must specialize in Favored School."><![CDATA[hero.tagis[WizSpec.wsEnchant] + hero.tagis[WizSpec.wsIllusion] + hero.tagis[WizSpec.wsNecro] + hero.tagis[WizSpec.wsTrans] <> 0]]></exprreq>
+    <exprreq message="Must be Red Robe or Black Robe.">hero.tagis[Alignment.Good] = 0</exprreq>
+    </thing>
+  <thing id="cArcFocus3" name="Enhanced Specialization: Forbid Transmutation" description="Choose this option if the wizard wants enhanced specialization and chooses to lose access to Transmutation.\n\nUpon passing the Test of High Sorcery, a wizard taking his first level of Wizard of High Sorcery has the option of narrowing his focus in accordance with the traditions of his order.\n\nIf he was already a specialist he may now further specialize in his chosen school at the cost of giving up an additional school of magic. This school must be chosen from among the schools favored by the other Orders, either Enchantment, Necromancy (Black Robes), Illusion, Transmutation (Red Robes) or Abjuration (White Robes). \n\nThe wizard can no longer learn spells from the prohibited school, but he retains knowledge of and can continue to use spells of that school  known prior to taking his first Wizard of High Sorcery level. This includes allowing the use of items activated by spell completion or spell trigger that require those spells to be on the wizards spell list.\n\nA wizard with this enhanced specialization gains a +1 bonus to caster level when casting spells from his specialist school and on saves against spells cast against him from that school, in addition to the normal benefits for specializing." compset="CustomSpec" summary="Enhance specialization, but keep access to previously known spells." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="Secondary"/>
+    <bootstrap thing="xEnhanceSp"></bootstrap>
+    <eval phase="UserPostLv" priority="10000" index="2">perform delete[Helper.ShowSpec]</eval>
+    <eval phase="UserPreLv" priority="10000">~ Add one to our secondary special abilities (forbidden schools)
+      hero.childfound[cHelpWiz].field[cGiveSp2nd].value += 1</eval>
+    <evalrule phase="Validation" priority="10000" message="Must choose Transmutation as a Forbidden School."><![CDATA[  validif (hero.childfound[wfTrans].tagis[Helper.ShowSpec] <> 0)]]></evalrule>
+    <exprreq message="Must specialize in Favored School."><![CDATA[hero.tagis[WizSpec.wsAbjur] + hero.tagis[WizSpec.wsDivin] + hero.tagis[WizSpec.wsEnchant] + hero.tagis[WizSpec.wsNecro] <> 0]]></exprreq>
+    <exprreq message="Must be White Robe or Black Robe.">hero.tagis[Alignment.NeutralGE] = 0</exprreq>
+    </thing>
+  <thing id="cArcFocus4" name="Enhanced Specialization: Forbid Illusion" description="Choose this option if the wizard wants enhanced specialization and chooses to lose access to Illusion.\n\nUpon passing the Test of High Sorcery, a wizard taking his first level of Wizard of High Sorcery has the option of narrowing his focus in accordance with the traditions of his order.\n\nIf he was already a specialist he may now further specialize in his chosen school at the cost of giving up an additional school of magic. This school must be chosen from among the schools favored by the other Orders, either Enchantment, Necromancy (Black Robes), Illusion, Transmutation (Red Robes) or Abjuration (White Robes). \n\nThe wizard can no longer learn spells from the prohibited school, but he retains knowledge of and can continue to use spells of that school  known prior to taking his first Wizard of High Sorcery level. This includes allowing the use of items activated by spell completion or spell trigger that require those spells to be on the wizards spell list.\n\nA wizard with this enhanced specialization gains a +1 bonus to caster level when casting spells from his specialist school and on saves against spells cast against him from that school, in addition to the normal benefits for specializing." compset="CustomSpec" summary="Enhance specialization, but keep access to previously known spells." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="Secondary"/>
+    <bootstrap thing="xEnhanceSp"></bootstrap>
+    <eval phase="UserPostLv" priority="10000" index="2">perform delete[Helper.ShowSpec]</eval>
+    <eval phase="UserPreLv" priority="10000">~ Add one to our secondary special abilities (forbidden schools)
+      hero.childfound[cHelpWiz].field[cGiveSp2nd].value += 1</eval>
+    <evalrule phase="Validation" priority="10000" message="Must choose Illusion as a Forbidden School."><![CDATA[  validif (hero.childfound[wfIllusion].tagis[Helper.ShowSpec] <> 0)]]></evalrule>
+    <exprreq message="Must specialize in Favored School."><![CDATA[hero.tagis[WizSpec.wsAbjur] + hero.tagis[WizSpec.wsDivin] + hero.tagis[WizSpec.wsEnchant] + hero.tagis[WizSpec.wsNecro] <> 0]]></exprreq>
+    <exprreq message="Must be White Robe or Black Robe.">hero.tagis[Alignment.NeutralGE] = 0</exprreq>
+    </thing>
+  <thing id="cArcFocus5" name="Enhanced Specialization: Forbid Necromancy" description="Choose this option if the wizard wants enhanced specialization and chooses to lose access to Necromancy.\n\nUpon passing the Test of High Sorcery, a wizard taking his first level of Wizard of High Sorcery has the option of narrowing his focus in accordance with the traditions of his order.\n\nIf he was already a specialist he may now further specialize in his chosen school at the cost of giving up an additional school of magic. This school must be chosen from among the schools favored by the other Orders, either Enchantment, Necromancy (Black Robes), Illusion, Transmutation (Red Robes) or Abjuration (White Robes). \n\nThe wizard can no longer learn spells from the prohibited school, but he retains knowledge of and can continue to use spells of that school  known prior to taking his first Wizard of High Sorcery level. This includes allowing the use of items activated by spell completion or spell trigger that require those spells to be on the wizards spell list.\n\nA wizard with this enhanced specialization gains a +1 bonus to caster level when casting spells from his specialist school and on saves against spells cast against him from that school, in addition to the normal benefits for specializing." compset="CustomSpec" summary="Enhance specialization, but keep access to previously known spells." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="Secondary"/>
+    <bootstrap thing="xEnhanceSp"></bootstrap>
+    <eval phase="UserPostLv" priority="10000" index="2">perform delete[Helper.ShowSpec]</eval>
+    <eval phase="UserPreLv" priority="10000">~ Add one to our secondary special abilities (forbidden schools)
+      hero.childfound[cHelpWiz].field[cGiveSp2nd].value += 1</eval>
+    <evalrule phase="Validation" priority="10000" message="Must choose Necromancy as a Forbidden School."><![CDATA[  validif (hero.childfound[wfNecro].tagis[Helper.ShowSpec] <> 0)]]></evalrule>
+    <exprreq message="Must specialize in Favored School."><![CDATA[hero.tagis[WizSpec.wsAbjur] + hero.tagis[WizSpec.wsDivin] + hero.tagis[WizSpec.wsIllusion] + hero.tagis[WizSpec.wsTrans] <> 0]]></exprreq>
+    <exprreq message="Must be White Robe or Red Robe.">hero.tagis[Alignment.Evil] = 0</exprreq>
+    </thing>
+  <thing id="cArcFocus6" name="Enhanced Specialization: Forbid Enchantment" description="Choose this option if the wizard wants enhanced specialization and chooses to lose access to Enchantment.\n\nUpon passing the Test of High Sorcery, a wizard taking his first level of Wizard of High Sorcery has the option of narrowing his focus in accordance with the traditions of his order.\n\nIf he was already a specialist he may now further specialize in his chosen school at the cost of giving up an additional school of magic. This school must be chosen from among the schools favored by the other Orders, either Enchantment, Necromancy (Black Robes), Illusion, Transmutation (Red Robes) or Abjuration (White Robes). \n\nThe wizard can no longer learn spells from the prohibited school, but he retains knowledge of and can continue to use spells of that school  known prior to taking his first Wizard of High Sorcery level. This includes allowing the use of items activated by spell completion or spell trigger that require those spells to be on the wizards spell list.\n\nA wizard with this enhanced specialization gains a +1 bonus to caster level when casting spells from his specialist school and on saves against spells cast against him from that school, in addition to the normal benefits for specializing." compset="CustomSpec" summary="Enhance specialization, but keep access to previously known spells." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <bootstrap thing="xEnhanceSp"></bootstrap>
+    <eval phase="UserPostLv" priority="10000" index="2">perform delete[Helper.ShowSpec]</eval>
+    <eval phase="UserPreLv" priority="10000">~ Add one to our secondary special abilities (forbidden schools)
+      hero.childfound[cHelpWiz].field[cGiveSp2nd].value += 1</eval>
+    <evalrule phase="Validation" priority="10000" message="Must choose Enchantment as a Forbidden School."><![CDATA[  validif (hero.childfound[wfEnchant].tagis[Helper.ShowSpec] <> 0)]]></evalrule>
+    <exprreq message="Must be White Robe or Red Robe.">hero.tagis[Alignment.Evil] = 0</exprreq>
+    <exprreq message="Must specialize in Favored School."><![CDATA[hero.tagis[WizSpec.wsAbjur] + hero.tagis[WizSpec.wsDivin] + hero.tagis[WizSpec.wsIllusion] + hero.tagis[WizSpec.wsTrans] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWHSArcRe1" name="Arcane Research +1" description="A Wizard of High Sorcery has access to the secrets and knowledge of the Conclave and the Towers of High Sorcery. Beginning at 2nd level, the character gains a +1 competence bonus to Spellcraft and Knowledge (arcana) skill checks. This bonus increases by +1 every two levels thereafter (so +2 at 4th level, +3 at 6th level, and so on).\n\nIn addition, each level that grants a bonus in Arcane Research also allows the Wizard of High Sorcery to add a bonus spell to his spellbook (in addition to the spells normally gained through level advancement). This spell must be of a level the Wizard of High Sorcery can cast and must be from one of his Order&#146;s specialist schools." compset="ClSpecial" summary="Gain a comp bon to spellcraft &amp; knowledge (arcana), add extra spells to spellbook." sortorder="2">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="UserPostLv" priority="10000">~ Calculate our bonus
+      var bonus as number
+      bonus = round(field[xTotalLev].value/2, 0, -1)
+      
+      #competencebonus[hero.childfound[kKnowArcan], bonus]
+      #competencebonus[hero.childfound[kSpellcr], bonus]</eval>
+    </thing>
+  <thing id="cWHSArcRe2" name="Arcane Research +2" description="Competence bonus increases to +2 and you add another spell from your order&apos;s favored schools to your spellbook." compset="ClSpecial" summary="Competence bonus increases, add another spell to spellbook." sortorder="4">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="4" name="4" abbrev="4"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cWHSArcRe3" name="Arcane Research +3" description="Competence bonus increases to +3 and you add another spell from your order&apos;s favored schools to your spellbook." compset="ClSpecial" summary="Competence bonus increases, add another spell to spellbook." sortorder="6">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="6" name="6" abbrev="6"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cWHSArcRe4" name="Arcane Research +4" description="Competence bonus increases to +4 and you add another spell from your order&apos;s favored schools to your spellbook." compset="ClSpecial" summary="Competence bonus increases, add another spell to spellbook." sortorder="8">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="8" name="8" abbrev="8"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cWHSArcRe5" name="Arcane Research +5" description="Competence bonus increases to +5 and you add another spell from your order&apos;s favored schools to your spellbook." compset="ClSpecial" summary="Competence bonus increases, add another spell to spellbook." sortorder="10">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="10" name="10" abbrev="10"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cWHSMoonM" name="Moon Magic" description="All Wizards of High Sorcery draw strength directly from the moon aligned with their particular Order&#151;White Robe wizards from Solinari, the White Moon; Red Robe wizards from Lunitari, the Red Moon; Black Robe wizards from Nuitari, the Black Moon (whose aspect only Black Robe wizards can see).\n\nThe waxing and waning of their respective moons has an effect upon the magic of Wizards of High Sorcery. When a moon is at High Sanction (from waxing gibbous, through full, to waning gibbous), wizards of that moon&#146;s order cast spells at +1 caster level and with a +1 to any spell save DCs. When a moon is at Low Sanction (from waning crescent, through new, to waxing crescent), wizards of that moon&#146;s Order cast spells at &#150;1 caster level and with a &#150;1 to any spell save DCs. During the waxing and waning periods around the quarter moons, wizards of that moon&#146;s Order cast their spells normally.\n\nThe alignment of any two moons is a positive event for wizards of both orders, even if the moons are at Low Sanction. When two moons are in conjunction, wizards of both moons&#146; Orders cast spells at +1 caster level and with a +1 to any spell save DCs. These bonuses stack with any bonus or penalty already in place for the phase of the moons. Thus, if Lunitari and Nuitari come into conjunction at High Sanction, Wizards of the Red and Black Robes cast at caster level +2 and a +2 on spell save DCs. If the same two moons come into conjunction at Low Sanction, the benefit from the conjunction cancel out the penalty for the two moons being at Low Sanction, and these wizards cast spells as normal.\n\nWhen all three moons come into alignment, all magic becomes more powerful. Wizards of all three Orders cast spells at caster level +2 and with a +2 on spell save DCs. Again, these bonuses stack with any bonus or penalty in place for the phase of the moons. If the three moons are in conjunction at Low Sanction, every wizard still casts with +1 bonuses. If they align at High Sanction, the bonuses are +3. This alignment, known as the Night of the Eye, occurs in a cycle of 504 days (exactly 1&#150;1/2 years)." compset="ClSpecial" summary="Your magical strength is tied to the cycle of your patron&apos;s Moon." sortorder="1">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cWHSTowerR" name="Tower Resources" description="A Wizard of High Sorcery gains full admission to any operational Tower of High Sorcery and its resources for spell research and the creation of magical items.\n\n{i}Access to Libraries{/i}: A wizard who has passed the Test of High Sorcery and declared allegiance to the Gods of Magic gains access to the libraries within the Tower. These libraries contain the spellbooks of countless wizards throughout history, stretching back to the Age of Dreams. With access to these libraries, it is easier for a wizard to create new spells or to add new spells to his spellbooks. When a wizard is researching or scribing a spell using the Tower&#146;s libraries, the time requirement for replacing or copying spells is halved (so a wizard can scribe two spells per day), while the cost for creating new spells is three-quarters of the normal cost (750 stl per week of research).\n\n{i}Access to Laboratories{/i}: Laboratories in the Tower of High Sorcery are available for the use of any Wizard of High Sorcery wanting to create magic items. The laboratories and come complete with most commonly used components. Rare and exotic components may have to be bartered for or gained independently through other channels. A wizard using these laboratories can almost certainly complete the creation process without interruption." compset="ClSpecial" summary="In Tower scribe spl 2x speed, -25% spl research cost, use item creation labs." sortorder="1">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="ClExLose"/>
+    </thing>
+  <thing id="cWHSPwrI" name="Item of Power" description="Once a prospective Wizard of High Sorcery successfully completes the Test, his order gives him a permanent magic item, usually valued between 2,000&#150;4,000 gp. The order does not tell the new Wizard of High Sorcery what powers the item possesses, as discovering the item&#146;s secrets is seen as a challenge on his new path." compset="ClSpecial" summary="Gain a permanent magic item of unknown abilities." sortorder="1">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWHSSecre1" name="Order Secret (1st)" description="At 3rd level, and again at 5th, 7th, 9th, and 10th level, a Wizard of High Sorcery learns one of the secrets of his Order desrcibed in the following sections." compset="ClSpecial" summary="You gain secrets appropriate to your order&apos;s magical strengths." sortorder="3">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWHSSecre2" name="Order Secret (2nd)" description="You gain another Order Secret appropriate to your alignment." compset="ClSpecial" sortorder="5">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWHSSecre3" name="Order Secret (3rd)" description="You gain another Order Secret appropriate to your alignment." compset="ClSpecial" sortorder="7">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWHSSecre4" name="Order Secret (4th)" description="You gain another Order Secret appropriate to your alignment." compset="ClSpecial" sortorder="9">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWHSSecre5" name="Order Secret (5th)" description="You gain another Order Secret appropriate to your alignment." compset="ClSpecial" sortorder="10">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cWHSArcFoc" name="Arcane Focus" description="Upon passing the Test of High Sorcery, a wizard has the option of narrowing the focus of his arcane power in accordance with the traditions of his order. The effects of this optional focus depend on whether the wizard was already a specialist or not.\n\n{i}Non-Specialists{/i}: At 1st level, a Wizard of High Sorcery who was not already a specialist wizard may choose a specialty school from one of those favored by his Order (Abjuration/Divination for White, Illusion/Transmutation for Red, or Necromancy/Enchantment for Black). From this point on, he follows all of the rules regarding specialist wizards in the Player&#146;s Handbook, including the selection of prohibited schools. He can never again learn spells from the prohibited school, though the prohibited spells he knew prior to becoming a Wizard of High Sorcery remain usable to him, including allowing the use of items activated by spell completion or spell trigger.\n\n{i}Specialists{/i}: If the wizard was already a specialist in one of the two favored schools of his order, his specialization is enhanced. In addition to his existing benefi ts, he gains a +1 bonus to caster level on spells from the specialist school, as well as gaining a +1 bonus on saving throws against spells from his specialist school and against spell like abilities (but not supernatural abilities) that duplicate such spells.\n\nIn exchange for this enhanced focus on one school, the wizard must give up one additional school of magic, chosen from among the specialist schools of the other two Orders of High Sorcery (see Favored Specialization). He can never again learn spells from the prohibited school, though the prohibited spells he knew prior to becoming a Wizard of High Sorcery remain usable to him, including allowing the use of items activated by spell completion or spell trigger. He cannot choose a prohibited school that he already chose as a 1st level specialist.\n\nFor example, Rikar is a wizard who specializes in the school of Illusion. His prohibited schools are Necromancy and Enchantment. When he passes his Test and joins Order of the Red Robes, he must choose one additional prohibited school and has only one option: Abjuration. He must choose from among the schools favored by the Orders of the White and Black Robes, and no wizard can take Divination as a prohibited school." compset="ClSpecial" summary="You may choose to specialize by taking an Arcane Focus.">
+<usesource source="ToHS"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    </thing>
+  <thing id="xEnhanceSp" name="Enhanced Specialization" description="If the wizard was already a specialist in one of the two favored schools of his order, his specialization is enhanced. In addition to his existing benefits, he gains a +1 bonus to caster level on spells from the specialist school, as well as gaining a +1 bonus on saving throws against spells from his specialist school and against spell like abilities (but not supernatural abilities) that duplicate such spells.\n\nIn exchange for this enhanced focus on one school, the wizard must give up one additional school of magic, chosen from among the specialist schools of the other two Orders of High Sorcery (see Favored Specialization). He can never again learn spells from the prohibited school, though the prohibited spells he knew prior to becoming a Wizard of High Sorcery remain usable to him, including allowing the use of items activated by spell completion or spell trigger. He cannot choose a prohibited school that he already chose as a 1st level specialist.\n\nFor example, Rikar is a wizard who specializes in the school of Illusion. His prohibited schools are Necromancy and Enchantment. When he passes his Test and joins Order of the Red Robes, he must choose one additional prohibited school and has only one option: Abjuration. He must choose from among the schools favored by the Orders of the White and Black Robes, and no wizard can take Divination as a prohibited school." compset="Special" summary="+1 CL on and +1 to saves vs spells/spell like abilities of your specialist school." uniqueness="unique">
+<usesource source="ToHS"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="cHelpWHS"/>
+    </thing>
+  </document>

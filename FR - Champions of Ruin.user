@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>By: GLBIV on Hero Labs.</info_author>
+    <info_history>09-14-2014
+
+Feats:
+Craven, Initiate of Shar (Incomplete)</info_history>
+    </fileinfo>
+  <thing id="fInitiShar" name="Initiate of Shar" description="You have been initiated into the greatest secrets of Shar&apos;s church.\n\n{b}Prerequisite:{/b} Able to cast 1st-level divine spells, patron deity Shar,\n\n{b}Benefit:{/b} You add Bluff and Hide to your list of class skills. In addition, you add the following spells to your divine spellcaster spell list. If you have more than one divine spellcasting class before taking this feat, you must decide which class has the additional spells added to its list. \n\n{b}1st{/b} {i}Disguise Self{/i}: Changes your appearance. \n{b}3rd{/b} {i}Crushing Despair{/i}: Subject takes -2 on attack rolls, damage rolls, saves, and checks. \n{b}4th{/b} {i}Armor of Darkness{/i}: Creates a shroud of shadow around target that grants darkvision, a bonus to AC, and a bonus to some saving throws. \n{b}5th{/b} {i}Darkbolt{/i}: One beam of darkness/2 levels deals damage and dazes opponents.\n\n{b}Special:{/b}  The armor of darkness and darkbolt spells also appear on the Darkness domain list. With this feat, you can cast them as regular cleric spells, not just domain spells.\n\n{b}Source{/b}: Champions of Ruin (Forgotten Realms)" compset="Feat" summary="You have been initiated into the greatest secrets of Shar&apos;s church." uniqueness="unique">
+    <usesource source="ChampRuin"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="fShowWhat" tag="Classes"/>
+    <eval phase="First">~We add our class skills to the selected class
+perform field[fChosen].chosen.assign[ClassSkill.kBluff]
+perform field[fChosen].chosen.assign[ClassSkill.kHide]</eval>
+    <eval phase="PostAttr" priority="15005" index="2"><![CDATA[doneif (field[fChosen].ischosen = 0)
+doneif (field[fChosen].chosen.tagis[Hero.Divine] = 0)
+
+field[fChosen].chosen.field[cSpellExpr].text &= " | sClass.InShar"]]></eval>
+    <exprreq message="Able to cast 1st-level divine spells.  Patron Deity Shar." onlyonce="yes"><![CDATA[tagcount[Hero.Divine] >=1+1]]></exprreq>
+    </thing>
+  <thing id="sDisSelIni" name="Disguise Self" description="You make yourself&#151;including clothing, armor, weapons, and equipment&#151;look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your body type. For example, a human caster could look human, humanoid, or like any other human-shaped bipedal creature. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.\n\nThe spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment. A battleaxe made to look like a dagger still functions as a battleaxe.\n\nIf you use this spell to create a disguise, you get a +10 bonus on the Disguise check.\n\nA creature that interacts with the glamer gets a Will save to recognize it as an illusion. For example, a creature that touched you and realized that the tactile sensation did not match the visual one would be entitled to such a save." compset="Spell" summary="Changes your appearance.">
+    <comment>Complete</comment>
+    <fieldval field="sDuration" value="10 minutes/level (D)"/>
+    <fieldval field="sSave" value="N/A"/>
+    <fieldval field="sResist" value="No"/>
+    <fieldval field="sRange" value="Personal"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="1" name="1" abbrev="1"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="None" name="None" abbrev="None"/>
+    <tag group="sSave" tag="RefHalf" name="Reflex Half" abbrev="Reflex Half"/>
+    <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <tag group="sSchool" tag="Illusion" name="Illusion" abbrev="Illu"/>
+    <tag group="sSubschool" tag="Glamer" name="Glamer" abbrev="Glamer"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="InShar"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
+    <exprreq message="Must have Initiate of Shar feat"><![CDATA[#hasfeat[fInitiShar] <> 0]]></exprreq>
+    </thing>
+  <thing id="sCruDesIni" name="Crushing Despair" description="An invisible {b}30 ft{/b} cone {b}shaped burst{/b} of despair causes great sadness in the subjects. Each affected creature takes a &#150;2 penalty on attack rolls, saving throws, ability checks, skill checks, and weapon damage rolls.\n\n{i}Crushing despair{/i} counters and dispels {i}good hope{/i}.\n\n{i}Material Component{/i}: A vial of tears." compset="Spell" summary="Subjects take &#150;2 on attack rolls, damage rolls, saves, and checks.">
+    <comment>Complete</comment>
+    <fieldval field="sDuration" value="1 minute/level"/>
+    <fieldval field="sSave" value="Will Negates"/>
+    <fieldval field="sResist" value="Yes"/>
+    <fieldval field="sRange" value="30 ft"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="3" name="3" abbrev="3"/>
+    <tag group="sRange" tag="Feet" name="Feet" abbrev="Feet"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Enchant" name="Enchantment" abbrev="Ench"/>
+    <tag group="sSubschool" tag="Compulsion" name="Compulsion" abbrev="Compulsion"/>
+    <tag group="sSubschool" tag="MindAffect" name="Mind-Affecting" abbrev="MindAffect"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="InShar"/>
+    <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <exprreq message="Must have Initiate of Shar feat"><![CDATA[#hasfeat[fInitiShar] <> 0]]></exprreq>
+    </thing>
+  <thing id="sArmDarIni" name="Armor of Darkness" description="{i}The spell envelops the creature in a shroud of flickering shadows. {/i}\n\nThe shroud grants the subject a +4 deflection bonus to Armor Class plus an additional +1 for every three caster levels above 7th (for a total of +5 at 10th level, +6 at 13th, +7 at 16th, to a maximum of +8 at 19th level). The subject can see through the armor as if it did not exist and is also afforded darkvision out to 60 feet. The subject gains a +2 saving throw bonus against any holy, good, or light spells or effects. Undead creatures that are subjects of {i}armor of darkness{/i} also gain +4 turn resistance." compset="Spell">
+    <comment>Complete</comment>
+    <fieldval field="sDuration" value="10 minutes/level"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <fieldval field="sRange" value="Touch"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
+    <tag group="sResist" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
+    <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
+    <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
+    <tag group="sSubschool" tag="Darkness" name="Darkness" abbrev="Darkness"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="InShar" name="Initiate of Shar"/>
+    <tag group="sComp" tag="DF" name="Divine Focus" abbrev="{ref s_DF}DF{ref}"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
+    <exprreq message="Must have Initiate of Shar feat"><![CDATA[#hasfeat[fInitiShar] <> 0]]></exprreq>
+    </thing>
+  <thing id="sDarBolIni" name="Darkbolt" description="You unleash beams of darkness from your open palm.  You must succeed at a ranged touch attack to strike your target.  You can hurl one {i}darkbolt{/i} for every two caster levels you have (maximum seven bolts).  You can hurl all the bolts at once, or you can hurl one bolt per round as a free action, starting on the round you cast the spell.  You do not have to hurl a bolt every round, but if you don&apos;t hurl the bolt you were entitled to that round, it is lost.  If you hurl all the bolts at once, all your targets mus tbe within 60 feet of each other.\n\nA {i}darkbolt{/i} deals 2d8 points of damage to a living creature, and the creature is dazed for 1 round unless it makes a Will save (a creature struck by multiple bolts during the same round is dazed for a maximum of 1 round, no matter how many times it fails its save).  Undead take no damage, but are dazed if they fail their saves." compset="Spell">
+    <comment>Complete</comment>
+    <fieldval field="sDuration" value="Instantaneous (see text)"/>
+    <fieldval field="sSave" value="Will partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <fieldval field="sRange" value="One ray/2 caster levels (maximum 7)"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Medium" name="Medium (100 + 10 ft./level)" abbrev="{ref s_Medium}Med{ref}"/>
+    <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
+    <tag group="sSave" tag="WillPart" name="Will Partial" abbrev="Will Partial"/>
+    <tag group="sSchool" tag="Evocation" name="Evocation" abbrev="Evoc"/>
+    <tag group="sSubschool" tag="Darkness" name="Darkness" abbrev="Darkness"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sClass" tag="InShar"/>
+    <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
+    <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sDuration" tag="SeeText" name="See Text" abbrev="See Text"/>
+    <exprreq message="Must have Initiate of Shar feat"><![CDATA[#hasfeat[fInitiShar] <> 0]]></exprreq>
+    </thing>
+  <thing id="fCraven" name="Craven" description="Like most sly rogues, you are a dangerous coward. However, your sneak attacks deal more damage than normal.\n\n{b}Prerequisite{/b}\ncannot be immune to fear, Sneak attack class feature,\n\n{b}Benefit{/b}\nYou take a -2 penalty on saving throws against fear effects. However, when making a sneak attack, you deal an extra 1 point of damage per character level.\n\n{b}Source{/b}: Champions of Ruin (Forgotten Realms)" compset="Feat" summary="-2 pen vs. fear, but add+1/char level to sneak attacks." uniqueness="unique">
+    <comment>Complete</comment>
+    <usesource source="ChampRuin" parent="pFR" name="Champions of Ruin 3.5"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <pickreq thing="xSneakAtt"/>
+    <pickreq thing="xImmFear" ispreclude="yes"/>
+    </thing>
+  </document>

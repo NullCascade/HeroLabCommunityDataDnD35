@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="sWld30032" name="Breath Barrier" description="{i}A Sparkling golden sphere forms around you, moving as you move.{/i}\n\nYou create a quasi-real barrier in the shape of a sphere that shimmers with golden sparkles and moves with you.\n\nCreatures and objects can enter or leave the barriet unimpeded. A {i}Breath Barrier{/i) blocks fog, foglike effects and gases created by spells such as {i}Fog Cloud{/i} or {i}Cloudkill{/i} or by breath weapons that are poison gas.\n\nWhen used as a barrier against breath weapons that deal hit point damage directly, the sphere absorbs up to 60 points of damage from one or more breath weapons before collapsing (at which time the power ends).\n\nA Breath Barrier takes damage as though as though it were a creature that failed its saving throw against the weapon being used.\n\n{b}Augment{/b}: For every 2 additional power points you spend, the barrier can absorb an additional 12 points of breath weapon before collapsing." compset="PsiPower" summary="You create a quasi-real barrier that moves with you.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sDuration" value="1 Minute/Level (D)"/>
+    <fieldval field="sRange" value="10-ft. Radius emanation, centered on you."/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="psiDiscip" tag="Metacreate"/>
+    <tag group="psiClass" tag="Wilder" name="Wilder" abbrev="Wilder"/>
+    <tag group="sRange" tag="10"/>
+    <tag group="sDuration" tag="Minute1"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="NA"/>
+    <tag group="sCastTime" tag="Action"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sPyW30020" name="Breath Barrier" description="{i}A Sparkling golden sphere forms around you, moving as you move.{/i}\n\nYou create a quasi-real barrier in the shape of a sphere that shimmers with golden sparkles and moves with you.\n\nCreatures and objects can enter or leave the barriet unimpeded. A {i}Breath Barrier{/i) blocks fog, foglike effects and gases created by spells such as {i}Fog Cloud{/i} or {i}Cloudkill{/i} or by breath weapons that are poison gas.\n\nWhen used as a barrier against breath weapons that deal hit point damage directly, the sphere absorbs up to 60 points of damage from one or more breath weapons before collapsing (at which time the power ends).\n\nA Breath Barrier takes damage as though as though it were a creature that failed its saving throw against the weapon being used.\n\n{b}Augment{/b}: For every 2 additional power points you spend, the barrier can absorb an additional 12 points of breath weapon before collapsing." compset="PsiPower" summary="You create a quasi-real barrier that moves with you.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="10-ft. Radius emanation, centered on you."/>
+    <fieldval field="sDuration" value="1 Minute/Level (D)"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sDuration" tag="Minute1" name="1 Minute" abbrev="1 Minute"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="3" name="3" abbrev="3"/>
+    <tag group="sRange" tag="10" name="10" abbrev="10"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiDiscip" tag="Metacreate" name="Metacreativity" abbrev="Metacr"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sCastTime" tag="Action"/>
+    <tag group="psiClass" tag="PsyWarr"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sPsi30032" name="Breath Barrier" description="{i}A Sparkling golden sphere forms around you, moving as you move.{/i}\n\nYou create a quasi-real barrier in the shape of a sphere that shimmers with golden sparkles and moves with you.\n\nCreatures and objects can enter or leave the barriet unimpeded. A {i}Breath Barrier{/i) blocks fog, foglike effects and gases created by spells such as {i}Fog Cloud{/i} or {i}Cloudkill{/i} or by breath weapons that are poison gas.\n\nWhen used as a barrier against breath weapons that deal hit point damage directly, the sphere absorbs up to 60 points of damage from one or more breath weapons before collapsing (at which time the power ends).\n\nA Breath Barrier takes damage as though as though it were a creature that failed its saving throw against the weapon being used.\n\n{b}Augment{/b}: For every 2 additional power points you spend, the barrier can absorb an additional 12 points of breath weapon before collapsing." compset="PsiPower" summary="You create a quasi-real barrier that moves with you.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="10-ft. Radius emanation, centered on you."/>
+    <fieldval field="sDuration" value="1 Minute/Level (D)"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sDuration" tag="Minute1" name="1 Minute" abbrev="1 Minute"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="3" name="3" abbrev="3"/>
+    <tag group="sRange" tag="10" name="10" abbrev="10"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiDiscip" tag="Metacreate" name="Metacreativity" abbrev="Metacr"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sCastTime" tag="Action"/>
+    <tag group="psiClass" tag="Psion"/>
+    <tag group="sResist" tag="No"/>
+    </thing>
+  <thing id="sWld40023" name="Dragon Hearted" description="{i}Your skin takes on a reddish hue, and you feel a chill sweep through your body.{/i}\n\nYou can choose to emulate the heart of a red dragon or a white dragon. If you choose white, you gain immunity to cold and vulnerability to fire.\nIf you choose red you gain immunity to fire and vulnerability to cold.\n\n{b}Augment{/b}: For every 4 additional power points you spend, you can manifest this power as an immediate action." compset="PsiPower" summary="Gain energy immunity and vulnerability to red or white dragons.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="1 Minute/Level (D)"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sDuration" tag="Minute1" name="1 Minute" abbrev="1 Minute"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiDiscip" tag="Psychomet"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sCastTime" tag="Action"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="psiClass" tag="Wilder"/>
+    </thing>
+  <thing id="sPyW40015" name="Dragon Hearted" description="{i}Your skin takes on a reddish hue, and you feel a chill sweep through your body.{/i}\n\nYou can choose to emulate the heart of a red dragon or a white dragon. If you choose white, you gain immunity to cold and vulnerability to fire.\nIf you choose red you gain immunity to fire and vulnerability to cold.\n\n{b}Augment{/b}: For every 4 additional power points you spend, you can manifest this power as an immediate action." compset="PsiPower" summary="Gain energy immunity and vulnerability to red or white dragons.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="1 Minute/Level (D)"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sDuration" tag="Minute1" name="1 Minute" abbrev="1 Minute"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiDiscip" tag="Psychomet" name="Psychometabolism" abbrev="Psymet"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sCastTime" tag="Action"/>
+    <tag group="psiClass" tag="PsyWarr"/>
+    </thing>
+  <thing id="sPsi40023" name="Dragon Hearted" description="{i}Your skin takes on a reddish hue, and you feel a chill sweep through your body.{/i}\n\nYou can choose to emulate the heart of a red dragon or a white dragon. If you choose white, you gain immunity to cold and vulnerability to fire.\nIf you choose red you gain immunity to fire and vulnerability to cold.\n\n{b}Augment{/b}: For every 4 additional power points you spend, you can manifest this power as an immediate action." compset="PsiPower" summary="Gain energy immunity and vulnerability to red or white dragons.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="1 Minute/Level (D)"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sDuration" tag="Minute1" name="1 Minute" abbrev="1 Minute"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiDiscip" tag="Psychomet" name="Psychometabolism" abbrev="Psymet"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sCastTime" tag="Action"/>
+    <tag group="psiClass" tag="Psion"/>
+    </thing>
+  <thing id="sPsi40024" name="Evade Breath" description="{i}A sheen of false flesh falls away from you, a false echo designed to protrect you from dragon breath.{/i}\n\nYou throw off a faux ectoplasmic shell, allowing you to slide out of range of a breath weapon. When you manifest this power in conjunction with making a successful Reflex save against a breath attack that normally deals half damage on a successful save (such as a Red Dragon&apos;s fiery breath), you instead take no damage.\n\n{b}Augment{/b}: For every 4 additional power points you spend, you take only half damage on a failed reflex save." compset="PsiPower" summary="Slide out of range of a breath weapon.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiDiscip" tag="Psychomet" name="Psychometabolism" abbrev="Psymet"/>
+    <tag group="sCastTime" tag="Immediate"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="psiClass" tag="Psion" name="Psion" abbrev="Psion"/>
+    <tag group="psiDisplay" tag="Material"/>
+    <tag group="sDuration" tag="Instant"/>
+    </thing>
+  <thing id="sPyW20036" name="Evade Breath" description="{i}A sheen of false flesh falls away from you, a false echo designed to protrect you from dragon breath.{/i}\n\nYou throw off a faux ectoplasmic shell, allowing you to slide out of range of a breath weapon. When you manifest this power in conjunction with making a successful Reflex save against a breath attack that normally deals half damage on a successful save (such as a Red Dragon&apos;s fiery breath), you instead take no damage.\n\n{b}Augment{/b}: For every 4 additional power points you spend, you take only half damage on a failed reflex save." compset="PsiPower" summary="Slide out of range of a breath weapon.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiDiscip" tag="Psychomet" name="Psychometabolism" abbrev="Psymet"/>
+    <tag group="psiDisplay" tag="Material" name="Material" abbrev="Material"/>
+    <tag group="sCastTime" tag="Immediate" name="Immediate" abbrev="Immediate"/>
+    <tag group="psiClass" tag="PsyWarr"/>
+    </thing>
+  <thing id="sWld40024" name="Evade Breath" description="{i}A sheen of false flesh falls away from you, a false echo designed to protrect you from dragon breath.{/i}\n\nYou throw off a faux ectoplasmic shell, allowing you to slide out of range of a breath weapon. When you manifest this power in conjunction with making a successful Reflex save against a breath attack that normally deals half damage on a successful save (such as a Red Dragon&apos;s fiery breath), you instead take no damage.\n\n{b}Augment{/b}: For every 4 additional power points you spend, you take only half damage on a failed reflex save." compset="PsiPower" summary="Slide out of range of a breath weapon.">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
+    <tag group="sLevel" tag="4" name="4" abbrev="4"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiDiscip" tag="Psychomet" name="Psychometabolism" abbrev="Psymet"/>
+    <tag group="psiDisplay" tag="Material" name="Material" abbrev="Material"/>
+    <tag group="sCastTime" tag="Immediate" name="Immediate" abbrev="Immediate"/>
+    <tag group="psiClass" tag="Wilder"/>
+    </thing>
+  <thing id="sPsi50022" name="Sense of the Dragon" description="{i}Your iris colour expands to fill your eyes, and your pupils lengthen into oblong vertical slits.{/i}\n\nThe subject gains augmented non visual senses out to a distance of 30 feet (Blindsense). The subject does not need to make Spot or Listen checks to pinpoint the location of a creature within 30 feet, provided that it has line of effect to that creature.\n\nAny opponent the subject cannot see still has total concealment against the recipient of this power, and the subject still has the normal miss chance when attacking foes that have concealment.\n\nVisibility still affects the movement of the subject, and the recipient of this power is still denied its Dexterity bonus to Armour Class against attacks from creatures it cannot see.\n\n{i}Sense of the Dragon{/i} can be made permanent with a {i}Permanency{/i} spell in regard to yourself for a cost of 1,500 XP.\n\n{b}Augment{/b}: For every 2 additional power points you spend, the Blindsense granted by this power increases by 5 feet." compset="PsiPower" summary="Gain Dragonlike senses">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="1 Hour/Level (D)"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiClass" tag="Psion" name="Psion" abbrev="Psion"/>
+    <tag group="psiDiscip" tag="Psychomet"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    </thing>
+  <thing id="sWld50022" name="Sense of the Dragon" description="{i}Your iris colour expands to fill your eyes, and your pupils lengthen into oblong vertical slits.{/i}\n\nThe subject gains augmented non visual senses out to a distance of 30 feet (Blindsense). The subject does not need to make Spot or Listen checks to pinpoint the location of a creature within 30 feet, provided that it has line of effect to that creature.\n\nAny opponent the subject cannot see still has total concealment against the recipient of this power, and the subject still has the normal miss chance when attacking foes that have concealment.\n\nVisibility still affects the movement of the subject, and the recipient of this power is still denied its Dexterity bonus to Armour Class against attacks from creatures it cannot see.\n\n{i}Sense of the Dragon{/i} can be made permanent with a {i}Permanency{/i} spell in regard to yourself for a cost of 1,500 XP.\n\n{b}Augment{/b}: For every 2 additional power points you spend, the Blindsense granted by this power increases by 5 feet." compset="PsiPower" summary="Gain Dragonlike senses">
+    <comment>Races of the Dragon Psion / Wilder / Psychic Warrior power Page 120.
+
+Added by Bodrin.</comment>
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="1 Hour/Level (D)"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiClass" tag="Wilder"/>
+    <tag group="psiDiscip" tag="Psychomet" name="Psychometabolism" abbrev="Psymet"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    </thing>
+  <thing id="sPyW50009" name="Sense of the Dragon" description="{i}Your iris colour expands to fill your eyes, and your pupils lengthen into oblong vertical slits.{/i}\n\nThe subject gains augmented non visual senses out to a distance of 30 feet (Blindsense). The subject does not need to make Spot or Listen checks to pinpoint the location of a creature within 30 feet, provided that it has line of effect to that creature.\n\nAny opponent the subject cannot see still has total concealment against the recipient of this power, and the subject still has the normal miss chance when attacking foes that have concealment.\n\nVisibility still affects the movement of the subject, and the recipient of this power is still denied its Dexterity bonus to Armour Class against attacks from creatures it cannot see.\n\n{i}Sense of the Dragon{/i} can be made permanent with a {i}Permanency{/i} spell in regard to yourself for a cost of 1,500 XP.\n\n{b}Augment{/b}: For every 2 additional power points you spend, the Blindsense granted by this power increases by 5 feet." compset="PsiPower" summary="Gain Dragonlike senses">
+    <fieldval field="sRange" value="Personal"/>
+    <fieldval field="sDuration" value="1 Hour/Level (D)"/>
+    <usesource source="RoD" parent="p35" name="Races of the Dragon"/>
+    <tag group="psiDisplay" tag="Visual" name="Visual" abbrev="Visual"/>
+    <tag group="sCastTime" tag="Action1" name="1 Action" abbrev="Action1"/>
+    <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
+    <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
+    <tag group="sLevel" tag="5" name="5" abbrev="5"/>
+    <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
+    <tag group="sResist" tag="No" name="No" abbrev="No"/>
+    <tag group="sSave" tag="NA" name="N/A" abbrev="N/A"/>
+    <tag group="psiClass" tag="PsyWarr"/>
+    <tag group="psiDiscip" tag="Psychomet" name="Psychometabolism" abbrev="Psymet"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    </thing>
+  <thing id="cHelpDDv" name="Dragon Devotee" compset="ClassHelp" uniqueness="unique">
+    <comment>Set to install with release 1.4.
+Since none of the classes/prestige classes for Race of the Dragon have been added and I had someone who started taking levels of the Dragon Devotee PrC, I created a basic DDev PrC.
+
+It will do the job, but there are a few shortcuts that I took because I am just learning the Hero Lab Editor system.
+
+-The only combat technique option is for Bonus Fighter feats...I am unsure how to create a choice between Fighter Feats and Rogue Sneak +d6
+-I could not find a way to add the Magic Fang and Greater Magic Fang to the spell list.</comment>
+    <fieldval field="cAbbr" value="DDv"/>
+    <fieldval field="cSkills" value="4"/>
+    <fieldval field="cHDSides" value="6"/>
+    <arrayval field="cBonFtTot" index="1" value="1"/>
+    <arrayval field="cCastTot" index="2" value="5"/>
+    <arrayval field="cCastTot" index="2" column="1" value="3"/>
+    <arrayval field="cCastTot" index="3" value="5"/>
+    <arrayval field="cCastTot" index="3" column="1" value="3"/>
+    <arrayval field="cCastTot" index="4" value="6"/>
+    <arrayval field="cCastTot" index="4" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="2" value="4"/>
+    <arrayval field="cKnowTot" index="2" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="3" value="4"/>
+    <arrayval field="cKnowTot" index="3" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="4" value="5"/>
+    <arrayval field="cKnowTot" index="4" column="1" value="2"/>
+    <arrayval field="cBonFtTot" index="3" value="2"/>
+    <usesource source="RoDestiny"/>
+    <tag group="Classes" tag="DrgnDvote" name="Dragon Devotee"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="CastArmor" tag="Light"/>
+    <tag group="CastArmor" tag="Medium"/>
+    <tag group="CastArmor" tag="Heavy"/>
+    <tag group="CastArmor" tag="Shield"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="ClsCountAs" tag="cHelpSor"/>
+    <tag group="CasterType" tag="SpontKnow"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="CasterSrc" tag="Arcane"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <bootstrap thing="cDDvIgSpF"></bootstrap>
+    <bootstrap thing="cDDvClaw"></bootstrap>
+    <bootstrap thing="cDDvDrTmp"></bootstrap>
+    <bootstrap thing="cDDvCha"></bootstrap>
+    <bootstrap thing="cDDvNatA"></bootstrap>
+    <bootstrap thing="cDDvCon"></bootstrap>
+    <bootstrap thing="cDDvStr"></bootstrap>
+    <bootstrap thing="cDDvDrRes"></bootstrap>
+    <link linkage="maxsplattr" thing="aCHA"/>
+    <link linkage="spellattr" thing="aCHA"/>
+    </thing>
+  <thing id="cDrgnDvote" name="Dragon Devotee" description="An individual (usually a warrior) who has studied the Way of the Dragon and has embarked on the path of becoming Draconic." compset="ClassLevel" maxlimit="5">
+    <usesource source="RoD"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpDDv"></bootstrap>
+    <link linkage="helper" thing="cHelpDDv"/>
+    <pickreq thing="lDraconic"/>
+    <exprreq message="Base Attack 5+"><![CDATA[child[Attack].field[tAtkBase].value >= 5]]></exprreq>
+    <exprreq message="Knowledge (Arcana) 1 Rank"><![CDATA[#skillranks[kKnowArcan] >= 1]]></exprreq>
+    </thing>
+  <thing id="cDDvCha" name="Ability Boost: Charisma +2" description="Adds +2 to your Charisma." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpDDv"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      hero.child[aCHA].field[aNormMod].value = hero.child[aCHA].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cDDvNatA" name="Natural Armor Boost" description="Adds to your natural armor class." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="SpecSource" tag="cHelpDDv"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ Generate our new name
+      var level as number
+      level = field[xTotalLev].value
+      field[livename].text = "Natural Armor +"
+      var total as number
+      total = 1
+      
+      ~ Note: This power increases our natural armor, it doesn't just add
+      ~ a nonstackable bonus.
+      hero.child[mNatural].field[Bonus].value = hero.child[mNatural].field[Bonus].value + total
+      field[livename].text = field[livename].text & total]]></eval>
+    </thing>
+  <thing id="cDDvCon" name="Ability Boost: Constitution +2" description="Adds +2 to your Constitution." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpDDv"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      hero.child[aCON].field[aNormMod].value = hero.child[aCON].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cDDvStr" name="Ability Boost: Strength +2" description="Adds +2 to your Strength." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpDDv"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      hero.child[aSTR].field[aNormMod].value = hero.child[aSTR].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cDDvDrRes" name="Draconic Resistance" description="+4 Bonus to Save vs Paralysis &amp; Magical Sleep" compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpDDv"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Resist"/>
+    </thing>
+  <thing id="cDDvIgSpF" name="Ignore Spell Failure" description="Dragon Devotee can cast 0-level &amp; 1st-level Arcane Spells with no chance of Spell Failure due to Armor.  This ability does not apply to 0 or 1st level spells raised to a higher level because of Metamagic Feats." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpDDv"/>
+    </thing>
+  <thing id="cDDvClaw" name="Claws" description="You can claw 1d3 damage (1d2 for Small creatures,  1d4 for Large)." compset="ClSpecial" summary="You can use a Claw attack.">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpDDv"/>
+    <bootstrap thing="wClaw">
+      <containerreq phase="First" priority="400"><![CDATA[count:Classes.DrgnDvote >= 4]]></containerreq>
+      <autotag group="wMain" tag="1d3_3"/>
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    </thing>
+  <thing id="cDDvDrTmp" name="Draconic Template" description="You have gained the Dragonblood subtype.  In addition to the bonuses you have already gained this gives you Darkvision (60ft), Lowlight Vision, and a +2 bonus to Intimidate and Spot Checks." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="SpecSource" tag="cHelpDDv"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="rDarkVis2">
+      <containerreq phase="First" priority="400"><![CDATA[count:Classes.DrgnDvote >= 5]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="rLowLight">
+      <containerreq phase="First" priority="400"><![CDATA[count:Classes.DrgnDvote >= 5]]></containerreq>
+      </bootstrap>
+    <eval phase="PreLevel">if (#levelcount[DrgnDvote] =5) then
+#skillbonus[kSpot] = #skillbonus[kSpot] + 2
+endif</eval>
+    <eval phase="PreLevel" index="2">if (#levelcount[DrgnDvote] =5) then
+#skillbonus[kIntim] = #skillbonus[kIntim] + 2
+endif</eval>
+    </thing>
+  <thing id="tmDrgnbrn" name="Dragonborn of Bahamut" description="{b}Other Racial Traits{/b}: You lose all other racial traits of your original race, including bonus feats, skill bonuses, attack bonuses, save bonuses, spell-like abilities, and so forth. Two specific instances warrant clarification.\n\n1) If your original race granted you a nonspecific bonus feat (such as the one gained by a human at 1st level), any feat can be lost, so long as it is not a prerequisite for another feat you have.\n\n2) If your original race granted bonus skill points, you should deduct an appropriate amount of skill points from your current skill ranks. The specific skills affected are up to you, but the DM&#146;s input might be required to adjudicate tricky situations (such as multiclass characters who might have purchased ranks of various skills as both class skills and cross-class skills).\n\nThe loss of racial traits might mean you no longer meet the prerequisites for a prestige class, feat, or some other feature. In general, you lose any special ability for which you no longer qualify, and nothing is gained in its place. A couple of exceptions exist.\n\n1) If you no longer qualify for a feat due to the transformation, you lose the feat and immediately select a new feat for which you qualify in its place. You must also replace any feat for which the lost feat was a prerequisite.\n\n2) If you no longer qualify for a prestige class, you lose the benefit of any class features or other special abilities granted by the class. You retain Hit Dice gained from advancing in the class, as well as any improvements to base attack bonus and base save bonuses that the class provided. If you later meet all the prerequisites for the class, you regain the benefits.\n\n{b}Special{/b}: Ordinarily, only a 1st-level character can select certain feats requiring the dragonblood subtype (see Chapter 6). However, upon becoming a dragonborn, you can elect to replace one (and only one) of your existing feats with one of these feats. A character cannot have more than one of these feats. The feat to be replaced cannot be a prerequisite for any prestige class, ability, or other feat." compset="Template" uniqueness="unique">
+    <fieldval field="tmCON" value="2"/>
+    <fieldval field="tmDEX" value="-2"/>
+    <usesource source="RoD"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <bootstrap thing="lDraconic"></bootstrap>
+    <bootstrap thing="fDracAsp"></bootstrap>
+    <bootstrap thing="stypDragon"></bootstrap>
+    <bootstrap thing="xImmFriPre"></bootstrap>
+    <bootstrap thing="xDrgnbrnAC"></bootstrap>
+    <eval phase="PreLevel" priority="11000">~ You retain your original base land speed, as well as any other modes of movement possessed by your original race. Other racial traits related to speed or movement, such as the dwarf&#146;s ability to move at full speed in medium or heavy armor, are lost.
+
+~You lose all other racial traits of your original race, including bonus feats, skill bonuses, attack bonuses, save bonuses, spell-like abilities, and so forth.
+
+~ disable racial abilities
+~   var race as string
+
+  doneif (compare(herofield[tRace].text, &quot;No Race&quot;) = 0)
+   var srchxpr as string
+   perform hero.findchild[BaseRace].setfocus
+~   race = focus.idstring
+~   srchxpr = &quot;SpecSource.&quot; &amp; race
+   srchxpr = focus.tagids[SpecSource.?,&quot;|&quot;] 
+   
+
+   foreach pick in hero from BaseSpec where srchxpr
+    perform eachpick.delete[Helper.ShowSpec]
+   nexteach
+
+ foreach pick in hero from BaseSkill
+  eachpick.field[Penalty].value -= eachpick.field[Bonus].value
+ nexteach</eval>
+    </thing>
+  <thing id="cDracAspct" name="Draconic Aspect" description="Bahamut has blessed the dragonborn with aspects combining some of the best attributes of good dragons. Upon completing the Rite of Rebirth, a dragonborn chooses which of the following three aspects to manifest. Once the choice is made, it cannot be changed." compset="ClSpecial">
+    <tag group="ClSpecWhen" tag="1"/>
+    </thing>
+  <thing id="fDracAsp" name="Draconic Aspect" description="Bahamut has blessed the dragonborn with aspects combining some of the best attributes of good dragons. Upon completing the Rite of Rebirth, a dragonborn chooses which of the following three aspects to manifest. Once the choice is made, it cannot be changed.\n\n{b}Heart{/b}: A dragonborn who chooses heart as her draconic aspect gains a breath weapon. The breath weapon is a bright, shining line that coruscates with every metallic color. The line&#146;s length is 5 feet per Hit Die the dragonborn has, up to a maximum of 100 feet at 20 HD. The breath weapon deals 1d8 points of damage, plus an extra 1d8 points for each 3 HD the dragonborn possesses (2d8 at 3 HD, 3d8 at 6 HD, and so on). The damage can be acid, cold, electricity, or fire, changing on each use as the dragonborn chooses. A successful Reflex save (DC 10 + 1/2 the dragonborn&#146;s HD + her Con modifier) halves the damage. A dragonborn can use her breath weapon once every 1d4 rounds.\n\n{b}Mind{/b}:A dragonborn who selects the mind aspect sharpens her senses, gaining immunity to paralysis and magic sleep effects. She gains darkvision out to 30 feet and low-light vision, plus a +2 racial bonus on Listen, Search, and Spot checks.\n\nAt 6 HD, the dragonborn&#146;s darkvision extends to 60 feet.\n\nAt 9 HD, the dragonborn&#146;s darkvision extends to 90 feet, and her low-light vision allows her to see three times as far as a human in shadowy illumination.\n\nAt 12 HD, the dragonborn&#146;s darkvision extends to 120 feet, and her low-light vision allows her to see four times as far as a human in shadowy illumination.\n\nAt 15 HD, the dragonborn gains blindsense out to 30 feet.\n\n{b}Wings{/b}: A dragonborn who selects the wings aspect hatches sporting fully formed wings. Dragonborn can use these wings to aid their jumps (granting a +10 racial bonus on Jump checks) and to glide. Those with 6 HD or more can use their wings to fly.\n\n{i}Gliding{/i}: A dragonborn can use her wings to glide, negating damage from a fall from any height and allowing 20 feet of forward travel for every  5 feet of descent. Dragonborn glide at a speed of 30 feet with average maneuverability. Even if a dragonborn&#146;s maneuverability improves, she can&#146;t hover while gliding. A dragonborn can&#146;t glide while carrying a medium or heavy load.\n\nIf a dragonborn becomes unconscious or helpless while in midair, her wings naturally unfurl, and powerful ligaments stiffen them.\n\nThe dragonborn descends slowly in a tight corkscrew and takes only 1d6 points of falling damage, no matter the actual distance of the fall.\n\n{i}Flight{/i}: When a dragonborn who selected the wings aspect reaches 6 HD, she gains a f ly speed of 30 feet with average maneuverability. A dragonborn can&#146;t fly while carrying a medium or heavy load or while fatigued or exhausted.\n\nA dragonborn can safely fly for a number of consecutive rounds equal to her Constitution modifier (minimum 1 round). She can double this length of flight but is fatigued by such exertion. The dragonborn is likewise fatigued after spending a total of more than 10 minutes per day flying. Because a dragonborn can glide before, after, and between rounds of actual flight, she can remain aloft for extended periods, even if she can only use flight for 1 round at a time without becoming fatigued.\n\nWhen she reaches 12 HD, a dragonborn has enough stamina and prowess to fl y without tiring. She can fly at a speed of 30 feet (average maneuverability) with no more exertion than walking or running.\n\nA dragonborn with flight can make a dive attack. A dive attack works like a charge, but the dragonborn must move a minimum of 30 feet and descend at least 10 feet. A dragonborn can make a dive attack only when wielding a piercing weapon. If the dive attack hits, it deals double damage.\n\nA dragonborn with flight can use the run action while flying, provided she flies in a straight line." compset="Feat" uniqueness="unique">
+    <fieldval field="ftCandExpr" value="thingid.xDrAsHeart | thingid.xDrAsMind | thingid.xDrAsWings"/>
+    <usesource source="RoD"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="User" tag="DrAsHeart"/>
+    <tag group="User" tag="DrAsMind"/>
+    <tag group="User" tag="DrAsWings"/>
+    <tag group="Helper" tag="ProfGroup"/>
+    <bootstrap thing="xDrAsHeart">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 1</containerreq>
+      </bootstrap>
+    <bootstrap thing="xDrAsMind">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 2</containerreq>
+      </bootstrap>
+    <bootstrap thing="xDrAsWings">
+      <containerreq phase="First" priority="10000">fieldval:hTotal = 3</containerreq>
+      </bootstrap>
+    <eval phase="First" priority="1000"><![CDATA[var id as string
+
+id = field[fChosen].chosen.idstring
+
+if (compare(id, "xDrAsHeart") = 0) then
+  field[hTotal].value = 1
+elseif (compare(id, "xDrAsMind") = 0) then
+  field[hTotal].value = 2
+elseif (compare(id, "xDrAsWings") = 0) then
+  field[hTotal].value = 3  
+else
+  
+endif]]></eval>
+    </thing>
+  <thing id="xDrAsHeart" name="Heart" compset="Special">
+    <usesource source="RoD"/>
+    <bootstrap thing="xDrAsBrWpn"></bootstrap>
+    </thing>
+  <thing id="xDrAsMind" name="Mind" compset="Special">
+    <usesource source="RoD"/>
+    <bootstrap thing="xImmParaly"></bootstrap>
+    <bootstrap thing="xImmSleep"></bootstrap>
+    <bootstrap thing="rLowLight2"></bootstrap>
+    <bootstrap thing="rDarkVis2">
+      <assignval field="Value" value="30"/>
+      </bootstrap>
+    <bootstrap thing="rBlindsen">
+      <assignval field="Value" value="30"/>
+      </bootstrap>
+    <eval phase="PreLevel" priority="12000">#skillbonus[kSpot] +=2
+  #skillbonus[kSearch] +=2
+  #skillbonus[kListen] +=2</eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[var HD as number
+HD = herofield[tHitDice].value
+debug HD
+
+if (HD <= 14) then
+  perform hero.childfound[rBlindsen].delete[Helper.ShowSpec]
+endif
+
+if (HD >=12) then
+  hero.childfound[rDarkVis2].field[Value].value += 90
+  hero.childfound[rLowLight2].field[xSumm].text = "See four times as far as a human in low light, distinguishing color and detail"
+elseif (HD >=9) then
+  hero.childfound[rDarkVis2].field[Value].value += 60
+  hero.childfound[rLowLight2].field[xSumm].text = "See three times as far as a human in low light, distinguishing color and detail"
+elseif (HD >=6) then
+  hero.childfound[rDarkVis2].field[Value].value += 30
+endif]]></eval>
+    </thing>
+  <thing id="xDrAsWings" name="Wings" description="A dragonborn who selects the wings aspect hatches sporting fully formed wings. Dragonborn can use these wings to aid their jumps (granting a +10 racial bonus on Jump checks) and to glide. Those with 6 HD or more can use their wings to fly." compset="Special" summary="A dragonborn can use her wings to gain a +10 bonus on Jump checks.">
+    <usesource source="RoD"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xDrAsGlide"></bootstrap>
+    <bootstrap thing="xDrAsFligh"></bootstrap>
+    <bootstrap thing="xFly2">
+      <assignval field="Value" value="30"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[var HD as number
+HD = herofield[tHitDice].value
+debug HD
+
+if (HD <= 5) then
+  perform hero.childfound[xFly2].delete[Helper.ShowSpec]
+endif]]></eval>
+    </thing>
+  <thing id="xDrAsBrWpn" name="Breath Weapon" description="A dragonborn who chooses heart as her draconic aspect gains a breath weapon. The breath weapon is a bright, shining line that coruscates with every metallic color. The line&#146;s length is 5 feet per Hit Die the dragonborn has, up to a maximum of 100 feet at 20 HD. The breath weapon deals 1d8 points of damage, plus an extra 1d8 points for each 3 HD the dragonborn possesses (2d8 at 3 HD, 3d8 at 6 HD, and so on). The damage can be acid, cold, electricity, or fire, changing on each use as the dragonborn chooses. A successful Reflex save (DC 10 + 1/2 the dragonborn&#146;s HD + her Con modifier) halves the damage. A dragonborn can use her breath weapon once every 1d4 rounds." compset="Special" summary="You breathe a bright, shining line that coruscates with every metallic color.">
+    <usesource source="RoD"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="User" tag="PickFocus" name="Ability Focus Selection" abbrev="Ability Focus Selection"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <eval phase="PostAttr" priority="20000"><![CDATA[~ Count our Racial HD and get our base DC.
+      var Length as number
+      var DMG as number
+      var DC as number
+
+      Length = herofield[tHitDice].value*5
+      Length = minimum(Length, 100)
+
+      DMG = 1 + herofield[tHitDice].value/3
+      DMG = round(DMG, 0, -1)
+
+      DC = 10 + herofield[tHitDice].value/2 + hero.child[aCON].field[aModBonus].value
+      DC = round(DC, 0, -1)
+
+
+
+field[livename].text = "Breath Weapon (" & Length & "') (" & DMG & "d8) (DC" & DC & ")"]]></eval>
+    </thing>
+  <thing id="xDrAsGlide" name="Gliding" description="A dragonborn can use her wings to glide, negating damage from a fall from any height and allowing 20 feet of forward travel for every 5 feet of descent. Dragonborn glide at a speed of 30 feet with average maneuverability. Even if a dragonborn&#146;s maneuverability improves, she can&#146;t hover while gliding. A dragonborn can&#146;t glide while carrying a medium or heavy load.\n\nIf a dragonborn becomes unconscious or helpless while in midair, her wings naturally unfurl, and powerful ligaments stiffen them.\n\nThe dragonborn descends slowly in a tight corkscrew and takes only 1d6 points of falling damage, no matter the actual distance of the fall." compset="Special">
+    <usesource source="RoD"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="xDrAsFligh" name="Flight" description="When a dragonborn who selected the wings aspect reaches 6 HD, she gains a fly speed of 30 feet with average maneuverability. A dragonborn can&#146;t fly while carrying a medium or heavy load or while fatigued or exhausted.\n\nA dragonborn can safely fly for a number of consecutive rounds equal to her Constitution modifier (minimum 1 round). She can double this length of flight but is fatigued by such exertion. The dragonborn is likewise fatigued after spending a total of more than 10 minutes per day flying. Because a dragonborn can glide before, after, and between rounds of actual flight, she can remain aloft for extended periods, even if she can only use flight for 1 round at a time without becoming fatigued.\n\nWhen she reaches 12 HD, a dragonborn has enough stamina and prowess to fly without tiring. She can fly at a speed of 30 feet (average maneuverability) with no more exertion than walking or running.\n\nA dragonborn with flight can make a dive attack. A dive attack works like a charge, but the dragonborn must move a minimum of 30 feet and descend at least 10 feet. A dragonborn can make a dive attack only when wielding a piercing weapon. If the dive attack hits, it deals double damage.\n\nA dragonborn with flight can use the run action while flying, provided she flies in a straight line." compset="Special">
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xImmFriPre" name="Immunity to Frightful Presence" description="You are immune to the frightful presence ability of dragons, just as if you were a dragon." compset="Special" uniqueness="unique">
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecType" tag="Immune" name="Immunity" abbrev="Immunity"/>
+    </thing>
+  <thing id="xDrgnbrnAC" name="+2 dodge bonus vs dragons" description="+2 dodge bonus to Armor Class against creatures of the dragon type. The dragonborn have an innate sense of how best to defend themselves against their potential enemies." compset="Special">
+    <usesource source="RoD"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="tmFGDrcnc" name="Draconic Creature Template" description="{i}Draconic{/i} is an inherited template that can be added to any living, corporeal creature (referred to hereafter as the base creature) except a dragon. (The dragon devotee prestige class also allows a character to gain this template.) A draconic creature uses all the base creature&#146;s statistics and special abilities except as noted here.\n\n{b}Size and Type{/b}: Animals with this template become magical beasts, but otherwise the base creature&#146;s type is unchanged. All creatures gain the dragonblood subtype. Size is unchanged. \n\n{b}Armor Class{/b}: Natural armor improves by 1.\n\n{b}Attack{/b}: A draconic creature retains all the attacks of the base creature and gains two claw attacks if it doesn&#146;t already have them. If the base creature can use weapons, the draconic creature retains this ability. If the base creature has natural weapons, it retains those weapons. A draconic creature ? ghting without weapons uses either its claw attacks or its primary natural weapon (if it has one). A draconic creature armed with a weapon uses its claw attacks or a weapon, as it desires.\n\n{b}Full Attack{/b}: A draconic creature fighting without weapons uses either its claw attacks or its natural weapons. If armed with a weapon, it uses the weapon as its primary attack and claws or some other natural weapon as a secondary attack.\n\n{b}Damage{/b}: Draconic creatures have two claw attacks. If the base creature does not have this attack form, use the appropriate damage value from the following table, according to the draconic creature&#146;s size. Creatures that have claw attacks retain their old damage values, or use the appropriate value from the table, whichever is higher.\nSize Claw Damage Up to Tiny 1 Small 1d2 Medium 1d3 Large 1d4 Huge 1d6 Gargantuan 1d8 Colossal 1d10\n\n{b}Special Qualities{/b}: A draconic creature retains all the special qualities of the base creature, and it gains darkvision out to 60 feet and low-light vision.\n\n{b}Saves{/b}: Draconic creatures have a +4 racial bonus on saves against magic sleep effects and paralysis.\n\n{b}Abilities{/b}: Increase from the base creature as follows: Str +2, Con +2, Cha +2.\n\n{b}Skills{/b}: Draconic creatures have a +2 racial bonus on Intimidate checks and Spot checks. \n\n{b}Level Adjustment{/b}: Same as base creature +1" compset="Template" uniqueness="unique">
+    <fieldval field="tmSTR" value="2"/>
+    <fieldval field="tmCON" value="2"/>
+    <fieldval field="tmCHA" value="2"/>
+    <fieldval field="tmAC" value="1"/>
+    <fieldval field="cLevelAdj" value="1"/>
+    <tag group="TemplHelp" tag="Inherited" name="Inherited" abbrev="Inherited"/>
+    <bootstrap thing="wClaw">
+      <autotag group="Helper" tag="NatPrimary"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="stypDragon"></bootstrap>
+    <bootstrap thing="xFGDrcSkil"></bootstrap>
+    <bootstrap thing="xFGDrcSave"></bootstrap>
+    <bootstrap thing="typMagBeas"></bootstrap>
+    <eval phase="First" priority="50000" index="2"><![CDATA[~ First, find out if we're an Animal or Magical Beast
+var type as number
+
+foreach pick in hero from BaseRace
+ if (eachpick.tagis[Type.Animal] <> 0) then
+  type = 1
+ elseif (eachpick.tagis[Race.typMagBeas] <> 0) then 
+  type = 2
+ else
+  type = 0
+ endif
+nexteach
+
+~ If we're an Animal, remove type and replace with Magical Beast
+  if (type = 1) then
+   perform hero.delete[Race.typAnimal]
+   perform hero.assign[Race.typMagBeas]
+   perform hero.childfound[typAnimal].delete[Helper.ShowSpec]
+  endif
+
+~ If we're a Magical Beast, hide second instance of Special
+  if (type = 2) then
+   perform hero.childfound[typMagBeas].delete[Helper.ShowSpec]
+  endif
+
+~ If we're not an Animal or Magical Beast, remove Magical Beast type
+  if (type = 0) then
+   perform hero.delete[Race.typMagBeas]
+   perform hero.childfound[typMagBeas].delete[Helper.ShowSpec]
+  endif]]></eval>
+    <eval phase="First" priority="10000"><![CDATA[~ Set our claw weapon damage based on size
+
+
+foreach pick in hero from BaseNatWep where "thingid.wClaw"
+if (herofield[tSize].value >= 4) then
+ perform each.assign[wMain.1d10_304]
+elseif (herofield[tSize].value = 3) then
+ perform each.assign[wMain.1d8_6]
+elseif (herofield[tSize].value = 2) then
+ perform each.assign[wMain.1d6_5]
+elseif (herofield[tSize].value = 1) then
+ perform each.assign[wMain.1d4_4]
+elseif (herofield[tSize].value = -1) then
+ perform each.assign[wMain.1d2_2]
+elseif (herofield[tSize].value <= -2) then
+ perform each.assign[wMain.1_1]
+elseif (herofield[tSize].value = 0) then
+ perform each.assign[wMain.1d3_3]
+endif
+
+nexteach]]></eval>
+    </thing>
+  <thing id="xFGDrcSkil" name="Racial skills bonus" description=" Draconic creatures have a +2 racial bonus on Intimidate checks and Spot checks." compset="Special">
+    <tag group="SpecSource" tag="Draconic" name="Draconic"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <eval phase="First">~ +2 racial to spot and intimidate.
+#skillbonus[kSpot] += 2
+#skillbonus[kIntim] += 2</eval>
+    </thing>
+  <thing id="xFGDrcSave" name="Draconic resistance bonus" description="Draconic creatures have a +4 racial bonus on saves against magic sleep effects and paralysis." compset="Special">
+    <fieldval field="xSource" value="Draconic"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    </thing>
+  </document>

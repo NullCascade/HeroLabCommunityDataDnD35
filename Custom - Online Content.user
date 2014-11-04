@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="fWldCoh" name="Wild Cohort" description="{b}Editor&apos;s note:{/b} It is recommended you not use this feat if you already have an animal companion.\n\nYou have a special bond with a wild animal, and it is willing to travel and adventure with you.\n\nBenefit: You gain an animal cohort. The animal cohort is generally friendly to you and is willing to follow you and adventure with you. If given proper training, the animal cohort will willingly serve as your mount, guardian, and companion. (See the description of the Handle Animal skill on page 74 of the Player&apos;s Handbook for more details on training animals.)\n\nYou can use the Handle Animal skill on your animal cohort as a move action rather than as a standard action, and you gain a +2 bonus on all Handle Animal checks made to direct or influence your animal cohort.\n\nProvided the DM gives her approval, at 1st level you can choose from a badger, camel, dire rat, dog, riding dog, eagle, hawk, horse (light or heavy), owl, pony, snake (Small or Medium viper), or wolf. Like a druid, you can choose more powerful animals as you increase in level. These alternative animal cohorts work like the alternative animal companions available to a druid, but they are available as cohorts later than they are available as animal companions. When selecting an alternative animal cohort, use the list of alternative animal companions on page 36 of the Player&apos;s Handbook, but treat yourself as a druid three levels lower than your character level. For example, once you reach 7th level, you can choose an animal cohort off the list of animal companions available to a 4th-level druid.\n\nSpecial: Druids and rangers who take the wild cohort feat gain an animal cohort in addition to their animal companion. Although the two abilities are similar, they follow different sets of rules and must be tracked separately.\n\nYou can only ever have one wild cohort at any given time.\n\nLike a druid&apos;s animal companion, your wild cohort improves as you gain experience. Although the animal cohort improves significantly compared to others of its kind, its abilities do not rival those of a druid&apos;s animal companion.\n\nCharacter Bonus  Natural      Str/Dex    Bonus    Special\nLevel          HD   Armor Adj.    Bonus     Tricks\n1-2             +0        +0             +0           0\n3-5             +1        +1             +0           1        Evasion\n6-8             +3        +3             +1           2\n9-11           +5        +5             +2           3\n12-14         +7        +7             +3           4        Devotion\n15-17         +9        +9             +4           5\n18-20        +11      +11             +5           6        Improved evasion\nAnimal Companion Basics: Use the base statistics for a creature of the companion&apos;s kind, as given in the Monster Manual, but make the following changes.\n\nClass Level: The character&apos;s class levels and racial Hit Dice.\n\nBonus HD: Extra eight-sided (d8) Hit Dice, each of which gains a Constitution modifier, as normal. Remember that extra Hit Dice improve the animal cohort&apos;s base attack and base save bonuses. An animal cohort&apos;s base attack bonus is the same as that of a cleric or rogue of a level equal to the animal&apos;s HD. An animal cohort has good Fortitude and Reflex saves (treat it as a character whose level equals the animal&apos;s HD). An animal cohort gains additional skill points and feats for bonus HD as normal for advancing a monster&apos;s Hit Dice (see the Monster Manual). The number listed is the current total of extra HD over and above the base creature&apos;s total. For example, a creature that normally has 1 HD but that is a wild cohort for a 6th-level character gains an additional 3 HD for a total of 4 HD.\n\nNatural Armor: The number noted here is an improvement to the animal cohort&apos;s existing natural armor bonus. For example, a creature that normally has a natural armor bonus of +2 but that is a wild cohort for a 6th-level character gains an additional +3 bonus for a total natural armor bonus of +5.\n\nStr/Dex Bonus: Add this value to the base creature&apos;s Strength and Dexterity scores. For example, a creature that normally has a Strength score of 10 but that is a wild cohort for a 15th-level character gains an additional +4 for a total Strength score of 14.\n\nBonus Tricks: The value given in this column is the total number of &quot;bonus&quot; tricks that the animal knows in addition to any that the character might choose to teach it (see the Handle Animal skill, Player&apos;s Handbook page 74). These bonus tricks don&apos;t require any training time or Handle Animal checks, and they don&apos;t count against the normal limit of tricks known by the animal. The character selects these bonus tricks, and once selected, they can&apos;t be changed. For example, a wild cohort that belongs to an 11th-level character has a total of 3 bonus tricks.\n\nEvasion (Ex): If an animal cohort is subjected to an attack that normally allows a Reflex saving throw for half damage, it takes no damage if it makes a successful saving throw.\n\nDevotion (Ex): An animal cohort&apos;s devotion to its master is so complete that it gains a +4 morale bonus on Will saves against enchantment spells and effects.\n\nImproved Evasion (Ex): When subjected to an attack that normally allows a Reflex saving throw for half damage, an animal cohort takes no damage if it makes a successful saving throw and only half damage if the saving throw fails.\n\n{b}Source{/b}: Online Content (Wizards 3.5 D&amp;D Archive Random Encounters: Wild Life)" compset="Feat">
+    <usesource source="Online" parent="UserParent" name="Online Content"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="fShowWhat" tag="Classes"/>
+    <tag group="fSelFrom" tag="Hero"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="User" tag="WildCohort"/>
+    <bootstrap thing="cAnimClass"></bootstrap>
+    <eval phase="First" priority="497" index="2"><![CDATA[~Only do stuff if the animal companion is live
+if (hero.childlives[cAnimComp] <> 0) then
+  ~ Remove Link and Share Spells special abilities.
+  perform hero.childfound[cAnimLink].delete[Helper.ShowSpec]
+  perform hero.childfound[cAnimShare].delete[Helper.ShowSpec]
+  ~ Assign User tag to minion that is used to reduce Bonus HP
+  perform hero.childfound[cAnimComp].minion[AnimComp].assign[User.WildCohort]
+endif]]></eval>
+    <eval phase="First" priority="400"><![CDATA[doneif (field[fChosen].ischosen = 0)
+
+var class as string
+class = "thingid." & field[fChosen].chosen.idstring
+
+foreach pick in hero from BaseClHelp where class
+ perform eachpick.assign[ClassPanel.ExNeeded]
+ eachpick.field[cAnimStart].value = 1
+nexteach]]></eval>
+    <eval phase="PreAttr" priority="10001" index="3"><![CDATA[if (hero.childlives[cAnimComp] <> 0) then
+ ~ Reduce bonus to STR, DEX, and Natural Armor by 1
+  hero.childfound[cAnimComp].minion[AnimComp].child[aSTR].field[aNormMod].value -= 1
+  hero.childfound[cAnimComp].minion[AnimComp].child[aDEX].field[aNormMod].value -= 1
+  hero.childfound[cAnimComp].minion[AnimComp].child[mNatural].field[mAC].value -= 1
+endif
+
+~ Squash Devotion and Improved Evasion until later levels.
+var lvl as number
+lvl = hero.childfound[cAnimClass].field[CompClLev].value
+
+if (lvl >= 6) then
+ if (lvl < 12) then
+ perform hero.childfound[cAnimComp].minion[AnimComp].childfound[cAnimDevo].delete[Helper.ShowSpec]
+ endif
+endif
+
+if (lvl >= 15) then
+ if (lvl < 18) then
+ perform hero.childfound[cAnimComp].minion[AnimComp].childfound[cAnimImpEv].delete[Helper.ShowSpec]
+ endif
+endif]]></eval>
+    </thing>
+  <thing id="idRoE" name="Rod of Exorcism" description="These rods are usually 14-inch spikes made out of strong metal, such as cold iron or adamantine, but are occasionally made out of darkwood as well. The rod activates when it pierces its target, and the target must succeed at a DC 23 Will save or suffer the effects of a dispel evil spell. Undead creatures struck by the rod suffer 10d6 holy damage (no saving throw allowed) in addition to the above affects.\n \n{b}Construction:{/b} Strong abjuration [good]; CL 17th; Craft Rod, Dispel Evil\n{b}Price:{/b} 11,000 gp.\n\n{b}Source{/b}: Online Content (Paizo forums: Campaign-Seed the Cellar Door)" compset="Rod">
+    <fieldval field="gCost" value="11000"/>
+    <fieldval field="h2ndLabel" value="Levels Used:"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Online"/>
+    <tag group="Helper" tag="SecondInc" name="SecondInc" abbrev="SecondInc"/>
+    <tag group="gType" tag="Rod" name="Rod" abbrev="Rod"/>
+    </thing>
+  </document>

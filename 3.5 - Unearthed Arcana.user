@@ -1,0 +1,1929 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>c6-24-10</info_history>
+    </fileinfo>
+  <thing id="cHelpDrP" name="Paragon - Drow" description="Separated from the rest of the elven people by a legacy of deceit, betrayal, and evil, the drow are easily one of the most dangerous of the humanoid races. Most drow paragons embody all their race&#146;s evil nature and delight in calculated cruelty, but some manage to pull away from this dark path, instead embodying the potential that all elves share for beauty, grace, and martial skill.\n\nDrow society is full of intrigue and fierce competition. Even the most able drow paragons can do little more to advance their race than to strive against the machinations of other powerful drow. When they succeed in breaking away from drow culture and its cruel influence, however, good-aligned drow paragons can be the most able and successful members of their race.\n\n{b}Adventures{/b}: Drow paragons adventure for one of two reasons. Those of an evil bent adventure to increase their own personal power, by acquiring wealth and powerful magic items or by improving their combat skills. Those few drow paragons with less selfish motives adventure to remove themselves from the influence of their race&#146;s harsh and cruel society. These latter drow paragons are the ones most likely to be seen in the company of other races.\n\n{b}Characteristics{/b}: Drow paragons are typically more reserved than other members of their race. Drow paragons consider themselves the elite of drow society, although they are careful about sharing these viewpoints with the powerful priestesses that hold sway over most aspects of drow culture. If anything, drow paragons are even more secretive and devious than average members of their race, and their success in such dangerous society emphasizes their ability to navigate treacherous social environments and manipulate the actions of others. It is said that the day a drow stops scheming is the day of her death.\n\n{b}Alignment{/b}: The vast majority of drow, including most drow paragons, are unrelentingly evil. However, the few goodaligned drow who survive their formative years are actually quite likely to gain levels in the drow paragon class. This makes good-aligned drow paragons more frequent than good drow of other classes, but still nowhere near as common as evil-aligned drow paragons.\n\n{b}Religion{/b}: Much of drow culture is dominated by religion, and the powerful priestesses who rule drow society see drow paragons as tools&#151;more skilled than other ambitious drow, perhaps, but no more inherently valuable. This outlook chafes against the drow paragon&#146;s own belief that she is the elite of her race. As a result, drow paragons are unlikely to follow religion of any kind when removed from the direct influence of the drow priestesses.\n\n{b}Background{/b}: Drow paragons learn their skills just as other drow do: by succeeding where weaker drow fail. Drow paragons build their skills among the hidden dangers of the subterranean realms and in a society where the powerful freely prey upon the weak. Regardless of alignment or other abilities, drow paragons are all forced at some point to make a decision about their race&#146;s cruel and ever-present religion. Those drow paragons who choose to follow the tenets of the evil priestesses often rise to become deadly lieutenants, carrying out the will of the matriarchs. The few who reject the priestesses&#146; teachings must do so quietly and covertly, biding their time until they can escape the influence of other drow.\n\n{b}Races{/b}: Most drow paragons have little use for members of the other races, viewing them only as potential prey or slaves. Good-aligned drow paragons, however, see the merits of interracial cooperation. These paragons seek out adventurers of other races, often coming to relate more to the societies of their adventuring companions than to their own culture.\n\n{b}Other Classes{/b}: Drow paragons see members of other classes as tools. They value a broad skill set in those with whom they associate, provided they can control the actions of these associates when the need arises. Drow paragons are willing to work with anyone they can manipulate to their own ends.\n\nThat said, drow paragons often see fighters as ideal companions because they combine great martial proficiency with physical prowess, while at the same time they are typically incapable of matching the drow&#146;s stealth and subtlety&#151;ensuring that the drow paragon can gain the upper hand whenever desired." compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cAbbr" value="DrP"/>
+    <fieldval field="cSkills" value="4"/>
+    <arrayval field="cSpecial" index="0" value="Improved spell-like abilities"/>
+    <arrayval field="cSpecial" index="1" value="Improved darkvision (+30 ft.), light sensitivity"/>
+    <arrayval field="cSpecial" index="2" value="Ability boost (Dex +2)"/>
+    <arrayval field="cSpell" index="0" value="+1 level of cleric or wizard"/>
+    <arrayval field="cSpell" index="2" value="+1 level of cleric or wizard"/>
+    <arrayval field="cMagLevTot" index="0" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <usesource source="Arcana"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="WepProf" tag="wCrsHand"/>
+    <tag group="WepProf" tag="wLongsword"/>
+    <tag group="WepProf" tag="wRapier"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="DroPara" name="Paragon - Drow"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="cDrPImpSpl"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="cDrPAbilBo"></bootstrap>
+    <bootstrap thing="cDrPImpDar"></bootstrap>
+    <bootstrap thing="cDrPLigSen"></bootstrap>
+    </thing>
+  <thing id="cDrowPara" name="Paragon - Drow" description="Separated from the rest of the elven people by a legacy of deceit, betrayal, and evil, the drow are easily one of the most dangerous of the humanoid races. Most drow paragons embody all their race&#146;s evil nature and delight in calculated cruelty, but some manage to pull away from this dark path, instead embodying the potential that all elves share for beauty, grace, and martial skill.\n\nDrow society is full of intrigue and fierce competition. Even the most able drow paragons can do little more to advance their race than to strive against the machinations of other powerful drow. When they succeed in breaking away from drow culture and its cruel influence, however, good-aligned drow paragons can be the most able and successful members of their race.\n\n{b}Adventures{/b}: Drow paragons adventure for one of two reasons. Those of an evil bent adventure to increase their own personal power, by acquiring wealth and powerful magic items or by improving their combat skills. Those few drow paragons with less selfish motives adventure to remove themselves from the influence of their race&#146;s harsh and cruel society. These latter drow paragons are the ones most likely to be seen in the company of other races.\n\n{b}Characteristics{/b}: Drow paragons are typically more reserved than other members of their race. Drow paragons consider themselves the elite of drow society, although they are careful about sharing these viewpoints with the powerful priestesses that hold sway over most aspects of drow culture. If anything, drow paragons are even more secretive and devious than average members of their race, and their success in such dangerous society emphasizes their ability to navigate treacherous social environments and manipulate the actions of others. It is said that the day a drow stops scheming is the day of her death.\n\n{b}Alignment{/b}: The vast majority of drow, including most drow paragons, are unrelentingly evil. However, the few goodaligned drow who survive their formative years are actually quite likely to gain levels in the drow paragon class. This makes good-aligned drow paragons more frequent than good drow of other classes, but still nowhere near as common as evil-aligned drow paragons.\n\n{b}Religion{/b}: Much of drow culture is dominated by religion, and the powerful priestesses who rule drow society see drow paragons as tools&#151;more skilled than other ambitious drow, perhaps, but no more inherently valuable. This outlook chafes against the drow paragon&#146;s own belief that she is the elite of her race. As a result, drow paragons are unlikely to follow religion of any kind when removed from the direct influence of the drow priestesses.\n\n{b}Background{/b}: Drow paragons learn their skills just as other drow do: by succeeding where weaker drow fail. Drow paragons build their skills among the hidden dangers of the subterranean realms and in a society where the powerful freely prey upon the weak. Regardless of alignment or other abilities, drow paragons are all forced at some point to make a decision about their race&#146;s cruel and ever-present religion. Those drow paragons who choose to follow the tenets of the evil priestesses often rise to become deadly lieutenants, carrying out the will of the matriarchs. The few who reject the priestesses&#146; teachings must do so quietly and covertly, biding their time until they can escape the influence of other drow.\n\n{b}Races{/b}: Most drow paragons have little use for members of the other races, viewing them only as potential prey or slaves. Good-aligned drow paragons, however, see the merits of interracial cooperation. These paragons seek out adventurers of other races, often coming to relate more to the societies of their adventuring companions than to their own culture.\n\n{b}Other Classes{/b}: Drow paragons see members of other classes as tools. They value a broad skill set in those with whom they associate, provided they can control the actions of these associates when the need arises. Drow paragons are willing to work with anyone they can manipulate to their own ends.\n\nThat said, drow paragons often see fighters as ideal companions because they combine great martial proficiency with physical prowess, while at the same time they are typically incapable of matching the drow&#146;s stealth and subtlety&#151;ensuring that the drow paragon can gain the upper hand whenever desired." compset="ClassLevel" maxlimit="3">
+    <fieldval field="cHitDice" value="6"/>
+    <usesource source="Arcana"/>
+    <tag group="AgeColumn" tag="2"/>
+    <tag group="ClassType" tag="Normal"/>
+    <bootstrap thing="cHelpDrP"></bootstrap>
+    <link linkage="helper" thing="cHelpDrP"/>
+    <exprreq message="Elf, Drow race required."><![CDATA[tagis[Race.Elf] + tagis[Race.Drow] >= 2]]></exprreq>
+    </thing>
+  <thing id="xDroSpAbil" name="Drow Spell-Like Abilities" description="Drow can use the following spell-like abilities once per day: {i}dancing lights{/i}, {i}darkness{/i}, {i}faerie fire{/i}. Caster level equals the drow&#146;s class levels." compset="Special" summary="1/day, use {i}dancing lights{/i}, {i}darkness{/i}, and {i}faerie fire{/i}.">
+    <comment>Eval script basing the Summary on charges. (Done)</comment>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="rDrElf"/>
+    <bootstrap thing="xDroFairyF"></bootstrap>
+    <bootstrap thing="xDroDanLi"></bootstrap>
+    <bootstrap thing="xDroDarkne"></bootstrap>
+    <eval phase="UserPostLv" priority="10100"><![CDATA[    var charges as number
+    charges = hero.child[xDroDanLi].field[hTotal].value
+
+    var charge2 as number
+    charge2 = hero.child[xDroDarkne].field[hTotal].value
+
+    var charge3 as number
+    charge3 = hero.child[xDroFairyF].field[hTotal].value
+
+    field[xSumm].text = "" & charges & "/day, {i}dancing lights{/i}. " & charge2 & "/day {i}darkness{/i}. " & charge3 & "/day {i}faerie fire{/i}."]]></eval>
+    </thing>
+  <thing id="xDroDanLi" name="{i}Dancing lights{/i}" description="Drow can use {i}dancing lights{/i} once per day as a spell like ability." compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="xDroFairyF" name="{i}Faerie fire{/i}" description="Drow can use {i}faerie fire{/i} once per day as a spell like ability." compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="xDroDarkne" name="{i}Darkness{/i}" description="Drow can use {i}darkness{/i} once per day as a spell like ability." compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    </thing>
+  <thing id="cDrPImpDar" name="Improved Darkvision" description="At 2nd level, a drow paragon&#146;s darkvision range increases by 30 feet." compset="ClSpecial">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Sense"/>
+    <tag group="SpecSource" tag="cHelpDrP"/>
+    <eval phase="UserPostLv" priority="11000"><![CDATA[~ Add 30 to our darkvision
+     if (field[xTotalLev].value >= 2) then
+      hero.child[rDarkVis2].field[Value].value += 30
+     endif]]></eval>
+    </thing>
+  <thing id="cDrPImpSpl" name="Improved Spell-Like Abilities" description="At 1st level, a drow paragon gains one additional daily use of each of her innate spell-like abilities." compset="ClSpecial" summary="One extra use per day of drow spell like abilities.">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="cHelpDrP"/>
+    <eval phase="UserPostLv" priority="10000">hero.child[xDroDanLi].field[hTotal].value += 1
+hero.child[xDroDarkne].field[hTotal].value += 1
+hero.child[xDroFairyF].field[hTotal].value += 1
+
+    hero.child[xDroSpAbil].field[CustDesc].text = &quot;Drow Paragons can use the following spell-like abilities twice per day: {i}dancing lights{/i}, {i}darkness{/i}, {i}faerie fire{/i}. Caster level equals the drow&#146;s class levels.&quot;</eval>
+    </thing>
+  <thing id="cDrPLigSen" name="Light Sensitivity" description="A 2nd-level drow paragon&#146;s light blindness is lessened to light sensitivity. Instead of being blinded by bright light, she is merely dazzled in bright sunlight or within the radius of a {i}daylight{/i} spell." compset="ClSpecial" summary="A 2nd-level drow paragon&#146;s light blindness is lessened to light sensitivity.">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Weakness"/>
+    <tag group="SpecSource" tag="cHelpDrP"/>
+    <eval phase="UserPostLv" priority="10000">if (field[xTotalLev].value &gt;= 2) then
+hero.child[rDrElBlind].field[livename].text = &quot;Light Sensitivity&quot;
+    hero.child[rDrElBlind].field[xSumm].text = &quot;Dazzled by bright sunlight or the {i}daylight{/i} spell.&quot;
+    hero.child[rDrElBlind].field[CustDesc].text = &quot;A 2nd-level drow paragon&#146;s light blindness is lessened to light sensitivity. Instead of being blinded by bright light, she is merely dazzled in bright sunlight or within the radius of a {i}daylight{/i} spell.&quot;
+     endif</eval>
+    </thing>
+  <thing id="cDrPAbilBo" name="Ability Boost" description="At 3rd level, a drow paragon&#146;s Dexterity score increases by 2 points." compset="ClSpecial">
+    <usesource source="Arcana"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="3" name="3" abbrev="3"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpDrP"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      ~ NOTE: Changing our intelligence doesn't change our skill points. We
+      ~ need to do that manually in the dragon disciple class pick.
+      hero.child[aDEX].field[aNormMod].value += 2]]></eval>
+    </thing>
+  <thing id="cHelpElP" name="Paragon - Elf" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cAbbr" value="ElP"/>
+    <fieldval field="cSkills" value="2"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cSpell" index="1" value="+1 level of wizard"/>
+    <arrayval field="cSpell" index="2" value="+1 level of wizard"/>
+    <usesource source="Arcana"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="ElfParago" name="Paragon - Elf"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="WepProf" tag="wLongbow"/>
+    <tag group="WepProf" tag="wLongsword"/>
+    <tag group="WepProf" tag="wRapier"/>
+    <tag group="WepProf" tag="wShortbow"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <bootstrap thing="cElPWeaFoc"></bootstrap>
+    <bootstrap thing="cElPResEnc"></bootstrap>
+    <bootstrap thing="cElPElfsig"></bootstrap>
+    <bootstrap thing="cElPAbiBoo"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    </thing>
+  <thing id="cElfPara" name="Paragon - Elf" description="Accomplished with both spell and blade, elves move through the world at a pace removed from that of shorter-lived races. Long-standing champions of good, the elf race is storied beyond telling and peopled by heroes beyond counting. As mighty as the elf race can be, it is not often that elves turn to warfare or combat, preferring instead the paths of poetry, dance, song, and lore. With their long life spans and many talents, elves excel in numerous areas and classes, but a few exemplify to an even greater degree the complex and powerful nature of their race.\n\n{b}Adventures{/b}: Elf paragons retreat from the world less readily than most elves, seeing much of the nature of the elf race in the form and shape of the world. They enjoy travel and interaction with other races, learning as much about themselves in the process as they do about those they meet. Elf paragons are aware that voluntary isolation from other good-aligned races poses a great danger to the elven race&#151;although such self absorption lessens the pain and frustration involved in dealing with other races, it leaves an elven community vulnerable to stagnation and decline.\n\n{b}Characteristics{/b}: Elf paragons are curious, patient, and, when roused to action, deadly. They are swift and stealthy and have amazingly acute senses, allowing them to react far faster than opponents might expect. Their aptitude in both stealth and weapons makes them excellent at attacking from ambush, and their propensity to take rogue and ranger levels in addition to their paragon levels accentuates these strengths.\n\n{b}Alignment{/b}: Elf paragons can be of any alignment, but most are neutral good. They see the world as a place of harmony, a place that can provide bounty to all those willing to live in peace&#151;so long as society is not pushed to extremes of law or anarchy.\n\n{b}Religion{/b}: Although elves as a whole can be as religious as members of any other race, elf paragons rarely concentrate on religion. Instead, they focus their attention and devotion on the mortal members of their race.\n\n{b}Background{/b}: Most elf paragons come into their abilities through a strong love of their people and the work of an influential mentor. Although this mentor may be of any class, it is often the lorekeepers and wizards of the elf race who seek to foster the skills of fledgling elf paragons, knowing that one young elf turning to the path of the paragon can benefit the race for nearly a thousand years.\n\n{b}Races{/b}: Elf paragons are, for the most part, open and gracious when dealing with members of other races. Even if she secretly looks down on shorter-lived and less gifted folk, an elf paragon knows that other races can offer her the one thing that most elves lack: a sense of urgency. As an elf paragon grows in power, she becomes more and more apt to look upon members of other races as curiosities to be studied rather than as peers&#151;but she remains gracious and trusting, striving to learn how the virtues of other races might benefit the elf race.\n\n{b}Other Classes{/b}: Like most racial paragons, elf paragons tend to think more in terms of relations with other races than they do about interactions with other classes. Elf paragons relate best to characters who revere nature or seek to live in harmony with the world around them. They find common philosophical ground with monks and common cause with many paladins, but they are most comfortable around wizards, rangers, and druids. Although elves are as religious as any other race, elf paragons often mistrust clerics&#146; reliance on divine guidance, and heavily armored warriors have an approach to combat that elf paragons sometimes have a hard time appreciating." compset="ClassLevel" maxlimit="3">
+    <fieldval field="cHitDice" value="8"/>
+    <usesource source="Arcana"/>
+    <tag group="ClassType" tag="Normal"/>
+    <tag group="AgeColumn" tag="2"/>
+    <bootstrap thing="cHelpElP"></bootstrap>
+    <link linkage="helper" thing="cHelpElP"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If this isn't the 3rd level of the class, get out
+      if (field[cThisIndex].value <> 3) then
+        done
+        endif
+
+      ~ Our intelligence goes up by 2 points at this level, which means
+      ~ we get a bonus skill point.
+      var v_level as number
+      v_level = field[cIndex].value
+      call aAddIntSkl]]></eval>
+    <exprreq message="Elf, non-Drow race required."><![CDATA[tagis[Race.Elf] - tagis[Race.Drow] <> 0]]></exprreq>
+    </thing>
+  <thing id="cElPElfsig" name="Elfsight" description="An elf paragon has exceptional visual acuity. Her racial bonus on Search and Spot checks increases to +4. In addition, an elf paragon&#146;s low-light vision increases in range, allowing her to see three times as far as a human in starlight, moonlight, torchlight, and similar conditions of poor illumination." compset="ClSpecial" summary="Low light vision increases to 3x farther than humans, +2 to search and spot">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Sense"/>
+    <tag group="SpecSource" tag="cHelpElP"/>
+    <eval phase="PreLevel" priority="10000">~ +2 to Search and Spot checks
+      #skillbonus[kSearch] += 2
+      #skillbonus[kSpot] += 2</eval>
+    </thing>
+  <thing id="cElPResEnc" name="Resist Enchantment" description="An elf paragon&#146;s racial bonus on saves against enchantment spells or effects increases by 2." compset="ClSpecial" summary="Racial bonus on saves vs Enchantment increases to +4">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Resist"/>
+    <tag group="SpecSource" tag="cHelpElP"/>
+    <eval phase="PreLevel" priority="10000">~ +2 to Search and Spot checks
+      #skillbonus[kSearch] += 2
+      #skillbonus[kSpot] += 2</eval>
+    </thing>
+  <thing id="cElPWeaFoc" name="Weapon Focus" description="At 2nd level, an elf paragon gains Weapon Focus as a bonus feat. This feat must apply to either the rapier, longsword, shortsword, shortbow, longbow, composite shortbow, or composite longbow." compset="ClSpecial" summary="Gain Weapon Focus for rapier, longsword, shortsword, shortbow or longbow.">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpElP"/>
+    <bootstrap thing="fWepFoc">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.ElfParago >=2]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cElPAbiBoo" name="Ability Boost" description="At 3rd level, an elf paragon&#146;s Intelligence score increases by 2 points." compset="ClSpecial">
+    <usesource source="Arcana"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpElP"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      ~ NOTE: Changing our intelligence doesn't change our skill points. We
+      ~ need to do that manually in the dragon disciple class pick.
+      hero.child[aINT].field[aNormMod].value += 2]]></eval>
+    </thing>
+  <thing id="cHelpHuP" name="Paragon - Human" description="Human inventors, explorers, and others who push the boundaries of knowledge and experience may become human paragons. They turn adversity into opportunity by finding new ways to apply their skills, discovering new techniques to solve problems, and challenging entropy by constantly seeking out ventures they have not yet mastered. Humans, and the paragons who rise from among them, balance strength with agility and temper intellect with intuition.\n\n{b}Adventures{/b}: Adventure occupies much of a human paragon&#146;s time. Whether impulsive or carefully studious, a human paragon searches almost constantly for the new and unexplored. Few, however, think of themselves as pioneers or inventors. They see themselves as naturally curious, deeming the intelligent and unusual way in which they use their skills to be the norm rather than an exception. Curiosity and wanderlust are easily the two most common motivations for undertaking adventures, but human paragons may find themselves on adventures as a result of a quest or some other necessary duty.\n\n{b}Characteristics{/b}: Human paragons are inventiveness personified. They are adaptable and capable of using their skills in a broad variety of situations. Perhaps because they are capable in such a wide range of situations, human paragons tend to dislike repetition and crave variety. They seldom pass up a chance to indulge in a new experience, and a new challenge is much more likely to excite them than a lingering goal. If human paragons have a downfall, it is that they see themselves capable of overcoming any challenge or inventing a solution for any problem. When asked who would be best for a task, a human paragon almost always chooses himself&#151;not out of overconfidence or egotism, but because he has learned through success after success that when backed into a corner, he&#146;ll almost always find a way out.\n\n{b}Alignment{/b}: Human paragons have few tendencies in alignment. Perhaps more are attracted to chaos over law, although those who become devoted to a religion or cause seem to gravitate toward lawful deities or philosophies.\n\n{b}Religion{/b}: Humans are as varied in their beliefs as they are in every other aspect of their lives, and human paragons are no exception. Many human paragons dabble in religion, learning a bit of one doctrine, following another deity for a brief time, and so on. Although these individuals seldom stay with one belief system for long, they become quite well versed in religion over time. While it&#146;s more common to find human paragons with only these surface attachments to religion, some human paragons develop a passion for worship that fuses seamlessly with their views of humanity, resulting in zealotry. In almost every case, these human paragons follow lawful deities and multiclass as clerics or paladins. \n\n{b}Background{/b}: Although there is no single common background for human paragons, many share some common characteristics. They often arise from situations in which they have many opportunities to learn, either from parents, an accepting community, or even a monastery filled with learned monks and clerics.\n\n{b}Races{/b}: Human paragons are open and accepting, embodying the best aspects of humanity&#146;s flexibility and tolerance. Human paragons usually delight in poking gentle fun at the foibles of other races, finding their extremes of behavior amusing. They also find much to admire in other races, including the stoic fortitude of the dwarves, the beauty and grace of the elves, and the curiosity and inventiveness of the halfl ings. In truth, human paragons are closer in attitude to halfl ings than any other race&#151;both suffer (or benefit) from more than a touch of wanderlust." compset="ClassHelp" uniqueness="unique">
+    <comment><![CDATA[Need to Limit to one Adaptive Learning Skill. (Done)
+
+Need to hide class skills from Specials tab
+Post level 10000
+~ Hide us, we don't need to be seen on the Specials list
+     perform delete[Helper.ShowSpec]]]></comment>
+    <fieldval field="cAbbr" value="HuP"/>
+    <fieldval field="cSkills" value="4"/>
+    <fieldval field="cSpec2ndNm" value="Ability Boost"/>
+    <fieldval field="cSpecName" value="Class Skills"/>
+    <arrayval field="cCustScTot" index="2" value="1"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cSpecial" index="0" value="Adaptive learning"/>
+    <arrayval field="cSpecial" index="1" value="Bonus feat"/>
+    <arrayval field="cSpecial" index="2" value="Ability boost (+2)"/>
+    <arrayval field="cBonFtTot" index="1" value="1"/>
+    <arrayval field="cSpell" index="1" value="+1 level of existing class"/>
+    <arrayval field="cSpell" index="2" value="+1 level of existing class"/>
+    <arrayval field="cCustTot" index="0" value="10"/>
+    <usesource source="Arcana"/>
+    <tag group="cRef" tag="Poor" name="Poor" abbrev="Poor"/>
+    <tag group="cWill" tag="Good" name="Good" abbrev="Good"/>
+    <tag group="Classes" tag="HumPara" name="Paragon - Human" abbrev="Expert"/>
+    <tag group="cAttack" tag="Medium" name="Medium" abbrev="Medium"/>
+    <tag group="cFort" tag="Poor" name="Poor" abbrev="Poor"/>
+    <bootstrap thing="fMartial"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="cHuPBonFea"></bootstrap>
+    <bootstrap thing="cHuPAbiBoo"></bootstrap>
+    <bootstrap thing="cHuPAdaLea"></bootstrap>
+    <evalrule phase="PreLevel" priority="10000" message="All designated class skills for Expert must be different" summary="Duplicate class skills"><![CDATA[
+      ~Tally up the total number of ClassSkill tags
+      var total as number
+      total = tagcount[ClassSkill.?]
+      ~Tally up the number of different ClassSkill tags
+      var unique as number
+      unique = tagunique[ClassSkill.?]
+      ~If we have any duplicates (i.e. the values don't match), we have an error
+      if (total <> unique) then
+        linkvalid = 0
+      else
+        @valid = 1
+        endif]]></evalrule>
+    </thing>
+  <thing id="cHumPara" name="Paragon - Human" description="Human inventors, explorers, and others who push the boundaries of knowledge and experience may become human paragons. They turn adversity into opportunity by finding new ways to apply their skills, discovering new techniques to solve problems, and challenging entropy by constantly seeking out ventures they have not yet mastered. Humans, and the paragons who rise from among them, balance strength with agility and temper intellect with intuition.\n\n{b}Adventures{/b}: Adventure occupies much of a human paragon&#146;s time. Whether impulsive or carefully studious, a human paragon searches almost constantly for the new and unexplored. Few, however, think of themselves as pioneers or inventors. They see themselves as naturally curious, deeming the intelligent and unusual way in which they use their skills to be the norm rather than an exception. Curiosity and wanderlust are easily the two most common motivations for undertaking adventures, but human paragons may find themselves on adventures as a result of a quest or some other necessary duty.\n\n{b}Characteristics{/b}: Human paragons are inventiveness personified. They are adaptable and capable of using their skills in a broad variety of situations. Perhaps because they are capable in such a wide range of situations, human paragons tend to dislike repetition and crave variety. They seldom pass up a chance to indulge in a new experience, and a new challenge is much more likely to excite them than a lingering goal. If human paragons have a downfall, it is that they see themselves capable of overcoming any challenge or inventing a solution for any problem. When asked who would be best for a task, a human paragon almost always chooses himself&#151;not out of overconfidence or egotism, but because he has learned through success after success that when backed into a corner, he&#146;ll almost always find a way out.\n\n{b}Alignment{/b}: Human paragons have few tendencies in alignment. Perhaps more are attracted to chaos over law, although those who become devoted to a religion or cause seem to gravitate toward lawful deities or philosophies.\n\n{b}Religion{/b}: Humans are as varied in their beliefs as they are in every other aspect of their lives, and human paragons are no exception. Many human paragons dabble in religion, learning a bit of one doctrine, following another deity for a brief time, and so on. Although these individuals seldom stay with one belief system for long, they become quite well versed in religion over time. While it&#146;s more common to find human paragons with only these surface attachments to religion, some human paragons develop a passion for worship that fuses seamlessly with their views of humanity, resulting in zealotry. In almost every case, these human paragons follow lawful deities and multiclass as clerics or paladins. \n\n{b}Background{/b}: Although there is no single common background for human paragons, many share some common characteristics. They often arise from situations in which they have many opportunities to learn, either from parents, an accepting community, or even a monastery filled with learned monks and clerics.\n\n{b}Races{/b}: Human paragons are open and accepting, embodying the best aspects of humanity&#146;s flexibility and tolerance. Human paragons usually delight in poking gentle fun at the foibles of other races, finding their extremes of behavior amusing. They also find much to admire in other races, including the stoic fortitude of the dwarves, the beauty and grace of the elves, and the curiosity and inventiveness of the halfl ings. In truth, human paragons are closer in attitude to halfl ings than any other race&#151;both suffer (or benefit) from more than a touch of wanderlust." compset="ClassLevel" maxlimit="3">
+    <fieldval field="cHitDice" value="8"/>
+    <usesource source="Arcana"/>
+    <tag group="ClassType" tag="Normal"/>
+    <bootstrap thing="cHelpHuP"></bootstrap>
+    <link linkage="helper" thing="cHelpHuP"/>
+    <exprreq message="Human race required" onlyonce="yes"><![CDATA[tagis[Race.Human] <> 0]]></exprreq>
+    </thing>
+  <thing id="cHuPOLock" name="Open Lock" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kOpenLock]</eval>
+    </thing>
+  <thing id="cHuPApprai" name="Appraise" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kAppraise]</eval>
+    </thing>
+  <thing id="cHuPAutoHy" name="Autohypnosis" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kAutohypno]</eval>
+    </thing>
+  <thing id="cHuPBalanc" name="Balance" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kBalance]</eval>
+    </thing>
+  <thing id="cHuPBlufAL" name="Bluff (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kBluff]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPBlufAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPClimb" name="Climb" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kClimb]</eval>
+    </thing>
+  <thing id="cHuPConc" name="Concentration" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kConcent]</eval>
+    </thing>
+  <thing id="cHuPCraft" name="Craft" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.Craft]</eval>
+    </thing>
+  <thing id="cHuPKnGeo" name="Knowledge (Geography)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowGeog]</eval>
+    </thing>
+  <thing id="cHuPJump" name="Jump" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kJump]</eval>
+    </thing>
+  <thing id="cHuPKnDun" name="Knowledge (Dungeoneering)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowDun]</eval>
+    </thing>
+  <thing id="cHuPKnArc" name="Knowledge (Arcana)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowArcan]</eval>
+    </thing>
+  <thing id="cHuPDecScr" name="Decipher Script" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kDecScript]</eval>
+    </thing>
+  <thing id="cHuPDiplo" name="Diplomacy" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kDiplomacy]</eval>
+    </thing>
+  <thing id="cHuPDisDev" name="Disable Device" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kDisable]</eval>
+    </thing>
+  <thing id="cHuPDisgui" name="Disguise" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kDisguise]</eval>
+    </thing>
+  <thing id="cHuPEscArt" name="Escape Artist" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kEscape]</eval>
+    </thing>
+  <thing id="cHuPForge" name="Forgery" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kForgery]</eval>
+    </thing>
+  <thing id="cHuPKnArEn" name="Knowledge (Architecture and Engineering)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowArcEn]</eval>
+    </thing>
+  <thing id="cHuPGatInf" name="Gather Information" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kGatherInf]</eval>
+    </thing>
+  <thing id="cHuPHanAnm" name="Handle Animal" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kHandleAnm]</eval>
+    </thing>
+  <thing id="cHuPHeal" name="Heal" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kHeal]</eval>
+    </thing>
+  <thing id="cHuPHide" name="Hide" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kHide]</eval>
+    </thing>
+  <thing id="cHuPIntim" name="Intimidate" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kIntim]</eval>
+    </thing>
+  <thing id="cHuPKnLoc" name="Knowledge (Local)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowLocal]</eval>
+    </thing>
+  <thing id="cHuPKnHis" name="Knowledge (History)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowHist]</eval>
+    </thing>
+  <thing id="cHuPKnNat" name="Knowledge (Nature)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowNat]</eval>
+    </thing>
+  <thing id="cHuPKnNob" name="Knowledge (Nobility and Royalty)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowNoble]</eval>
+    </thing>
+  <thing id="cHuPKnPsi" name="Knowledge (Psionics)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowPsi]</eval>
+    </thing>
+  <thing id="cHuPKnRel" name="Knowledge (Religion)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowRel]</eval>
+    </thing>
+  <thing id="cHuPKnPla" name="Knowledge (Planes)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowPlane]</eval>
+    </thing>
+  <thing id="cHuPKnOth" name="Knowledge (Other)" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kKnowOther]</eval>
+    </thing>
+  <thing id="cHuPListen" name="Listen" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kListen]</eval>
+    </thing>
+  <thing id="cHuPMovSil" name="Move Silently" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kMoveSil]</eval>
+    </thing>
+  <thing id="cHuPPerfor" name="Perform" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.Perform]</eval>
+    </thing>
+  <thing id="cHuPProf" name="Profession" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.Profession]</eval>
+    </thing>
+  <thing id="cHuPApprAL" name="Appraise (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kAppraise]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPApprAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPAuHyAL" name="Autohypnosis (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kAutohypno]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPAuHyAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPBalaAL" name="Balance (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kBalance]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPBalaAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPBluff" name="Bluff" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kBluff]</eval>
+    </thing>
+  <thing id="cHuPClimAL" name="Climb (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kClimb]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPClimAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPConcAL" name="Concentration (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kConcent]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPConcAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPCrafAL" name="Craft (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.Craft]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL]+ picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPCrafAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPDecSAL" name="Decipher Script (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kDecScript]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPDecSAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPDiplAL" name="Diplomacy (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kDiplomacy]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPDiplAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPDisDAL" name="Disable Device (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kDisable]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPDisDAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPDisgAL" name="Disguise (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kDisguise]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPDisgAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPForgAL" name="Forgery (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <comment>picklives[cHuPApprAL] + 
+picklives[cHuPAuHyAL] + 
+picklives[cHuPBalaAL] + 
+picklives[cHuPBlufAL] + 
+picklives[cHuPClimAL] +
+ 
+picklives[cHuPConcAL] + 
+picklives[cHuPCrafAL] + 
+picklives[cHuPDecSAL] + 
+picklives[cHuPDiplAL] +
+ 
+picklives[cHuPDisDAL] + 
+picklives[cHuPDisgAL] + 
+picklives[cHuPEscAAL] + 
+picklives[cHuPForgAL] +
+ 
+picklives[cHuPGatIAL] + 
+picklives[cHuPHanAAL] + 
+picklives[cHuPHealAL] + 
+picklives[cHuPHideAL] +
+ 
+picklives[cHuPIntiAL] + 
+picklives[cHuPJumpAL] + 
+picklives[cHuPKnArAL] + 
+picklives[cHuPKnAEAL] +
+
+picklives[cHuPKnDuAL] + 
+picklives[cHuPKnGeAL] + 
+picklives[cHuPKnHiAL] + 
+picklives[cHuPKnLoAL] +
+
+picklives[cHuPIntiAL] + 
+picklives[cHuPJumpAL] + 
+picklives[cHuPKnArAL] + 
+picklives[cHuPKnAEAL] +
+
+picklives[cHuPIntiAL] + 
+picklives[cHuPJumpAL] + 
+picklives[cHuPKnArAL] + 
+picklives[cHuPKnAEAL] +</comment>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kForgery]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPForgAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPGatIAL" name="Gather Information (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kGatherInf]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPGatIAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPHanAAL" name="Handle Animal (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kHandleAnm]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPHanAAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPHealAL" name="Heal (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kHeal]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPHealAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPHideAL" name="Hide (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kHide]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPHideAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPIntiAL" name="Intimidate (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kIntim]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPIntiAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPJumpAL" name="Jump (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kJump]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPJumpAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnArAL" name="Knowledge (Arcana) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowArcan]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnArAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnAEAL" name="Knowledge (Architecture and Engineering) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowArcEn]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnAEAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPEscAAL" name="Escape Artist (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kEscape]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPEscAAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnDuAL" name="Knowledge (Dungeoneering) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowDun]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnDuAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnGeAL" name="Knowledge (Geography) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowGeog]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnGeAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnHiAL" name="Knowledge (History) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowHist]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnHiAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnLoAL" name="Knowledge (Local) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <comment>picklives[cHuPApprAL] + 
+picklives[cHuPAuHyAL] + 
+picklives[cHuPBalaAL] + 
+picklives[cHuPBlufAL] + 
+picklives[cHuPClimAL] +
+ 
+picklives[cHuPConcAL] + 
+picklives[cHuPCrafAL] + 
+picklives[cHuPDecSAL] + 
+picklives[cHuPDiplAL] +
+ 
+picklives[cHuPDisDAL] + 
+picklives[cHuPDisgAL] + 
+picklives[cHuPEscAAL] + 
+picklives[cHuPForgAL] +
+ 
+picklives[cHuPGatIAL] + 
+picklives[cHuPHanAAL] + 
+picklives[cHuPHealAL] + 
+picklives[cHuPHideAL] +
+ 
+picklives[cHuPIntiAL] + 
+picklives[cHuPJumpAL] + 
+picklives[cHuPKnArAL] + 
+picklives[cHuPKnAEAL] +
+
+picklives[cHuPKnDuAL] + 
+picklives[cHuPKnGeAL] + 
+picklives[cHuPKnHiAL] + 
+picklives[cHuPKnLoAL] +
+
+picklives[cHuPKnNaAL] + 
+picklives[cHuPKnNoAL] + 
+picklives[cHuPKnOtAL] + 
+picklives[cHuPKnPlAL] +
+
+picklives[cHuPKnPsAL] + 
+picklives[cHuPKnReAL] + 
+picklives[cHuPListAL] + 
+picklives[cHuPMovSAL] +</comment>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowLocal]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnLoAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnNaAL" name="Knowledge (Nature) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowNat]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnNaAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnNoAL" name="Knowledge (Nobility and Royalty) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowNoble]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnNoAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnOtAL" name="Knowledge (Other) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowOther]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnOtAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnPlAL" name="Knowledge (Planes) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowPlane]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnPlAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnPsAL" name="Knowledge (Psionics) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowPsi]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnPsAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPKnReAL" name="Knowledge (Religion) (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kKnowRel]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPKnReAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPListAL" name="Listen (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kListen]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPListAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPMovSAL" name="Move Silently (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kMoveSil]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPMovSAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPOLoAL" name="Open Lock (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <comment>picklives[cHuPApprAL] + 
+picklives[cHuPAuHyAL] + 
+picklives[cHuPBalaAL] + 
+picklives[cHuPBlufAL] + 
+picklives[cHuPClimAL] +
+ 
+picklives[cHuPConcAL] + 
+picklives[cHuPCrafAL] + 
+picklives[cHuPDecSAL] + 
+picklives[cHuPDiplAL] +
+ 
+picklives[cHuPDisDAL] + 
+picklives[cHuPDisgAL] + 
+picklives[cHuPEscAAL] + 
+picklives[cHuPForgAL] +
+ 
+picklives[cHuPGatIAL] + 
+picklives[cHuPHanAAL] + 
+picklives[cHuPHealAL] + 
+picklives[cHuPHideAL] +
+ 
+picklives[cHuPIntiAL] + 
+picklives[cHuPJumpAL] + 
+picklives[cHuPKnArAL] + 
+picklives[cHuPKnAEAL] +
+
+picklives[cHuPKnDuAL] + 
+picklives[cHuPKnGeAL] + 
+picklives[cHuPKnHiAL] + 
+picklives[cHuPKnLoAL] +
+
+picklives[cHuPKnNaAL] + 
+picklives[cHuPKnNoAL] + 
+picklives[cHuPKnOtAL] + 
+picklives[cHuPKnPlAL] +
+
+picklives[cHuPKnPsAL] + 
+picklives[cHuPKnReAL] + 
+picklives[cHuPListAL] + 
+picklives[cHuPMovSAL] +
+
+picklives[cHuPOLoAL] + 
+picklives[cHuPPerfAL] + 
+picklives[cHuPProfAL] + 
+picklives[cHuPPsicAL] +
+
+picklives[cHuPRideAL] + 
+picklives[cHuPSearAL] + 
+picklives[cHuPSenMAL] + 
+picklives[cHuPSlHaAL] +
+
+picklives[cHuPSpLaAL] + 
+picklives[cHuPSpelAL] + 
+picklives[cHuPSpotAL] + 
+picklives[cHuPSurvAL] +
+
+picklives[cHuPSwimAL] + 
+picklives[cHuPKnNoAL] + 
+picklives[cHuPKnOtAL] + 
+picklives[cHuPKnPlAL] +</comment>
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kOpenLock]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPOLoAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPPerfAL" name="Perform (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.Perform]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPPerfAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPProfAL" name="Profession (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.Profession]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPProfAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPPsicra" name="Psicraft" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kPsicraft]</eval>
+    </thing>
+  <thing id="cHuPRide" name="Ride" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kRide]</eval>
+    </thing>
+  <thing id="cHuPSearch" name="Search" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kSearch]</eval>
+    </thing>
+  <thing id="cHuPSenMot" name="Sense Motive" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kSenseMot]</eval>
+    </thing>
+  <thing id="cHuPSlHand" name="Sleight of Hand" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kSleight]</eval>
+    </thing>
+  <thing id="cHuPSpLang" name="Speak Language" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kSpeakLang]</eval>
+    </thing>
+  <thing id="cHuPSpelcr" name="Spellcraft" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kSpellcr]</eval>
+    </thing>
+  <thing id="cHuPSpot" name="Spot" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kSpot]</eval>
+    </thing>
+  <thing id="cHuPSurviv" name="Survival" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kSurvival]</eval>
+    </thing>
+  <thing id="cHuPSwim" name="Swim" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kSwim]</eval>
+    </thing>
+  <thing id="cHuPTumbl" name="Tumble" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kTumble]</eval>
+    </thing>
+  <thing id="cHuPUseMag" name="Use Magic Device" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kUseMagic]</eval>
+    </thing>
+  <thing id="cHuPUsePsi" name="Use Psionic Device" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kUsePsion]</eval>
+    </thing>
+  <thing id="cHuPUseRop" name="Use Rope" description="Add this skill to your list of class skills." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Add a class skill
+      var index as number
+      index = hero.child[cHelpHuP].assign[ClassSkill.kUseRope]</eval>
+    </thing>
+  <thing id="cHuPSwimAL" name="Swim (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kSwim]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPSwimAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPTumbAL" name="Tumble (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <comment>picklives[cHuPApprAL] + 
+picklives[cHuPAuHyAL] + 
+picklives[cHuPBalaAL] + 
+picklives[cHuPBlufAL] + 
+picklives[cHuPClimAL] +
+ 
+picklives[cHuPConcAL] + 
+picklives[cHuPCrafAL] + 
+picklives[cHuPDecSAL] + 
+picklives[cHuPDiplAL] +
+ 
+picklives[cHuPDisDAL] + 
+picklives[cHuPDisgAL] + 
+picklives[cHuPEscAAL] + 
+picklives[cHuPForgAL] +
+ 
+picklives[cHuPGatIAL] + 
+picklives[cHuPHanAAL] + 
+picklives[cHuPHealAL] + 
+picklives[cHuPHideAL] +
+ 
+picklives[cHuPIntiAL] + 
+picklives[cHuPJumpAL] + 
+picklives[cHuPKnArAL] + 
+picklives[cHuPKnAEAL] +
+
+picklives[cHuPKnDuAL] + 
+picklives[cHuPKnGeAL] + 
+picklives[cHuPKnHiAL] + 
+picklives[cHuPKnLoAL] +
+
+picklives[cHuPKnNaAL] + 
+picklives[cHuPKnNoAL] + 
+picklives[cHuPKnOtAL] + 
+picklives[cHuPKnPlAL] +
+
+picklives[cHuPKnPsAL] + 
+picklives[cHuPKnReAL] + 
+picklives[cHuPListAL] + 
+picklives[cHuPMovSAL] +
+
+picklives[cHuPOLoAL] + 
+picklives[cHuPPerfAL] + 
+picklives[cHuPProfAL] + 
+picklives[cHuPPsicAL] +
+
+picklives[cHuPRideAL] + 
+picklives[cHuPSearAL] + 
+picklives[cHuPSenMAL] + 
+picklives[cHuPSlHaAL] +
+
+picklives[cHuPSpLaAL] + 
+picklives[cHuPSpelAL] + 
+picklives[cHuPSpotAL] + 
+picklives[cHuPSurvAL] +
+
+picklives[cHuPSwimAL] + 
+picklives[cHuPTumbAL] + 
+picklives[cHuPUMagAL] + 
+picklives[cHuPUPsiAL] +
+picklives[cHuPURopAL] +</comment>
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kTumble]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPTumbAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPUMagAL" name="Use Magic Device (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kUseMagic]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPUMagAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPUPsiAL" name="Use Psionic Device (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kUsePsion]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPUPsiAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPURopAL" name="Use Rope (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kUseRope]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPURopAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPPsicAL" name="Psicraft (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kPsicraft]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPPsicAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPRideAL" name="Ride (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kRide]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPRideAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPSearAL" name="Search (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kSearch]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPSearAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPSenMAL" name="Sense Motive (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kSenseMot]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPSenMAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPSlHaAL" name="Sleight of Hand (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kSleight]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPSlHaAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPSpLaAL" name="Speak Language (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kSpeakLang]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPSpLaAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPSpelAL" name="Spellcraft (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kSpellcr]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpotAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPSpelAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPSpotAL" name="Spot (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kSpot]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSurvAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPSpotAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPSurvAL" name="Survival (Adaptive)" description="Add this skill to your list of class skills for all current and future classes." compset="CustomSpec" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreLv">~ Make this skill a class skills for all classes
+var result as number
+result = hero.assign[ClassSkill.kSurvival]</eval>
+    <prereq message="Adaptive Skill already chosen.">
+      <validate>~ Erase the current skill from the big list and place at the end
+@valid = 0
+   if (picklives[cHuPApprAL] + picklives[cHuPAuHyAL] + picklives[cHuPBalaAL] + picklives[cHuPBlufAL] + picklives[cHuPClimAL] + picklives[cHuPConcAL] + picklives[cHuPCrafAL] + picklives[cHuPDecSAL] + picklives[cHuPDiplAL] + picklives[cHuPDisDAL] + picklives[cHuPDisgAL] + picklives[cHuPEscAAL] + picklives[cHuPForgAL] + picklives[cHuPGatIAL] + picklives[cHuPHanAAL] + picklives[cHuPHealAL] + picklives[cHuPHideAL] + picklives[cHuPIntiAL] + picklives[cHuPJumpAL] + picklives[cHuPKnArAL] + picklives[cHuPKnAEAL] + picklives[cHuPKnDuAL] + picklives[cHuPKnGeAL] + picklives[cHuPKnHiAL] + picklives[cHuPKnLoAL] + picklives[cHuPKnNaAL] + picklives[cHuPKnNoAL] + picklives[cHuPKnOtAL] + picklives[cHuPKnPlAL] + picklives[cHuPKnPsAL] + picklives[cHuPKnReAL] + picklives[cHuPListAL] + picklives[cHuPMovSAL] + picklives[cHuPOLoAL] + picklives[cHuPPerfAL] + picklives[cHuPProfAL] + picklives[cHuPPsicAL] + picklives[cHuPRideAL] + picklives[cHuPSearAL] + picklives[cHuPSenMAL] + picklives[cHuPSlHaAL] + picklives[cHuPSpLaAL] + picklives[cHuPSpelAL] + picklives[cHuPSpotAL] + picklives[cHuPSwimAL] + picklives[cHuPTumbAL] + picklives[cHuPUMagAL] + picklives[cHuPUPsiAL] + picklives[cHuPURopAL] = 0) then
+     @valid = 1
+   elseif (picklives[cHuPSurvAL] = 1) then
+     @valid = 1
+       endif</validate>
+      </prereq>
+    </thing>
+  <thing id="cHuPAbCHA" name="Ability Boost (CHA +2)" description="The selected ability score increases by 2." compset="CustomSpec">
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreAt" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      hero.child[aCHA].field[aNormMod].value = hero.child[aCHA].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cHuPAbWIS" name="Ability Boost (WIS +2)" description="The selected ability score increases by 2." compset="CustomSpec">
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreAt" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      hero.child[aWIS].field[aNormMod].value = hero.child[aWIS].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cHuPAbINT" name="Ability Boost (INT +2)" description="The selected ability score increases by 2." compset="CustomSpec">
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreAt" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      hero.child[aINT].field[aNormMod].value = hero.child[aINT].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cHuPAbCON" name="Ability Boost (CON +2)" description="The selected ability score increases by 2." compset="CustomSpec">
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreAt" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      hero.child[aCON].field[aNormMod].value = hero.child[aCON].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cHuPAbDEX" name="Ability Boost (DEX +2)" description="The selected ability score increases by 2." compset="CustomSpec">
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreAt" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      hero.child[aDEX].field[aNormMod].value = hero.child[aDEX].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cHuPAbSTR" name="Ability Boost (STR +2)" description="The selected ability score increases by 2." compset="CustomSpec">
+    <usesource source="Arcana"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <eval phase="UserPreAt" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      if (tagis[Helper.ShowSpec] = 0) then
+        done
+        endif
+
+      hero.child[aSTR].field[aNormMod].value = hero.child[aSTR].field[aNormMod].value + 2]]></eval>
+    </thing>
+  <thing id="cHuPAdaLea" name="Adaptive Learning" description="At 1st level, a human paragon can designate any one of his human paragon class skills as an adaptive skill. This skill is treated as a class skill in all respects for all classes that character has levels in, both current and future. For example, if a human paragon chooses Spot as an adaptive skill, he treats Spot as a class skill for all future class levels he gains, even if it is not normally a class skill for the class in question." compset="ClSpecial" summary="One chosen class skill becomes a class skill for all future classes.">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cHuPBonFea" name="Bonus Feat" description="At 2nd level, a human paragon gains a bonus feat. Due to the varied talents and adaptable nature of humans, this feat can be any feat for which the human paragon is qualified (he is not restricted to a special list of bonus feats). The character must meet the prerequisites for the bonus feat normally." compset="ClSpecial" summary="Gain a bonus feat, any one you qualify for.">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cHuPAbiBoo" name="Ability Boost" description="At 3rd level, a human paragon increases one ability score of his choice by 2 points." compset="ClSpecial" summary="Choose one ability score to gain a +2 bonus.">
+    <usesource source="Arcana"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="SpecSource" tag="cHelpHuP"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cvMnkPWay" name="Passive Way School" description="Focuses on making your opponent overreact himself or underestimate your skill" compset="ClassVary" uniqueness="unique">
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="ClVaryName" tag="Append" name="Append" abbrev="Append"/>
+    <bootstrap thing="cMnkPWBlf"></bootstrap>
+    <bootstrap thing="cMnkPWCE"></bootstrap>
+    <bootstrap thing="cMnkPWimpf"></bootstrap>
+    <bootstrap thing="cMnkPWImpT"></bootstrap>
+    <bootstrap thing="cMnkPWBon"></bootstrap>
+    <link linkage="varies" thing="cHelpMnk"/>
+    <eval phase="PostLevel" priority="10001"><![CDATA[hero.child[cHelpMnk].field[cBonFtMax].value = 0
+
+      ~ Calculate the number of bonus feats we have
+~      var result as number
+~      result=hero.child[cHelpMnk].field[cTotalLev].value
+
+~      perform hero.delete[Hero.GiveMonk1]
+~      if (hero.child[cHelpMnk].field[cTotalLev].value >= 2) then
+~        perform hero.delete[Hero.GiveMonk2]
+~        endif
+~      if (hero.child[cHelpMnk].field[cTotalLev].value >= 6) then
+~        perform hero.delete[Hero.GiveMonk3]
+~        endif]]></eval>
+    </thing>
+  <thing id="cMnkPWCE" name="Passive Way School Combat Expertise" description="Gain Combat Expertise as a bonus feat." compset="ClSpecial">
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMnk" name="Monk" abbrev="Monk"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <bootstrap thing="fComExpert">
+      <containerreq phase="First" priority="10000"><![CDATA[
+      count:Classes.Monk >=1]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cMnkPWBon" name="Passive Way Strength bonus" description="You gain a +4 bonus on strength checks made to trip an opponent who is denied his dexterity bonus to armor class.\n\n{b}Prerequisites{/b}:Bluff 4 ranks andSense Motive 4 ranks, Skill Focus (Bluff)." compset="ClSpecial" summary="Your dodge feat now offers +2 AC.">
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMnk" name="Monk" abbrev="Monk"/>
+    <tag group="ClSpecWhen" tag="6" name="6" abbrev="6"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      if (#skillranks[kBluff] < 4) then
+        perform assign[Helper.SpcDisable]
+        endif
+      if (#skillranks[kSenseMot] < 4) then
+        perform assign[Helper.SpcDisable]
+        endif
+      if (#hasfeat[fSkillFoc] <> 0) then
+~        if (hero.childfound[kBluff].tagis[Helper.SkillFocus] <> 0) ~then
+           perform assign[Helper.SpcDisable]
+~        endif
+      endif]]></eval>
+    </thing>
+  <thing id="cMnkPWBlf" name="Passive Way  School Bluff +2" description="You gain +2 to all Bluff checks." compset="ClSpecial" summary="+2 Escape Artist">
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMnk" name="Monk" abbrev="Monk"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+
+      #skillbonus[kBluff] += 2]]></eval>
+    </thing>
+  <thing id="cMnkPWImpT" name="Passive Way School Improved Trip" description="Gain Improved Trip as a bonus feat." compset="ClSpecial">
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMnk" name="Monk" abbrev="Monk"/>
+    <tag group="ClSpecWhen" tag="2" name="2" abbrev="2"/>
+    <bootstrap thing="fImpTrip">
+      <containerreq phase="First" priority="10000"><![CDATA[
+      count:Classes.Monk >=2]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cMnkPWimpf" name="Passive Way School Improved Feint" description="Gain Improved Feint as a bonus feat." compset="ClSpecial">
+    <usesource source="Arcana" name="Open Content from Unearthed Arcana"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpMnk" name="Monk" abbrev="Monk"/>
+    <tag group="ClSpecWhen" tag="6" name="6" abbrev="6"/>
+    <bootstrap thing="fImpFeint">
+      <containerreq phase="First" priority="10000"><![CDATA[
+      count:Classes.Monk >=6]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cvWizEnhAt" name="Transmuter - Enhance Attribute" description="Trades the familiar for the ability, once per day, + once for every five class levels, the transmuter can add a +2 enhancement bonus on  one of his attributes as a free action. Duration 1 minute/class level" compset="ClassVary" uniqueness="unique">
+    <fieldval field="cvLevel" value="1"/>
+    <fieldval field="cvArcFStar" value="-1"/>
+    <usesource source="Arcana"/>
+    <tag group="SpcReplace" tag="cWizFam"/>
+    <link linkage="varies" thing="cHelpWiz"/>
+    <exprreq message="Transmuter required."><![CDATA[hero.tagis[WizSpec.Transmutat] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvWizSpVer" name="Transmuter - Spell Versatility" description="Trades wizard bonus feats for the ability to adapt magic of other school to transmutation - 1 for every 5 class levels. He can treat that spell as a Transmutation spell forever after." compset="ClassVary" uniqueness="unique">
+    <arrayval field="cvBonFtMod" index="0" value="-4"/>
+    <usesource source="Arcana"/>
+    <tag group="SpcReplace" tag="cWizScribe"/>
+    <tag group="fDisable" tag="fScribeS"/>
+    <link linkage="varies" thing="cHelpWiz"/>
+    <exprreq message="Transmuter required."><![CDATA[hero.tagis[WizSpec.Transmutat] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvWizTranM" name="Transmuter - Transmutable Memory" description="Trades the Wizard&apos;s specialty spells for the ability to exchange a number of prepared spells (up to a maximum total of spell levels equal to half his class level) for other spells of the same spell level amount. Using this ability requires a number of minutes of concentration equal to the spell levels exchanged." compset="ClassVary" uniqueness="unique">
+    <usesource source="Arcana"/>
+    <link linkage="varies" thing="cHelpWiz"/>
+    <eval phase="PostLevel" priority="21000">hero.childfound[cHelpWiz].field[cSecSplReq].value = 0</eval>
+    <exprreq message="Transmuter required."><![CDATA[hero.tagis[WizSpec.Transmutat] <> 0]]></exprreq>
+    </thing>
+  <thing id="cvRogMart" name="Martial Rogue" description="The rogue who favors martial training over stealth and cunning can profit if she chooses her fights carefully.\n\n{b}Gain{/b}: Bonus feats (as fighter). \n\n{b}Lose{/b}: Sneak attack." compset="ClassVary" uniqueness="unique">
+    <arrayval field="cvBonFtMod" index="0" value="1"/>
+    <arrayval field="cvBonFtMod" index="1" value="2"/>
+    <arrayval field="cvBonFtMod" index="3" value="3"/>
+    <arrayval field="cvBonFtMod" index="5" value="4"/>
+    <arrayval field="cvBonFtMod" index="7" value="5"/>
+    <arrayval field="cvBonFtMod" index="9" value="6"/>
+    <arrayval field="cvBonFtMod" index="11" value="7"/>
+    <arrayval field="cvBonFtMod" index="13" value="8"/>
+    <arrayval field="cvBonFtMod" index="15" value="9"/>
+    <arrayval field="cvBonFtMod" index="17" value="10"/>
+    <arrayval field="cvBonFtMod" index="19" value="11"/>
+    <usesource source="Arcana"/>
+    <tag group="ClVaryName" tag="Replace"/>
+    <tag group="SpcReplace" tag="xSneakAtt"/>
+    <tag group="SpcReplace" tag="cRogSneakX"/>
+    <tag group="SpcReplace" tag="cRogSneak1"/>
+    <tag group="SpcReplace" tag="cRogSneak2"/>
+    <tag group="SpcReplace" tag="cRogSneak3"/>
+    <tag group="SpcReplace" tag="cRogSneak4"/>
+    <tag group="SpcReplace" tag="cRogSneak5"/>
+    <tag group="SpcReplace" tag="cRogSneak6"/>
+    <tag group="SpcReplace" tag="cRogSneak7"/>
+    <tag group="SpcReplace" tag="cRogSneak8"/>
+    <tag group="SpcReplace" tag="cRogSneak9"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <link linkage="varies" thing="cHelpRog"/>
+    </thing>
+  <thing id="cvWizMart" name="Martial Wizard" description="Some wizards trade their knowledge of magic and craft to improve their combat prowess.\n\n{b}Gain{/b}: Bonus feat list (as fighter; bonus feats gained at 1st level and every five levels as wizard).\n\n{b}Lose{/b}: Scribe Scroll, wizard bonus feat list." compset="ClassVary" uniqueness="unique">
+    <arrayval field="cvBonFtMod" index="0" value="1"/>
+    <arrayval field="cvBonFtMod" index="1" value="2"/>
+    <arrayval field="cvBonFtMod" index="3" value="3"/>
+    <arrayval field="cvBonFtMod" index="4" value="-1"/>
+    <arrayval field="cvBonFtMod" index="5" value="4"/>
+    <arrayval field="cvBonFtMod" index="7" value="5"/>
+    <arrayval field="cvBonFtMod" index="9" value="4"/>
+    <arrayval field="cvBonFtMod" index="11" value="7"/>
+    <arrayval field="cvBonFtMod" index="13" value="8"/>
+    <arrayval field="cvBonFtMod" index="14" value="-3"/>
+    <arrayval field="cvBonFtMod" index="15" value="9"/>
+    <arrayval field="cvBonFtMod" index="17" value="10"/>
+    <arrayval field="cvBonFtMod" index="19" value="7"/>
+    <usesource source="Arcana"/>
+    <tag group="ClVaryName" tag="Replace"/>
+    <tag group="SpcReplace" tag="fScribeS"/>
+    <tag group="SpcReplace" tag="cWizScribe"/>
+    <link linkage="varies" thing="cHelpWiz"/>
+    <eval phase="Render" priority="11000"><![CDATA[hero.child[cHelpWiz].field[cBonFtExpr].text = "!Helper.Helper & (fCategory.Custom | BonusFor.Fighter)"
+
+perform hero.delete[HasFeat.fScribeS]
+perform hero.delete[fCategory.ItemCreate]
+
+foreach pick in hero from BaseFeat where "HasFeat.fScribeS & Helper.FirstCopy"
+  perform eachpick.assign[Helper.FtDisable]
+  perform eachpick.delete[fCategory.ItemCreate]
+nexteach
+
+foreach pick in hero from BaseFeat where "HasFeat.fScribeS & !Helper.FirstCopy"
+  perform eachpick.delete[Helper.FtDisable]
+nexteach
+
+foreach pick in hero from BaseFeat where "HasFeat.fScribeS"
+  if (eachpick.tagis[Helper.FirstCopy] = 0) then
+   perform hero.assign[HasFeat.fScribeS]
+   perform hero.assign[fCategory.ItemCreate]
+  endif
+nexteach]]></eval>
+    </thing>
+  <thing id="cGesCleric" name="Cleric" compset="CustomSpec">
+    <tag group="SpecSource" tag="cHelpGes"/>
+    </thing>
+  </document>

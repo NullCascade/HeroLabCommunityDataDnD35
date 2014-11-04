@@ -1,0 +1,1477 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>Sendric</info_author>
+    <info_history>v1.0 - Sendric - June 15, 2012</info_history>
+    </fileinfo>
+  <thing id="cFactotum" name="Factotum" description="Knowledge is everything, and applied knowledge is even better. You adventure out of a sense of curiosity, a desire to pierce the veil of ignorance that shrouds so much of the world. If you hear rumors of an island with beaches of diamonds and mountains of gold, you want to find the island, determine its origin, and learn its secrets. To other adventurers, the entrance to a dungeon is a gateway to treasure and power. To you, it is a promise of secrets waiting in the dungeon&apos;s deepest levels.\n\nThink of yourself as an adventuring scholar, an expert who has the right answer at the right time, a seeker who fi nds the truths hidden in the world. You are the one who notices that an ogre has a long scar along its leg, allowing you to strike the creature where the old wound has not fully healed. You are the one who read a book on the dark arts, allowing you to conjure the spell needed to banish an ice devil. Other adventurers must prepare their abilities and hope they have the right tools to overcome a challenge. You wait for diffi culties to present themselves and then decide what talents to employ.\n\nVersatility is the key to your success. In some encounters, you draw your weapon and hold back the enemy. In others, you slip around behind the foe to unleash a potent spell. At other times, you scout ahead, uncover traps, and clear the way for your friends." compset="ClassLevel" maxlimit="20">
+    <usesource source="DScape"/>
+    <tag group="ClassType" tag="Normal"/>
+    <bootstrap thing="cHelpFac"></bootstrap>
+    <link linkage="helper" thing="cHelpFac"/>
+    </thing>
+  <thing id="cFacTrpFnd" name="Trapfinding" description="You can find and disarm traps with a DC &gt; 20." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="ClSpecWhen" tag="1" name="1" abbrev="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xTrapfind"></bootstrap>
+    </thing>
+  <thing id="cFacInspir" name="Inspiration" description="The factotum is a dabbler, a professional explorer who plunders a wide variety of fields to find the tools he needs to survive. He reads through tomes of arcane magic to gain a basic understanding of spells. He offers prayers to a variety of deities to gain their blessings. He observes warrior stances and exercises to understand the art of fighting. But while a factotum learns many paths, he masters none of them. Rather than train in a given field, he masters all the basics and manages to pull out something useful when the situation is desperate enough.\n\nTo represent this seemingly random body of knowledge, a factotum gains inspiration points that he can spend to activate his abilities. At the beginning of each encounter, he gains a number of inspiration points determined by his level." compset="ClSpecial" summary="Inspiration point total: ?">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[var pts as number
+
+if (#levelcount[Factotum] = 1) then
+ pts = 2
+elseif (#levelcount[Factotum] <= 19) then
+ pts = #levelcount[Factotum]+1
+ pts = round(pts/3,0,-1)+2 
+elseif (#levelcount[Factotum] = 20) then
+ pts = 20
+endif
+
+
+field[hTotal].value = pts]]></eval>
+    </thing>
+  <thing id="cFacCunIn" name="Cunning Insight" description="Before making an attack roll, damage roll, or saving throw, you can spend 1 inspiration point to gain a competence bonus on the roll equal to your Intelligence modifier. Cunning insight does not require an action, and you can use it as often as you wish during your turn or others&apos; turns&#151;provided that you have the inspiration points to spend. Because this ability provides a competence bonus, it does not stack with itself." compset="ClSpecial" summary="Spend 1 Inspiration point to gain bonus to one roll.">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cFacCunKn" name="Cunning Knowledge" description="When making a check involving a skill in which you have at least 1 rank, you can spend 1 inspiration point to gain a bonus on the check equal to your factotum level. You can use this ability once per day for a particular skill. For example, if you use cunning knowledge to gain a bonus on a Hide check, you cannot use the ability to improve other Hide checks for the rest of the day, though you can use it on different skills." compset="ClSpecial" summary="Spend 1 Inspiration point to gain a bonus to a skill check.">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    </thing>
+  <thing id="cFacBovB" name="Brains over Brawn" description="At 3rd level, you gain your Intelligence bonus as a modifier on Strength checks, Dexterity checks, and checks involving skills based on Strength or Dexterity, such as Hide, Climb, and Jump." compset="ClSpecial" summary="Add Int modifier to Str- and Dex-based checks.">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ For each skill...
+foreach pick in hero where "component.BaseSkill"
+
+~ If this skill has a linked attribute, and the attribute is
+~ strength (i.e. this is a strength-based skill), add +1 to it
+if (each.islinkage[skillattr] <> 0) then
+ if (each.linkage[skillattr].tagis[IsAttr.aSTR] + each.linkage[skillattr].tagis[IsAttr.aDEX] <> 0) then
+each.field[Bonus].value += hero.child[aINT].field[aModBonus].value
+ endif
+endif
+
+~ Go on to the next skill
+nexteach]]></eval>
+    </thing>
+  <thing id="cFacCunDe" name="Cunning Defense" description="You study your opponents and learn to anticipate their attacks. Starting at 3rd level, you can spend 1 inspiration point to gain your Intelligence bonus as a dodge bonus to Armor Class against one opponent for 1 round. Using this ability is a free action. You gain this benefi t even while wearing medium or heavy armor. You can use this ability multiple times to gain a bonus against different opponents, but you cannot use it more than once during your turn against a single foe." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[var bonus as number
+
+bonus = hero.child[aINT].field[aModBonus].value
+
+field[xSumm].text = "Spend 1 Inspiration point to gain a +" & bonus & " dodge bonus to AC for 1 round."]]></eval>
+    </thing>
+  <thing id="cFacCunSt" name="Cunning Strike" description="With a quick study of a vulnerable opponent&#146;s defenses, you can spot the precise area you need to hit to score a telling blow. Starting at 4th level, you can spend 1 inspiration point to gain 1d6 points of sneak attack damage. You must spend the inspiration point to activate this ability before making the attack roll. When determining if you can use sneak attack against a target that has uncanny dodge, use your factotum level as your rogue level." compset="ClSpecial" summary="Spend 1 Inspiration point to gain 1d6 sneak attack damage.">
+    <usesource source="DScape"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    </thing>
+  <thing id="cFacOppPi" name="Opportunistic Piety" description="Factotums are legendary for the number of holy symbols, lucky trinkets, and blessed items they keep handy. As the saying goes, there are no atheists in the dungeon. Starting at 5th level, you can spend 1 inspiration point to channel divine energy as a standard action. You can use this energy to heal injuries, harm undead, or turn undead. At 5th level, you can use this ability a number of times per day equal to 3 + your Wisdom bonus (if any). You gain one extra daily use of this ability at 10th level, 15th level, and 20th level. You cannot use opportunistic piety if you have exhausted your daily uses, even if you have inspiration points left to spend.\n\nIf you use this ability to heal injuries, you channel positive energy to heal a living creature of a number of points of damage equal to twice your factotum level + your Int modifier. The energy will also deal the same amount of damage to undead targets.\n\nIf you use this ability to turn undead, you act as a cleric of a level equal to your factotum level. No matter what your alignment, you cannot control undead&#151;your understanding of divine magic is too rudimentary." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[var bonus as number
+var dmg as number
+var cllvl as number
+
+bonus = hero.child[aWIS].field[aModBonus].value + #levelcount[Factotum]/5
+bonus = round(bonus, 0, -1)
+
+field[hTotal].value = bonus
+
+dmg = hero.child[aINT].field[aModBonus].value + (#levelcount[Factotum]*2)
+
+cllvl = #levelcount[Factotum]
+
+field[xSumm].text = "Spend 1 Inspiration point to channel divine energy. Heal/Dmg " & dmg & " / Turn CL " & cllvl & ""]]></eval>
+    </thing>
+  <thing id="cFacCunSu" name="Cunning Surge" description="Starting at 8th level, you learn to push yourself when needed. By spending 3 inspiration points, you can take an extra standard action during your turn." compset="ClSpecial" summary="Spend 3 Inspiration points to gain an extra standard action.">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    </thing>
+  <thing id="cFacCunBr" name="Cunning Breach" description="Starting at 11th level, your broad knowledge allows you to study an opponent and gain a brief flash of insight to breach her defenses. By spending 2 inspiration points as a free action, you can ignore a single target&#146;s spell resistance and damage reduction for 1 round. The target automatically fails any spell resistance check that she attempts to avoid your spell." compset="ClSpecial" summary="Spend 2 Inspiration points to ignore SR/DR.">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ClSpecWhen" tag="11"/>
+    </thing>
+  <thing id="cFacCunDo" name="Cunning Dodge" description="Starting at 13th level, your luck, reflexes, and intuition allow you to avoid an attack or spell that would otherwise defeat you. If you take damage that would reduce you to 0 or fewer hit points, you can spend 4 inspiration points as an immediate action to ignore the damage. You dodge out of the way, take cover from a spell, or otherwise escape. You can use this ability once per day." compset="ClSpecial" summary="Spend 4 Inspiration points to ignore damage once per day.">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="13"/>
+    </thing>
+  <thing id="cFacImpCD" name="Improved Cunning Defense" description="At 16th level, you gain your Intelligence bonus as a dodge bonus to Armor Class. You no longer need to spend an inspiration point to gain this benefit. Unlike the standard cunning defense ability, you do not gain this benefit when wearing medium or heavy armor." compset="ClSpecial" summary="Gain dodge bonus to AC.">
+    <usesource source="DScape"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="16"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[doneif (hero.tagis[Hero.MedArmor] + hero.tagis[Hero.HeavyArmor] <> 0)
+
+var bonus as number
+
+bonus = hero.child[aINT].field[aModBonus].value
+
+hero.child[ArmorClass].field[tACDodge].value += bonus]]></eval>
+    </thing>
+  <thing id="cFacCunBri" name="Cunning Brilliance" description="At 19th level, you become the ultimate jack of all trades. Your sharp mind and keen sense of your surroundings allow you to duplicate almost any ability you witness. At the start of each day, choose three extraordinary class abilities. Each ability must be available to a standard character class at 15th level or lower, and must appear on the advancement table or in the text description for that class. By spending 4 inspiration points as a free action, you gain the benefits and drawbacks of one chosen ability for 1 minute. You use the ability as if your level in the relevant class equaled your factotum level. You can use each chosen class ability once per day.\n\nFor example, if you use a monk&#146;s flurry of blows ability, you gain all the benefits and drawbacks described under Flurry of Blows (PH 40). You do not gain the benefits of unarmed strike, because that is a separate ability in the monk&#146;s class description." compset="ClSpecial" summary="Gain the use of three extraordinairy class abilities.">
+    <usesource source="DScape"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ClSpecWhen" tag="19"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    </thing>
+  <thing id="cArcDill1" name="Arcane Dilletante (1 spell)" description="At 2nd level, you acquire a vague understanding of magic. You know that with a few weird hand gestures and an array of grunts and bizarre words, you can conjure up something that looks like a spell. By spending 1 inspiration point, you can mimic a spell as a spell-like ability.\n\nAt the start of each day, choose a number of spells from the sorcerer/ wizard spell list based on your factotum level. You can choose one spell at 2nd level, and you gain additional spells as shown on Table 1&#150;1. The maximum level of spell you can use, according to your class level, is also shown on the table. You can select any sorcerer/ wizard spell up to that level, but you can prepare only one spell of your maximum level. Your caster level equals your level in this character class. The Diffi culty Class for a saving throw against your spell is 10 + the spell level + your Int modifier.\n\nOnce you have used a spell, you cannot use it again until you have rested for 8 hours. After resting for this time, you choose new spells and lose any unused spells from the previous day, though you can select the same spell on consecutive days. You cannot prepare the same spell multiple times to use it more than once during the same day.\n\nYou cannot use spells that require an XP cost. You must otherwise provide the necessary material components as normal.\n\nIf you wish to enhance a spell with a metamagic feat, you must apply the feat when you prepare the spell. In addition, you must be capable of using a spell of the modified spell&#146;s level." compset="ClSpecial" summary="Spend 1 Inspiration point to cast chosen spell.">
+    <usesource source="DScape"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <eval phase="PostLevel"><![CDATA[~ Setup livename. Get out now if less than 4th level
+doneif (#levelcount[Factotum] < 4)
+
+var total as number
+
+if (#levelcount[Factotum] < 5) then
+ total=2
+elseif (#levelcount[Factotum] < 8) then
+ total=3
+elseif (#levelcount[Factotum] < 10) then
+ total=4
+elseif (#levelcount[Factotum] < 13) then
+ total=5
+elseif (#levelcount[Factotum] < 15) then
+ total=6
+elseif (#levelcount[Factotum] < 18) then
+ total=7
+else
+ total=8
+endif
+
+field[livename].text = "Arcane Dilletante ("& total &" spells)"]]></eval>
+    </thing>
+  <thing id="cArcDill2" name="Arcane Dilletante (2 spells)" description="Choose up to 2 Spells to cast as a Spell-Like Ability 1/day." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cArcDill3" name="Arcane Dilletante (3 spells)" description="Choose up to 3 Spells to cast as a Spell-Like Ability 1/day." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="ClSpecWhen" tag="7"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cArcDill4" name="Arcane Dilletante (4 spells)" description="Choose up to 4 Spells to cast as a Spell-Like Ability 1/day." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cArcDill5" name="Arcane Dilletante (5 spells)" description="Choose up to 5 Spells to cast as a Spell-Like Ability 1/day." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="ClSpecWhen" tag="12"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cArcDill6" name="Arcane Dilletante (6 spells)" description="Choose up to 6 Spells to cast as a Spell-Like Ability 1/day." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="ClSpecWhen" tag="14"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cArcDill7" name="Arcane Dilletante (7 spells)" description="Choose up to 7 Spells to cast as a Spell-Like Ability 1/day." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="ClSpecWhen" tag="17"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cArcDill8" name="Arcane Dilletante (8 spells)" description="Choose up to 8 Spells to cast as a Spell-Like Ability 1/day." compset="ClSpecial">
+    <usesource source="DScape"/>
+    <tag group="ClSpecWhen" tag="20"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="xArcDill" name="Arcane Dilletante" description="At 2nd level, you acquire a vague understanding of magic. You know that with a few weird hand gestures and an array of grunts and bizarre words, you can conjure up something that looks like a spell. By spending 1 inspiration point, you can mimic a spell as a spell-like ability.\n\nAt the start of each day, choose a number of spells from the sorcerer/ wizard spell list based on your factotum level. You can choose one spell at 2nd level, and you gain additional spells as shown on Table 1&#150;1. The maximum level of spell you can use, according to your class level, is also shown on the table. You can select any sorcerer/ wizard spell up to that level, but you can prepare only one spell of your maximum level. Your caster level equals your level in this character class. The Diffi culty Class for a saving throw against your spell is 10 + the spell level + your Int modifier.\n\nOnce you have used a spell, you cannot use it again until you have rested for 8 hours. After resting for this time, you choose new spells and lose any unused spells from the previous day, though you can select the same spell on consecutive days. You cannot prepare the same spell multiple times to use it more than once during the same day.\n\nYou cannot use spells that require an XP cost. You must otherwise provide the necessary material components as normal.\n\nIf you wish to enhance a spell with a metamagic feat, you must apply the feat when you prepare the spell. In addition, you must be capable of using a spell of the modified spell&#146;s level." compset="Special">
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostAttr"><![CDATA[var CL as number
+var DC as number
+
+CL = #levelcount[Factotum]
+DC = 10 + hero.child[aINT].field[aModBonus].value
+
+field[xSumm].text = "Spend 1 Inspiration point to cast chosen spell. CL " & CL & ". DC " & DC &" plus spell level."]]></eval>
+    </thing>
+  <thing id="cArcDil1" name="Arcane Dilletante (1st Spell)" compset="CustomSpec" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DScape"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="First" priority="1000" index="3"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[usrChosen1].ischosen = 0)
+
+field[CustDesc].text = field[usrChosen1].chosen.field[descript].text]]></eval>
+    <eval phase="PostLevel" priority="1000"><![CDATA[~ Get out now if we aren't high enough level
+doneif (#levelcount[Factotum] < 2)
+
+~ Increase selection as Factotum increases in level
+
+if (#levelcount[Factotum] = 2) then
+ field[usrCandid1].text = "component.BaseSpell & sLevel.0 & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 5) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 8) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 10) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 13) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 15) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 18) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6) & sClass.Wizard & !Spellbook.?"
+
+else
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6 | sLevel.8) & sClass.Wizard & !Spellbook.?"
+
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[~ Set summary description
+
+var SL as number
+var DC as number
+var maxlvl as number
+
+SL = field[usrChosen1].chosen.tagvalue[sLevel.?]
+DC = 10 + SL + hero.child[aINT].field[aModBonus].value
+
+if (#levelcount[Factotum] = 2) then
+ maxlvl=0
+elseif (#levelcount[Factotum] < 5) then
+ maxlvl=1
+elseif (#levelcount[Factotum] < 8) then
+ maxlvl=2
+elseif (#levelcount[Factotum] < 10) then
+ maxlvl=3
+elseif (#levelcount[Factotum] < 13) then
+ maxlvl=4
+elseif (#levelcount[Factotum] < 15) then
+ maxlvl=5
+elseif (#levelcount[Factotum] < 18) then
+ maxlvl=6
+else
+ maxlvl=7
+endif
+
+field[xSumm].text = "Select a spell up to level "& maxlvl &". DC " & DC &""]]></eval>
+    </thing>
+  <thing id="cArcDil2" name="Arcane Dilletante (2nd Spell)" compset="CustomSpec" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DScape"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="First" priority="1000" index="3"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[usrChosen1].ischosen = 0)
+
+field[CustDesc].text = field[usrChosen1].chosen.field[descript].text]]></eval>
+    <eval phase="PostLevel" priority="1000"><![CDATA[~ Get out now if we aren't high enough level
+doneif (#levelcount[Factotum] < 4)
+
+~ Increase selection as Factotum increases in level
+
+if (#levelcount[Factotum] = 4) then
+ field[usrCandid1].text = "component.BaseSpell & sLevel.0 & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 8) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 10) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 13) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 15) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 18) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5) & sClass.Wizard & !Spellbook.?"
+
+else
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6) & sClass.Wizard & !Spellbook.?"
+
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[~ Set summary description
+
+var SL as number
+var DC as number
+var maxlvl as number
+
+SL = field[usrChosen1].chosen.tagvalue[sLevel.?]
+DC = 10 + SL + hero.child[aINT].field[aModBonus].value
+
+if (#levelcount[Factotum] = 2) then
+ maxlvl=0
+elseif (#levelcount[Factotum] < 5) then
+ maxlvl=1
+elseif (#levelcount[Factotum] < 8) then
+ maxlvl=2
+elseif (#levelcount[Factotum] < 10) then
+ maxlvl=3
+elseif (#levelcount[Factotum] < 13) then
+ maxlvl=4
+elseif (#levelcount[Factotum] < 15) then
+ maxlvl=5
+elseif (#levelcount[Factotum] < 18) then
+ maxlvl=6
+else
+ maxlvl=7
+endif
+
+field[xSumm].text = "Select a spell up to level "& maxlvl &". DC " & DC &""]]></eval>
+    <exprreq message="Factotum level 4 required."><![CDATA[tagcount[Classes.Factotum] >= 4]]></exprreq>
+    </thing>
+  <thing id="cArcDil3" name="Arcane Dilletante (3rd Spell)" compset="CustomSpec" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DScape"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="First" priority="1000" index="3"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[usrChosen1].ischosen = 0)
+
+field[CustDesc].text = field[usrChosen1].chosen.field[descript].text]]></eval>
+    <eval phase="PostLevel" priority="1000"><![CDATA[~ Get out now if we aren't high enough level
+doneif (#levelcount[Factotum] < 7)
+
+~ Increase selection as Factotum increases in level
+
+if (#levelcount[Factotum] = 7) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 10) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 13) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 15) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 18) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5) & sClass.Wizard & !Spellbook.?"
+
+else
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6) & sClass.Wizard & !Spellbook.?"
+
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[~ Set summary description
+
+var SL as number
+var DC as number
+var maxlvl as number
+
+SL = field[usrChosen1].chosen.tagvalue[sLevel.?]
+DC = 10 + SL + hero.child[aINT].field[aModBonus].value
+
+if (#levelcount[Factotum] = 2) then
+ maxlvl=0
+elseif (#levelcount[Factotum] < 5) then
+ maxlvl=1
+elseif (#levelcount[Factotum] < 8) then
+ maxlvl=2
+elseif (#levelcount[Factotum] < 10) then
+ maxlvl=3
+elseif (#levelcount[Factotum] < 13) then
+ maxlvl=4
+elseif (#levelcount[Factotum] < 15) then
+ maxlvl=5
+elseif (#levelcount[Factotum] < 18) then
+ maxlvl=6
+else
+ maxlvl=7
+endif
+
+field[xSumm].text = "Select a spell up to level "& maxlvl &". DC " & DC &""]]></eval>
+    <exprreq message="Factotum level 7 required."><![CDATA[tagcount[Classes.Factotum] >= 7]]></exprreq>
+    </thing>
+  <thing id="cArcDil4" name="Arcane Dilletante (4th Spell)" compset="CustomSpec" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DScape"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="First" priority="1000" index="3"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[usrChosen1].ischosen = 0)
+
+field[CustDesc].text = field[usrChosen1].chosen.field[descript].text]]></eval>
+    <eval phase="PostLevel" priority="1000"><![CDATA[~ Get out now if we aren't high enough level
+doneif (#levelcount[Factotum] < 9)
+
+~ Increase selection as Factotum increases in level
+
+if (#levelcount[Factotum] = 9) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 13) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 15) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 18) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5) & sClass.Wizard & !Spellbook.?"
+
+else
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6) & sClass.Wizard & !Spellbook.?"
+
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[~ Set summary description
+
+var SL as number
+var DC as number
+var maxlvl as number
+
+SL = field[usrChosen1].chosen.tagvalue[sLevel.?]
+DC = 10 + SL + hero.child[aINT].field[aModBonus].value
+
+if (#levelcount[Factotum] = 2) then
+ maxlvl=0
+elseif (#levelcount[Factotum] < 5) then
+ maxlvl=1
+elseif (#levelcount[Factotum] < 8) then
+ maxlvl=2
+elseif (#levelcount[Factotum] < 10) then
+ maxlvl=3
+elseif (#levelcount[Factotum] < 13) then
+ maxlvl=4
+elseif (#levelcount[Factotum] < 15) then
+ maxlvl=5
+elseif (#levelcount[Factotum] < 18) then
+ maxlvl=6
+else
+ maxlvl=7
+endif
+
+field[xSumm].text = "Select a spell up to level "& maxlvl &". DC " & DC &""]]></eval>
+    <exprreq message="Factotum level 9 required."><![CDATA[tagcount[Classes.Factotum] >= 9]]></exprreq>
+    </thing>
+  <thing id="cArcDil5" name="Arcane Dilletante (5th Spell)" compset="CustomSpec" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DScape"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="First" priority="1000" index="3"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[usrChosen1].ischosen = 0)
+
+field[CustDesc].text = field[usrChosen1].chosen.field[descript].text]]></eval>
+    <eval phase="PostLevel" priority="1000"><![CDATA[~ Get out now if we aren't high enough level
+doneif (#levelcount[Factotum] < 12)
+
+~ Increase selection as Factotum increases in level
+
+if (#levelcount[Factotum] = 12) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 15) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 18) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5) & sClass.Wizard & !Spellbook.?"
+
+else
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6) & sClass.Wizard & !Spellbook.?"
+
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[~ Set summary description
+
+var SL as number
+var DC as number
+var maxlvl as number
+
+SL = field[usrChosen1].chosen.tagvalue[sLevel.?]
+DC = 10 + SL + hero.child[aINT].field[aModBonus].value
+
+if (#levelcount[Factotum] = 2) then
+ maxlvl=0
+elseif (#levelcount[Factotum] < 5) then
+ maxlvl=1
+elseif (#levelcount[Factotum] < 8) then
+ maxlvl=2
+elseif (#levelcount[Factotum] < 10) then
+ maxlvl=3
+elseif (#levelcount[Factotum] < 13) then
+ maxlvl=4
+elseif (#levelcount[Factotum] < 15) then
+ maxlvl=5
+elseif (#levelcount[Factotum] < 18) then
+ maxlvl=6
+else
+ maxlvl=7
+endif
+
+field[xSumm].text = "Select a spell up to level "& maxlvl &". DC " & DC &""]]></eval>
+    <exprreq message="Factotum level 12 required."><![CDATA[tagcount[Classes.Factotum] >= 12]]></exprreq>
+    </thing>
+  <thing id="cArcDil6" name="Arcane Dilletante (6th Spell)" compset="CustomSpec" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DScape"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="First" priority="1000" index="3"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[usrChosen1].ischosen = 0)
+
+field[CustDesc].text = field[usrChosen1].chosen.field[descript].text]]></eval>
+    <eval phase="PostLevel" priority="1000"><![CDATA[~ Get out now if we aren't high enough level
+doneif (#levelcount[Factotum] < 14)
+
+~ Increase selection as Factotum increases in level
+
+if (#levelcount[Factotum] = 14) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4) & sClass.Wizard & !Spellbook.?"
+
+elseif (#levelcount[Factotum] < 18) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5) & sClass.Wizard & !Spellbook.?"
+
+else
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6) & sClass.Wizard & !Spellbook.?"
+
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[~ Set summary description
+
+var SL as number
+var DC as number
+var maxlvl as number
+
+SL = field[usrChosen1].chosen.tagvalue[sLevel.?]
+DC = 10 + SL + hero.child[aINT].field[aModBonus].value
+
+if (#levelcount[Factotum] = 2) then
+ maxlvl=0
+elseif (#levelcount[Factotum] < 5) then
+ maxlvl=1
+elseif (#levelcount[Factotum] < 8) then
+ maxlvl=2
+elseif (#levelcount[Factotum] < 10) then
+ maxlvl=3
+elseif (#levelcount[Factotum] < 13) then
+ maxlvl=4
+elseif (#levelcount[Factotum] < 15) then
+ maxlvl=5
+elseif (#levelcount[Factotum] < 18) then
+ maxlvl=6
+else
+ maxlvl=7
+endif
+
+field[xSumm].text = "Select a spell up to level "& maxlvl &". DC " & DC &""]]></eval>
+    <exprreq message="Factotum level 14 required."><![CDATA[tagcount[Classes.Factotum] >= 14]]></exprreq>
+    </thing>
+  <thing id="cArcDil7" name="Arcane Dilletante (7th Spell)" compset="CustomSpec" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DScape"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="First" priority="1000" index="3"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[usrChosen1].ischosen = 0)
+
+field[CustDesc].text = field[usrChosen1].chosen.field[descript].text]]></eval>
+    <eval phase="PostLevel" priority="1000"><![CDATA[~ Get out now if we aren't high enough level
+doneif (#levelcount[Factotum] < 17)
+
+~ Increase selection as Factotum increases in level
+
+if (#levelcount[Factotum] = 17) then
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5) & sClass.Wizard & !Spellbook.?"
+
+else
+ field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6) & sClass.Wizard & !Spellbook.?"
+
+endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[~ Set summary description
+
+var SL as number
+var DC as number
+var maxlvl as number
+
+SL = field[usrChosen1].chosen.tagvalue[sLevel.?]
+DC = 10 + SL + hero.child[aINT].field[aModBonus].value
+
+if (#levelcount[Factotum] = 2) then
+ maxlvl=0
+elseif (#levelcount[Factotum] < 5) then
+ maxlvl=1
+elseif (#levelcount[Factotum] < 8) then
+ maxlvl=2
+elseif (#levelcount[Factotum] < 10) then
+ maxlvl=3
+elseif (#levelcount[Factotum] < 13) then
+ maxlvl=4
+elseif (#levelcount[Factotum] < 15) then
+ maxlvl=5
+elseif (#levelcount[Factotum] < 18) then
+ maxlvl=6
+else
+ maxlvl=7
+endif
+
+field[xSumm].text = "Select a spell up to level "& maxlvl &". DC " & DC &""]]></eval>
+    <exprreq message="Factotum level 17 required."><![CDATA[tagcount[Classes.Factotum] >= 17]]></exprreq>
+    </thing>
+  <thing id="cArcDil8" name="Arcane Dilletante (8th Spell)" compset="CustomSpec" uniqueness="unique">
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="DScape"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <eval phase="First" priority="1000" index="3"><![CDATA[~ If we haven't chosen anything, get out now.
+doneif (field[usrChosen1].ischosen = 0)
+
+field[CustDesc].text = field[usrChosen1].chosen.field[descript].text]]></eval>
+    <eval phase="PostLevel" priority="1000"><![CDATA[~ Get out now if we aren't high enough level
+doneif (#levelcount[Factotum] < 20)
+
+field[usrCandid1].text = "component.BaseSpell & (sLevel.0 | sLevel.1 | sLevel.2 | sLevel.3 | sLevel.4 | sLevel.5 | sLevel.6) & sClass.Wizard & !Spellbook.?"]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[~ Set summary description
+
+var SL as number
+var DC as number
+var maxlvl as number
+
+SL = field[usrChosen1].chosen.tagvalue[sLevel.?]
+DC = 10 + SL + hero.child[aINT].field[aModBonus].value
+
+if (#levelcount[Factotum] = 2) then
+ maxlvl=0
+elseif (#levelcount[Factotum] < 5) then
+ maxlvl=1
+elseif (#levelcount[Factotum] < 8) then
+ maxlvl=2
+elseif (#levelcount[Factotum] < 10) then
+ maxlvl=3
+elseif (#levelcount[Factotum] < 13) then
+ maxlvl=4
+elseif (#levelcount[Factotum] < 15) then
+ maxlvl=5
+elseif (#levelcount[Factotum] < 18) then
+ maxlvl=6
+else
+ maxlvl=7
+endif
+
+field[xSumm].text = "Select a spell up to level "& maxlvl &". DC " & DC &""]]></eval>
+    <exprreq message="Factotum level 20 required."><![CDATA[tagcount[Classes.Factotum] >= 20]]></exprreq>
+    </thing>
+  <thing id="cFacImpEva" name="Improved Evasion" description="Mimic the abilities of a Monk or Rogue to avoid damage. When wearing light or no armor, if you succed on your Reflex save against an attack that deals half damage on a save, you take no damage. Take only half damage on a failed Reflex save." compset="CustomSpec" summary="Take only half damage on a failed Reflex save; no damage on successful save" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif
+
+      ~ If we're wearing medium or worse armor, disable
+      if (hero.tagis[Hero.MedArmor] + hero.tagis[Hero.HeavyArmor] <> 0) then
+        var result as number
+        perform delete[Helper.ShowSpec]
+        done
+        endif]]></eval>
+    </thing>
+  <thing id="cFacNatSen" name="Nature Sense" description="Mimic the abilities of a Druid to increase your nature awareness; gain +2 to Knowledge (Nature) and Survival checks." compset="CustomSpec" summary="+2 to Knowledge (Nature) and Survival checks." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      #skillbonus[kKnowNat] += 2
+      #skillbonus[kSurvival] += 2]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[     ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacWldEmp" name="Wild Empathy" description="Mimic the abilities of a Druid or Ranger to affect animals. Roll 1d20 + factotum level (up to 15) + Charisma modifier like a Diplomacy check to try and improve the attitude of an animal." compset="CustomSpec" summary="Roll 1d20 + factotum level (up to 15) + Charisma modifier" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacWoodSt" name="Woodland Stride" description="Mimic the abilities of a Druid or Ranger to move through undergrowth at normal speed, without taking any damage. Magically-manipulated undergrowth still affects as normal." compset="CustomSpec" summary="Move through undergrowth at normal speed" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacImpUD" name="Improved Uncanny Dodge" description="Mimic the abilities of a Barbarian or Rogue to become unflankable. You can no longer be flanked, and cannot be sneak attacked except by attackers whose Rogue levels are 4+ higher than your Improved Uncanny Dodge level (max 15 from Factotum levels). In addition, you retain your Dexterity bonus to AC even if caught flat-footed or hit by an invisible attacker. You still lose it if immobilized." compset="CustomSpec" summary="You are no longer flankable, and retain Dex bonus to AC when flat-footed" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacTrpSns" name="Trap Sense" description="Mimic the abilities of a Barbarian or Rogue to avoid traps. +5 bonus to Reflex saves made against traps and to AC against attacks made by traps." compset="CustomSpec" summary="+5 to Ref saves and AC against attacks made by traps." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacResLur" name="Resist Nature&apos;s Lure" description="Mimic the abilities of a Druid to gain a +4 bonus to saves against the spell-like abilities of Fey." compset="CustomSpec" summary="+4 to saves against the spell-like abilities of Fey." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacTrckls" name="Trackless Step" description="Mimic the abilities of a Druid to avoid leaving a trail in natural surroundings." compset="CustomSpec" summary="You leave no trail in natural surroundings." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacVenImm" name="Venom Immunity" description="Mimic the abilities of a Druid to become immune to all poisons." compset="CustomSpec" summary="You are immune to all poisons." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacFMBarb" name="Fast Movement (Barbarian)" description="Mimic the abilities of a Barbarian to improve your speed. Gain +10 feet to land speed movement. This only applies when wearing medium armor or less, and not under a heavy load." compset="CustomSpec" summary="Gain +10 movement unless heavily loaded" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ If we fail the test for being speedy, get out
+      if (hero.tagis[Encumbered.Light] + hero.tagis[Encumbered.Medium] = 0) then
+        perform assign[Helper.SpcDisable]
+        done
+      elseif (hero.tagis[Hero.HeavyArmor] <> 0) then
+        perform assign[Helper.SpcDisable]
+        done
+        endif
+
+      ~ We passed, so add to our base speed.
+      hero.child[Speed].field[tSpeed].value = hero.child[Speed].field[tSpeed].value + 10]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[     ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacSwTrck" name="Swift Tracker" description="Mimic the abilities of a Ranger to track foes more quickly. You can move at normal speed while Tracking without taking the -5 penalty. You can move up to twice normal speed and take only a -10 penalty. NOTE: This ability does not grant use of the Track feat to the Factotum. The feat must already be taken for this ability to work." compset="CustomSpec" summary="Move at normal speed while tracking without penalty." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacCamo" name="Camouflage" description="Mimic the abilities of a Ranger to use the Hide skill in any sort of natural terrain." compset="CustomSpec" summary="You can use the Hide skill in any sort of natural terrain." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacInWill" name="Indomitable Will" description="Mimic the abilities of a Barbarian to resist enchantments. Gain +4 to Will saves to resist Enchantment spells." compset="CustomSpec" summary="+4 to Will saves to resist Enchantment spells." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFACDR2" name="Damage Reduction" description="Mimic the abilities of a Barbarian to reduce damage. Gain DR 2/--" compset="CustomSpec" summary="Gain DR 2/--" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="xDamRd"></bootstrap>
+    <eval phase="PostAttr" priority="10001"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ Add to our Damage Reduction
+      #applydr[xDamRd, 2]]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[     ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacStlMnd" name="Still Mind" description="Mimic the abilities of a Monk to resist enchantments. Gain +2 to saves against enchantment spells and effects." compset="CustomSpec" summary="+2 to saves against enchantment spells and effects." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacSlwFal" name="Slow Fall, 70 ft" description="Mimic the abilities of a Monk to slow your descent within arm&apos;s reach of a wall. You can Slow Fall up to 70 feet." compset="CustomSpec" summary="You can Slow Fall up to 70 feet." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacPurBdy" name="Purity of Body" description="Mimic the abilities of a Monk to become immune to all diseases except supernatural and magical diseases." compset="CustomSpec" summary="Immunity to all diseases except supernatural and magical diseases" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacDiaSou" name="Diamond Soul" description="Mimic the abilities of a Monk to gain spell resistance equal to your factotum level (max 15) + 10." compset="CustomSpec" summary="Gain SR 25." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacDvHlth" name="Divine Health" description="Mimic the abilities of a Paladin to become immune to all diseases." compset="CustomSpec" summary="You are immune to all diseases." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacCrStrk" name="Crippling Strike" description="Mimic the abilities of a Rogue to improve your sneak attack. Your sneak attacks do 2 points of Strength damage. These ability points return at a rate of 1 per day." compset="CustomSpec" summary="Your sneak attacks do 2 points of Strength damage." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacDefRol" name="Defensive Roll" description="Mimic the abilities of a Rogue to attempt to narrowly escape death. When reduced to 0 or fewer hit points from damage in combat, take a reflex save with DC = damage dealt. If you succeed, you take half damage. This ability can only be used once per day." compset="CustomSpec" summary="Attempt to narrowly escape death" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacOpp" name="Opportunist" description="Mimic the abilities of a Rogue to gain attacks of opportunity. Once per round, make an attack of opportunity against an opponent who has just been hit for melee damage by another character." compset="CustomSpec" summary="Make a special attack of opportunity once per round." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacSlpMnd" name="Slippery Mind" description="Mimic the abilities of a Rogue to gain a second throw against enchantments. If you fail a saving throw vs enchantments, attempt it again next round at the same DC (once only)." compset="CustomSpec" summary="Two saves vs Enchantment spells." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacFMMnk" name="Fast Movement (Monk)" description="Mimic the abilities of a Monk to improve your speed when unarmored and unencumbered. Base speed increased by 50 feet." compset="CustomSpec" summary="Base speed increased by 50 feet." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ Get our encumbrance level - if we're encumbered by that, or if we're wearing
+      ~ armor or shield, we're disabled.
+      if (hero.tagis[Encumbered.Light] = 0) then
+        perform assign[Helper.SpcDisable]
+        done
+        endif
+      if (hero.tagis[Hero.EquipArmor] + hero.tagis[Hero.EquipShld] > 0) then
+        perform assign[Helper.SpcDisable]
+        done
+        endif
+
+      ~ Apply the enhancement bonus to our speed
+      #enhancementbonus[container.child[Speed], 50]]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[     ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFACACB" name="AC Bonus" description="Mimic the abilities of a Monk to improve your armor class. When unarmored and unencumbered, add your Wisdom bonus to AC, plus additional bonuses equal to that of a 15th level Monk (+3)." compset="CustomSpec" summary="Gain Wisdom bonus to AC, plus additional +3" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Final"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+
+      ~ Get our encumbrance level - if we're encumbered by that, or if we're wearing
+      ~ armor or shield, we're disabled.
+      var result as number
+      if (hero.tagis[Encumbered.Light] = 0) then
+        result = assign[Helper.SpcDisable]
+        done
+        endif
+      if (hero.tagis[Hero.EquipArmor] + hero.tagis[Hero.EquipShld] > 0) then
+        result = assign[Helper.SpcDisable]
+        done
+        endif
+
+      ~ Start our bonus off as our wisdom bonus
+      var bonus as number
+      bonus = hero.child[aWIS].field[aModBonus].value + 3
+
+      ~ Apply our AC bonus to all our armor scores
+      hero.child[ArmorClass].field[Bonus].value = hero.child[ArmorClass].field[Bonus].value + bonus]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[     ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFacFavEn" name="Favored Enemy" description="Mimic the abilities of a Ranger to gain a better understanding of your enemies. Gain a +8 bonus on Bluff, Listen, Sense Motive, Spot, and Survival checks when using these skills against creatures of this type. Additionally, gain a +8 bonus to weapon damage rolls against such creatures." compset="CustomSpec" summary="Gain +8 bonus on rolls against certain enemies" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="CustCharge"/>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[     ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFACGrRage" name="Greater Rage" description="Mimic the abilities of a Barbarian to fly into a rage and pummel your enemies. Fly into a rage, giving you +6 Str, +6 Con, +3 to Will saves and -2 to Armor Class. Many skills and abilities cannot be used while the character is enraged.\n\nRage lasts for 3 rounds + Con bonus. At the end of the rage, you become fatigued (-2 Str, -2 Dex, can&apos;t charge or run) for the rest of the encounter.\n\nThis ability can be used once per encounter." compset="CustomSpec" summary="Gain +6 to Str and Con and +3 to Will saves" uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <fieldval field="hName2" value="Exhausted"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[     ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ Available when not lawful - otherwise we don't meet requirements
+      if (hero.tagis[Alignment.Lawful] <> 0) then
+        perform assign[Helper.SpcDisable]
+      endif
+
+      ~ If we're enraged, apply the stat modifiers for that
+      if (field[hIsOn1].value <> 0) then
+        hero.child[aSTR].field[Bonus].value += 6
+        hero.child[aCON].field[Bonus].value += 6
+        #applybonus[BonMorale, hero.child[vWill], 3]
+        hero.child[ArmorClass].field[Penalty].value -= 2
+        endif]]></eval>
+    <eval phase="PostLevel" priority="10001" index="3"><![CDATA[      ~ If we're exhausted, apply the stat modifiers for that
+      if (field[hIsOn2].value <> 0) then
+        hero.child[aSTR].field[Penalty].value = hero.child[aSTR].field[Penalty].value - 2
+        hero.child[aDEX].field[Penalty].value = hero.child[aDEX].field[Penalty].value - 2
+          endif]]></eval>
+    </thing>
+  <thing id="cFACFlBlws" name="Flurry of Blows" description="Mimic the abilities of a Monk to add extra attacks with your unarmed strike. When unarmored, the monk may make a Flurry of Blows attack with his unarmed attacks and/or special monk weapons as a full round action. Note that this ability does not provide the Improved Unarmed Strike feat." compset="CustomSpec" summary="Make Flurry of Blows attack as a full action." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="wFlurry">
+      <containerreq phase="First" priority="100"><![CDATA[fieldval:hIsOn1 <> 0]]></containerreq>
+      </bootstrap>
+    <eval phase="Final" index="2"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ If we're wearing armor or shield, we're disabled.
+      if (hero.tagis[Hero.EquipArmor] + hero.tagis[Hero.EquipShld] > 0) then
+        perform assign[Helper.SpcDisable]
+        endif
+
+      ~ Get the number of extra attacks we can make
+      var extra as number
+       extra = 2
+
+       ~ Apply the bonus to our flurry of blows weapon
+      var i as number
+      for i = 1 to extra
+        perform hero.child[wFlurry].assign[Helper.ExtraHigh]
+        next]]></eval>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFACCSMA" name="Combat Style Mastery (Archery)" description="Mimic the abilities of a Ranger to improve your archery skills. Gain the use of the Improved Precise Shot feat even if you normally wouldn&apos;t meet the requirements. You cannot use this ability if you wear medium or heavier armor." compset="CustomSpec" summary="Gain Improved Precise Shot as a feat." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="fImpPrec">
+      <containerreq phase="First" priority="100"><![CDATA[fieldval:hIsOn1 <> 0]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="Final" index="2"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ If we're wearing medium or worse armor, disable our feat
+
+      if (hero.tagis[Hero.MedArmor] + hero.tagis[Hero.HeavyArmor] <> 0) then
+        perform hero.child[fImpPrec].assign[Helper.SpcDisable]
+      endif]]></eval>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFACCSA" name="Combat Style (Archery)" description="Mimic the abilities of a Ranger to improve your archery skills. Gain the use of the Rapid Shot feat even if you normally wouldn&apos;t meet the requirements. You cannot use this ability if you wear medium or heavier armor." compset="CustomSpec" summary="Gain Rapid Shot as a feat." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="fRapidShot">
+      <containerreq phase="First" priority="100"><![CDATA[fieldval:hIsOn1 <> 0]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="Final" index="2"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ If we're wearing medium or worse armor, disable our feat
+
+      if (hero.tagis[Hero.MedArmor] + hero.tagis[Hero.HeavyArmor] <> 0) then
+        perform hero.child[fImpPrec].assign[Helper.SpcDisable]
+      endif]]></eval>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFACICSA" name="Improved Combat Style (Archery)" description="Mimic the abilities of a Ranger to improve your archery skills. Gain the use of the Manyshot feat even if you normally wouldn&apos;t meet the requirements. You cannot use this ability if you wear medium or heavier armor." compset="CustomSpec" summary="Gain Manyshot as a feat." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="fManyshot">
+      <containerreq phase="First" priority="100"><![CDATA[fieldval:hIsOn1 <> 0]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="Final" index="2"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ If we're wearing medium or worse armor, disable our feat
+
+      if (hero.tagis[Hero.MedArmor] + hero.tagis[Hero.HeavyArmor] <> 0) then
+        perform hero.child[fImpPrec].assign[Helper.SpcDisable]
+      endif]]></eval>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cFACCSM2" name="Combat Style Mastery (Two-Weapon Fighting)" description="Mimic the abilities of a Ranger to improve your skills at dual-wielding. Gain the use of the Greater Two-Weapon Fighting feat even if you normally wouldn&apos;t meet the requirements. You cannot use this ability if you wear medium or heavier armor." compset="CustomSpec" summary="Gain Greater Two-Weapon Fighting as a feat." uniqueness="useronce">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="SpecSource" tag="cHelpFac"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="fGrtTwoWep">
+      <containerreq phase="First" priority="100"><![CDATA[fieldval:hIsOn1 <> 0]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="Final" index="2"><![CDATA[      ~ If we're not active, get out now
+      doneif (field[hIsOn1].value = 0)
+
+      ~ If we're wearing medium or worse armor, disable our feat
+
+      if (hero.tagis[Hero.MedArmor] + hero.tagis[Hero.HeavyArmor] <> 0) then
+        perform hero.child[fImpPrec].assign[Helper.SpcDisable]
+      endif]]></eval>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not active, disable
+      if (field[hIsOn1].value = 0) then
+        perform delete[Helper.ShowSpec]
+      endif]]></eval>
+    </thing>
+  <thing id="cHelpFac" name="Factotum" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cAbbr" value="Fac"/>
+    <fieldval field="cSpecSing" value="Arcane Dilletante Level"/>
+    <fieldval field="cSpec2ndNm" value="Cunning Brilliance Abilities"/>
+    <fieldval field="cSkills" value="6"/>
+    <arrayval field="cCustTot" index="6" value="3"/>
+    <arrayval field="cCustTot" index="8" value="4"/>
+    <arrayval field="cCustTot" index="11" value="5"/>
+    <arrayval field="cCustTot" index="14" value="6"/>
+    <arrayval field="cCustTot" index="17" value="7"/>
+    <arrayval field="cCustTot" index="19" value="8"/>
+    <arrayval field="cCustScTot" index="18" value="3"/>
+    <arrayval field="cCustTot" index="1" value="1"/>
+    <arrayval field="cCustTot" index="3" value="2"/>
+    <usesource source="DScape"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kDecScript"/>
+    <tag group="ClassSkill" tag="kDiplomacy"/>
+    <tag group="ClassSkill" tag="kDisable"/>
+    <tag group="ClassSkill" tag="kDisguise"/>
+    <tag group="ClassSkill" tag="kEscape"/>
+    <tag group="ClassSkill" tag="kForgery"/>
+    <tag group="ClassSkill" tag="kGatherInf"/>
+    <tag group="ClassSkill" tag="kHandleAnm"/>
+    <tag group="ClassSkill" tag="kHeal"/>
+    <tag group="ClassSkill" tag="kHide"/>
+    <tag group="ClassSkill" tag="kIntim"/>
+    <tag group="ClassSkill" tag="kJump"/>
+    <tag group="ClassSkill" tag="kListen"/>
+    <tag group="ClassSkill" tag="kMoveSil"/>
+    <tag group="ClassSkill" tag="kOpenLock"/>
+    <tag group="ClassSkill" tag="kRide"/>
+    <tag group="ClassSkill" tag="kSearch"/>
+    <tag group="ClassSkill" tag="kSenseMot"/>
+    <tag group="ClassSkill" tag="kSleight"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kSpot"/>
+    <tag group="ClassSkill" tag="kSurvival"/>
+    <tag group="ClassSkill" tag="kSwim"/>
+    <tag group="ClassSkill" tag="kTumble"/>
+    <tag group="ClassSkill" tag="kUseMagic"/>
+    <tag group="ClassSkill" tag="kUseRope"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="ClassSkill" tag="kAppraise"/>
+    <tag group="psiClass" tag="AddNewTag"/>
+    <tag group="psiClDisc" tag="None"/>
+    <tag group="Classes" tag="Factotum" name="Factotum"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
+    <tag group="ClassSkill" tag="Perform"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="kBluff"/>
+    <tag group="ClassSkill" tag="kBalance"/>
+    <tag group="ClassSkill" tag="kClimb"/>
+    <bootstrap thing="cFacCunBr"></bootstrap>
+    <bootstrap thing="cFacCunDo"></bootstrap>
+    <bootstrap thing="cFacImpCD"></bootstrap>
+    <bootstrap thing="cFacCunBri"></bootstrap>
+    <bootstrap thing="cArcDill1"></bootstrap>
+    <bootstrap thing="cArcDill2"></bootstrap>
+    <bootstrap thing="cArcDill3"></bootstrap>
+    <bootstrap thing="cArcDill4"></bootstrap>
+    <bootstrap thing="cArcDill5"></bootstrap>
+    <bootstrap thing="cArcDill6"></bootstrap>
+    <bootstrap thing="cArcDill7"></bootstrap>
+    <bootstrap thing="cArcDill8"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="cFacTrpFnd"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="cFacCunIn"></bootstrap>
+    <bootstrap thing="cFacCunKn"></bootstrap>
+    <bootstrap thing="cFacInspir"></bootstrap>
+    <bootstrap thing="fArmLgShld"></bootstrap>
+    <bootstrap thing="cFacBovB"></bootstrap>
+    <bootstrap thing="cFacCunDe"></bootstrap>
+    <bootstrap thing="cFacCunSt"></bootstrap>
+    <bootstrap thing="cFacOppPi"></bootstrap>
+    <bootstrap thing="cFacCunSu"></bootstrap>
+    </thing>
+  <thing id="fComTinker" name="Combat Tinkering" description="You can disarm traps or pick locks quickly and efficiently, even under the pressure of combat.\n\n{b}Benefit{/b}: You gain a +4 bonus on Concentration checks to avoid being distracted in combat while making Disable Device or Open Lock checks. You also gain a +4 bonus when attempting to quicken a Disable Device or Open Lock check (see the Quickened Skill Checks sidebar).\n\n{b}Normal{/b}: You must make a Concentration check whenever you are damaged or otherwise distracted while attempting to use the Disable Device or Open Lock skills. The DC to open a lock or disable a device is increased by 20 if you attempt to complete the task in a shorter amount of time.\n\n{b}Special{/b}: This feat is particularly useful against encounter traps (see page 120)." compset="Feat" summary="When Open Lock/Disable device gain +4 bon to Concentrate or quicken check." uniqueness="useronce">
+    <comment>Trap Sensitivity Error needs resolve, working on in forum (Done)
+
+Summ (Done)</comment>
+    <usesource source="DScape" parent="p35" name="Dungeonscape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    </thing>
+  <thing id="fGnTunAcro" name="Gnome Tunnel Acrobatics" description="Goblin raiding parties whisper of the crazed but effective tactics that gnome tunnel guards use to defend their homes. The gnomes excel at using acrobatics to penetrate enemy ranks or launch devastating attacks from above.\n\n{b}Prerequisites{/b}: Gnome; or base attack bonus +4, Knowledge (dungeoneering) 2 ranks, and Tumble 9 ranks.\n\n{b}Benefit{/b}: The Gnome Tunnel Acrobatics feat enables the use of certain tactical maneuvers, described below.\n\n{i}Combat Puppeteer{/i}: You slip between your foes in a blur of movement, confusing them and causing them to strike at each other by mistake. If you use the Tumble skill to avoid an opponent&#146;s attack of opportunity, you can use this maneuver on the following round. You must make a double move and attempt a Tumble check at a &#150;5 penalty to avoid a foe&#146;s attack of opportunity. If your check succeeds, your foe makes an attack of opportunity but targets a creature of your choice within its reach rather than you. You can use this maneuver against one creature per round.\n\n{i}Tunnel Scrambler{/i}: Using a series of deft tumbles and somersaults, you crowd your opponent and force him to move. If you make a successful melee attack against an opponent who has walls adjacent to at least two sides of his space, you can make a special Tumble check on your next turn. This check requires a full-round action. As part of this action, make a Tumble check to move through the target&#146;s space. On a successful check, you stop in his space (rather than move past him) and attack as part of your full-round action. If the check fails, you provoke an attack of opportunity, and the rest of your full-round action is wasted.\n\nIf your melee attack hits, you move your foe 5 feet in a direction of your choice. You now occupy the space that he occupied (or one of the spaces of your choice). If your melee attack misses, you return to the space you occupied when you started this maneuver.\n\n{i}Wall Leaper{/i}: If you drop from a wall while climbing and land adjacent to a creature, you can make one attack as a standard action. This attack counts as a charge, and you gain a bonus on your damage roll equal to the number of points of falling damage that you take.\n\n{b}Special{/b}: A fighter can select Gnome Tunnel Acrobatics as one of his fighter bonus feats (PH 38)." compset="Feat" summary="Gain a variety of bonuses while tumbling in tunnels." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Tactical"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <prereq message="Gnome race or base attack bonus +4, &amp; Knowledge (dungeoneering) 2 ranks, &amp; Tumble 9 ranks required.">
+      <validate><![CDATA[   validif (hero.tagis[Race.Gnome] <> 0) 
+
+   var result as number
+   if (child[Attack].field[tAtkBase].value >= 4) then
+     result += 1
+   endif
+
+   if (#skillranks[kKnowDun] >= 2) then
+     result += 1
+   endif
+
+   if (#skillranks[kTumble] >= 9) then
+     result += 1
+   endif
+
+   validif (result >= 3)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fHammPiton" name="Hammer and Piton" description="You can drive pitons into your foes, giving you a useful perch from which to strike.\n\n{b}Prerequisites{/b}: Strength 15, Climb 3 ranks.\n\n{b}Benefit{/b}: While wielding a one-handed bludgeoning melee weapon in your primary hand and a climbing piton or spike in the other, you can make a touch attack with the piton as a standard action. This attack deals 1d4 points of damage + your Strength modifier. The target must be size Large or bigger.\n\nIf the target is at least one size category larger than you, you can make a special Climb check (DC equal to the target&#146;s Armor Class) to enter his space as a move action. You must make the check on the same turn in which you struck your foe with the piton. If the check succeeds, you enter and remain in the target&#146;s space without provoking an attack of opportunity from the target. You lose your Dexterity bonus to Armor Class, but if your foe moves, you remain in his space as he moves. If any attack against you deals 10 or more points of damage, you must make a Climb check (DC equal to the number of points of damage) to remain in place. If the check fails, you must leave your foe&#146;s space and enter the nearest clear space.\n\n{b}Special{/b}: A fighter can select Hammer and Piton as one of his fighter bonus feats (PH 38)." compset="Feat" summary="Stand, touch att drives piton into Lg+ foe. Mv, climb chk to mount (no AoO)." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <exprreq message="Strength 15 required."><![CDATA[child[aSTR].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Climb 3 ranks required."><![CDATA[#skillranks[kClimb] >= 3]]></exprreq>
+    </thing>
+  <thing id="fQuicRecon" name="Quick Reconnoiter" description="You are skilled at scanning an area or object quickly and thoroughly.\n\n{b}Prerequisite{/b}: Listen 5 ranks, Spot 5 ranks.\n\n{b}Benefit{/b}: You can make one Spot check and one Listen check each round as a free action. You also gain a +2 bonus on initiative checks.\n\n{b}Normal{/b}: Using Spot or Listen in a reactive fashion is a free action, but actively trying to make a Spot check or a Listen check requires a move action." compset="Feat" summary="Free, can make 1 active Spot &amp; Listen check per round." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <eval phase="PreLevel" priority="5000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      hero.child[Initiative].field[Bonus].value = hero.child[Initiative].field[Bonus].value + 2]]></eval>
+    <exprreq message="Spot 5 ranks required."><![CDATA[#skillranks[kSpot] >= 5]]></exprreq>
+    <exprreq message="Listen 5 ranks required."><![CDATA[#skillranks[kListen] >= 5]]></exprreq>
+    </thing>
+  <thing id="fTrapEngin" name="Trap Engineer" description="You have spent a great deal of time studying trap construction and recognize the work of famous builders, which gives you an edge against their devices.\n\n{b}Prerequisites{/b}: Knowledge (architecture and engineering) 1 rank, Knowledge (dungeoneering) 4 ranks.\n\n{b}Benefit{/b}: You know the styles of famous dungeon architects or recognize their influences. After finding or setting off a trap in a dungeon, you gain a +2 bonus on future Search checks and Disable Device checks to find or disarm traps in that same dungeon. You also gain a +4 bonus on Reflex saves to avoid traps in that dungeon, and a +4 dodge bonus to Armor Class against attacks made by traps in that dungeon." compset="Feat" summary="After find/trigger trap in dungeon, +2 Search/Disable, +4 Ref &amp; AC vs rest." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Knowledge (architecture and engineering) 1 rank required."><![CDATA[#skillranks[kKnowArcEn] >= 1]]></exprreq>
+    <exprreq message="Knowledge (dungeoneering) 4 ranks required."><![CDATA[#skillranks[kKnowDun] >= 4]]></exprreq>
+    </thing>
+  <thing id="fTrapSensi" name="Trap Sensitivity" description="Your senses are so attuned that you can detect mechanical traps that are close by.\n\n{b}Prerequisites{/b}: Elf or trapfinding class feature, trap sense +2.\n\n{b}Benefit{/b}: When you pass within 5 feet of a mechanical trap, you are entitled to make a Search check to notice the trap as if you were looking for it. You cannot sense magic traps or spell traps with this feat.\n\n{b}Normal{/b}: Without this feat, you must actively search for a trap to find it before it activates." compset="Feat" summary="If pass within 5 ft of mech trap, gain search chk as though actively looking." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="General"/>
+    <exprreq message="Elf or trapfinding class feature required."><![CDATA[hero.childfound[cRogTrapfn].tagis[Helper.ShowSpec] + hero.tagis[Race.Elf] + hero.tagis[User.Trapfindin] <> 0]]></exprreq>
+    <exprreq message="Trap sense +2 required."><![CDATA[hero.childfound[xTrapSense].field[Value].value >= 2]]></exprreq>
+    </thing>
+  <thing id="fTunnFight" name="Tunnel Fighting" description="You are adept at maneuvering and fighting in tight spaces and underground passages.\n\n{b}Prerequisites{/b}: Base attack bonus +1.\n\n{b}Benefit{/b}: When squeezing into or through a tight space, you do not take a penalty on your attack rolls or to your Armor Class.\n\n{b}Normal{/b}: Each movement into or through a narrow space counts as if it were 2 squares, and while squeezed in a narrow space, you take a &#150;4 penalty on your attack rolls and a &#150;4 penalty to your Armor Class (PH 148).\n\n{b}Special{/b}: A fighter can select Tunnel Fighting as one of his fighter bonus feats (PH 38)." compset="Feat" summary="No penalty to attacks or AC when squeezing." replaces="fTunnelFig" uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="DScape"/>
+    <usesource source="srcRoS"/>
+    <tag group="fCategory" tag="General"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Base attack bonus +1 required."><![CDATA[child[Attack].field[tAtkBase].value >= 1]]></exprreq>
+    </thing>
+  <thing id="fUndMouTac" name="Undermountain Tactics" description="Dwarves have developed a variety of cunning tactics to defeat those foolish enough to enter their mountain redoubts. While gnomes lack the dwarves&#146; militaristic streak, they too have refined these tactics in countless battles against kobolds and goblins.\n\n{b}Prerequisites{/b}: Dwarf or gnome; or base attack bonus +6 and Knowledge (dungeoneering) 2 ranks.\n\n{b}Benefit{/b}: The Undermountain Tactics feat enables the use of certain tactical maneuvers, described below.\n\n{i}Stair King{/i}: To use this maneuver, you must gain the high ground bonus on your attacks against an opponent. If you hit your foe with two or more melee attacks during your turn, he must make a Balance check (DC 10 + your Str modifier) or be knocked prone. Your opponent can opt to succeed automatically on his Balance check. If he does so, he will lose his move action on his next turn, but he will succeed automatically on Balance checks to resist this maneuver until the start of his next turn. Your opponent must make this choice before seeing the result of his Balance check. You can target a particular creature with this maneuver once per round.\n\n{i}Tunnel Fighter{/i}: To use this maneuver, you must be the target of at least one melee attack from at least one foe while standing with walls adjacent to you on two or more sides. When you are attacked under such conditions, you gain a +2 bonus to Armor Class due to cover. (If you gain cover from another source, this benefit does not stack with it.) You also block line of sight for any spells or attacks made by your opponents, though your allies can fire through your space as normal.\n\n{i}Door Sentinel{/i}: To use this maneuver, you must fight defensively while adjacent to or standing in a doorway, a gate, or a similar opening in a wall. You must be adjacent to or standing in each square across the doorway&#146;s width. For 1 round after you fight defensively, you gain a +4 bonus on Strength or Dexterity checks to resist bull rush or trip attacks. Any creature attempting a Tumble check to avoid your attack of opportunity takes a &#150;5 penalty on the check. Any creature attempting to tumble through your space takes a &#150;10 penalty on its check.\n\n{b}Special{/b}: A fighter can select Undermountain Tactics as one of his fighter bonus feats (PH 38)." compset="Feat" summary="Gain a variety of options when standing in tunnels, on stairs, or in doorways." uniqueness="useronce">
+    <comment>Pre req (Done)
+
+Summ (Done)</comment>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Tactical"/>
+    <tag group="BonusFor" tag="Fighter"/>
+    <prereq message="Dwarf/Gnome race; or base attack bonus +6 &amp; Knowledge (dungeoneering) 2 ranks required.">
+      <validate><![CDATA[   validif (hero.tagis[Race.Dwarf] + hero.tagis[Race.Gnome] <> 0) 
+
+   var result as number
+   if (child[Attack].field[tAtkBase].value >= 6) then
+     result += 1
+   endif
+
+   if (#skillranks[kKnowDun] >= 2) then
+     result += 1
+   endif
+
+   validif (result >= 2)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fWeapTorch" name="Weapon and Torch" description="You have mastered a style of fighting that uses a melee weapon and a torch to devastating effect. You can dazzle and burn your opponent with the open flame.\n\n{b}Benefit{/b}: While fighting with a one-handed melee weapon and holding a lit torch in the other hand, you can make a special attack as a full-round action. Attack once with your melee weapon. If the attack hits, you also sweep your torch across your foe&#146;s eyes, dealing 1d6 points of fire damage and dazzling him for 1d4 rounds. You can also use this feat while wielding a lit lantern, a sunrod, or an {i}everburning torch{/i} in your off hand, although items that do not give off heat do not deal fire damage." compset="Feat" summary="Full rd, 1 att with main hand, on hit +d6 fire from off hand torch &amp; dazzle d4 rds." uniqueness="useronce">
+    <comment>Summ (Done)</comment>
+    <usesource source="DScape"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Style"/>
+    </thing>
+  </document>

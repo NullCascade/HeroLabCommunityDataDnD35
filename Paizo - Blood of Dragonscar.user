@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>Input by bodrin 20/03/2011
+
+bodrinbarlow@gmail.com</info_author>
+    <info_history>7-19-11 Lawful_G
+Eliminated (Ex) from the names of the specials and applied the correct tags to them instead. Added evals to automatically display updated names with the damage for each special, also modded the xSumms to be shorter.
+Deleted the ImmFire and VulCold bootstraps both of those are part of the subtype now and will be added with it.
+Added pre-reqs for the template.
+
+version 1.1</info_history>
+    <info_todo/>
+    </fileinfo>
+  <thing id="xBlaztouch" name="Blazing Touch" description="A Necropyre&apos;s natural attacks, plus any weapons it wields, deal an additional 1d6 fire damage (or 2d6 if the base creature has 10 or more hit dice)." compset="Special" summary="Additional fire damage on all attacks." uniqueness="unique">
+    <usesource source="BoD"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="SpecSource" tag="Necropyre"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Render"><![CDATA[  ~ Set our name according to our HD.
+  if (herofield[tHitDice].value >= 10) then
+    field[livename].text = field[name].text & " (2d6 fire)"
+  else
+    field[livename].text = field[name].text & " (1d6 fire)"
+  endif]]></eval>
+    </thing>
+  <thing id="xFireShrou" name="Fiery Shroud" description="Any creature that strikes a necropyre with a melee attack suffers 1d6 fire damage (or 2d6 if the base creature has 10 or more hit dice)." compset="Special" summary="Attackers take fire damage on successful melee attacks." uniqueness="unique">
+    <usesource source="BoD"/>
+    <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="SpecSource" tag="Necropyre" name="Necropyre" abbrev="Necropyre"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="thingid" tag="xBlaztouch" name="Blazing Touch (Ex)" abbrev="Blazing Touch (Ex)"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Render"><![CDATA[  ~ Set our name according to our HD.
+  if (herofield[tHitDice].value >= 10) then
+    field[livename].text = field[name].text & " (2d6 fire)"
+  else
+    field[livename].text = field[name].text & " (1d6 fire)"
+  endif]]></eval>
+    </thing>
+  <thing id="tmNecropyr" name="Necropyre Template" description="A Necropyre is a form of undead created when the Necropyre Crystals bearer slays a living creature. With his soul tied to the necropyre crystal, the victim is reborn as a burning spirit in perpetual agony.\n\nNecropyres are not under the control of the crystal&apos;s bearer, but they cannot harm him.\n\nMost are dangerously insane and immediately attack any other living creature they encounter. Destroying them or the crystal is the only way to end their torment.\n\n{B}Creating a Necropyre{/B}\n&quot;Necropyre&quot; is an acquired template that can be applied to an incorporeal undead creature that does not possess the cold subtype.\n\nA Necropyre uses all of the base creatures statistics except where noted below.\n\nChallenge Rating : +0\n\nSize and type : The creatures size and type remains unchanged, but it gains the fire subtype.\n\n{b}Special attacks : {/b}\nA necropyre retains the base creatures special attacks and gains Blazing Touch (Ex).\nA Necropyre&apos;s natural attacks, plus any weapons it wields, deal an additional 1d6 fire damage (or 2d6 if the base creature has 10 or more hit dice).\n\n{b}Defensive abilities :{/b}\nA necropyre retains the base creatures defensive abilities and gains Fiery Shroud (Ex)\nAny creature that strikes a necropyre with a melee attack suffers 1d6 fire damage (or 2d6 if the base creature has 10 or more hit dice)." compset="Template" uniqueness="unique">
+    <comment>Input by Bodrin 20/03/2011
+Template from Pathfinder Module for 3.5 OGL D20 rules
+
+Blood of Dragonscar by Paizo publishing</comment>
+    <usesource source="BoD" parent="pPaizo" name="Blood of Dragonscar"/>
+    <tag group="TemplHelp" tag="Acquired"/>
+    <tag group="SpecSource" tag="Necropyre"/>
+    <bootstrap thing="xBlaztouch">
+      <autotag group="SpecSource" tag="Necropyre"/>
+      </bootstrap>
+    <bootstrap thing="xFireShrou">
+      <autotag group="SpecSource" tag="Necropyre"/>
+      </bootstrap>
+    <bootstrap thing="stypFire"></bootstrap>
+    <eval phase="First" priority="50">  perform hero.assign[Race.stypFire]</eval>
+    <exprreq message="Incorporeal subtype required."><![CDATA[tagis[Race.stypIncorp] <> 0]]></exprreq>
+    <exprreq message="Cold subtype forbidden.">tagis[Race.stypCold] = 0</exprreq>
+    <exprreq message="Undead type required."><![CDATA[tagis[Race.typUndead] <> 0]]></exprreq>
+    </thing>
+  </document>

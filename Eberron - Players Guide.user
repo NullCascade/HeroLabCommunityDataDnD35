@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <thing id="cHelpHEB" name="High Elemental Binder" compset="ClassHelp" uniqueness="unique">
+    <fieldval field="cHDSides" value="6"/>
+    <fieldval field="cAbbr" value="HEB"/>
+    <fieldval field="cSkills" value="2"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cMagLevTot" index="3" value="3"/>
+    <arrayval field="cMagLevTot" index="4" value="4"/>
+    <arrayval field="cMagLevTot" index="5" value="5"/>
+    <arrayval field="cMagLevTot" index="6" value="6"/>
+    <arrayval field="cMagLevTot" index="7" value="7"/>
+    <arrayval field="cMagLevTot" index="8" value="8"/>
+    <arrayval field="cMagLevTot" index="9" value="9"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <usesource source="PGEbb" parent="pECS" name="Player&apos;s Guide to Eberron"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="Classes" tag="HighEleBi" name="High Elemental Binder"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="kConcent"/>
+    <tag group="ClassSkill" tag="kKnowArcan"/>
+    <tag group="ClassSkill" tag="kKnowPlane"/>
+    <tag group="ClassSkill" tag="kSpellcr"/>
+    <tag group="ClassSkill" tag="kUseMagic"/>
+    <bootstrap thing="cHEBECMed"></bootstrap>
+    <bootstrap thing="cHEBEC2"></bootstrap>
+    <bootstrap thing="cHEBEC3"></bootstrap>
+    <bootstrap thing="cHEBEC4"></bootstrap>
+    <bootstrap thing="cHEBECLg"></bootstrap>
+    <bootstrap thing="cHEBECHuge"></bootstrap>
+    <bootstrap thing="cHEBIB1Wpn"></bootstrap>
+    <bootstrap thing="cHEBIB2"></bootstrap>
+    <bootstrap thing="cHEBIBArm"></bootstrap>
+    <bootstrap thing="cHEBIB3"></bootstrap>
+    <bootstrap thing="cHEBIB4"></bootstrap>
+    <bootstrap thing="cHEBIB5Bdy"></bootstrap>
+    <eval phase="PreLevel" priority="9999"><![CDATA[if (hero.tagis[Classes.Artificer] <> 0) then
+ perform hero.child[cHelpArt].assign[Hero.Arcane]
+endif]]></eval>
+    </thing>
+  <thing id="cHighEleBi" name="High Elemental Binder" description="{i}&quot;I bind fire to scorch my enemies. I bind air to move with the wind. I bind earth to find the secret places. I bind water to dance with the waves. I am their master, and let my enemies quail.&quot;{/i}\n                               &#151;Zallias the high elemental binder\n\nA few Spellcasters dabble with elemental binding; high elemental binders (also known simply as high binders) are masters of the craft. As a high binder, you can reach into the planes and immediately draw elemental beings into objects&#151;coating your armor in stone or your blade in fire. You can also use elementals to power your spells and call them to serve you. You can even bind elementals to your body, harnessing their powers for your own.\n\nThe artificer is the easiest path into the high elemental binder class: You gain Craft Wondrous Item as a bonus feat, and Concentration, Knowledge (arcana), and Knowledge (the planes) are class skills for you. Wizards can also meet the entry requirements easily, but have less to gain from the class. Clerics make good high binders, since they benefit greatly from the ability to bind elementals to their weapons and armor. Your key spellcasting ability (Intelligence, Wisdom, or Charisma) remains your most important ability. Constitution is helpful to maintain your instant binds, while Charisma helps you bind unwilling elementals." compset="ClassLevel" maxlimit="10">
+    <usesource source="PGEbb"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpHEB"></bootstrap>
+    <link linkage="helper" thing="cHelpHEB"/>
+    <exprreq message="Concentration 8 ranks required."><![CDATA[#skillranks[kConcent] >= 8]]></exprreq>
+    <exprreq message="Knowledge (arcana) 4 ranks required."><![CDATA[#skillranks[kKnowArcan] >= 4]]></exprreq>
+    <exprreq message="Knowledge (the planes) 8 ranks required."><![CDATA[#skillranks[kKnowPlane] >= 8]]></exprreq>
+    <exprreq message="Bind Elemental required."><![CDATA[#hasfeat[fBindEleme] <> 0]]></exprreq>
+    <exprreq message="Craft Wondrous Item required."><![CDATA[#hasfeat[fCraftWond] <> 0]]></exprreq>
+    <prereq message="Ability to cast 3rd level spells or infusions required">
+      <validate><![CDATA[   if (tagcount[Hero.Divine] >= 3 + 1) then
+     @valid = 1
+   elseif (tagcount[Hero.Arcane] >= 3 + 1) then
+     @valid = 1
+   elseif (tagcount[Classes.Artificer] >= 1) then
+     if (hero.child[cHelpArt].field[cCasterLev].value >= 5) then
+       @valid = 1
+     endif
+   endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="xHEBEleCom" name="Elemental Companion" description="At 1st level, you gain the service of a loyal elemental (your choice of air, earth, fire, or water). The elementals size is Medium when you are 1st level, but it grows larger and more powerful as you gain levels. At 4th level, your elemental companion is Large, and at 8th level it is Huge. When you summon your companion, you can choose for it to appear in a smaller size (to a minimum of Small). \n\nOnce per day, as a full-round action, you can summon your elemental companion from the plane on which it resides. The elemental immediately appears adjacent to you and remains for 2 hours per class level; it can be dismissed at any time as a free action. The companion is the same creature each time it is summoned. Each time it is summoned, it appears in full health, regardless of any damage it might have taken previously. If your elemental companion is reduced to 0 or fewer hit points, it disappears back to its home plane as normal for a summoned creature. If your elemental companion carries any gear when it disappears, that gear remains behind.\n\nAt 3rd level, you gain the service of a second elemental; this elemental must be of a different kind from your current elemental companion. When you summon your elemental companion, you can choose to summon either elemental. At 6th level, you gain a t h i rd elemental, and at 9th level you gain a fourth elemental; no of these companions can be of the same kind.\n\nThis ability is the equivalent of a 4th-level spell; your caster level is equal to your highest caster level in any class." compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <eval phase="UserPostLv" priority="15000"><![CDATA[var hrs as number
+hrs = #levelcount[HighEleBi] * 2
+
+field[xSumm].text = "1/day you can summon an elemental that lasts for " & hrs & " hours."]]></eval>
+    </thing>
+  <thing id="cHEBECMed" name="Elemental Companion (Medium)" description="You gain the services of one medium-sized elemental companion." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="1"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    <bootstrap thing="xHEBEleCom"></bootstrap>
+    </thing>
+  <thing id="cHEBEC2" name="Elemental Companion (2)" description="You gain the services of a second elemental companion." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="3"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="cHEBEC3" name="Elemental Companion (3)" description="You gain the services of a third elemental companion." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="cHEBEC4" name="Elemental Companion (4)" description="You gain the services of a fourth elemental companion." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="9"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="cHEBECLg" name="Elemental Companion (Large)" description="The size of your summoned elemental companion increases to large." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="cHEBECHuge" name="Elemental Companion (Huge)" description="The size of your summoned elemental companion increases to huge." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="AbilType" tag="SpellLike"/>
+    </thing>
+  <thing id="xHEBInsBnd" name="Instant Bind" description="Beginning at 2nd level, you can temporarily bind a nearby elemental to your weapon, armor, or even yourself without the normal cost and time requirements. Binding an elemental in this fashion is a standard action; at 7th level it becomes a swift action. It does not provoke attacks of opportunity. The bind lasts for a number of rounds equal to your class level + your Con modifier (minimum 1 round). Initially you can use this ability only once per day; as you gain levels you can use it more often, as indicated on the table.\n\nAn elemental creature of the appropriate kind must be within 30 feet for you to use the ability. (Usually, a high binder uses his elemental companion for this purpose.) If the creature is unwilling to be bound in this fashion, it receives a Will saving throw to avoid the effect (DC 10 + class level + Cha modifier). If it succeeds, the instant bind fails (though it still counts as a daily use) and that elemental is immune to your instant bind ability for the next 24 hours.\n\nWhen the instant bind ends, the bound elemental appears adjacent to you (or in the nearest open space, if there is insufficient space adjacent to you) and can act immediately. If the elemental is a summoned creature, time spent in the bind counts against the duration of the summoning spell or effect; if this duration elapses before the bind ends, the elemental remains bound for the full duration of the bind but disappears immediately after the bind ends.\n\nAt 2nd level, you can use your instant bind ability to bind an elemental to a weapon you are holding. This grants your weapon one of the following weapon special properties (see Chapter 10 of the {b}Eberron Campaign Setting{/b}), depending on the kind of elemental you bind: {i}burning{/i} (fire), {i}earthbound{/i} (earth), {i}finesse{/i} (air), or {i}waterborn{/i} (water). You can&apos;t bind more than one elemental to your weapon at one time. If the weapon is destroyed or leaves your hands, the effect ends.\n\nAt 5th level, you can use your instant bind ability to bind an elemental to a suit of armor you are wearing. This grants your armor one of the following armor special properties (see Chapter 10 of the {b}Eberron Campaign Setting{/b}), depending on the kind of elemental you bind: {i}burning{/i} (fire), {i}stonemeld{/i} (earth), {i}underwater action{/i} (water), or {i}whirlwind{/i} (air). You can&apos;t bind more than one elemental to your armor at one time. If the armor is destroyed or removed, the effect ends.\n\nAt 10th level, you can use your instant bind ability to bind an elemental to your own body.This grants you benefits based on the kind of elemental bound. You can&apos;t bind more than one elemental to your body at one time.\n\n{b}Air{/b}: You gain a + 4 dodge bonus to AC and a fly speed of 100 feet (perfect).\n\n{b}Earth{/b}: You gain a + 4 bonus on melee weapon damage rolls and a +4 bonus on checks to avoid being bull rushed, overrun, or tripped.\n\n{b}Fire{/b}: You gain a +4 bonus on initiative checks and Reflex saves. Your unarmed attacks and natural weapons deal an extra 2d6 points of fire damage.\n\n{b}Water{/b}: You gain temporary hit points equal to twice your HD and a swim speed of 60 feet." compset="Special">
+    <fieldval field="hTotal" value="1"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <eval phase="UserPostAt" priority="15000"><![CDATA[~ Set and display # of rounds binding holds
+var rnds as number
+rnds = #levelcount[HighEleBi] + hero.child[aCON].field[aModBonus].value
+rnds = maximum(rnds,1)
+
+field[xSumm].text = "Bind a nearby elemental to your weapon, armor or self for " & rnds & " rnds."
+
+~ Set and display the DC for elementals to avoid
+var DC as number
+DC = 10 + #levelcount[HighEleBi] + hero.child[aCHA].field[aModBonus].value
+
+field[livename].text = field[name].text & " (DC " & DC & ")"
+
+~ Set # of charges
+field[hTotal].value = round(#levelcount[HighEleBi]/2,0,-1)]]></eval>
+    </thing>
+  <thing id="cHEBIB1Wpn" name="Instant Bind (1/day, Weapon)" description="Bind a nearby elemental to your weapon 1/day." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="2"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    <bootstrap thing="xHEBInsBnd">
+      <containerreq phase="First" priority="10000"><![CDATA[count:Classes.HighEleBi >= 2]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cHEBIB2" name="Instant Bind (2/day)" description="The number of times you can bind nearby elementals increases to 2/day." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="4"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHEBIBArm" name="Instant Bind (Armor)" description="Bind a nearby elemental to your armor." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="5"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHEBIB3" name="Instant Bind (3/day)" description="The number of times you can bind nearby elementals increases to 3/day." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="6"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHEBIB4" name="Instant Bind (4/day)" description="The number of times you can bind nearby elementals increases to 4/day." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="8"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cHEBIB5Bdy" name="Instant Bind (5/day, Body)" description="Bind a nearby elemental to your body. Use this abilty up to 5/day." compset="ClSpecial">
+    <usesource source="PGEbb"/>
+    <tag group="SpecSource" tag="cHelpHEB"/>
+    <tag group="ClSpecWhen" tag="10"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  </document>
