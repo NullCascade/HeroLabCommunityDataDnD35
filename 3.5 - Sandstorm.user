@@ -1321,6 +1321,12 @@ endif]]></eval>
     <tag group="NoScore" tag="aCON"/>
     <tag group="TemplHelp" tag="Acquired"/>
     <bootstrap thing="xADespair"></bootstrap>
+    <bootstrap thing="xImmCold"></bootstrap>
+    <bootstrap thing="xImmElec"></bootstrap>
+    <bootstrap thing="xImmMind"></bootstrap>
+    <bootstrap thing="xImmPoly"></bootstrap>
+    <bootstrap thing="xTurnRes"></bootstrap>
+    <bootstrap thing="typUndead"></bootstrap>
     <eval phase="UserPostLv">~ Skill bonuses.
 #skillbonus[kHide] += 8
 #skillbonus[kIntim] += 8
@@ -1330,7 +1336,11 @@ endif]]></eval>
 #skillbonus[kSpot] += 8
 
 ~ +4 Turn Resistance
-#applyturnresist[4]</eval>
+#applyturnresist[6]
+
+~ Our racial type becomes Undead.
+perform hero.delete[Race.typ?]
+perform hero.assign[Race.typUndead]</eval>
     </thing>
   <thing id="xADespair" name="Aura of Despair" description="A dry lich is surrounded by a terrible sense of age, loss, and death. Any creature within a 60-foot radius must succeed on a Will save or be shaken for 1d4 rounds. A creature that successfully saves cannot be affected again by the same dry lich&apos;s aura of despair for 4 hours." compset="Special" summary="A dry lich is surrounded by a terrible sense of age, loss, and death.">
     <usesource source="Sandstorm"/>
