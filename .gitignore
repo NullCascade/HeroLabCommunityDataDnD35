@@ -1,0 +1,9 @@
+*.bmp
+authoring/
+importbackup/
+manual/
+source/
+*.stock
+*.htm
+*.cfg
+*.hlz
