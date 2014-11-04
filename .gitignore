@@ -7,3 +7,6 @@ source/
 *.htm
 *.cfg
 *.hlz
+*.1st
+*.dtd
+*.pkg
