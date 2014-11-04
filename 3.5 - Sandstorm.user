@@ -926,7 +926,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="SecClsAllw" tag="Sand"/>
     <bootstrap thing="xShapeSand"></bootstrap>
     </thing>
-  <thing id="sWasteStri" name="Waste Strider" description="The subject can move through desert environments without hindrance, ignoring movement penalties and penalties on skill checks for all types of desert and waste terrain. This spell does not grant a subject immunity to other ill effects of waste environments, such as heat and sun." compset="Spell" summary="Move through waste without penalties.">
+  <thing id="sWstStriSa" name="Waste Strider" description="The subject can move through desert environments without hindrance, ignoring movement penalties and penalties on skill checks for all types of desert and waste terrain. This spell does not grant a subject immunity to other ill effects of waste environments, such as heat and sun." compset="Spell" summary="Move through waste without penalties.">
     <fieldval field="sRange" value="One touched creature/level"/>
     <fieldval field="sDuration" value="1 hour/level (D)"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
@@ -948,7 +948,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sResist" tag="Yes"/>
     <tag group="sComp" tag="V"/>
     </thing>
-  <thing id="sBlackSand" name="Black Sand" description="This spell creates an area of black sand (see page 20), infused with shadowstuff and negative energy. A region of black sand literally swallows light, emitting magical darkness rising to a height of 20 feet over the surface. Creatures that come in contact with the sand take 1d4 points of damage per round from negative energy (no save). Those reduced to 0 hit points crumble into black sand themselves. Creatures can make Reflex saves to avoid being caught in the area upon which the spell is first cast. Only the surface of the sand is affected by the spell, so creatures burrowing beneath an area of black sand are unaffected unless they break its surface. Creatures that do so immediately take damage from the spell.\n\n{i}Black sand{/i} can be made permanent with a {i}permanency{/i} spell." compset="Spell" summary="Creates a 20&apos;-radius area of black sand.">
+  <thing id="sBlckSndSa" name="Black Sand" description="This spell creates an area of black sand (see page 20), infused with shadowstuff and negative energy. A region of black sand literally swallows light, emitting magical darkness rising to a height of 20 feet over the surface. Creatures that come in contact with the sand take 1d4 points of damage per round from negative energy (no save). Those reduced to 0 hit points crumble into black sand themselves. Creatures can make Reflex saves to avoid being caught in the area upon which the spell is first cast. Only the surface of the sand is affected by the spell, so creatures burrowing beneath an area of black sand are unaffected unless they break its surface. Creatures that do so immediately take damage from the spell.\n\n{i}Black sand{/i} can be made permanent with a {i}permanency{/i} spell." compset="Spell" summary="Creates a 20&apos;-radius area of black sand.">
     <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="Reflex negates; see text"/>
@@ -969,7 +969,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sResist" tag="Yes"/>
     <tag group="sSubschool" tag="Darkness"/>
     </thing>
-  <thing id="sHaboob" name="Haboob" description="A thick haze of swirling dust and sand swirls out from the point you designate. The effect obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment. Creatures farther away have total concealment.\n\nUnprotected, nonmagical flames are automatically extinguished, and there is a 50% chance that protected flames will be snuffed. In addition to obscuring sight, the swirling dust abrades any creature within it or attempting to move through it. Any creature passing through the haze takes 1d4 points of damage per two caster levels (maximum 5d4), with no save allowed. If you conjure haboob so that it appears where creatures are located, each creature takes damage as if passing through the haze. Such creatures take half damage with a successful Reflex save, but if these creatures do not leave the affected area at their next opportunity, they take full damage from the abrading sands (no save) as if they had voluntarily entered the area. Any creature that remains within the affected area for more than 1 round likewise takes damage automatically (no save).\n\nA moderate wind (11+ mph) disperses the dust in 8 rounds; a strong wind (21+ mph) disperses it in 4 rounds.\n\nThis spell does not function underwater.\n\nMaterial Component: A pinch of ash, dust, or sand." compset="Spell" summary="Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage.">
+  <thing id="sHaboobSa" name="Haboob" description="A thick haze of swirling dust and sand swirls out from the point you designate. The effect obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment. Creatures farther away have total concealment.\n\nUnprotected, nonmagical flames are automatically extinguished, and there is a 50% chance that protected flames will be snuffed. In addition to obscuring sight, the swirling dust abrades any creature within it or attempting to move through it. Any creature passing through the haze takes 1d4 points of damage per two caster levels (maximum 5d4), with no save allowed. If you conjure haboob so that it appears where creatures are located, each creature takes damage as if passing through the haze. Such creatures take half damage with a successful Reflex save, but if these creatures do not leave the affected area at their next opportunity, they take full damage from the abrading sands (no save) as if they had voluntarily entered the area. Any creature that remains within the affected area for more than 1 round likewise takes damage automatically (no save).\n\nA moderate wind (11+ mph) disperses the dust in 8 rounds; a strong wind (21+ mph) disperses it in 4 rounds.\n\nThis spell does not function underwater.\n\nMaterial Component: A pinch of ash, dust, or sand." compset="Spell" summary="Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage.">
     <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level). Abrasive dust spreads in 20-ft. radius, 20 ft. high"/>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="None or Reflex half; see text"/>
@@ -994,7 +994,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sResist" tag="No"/>
     <tag group="sSubschool" tag="Creation"/>
     </thing>
-  <thing id="sBlstSand" name="Blast of Sand" description="Sand sprays from your outstretched palm with enough force to strip flesh from bone and scour surfaces. The spell deals 1d6 points of damage per caster level (maximum 10d6). Do not divide damage from sand scour by four when applying it to objects.\n\nMaterial Component: A pinch of sand." compset="Spell" summary="Cone deals 1d6 damage/level.">
+  <thing id="sBlstSndSa" name="Blast of Sand" description="Sand sprays from your outstretched palm with enough force to strip flesh from bone and scour surfaces. The spell deals 1d6 points of damage per caster level (maximum 10d6). Do not divide damage from sand scour by four when applying it to objects.\n\nMaterial Component: A pinch of sand." compset="Spell" summary="Cone deals 1d6 damage/level.">
     <fieldval field="sRange" value="30&apos; Cone-shaped burst"/>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="Reflex half"/>
@@ -1016,7 +1016,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sResist" tag="No"/>
     <tag group="sSubschool" tag="Creation"/>
     </thing>
-  <thing id="sFlwndBrst" name="Flaywind Burst" description="This spell produces a brief windstorm (approximately 70 mph), filled with scouring, supernatural grit that literally strips flesh. In addition to the possible effects of the wind, creatures within the area of a flaywind burst spell take 1d6 points of damage per caster level (maximum 10d6) from the scouring sands. A successful Reflex save halves this damage. A creature within the area of flaywind burst must make a Fortitude save or experience the effects of the wind&apos;s force.\n\nA Small or smaller creature is knocked down and rolled 1d4&#215;10 feet, taking 1d4 points of nonlethal damage per 10 feet. If flying, a Small or smaller creature is blown back 2d6&#215;10 feet and takes 2d6 points of nonlethal damage.\n\nMedium creatures are knocked prone, or if flying are blown back 1d6&#215;10 feet.\n\nLarge or Huge creatures are unable to move forward against the force of the blast, or if flying are blown back 1d6&#215;5 feet.\n\nGargantuan or larger creatures can move normally within a flaywind burst.\n\nFlaywind burst can&apos;t move a creature beyond its range.\n\nIn addition to the effects noted, flaywind burst can do anything else that a windstorm-force sandstorm would be expected to do, such as briefly obscure vision, heel over a boat, or blow gases and vapors to the limit of its area.\n\nMaterial Component: A pinch of sand and the wing feather of a vulture." compset="Spell" summary="Blows away and knocks down smaller creatures and deals 1d6 damage/level.">
+  <thing id="sFlwBlstSa" name="Flaywind Burst" description="This spell produces a brief windstorm (approximately 70 mph), filled with scouring, supernatural grit that literally strips flesh. In addition to the possible effects of the wind, creatures within the area of a flaywind burst spell take 1d6 points of damage per caster level (maximum 10d6) from the scouring sands. A successful Reflex save halves this damage. A creature within the area of flaywind burst must make a Fortitude save or experience the effects of the wind&apos;s force.\n\nA Small or smaller creature is knocked down and rolled 1d4&#215;10 feet, taking 1d4 points of nonlethal damage per 10 feet. If flying, a Small or smaller creature is blown back 2d6&#215;10 feet and takes 2d6 points of nonlethal damage.\n\nMedium creatures are knocked prone, or if flying are blown back 1d6&#215;10 feet.\n\nLarge or Huge creatures are unable to move forward against the force of the blast, or if flying are blown back 1d6&#215;5 feet.\n\nGargantuan or larger creatures can move normally within a flaywind burst.\n\nFlaywind burst can&apos;t move a creature beyond its range.\n\nIn addition to the effects noted, flaywind burst can do anything else that a windstorm-force sandstorm would be expected to do, such as briefly obscure vision, heel over a boat, or blow gases and vapors to the limit of its area.\n\nMaterial Component: A pinch of sand and the wing feather of a vulture." compset="Spell" summary="Blows away and knocks down smaller creatures and deals 1d6 damage/level.">
     <fieldval field="sRange" value="60&apos; Cone-shaped burst"/>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="See text"/>
@@ -1039,7 +1039,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sResist" tag="No"/>
     <tag group="sSubschool" tag="Air"/>
     </thing>
-  <thing id="sAwknSand" name="Awaken Sand" description="You awaken a region of sand, or similar material, to humanlike sentience. To succeed, you must make a DC 18 Will save. The {i}awakened{/i} sand is friendly toward you. You have no special empathy or connection with sand you awaken, although it serves you in specific tasks or endeavours if you communicate your desire to it.\n\nThe sand creature you awaken has the same statistics as a Huge animated object with a base land speed of 40 feet and a burrow speed of 20 feet. Unlike normal animated objects, {i}awakened{/i} sand beings have the earth subtype, and their Intelligence, Wisdom, and Charisma scores are each 3d6. A sand being has immunity to polymorphing. The awakened sand can speak one language you know, plus one additional language that you know per point of Intelligence bonus (if any) it has.\n\nA sand creature can engulf Large or smaller creatures as a standard action. It cannot make a slam attack during a round in which it engulfs. The sand creature merely has to move over the opponents, affecting as many as it can cover. Opponents can make attacks of opportunity against the creature, but if they do so they are not entitled to a saving throw. Those who do not attempt attacks of opportunity must succeed on a DC 19 Reflex save or be engulfed; on a success, they are pushed back or aside (opponent&apos;s choice) as the creature moves forward. Engulfed opponents are considered grappled and are trapped within the sand creature&apos;s body. The sand creature deals 1d6+3 points of damage to trapped opponents each round after the one in which it engulfed them. Opponents that need to breathe risk suffocation (see page 304 of the {i}Dungeon Master&apos;s Guide{/i}). The save DC is Strength-based.\n\nSand creatures are amorphous and can do anything sand would be expected to do&#151;hide perfectly atop other sand, form into dunes and drifts, and pour through small openings (although passing through an opening two size categories smaller than the creature takes a full-round action).\n\n{i}XP Cost{/i}: 500 XP." compset="Spell" summary="A region of sand forms into a Huge, sentient creature.">
+  <thing id="sAwknSndSa" name="Awaken Sand" description="You awaken a region of sand, or similar material, to humanlike sentience. To succeed, you must make a DC 18 Will save. The {i}awakened{/i} sand is friendly toward you. You have no special empathy or connection with sand you awaken, although it serves you in specific tasks or endeavours if you communicate your desire to it.\n\nThe sand creature you awaken has the same statistics as a Huge animated object with a base land speed of 40 feet and a burrow speed of 20 feet. Unlike normal animated objects, {i}awakened{/i} sand beings have the earth subtype, and their Intelligence, Wisdom, and Charisma scores are each 3d6. A sand being has immunity to polymorphing. The awakened sand can speak one language you know, plus one additional language that you know per point of Intelligence bonus (if any) it has.\n\nA sand creature can engulf Large or smaller creatures as a standard action. It cannot make a slam attack during a round in which it engulfs. The sand creature merely has to move over the opponents, affecting as many as it can cover. Opponents can make attacks of opportunity against the creature, but if they do so they are not entitled to a saving throw. Those who do not attempt attacks of opportunity must succeed on a DC 19 Reflex save or be engulfed; on a success, they are pushed back or aside (opponent&apos;s choice) as the creature moves forward. Engulfed opponents are considered grappled and are trapped within the sand creature&apos;s body. The sand creature deals 1d6+3 points of damage to trapped opponents each round after the one in which it engulfed them. Opponents that need to breathe risk suffocation (see page 304 of the {i}Dungeon Master&apos;s Guide{/i}). The save DC is Strength-based.\n\nSand creatures are amorphous and can do anything sand would be expected to do&#151;hide perfectly atop other sand, form into dunes and drifts, and pour through small openings (although passing through an opening two size categories smaller than the creature takes a full-round action).\n\n{i}XP Cost{/i}: 500 XP." compset="Spell" summary="A region of sand forms into a Huge, sentient creature.">
     <fieldval field="sRange" value="Touch"/>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
@@ -1059,7 +1059,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sComp" tag="V"/>
     <tag group="Helper" tag="Domain"/>
     </thing>
-  <thing id="sVitrify" name="Vitrify" description="This spell transforms normal sand of any depth into crude glass. The sand is instantly heated to the melting point and then slowly hardens in its new form. Objects on or in the sand sink into the hot glass.\n\nA creature is allowed a Reflex save to escape before the area is changed. A creature that fails its save and that is unable to levitate, fly, or otherwise free itself sinks partway into the molten glass, reducing its speed to 5 feet and giving it a -2 penalty on attack rolls and to AC. Creatures of the earth subtype can move only 10 feet per round slower in molten glass.\n\nIf a creature is only partially in the area (such as a Large or larger creature on the edge of the effect), it still takes full damage, but its speed is reduced only by half (instead of to 5 feet).\n\nA creature caught in molten glass takes 10d6 points of fire damage on the first round. The transmuted material cools over a period of 10 rounds. Each round, the number of dice of damage the cooling glass deals is reduced by one, until it deals no damage.\n\nThe glass is solid enough to trap creatures by the sixth round. Creatures unable to escape the glass before it hardens become trapped and must be broken out. A creature so caught can break free by making a Strength check to break the glass or by dealing damage to the glass. Glass has hardness 1, 1 hit point per inch of thickness, and a break DC of 12, + 1 per inch of thickness. A creature partially caught in the glass takes a -2 penalty on attack rolls, a -4 penalty to Dexterity, and is unable to move. When breaking glass, a creature takes 1d6 points of damage each time it makes a successful Strength check to break free. If broken free by others, the creature takes 1d6 points of damage from broken glass. A creature trapped beneath the surface of the glass might begin to suffocate (see page 304 of the Dungeon Master&apos;s Guide)." compset="Spell" summary="Melts sand into glass.">
+  <thing id="sVitrifySa" name="Vitrify" description="This spell transforms normal sand of any depth into crude glass. The sand is instantly heated to the melting point and then slowly hardens in its new form. Objects on or in the sand sink into the hot glass.\n\nA creature is allowed a Reflex save to escape before the area is changed. A creature that fails its save and that is unable to levitate, fly, or otherwise free itself sinks partway into the molten glass, reducing its speed to 5 feet and giving it a -2 penalty on attack rolls and to AC. Creatures of the earth subtype can move only 10 feet per round slower in molten glass.\n\nIf a creature is only partially in the area (such as a Large or larger creature on the edge of the effect), it still takes full damage, but its speed is reduced only by half (instead of to 5 feet).\n\nA creature caught in molten glass takes 10d6 points of fire damage on the first round. The transmuted material cools over a period of 10 rounds. Each round, the number of dice of damage the cooling glass deals is reduced by one, until it deals no damage.\n\nThe glass is solid enough to trap creatures by the sixth round. Creatures unable to escape the glass before it hardens become trapped and must be broken out. A creature so caught can break free by making a Strength check to break the glass or by dealing damage to the glass. Glass has hardness 1, 1 hit point per inch of thickness, and a break DC of 12, + 1 per inch of thickness. A creature partially caught in the glass takes a -2 penalty on attack rolls, a -4 penalty to Dexterity, and is unable to move. When breaking glass, a creature takes 1d6 points of damage each time it makes a successful Strength check to break free. If broken free by others, the creature takes 1d6 points of damage from broken glass. A creature trapped beneath the surface of the glass might begin to suffocate (see page 304 of the Dungeon Master&apos;s Guide)." compset="Spell" summary="Melts sand into glass.">
     <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
     <fieldval field="sDuration" value="Permanent"/>
     <fieldval field="sSave" value="See text"/>
@@ -1080,7 +1080,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sResist" tag="No"/>
     <tag group="sSubschool" tag="Earth"/>
     </thing>
-  <thing id="sDsrtBndg" name="Desert Binding" description="This spell functions like binding (see page 204 of the Player&apos;s Handbook), except as noted here.\n\nSand in the Hourglass: The subject assumes the form of a minute portion of sand, each grain of which looks like its head. Held in a clear glass container, usually an hourglass, the subject remains aware of its surroundings (from multiple viewpoints) and can speak (from multiple, tiny mouths), but cannot leave the hourglass, attack, or use any other abilities. The subject does not need to breathe, eat, or drink while subject to sand in the hourglass, nor does it age. Shattering the hourglass before the spell ends slays the bound creature, and its body remains sand (effectively destroyed). The duration is one year per caster level, after which time the victim reforms into its original shape, destroying the hourglass.  Reduce the save DC by 4.\n\nWind in the Waste: The subject is transformed into a howling wind blowing across the waste. The victim retains knowledge of its prior existence, but has no abilities other than to howl with the wind. Because of its insubstantial nature, the subject is nearly impossible to define or specifically locate. The DM might allow the victim to be found through special means or through powerful magic (such as limited wish). The duration is one year per caster level, after which time the subject returns to its original shape in the location where it was first subjected to wind in the waste. Reduce the save DC by 4.\n\nMaterial Component: As the binding spell; see page 204 of the Player&apos;s Handbook." compset="Spell" summary="Imprisons creature as sand in an hourglass or wind in the waste.">
+  <thing id="sDsrtBndSa" name="Desert Binding" description="This spell functions like binding (see page 204 of the Player&apos;s Handbook), except as noted here.\n\nSand in the Hourglass: The subject assumes the form of a minute portion of sand, each grain of which looks like its head. Held in a clear glass container, usually an hourglass, the subject remains aware of its surroundings (from multiple viewpoints) and can speak (from multiple, tiny mouths), but cannot leave the hourglass, attack, or use any other abilities. The subject does not need to breathe, eat, or drink while subject to sand in the hourglass, nor does it age. Shattering the hourglass before the spell ends slays the bound creature, and its body remains sand (effectively destroyed). The duration is one year per caster level, after which time the victim reforms into its original shape, destroying the hourglass.  Reduce the save DC by 4.\n\nWind in the Waste: The subject is transformed into a howling wind blowing across the waste. The victim retains knowledge of its prior existence, but has no abilities other than to howl with the wind. Because of its insubstantial nature, the subject is nearly impossible to define or specifically locate. The DM might allow the victim to be found through special means or through powerful magic (such as limited wish). The duration is one year per caster level, after which time the subject returns to its original shape in the location where it was first subjected to wind in the waste. Reduce the save DC by 4.\n\nMaterial Component: As the binding spell; see page 204 of the Player&apos;s Handbook." compset="Spell" summary="Imprisons creature as sand in an hourglass or wind in the waste.">
     <fieldval field="sRange" value="Close (20&apos; + 20&apos;/2 levels)"/>
     <fieldval field="sDuration" value="See text (D)"/>
     <fieldval field="sSave" value="Will negates; see text"/>
@@ -1102,7 +1102,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sSubschool" tag="Compulsion"/>
     <tag group="sSubschool" tag="MindAffect"/>
     </thing>
-  <thing id="sSmDsrtAl9" name="Summon Desert Ally IX" compset="Spell" summary="Calls dustform creature to fight.">
+  <thing id="sDsrtAl9Sa" name="Summon Desert Ally IX" compset="Spell" summary="Calls dustform creature to fight.">
     <usesource source="Sandstorm"/>
     <tag group="sClass" tag="Sand"/>
     <tag group="sSchool" tag="Conjur"/>
@@ -1337,5 +1337,446 @@ endif]]></eval>
     <tag group="AbilType" tag="Super"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="SpecSource" tag="DryLich"/>
+    </thing>
+  <thing id="sAwknSndDr" name="Awaken Sand" description="You awaken a region of sand, or similar material, to humanlike sentience. To succeed, you must make a DC 18 Will save. The {i}awakened{/i} sand is friendly toward you. You have no special empathy or connection with sand you awaken, although it serves you in specific tasks or endeavours if you communicate your desire to it.\n\nThe sand creature you awaken has the same statistics as a Huge animated object with a base land speed of 40 feet and a burrow speed of 20 feet. Unlike normal animated objects, {i}awakened{/i} sand beings have the earth subtype, and their Intelligence, Wisdom, and Charisma scores are each 3d6. A sand being has immunity to polymorphing. The awakened sand can speak one language you know, plus one additional language that you know per point of Intelligence bonus (if any) it has.\n\nA sand creature can engulf Large or smaller creatures as a standard action. It cannot make a slam attack during a round in which it engulfs. The sand creature merely has to move over the opponents, affecting as many as it can cover. Opponents can make attacks of opportunity against the creature, but if they do so they are not entitled to a saving throw. Those who do not attempt attacks of opportunity must succeed on a DC 19 Reflex save or be engulfed; on a success, they are pushed back or aside (opponent&apos;s choice) as the creature moves forward. Engulfed opponents are considered grappled and are trapped within the sand creature&apos;s body. The sand creature deals 1d6+3 points of damage to trapped opponents each round after the one in which it engulfed them. Opponents that need to breathe risk suffocation (see page 304 of the {i}Dungeon Master&apos;s Guide{/i}). The save DC is Strength-based.\n\nSand creatures are amorphous and can do anything sand would be expected to do&#151;hide perfectly atop other sand, form into dunes and drifts, and pour through small openings (although passing through an opening two size categories smaller than the creature takes a full-round action).\n\n{i}XP Cost{/i}: 500 XP." compset="Spell" summary="A region of sand forms into a Huge, sentient creature.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sComp" tag="XP"/>
+    <tag group="sCastTime" tag="Hour24"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sBlckSndCl" name="Black Sand" description="This spell creates an area of black sand (see page 20), infused with shadowstuff and negative energy. A region of black sand literally swallows light, emitting magical darkness rising to a height of 20 feet over the surface. Creatures that come in contact with the sand take 1d4 points of damage per round from negative energy (no save). Those reduced to 0 hit points crumble into black sand themselves. Creatures can make Reflex saves to avoid being caught in the area upon which the spell is first cast. Only the surface of the sand is affected by the spell, so creatures burrowing beneath an area of black sand are unaffected unless they break its surface. Creatures that do so immediately take damage from the spell.\n\n{i}Black sand{/i} can be made permanent with a {i}permanency{/i} spell." compset="Spell" summary="Creates a 20&apos;-radius area of black sand.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="Reflex negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Evil"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="RefNeg"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sSubschool" tag="Darkness"/>
+    </thing>
+  <thing id="sBlstSndDr" name="Blast of Sand" description="Sand sprays from your outstretched palm with enough force to strip flesh from bone and scour surfaces. The spell deals 1d6 points of damage per caster level (maximum 10d6). Do not divide damage from sand scour by four when applying it to objects.\n\nMaterial Component: A pinch of sand." compset="Spell" summary="Cone deals 1d6 damage/level.">
+    <fieldval field="sRange" value="30&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Reflex half"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="30"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sBlstSndSr" name="Blast of Sand" description="Sand sprays from your outstretched palm with enough force to strip flesh from bone and scour surfaces. The spell deals 1d6 points of damage per caster level (maximum 10d6). Do not divide damage from sand scour by four when applying it to objects.\n\nMaterial Component: A pinch of sand." compset="Spell" summary="Cone deals 1d6 damage/level.">
+    <fieldval field="sRange" value="30&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Reflex half"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="30"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sBlstSndWz" name="Blast of Sand" description="Sand sprays from your outstretched palm with enough force to strip flesh from bone and scour surfaces. The spell deals 1d6 points of damage per caster level (maximum 10d6). Do not divide damage from sand scour by four when applying it to objects.\n\nMaterial Component: A pinch of sand." compset="Spell" summary="Cone deals 1d6 damage/level.">
+    <fieldval field="sRange" value="30&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Reflex half"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="30"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sDsrtBndSc" name="Desert Binding" description="This spell functions like binding (see page 204 of the Player&apos;s Handbook), except as noted here.\n\nSand in the Hourglass: The subject assumes the form of a minute portion of sand, each grain of which looks like its head. Held in a clear glass container, usually an hourglass, the subject remains aware of its surroundings (from multiple viewpoints) and can speak (from multiple, tiny mouths), but cannot leave the hourglass, attack, or use any other abilities. The subject does not need to breathe, eat, or drink while subject to sand in the hourglass, nor does it age. Shattering the hourglass before the spell ends slays the bound creature, and its body remains sand (effectively destroyed). The duration is one year per caster level, after which time the victim reforms into its original shape, destroying the hourglass.  Reduce the save DC by 4.\n\nWind in the Waste: The subject is transformed into a howling wind blowing across the waste. The victim retains knowledge of its prior existence, but has no abilities other than to howl with the wind. Because of its insubstantial nature, the subject is nearly impossible to define or specifically locate. The DM might allow the victim to be found through special means or through powerful magic (such as limited wish). The duration is one year per caster level, after which time the subject returns to its original shape in the location where it was first subjected to wind in the waste. Reduce the save DC by 4.\n\nMaterial Component: As the binding spell; see page 204 of the Player&apos;s Handbook." compset="Spell" summary="Imprisons creature as sand in an hourglass or wind in the waste.">
+    <fieldval field="sRange" value="Close (20&apos; + 20&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="See text (D)"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sLevel" tag="8"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Enchant"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sSubschool" tag="Compulsion"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    </thing>
+  <thing id="sDsrtBndWz" name="Desert Binding" description="This spell functions like binding (see page 204 of the Player&apos;s Handbook), except as noted here.\n\nSand in the Hourglass: The subject assumes the form of a minute portion of sand, each grain of which looks like its head. Held in a clear glass container, usually an hourglass, the subject remains aware of its surroundings (from multiple viewpoints) and can speak (from multiple, tiny mouths), but cannot leave the hourglass, attack, or use any other abilities. The subject does not need to breathe, eat, or drink while subject to sand in the hourglass, nor does it age. Shattering the hourglass before the spell ends slays the bound creature, and its body remains sand (effectively destroyed). The duration is one year per caster level, after which time the victim reforms into its original shape, destroying the hourglass.  Reduce the save DC by 4.\n\nWind in the Waste: The subject is transformed into a howling wind blowing across the waste. The victim retains knowledge of its prior existence, but has no abilities other than to howl with the wind. Because of its insubstantial nature, the subject is nearly impossible to define or specifically locate. The DM might allow the victim to be found through special means or through powerful magic (such as limited wish). The duration is one year per caster level, after which time the subject returns to its original shape in the location where it was first subjected to wind in the waste. Reduce the save DC by 4.\n\nMaterial Component: As the binding spell; see page 204 of the Player&apos;s Handbook." compset="Spell" summary="Imprisons creature as sand in an hourglass or wind in the waste.">
+    <fieldval field="sRange" value="Close (20&apos; + 20&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="See text (D)"/>
+    <fieldval field="sSave" value="Will negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Minute"/>
+    <tag group="sLevel" tag="8"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Enchant"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sSubschool" tag="Compulsion"/>
+    <tag group="sSubschool" tag="MindAffect"/>
+    </thing>
+  <thing id="sFlwBlstCl" name="Flaywind Burst" description="This spell produces a brief windstorm (approximately 70 mph), filled with scouring, supernatural grit that literally strips flesh. In addition to the possible effects of the wind, creatures within the area of a flaywind burst spell take 1d6 points of damage per caster level (maximum 10d6) from the scouring sands. A successful Reflex save halves this damage. A creature within the area of flaywind burst must make a Fortitude save or experience the effects of the wind&apos;s force.\n\nA Small or smaller creature is knocked down and rolled 1d4&#215;10 feet, taking 1d4 points of nonlethal damage per 10 feet. If flying, a Small or smaller creature is blown back 2d6&#215;10 feet and takes 2d6 points of nonlethal damage.\n\nMedium creatures are knocked prone, or if flying are blown back 1d6&#215;10 feet.\n\nLarge or Huge creatures are unable to move forward against the force of the blast, or if flying are blown back 1d6&#215;5 feet.\n\nGargantuan or larger creatures can move normally within a flaywind burst.\n\nFlaywind burst can&apos;t move a creature beyond its range.\n\nIn addition to the effects noted, flaywind burst can do anything else that a windstorm-force sandstorm would be expected to do, such as briefly obscure vision, heel over a boat, or blow gases and vapors to the limit of its area.\n\nMaterial Component: A pinch of sand and the wing feather of a vulture." compset="Spell" summary="Blows away and knocks down smaller creatures and deals 1d6 damage/level.">
+    <fieldval field="sRange" value="60&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Air"/>
+    </thing>
+  <thing id="sFlwBlstDr" name="Flaywind Burst" description="This spell produces a brief windstorm (approximately 70 mph), filled with scouring, supernatural grit that literally strips flesh. In addition to the possible effects of the wind, creatures within the area of a flaywind burst spell take 1d6 points of damage per caster level (maximum 10d6) from the scouring sands. A successful Reflex save halves this damage. A creature within the area of flaywind burst must make a Fortitude save or experience the effects of the wind&apos;s force.\n\nA Small or smaller creature is knocked down and rolled 1d4&#215;10 feet, taking 1d4 points of nonlethal damage per 10 feet. If flying, a Small or smaller creature is blown back 2d6&#215;10 feet and takes 2d6 points of nonlethal damage.\n\nMedium creatures are knocked prone, or if flying are blown back 1d6&#215;10 feet.\n\nLarge or Huge creatures are unable to move forward against the force of the blast, or if flying are blown back 1d6&#215;5 feet.\n\nGargantuan or larger creatures can move normally within a flaywind burst.\n\nFlaywind burst can&apos;t move a creature beyond its range.\n\nIn addition to the effects noted, flaywind burst can do anything else that a windstorm-force sandstorm would be expected to do, such as briefly obscure vision, heel over a boat, or blow gases and vapors to the limit of its area.\n\nMaterial Component: A pinch of sand and the wing feather of a vulture." compset="Spell" summary="Blows away and knocks down smaller creatures and deals 1d6 damage/level.">
+    <fieldval field="sRange" value="60&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Air"/>
+    </thing>
+  <thing id="sFlwBlstSc" name="Flaywind Burst" description="This spell produces a brief windstorm (approximately 70 mph), filled with scouring, supernatural grit that literally strips flesh. In addition to the possible effects of the wind, creatures within the area of a flaywind burst spell take 1d6 points of damage per caster level (maximum 10d6) from the scouring sands. A successful Reflex save halves this damage. A creature within the area of flaywind burst must make a Fortitude save or experience the effects of the wind&apos;s force.\n\nA Small or smaller creature is knocked down and rolled 1d4&#215;10 feet, taking 1d4 points of nonlethal damage per 10 feet. If flying, a Small or smaller creature is blown back 2d6&#215;10 feet and takes 2d6 points of nonlethal damage.\n\nMedium creatures are knocked prone, or if flying are blown back 1d6&#215;10 feet.\n\nLarge or Huge creatures are unable to move forward against the force of the blast, or if flying are blown back 1d6&#215;5 feet.\n\nGargantuan or larger creatures can move normally within a flaywind burst.\n\nFlaywind burst can&apos;t move a creature beyond its range.\n\nIn addition to the effects noted, flaywind burst can do anything else that a windstorm-force sandstorm would be expected to do, such as briefly obscure vision, heel over a boat, or blow gases and vapors to the limit of its area.\n\nMaterial Component: A pinch of sand and the wing feather of a vulture." compset="Spell" summary="Blows away and knocks down smaller creatures and deals 1d6 damage/level.">
+    <fieldval field="sRange" value="60&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Air"/>
+    </thing>
+  <thing id="sFlwBlstWz" name="Flaywind Burst" description="This spell produces a brief windstorm (approximately 70 mph), filled with scouring, supernatural grit that literally strips flesh. In addition to the possible effects of the wind, creatures within the area of a flaywind burst spell take 1d6 points of damage per caster level (maximum 10d6) from the scouring sands. A successful Reflex save halves this damage. A creature within the area of flaywind burst must make a Fortitude save or experience the effects of the wind&apos;s force.\n\nA Small or smaller creature is knocked down and rolled 1d4&#215;10 feet, taking 1d4 points of nonlethal damage per 10 feet. If flying, a Small or smaller creature is blown back 2d6&#215;10 feet and takes 2d6 points of nonlethal damage.\n\nMedium creatures are knocked prone, or if flying are blown back 1d6&#215;10 feet.\n\nLarge or Huge creatures are unable to move forward against the force of the blast, or if flying are blown back 1d6&#215;5 feet.\n\nGargantuan or larger creatures can move normally within a flaywind burst.\n\nFlaywind burst can&apos;t move a creature beyond its range.\n\nIn addition to the effects noted, flaywind burst can do anything else that a windstorm-force sandstorm would be expected to do, such as briefly obscure vision, heel over a boat, or blow gases and vapors to the limit of its area.\n\nMaterial Component: A pinch of sand and the wing feather of a vulture." compset="Spell" summary="Blows away and knocks down smaller creatures and deals 1d6 damage/level.">
+    <fieldval field="sRange" value="60&apos; Cone-shaped burst"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="1Rnd"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sRange" tag="60"/>
+    <tag group="sRange" tag="Burst"/>
+    <tag group="sRange" tag="Cone"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Air"/>
+    </thing>
+  <thing id="sHaboobCl" name="Haboob" description="A thick haze of swirling dust and sand swirls out from the point you designate. The effect obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment. Creatures farther away have total concealment.\n\nUnprotected, nonmagical flames are automatically extinguished, and there is a 50% chance that protected flames will be snuffed. In addition to obscuring sight, the swirling dust abrades any creature within it or attempting to move through it. Any creature passing through the haze takes 1d4 points of damage per two caster levels (maximum 5d4), with no save allowed. If you conjure haboob so that it appears where creatures are located, each creature takes damage as if passing through the haze. Such creatures take half damage with a successful Reflex save, but if these creatures do not leave the affected area at their next opportunity, they take full damage from the abrading sands (no save) as if they had voluntarily entered the area. Any creature that remains within the affected area for more than 1 round likewise takes damage automatically (no save).\n\nA moderate wind (11+ mph) disperses the dust in 8 rounds; a strong wind (21+ mph) disperses it in 4 rounds.\n\nThis spell does not function underwater.\n\nMaterial Component: A pinch of ash, dust, or sand." compset="Spell" summary="Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level). Abrasive dust spreads in 20-ft. radius, 20 ft. high"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None or Reflex half; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Air"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sHaboobDr" name="Haboob" description="A thick haze of swirling dust and sand swirls out from the point you designate. The effect obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment. Creatures farther away have total concealment.\n\nUnprotected, nonmagical flames are automatically extinguished, and there is a 50% chance that protected flames will be snuffed. In addition to obscuring sight, the swirling dust abrades any creature within it or attempting to move through it. Any creature passing through the haze takes 1d4 points of damage per two caster levels (maximum 5d4), with no save allowed. If you conjure haboob so that it appears where creatures are located, each creature takes damage as if passing through the haze. Such creatures take half damage with a successful Reflex save, but if these creatures do not leave the affected area at their next opportunity, they take full damage from the abrading sands (no save) as if they had voluntarily entered the area. Any creature that remains within the affected area for more than 1 round likewise takes damage automatically (no save).\n\nA moderate wind (11+ mph) disperses the dust in 8 rounds; a strong wind (21+ mph) disperses it in 4 rounds.\n\nThis spell does not function underwater.\n\nMaterial Component: A pinch of ash, dust, or sand." compset="Spell" summary="Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level). Abrasive dust spreads in 20-ft. radius, 20 ft. high"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None or Reflex half; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Air"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sHaboobRn" name="Haboob" description="A thick haze of swirling dust and sand swirls out from the point you designate. The effect obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment. Creatures farther away have total concealment.\n\nUnprotected, nonmagical flames are automatically extinguished, and there is a 50% chance that protected flames will be snuffed. In addition to obscuring sight, the swirling dust abrades any creature within it or attempting to move through it. Any creature passing through the haze takes 1d4 points of damage per two caster levels (maximum 5d4), with no save allowed. If you conjure haboob so that it appears where creatures are located, each creature takes damage as if passing through the haze. Such creatures take half damage with a successful Reflex save, but if these creatures do not leave the affected area at their next opportunity, they take full damage from the abrading sands (no save) as if they had voluntarily entered the area. Any creature that remains within the affected area for more than 1 round likewise takes damage automatically (no save).\n\nA moderate wind (11+ mph) disperses the dust in 8 rounds; a strong wind (21+ mph) disperses it in 4 rounds.\n\nThis spell does not function underwater.\n\nMaterial Component: A pinch of ash, dust, or sand." compset="Spell" summary="Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level). Abrasive dust spreads in 20-ft. radius, 20 ft. high"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None or Reflex half; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Air"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Ranger"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sHaboobSc" name="Haboob" description="A thick haze of swirling dust and sand swirls out from the point you designate. The effect obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment. Creatures farther away have total concealment.\n\nUnprotected, nonmagical flames are automatically extinguished, and there is a 50% chance that protected flames will be snuffed. In addition to obscuring sight, the swirling dust abrades any creature within it or attempting to move through it. Any creature passing through the haze takes 1d4 points of damage per two caster levels (maximum 5d4), with no save allowed. If you conjure haboob so that it appears where creatures are located, each creature takes damage as if passing through the haze. Such creatures take half damage with a successful Reflex save, but if these creatures do not leave the affected area at their next opportunity, they take full damage from the abrading sands (no save) as if they had voluntarily entered the area. Any creature that remains within the affected area for more than 1 round likewise takes damage automatically (no save).\n\nA moderate wind (11+ mph) disperses the dust in 8 rounds; a strong wind (21+ mph) disperses it in 4 rounds.\n\nThis spell does not function underwater.\n\nMaterial Component: A pinch of ash, dust, or sand." compset="Spell" summary="Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level). Abrasive dust spreads in 20-ft. radius, 20 ft. high"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None or Reflex half; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Air"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sHaboobWz" name="Haboob" description="A thick haze of swirling dust and sand swirls out from the point you designate. The effect obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment. Creatures farther away have total concealment.\n\nUnprotected, nonmagical flames are automatically extinguished, and there is a 50% chance that protected flames will be snuffed. In addition to obscuring sight, the swirling dust abrades any creature within it or attempting to move through it. Any creature passing through the haze takes 1d4 points of damage per two caster levels (maximum 5d4), with no save allowed. If you conjure haboob so that it appears where creatures are located, each creature takes damage as if passing through the haze. Such creatures take half damage with a successful Reflex save, but if these creatures do not leave the affected area at their next opportunity, they take full damage from the abrading sands (no save) as if they had voluntarily entered the area. Any creature that remains within the affected area for more than 1 round likewise takes damage automatically (no save).\n\nA moderate wind (11+ mph) disperses the dust in 8 rounds; a strong wind (21+ mph) disperses it in 4 rounds.\n\nThis spell does not function underwater.\n\nMaterial Component: A pinch of ash, dust, or sand." compset="Spell" summary="Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level). Abrasive dust spreads in 20-ft. radius, 20 ft. high"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None or Reflex half; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSubschool" tag="Air"/>
+    <tag group="sSubschool" tag="Earth"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="RefHalf"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Creation"/>
+    </thing>
+  <thing id="sDsrtAl9Dr" name="Summon Desert Ally IX" compset="Spell" summary="Calls dustform creature to fight.">
+    <usesource source="Sandstorm"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Summoning"/>
+    <tag group="sLevel" tag="9"/>
+    </thing>
+  <thing id="sVitrifySc" name="Vitrify" description="This spell transforms normal sand of any depth into crude glass. The sand is instantly heated to the melting point and then slowly hardens in its new form. Objects on or in the sand sink into the hot glass.\n\nA creature is allowed a Reflex save to escape before the area is changed. A creature that fails its save and that is unable to levitate, fly, or otherwise free itself sinks partway into the molten glass, reducing its speed to 5 feet and giving it a -2 penalty on attack rolls and to AC. Creatures of the earth subtype can move only 10 feet per round slower in molten glass.\n\nIf a creature is only partially in the area (such as a Large or larger creature on the edge of the effect), it still takes full damage, but its speed is reduced only by half (instead of to 5 feet).\n\nA creature caught in molten glass takes 10d6 points of fire damage on the first round. The transmuted material cools over a period of 10 rounds. Each round, the number of dice of damage the cooling glass deals is reduced by one, until it deals no damage.\n\nThe glass is solid enough to trap creatures by the sixth round. Creatures unable to escape the glass before it hardens become trapped and must be broken out. A creature so caught can break free by making a Strength check to break the glass or by dealing damage to the glass. Glass has hardness 1, 1 hit point per inch of thickness, and a break DC of 12, + 1 per inch of thickness. A creature partially caught in the glass takes a -2 penalty on attack rolls, a -4 penalty to Dexterity, and is unable to move. When breaking glass, a creature takes 1d6 points of damage each time it makes a successful Strength check to break free. If broken free by others, the creature takes 1d6 points of damage from broken glass. A creature trapped beneath the surface of the glass might begin to suffocate (see page 304 of the Dungeon Master&apos;s Guide)." compset="Spell" summary="Melts sand into glass.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Permanent"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Earth"/>
+    </thing>
+  <thing id="sVitrifyWz" name="Vitrify" description="This spell transforms normal sand of any depth into crude glass. The sand is instantly heated to the melting point and then slowly hardens in its new form. Objects on or in the sand sink into the hot glass.\n\nA creature is allowed a Reflex save to escape before the area is changed. A creature that fails its save and that is unable to levitate, fly, or otherwise free itself sinks partway into the molten glass, reducing its speed to 5 feet and giving it a -2 penalty on attack rolls and to AC. Creatures of the earth subtype can move only 10 feet per round slower in molten glass.\n\nIf a creature is only partially in the area (such as a Large or larger creature on the edge of the effect), it still takes full damage, but its speed is reduced only by half (instead of to 5 feet).\n\nA creature caught in molten glass takes 10d6 points of fire damage on the first round. The transmuted material cools over a period of 10 rounds. Each round, the number of dice of damage the cooling glass deals is reduced by one, until it deals no damage.\n\nThe glass is solid enough to trap creatures by the sixth round. Creatures unable to escape the glass before it hardens become trapped and must be broken out. A creature so caught can break free by making a Strength check to break the glass or by dealing damage to the glass. Glass has hardness 1, 1 hit point per inch of thickness, and a break DC of 12, + 1 per inch of thickness. A creature partially caught in the glass takes a -2 penalty on attack rolls, a -4 penalty to Dexterity, and is unable to move. When breaking glass, a creature takes 1d6 points of damage each time it makes a successful Strength check to break free. If broken free by others, the creature takes 1d6 points of damage from broken glass. A creature trapped beneath the surface of the glass might begin to suffocate (see page 304 of the Dungeon Master&apos;s Guide)." compset="Spell" summary="Melts sand into glass.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Permanent"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="7"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Permanent"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sSubschool" tag="Earth"/>
+    </thing>
+  <thing id="sWstStriDr" name="Waste Strider" description="The subject can move through desert environments without hindrance, ignoring movement penalties and penalties on skill checks for all types of desert and waste terrain. This spell does not grant a subject immunity to other ill effects of waste environments, such as heat and sun." compset="Spell" summary="Move through waste without penalties.">
+    <fieldval field="sRange" value="One touched creature/level"/>
+    <fieldval field="sDuration" value="1 hour/level (D)"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Lvl_Based"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sWstStriRn" name="Waste Strider" description="The subject can move through desert environments without hindrance, ignoring movement penalties and penalties on skill checks for all types of desert and waste terrain. This spell does not grant a subject immunity to other ill effects of waste environments, such as heat and sun." compset="Spell" summary="Move through waste without penalties.">
+    <fieldval field="sRange" value="One touched creature/level"/>
+    <fieldval field="sDuration" value="1 hour/level (D)"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Ranger"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sRange" tag="Lvl_Based"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="V"/>
     </thing>
   </document>
