@@ -614,7 +614,7 @@ Too large? (done)</comment>
     <tag group="sComp" tag="V"/>
     <tag group="sDuration" tag="Minute1"/>
     </thing>
-  <thing id="sAsnSacrSk" name="Sacrificial Skill" description="The caster gains a +5 bonus on all Knowledge (religion) checks that have to do with sacrifices made to evil gods.\nSee Sacrifices in Chapter 2 for the Knowledge (religion) check DCs required to gain boons from evil gods.\n{b}Material Component:{/b} A lock of hair taken from an unwilling humanoid." compset="Spell" summary="Sacrificial Skill. Caster gains +5 bonus on Knowledge (religion) checks made during a sacrifice.">
+  <thing id="sAsnSacrSk" name="Sacrificial Skill" description="The caster gains a +5 bonus on all Knowledge (religion) checks that have to do with sacrifices made to evil gods.\nSee Sacrifices in Chapter 2 of Book of Vile Darkness for the Knowledge (religion) check DCs required to gain boons from evil gods.\n{b}Material Component:{/b} A lock of hair taken from an unwilling humanoid." compset="Spell" summary="Sacrificial Skill. Caster gains +5 bonus on Knowledge (religion) checks made during a sacrifice.">
     <fieldval field="sDuration" value="1 minute/level"/>
     <fieldval field="sRange" value="Personal"/>
     <usesource source="BoVD"/>
@@ -630,7 +630,7 @@ Too large? (done)</comment>
     <tag group="sCastTime" tag="Action1"/>
     <tag group="sRange" tag="Personal"/>
     </thing>
-  <thing id="sClrSacrSk" name="Sacrificial Skill" description="The caster gains a +5 bonus on all Knowledge (religion) checks that have to do with sacrifices made to evil gods.\nSee Sacrifices in Chapter 2 for the Knowledge (religion) check DCs required to gain boons from evil gods.\n{b}Material Component:{/b} A lock of hair taken from an unwilling humanoid." compset="Spell" summary="Sacrificial Skill. Caster gains +5 bonus on Knowledge (religion) checks made during a sacrifice.">
+  <thing id="sClrSacrSk" name="Sacrificial Skill" description="The caster gains a +5 bonus on all Knowledge (religion) checks that have to do with sacrifices made to evil gods.\nSee Sacrifices in Chapter 2 of Book of Vile Darkness for the Knowledge (religion) check DCs required to gain boons from evil gods.\n{b}Material Component:{/b} A lock of hair taken from an unwilling humanoid." compset="Spell" summary="Sacrificial Skill. Caster gains +5 bonus on Knowledge (religion) checks made during a sacrifice.">
     <fieldval field="sDuration" value="1 minute/level"/>
     <fieldval field="sRange" value="Personal"/>
     <usesource source="BoVD"/>
@@ -646,7 +646,7 @@ Too large? (done)</comment>
     <tag group="sCastTime" tag="Action1"/>
     <tag group="sRange" tag="Personal"/>
     </thing>
-  <thing id="sSorSacrSk" name="Sacrificial Skill" description="The caster gains a +5 bonus on all Knowledge (religion) checks that have to do with sacrifices made to evil gods.\nSee Sacrifices in Chapter 2 for the Knowledge (religion) check DCs required to gain boons from evil gods.\n{b}Material Component:{/b} A lock of hair taken from an unwilling humanoid." compset="Spell" summary="Sacrificial Skill. Caster gains +5 bonus on Knowledge (religion) checks made during a sacrifice.">
+  <thing id="sSorSacrSk" name="Sacrificial Skill" description="The caster gains a +5 bonus on all Knowledge (religion) checks that have to do with sacrifices made to evil gods.\nSee Sacrifices in Chapter 2 of Book of Vile Darkness for the Knowledge (religion) check DCs required to gain boons from evil gods.\n{b}Material Component:{/b} A lock of hair taken from an unwilling humanoid." compset="Spell" summary="Sacrificial Skill. Caster gains +5 bonus on Knowledge (religion) checks made during a sacrifice.">
     <fieldval field="sDuration" value="1 minute/level"/>
     <fieldval field="sRange" value="Personal"/>
     <usesource source="BoVD"/>
@@ -662,7 +662,7 @@ Too large? (done)</comment>
     <tag group="sCastTime" tag="Action1"/>
     <tag group="sRange" tag="Personal"/>
     </thing>
-  <thing id="sWizSacrSk" name="Sacrificial Skill" description="The caster gains a +5 bonus on all Knowledge (religion) checks that have to do with sacrifices made to evil gods.\nSee Sacrifices in Chapter 2 for the Knowledge (religion) check DCs required to gain boons from evil gods.\n{b}Material Component:{/b} A lock of hair taken from an unwilling humanoid." compset="Spell" summary="Sacrificial Skill. Caster gains +5 bonus on Knowledge (religion) checks made during a sacrifice.">
+  <thing id="sWizSacrSk" name="Sacrificial Skill" description="The caster gains a +5 bonus on all Knowledge (religion) checks that have to do with sacrifices made to evil gods.\nSee Sacrifices in Chapter 2 of Book of Vile Darkness for the Knowledge (religion) check DCs required to gain boons from evil gods.\n{b}Material Component:{/b} A lock of hair taken from an unwilling humanoid." compset="Spell" summary="Sacrificial Skill. Caster gains +5 bonus on Knowledge (religion) checks made during a sacrifice.">
     <fieldval field="sDuration" value="1 minute/level"/>
     <fieldval field="sRange" value="Personal"/>
     <usesource source="BoVD"/>
