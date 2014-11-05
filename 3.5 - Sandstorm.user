@@ -2059,4 +2059,10 @@ perform hero.assign[Race.typUndead]</eval>
       <containerreq phase="UserFirst" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
       </bootstrap>
     </thing>
+  <thing id="idSndRepel" name="Sand Repelling" description="This clear glass rod forces sand, dust, ash, grit, and similar loose soils away in a 10-foot-radius sphere. This ability functions on command. The user can travel through sand and loose soil as the rod pushes the material away. Breathing is not a problem as long as the surrounding area is not poisonous or a vacuum. It cannot keep duststorms at bay, but it does protect against any of the effects of the suspended grit in the storm (such as nonlethal damage and potential suffocation).\n   Strong abjuration; CL 15th; Craft Rod, wind wall; Price 60,000gp." compset="Rod" summary="Forces loose soils away in a 10&apos; radius sphere.">
+    <fieldval field="gCost" value="60000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="NoCharge"/>
+    <tag group="gType" tag="Rod"/>
+    </thing>
   </document>
