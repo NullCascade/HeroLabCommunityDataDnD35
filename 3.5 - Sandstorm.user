@@ -1975,4 +1975,55 @@ perform hero.assign[Race.typUndead]</eval>
     <tag group="Helper" tag="GearNoSize"/>
     <tag group="gType" tag="Transport"/>
     </thing>
+  <thing id="ipCool" name="Cool" description="This special ability can be placed only on a suit of armor. The suit&#146;s wearer does not take the normal &#150;4 penalty on Fortitude saves to resist the effects of hot environments.\n   Faint abjuration; CL 3rd; Craft Magic Arms and Armor, endure elements; Price +2,400 gp." compset="ItemPower" summary="Removes -4 Fort. save penalty in hot environments.">
+    <fieldval field="iPriceCash" value="2400"/>
+    <usesource source="Sandstorm"/>
+    <tag group="PowerType" tag="Armor"/>
+    <tag group="PowerReq" tag="Armor"/>
+    </thing>
+  <thing id="ipDessResi" name="Dessication Resistance" description="This special ability can be placed only on a suit of armor. The armor absorbs the first 10 points of dessication damage per attack that the wearer would normally take.\n   Faint abjuration; CL 3rd; Craft Magic Arms and Armor, protection from dessication; Price +9,000 gp." compset="ItemPower" summary="DR 10/- from dessication damage.">
+    <fieldval field="iPriceCash" value="9000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="PowerType" tag="Armor"/>
+    <tag group="PowerReq" tag="Armor"/>
+    </thing>
+  <thing id="ipScorpCar" name="Scorpion Carapace" description="This special ability can be placed only on a suit of armor. A favorite of many desert fi ghters, this suit of armor contains the essence of and has a visual resemblance to a desert scorpion. The wearer gains the benefit of the Scorpion&#146;s Resolve and Scorpion&#146;s Sense feats (see Sandstorm p. 53).\n   Moderate transmutation; CL 9th; Craft Magic Arms and Armor, Scorpion&#146;s Resolve and Scorpion&#146;s Sense or resistance, and creator must be 12th level; Price +32,000 gp." compset="ItemPower">
+    <fieldval field="iPriceCash" value="32000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="PowerReq" tag="Armor"/>
+    <tag group="PowerType" tag="Armor"/>
+    </thing>
+  <thing id="ipDesi" name="Desiccating" description="A desiccating weapon destroys the water in a living creature that it strikes. Upon command, it is surrounded by a glow like the desert sun, which does not harm the wielder. A desiccating weapon deals an extra 1d6 points of dessication damage (1d8 points against plants and elementals of the water subtype). Bows, crossbows, slings, and other projectile weapons so crafted bestow the desiccating effect on their ammunition.\n   Moderate necromancy; CL 8th; Craft Magic Arms and Armor, desiccate&#134;, wither&#134;, or horrid wilting; Price +2 bonus." compset="ItemPower" summary="+1d6 dessication damage.">
+    <fieldval field="iPrice" value="+2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="PowerReq" tag="B"/>
+    <tag group="PowerReq" tag="Melee"/>
+    <tag group="PowerReq" tag="P"/>
+    <tag group="PowerReq" tag="Ranged"/>
+    <tag group="PowerReq" tag="S"/>
+    <tag group="PowerReq" tag="Thrown"/>
+    <tag group="PowerType" tag="Weapon"/>
+    </thing>
+  <thing id="ipDesiBrst" name="Desiccating Burst" description="A desiccating burst weapon functions as a desiccating weapon that also explodes with a dehydrating blast upon striking a successful critical hit. The burst does not harm the wielder. In addition to the dessication damage from the desiccating ability (see above), a desiccating burst weapon deals an extra 1d10 points of dessication damage on a successful critical hit (2d8 points against plants and elementals of the water subtype). If the weapon&#146;s critical multiplier is &#215;3, add an extra 2d10 points of dessication damage instead, and if the multiplier is &#215;4, add an extra 3d10 points of dessication damage (4d8 and 6d8 points, respectively, against plants and elementals of the water subtype). Bows, crossbows, slings, and other projectile weapons so crafted bestow the desiccating burst effect on their ammunition. Even if the desiccating ability is not active, the weapon still deals its extra dessication damage on a successful critical hit.\n   Strong necromancy; CL 12th; Craft Magic Arms and Armor, desiccate&#134;, wither&#134;, or horrid wilting; Price +3 bonus." compset="ItemPower" summary="+1d10 desiccation damage on critical hit.">
+    <fieldval field="iPrice" value="+3"/>
+    <usesource source="Sandstorm"/>
+    <tag group="PowerReq" tag="B"/>
+    <tag group="PowerReq" tag="Melee"/>
+    <tag group="PowerReq" tag="P"/>
+    <tag group="PowerReq" tag="Ranged"/>
+    <tag group="PowerReq" tag="S"/>
+    <tag group="PowerReq" tag="Thrown"/>
+    <tag group="PowerType" tag="Weapon"/>
+    </thing>
+  <thing id="ipDuststrm" name="Duststorm" description="This special ability can be placed only on a melee weapon. Three times per day, the wielder of a duststorm weapon can use it to activate haboob&#134;, as the spell. The wielder has immunity to the effect. To cast the spell, the wielder must take a full-round action to swing the weapon about in circles, provoking attacks of opportunity.\n   Moderate conjuration; CL 10th; Craft Magic Arms and Armor, freedom of breath&#134; and haboob&#134;; Price +3 bonus." compset="ItemPower" summary="3x/day casts Haboob, as the spell.">
+    <fieldval field="iPrice" value="+3"/>
+    <usesource source="Sandstorm"/>
+    <tag group="PowerReq" tag="B"/>
+    <tag group="PowerReq" tag="Melee"/>
+    <tag group="PowerReq" tag="P"/>
+    <tag group="PowerReq" tag="Ranged"/>
+    <tag group="PowerReq" tag="S"/>
+    <tag group="PowerReq" tag="Thrown"/>
+    <tag group="PowerType" tag="Weapon"/>
+    </thing>
   </document>
