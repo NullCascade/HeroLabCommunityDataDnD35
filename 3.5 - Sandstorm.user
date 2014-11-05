@@ -2330,4 +2330,226 @@ hero.child[ArmorClass].field[tACNatural].value += 2]]></eval>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Wonder"/>
     </thing>
+  <thing id="sLocWtrCl" name="Locate Water" description="You sense the direction of a substantial body of water. The amount of information revealed depends on how long you search a particular area.\n   1st Round: Presence or absence of water.\n   2nd Round: Number of water sources in the area and the rough size of the largest one present.\n   3rd Round: The size (see below) and location of each source of water. If a water source is outside your line of sight, then you discern its direction but not its exact location.\n   Size: For the purpose of this spell, the size categories of bodies of water are as follows.\n   Small: A small pond or pool (200 cubic feet or less) or a brook (5 feet across or smaller).\n   Medium: A large pond or small lake (up to 20,000 cubic feet) or a good sized stream (up to 30 feet across).\n   Large: A large lake (up to 10 million cubic feet) or a broad river.\n   Vast: An ocean or an inland sea.\n   Creatures cannot be found by this spell. The spell ignores small quantities of water, such as filled bottles and skins. The spell reveals nothing about the quality of the water or how easy it is to reach.\n   The presence of fire or magma within the spell&#146;s area blocks it.\n   Arcane Focus: A forked hazel wand." compset="Spell" summary="Snse the direction of a substantial body of water.">
+    <fieldval field="sRange" value="Long (400&apos; + 40&apos;/level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 10 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sLocWtrDr" name="Locate Water" description="You sense the direction of a substantial body of water. The amount of information revealed depends on how long you search a particular area.\n   1st Round: Presence or absence of water.\n   2nd Round: Number of water sources in the area and the rough size of the largest one present.\n   3rd Round: The size (see below) and location of each source of water. If a water source is outside your line of sight, then you discern its direction but not its exact location.\n   Size: For the purpose of this spell, the size categories of bodies of water are as follows.\n   Small: A small pond or pool (200 cubic feet or less) or a brook (5 feet across or smaller).\n   Medium: A large pond or small lake (up to 20,000 cubic feet) or a good sized stream (up to 30 feet across).\n   Large: A large lake (up to 10 million cubic feet) or a broad river.\n   Vast: An ocean or an inland sea.\n   Creatures cannot be found by this spell. The spell ignores small quantities of water, such as filled bottles and skins. The spell reveals nothing about the quality of the water or how easy it is to reach.\n   The presence of fire or magma within the spell&#146;s area blocks it.\n   Arcane Focus: A forked hazel wand." compset="Spell" summary="Snse the direction of a substantial body of water.">
+    <fieldval field="sRange" value="Long (400&apos; + 40&apos;/level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 10 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sLocWtrRn" name="Locate Water" description="You sense the direction of a substantial body of water. The amount of information revealed depends on how long you search a particular area.\n   1st Round: Presence or absence of water.\n   2nd Round: Number of water sources in the area and the rough size of the largest one present.\n   3rd Round: The size (see below) and location of each source of water. If a water source is outside your line of sight, then you discern its direction but not its exact location.\n   Size: For the purpose of this spell, the size categories of bodies of water are as follows.\n   Small: A small pond or pool (200 cubic feet or less) or a brook (5 feet across or smaller).\n   Medium: A large pond or small lake (up to 20,000 cubic feet) or a good sized stream (up to 30 feet across).\n   Large: A large lake (up to 10 million cubic feet) or a broad river.\n   Vast: An ocean or an inland sea.\n   Creatures cannot be found by this spell. The spell ignores small quantities of water, such as filled bottles and skins. The spell reveals nothing about the quality of the water or how easy it is to reach.\n   The presence of fire or magma within the spell&#146;s area blocks it.\n   Arcane Focus: A forked hazel wand." compset="Spell" summary="Snse the direction of a substantial body of water.">
+    <fieldval field="sRange" value="Long (400&apos; + 40&apos;/level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 10 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Ranger"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sLocWtrSc" name="Locate Water" description="You sense the direction of a substantial body of water. The amount of information revealed depends on how long you search a particular area.\n   1st Round: Presence or absence of water.\n   2nd Round: Number of water sources in the area and the rough size of the largest one present.\n   3rd Round: The size (see below) and location of each source of water. If a water source is outside your line of sight, then you discern its direction but not its exact location.\n   Size: For the purpose of this spell, the size categories of bodies of water are as follows.\n   Small: A small pond or pool (200 cubic feet or less) or a brook (5 feet across or smaller).\n   Medium: A large pond or small lake (up to 20,000 cubic feet) or a good sized stream (up to 30 feet across).\n   Large: A large lake (up to 10 million cubic feet) or a broad river.\n   Vast: An ocean or an inland sea.\n   Creatures cannot be found by this spell. The spell ignores small quantities of water, such as filled bottles and skins. The spell reveals nothing about the quality of the water or how easy it is to reach.\n   The presence of fire or magma within the spell&#146;s area blocks it.\n   Arcane Focus: A forked hazel wand." compset="Spell" summary="Snse the direction of a substantial body of water.">
+    <fieldval field="sRange" value="Long (400&apos; + 40&apos;/level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 10 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sLocWtrWz" name="Locate Water" description="You sense the direction of a substantial body of water. The amount of information revealed depends on how long you search a particular area.\n   1st Round: Presence or absence of water.\n   2nd Round: Number of water sources in the area and the rough size of the largest one present.\n   3rd Round: The size (see below) and location of each source of water. If a water source is outside your line of sight, then you discern its direction but not its exact location.\n   Size: For the purpose of this spell, the size categories of bodies of water are as follows.\n   Small: A small pond or pool (200 cubic feet or less) or a brook (5 feet across or smaller).\n   Medium: A large pond or small lake (up to 20,000 cubic feet) or a good sized stream (up to 30 feet across).\n   Large: A large lake (up to 10 million cubic feet) or a broad river.\n   Vast: An ocean or an inland sea.\n   Creatures cannot be found by this spell. The spell ignores small quantities of water, such as filled bottles and skins. The spell reveals nothing about the quality of the water or how easy it is to reach.\n   The presence of fire or magma within the spell&#146;s area blocks it.\n   Arcane Focus: A forked hazel wand." compset="Spell" summary="Snse the direction of a substantial body of water.">
+    <fieldval field="sRange" value="Long (400&apos; + 40&apos;/level)"/>
+    <fieldval field="sDuration" value="Concentration, up to 10 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="ForDF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Divination"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Concent"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sPrchTchWz" name="Parching Touch" description="Your hand glows with a dull, ruby light, and your touch drains moisture from the body of a living creature, dealing 1d6 points of dessication damage. A plant or elemental of the water subtype instead takes 1d8 points of dessication damage. A touched creature also takes 1 point of Constitution damage and is dehydrated unless it makes a successful Fortitude saving throw. You can use this melee touch attack up to once per caster level." compset="Spell" summary="Deal 1d6 dessication damage as a touch attack CL times.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sPrchTchSc" name="Parching Touch" description="Your hand glows with a dull, ruby light, and your touch drains moisture from the body of a living creature, dealing 1d6 points of dessication damage. A plant or elemental of the water subtype instead takes 1d8 points of dessication damage. A touched creature also takes 1 point of Constitution damage and is dehydrated unless it makes a successful Fortitude saving throw. You can use this melee touch attack up to once per caster level." compset="Spell" summary="Deal 1d6 dessication damage as a touch attack CL times.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sSnstrokDr" name="Sunstroke" description="You cause a living creature to experience the effects of heatstroke. The target takes 2d6 points of nonlethal damage. If the target fails a Fortitude save, it immediately becomes fatigued, or exhausted if already fatigued. Since this spell causes heatstroke, the damage and fatigue dealt can only be healed after that condition is treated properly (see Sandstorm p. 13)." compset="Spell" summary="2d6 nonlethal damage; can cause heatstroke.">
+    <fieldval field="sRange" value="Close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sSnstrokSc" name="Sunstroke" description="You cause a living creature to experience the effects of heatstroke. The target takes 2d6 points of nonlethal damage. If the target fails a Fortitude save, it immediately becomes fatigued, or exhausted if already fatigued. Since this spell causes heatstroke, the damage and fatigue dealt can only be healed after that condition is treated properly (see Sandstorm p. 13)." compset="Spell" summary="2d6 nonlethal damage; can cause heatstroke.">
+    <fieldval field="sRange" value="Close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sSnstrokWz" name="Sunstroke" description="You cause a living creature to experience the effects of heatstroke. The target takes 2d6 points of nonlethal damage. If the target fails a Fortitude save, it immediately becomes fatigued, or exhausted if already fatigued. Since this spell causes heatstroke, the damage and fatigue dealt can only be healed after that condition is treated properly (see Sandstorm p. 13)." compset="Spell" summary="2d6 nonlethal damage; can cause heatstroke.">
+    <fieldval field="sRange" value="Close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sClkShadCl" name="Cloak of Shade" description="The subject is wrapped in an envelope of perfect shade. Inside the cloak, the temperature is one band lower than the actual temperature (see Heat Dangers, Sandstorm p. 12), but the spell has no effect on unearthly or hotter heat, nor does it offer any protection against fire damage. The target is treated as though it is in shade, thereby protected from sunburn, able to begin recovering from sun glare, and able to begin healing nonlethal damage taken from exposure to heat. Cloak of shade has no effect on light, daylight, sunburst, and similar magical light effects, and it offers no protection from damage that creatures vulnerable to sunlight might take from the sun." compset="Spell" summary="Touched creature gains protection from heat and sun.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 hour/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sClkShadDr" name="Cloak of Shade" description="The subject is wrapped in an envelope of perfect shade. Inside the cloak, the temperature is one band lower than the actual temperature (see Heat Dangers, Sandstorm p. 12), but the spell has no effect on unearthly or hotter heat, nor does it offer any protection against fire damage. The target is treated as though it is in shade, thereby protected from sunburn, able to begin recovering from sun glare, and able to begin healing nonlethal damage taken from exposure to heat. Cloak of shade has no effect on light, daylight, sunburst, and similar magical light effects, and it offers no protection from damage that creatures vulnerable to sunlight might take from the sun." compset="Spell" summary="Touched creature gains protection from heat and sun.">
+    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sDuration" value="1 hour/level (D)"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes (harmless)"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="1"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Hour"/>
+    <tag group="sDuration" tag="Dismiss"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Harmless"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
   </document>
