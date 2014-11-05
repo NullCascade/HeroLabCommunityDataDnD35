@@ -1794,4 +1794,57 @@ perform hero.assign[Race.typUndead]</eval>
     <tag group="sResist" tag="Yes"/>
     <tag group="sComp" tag="V"/>
     </thing>
+  <thing id="gDistilKit" name="Distillation Kit" description="Water is precious in the waste. This simple kit uses the sun and the ambient heat to evaporate pure water from body or cooking waste, salt lakes, poisonous plant saps, and so on. This &#147;solar still&#148; consists of a sheet of glass fastened at an angle into a frame, with a lip and a small spout (the components are packed separately and assembled when needed). The bottom and sides of the frame are covered with black oilcloth, the edges sealed with grease or tar to make it watertight. To use the still, pour the dirty water into the bottom of the container, then place the glass lid on top. The water evaporates and condenses on the underside of the glass surface, where it runs down and collects in the lip, dripping through the spout and producing about 1 gallon of water per day (if the container is filled to capacity)." compset="Gear" summary="Create up to 1 gallon of water per day.">
+    <fieldval field="gCost" value="50"/>
+    <fieldval field="gWeight" value="20"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="AdventGear"/>
+    </thing>
+  <thing id="gDrill" name="Drill" description="Whether they are used to carve sandstone, locate water, or mine salt and other precious minerals, drills are important tools in any wasteland environment. These objects can range from a primitive bow drill, suitable for perforating bone and wood, to a massive assembly of cast-iron pipes and bits, turned by wheels or beasts of burden. The drill described here is made of iron with a wooden handle, about 3 feet long. (In metal-poor areas, the bit might be of hard crystal instead of iron.) Wrapping a cord about the shaft and pulling it sharply sets the drill spinning. It can penetrate roughly 6 inches of stone per hour; the rate of drilling is faster in softer material, such as salt. A drill can be used as an improvised club or shortspear." compset="Gear" summary="Penetrate up to 6 inches of stone per hour.">
+    <fieldval field="gCost" value="5"/>
+    <fieldval field="gWeight" value="7"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="AdventGear"/>
+    </thing>
+  <thing id="gParasol" name="Parasol" description="The simplest form of portable shade, a parasol can range from an animal hide draped over a crude framework to a collapsible construction of textile and metal. The typical parasol described here is made of stretched canvas over wood or bone. A parasol offers immunity to sun glare and limited protection from heat dangers and some sun hazards (see Sandstorm ch. 1). It also grants a +1 bonus on Fortitude saves against dehydration." compset="Gear" summary="Immunity to sun glare, +1 heat protection, +1 Fort. saves against dehydration.">
+    <fieldval field="gCost" value="3"/>
+    <fieldval field="gWeight" value="2"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="AdventGear"/>
+    </thing>
+  <thing id="gSandTube" name="Sand Tube" description="When a storm scours the land, the best defence is to escape. Burrowing into the ground is one way to do this, but sand is loose and difficult to stabilize. This handy device enables you to create a burrow beneath the sand, in which you can rest while waiting for the storm to pass.\n   A sand tube looks something like an open-ended sleeping bag, made of treated hide attached to a number of collapsible hoops. After digging a small hole in the sand to get started, you shove one end of this apparatus inside the hole and expand the hoops to stiffen it into a tube. More sand can then be dug from the buried end (usually you crawl partway into the tube and use your hands) and removed through the tube, which is shoved more deeply into the tunnel as digging progresses. In normal sand, it takes 10 minutes of digging to fully bury a sand tube. When fully buried, a sand tube can hold one Medium humanoid. A flap fastens over the exposed end to provide shade and protection from duststorms and sandstorms" compset="Gear" summary="Allows a medium humanoid to create a burrow beneath the sand.">
+    <fieldval field="gCost" value="80"/>
+    <fieldval field="gWeight" value="5"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="AdventGear"/>
+    </thing>
+  <thing id="gSunLenses" name="Sun Lenses" description="This item, made of thin slabs of mica or volcanic glass affixed to curved frames, can protect your eyes from being dazzled by bright light, such as glare (see Sandstorm p. 18). If you are already dazzled when you don the lenses, you are treated as if you had entered an area of shade; you recover from the dazzled condition 1 hour if you continue to wear the lenses." compset="Gear" summary="Protection from bright lights, such as sun glare.">
+    <fieldval field="gCost" value="10"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="AdventGear"/>
+    </thing>
+  <thing id="gOtftDsrt" name="Desert Outfit" description="This outfit consists of loose, billowy clothing to keep the wearer cool and protected from the sun while in hot, dry desert terrain. It includes a caftan, turban, scarf, loose pantaloons, and sandals or high cloth boots. This outfit counts as light clothing and offers limited protections against some waste hazards (see Sandstorm ch. 1). The protection it offers against heat is negated if the wearer also dons armor." compset="Gear" summary="Provides +1 heat protection, unless armor is worn.">
+    <fieldval field="gCost" value="6"/>
+    <fieldval field="gWeight" value="3"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Clothing"/>
+    </thing>
+  <thing id="gHeatOutfi" name="Heatsuit Outfit" description="This suit is designed to protect against heat. It consists of heavy pants and coat, a specially treated leather apron, thick mittens, a thick hood, and goggles. A heatsuit outfit prevents 3 points of lethal or nonlethal damage per round from hot environments. Although the outfit is heavy clothing, its heat-resistant materials negate the usual &#150;4 penalty on Fortitude saves against damage dealt by hot environments." compset="Gear" summary="DR 3/- from hot environments. Negates -4 on Fort. saves against heat.">
+    <fieldval field="gCost" value="20"/>
+    <fieldval field="gWeight" value="15"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Clothing"/>
+    </thing>
+  <thing id="gHydraSuit" name="Hydration Suit" description="The hydration suit is a masterpiece of water retention, crafted by waste-dwellers with technical skill and unusual materials. Its design allows you to recover nearly all the water your body loses through sweat and exhalation. A hydration suit is made of the skin and tissue of various desert-dwelling beasts and treated with oils or waxes for water retention. It covers your entire body, with a tight-fitting hood over the head and a mask covering the mouth and nose. Inside the mask is a glass plate to collect condensation and a tube fashioned from watertight materials. An inner lining wicks sweat away from your body and collects it in spongelike filtration material that can be removed after you doff the hydration suit. The tube from the facemask twists in loops around your body, through the sponge, to reclaim moisture, condensing it in a reservoir from which you can sip.\n   A functioning hydration suit eliminates the need to make Constitution checks to avoid dehydration. It raises the level of protection from heat dangers by two steps (see Sandstorm p. 14), and its mask functions as a filter mask. A hydration suit offers no protection from magical dessication damage." compset="Gear">
+    <fieldval field="gCost" value="1000"/>
+    <fieldval field="gWeight" value="10"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Clothing"/>
+    </thing>
+  <thing id="gArmorbrgt" name="Armorbright (flask)" description="This metallic paint is applied with a brush to the outside of a suit of armor (requiring 1 minute to apply), producing a shiny surface that reflects the light of the sun to reduce the effects of hot weather on the wearer. For 24 hours after applying armorbright to a suit of armor, you gain a +2 bonus on Fortitude saving throws to avoid heat dangers. Armorbright also raises your level of protection against heat by one step (see Sandstorm p. 14). Armorbright is not effective in hot environments with no sun, such as the Elemental Plane of Fire." compset="Gear" summary="+2 on Fort. saves and +1 heat protection for 24 hours.">
+    <fieldval field="gCost" value="50"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
   </document>
