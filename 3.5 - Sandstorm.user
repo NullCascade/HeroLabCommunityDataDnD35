@@ -1908,4 +1908,29 @@ perform hero.assign[Race.typUndead]</eval>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="SpecSubs"/>
     </thing>
+  <thing id="minAshworm" name="Ashworm" description="These creatures (described on Sandstorm p. 140) can be domesticated and trained to become mounts. The poison stingers of most domesticated ashworms are clipped.\n   A tamed ashworm is suitable as a mount for a Medium humanoid. However, the rider must succeed on a DC 15 Ride check once every 24 hours if in a sandy environment or be swept off the back of the ashworm as it dives below the surface for 1d4 rounds before returning to its rider. An ashworm is hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook) unless it belongs to an ashworm dragoon (see p. 66). \n   An ashworm mount requires an exotic saddle, benefits from stabling, can wear custom barding (specially constructed, adding an additional 50% to the price), and requires feed like a normal mount (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
+    <fieldval field="gCost" value="200"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Mounts"/>
+    </thing>
+  <thing id="minCamelTH" name="Camel, Two-Humped" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
+    <fieldval field="gCost" value="100"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Mounts"/>
+    </thing>
+  <thing id="minCamelDr" name="Camel, Dromedary" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
+    <fieldval field="gCost" value="75"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Mounts"/>
+    </thing>
+  <thing id="minCamelWr" name="Camel, War" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
+    <fieldval field="gCost" value="450"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Mounts"/>
+    </thing>
+  <thing id="minDustTwi" name="Dust Twister" description="Using a dust twister (described on Sandstorm p. 162) as a mount is something only the very rich, eccentric, or the magically gifted normally consider. \n   A tamed dust twister is suitable as a mount for a Medium or Large humanoid-shaped creature. Dust twisters are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook). While riding, you appear to be held aloft in the center of the twister some 5 feet off the ground as the dust twister races across the sand. However, you must succeed on a DC 15 Ride check once per day or be flung from the calm eye of the dust twister, taking 1d6 points of damage. A dust twister requires no saddle or stable, cannot wear barding, and does not require feed like a normal mount." compset="Minion">
+    <fieldval field="gCost" value="1500"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Mounts"/>
+    </thing>
   </document>
