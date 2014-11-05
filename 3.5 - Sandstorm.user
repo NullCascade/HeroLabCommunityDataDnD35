@@ -2065,4 +2065,28 @@ perform hero.assign[Race.typUndead]</eval>
     <tag group="Helper" tag="NoCharge"/>
     <tag group="gType" tag="Rod"/>
     </thing>
+  <thing id="isNomads" name="Nomads" description="A simple, wooden staff with a pronounced bend at the top, this item appears to be nothing more than a shepherd&#146;s crook. It allows the use of the following spells:\n &#149; Cloak of shade (1 charge)\n &#149; Locate water (1 charge)\n &#149; Hydrate (1 charge)\n &#149; Find the path (2 charges)\n   Strong divination; CL 12th; Craft Staff, find the path, cloak of shade, locate water, hydrate; Price 49,500gp." compset="Staff">
+    <fieldval field="gCost" value="49500"/>
+    <fieldval field="hTotal" value="50"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Staff"/>
+    </thing>
+  <thing id="isPharaoh" name="The Pharaoh" description="This staff is covered in gold leaf, giving it a metallic sheen. The head forms a large hook, open in the center. It allows the use of the following spells:\n &#149; Cause fear (1 charge)\n &#149; Summon monster IV (a celestial or fiendish snake, Huge viper only) (1 charge)\n &#149; Lightning bolt (1 charge)\n &#149; Control weather (2 charges)\n   Strong transmutation; CL 13th; Craft Staff, cause fear, control weather, lightning bolt, summon monster IV; Price 82,901gp." compset="Staff">
+    <fieldval field="gCost" value="82901"/>
+    <fieldval field="hTotal" value="50"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Staff"/>
+    </thing>
+  <thing id="isTheSands" name="The Sands" description="A clear glass sphere half filled with dust tops this staff of fused and vitreous sand. It allows use of the following spells:\n &#149; Blast of sand (1 charge)\n &#149; Haboob (1 charge)\n &#149; Flaywind burst&#134; (2 charges)\n &#149; Sandstorm (2 charges)\n   Strong conjuration; CL 12th; Craft Staff, sandstorm, flaywind burst, blast of sand, haboob; Price 79,890 gp." compset="Staff">
+    <fieldval field="gCost" value="79890"/>
+    <fieldval field="hTotal" value="50"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Staff"/>
+    </thing>
+  <thing id="isWithThrs" name="Withering Thirst" description="This horrid staff is crafted from the mummified limb of a creature that died of thirst. It allows use of the following spells:\n &#149; Desiccate (1 charge)\n &#149; Wither (2 charges)\n &#149; Dispel water (2 charges)\n &#149; Mass desiccate (2 charges)\n &#149; Horrid wilting (3 charges)\n   Strong necromancy and abjuration; CL 15th; Craft Staff, desiccate, dispel water, horrid wilting, mass desiccate, wither; Price 91,880 gp." compset="Staff">
+    <fieldval field="gCost" value="91880"/>
+    <fieldval field="hTotal" value="50"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Staff"/>
+    </thing>
   </document>
