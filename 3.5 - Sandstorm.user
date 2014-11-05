@@ -1913,17 +1913,17 @@ perform hero.assign[Race.typUndead]</eval>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Mounts"/>
     </thing>
-  <thing id="minCamelTH" name="Camel, Two-Humped" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
+  <thing id="minCamelTH" name="Camel, two-humped" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
     <fieldval field="gCost" value="100"/>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Mounts"/>
     </thing>
-  <thing id="minCamelDr" name="Camel, Dromedary" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
+  <thing id="minCamelDr" name="Camel, dromedary" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
     <fieldval field="gCost" value="75"/>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Mounts"/>
     </thing>
-  <thing id="minCamelWr" name="Camel, War" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
+  <thing id="minCamelWr" name="Camel, war" description="The camel is the most common mount in the waste. A camel is appropriate as a mount for a Medium humanoid creature. Dromedary and two-humped camels are hard to control in combat (see Mounted Combat, page 157 of the Player&#146;s Handbook), while war camels can be ridden into battle easily. Camels benefit from stabling, can wear barding, and require feed like normal mounts (see Mounts and Related Gear, page 131 of the Player&#146;s Handbook)." compset="Minion">
     <fieldval field="gCost" value="450"/>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Mounts"/>
