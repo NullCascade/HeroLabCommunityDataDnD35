@@ -1175,7 +1175,6 @@ Make it check for wepprof? (Done)</comment>
     <tag group="ClassSkill" tag="kSpellcr"/>
     <tag group="ClassSkill" tag="kSurvival"/>
     <tag group="cWill" tag="Good"/>
-    <tag group="ClassSkill" tag="kCrafAlch"/>
     <tag group="psiClass" tag="AddNewTag"/>
     <tag group="psiClDisc" tag="None"/>
     <tag group="Classes" tag="cWlkrWst" name="Walker in the Waste"/>
@@ -1184,8 +1183,8 @@ Make it check for wepprof? (Done)</comment>
     <tag group="cRef" tag="Poor"/>
     <tag group="ClassSkill" tag="kConcent"/>
     <tag group="AlgnForbid" tag="Good"/>
-    <bootstrap thing="cWtWDisTch"></bootstrap>
-    <bootstrap thing="cWtWWastng"></bootstrap>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
     <bootstrap thing="cWtWWthTgh"></bootstrap>
     <bootstrap thing="cWtWImpHE"></bootstrap>
     <bootstrap thing="cWtWPlrSlt"></bootstrap>
@@ -1194,8 +1193,11 @@ Make it check for wepprof? (Done)</comment>
     <bootstrap thing="cWtWDrgtGr"></bootstrap>
     <bootstrap thing="cWtWDrgtLc"></bootstrap>
     <bootstrap thing="cWtWDryLch"></bootstrap>
+    <bootstrap thing="cWtWDisTch"></bootstrap>
+    <bootstrap thing="cWtWWastng"></bootstrap>
+    <pickreq thing="fHeatEndur"/>
     </thing>
-  <thing id="ccWlkrWst" name="Walker in the Waste" compset="ClassLevel" maxlimit="10">
+  <thing id="ccWlkrWst" name="Walker in the Waste" description="{i}&quot;The waste is a monument filled with eternal reminders.&quot; -- Abesukh Habah, a walker in the waste{/i}\n\nA walker in the waste embodies the harsh, unforgiving nature of the desert. The waste&#146;s dryness can perfectly preserve a royal city, a wondrous creature, or a towering forest&#151;caught at the very moment of death, before age and decay can spoil it. Maybe you want to protect your chosen environment and warn away those who would intrude. For you, most living things are nothing more than potential exhibits, and your soul is as parched as the sands that surround you.\n\n{b}Becoming a Walker in the Waste{/b}\nClerics who serve deities of thirst are the most common characters to take levels in this class. You already worship a harsh deity, and the magic of the dry and deadly waste comes readily to you. If you&#146;re a desert druid of a harsh bent, you might take up this path as well.\n\n{b}Entry Requirements{/b}:\n  {b}Alignment{/b}: Any nongood.\n  {b}Feat{/b}: Heat Endurance.\n  {bi}Spells{/b}: Ability to cast at least three spells of the Sand or Thirst domain as divine spells." compset="ClassLevel" maxlimit="10">
     <usesource source="Sandstorm"/>
     <tag group="ClassType" tag="Prestige"/>
     <bootstrap thing="cHelpWtW"></bootstrap>
@@ -1296,16 +1298,19 @@ if (#levelcount[cWlkrWst] >= this.tagvalue[ClSpecWhen.?]) then
 endif]]></eval>
     </thing>
   <thing id="cWtWDryLch" name="Dry Lich" description="You learn to apply the secrets of waste preservation to your own body, becoming a dry lich. You must undergo the Sere Rite, overseen by another dry lich, which includes preserving your flesh, removing your organs and storing them in special canopic jars, and imbuing your body with foul magic to make it undying.\n\nAs a dry lich, you cannot be permanently killed unless the canopic jars containing your life essence are destroyed." compset="ClSpecial" summary="You undergo a ritual to become a dry lich.">
-    <fieldval field="usrChkText" value="Ritual Performed"/>
     <usesource source="Sandstorm"/>
     <tag group="ClSpecWhen" tag="10"/>
     <tag group="Helper" tag="SpecUp"/>
     <tag group="SpecSource" tag="cHelpWtW"/>
     <tag group="Helper" tag="NoAutoName"/>
     <bootstrap thing="tmDryLich">
-      <containerreq phase="UserFirst" priority="10000"><![CDATA[fieldval:usrIsCheck <> 0]]></containerreq>
+      <containerreq phase="UserFirst" priority="10000">fieldval:usrIsCheck = 1</containerreq>
       <assignval field="cLevelAdj" value="0"/>
       </bootstrap>
+    <eval phase="UserPostLv"><![CDATA[~ Enable a checkbox if we're a high enough level.
+if (#levelcount[cWlkrWst] >= this.tagvalue[ClSpecWhen.?]) then
+  this.field[usrChkText].text = "Ritual Performed"
+endif]]></eval>
     </thing>
   <thing id="tmDryLich" name="Dry Lich" description="A dry lich is an especially horrid sort of undead spellcaster, and the ultimate destiny of a walker in the waste.\n\nA dry lich is not purposefully evil, but it is absorbed with its own agenda and has little regard for living things. It spends its unnatural existence continuing to spread the waste and preserve whatever it encounters as dry, mummified monuments.\n\nA dry lich is gaunt, skeletal, and usually humanoid (although some monstrous humanoids and aberrations occasionally follow the walker&apos;s path). Its flesh is parchment-dry and clings tightly to its bones, and a thick encrustation of glittering white salt covers its body. A weird green light lights its hollow eye sockets. It is garbed as it was in life, which is generally in a simple and practical costume rather than the ornate robes of typical liches. Dry lich clerics usually wear heavy armor, since walkers in the waste had immunity to dehydration and heat effects even before they became undead.\n\nThe mysterious Dusty Conclave closely guards the secret of becoming a dry lich, and at least one other dry lich must participate in another&apos;s creation." compset="Template" uniqueness="unique">
     <fieldval field="tmSTR" value="+2"/>
