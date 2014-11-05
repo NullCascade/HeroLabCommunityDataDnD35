@@ -567,6 +567,9 @@ Does this already have correct dom spells? Check]]></comment>
     <usesource source="CompWarrio"/>
     <tag group="Domain" tag="Planning" name="Planning" abbrev="Planning"/>
     <tag group="SecClsAllw" tag="Planning"/>
+    <bootstrap thing="fExtSpell">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
     </thing>
   <thing id="cdPortal" name="Portal" description="{b}Granted Power{/b}: You can detect an active or inactive portal as if it were a normal secret door (Search DC 20).\n\n{b}Portal Domain Spells{/b}\n{b}1{/b} &#150; {i}Summon Monster I{/i}: Calls extraplanar creature to fight for you.\n{b}2{/b} &#150; {i}Analyze Portal{/i}: Find a nearby portal and discover its properties.\n{b}3{/b} &#150; {i}Dimensional Anchor{/i}: Bars extradimensional movement.\n{b}4{/b} &#150; {i}Dimension Door{/i}: Teleports you a short distance.\n{b}5{/b} &#150; {i}Teleport{/i}: Forces a creature to return to native plane.\n{b}6{/b} &#150; {i}Banishment{/i}: Banishes 2 HD/level of extraplanar creatures.\n{b}7{/b} &#150; {i}Etherealness{/i}: Travel to Ethereal Plane with companions.\n{b}8{/b} &#150; {i}Maze{/i}: Traps subject in extradimensional maze.\n{b}9{/b} &#150; {i}GateX{/i}: Connects two planes for travel or summoning.\n\n{b}Source{/b}: Spell Compendium" compset="ClerDomain" uniqueness="unique">
     <comment><![CDATA[Add spells & Specials for Dom Power]]></comment>
