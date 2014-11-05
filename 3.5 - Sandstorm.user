@@ -2026,4 +2026,37 @@ perform hero.assign[Race.typUndead]</eval>
     <tag group="PowerReq" tag="Thrown"/>
     <tag group="PowerType" tag="Weapon"/>
     </thing>
+  <thing id="irBlzngSun" name="Blazing Sun" description="This ring is made of polished fire opal and is always very warm to the touch, as though it has been lying in the sun for several hours. The wearer gains the fire subtype while wearing the ring.\n   Strong transmutation; CL 15th; Forge Ring, mantle of the fiery spirit; Price 135,000gp." compset="Ring" summary="Gain the fire subtype.">
+    <fieldval field="gCost" value="135000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Ring"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    <bootstrap thing="stypFire">
+      <containerreq phase="First" priority="5000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="irSandform" name="Sandform" description="On command, this sandstone ring allows the wearer to take the form of living sand, as the sandform spell. The wearer can remain in sandform for up to 10 minutes per day, and the duration need not be consecutive rounds or minutes.\n   Moderate transmutation; CL 10th; Forge Ring, sandform; Price 24,000 gp." compset="Ring" summary="Take the form of living sand for 10 minutes/day.">
+    <fieldval field="gCost" value="24000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Ring"/>
+    <bootstrap thing="xSandform">
+      <containerreq phase="UserPreLv" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="xSandform" name="Sandform" description="The wearer can remain in sandform for up to 10 minutes per day, and the duration need not be consecutive rounds or minutes." compset="Special" summary="Take the form of living sand.">
+    <fieldval field="xSource" value="Sandform"/>
+    <fieldval field="hTotal" value="10"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="SourceEqp"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Usage" tag="DayMinute"/>
+    </thing>
+  <thing id="irSandstri" name="Sandstriding" description="This brass ring has the shape of a coiled rattlesnake. The wearer gains the benefit of the Sandskimmer feat (see Sandstorm p. 52).\n   Faint transmutation; CL 3rd; Forge Ring, creator must have the Sandskimmer feat or the innate ability to move easily through sand; Price 5,000gp." compset="Ring" summary="Grants the Sandskimmer feat.">
+    <fieldval field="gCost" value="5000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Ring"/>
+    <bootstrap thing="fSandskimm">
+      <containerreq phase="UserFirst" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    </thing>
   </document>
