@@ -1933,4 +1933,46 @@ perform hero.assign[Race.typUndead]</eval>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Mounts"/>
     </thing>
+  <thing id="gCloudskat" name="Cloudskate" description="Huge vehicle; Profession (sailor) +2; Spd wind &#215; 10 ft. (nautical good) or 20 ft. during daylight; Overall AC 1; Section hp 40 (hardness 5); Section AC 3; Rigging 30 hp (hardness 0), AC 3; Ram 4d6; Space 20 ft.; Height 10 ft. (draft 5 ft.); Crew 4; Cargo 10 tons; Cost 3,000 gp.\n   This vehicle is similar to a small keelboat&#151;it is a 20-foot ship without oars&#151;except that it has stabilizing runners along each side. It has a single mast on which a sail can be set. A blade is sturdily mounted on the bottom exterior of the vehicle, running the whole length of the hull, and similar blades are attached to each runner. The rudder is another blade that drags behind the ship, allowing it to be steered. This configuration allows the vehicle to skate on glass seas at a rate of 1 to 3 miles per hour. An empty cloudskate can carry up to twenty passengers." compset="Gear">
+    <fieldval field="gCost" value="3000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="gType" tag="Transport"/>
+    </thing>
+  <thing id="gFrmWheel" name="Frame Wheel" description="Large vehicle; Handle Animal +2, Diplomacy +2, or Intimidate +2; Spd drawn (poor); Overall hp 15 (hardness 5); Overall AC 3; Ram 3d6; Space 10 ft.; Height 10 ft.; Crew 1; Weight 300 lb., Cargo 4 tons; Cost 15 gp.\n   A frame wheel consists of a pair of wooden wheels constructed around a large, heavy object, such as a block of stone. The wheels cap the ends of the object and keep it off the ground, allowing the object to be rolled along like an oversized log. Like a sledge, a frame wheel can be drawn by beasts of burden or by people and is difficult to steer, but it moves more easily up and down slopes than a sledge does.\n   The major drawback of a frame wheel is that it is usually only good for a single load, after which it has to be disassembled, returned to the point of departure, and built all over again around a new load. When multiple loads are of a uniform size, however, the same set of wheels can be used many times." compset="Gear">
+    <fieldval field="gCost" value="15"/>
+    <usesource source="Sandstorm"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="gType" tag="Transport"/>
+    </thing>
+  <thing id="gSndGalley" name="Sand Galley" description="Colossal vehicle; Profession (sailor) &#150;2; Spd wind &#215;10 ft. (nautical poor); Overall AC &#150;3; Section hp 25 (hardness 5); Rigging 15 hp (hardness 0), Section AC 1; Ram 10d6; Space 60 ft.; Height 20 ft.; Crew 25; Cargo 100 tons; Cost 16,000 gp.\n   A step up from the sand schooner, the sand galley is specifically designed as a warship. It has sufficient deck space to accommodate three heavy catapults or six ballistas or light catapults. Much of the vessel&#146;s cargo space is often used for troops rather than for stores or merchandise. Like a sand schooner, a sand galley has one bulkhead on either side of the hull that opens downward to act as a ramp&#151;in this case, facilitating the swift deployment of soldiers. A sand galley moves 1 to 3 miles per hour, depending on the wind, and requires flat, open sand on which to travel." compset="Gear">
+    <fieldval field="gCost" value="16000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="gType" tag="Transport"/>
+    </thing>
+  <thing id="gSndSchonr" name="Sand Schooner" description="Gargantuan vehicle; Profession (sailor) +2; Spd wind &#215;20 ft. (nautical average); Overall AC &#150;3; Section hp 25 (hardness 5); Rigging 15 hp (hardness 0), Section AC 3; Ram 8d6; Space 40 ft.; Height 15 ft.; Crew 15; Cargo 50 tons; Cost 8,500 gp.\n   Though rarely seen, the sand schooner is a popular vehicle among certain deep-desert denizens, who use it as a merchant vessel and as a warship. A sand schooner has enough room on its deck for two light catapults or ballistas. Because ships that travel on sand need not worry about sinking, a schooner&#146;s cargo holds have additional hatches located on either side of the hull. These two doors are built to pivot downward and create a simple but effective cargo ramp. A sand schooner moves 2 to 7 miles per hour, depending on the wind, and requires flat, open sand on which to travel." compset="Gear">
+    <fieldval field="gCost" value="8500"/>
+    <usesource source="Sandstorm"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="gType" tag="Transport"/>
+    </thing>
+  <thing id="gSandSkiff" name="Sand Skiff" description="Large vehicle; Profession (sailor) +2; Spd wind &#215; 30 ft. (nautical good); Overall AC 3; Section hp 15 (hardness 5); Rigging 10 hp (hardness 0), Section AC 3; Ram 2d6; Space 10 ft.; Height 5 ft.; Crew 1; Weight 200 lb., Cargo 500 lb.; Cost 150 gp.\n   This lightweight framework rests atop a pair of polished runners and sports a single tall sail. Designed for a single rider, a sand skiff is useful for scouting, carrying messages, and as entertainment. The major advantage of the sand skiff lies in how easy it is to construct, though the major disadvantage is that those with the appropriate skill to pilot them are few and far between in the wastes. A sand skiff moves 3 to 10 miles per hour, depending on the wind, and requires flat, open sand on which to move." compset="Gear">
+    <fieldval field="gCost" value="150"/>
+    <usesource source="Sandstorm"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="gType" tag="Transport"/>
+    </thing>
+  <thing id="gSledge" name="Sledge" description="Large vehicle; Handle Animal +2, Diplomacy +2, or Intimidate +2; Spd drawn (clumsy); Overall hp 40 (hardness 5); Overall AC 4; Ram 2d6; Space 10 ft.; Height 1 ft.; Crew 1; Weight 500 lb., Cargo 2 tons; Cost 15 gp.\n   A primitive conveyance still used in many parts of the wastes, especially in sandy areas, the venerable sledge is popular because it does not become mired in sand as easily as wheeled vehicles can. Consisting of a flat expanse of reinforced wood, a sledge is really just a convenient platform for heavy loads; one can stack up to two tons of material on a sledge and push or pull it all at once. The &#147;driver&#148; of a sledge rarely rides upon the vehicle, but instead paces back and forth between groups of workers or animals that are doing the work, coordinating the team." compset="Gear">
+    <fieldval field="gCost" value="15"/>
+    <usesource source="Sandstorm"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="gType" tag="Transport"/>
+    </thing>
   </document>
