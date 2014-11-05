@@ -2089,4 +2089,245 @@ perform hero.assign[Race.typUndead]</eval>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Staff"/>
     </thing>
+  <thing id="ioAshPllt" name="Ashworm Pellet" description="This item is a roughly spherical bead of volcanic scoria, about 1 inch across. When thrown upon the ground, the pellet grows into an ashworm (see Sandstorm p. 140). This action consumes the pellet and takes 1 full round to fully form. Disintegrating the pellet or dealing it at least 50 points of damage during that time prevents the ashworm from appearing.\n   The ashworm remains for 10 minutes. It is an average specimen in all regards. It serves the user until it is slain or the duration ends (it can obey only simple commands).\n   Strong conjuration; CL 13th; Craft Wondrous Item, summon nature&#146;s ally VII; Price 6,825gp." compset="Wondrous" summary="Summon an Ashworm for 10 minutes.">
+    <fieldval field="gCost" value="6825"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioBtEndlSn" name="Bottle of Endless Sand" description="If the stopper is removed from this opaque glass bottle and a command word spoken, an amount of fine, dry sand flows out. Separate command words determine the type as well as the volume and velocity.\n &#149; &#147;Heap&#148; pours out 1 cubic foot per round.\n &#149; &#147;Dune&#148; produces a 20-cubic-foot pile at 5 cubic feet per round.\n &#149; &#147;Sandblast&#148; produces a spray of sand dealing 1d6 points of damage per round. This effect causes considerable back pressure, requiring the holder to make a DC 12 Strength check to avoid being knocked prone. A sandblast can affect only one target per round. The command word must be spoken to stop the flow of sand.\n   Moderate conjuration; CL 9th; Craft Wondrous Item, blast of sand; Price 21,600gp; Weight 2 lb." compset="Wondrous" summary="Creates endless sand.">
+    <fieldval field="gWeight" value="2"/>
+    <fieldval field="gCost" value="21600"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioMnlNghts" name="Burnoose of Moonless Nights" description="This black burnoose seems like an ordinary desert robe. Three times per day, in darkness or shadowy illumination, the wearer can draw up the hood to gain total concealment. Unlike ordinary invisibility, the wearer can attack without revealing her location. The burnoose does not work in bright light, and such light reveals a wearer within its area. Each use of the burnoose lasts for 10 rounds.\n   Moderate illusion; CL 10th; Craft Wondrous Item, greater invisibility; Price 33,000gp." compset="Wondrous" summary="3x/day: Improved Invisibility while in shadowy illumination.">
+    <fieldval field="gCost" value="33000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Hero" tag="EqpArmor"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="gType" tag="Wonder"/>
+    <bootstrap thing="xMnlNights">
+      <containerreq phase="UserPreLv" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="xMnlNights" name="Burnoose of Moonless Nights" compset="Special" summary="3x/day: Greater Invisibility for 10 minutes in shadowy illumination.">
+    <fieldval field="xSource" value="Burnoose of Moonless Nights"/>
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="SourceEqp"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    </thing>
+  <thing id="io1001Thrn" name="Burnoose of 1,001 Thorns" description="Once per day, the wearer of this robe can utter a command word, causing the burnoose to harden and sprout hundreds of sharp thorns. For 70 minutes thereafter, the wearer is the subject of a skin of the cactus spell.\n   Moderate abjuration; CL 7th; Craft Wondrous Item, skin of the cactus; Price 10,080gp." compset="Wondrous" summary="1x/day: Subject to Skin of the Cactus for 70 minutes.">
+    <fieldval field="gCost" value="10080"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Hero" tag="EqpArmor"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <bootstrap thing="x1001Thrns">
+      <containerreq phase="UserPreLv" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="x1001Thrns" name="Burnoose of 1,001 Thorns" description="Once per day, the wearer of this robe can utter a command word, causing the burnoose to harden and sprout hundreds of sharp thorns. For 70 minutes thereafter, the wearer is the subject of a skin of the cactus spell." compset="Special" summary="1x/day: Wearer is the subject of a skin of the cactus spell for 70 minutes.">
+    <fieldval field="xSource" value="Burnoose of 1,001 Thorns"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="SourceEqp"/>
+    </thing>
+  <thing id="ioCpotWsts" name="Cape of the Wastes" description="This bizarre garment appears to be made of sand, although it is soft and light. Its wearer remains comfortably cool in hot weather up to extreme heat, making no Fortitude saves or Constitution checks to resist natural heat effects. The cape keeps its wearer comfortably warm, as the endure elements spell, similarly negating the need for saves or checks against natural cold effects. Finally, the wearer gains the benefit of the Sand Camouflage feat (see Sandstorm p. 51).\n   Faint abjuration; CL 5th; Craft Wondrous Item, Sand Camouflage, endure elements; Price 30,000gp." compset="Wondrous" summary="Protection from elements, gain Sand Camouflage.">
+    <fieldval field="gCost" value="30000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Hero" tag="EqpBack"/>
+    <tag group="gType" tag="Wonder"/>
+    <bootstrap thing="fSandCamou">
+      <containerreq phase="UserFirst" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="ioClkGrdSh" name="Cloak of Garden Shade" description="The wearer of this deep green cloak is treated as if under the effect of a cloak of shade spell.\n   Faint abjuration; CL 5th; Craft Wondrous Item, cloak of shade; Price 10,000gp." compset="Wondrous" summary="Wearer treated as if under the effect of a Cloak of Shade spell.">
+    <fieldval field="gCost" value="10000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Hero" tag="EqpBack"/>
+    <tag group="Helper" tag="EquipAvail"/>
+    </thing>
+  <thing id="ioClkSndSw" name="Cloak of Sandswimming" description="This rust-red cloak is made of slick satin. The wearer&#146;s body becomes smooth and slick like an asherati&#146;s, granting a +2 enhancement bonus to natural armor. The wearer can also use the sandswim ability of the asheratis (see Sandstorm p. 38).\n   Faint transmutation; CL 3rd; Craft Wondrous Item, barkskin, creator must be an asherati; Price 15,000gp; Weight 1 lb." compset="Wondrous" summary="+2 Nat. AC, gain Sandswim ability.">
+    <fieldval field="gCost" value="15000"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Hero" tag="EqpBack"/>
+    <bootstrap thing="xSandswim">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    <eval phase="First"><![CDATA[doneif (field[gIsEquip].value <> 1)
+
+~ +2 AC (Natural)
+hero.child[ArmorClass].field[tACNatural].value += 2]]></eval>
+    </thing>
+  <thing id="ioEvrfrBot" name="Everfresh Bottle" description="Any water contained in this ornate glass bottle is always pure and perfectly suitable for drinking. Even poisons and holy (or unholy) water become ordinary drinking water when placed within. Magic potions are unaffected.\n   Faint transmutation; CL 5th; Craft Wondrous Item, purify food and drink; Price 10,000gp." compset="Wondrous" summary="Purifies water contained inside.">
+    <fieldval field="gCost" value="10000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioFigGldBe" name="Figurine, Gold Beetle" description="Inhabitants of the waste craft these figurines from inspiration they get from the desert and its trials.\n\nWhen activated, a gold beetle grows, gaining the statistics of a giant stag beetle (see page 285 of the Monster Manual) with some exceptions. Its Intelligence is 6, it is able to understand Common and Terran, and it is able to move across any waste terrain at normal speed. The beetle is treated as a magical beast when in its living form. The item can be used for up to 24 hours per week, but the duration need not be continuous.\n\nModerate transmutation; CL 11th; Craft Wondrous Item, animate objects, levitate; Price 11,500 gp" compset="Wondrous" summary="Summon a Gold Beetle for 24 hours/week.">
+    <fieldval field="gCost" value="10000"/>
+    <fieldval field="hTotal" value="24"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="AlwaysAvl"/>
+    </thing>
+  <thing id="ioFigIvrCa" name="Figurine, Ivory Camel" description="When commanded, this statuette changes into a creature with the same properties as a dromedary camel (see Sandstorm p. 192), except that it has an Intelligence of 8, can communicate in Common, and is exceptionally heat-tolerant. It has a +4 bonus on saves to resist heat and dehydration, and it is unaffected by sun glare. The item can be used for up to 12 hours per week, but the duration need not be continuous.\n   Moderate transmutation; CL 11th; Craft Wondrous Item, animate objects; Price 8,500gp." compset="Wondrous" summary="Summon a dromedary camel for 12 hours/week.">
+    <fieldval field="gCost" value="8500"/>
+    <fieldval field="hTotal" value="12"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder" name="Wondrous Item" abbrev="Wonder"/>
+    <tag group="Helper" tag="AlwaysAvl"/>
+    </thing>
+  <thing id="ioFldSndVs" name="Folding Sand Vessel" description="This fine, wooden box is 12 inches long, 6 inches wide, and 6 inches deep. It can hold items like any other box. If a command word is spoken, the box unfolds itself to form a sand skiff (see Sandstorm p. 104) over the course of 1 round. Items in the box are deposited, unharmed, on the ground. A second command word causes it to unfold into a sand schooner over the course of 5 rounds. A third word of command causes the vessel to fold itself into a box again, taking the same amount of time as unfolding.\n   Strong transmutation; CL 15th; Craft Wondrous Item, polymorph any object, creator must have 5 ranks in the Craft (shipbuilding) skill; Price 100,000gp; Weight 4 lb." compset="Wondrous" summary="Unfolds into a sand skiff or schooner.">
+    <fieldval field="gCost" value="100000"/>
+    <fieldval field="gWeight" value="4"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioGlsDista" name="Glass of Distance" description="This fine spyglass can be used to see up to ten miles away. While looking into the distance, a user can speak a command word to instantly transport to an adjacent square of an object or creature he can see. If the spyglass is reversed, a user looking through the large end can speak a command word to transport an adjacent creature or object to a distance of up to ten miles away. More than one object or creature can be transported, so long as each is in physical contact with another. A spyglass of distance can be used to teleport a creature only once per day, regardless of direction.\n   Moderate conjuration and divination; CL 9th; Craft Wondrous Item, teleport, scrying; Price 52,200gp; Weight 1 lb." compset="Wondrous" summary="Spyglass that allows teleportation to/from viewed location.">
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gCost" value="52200"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioGlvChSnd" name="Glove of Choking Sands" description="This seemingly ordinary leather glove allows the wearer to choke a target, as with the choking sands spell, on command, once per day.\n   Moderate necromancy; CL 9th; Craft Wondrous Item, choking sands; Price 16,200gp." compset="Wondrous" summary="Choke a target 1x/day, as per Choking Sands spell.">
+    <fieldval field="gCost" value="16200"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Hero" tag="EqpHand"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <bootstrap thing="xChkSands">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="xChkSands" name="Choking Sands" description="Cast Choking Sands, once per day." compset="Special" summary="Cast Choking Sands 1x/day.">
+    <fieldval field="xSource" value="Glove of Choking Sands"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="ShowCharge"/>
+    <tag group="Helper" tag="SourceEqp"/>
+    <tag group="Usage" tag="Day"/>
+    </thing>
+  <thing id="ioGlvSndSh" name="Gloves of Sand Shaping" description="These lizardskin gloves confer sand shaping ability as if the wearer possessed the Sand domain&#146;s granted power (see Sandstorm p. 107).\n   Moderate transmutation; CL 10th; Craft Wondrous Item, creator must have access to the Sand domain; Price 15,000gp." compset="Wondrous">
+    <fieldval field="gCost" value="15000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Hero" tag="EqpHand"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <bootstrap thing="xShapeSand">
+      <containerreq phase="First" priority="10000"><![CDATA[fieldval:gIsEquip <> 0]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="ioGogDesrt" name="Goggles of the Desert" description="The lenses of these goggles are all black, except for thin horizontal strips just over the wearer&#146;s eyes. They protect a wearer from the effects of glare (see Sandstorm p. 18) and grant a +4 bonus on saving throws against dazzling effects, such as flare. The goggles enable the wearer to see up to 60 feet without penalty in duststorm conditions.\n   Faint Transmutation; CL 3rd; Craft Wondrous Item, cloak of shade, darkvision; Price 8,250gp." compset="Wondrous" summary="Protects against glare, and grants +4 on saves vs. dazzling.">
+    <fieldval field="gCost" value="8250"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Hero" tag="EqpEyes"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioJugWhrlw" name="Jug of Whirlwinds" description="This item is a beaten silver amphora, stoppered by a silver plug engraved with runes of protection. Once per day, when the user speaks a command word and opens the jug, a whirlwind (as the spell) emerges. The user directs the whirlwind, which lasts for 15 rounds unless dismissed.\n   Strong evocation; CL 15th; Craft Wondrous Item, whirlwind; Price 64,800gp; Weight 5lb." compset="Wondrous" summary="1x/day: Cast Worldwhind.">
+    <fieldval field="gCost" value="64800"/>
+    <fieldval field="gWeight" value="5"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="AlwaysAvl"/>
+    </thing>
+  <thing id="ioLmpStars" name="Lamp of Stars" description="This item appears to be an ordinary oil lamp, decorated with a pattern of tiny stars. Once per day, the bearer of the lamp can utter a command word, causing the flame to flicker out and be replaced by magical starlight. The lamp then sheds blue-white light in a 30-foot radius (and shadowy light for an additional 30 feet). Creatures with low-light vision can see three times as far in this light, instead of just twice as far. The starlight lasts until the lamp runs out of oil after 6 hours, at which point both the starlight and the lamplight are extinguished. Refilling the lamp with oil allows the magic to be used once again.\n   Faint evocation; CL 3rd; Craft Wondrous Item, light; Price 1,100gp." compset="Wondrous" summary="1x/day: Replace flame with starlight.">
+    <fieldval field="gCost" value="1100"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="AlwaysAvl"/>
+    </thing>
+  <thing id="ioLnsDesrt" name="Lens of the Desert" description="This magnifying glass, its gold frame worked with a sunburst motif, can be commanded to create a beam of focused sunlight. Three times per day, on command, the lens emits a single beam like that produced by a sunbeam spell.\n   Strong evocation; CL 13th; Craft Wondrous Item, sunbeam; Price 66,000gp." compset="Wondrous" summary="3x/day: Cast Sunbeam.">
+    <fieldval field="gCost" value="66000"/>
+    <fieldval field="hTotal" value="3"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    <tag group="Helper" tag="AlwaysAvl"/>
+    </thing>
+  <thing id="ioMskSwAir" name="Mask of Sweet Air" description="This clear crystal mask fits snugly over the mouth and nose. Its wearer can breathe freely in air fouled by smoke, dust, and fumes without fear of suffocation. The wearer gains immunity to airborne stench attacks or poisons, such as the stench of a troglodyte or the effect of cloudkill. In addition, a mask of sweet air grants continuous water breathing. \n   Moderate abjuration, conjuration, and transmutation; CL 7th; Craft Wondrous Item, freedom of breath, neutralize poison, water breathing; Price 147,000gp." compset="Wondrous">
+    <fieldval field="gCost" value="147000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Hero" tag="EqpHead"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioOplTnlng" name="Opal of Tunneling" description="This black opal bead is about the size of a large pearl. When thrown against a surface, the bead explodes in a red flash and melts a hole into the material, forming a lava tube 10 feet wide and up to 30 feet long. The hot tunnel walls deal 1d6 points of fire damage per round of contact. Edges of the lava tube glow with this heat for 1 minute, after which time the new tunnel is safe for unprotected creatures to enter.\n   An opal of tunneling works only on rock and similar materials (such as crystal, salt, and so on). It  does not damage a living creature, nor does it penetrate wood. However, a creature within the 10-foot-diameter sphere of the bead&#146;s explosion takes 2d6 points of fi re damage from the blast.\n   Strong conjuration and transmutation; CL 13th; Craft Wondrous Item, disintegrate, wall of magma; Price 6,350 gp." compset="Wondrous">
+    <fieldval field="gCost" value="6350"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioPrsnlOas" name="Personal Oasis" description="Once per day, when this 10-foot-by-10-foot blanket is unrolled, and the command word spoken, a 5-foot-by-10-foot tent springs from the blanket, along with a campfire, a bowl of dates, and a gallon of cool water. The tent functions in all ways, aside from its dimensions, as Leomund&#146;s tiny hut. The campfire burns continuously, never needing fuel, and the dates are enough to sustain one person for a day. Upon speaking the command word again, the oasis rolls back up into blanket form.\n   Faint conjuration and evocation; CL 5th; Craft Wondrous Item, create food and water, Leomund&#146;s tiny hut, produce flame; Price 18,600gp." compset="Wondrous">
+    <fieldval field="gCost" value="18600"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioPortFtn" name="Portable Fountain" description="When it is placed on the ground and a command word spoken, this palm-sized, jade chrysanthemum expands to become a fountain, gushing fresh water from its center into a spacious basin. The fountain occupies a 5-foot square. It can be used once per day, producing 10 gallons of water. The fountain reverts to its portable form when all the water has been removed from its basin.\n   Faint conjuration; CL 5th; Craft Wondrous Item, create water; Price 1,800gp." compset="Wondrous" summary="Produces 10 gallons of water/day.">
+    <fieldval field="gCost" value="18000"/>
+    <fieldval field="hTotal" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioPortShd" name="Portable Shade" description="This circle of black silk is 3 feet in diameter, but it can be folded up into the size of a handkerchief. When unfolded, a portable shade floats into the air and hovers over the user&#146;s head, moving as the user does but no more than 30 feet per round. It automatically tilts to block the sun&#146;s rays, providing all the benefits of a parasol (see Sandstorm p. 100), but leaving the user&#146;s hands free for combat or spellcasting. Folding up a portable shade (a move action) ends its effect.\n   Faint evocation; CL 1st; Craft Wondrous Item, Tenser&#146;s floating disk; Price 2,000 gp." compset="Wondrous">
+    <fieldval field="gCost" value="2000"/>
+    <fieldval field="hName1" value="Active"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioRplnSkin" name="Replenishing Skin" description="This unremarkable waterskin is made from the hide of a camel. Whenever the skin becomes empty, it slowly refills with pure water over a period of 1d4 hours. Smaller quantities of water can be drained from the skin after a shorter time.\n   Faint conjuration; CL 1st; Craft Wondrous Item, create water; Price 1,000gp." compset="Wondrous" summary="Refills with pure water every 1d4 hours.">
+    <fieldval field="gCost" value="1000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioSndlShSn" name="Sandals of the Shifting Sands" description="These plain sandals enable the wearer to travel across sand and sand crust at his normal speed, without breaking through sand crust and leaving no tracks. The wearer is also cooled as if protected by endure elements.\n   Faint abjuration and transmutation; CL 5th; Craft Wondrous Item, cat&#146;s grace, endure elements, pass without trace; Price 2,500gp; Weight 1 lb." compset="Wondrous" summary="Protected by Endure Elements, don&apos;t leave tracks in sand or break through crust.">
+    <fieldval field="gCost" value="2500"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Hero" tag="EqpFoot"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioSlshSand" name="Slashing Sand" description="This handful of glittering dark sand is typically stored in a small sack. When flung on the ground, it covers an area of up to 200 square feet with razor-sharp obsidian shards that produce a spike stones effect that lasts for 10 hours.\n   Moderate transmutation; CL 10th; Craft Wondrous Item, spike stones; Price 2,000 gp." compset="Wondrous" summary="Makes razor-sharp shards for 10 hours.">
+    <fieldval field="gCost" value="2000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioThrstSnd" name="Thirsty Sand" description="This sand looks like gritty volcanic ash. When sprinkled on a body of water (or a solution in water), thirsty sand soaks up the liquid and stores it. Each grain can absorb up to 1 gallon of water, thereafter covering a 1-foot cube and weighing about 24 pounds. When a command word is spoken, the water is released again and the sand becomes nonmagical.\n   An area of water-laden thirsty sand is a mud bog. It costs 2 squares of movement to enter a square containing the mud, and the DC of Tumble checks in that area increases by 2. If the water is not released from the sand within 4 hours, it cannot be released and the material dries into normal, sandy soil over a period of days.\n   Releasing the water can be hazardous, depending on the volume absorbed. It rapidly fills a depression or pit and might be deep enough to present a drowning hazard, depending on the dimensions of the volume filled. Releasing 10,000 gallons or more at once produces a flash flood effect that lasts for 1 round per 10,000 gallons. Thirsty sand is usually packaged in a vial containing 1,000 grains.\n   Moderate transmutation; CL 9th; Craft Wondrous Item, control water, transmute rock to mud; Price 3,000gp." compset="Wondrous" summary="1,000 graints, each can absorb 1 gallon of water.">
+    <fieldval field="gCost" value="3000"/>
+    <fieldval field="hTotal" value="1000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioInstWell" name="Tovar&#146;s Instant Well" description="This item is a foot-long copper pipe that, when set into the ground and activated with a command word, transforms into a well that produces potable water. The lower end of the tube widens and lengthens, probing into the ground until it finds a reliable water source. The protruding end becomes a pump. The pump springs up in just 1 round, but it might be several minutes before water begins to flow, depending on the distance of the source. Speaking a second command word deactivates the well, returning the item to its pipe form.\n   Strong transmutation and divination; CL 15th; Craft Wondrous Item, locate water, polymorph any object; Price 23,500gp." compset="Wondrous">
+    <fieldval field="gCost" value="23500"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioVeilAlur" name="Veil of Allure" description="This diaphanous veil has two effects. The DC to resist the wearer&#146;s enchantment spells increases by 2. Also, the DC to resist Charisma-based supernatural abilities used by the wearer also increases by 2.\n   Faint enchantment; CL 5th; Craft Wondrous Item, eagle&#146;s splendor; Price 14,000gp." compset="Wondrous" summary="+2 to enchantment and Charisma-based supernatural DCs.">
+    <fieldval field="gCost" value="14000"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="EquipMag"/>
+    <tag group="Hero" tag="EqpHead"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
+  <thing id="ioWSknDlg" name="Waterskin of Deluge" description="Once per week, the bearer of this blue leather waterskin can remove the stopper and squeeze the container, releasing a deluge of water identical to a flash flood spell. Removing the stopper at any other time produces no effect at all, though the skin can be used to store water. If a waterskin of deluge is destroyed, it releases one last flash flood, in the direction from which the damage that destroyed it came.\n   Strong conjuration; CL 15th; Craft Wondrous Item, flash flood; Price 12,350gp." compset="Wondrous">
+    <fieldval field="hTotal" value="1"/>
+    <fieldval field="gCost" value="12350"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="Wonder"/>
+    </thing>
   </document>
