@@ -1828,21 +1828,82 @@ perform hero.assign[Race.typUndead]</eval>
     <fieldval field="gWeight" value="3"/>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Clothing"/>
+    <tag group="Helper" tag="GearSize"/>
     </thing>
   <thing id="gHeatOutfi" name="Heatsuit Outfit" description="This suit is designed to protect against heat. It consists of heavy pants and coat, a specially treated leather apron, thick mittens, a thick hood, and goggles. A heatsuit outfit prevents 3 points of lethal or nonlethal damage per round from hot environments. Although the outfit is heavy clothing, its heat-resistant materials negate the usual &#150;4 penalty on Fortitude saves against damage dealt by hot environments." compset="Gear" summary="DR 3/- from hot environments. Negates -4 on Fort. saves against heat.">
     <fieldval field="gCost" value="20"/>
     <fieldval field="gWeight" value="15"/>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Clothing"/>
+    <tag group="Helper" tag="GearSize"/>
     </thing>
   <thing id="gHydraSuit" name="Hydration Suit" description="The hydration suit is a masterpiece of water retention, crafted by waste-dwellers with technical skill and unusual materials. Its design allows you to recover nearly all the water your body loses through sweat and exhalation. A hydration suit is made of the skin and tissue of various desert-dwelling beasts and treated with oils or waxes for water retention. It covers your entire body, with a tight-fitting hood over the head and a mask covering the mouth and nose. Inside the mask is a glass plate to collect condensation and a tube fashioned from watertight materials. An inner lining wicks sweat away from your body and collects it in spongelike filtration material that can be removed after you doff the hydration suit. The tube from the facemask twists in loops around your body, through the sponge, to reclaim moisture, condensing it in a reservoir from which you can sip.\n   A functioning hydration suit eliminates the need to make Constitution checks to avoid dehydration. It raises the level of protection from heat dangers by two steps (see Sandstorm p. 14), and its mask functions as a filter mask. A hydration suit offers no protection from magical dessication damage." compset="Gear">
     <fieldval field="gCost" value="1000"/>
     <fieldval field="gWeight" value="10"/>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="Clothing"/>
+    <tag group="Helper" tag="GearSize"/>
     </thing>
-  <thing id="gArmorbrgt" name="Armorbright (flask)" description="This metallic paint is applied with a brush to the outside of a suit of armor (requiring 1 minute to apply), producing a shiny surface that reflects the light of the sun to reduce the effects of hot weather on the wearer. For 24 hours after applying armorbright to a suit of armor, you gain a +2 bonus on Fortitude saving throws to avoid heat dangers. Armorbright also raises your level of protection against heat by one step (see Sandstorm p. 14). Armorbright is not effective in hot environments with no sun, such as the Elemental Plane of Fire." compset="Gear" summary="+2 on Fort. saves and +1 heat protection for 24 hours.">
+  <thing id="gArmorbrgt" name="Armorbright (flask)" description="This metallic paint is applied with a brush to the outside of a suit of armor (requiring 1 minute to apply), producing a shiny surface that reflects the light of the sun to reduce the effects of hot weather on the wearer. For 24 hours after applying armorbright to a suit of armor, you gain a +2 bonus on Fortitude saving throws to avoid heat dangers. Armorbright also raises your level of protection against heat by one step (see Sandstorm p. 14). Armorbright is not effective in hot environments with no sun, such as the Elemental Plane of Fire.\n\nCraft (Alchemy) DC: 25" compset="Gear" summary="+2 on Fort. saves and +1 heat protection for 24 hours.">
     <fieldval field="gCost" value="50"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gAshSculpt" name="Asherati Sand Sculpture" description="Asheratis know the special sands, adherents, and natural dyes that are required to create stunning works of sculpture. The typical asherati sculpture is 2 to 3 feet high and weighs 10 to 20 pounds. Like any piece of art, value is in the eye of the beholder; however, anyone with the Appraise skill can determine the approximate price a particular sculpture would fetch in wider markets. Use Table 3&#150;7: Art Objects, page 55 of the Dungeon Master&#146;s Guide, to determine the price of an asherati sand sculpture found in a treasure hoard or in the marketplace." compset="Gear">
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gBlackeye" name="Blackeye (vial)" description="This oily paint is smeared around your eyes and on your cheeks to reduce the effects of bright sun, protecting you from sun glare for 4 hours.\n\nCraft (Alchemy) DC: 15" compset="Gear" summary="Protects from Sun Glare for 4 hours.">
+    <fieldval field="gCost" value="1"/>
+    <fieldval field="gWeight" value="0.5"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gDeepDrogt" name="Deep Draught" description="This powder is a mixture of salt, dried herbs, and extracts of desert plants. Adding it to water increases your body&#146;s retention of fluid and helps counteract the effects of dehydration. One packet of deep draught is enough for 1 gallon of solution, which grants a +5 bonus on the Heal check to treat dehydration (see Sandstorm p. 15).\n\nCraft (Alchemy) DC: 15" compset="Gear" summary="+5 Heal check vs. dehydration.">
+    <fieldval field="gCost" value="10"/>
+    <fieldval field="gWeight" value="0.5"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gIrnExtrct" name="Ironthorn Extract (flask)" description="The ironthorn plant has extremely tough tissues to prevent water loss. This extract of the plant is used to harden delicate items, make containers waterproof, and stiffen clothing to provide some protection. One flask of ironthorn extract is enough to treat a typical outfit, increasing the clothing&#146;s armor bonus to +1. Ironthorn extract does not improve materials that already provide an armor bonus. When applied to cloth, leather, or similar material, ironthorn extract improves its hardness by 1, to a maximum of 5. Both benefits last for one week or until the item is thoroughly washed.\n\nCraft (Alchemy) DC: 20" compset="Gear" summary="+1 AC to armor, increases hardness of armor.">
+    <fieldval field="gCost" value="25"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gKeepcoolS" name="Keepcool Salve (pot)" description="This small clay pot contains several ounces of a pearly ointment, enough to cover one Medium creature. Applying the ointment to your skin increases your level of protection against heat by one step (see Sandstorm p. 14). The salve also grants a +1 circumstance bonus on Fortitude saves to resist damage from hot environments.\n\nCraft (Alchemy) DC: 20" compset="Gear" summary="+1 heat protection, +1 Fort. vs. hot environments.">
+    <fieldval field="gCost" value="50"/>
+    <fieldval field="gWeight" value="0.5"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gLquidSalt" name="Liquid Salt (flask)" description="This deadly supernatural substance (see Red Seas, Sandstorm p. 25) can be used as a splash weapon. A direct hit deals 2d6 points of dessication damage (2d8 points to plants or elementals with the water subtype). Every creature within 5 feet of the point where the flask hits takes 1d4 points of dessication damage from the splash (1d6 points to plants or elementals with the water subtype). Liquid salt is always carried in a glass container." compset="Gear">
+    <fieldval field="gCost" value="200"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gOleum" name="Oleum (flask)" description="A black liquid, oleum has a foul, bitter odor. It occurs naturally around the world, but is particularly common in the waste. Though it forms underground, oleum is generally found in surface pools in areas of barren waste terrain.\n   You can use a flask of oleum as a splash weapon. Use the rules for alchemist&#146;s fire (page 128 of the Player&#146;s Handbook), except that it takes a full-round action to prepare a flask with a fuse. Once it is thrown, there is a 50% chance of the flask igniting successfully. Burning oleum is hard to put out, granting a &#150;4 penalty on the Reflex save to extinguish the fire. The oleum burns away within 4 rounds (eliminating the penalty on putting out the fire).\n   Raw oleum burns readily, but it is smoky when it does so. The smoke created by burning oleum is heavy smoke (see Smoke, page 304 of the Dungeon Master&#146;s Guide), so a wide area of open air is required for the substance to burn safely. Every round when raw oleum burns, it produces enough smoke to fill a 5-foot cube. For this reason, oleum is typically used only in lamps made to burn outdoors. The smoke drives away flying insects.\n   Oleum is also used to lubricate moving parts; a flask of it can cover a 5-foot square, provided that the surface is smooth. A creature can walk within or through an area of oleum at half normal speed by making a DC 10 Balance check. Failure means it can&#146;t move that round, while failure by 5 or more means it falls prone (see the Balance skill description, page 67 of the Player&#146;s Handbook, for details). If an area of oleum is ignited, it burns for 4 rounds and deals 1d3 points of fire damage to each creature in the area. A quart of oleum (two flasks) can coat a Medium creature, providing a +4 circumstance bonus on Escape Artist checks and opposed grapple checks made to resist being grappled or to escape a pin. Oleum applied in this manner also acts as insect repellent, protecting you from normal vermin (such as those summoned by insect plague) and granting a +4 bonus to Armor Class against vermin. A creature with oleum on its hands takes a &#150;4 penalty on grapple checks or any task requiring a solid grip, including attack rolls with weapons. A roll of 1 on the attack means the oleum-coated creature drops the slippery weapon.\n   When worn, oleum is uncomfortable and unpleasant. You take a &#150;2 penalty on Fortitude saves against natural heat effects. Further, oleum makes you quite flammable, granting a &#150;4 penalty on saves against supernaturally hot effects and any attack involving fire, including Reflex saves to put yourself out after catching fire. When subjected to a fire-based attack that does not normally cause subjects to catch on fire, you must make a DC 14 Reflex save or catch on fire. As indicated above, oleum burns away after 4 rounds.\n   An ounce of oleum can substitute for the material component usually used for a grease spell." compset="Gear" summary="See text.">
+    <fieldval field="gCost" value="30"/>
+    <fieldval field="gWeight" value="1"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gShapesand" name="Shapesand (jug)" description="Shapesand is a special kind of wasteland soil that is psychoreactive; it can be sculpted into any form according to your will. The new object is made of sand, but serves as a normal item of the same sort. A shapesand hammer functions just like an ordinary hammer, and a shapesand waterskin is just as watertight as an ordinary skin.\n   Controlling shapesand is an exercise in willpower. A DC 16 Wisdom check establishes control of a volume of sand based on the shaper&#146;s Wisdom score:\n{b}Wisdom Score | Controllable Volume{/b}\n1&#150;3 {b}|{/b} None\n4&#150;7 {b}|{/b} 1-ft. cube\n8&#150;11 {b}|{/b} 2-1/2-ft. cube\n12&#150;15 {b}|{/b} 5-ft. cube\n16&#150;19 {b}|{/b} 7-1/2-ft. cube\n20&#150;23 {b}|{/b} 10-ft. cube\n24+ {b}|{/b} +2-1/2 ft per 4 points of Wisdom\n\nIf your Wisdom check succeeds, you can reshape the volume of sand as you desire. Once control is established, the shape lasts as long as you remain within 100 feet of it. Thus, those with suffi cient patience and strong enough will can construct small fortresses out of shapesand, even if they must do so a few cubic feet at a time.\n   Another character can wrest control of a shapesand item away from you by succeeding on an opposed Wisdom check, though the winner&#146;s Wisdom score must be high enough to shape an item the size of the one contested. For example, if two characters are attempting to control a 5-foot cube of shapesand, the challenger must not only beat his opponent&#146;s roll, but must also have a Wisdom score of at least 12.\n   If you are a sand shaper (new prestige class, see Sandstorm p. 76) or a cleric with the Sand domain (p. 107) using shapesand in conjunction with your sand shaping abilities, you do not count shapesand items against the total number of items you can maintain at one time. In addition, if you are a sand shaper, you can give control of shapesand objects to other individuals, and those items persist even if the new owner takes them outside the normal 100-foot control area. The new owner need not make a Wisdom check to establish control of the item, so long as his Wisdom score meets the minimum requirement for the object&#146;s volume.\n\nCraft (Alchemy) DC: 25" compset="Gear">
+    <fieldval field="gCost" value="100"/>
+    <fieldval field="gWeight" value="12"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gSlmbrSand" name="Slumber Sand (flask)" description="Slumber sand is a supernatural hazard (see Sandstorm p. 26), but alchemists make a substance that mimics the hazard&#146;s effects. A target struck by a flask of slumber sand must make a DC 15 Fortitude save or fall asleep for 1 minute. Slumber sand affects only a creature struck by it, and creatures with 5 or more Hit Dice have immunity to the effect.\n   Slumber sand is more effective when a flask of it is used as an optional material component for sleep, deep slumber, or symbol of sleep. When so used, the total Hit Dice of creatures affected increases by 2 (the symbol of sleep affects creatures of up to 12 HD), and the DC for the Will saving throw increases by +1.\n\nCraft (Alchemy) DC: 12" compset="Gear">
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gCost" value="50"/>
+    <usesource source="Sandstorm"/>
+    <tag group="gType" tag="SpecSubs"/>
+    </thing>
+  <thing id="gSunshadeL" name="Sunshade Lotion (flask)" description="This translucent green lotion contains extracts of succulent plants, mixed with oils from the skin of chameleons. It darkens slightly on exposure to sunlight. One flask is sufficient to protect a Medium creature from nonlethal damage due to sunburn (see Sandstorm p. 18) for 4 hours.\n\nCraft (Alchemy) DC: 20" compset="Gear">
+    <fieldval field="gCost" value="20"/>
     <fieldval field="gWeight" value="1"/>
     <usesource source="Sandstorm"/>
     <tag group="gType" tag="SpecSubs"/>
