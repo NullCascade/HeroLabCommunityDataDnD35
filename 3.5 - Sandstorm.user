@@ -948,7 +948,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sResist" tag="Yes"/>
     <tag group="sComp" tag="V"/>
     </thing>
-  <thing id="sBlckSndSa" name="Black Sand" description="This spell creates an area of black sand (see page 20), infused with shadowstuff and negative energy. A region of black sand literally swallows light, emitting magical darkness rising to a height of 20 feet over the surface. Creatures that come in contact with the sand take 1d4 points of damage per round from negative energy (no save). Those reduced to 0 hit points crumble into black sand themselves. Creatures can make Reflex saves to avoid being caught in the area upon which the spell is first cast. Only the surface of the sand is affected by the spell, so creatures burrowing beneath an area of black sand are unaffected unless they break its surface. Creatures that do so immediately take damage from the spell.\n\n{i}Black sand{/i} can be made permanent with a {i}permanency{/i} spell." compset="Spell" summary="Creates a 20&apos;-radius area of black sand.">
+  <thing id="sBlckSndSa" name="Black Sand" description="This spell creates an area of black sand (see Sandstorm p. 20), infused with shadowstuff and negative energy. A region of black sand literally swallows light, emitting magical darkness rising to a height of 20 feet over the surface. Creatures that come in contact with the sand take 1d4 points of damage per round from negative energy (no save). Those reduced to 0 hit points crumble into black sand themselves. Creatures can make Reflex saves to avoid being caught in the area upon which the spell is first cast. Only the surface of the sand is affected by the spell, so creatures burrowing beneath an area of black sand are unaffected unless they break its surface. Creatures that do so immediately take damage from the spell.\n\n{i}Black sand{/i} can be made permanent with a {i}permanency{/i} spell." compset="Spell" summary="Creates a 20&apos;-radius area of black sand.">
     <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="Reflex negates; see text"/>
@@ -1040,7 +1040,7 @@ Make it check for wepprof? (Done)</comment>
     <tag group="sSubschool" tag="Air"/>
     </thing>
   <thing id="sAwknSndSa" name="Awaken Sand" description="You awaken a region of sand, or similar material, to humanlike sentience. To succeed, you must make a DC 18 Will save. The {i}awakened{/i} sand is friendly toward you. You have no special empathy or connection with sand you awaken, although it serves you in specific tasks or endeavours if you communicate your desire to it.\n\nThe sand creature you awaken has the same statistics as a Huge animated object with a base land speed of 40 feet and a burrow speed of 20 feet. Unlike normal animated objects, {i}awakened{/i} sand beings have the earth subtype, and their Intelligence, Wisdom, and Charisma scores are each 3d6. A sand being has immunity to polymorphing. The awakened sand can speak one language you know, plus one additional language that you know per point of Intelligence bonus (if any) it has.\n\nA sand creature can engulf Large or smaller creatures as a standard action. It cannot make a slam attack during a round in which it engulfs. The sand creature merely has to move over the opponents, affecting as many as it can cover. Opponents can make attacks of opportunity against the creature, but if they do so they are not entitled to a saving throw. Those who do not attempt attacks of opportunity must succeed on a DC 19 Reflex save or be engulfed; on a success, they are pushed back or aside (opponent&apos;s choice) as the creature moves forward. Engulfed opponents are considered grappled and are trapped within the sand creature&apos;s body. The sand creature deals 1d6+3 points of damage to trapped opponents each round after the one in which it engulfed them. Opponents that need to breathe risk suffocation (see page 304 of the {i}Dungeon Master&apos;s Guide{/i}). The save DC is Strength-based.\n\nSand creatures are amorphous and can do anything sand would be expected to do&#151;hide perfectly atop other sand, form into dunes and drifts, and pour through small openings (although passing through an opening two size categories smaller than the creature takes a full-round action).\n\n{i}XP Cost{/i}: 500 XP." compset="Spell" summary="A region of sand forms into a Huge, sentient creature.">
-    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sRange" value="15&apos; area of sand touched"/>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
@@ -1354,7 +1354,7 @@ perform hero.assign[Race.typUndead]</eval>
     <tag group="SpecSource" tag="DryLich"/>
     </thing>
   <thing id="sAwknSndDr" name="Awaken Sand" description="You awaken a region of sand, or similar material, to humanlike sentience. To succeed, you must make a DC 18 Will save. The {i}awakened{/i} sand is friendly toward you. You have no special empathy or connection with sand you awaken, although it serves you in specific tasks or endeavours if you communicate your desire to it.\n\nThe sand creature you awaken has the same statistics as a Huge animated object with a base land speed of 40 feet and a burrow speed of 20 feet. Unlike normal animated objects, {i}awakened{/i} sand beings have the earth subtype, and their Intelligence, Wisdom, and Charisma scores are each 3d6. A sand being has immunity to polymorphing. The awakened sand can speak one language you know, plus one additional language that you know per point of Intelligence bonus (if any) it has.\n\nA sand creature can engulf Large or smaller creatures as a standard action. It cannot make a slam attack during a round in which it engulfs. The sand creature merely has to move over the opponents, affecting as many as it can cover. Opponents can make attacks of opportunity against the creature, but if they do so they are not entitled to a saving throw. Those who do not attempt attacks of opportunity must succeed on a DC 19 Reflex save or be engulfed; on a success, they are pushed back or aside (opponent&apos;s choice) as the creature moves forward. Engulfed opponents are considered grappled and are trapped within the sand creature&apos;s body. The sand creature deals 1d6+3 points of damage to trapped opponents each round after the one in which it engulfed them. Opponents that need to breathe risk suffocation (see page 304 of the {i}Dungeon Master&apos;s Guide{/i}). The save DC is Strength-based.\n\nSand creatures are amorphous and can do anything sand would be expected to do&#151;hide perfectly atop other sand, form into dunes and drifts, and pour through small openings (although passing through an opening two size categories smaller than the creature takes a full-round action).\n\n{i}XP Cost{/i}: 500 XP." compset="Spell" summary="A region of sand forms into a Huge, sentient creature.">
-    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sRange" value="15&apos; area of sand touched"/>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
@@ -1372,7 +1372,7 @@ perform hero.assign[Race.typUndead]</eval>
     <tag group="sResist" tag="No"/>
     <tag group="sComp" tag="V"/>
     </thing>
-  <thing id="sBlckSndCl" name="Black Sand" description="This spell creates an area of black sand (see page 20), infused with shadowstuff and negative energy. A region of black sand literally swallows light, emitting magical darkness rising to a height of 20 feet over the surface. Creatures that come in contact with the sand take 1d4 points of damage per round from negative energy (no save). Those reduced to 0 hit points crumble into black sand themselves. Creatures can make Reflex saves to avoid being caught in the area upon which the spell is first cast. Only the surface of the sand is affected by the spell, so creatures burrowing beneath an area of black sand are unaffected unless they break its surface. Creatures that do so immediately take damage from the spell.\n\n{i}Black sand{/i} can be made permanent with a {i}permanency{/i} spell." compset="Spell" summary="Creates a 20&apos;-radius area of black sand.">
+  <thing id="sBlckSndCl" name="Black Sand" description="This spell creates an area of black sand (see Sandstorm p. 20), infused with shadowstuff and negative energy. A region of black sand literally swallows light, emitting magical darkness rising to a height of 20 feet over the surface. Creatures that come in contact with the sand take 1d4 points of damage per round from negative energy (no save). Those reduced to 0 hit points crumble into black sand themselves. Creatures can make Reflex saves to avoid being caught in the area upon which the spell is first cast. Only the surface of the sand is affected by the spell, so creatures burrowing beneath an area of black sand are unaffected unless they break its surface. Creatures that do so immediately take damage from the spell.\n\n{i}Black sand{/i} can be made permanent with a {i}permanency{/i} spell." compset="Spell" summary="Creates a 20&apos;-radius area of black sand.">
     <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="Reflex negates; see text"/>
@@ -2511,7 +2511,7 @@ hero.child[ArmorClass].field[tACNatural].value += 2]]></eval>
     <tag group="sComp" tag="S"/>
     </thing>
   <thing id="sClkShadCl" name="Cloak of Shade" description="The subject is wrapped in an envelope of perfect shade. Inside the cloak, the temperature is one band lower than the actual temperature (see Heat Dangers, Sandstorm p. 12), but the spell has no effect on unearthly or hotter heat, nor does it offer any protection against fire damage. The target is treated as though it is in shade, thereby protected from sunburn, able to begin recovering from sun glare, and able to begin healing nonlethal damage taken from exposure to heat. Cloak of shade has no effect on light, daylight, sunburst, and similar magical light effects, and it offers no protection from damage that creatures vulnerable to sunlight might take from the sun." compset="Spell" summary="Touched creature gains protection from heat and sun.">
-    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sRange" value="Creature touched"/>
     <fieldval field="sDuration" value="1 hour/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
@@ -2532,7 +2532,7 @@ hero.child[ArmorClass].field[tACNatural].value += 2]]></eval>
     <tag group="sComp" tag="S"/>
     </thing>
   <thing id="sClkShadDr" name="Cloak of Shade" description="The subject is wrapped in an envelope of perfect shade. Inside the cloak, the temperature is one band lower than the actual temperature (see Heat Dangers, Sandstorm p. 12), but the spell has no effect on unearthly or hotter heat, nor does it offer any protection against fire damage. The target is treated as though it is in shade, thereby protected from sunburn, able to begin recovering from sun glare, and able to begin healing nonlethal damage taken from exposure to heat. Cloak of shade has no effect on light, daylight, sunburst, and similar magical light effects, and it offers no protection from damage that creatures vulnerable to sunlight might take from the sun." compset="Spell" summary="Touched creature gains protection from heat and sun.">
-    <fieldval field="sRange" value="Touch"/>
+    <fieldval field="sRange" value="Creature touched"/>
     <fieldval field="sDuration" value="1 hour/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
@@ -2551,5 +2551,521 @@ hero.child[ArmorClass].field[tACNatural].value += 2]]></eval>
     <tag group="sResist" tag="Harmless"/>
     <tag group="sResist" tag="Yes"/>
     <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sXFreSphSc" name="Antifire Sphere" description="You bring into being a mobile, spherical energy field that protects against fire. All creatures within the area of the spell gain immunity to fire damage. In addition, the sphere prevents the entrance of any creature with the fire subtype and hedges out such creatures that are in the area when the spell is cast. You must overcome a creature&#146;s spell resistance to keep it at bay." compset="Spell" summary="Creatures within sphere gain immunity to fire damage.">
+    <fieldval field="sRange" value="10&apos;-radius emanation from touched creature"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="No; see text"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="SeeText"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sXFreSphWz" name="Antifire Sphere" description="You bring into being a mobile, spherical energy field that protects against fire. All creatures within the area of the spell gain immunity to fire damage. In addition, the sphere prevents the entrance of any creature with the fire subtype and hedges out such creatures that are in the area when the spell is cast. You must overcome a creature&#146;s spell resistance to keep it at bay." compset="Spell" summary="Creatures within sphere gain immunity to fire damage.">
+    <fieldval field="sRange" value="10&apos;-radius emanation from touched creature"/>
+    <fieldval field="sDuration" value="10 min./level"/>
+    <fieldval field="sSave" value="Will negates (harmless)"/>
+    <fieldval field="sResist" value="No; see text"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="Harmless"/>
+    <tag group="sSave" tag="WillNeg"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sResist" tag="SeeText"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sAshUnonSc" name="Ashen Union" description="You drain all the moisture from the body of a living creature, dealing it 1d6 points of dessication damage per two caster levels (maximum 10d6). A creature that makes a successful Fortitude save takes half damage. If the subject takes damage from the spell (whether its first save was successful or not) equal to more than half of its current hit points, it must make another Fortitude saving throw or die as its body expels all remaining fluid, leaving behind only a fragile husk that powders to ash at the least touch. A victim&#146;s equipment is unaffected. A creature that is affected but not slain by the spell is dehydrated (see Sandstorm p. 15).\n   {i}Material Component{/i}: A piece of dried fruit and a pinch of dust." compset="Spell" summary="Drains moisture from a creature, possibly killing it and destroying its body.">
+    <fieldval field="sRange" value="Medium (10&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. half, fort. partial; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortHalf"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sAshUnonWz" name="Ashen Union" description="You drain all the moisture from the body of a living creature, dealing it 1d6 points of dessication damage per two caster levels (maximum 10d6). A creature that makes a successful Fortitude save takes half damage. If the subject takes damage from the spell (whether its first save was successful or not) equal to more than half of its current hit points, it must make another Fortitude saving throw or die as its body expels all remaining fluid, leaving behind only a fragile husk that powders to ash at the least touch. A victim&#146;s equipment is unaffected. A creature that is affected but not slain by the spell is dehydrated (see Sandstorm p. 15).\n   {i}Material Component{/i}: A piece of dried fruit and a pinch of dust." compset="Spell" summary="Drains moisture from a creature, possibly killing it and destroying its body.">
+    <fieldval field="sRange" value="Medium (10&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. half, fort. partial; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortHalf"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sAshstarSc" name="Ashstar" description="You create a magical construct called an ashstar. It shoots from your hand and hovers in the air anywhere within the limit of the range. Each round, you can move the ashstar anywhere within range by spending a move action to concentrate on the new position. The ashstar gives off a reddish light, akin to the hazy light within a sandstorm, providing shadowy illumination in a 20-foot radius. A creature you designate within 10 feet of the ashstar that takes damage from any source must make a Fortitude saving throw. On a failed save, the damage is considered dessication damage, and the victim becomes dehydrated.\n   An ashstar can be attacked as if it were an object. It has hardness 10 and 20 hit points." compset="Spell" summary="Hovering construct dehydrates a wounded creature.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fort. negates"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Creation"/>
+    <tag group="sRange" tag="Lvl_Based"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sAshstarWz" name="Ashstar" description="You create a magical construct called an ashstar. It shoots from your hand and hovers in the air anywhere within the limit of the range. Each round, you can move the ashstar anywhere within range by spending a move action to concentrate on the new position. The ashstar gives off a reddish light, akin to the hazy light within a sandstorm, providing shadowy illumination in a 20-foot radius. A creature you designate within 10 feet of the ashstar that takes damage from any source must make a Fortitude saving throw. On a failed save, the damage is considered dessication damage, and the victim becomes dehydrated.\n   An ashstar can be attacked as if it were an object. It has hardness 10 and 20 hit points." compset="Spell" summary="Hovering construct dehydrates a wounded creature.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="Fort. negates"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Creation"/>
+    <tag group="sRange" tag="Lvl_Based"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sBodyBlzSc" name="Body Blaze" description="You are surrounded in flame, which does not harm you or your equipment. When you move, you leave a vertical trail of flame in your wake. The sheet of flame left behind you is up to 20 feet high, 2 inches wide, and lengthens as you move, exactly following the path you take across a horizontal surface&#151;you leave no trail on vertical surfaces or through the air because the sheet of flame must be anchored on a horizontal surface. \n   The blazing wall deals 2d6 points of fire damage +1 point of fire damage per caster level (maximum +20) to any creature passing through it. If you pass through a square more than once, the damage dealt by the wall to creatures moving through that square does not increase. You take no damage from your own blazing wall.\n   If you overrun a creature or otherwise manage to pass through its square, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that section goes out.\n   {i}Material Component{/i}: A small piece of phosphorus." compset="Spell" summary="You are surrounded by fire and leave a wall-like trail of flame in your wake.">
+    <fieldval field="sRange" value="Personal; see text"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sSubschool" tag="Fire"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sBodyBlzWz" name="Body Blaze" description="You are surrounded in flame, which does not harm you or your equipment. When you move, you leave a vertical trail of flame in your wake. The sheet of flame left behind you is up to 20 feet high, 2 inches wide, and lengthens as you move, exactly following the path you take across a horizontal surface&#151;you leave no trail on vertical surfaces or through the air because the sheet of flame must be anchored on a horizontal surface. \n   The blazing wall deals 2d6 points of fire damage +1 point of fire damage per caster level (maximum +20) to any creature passing through it. If you pass through a square more than once, the damage dealt by the wall to creatures moving through that square does not increase. You take no damage from your own blazing wall.\n   If you overrun a creature or otherwise manage to pass through its square, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that section goes out.\n   {i}Material Component{/i}: A small piece of phosphorus." compset="Spell" summary="You are surrounded by fire and leave a wall-like trail of flame in your wake.">
+    <fieldval field="sRange" value="Personal; see text"/>
+    <fieldval field="sDuration" value="1 round/level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sSubschool" tag="Fire"/>
+    <tag group="sRange" tag="Personal"/>
+    <tag group="sRange" tag="SeeText"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sChokSndCl" name="Choking Sands" description="You coat the target&#146;s lungs with dust and sand. The target can cough up the sand by taking a full-round action and making a Fortitude save. If it chooses not to do so, it must make Constitution checks to avoid suffocation (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}).\n   Material Component: A tiny stuffed animal filled with sand." compset="Spell" summary="Touched creature begins to suffocate on sand.">
+    <fieldval field="sRange" value="Living creature touched"/>
+    <fieldval field="sDuration" value="Instantaneous; see text"/>
+    <fieldval field="sSave" value="Fort. negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sChokSndDr" name="Choking Sands" description="You coat the target&#146;s lungs with dust and sand. The target can cough up the sand by taking a full-round action and making a Fortitude save. If it chooses not to do so, it must make Constitution checks to avoid suffocation (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}).\n   Material Component: A tiny stuffed animal filled with sand." compset="Spell" summary="Touched creature begins to suffocate on sand.">
+    <fieldval field="sRange" value="Living creature touched"/>
+    <fieldval field="sDuration" value="Instantaneous; see text"/>
+    <fieldval field="sSave" value="Fort. negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sChokSndSc" name="Choking Sands" description="You coat the target&#146;s lungs with dust and sand. The target can cough up the sand by taking a full-round action and making a Fortitude save. If it chooses not to do so, it must make Constitution checks to avoid suffocation (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}).\n   Material Component: A tiny stuffed animal filled with sand." compset="Spell" summary="Touched creature begins to suffocate on sand.">
+    <fieldval field="sRange" value="Living creature touched"/>
+    <fieldval field="sDuration" value="Instantaneous; see text"/>
+    <fieldval field="sSave" value="Fort. negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sChokSndWz" name="Choking Sands" description="You coat the target&#146;s lungs with dust and sand. The target can cough up the sand by taking a full-round action and making a Fortitude save. If it chooses not to do so, it must make Constitution checks to avoid suffocation (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}).\n   Material Component: A tiny stuffed animal filled with sand." compset="Spell" summary="Touched creature begins to suffocate on sand.">
+    <fieldval field="sRange" value="Living creature touched"/>
+    <fieldval field="sDuration" value="Instantaneous; see text"/>
+    <fieldval field="sSave" value="Fort. negates; see text"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Touch"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sDuration" tag="SeeText"/>
+    <tag group="sSave" tag="FortNeg"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sCtrlSndCl" name="Control Sand" description="Depending on the version you choose, control sand raises or lowers fine particles of material, such as dust or sand.\n   This spell alters a shapeable (S) area 10&apos;/level wide by 10&apos;/level long by 2&apos;/level deep. For either version, the caster can reduce one horizontal dimension by half and double the other horizontal dimension.\n   {i}Lower Sand{/i}: This effect causes sand to reduce its depth by as much as 2 feet per caster level, to a minimum depth of 1 inch. The dust and sand is lowered within a square-shaped depression whose sides are up to 10 feet long per caster level. In extremely large and deep sand piles, such as a sand dune, the spell creates a pit that sweeps creatures downward (without dealing damage), putting them at risk and rendering them unable to leave by normal movement for the duration of the spell. When cast on earth elementals, dust paraelementals, and other earth- or dust-based creatures, this spell acts as a slow spell (Will negates). The spell has no effect on other creatures.\n   {i}Raise Sand{/i}: This effect causes dust and sand to rise in height, just as the lower sand version causes it to lower. Creatures and objects on top of the dust or sand are raised along with the top level of sand." compset="Spell" summary="Raise or lower the level of sand.">
+    <fieldval field="sRange" value="Long (400&apos;/level + 40&apos;/level); see text"/>
+    <fieldval field="sDuration" value="10 min./level (D)"/>
+    <fieldval field="sSave" value="None; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sClass" tag="Cleric"/>
+    </thing>
+  <thing id="sCtrlSndDr" name="Control Sand" description="Depending on the version you choose, control sand raises or lowers fine particles of material, such as dust or sand.\n   This spell alters a shapeable (S) area 10&apos;/level wide by 10&apos;/level long by 2&apos;/level deep. For either version, the caster can reduce one horizontal dimension by half and double the other horizontal dimension.\n   {i}Lower Sand{/i}: This effect causes sand to reduce its depth by as much as 2 feet per caster level, to a minimum depth of 1 inch. The dust and sand is lowered within a square-shaped depression whose sides are up to 10 feet long per caster level. In extremely large and deep sand piles, such as a sand dune, the spell creates a pit that sweeps creatures downward (without dealing damage), putting them at risk and rendering them unable to leave by normal movement for the duration of the spell. When cast on earth elementals, dust paraelementals, and other earth- or dust-based creatures, this spell acts as a slow spell (Will negates). The spell has no effect on other creatures.\n   {i}Raise Sand{/i}: This effect causes dust and sand to rise in height, just as the lower sand version causes it to lower. Creatures and objects on top of the dust or sand are raised along with the top level of sand." compset="Spell" summary="Raise or lower the level of sand.">
+    <fieldval field="sRange" value="Long (400&apos;/level + 40&apos;/level); see text"/>
+    <fieldval field="sDuration" value="10 min./level (D)"/>
+    <fieldval field="sSave" value="None; see text"/>
+    <fieldval field="sResist" value="No"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sSchool" tag="Transmutat"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="DF"/>
+    <tag group="sRange" tag="Long"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="No"/>
+    <tag group="sClass" tag="Druid"/>
+    </thing>
+  <thing id="sDsrtDivSc" name="Desert Diversion" description="A gray ray flecked with red springs from your outstretched hand. You must make a ranged touch attack to hit the target. A target struck is covered with a glittering red field that usurps some forms of planar travel. Forms of travel taken over by desert diversion include {i}dimension door, ethereal jaunt, etherealness, gate, greater teleport, plane shift, shadow walk, teleport, teleport object, teleportation circle{/i}, and similar spells and spell-like abilities. If the subject of desert diversion casts one of the above spells, he and those traveling with him (or anyone using the gate{/i} or {i}teleportation circle{/i}) are diverted. This spell can also be cast upon a gate or {i}teleportation circle, thereafter diverting all who use the affected spell for the duration of {i}desert diversion{/i}.\n   Subjects are diverted to a wasteland location, chosen by the caster or randomly determined. Until {i}desert diversion{/i} ends or is dispelled, the subjects of the spell cannot use any of the abovementioned spells to travel from the area. If they try, the casting simply returns them to the same spot in the middle of the waste. When the duration expires, the diversion ends, and subjects return to their point of origin." compset="Spell" summary="Those attempting planar travel are diverted to a random wasteland.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level) ray"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Teleport"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sDsrtDivWz" name="Desert Diversion" description="A gray ray flecked with red springs from your outstretched hand. You must make a ranged touch attack to hit the target. A target struck is covered with a glittering red field that usurps some forms of planar travel. Forms of travel taken over by desert diversion include {i}dimension door, ethereal jaunt, etherealness, gate, greater teleport, plane shift, shadow walk, teleport, teleport object, teleportation circle{/i}, and similar spells and spell-like abilities. If the subject of desert diversion casts one of the above spells, he and those traveling with him (or anyone using the gate{/i} or {i}teleportation circle{/i}) are diverted. This spell can also be cast upon a gate or {i}teleportation circle, thereafter diverting all who use the affected spell for the duration of {i}desert diversion{/i}.\n   Subjects are diverted to a wasteland location, chosen by the caster or randomly determined. Until {i}desert diversion{/i} ends or is dispelled, the subjects of the spell cannot use any of the abovementioned spells to travel from the area. If they try, the casting simply returns them to the same spot in the middle of the waste. When the duration expires, the diversion ends, and subjects return to their point of origin." compset="Spell" summary="Those attempting planar travel are diverted to a random wasteland.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level) ray"/>
+    <fieldval field="sDuration" value="1 min./level"/>
+    <fieldval field="sSave" value="None"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Conjur"/>
+    <tag group="sSubschool" tag="Teleport"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Minute"/>
+    <tag group="sDuration" tag="PerLevel"/>
+    <tag group="sSave" tag="None"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="V"/>
+    </thing>
+  <thing id="sDsicateCl" name="Desiccate" description="You evaporate moisture from the body of a living creature, dealing it 1d6 points of dessication damage per two caster levels (maximum 5d6) and making it dehydrated (see Sandstorm p. 15). A successful Fortitude save results in half damage and negates the dehydration. A plant or elemental of the water subtype takes 1d8 points of damage per caster level (maximum 10d8). An elemental of the earth subtype takes only 1d4 points of damage per two caster levels (maximum 5d4).\n   {i}Material Component{/i}: A pinch of dust." compset="Spell" summary="Deals 1d6/2 levels dessication damage and dehydrates living creature.">
+    <fieldval field="sRange" value="One living creature; close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sDsicateDr" name="Desiccate" description="You evaporate moisture from the body of a living creature, dealing it 1d6 points of dessication damage per two caster levels (maximum 5d6) and making it dehydrated (see Sandstorm p. 15). A successful Fortitude save results in half damage and negates the dehydration. A plant or elemental of the water subtype takes 1d8 points of damage per caster level (maximum 10d8). An elemental of the earth subtype takes only 1d4 points of damage per two caster levels (maximum 5d4).\n   {i}Material Component{/i}: A pinch of dust." compset="Spell" summary="Deals 1d6/2 levels dessication damage and dehydrates living creature.">
+    <fieldval field="sRange" value="One living creature; close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sDsicateSc" name="Desiccate" description="You evaporate moisture from the body of a living creature, dealing it 1d6 points of dessication damage per two caster levels (maximum 5d6) and making it dehydrated (see Sandstorm p. 15). A successful Fortitude save results in half damage and negates the dehydration. A plant or elemental of the water subtype takes 1d8 points of damage per caster level (maximum 10d8). An elemental of the earth subtype takes only 1d4 points of damage per two caster levels (maximum 5d4).\n   {i}Material Component{/i}: A pinch of dust." compset="Spell" summary="Deals 1d6/2 levels dessication damage and dehydrates living creature.">
+    <fieldval field="sRange" value="One living creature; close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sDsicateWz" name="Desiccate" description="You evaporate moisture from the body of a living creature, dealing it 1d6 points of dessication damage per two caster levels (maximum 5d6) and making it dehydrated (see Sandstorm p. 15). A successful Fortitude save results in half damage and negates the dehydration. A plant or elemental of the water subtype takes 1d8 points of damage per caster level (maximum 10d8). An elemental of the earth subtype takes only 1d4 points of damage per two caster levels (maximum 5d4).\n   {i}Material Component{/i}: A pinch of dust." compset="Spell" summary="Deals 1d6/2 levels dessication damage and dehydrates living creature.">
+    <fieldval field="sRange" value="One living creature; close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="2"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Close"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="FortPart"/>
+    <tag group="sResist" tag="Yes"/>
+    <tag group="sComp" tag="S"/>
+    </thing>
+  <thing id="sDsctMasCl" name="Desiccate, Mass" description="This spell functions like {i}desiccate{/i}, except that it affects multiple creatures." compset="Spell" summary="Desiccates several creatures.">
+    <fieldval field="sRange" value="One living creature/level; close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sClass" tag="Cleric"/>
+    </thing>
+  <thing id="sDsctMasDr" name="Desiccate, Mass" description="This spell functions like {i}desiccate{/i}, except that it affects multiple creatures." compset="Spell" summary="Desiccates several creatures.">
+    <fieldval field="sRange" value="One living creature/level; close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sClass" tag="Druid"/>
+    </thing>
+  <thing id="sDsctMasSc" name="Desiccate, Mass" description="This spell functions like {i}desiccate{/i}, except that it affects multiple creatures." compset="Spell" summary="Desiccates several creatures.">
+    <fieldval field="sRange" value="One living creature/level; close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    </thing>
+  <thing id="sDsctMasWz" name="Desiccate, Mass" description="This spell functions like {i}desiccate{/i}, except that it affects multiple creatures." compset="Spell" summary="Desiccates several creatures.">
+    <fieldval field="sRange" value="One living creature/level; close (25&apos; + 5&apos;/2 levels)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="Fort. partial"/>
+    <fieldval field="sResist" value="Yes"/>
+    <usesource source="Sandstorm"/>
+    <tag group="sSchool" tag="Necromancy"/>
+    <tag group="sLevel" tag="6"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sClass" tag="Wizard"/>
+    </thing>
+  <thing id="sDsplWatBa" name="Dispel Water" description="You call on the power of the waste to counter and dismiss water creatures, spells, and effects. However, dispel water cannot counter an instantaneous spell or effect.\n   You choose to use dispel water in one of three ways: to dry up a body of water, to counter a water-based spell or effect, or to dismiss an extraplanar creature of the water subtype. \n   {i}Dry Up Water{/i}: This effect instantly destroys 200 cubic feet of water per level. Remaining water rushes in to fill the void. Cast in a large body of water, such as an ocean, the destruction of 1,000 or more cubic feet of water produces a strong current that pulls boats and creatures down. Creatures caught in the current must make a DC 20 Swim check to avoid going under. A creature that fails the Swim check is pulled down to a depth of 10 feet per caster level and must hold its breath or begin to drown (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}). The current might capsize vessels: The chance is 95% for a craft shorter than 20 feet long, 50% for one from 20 to 60 feet long, and 20% for one over 60 feet long.\n   {i}Counterspell{/i}: Used in this way, dispel water targets a spellcaster and is cast as a counterspell (see page 170 of the {i}Player&#146;s Handbook{/i}). It only counters spells and spell-like abilities that have the water descriptor, or appear on the Water domain spell list, or clearly involve water (such as create food and water, sleet storm, and wall of ice). To successfully counter the other spell, you must make a dispel check (1d20 + your caster level, maximum +20) against a DC equal to 11 + the spell&#146;s caster level.\n   {i}Dismiss Water Creature{/i}: Cast in this way, dispel water targets a single extraplanar creature of the water subtype within range. The creature can negate the effect with a successful Will save (and its spell resistance, if any, applies). If it fails to save or resist the spell, the creature is forced back to its home plane." compset="Spell" summary="Cancels water spells and effects or dismisses water creatures.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="See text"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Bard"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="SeeText"/>
+    </thing>
+  <thing id="sDsplWatCl" name="Dispel Water" description="You call on the power of the waste to counter and dismiss water creatures, spells, and effects. However, dispel water cannot counter an instantaneous spell or effect.\n   You choose to use dispel water in one of three ways: to dry up a body of water, to counter a water-based spell or effect, or to dismiss an extraplanar creature of the water subtype. \n   {i}Dry Up Water{/i}: This effect instantly destroys 200 cubic feet of water per level. Remaining water rushes in to fill the void. Cast in a large body of water, such as an ocean, the destruction of 1,000 or more cubic feet of water produces a strong current that pulls boats and creatures down. Creatures caught in the current must make a DC 20 Swim check to avoid going under. A creature that fails the Swim check is pulled down to a depth of 10 feet per caster level and must hold its breath or begin to drown (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}). The current might capsize vessels: The chance is 95% for a craft shorter than 20 feet long, 50% for one from 20 to 60 feet long, and 20% for one over 60 feet long.\n   {i}Counterspell{/i}: Used in this way, dispel water targets a spellcaster and is cast as a counterspell (see page 170 of the {i}Player&#146;s Handbook{/i}). It only counters spells and spell-like abilities that have the water descriptor, or appear on the Water domain spell list, or clearly involve water (such as create food and water, sleet storm, and wall of ice). To successfully counter the other spell, you must make a dispel check (1d20 + your caster level, maximum +20) against a DC equal to 11 + the spell&#146;s caster level.\n   {i}Dismiss Water Creature{/i}: Cast in this way, dispel water targets a single extraplanar creature of the water subtype within range. The creature can negate the effect with a successful Will save (and its spell resistance, if any, applies). If it fails to save or resist the spell, the creature is forced back to its home plane." compset="Spell" summary="Cancels water spells and effects or dismisses water creatures.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="See text"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Cleric"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="SeeText"/>
+    </thing>
+  <thing id="sDsplWatDr" name="Dispel Water" description="You call on the power of the waste to counter and dismiss water creatures, spells, and effects. However, dispel water cannot counter an instantaneous spell or effect.\n   You choose to use dispel water in one of three ways: to dry up a body of water, to counter a water-based spell or effect, or to dismiss an extraplanar creature of the water subtype. \n   {i}Dry Up Water{/i}: This effect instantly destroys 200 cubic feet of water per level. Remaining water rushes in to fill the void. Cast in a large body of water, such as an ocean, the destruction of 1,000 or more cubic feet of water produces a strong current that pulls boats and creatures down. Creatures caught in the current must make a DC 20 Swim check to avoid going under. A creature that fails the Swim check is pulled down to a depth of 10 feet per caster level and must hold its breath or begin to drown (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}). The current might capsize vessels: The chance is 95% for a craft shorter than 20 feet long, 50% for one from 20 to 60 feet long, and 20% for one over 60 feet long.\n   {i}Counterspell{/i}: Used in this way, dispel water targets a spellcaster and is cast as a counterspell (see page 170 of the {i}Player&#146;s Handbook{/i}). It only counters spells and spell-like abilities that have the water descriptor, or appear on the Water domain spell list, or clearly involve water (such as create food and water, sleet storm, and wall of ice). To successfully counter the other spell, you must make a dispel check (1d20 + your caster level, maximum +20) against a DC equal to 11 + the spell&#146;s caster level.\n   {i}Dismiss Water Creature{/i}: Cast in this way, dispel water targets a single extraplanar creature of the water subtype within range. The creature can negate the effect with a successful Will save (and its spell resistance, if any, applies). If it fails to save or resist the spell, the creature is forced back to its home plane." compset="Spell" summary="Cancels water spells and effects or dismisses water creatures.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="See text"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="4"/>
+    <tag group="sClass" tag="Druid"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="SeeText"/>
+    </thing>
+  <thing id="sDsplWatSc" name="Dispel Water" description="You call on the power of the waste to counter and dismiss water creatures, spells, and effects. However, dispel water cannot counter an instantaneous spell or effect.\n   You choose to use dispel water in one of three ways: to dry up a body of water, to counter a water-based spell or effect, or to dismiss an extraplanar creature of the water subtype. \n   {i}Dry Up Water{/i}: This effect instantly destroys 200 cubic feet of water per level. Remaining water rushes in to fill the void. Cast in a large body of water, such as an ocean, the destruction of 1,000 or more cubic feet of water produces a strong current that pulls boats and creatures down. Creatures caught in the current must make a DC 20 Swim check to avoid going under. A creature that fails the Swim check is pulled down to a depth of 10 feet per caster level and must hold its breath or begin to drown (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}). The current might capsize vessels: The chance is 95% for a craft shorter than 20 feet long, 50% for one from 20 to 60 feet long, and 20% for one over 60 feet long.\n   {i}Counterspell{/i}: Used in this way, dispel water targets a spellcaster and is cast as a counterspell (see page 170 of the {i}Player&#146;s Handbook{/i}). It only counters spells and spell-like abilities that have the water descriptor, or appear on the Water domain spell list, or clearly involve water (such as create food and water, sleet storm, and wall of ice). To successfully counter the other spell, you must make a dispel check (1d20 + your caster level, maximum +20) against a DC equal to 11 + the spell&#146;s caster level.\n   {i}Dismiss Water Creature{/i}: Cast in this way, dispel water targets a single extraplanar creature of the water subtype within range. The creature can negate the effect with a successful Will save (and its spell resistance, if any, applies). If it fails to save or resist the spell, the creature is forced back to its home plane." compset="Spell" summary="Cancels water spells and effects or dismisses water creatures.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="See text"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Sorcerer"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="SeeText"/>
+    </thing>
+  <thing id="sDsplWatWz" name="Dispel Water" description="You call on the power of the waste to counter and dismiss water creatures, spells, and effects. However, dispel water cannot counter an instantaneous spell or effect.\n   You choose to use dispel water in one of three ways: to dry up a body of water, to counter a water-based spell or effect, or to dismiss an extraplanar creature of the water subtype. \n   {i}Dry Up Water{/i}: This effect instantly destroys 200 cubic feet of water per level. Remaining water rushes in to fill the void. Cast in a large body of water, such as an ocean, the destruction of 1,000 or more cubic feet of water produces a strong current that pulls boats and creatures down. Creatures caught in the current must make a DC 20 Swim check to avoid going under. A creature that fails the Swim check is pulled down to a depth of 10 feet per caster level and must hold its breath or begin to drown (see page 304 of the {i}Dungeon Master&#146;s Guide{/i}). The current might capsize vessels: The chance is 95% for a craft shorter than 20 feet long, 50% for one from 20 to 60 feet long, and 20% for one over 60 feet long.\n   {i}Counterspell{/i}: Used in this way, dispel water targets a spellcaster and is cast as a counterspell (see page 170 of the {i}Player&#146;s Handbook{/i}). It only counters spells and spell-like abilities that have the water descriptor, or appear on the Water domain spell list, or clearly involve water (such as create food and water, sleet storm, and wall of ice). To successfully counter the other spell, you must make a dispel check (1d20 + your caster level, maximum +20) against a DC equal to 11 + the spell&#146;s caster level.\n   {i}Dismiss Water Creature{/i}: Cast in this way, dispel water targets a single extraplanar creature of the water subtype within range. The creature can negate the effect with a successful Will save (and its spell resistance, if any, applies). If it fails to save or resist the spell, the creature is forced back to its home plane." compset="Spell" summary="Cancels water spells and effects or dismisses water creatures.">
+    <fieldval field="sRange" value="Medium (100&apos; + 10&apos;/level)"/>
+    <fieldval field="sDuration" value="Instantaneous"/>
+    <fieldval field="sSave" value="See text"/>
+    <fieldval field="sResist" value="See text"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sLevel" tag="5"/>
+    <tag group="sClass" tag="Wizard"/>
+    <tag group="sSchool" tag="Abjur"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sRange" tag="Medium"/>
+    <tag group="sDuration" tag="Instant"/>
+    <tag group="sSave" tag="SeeText"/>
+    <tag group="sResist" tag="SeeText"/>
     </thing>
   </document>
