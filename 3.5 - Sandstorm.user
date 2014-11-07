@@ -249,13 +249,15 @@ MM (Done)</comment>
     <tag group="fCategory" tag="Metamagic"/>
     <tag group="Helper" tag="ShowSpec"/>
     </thing>
-  <thing id="fHeatEndur" name="Heat Endurance" description="Either as a result of growing up in the waste, or by training your body and mind to ignore the effects of searing heat, you can exist with ease in high-temperature environments.\n\n{b}Prerequisite{/b}: Base Fortitude save +2.\n\n{b}Benefit{/b}: You gain a +2 bonus on saving throws against fire effects. You can exist comfortably in temperatures up to 120&#176; F without having to make Fortitude saves (see Heat Dangers, page 12). Your protection against heat is level 1 (see Protection against Heat, page 14)." compset="Feat" summary="+2 bon to saves vs fire, no checks up to 120&#176; F, protection lvl 1 vs heat." uniqueness="useronce">
+  <thing id="fHeatEndur" name="Heat Endurance" description="Either as a result of growing up in the waste, or by training your body and mind to ignore the effects of searing heat, you can exist with ease in high-temperature environments.\n\n{b}Prerequisite{/b}: Base Fortitude save +2.\n\n{b}Benefit{/b}: You gain a +2 bonus on saving throws against fire effects. You can exist comfortably in temperatures up to 120&#176; F without having to make Fortitude saves (see Heat Dangers, page 12). Your protection against heat is level 1 (see Protection against Heat, Sandstorm p. 14)." compset="Feat" summary="+2 bon to saves vs fire, no checks up to 120&#176; F, protection lvl 1 vs heat." uniqueness="useronce">
     <comment>Pre req (Done)
 
 Summ (Done)</comment>
     <usesource source="Sandstorm"/>
     <tag group="fCategory" tag="General"/>
     <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostLevel">~ +1 Heat Resistance
+hero.childfound[pHeatResis].field[Value].value += 1</eval>
     <exprreq message="Base Fortitude save +2 required."><![CDATA[child[vFort].field[vBase].value >= 2]]></exprreq>
     </thing>
   <thing id="fImpHeatEn" name="Improved Heat Endurance" description="You can survive even in the most extreme natural heat conditions.\n\n{b}Prerequisites{/b}: Base Fortitude save +6, Heat Endurance.\n\n{b}Benefit{/b}: You gain fire resistance 5. If you already have fire resistance, it increases by 5. You can exist comfortably in temperatures up to 160&#176; F without having to make Fortitude saves (see Heat Dangers, page 12). Your protection against heat is level 3 (see Protection against Heat, page 14)." compset="Feat" summary="+2 bon to saves vs fire, no checks up to 160&#176; F, protection lvl 3 vs heat." uniqueness="useronce">
@@ -270,7 +272,10 @@ Test? (Done)</comment>
     <tag group="fCategory" tag="General"/>
     <tag group="Helper" tag="ShowSpec"/>
     <bootstrap thing="xImpHeaRes"></bootstrap>
-    <eval phase="First">perform hero.childfound[fHeatEndur].delete[Helper.ShowSpec]</eval>
+    <eval phase="First">perform hero.childfound[fHeatEndur].delete[Helper.ShowSpec]
+
+~ +3 Heat Resistance
+hero.childfound[pHeatResis].field[Value].value += 3</eval>
     <exprreq message="Base Fortitude save +6 required."><![CDATA[child[vFort].field[vBase].value >= 6]]></exprreq>
     <exprreq message="Heat Endurance required."><![CDATA[#hasfeat[fHeatEndur] <> 0]]></exprreq>
     </thing>
@@ -3067,5 +3072,37 @@ hero.child[ArmorClass].field[tACNatural].value += 2]]></eval>
     <tag group="sDuration" tag="Instant"/>
     <tag group="sSave" tag="SeeText"/>
     <tag group="sResist" tag="SeeText"/>
+    </thing>
+  <thing id="cdSummer" name="Summer" description="{b}Granted Power{/b}:\nYou are considered a native of the waste for purposes of heat resistance (you have 1 level of protection). During the summer season, you gain a +2 bonus on all Wisdom-based skill checks.\n\n{b}Domain Spells{/b}:\n{b}1 Impede Sun&#146;s Brilliance{/b}: Diminishes the heat and light of the sun in an area.\n{b}2 Sunstroke{/b}: Target takes 2d6 nonlethal damage and is fatigued.\n{b}3 Protection from Dessication{/b}: Absorb 10 points/level of dessication damage.\n{b}4 Skin of the Cactus{/b}: Grants natural armor, thorns, and resistance to dehydration.\n{b}5 Unearthly Heat{/b}: Target is subjected to unearthly heat for 1 round/level.\n{b}6 Sunbeam{/b}: Beam blinds and deals 4d6 damage.\n{b}7 Control Weather{/b}: Changes weather in local area.\n{b}8 Sunburst{/b}: Blinds all within 10 ft., deals 6d6 damage.\n{b}9 Storm of Vengeance{/b}: Storm rains acid, lightning, and hail" compset="ClerDomain" summary="+1 heat resistance, +2 to Wisdom-based skill checks during the summer." uniqueness="unique">
+    <usesource source="Sandstorm"/>
+    <tag group="SecClsAllw" tag="Summer"/>
+    <bootstrap thing="xWasteNati">
+      <autotag group="SpecSource" tag="Summer"/>
+      </bootstrap>
+    <bootstrap thing="xSumWisdom"></bootstrap>
+    </thing>
+  <thing id="xWasteNati" name="Native of the Waste" description="You are considered a native of the waste for purposes of heat resistance (you have 1 level of protection)." compset="Special" summary="1 level of heat resistance.">
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="xSumWisdom" name="Summer&apos;s Wisdom" description="During the summer season, you gain a +2 bonus on all Wisdom-based skill checks." compset="Special" summary="+2 to Wisdom-based skill checks.">
+    <fieldval field="hName1" value="Summer Season"/>
+    <usesource source="Sandstorm"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="SpecSource" tag="Summer"/>
+    <eval phase="First"><![CDATA[doneif (field[hIsOn1].value = 0)
+
+foreach pick in hero from BaseSkill
+  if ( eachpick.islinkage[skillattr] <> 0 ) then
+	if ( eachpick.linkage[skillattr].tagis[thingid.aWIS] <> 0 ) then
+	  each.field[Bonus].value += 2
+	endif
+  endif
+nexteach]]></eval>
+    </thing>
+  <thing id="pHeatResis" name="Heat Resistance" description="Few people venture into the waste without some form of protection against heat. By far the most common means of protection is dressing appropriately in flowing, light clothing or staying near shade and water. Magical protection further improves the chance to survive in hot, dry climates. In addition, special devices and alchemical concoctions can aid desert travel.\n   A character&#146;s protection against heat dangers is described by level of protection, which ranges from 1 to 5 or higher. Such levels of protection do not confer any special fire resistance&#151;a red dragon&#146;s breath still does the same damage. However, equipment that provides a bonus on saving throws against heat dangers contributes its bonus whether it is complete, partial, or ineffective protection against that degree of heat. Thus, even though keepcool salve is not sufficient to offer even partial protection against extreme heat, a character with keepcool salve (see Sandstorm p. 102) still adds the item&#146;s +1 circumstance bonus on saves against nonlethal damage dealt by an extremely hot environment." compset="InPlay" summary="Your ability to resist heat dangers." uniqueness="useronce">
+    <fieldval field="pMinimum" value="0"/>
+    <fieldval field="pWhat" value="Level"/>
+    <usesource source="Sandstorm"/>
     </thing>
   </document>
